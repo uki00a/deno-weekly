@@ -4,6 +4,7 @@ const rootDir = path.dirname(path.fromFileUrl(import.meta.url));
 const articlesDir = path.join(rootDir, "articles");
 const distDir = path.join(rootDir, "dist");
 const template = await Deno.readTextFile(path.join(rootDir, "template.html"));
+const url = Deno.env.get("URL") ?? "http://localhost:4507";
 
 interface Page {
   path: string;
@@ -56,7 +57,10 @@ async function writePage(page: Page): Promise<void> {
 }
 
 function generateHTML(page: Page): Promise<string> {
-  return dejs.renderToString(template, page);
+  return dejs.renderToString(template, {
+    ...page,
+    top: url,
+  });
 }
 
 async function collectFiles(dir: string): Promise<string[]> {

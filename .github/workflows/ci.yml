@@ -13,7 +13,7 @@ jobs:
         deno-version: 1.6.3
     - name: Build
       run: |
-        make generate
+        URL=https://uki00a.github.io/deno-weekly make generate
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
