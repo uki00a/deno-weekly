@@ -5,6 +5,7 @@ const articlesDir = path.join(rootDir, "articles");
 const distDir = path.join(rootDir, "dist");
 const template = await Deno.readTextFile(path.join(rootDir, "template.html"));
 const url = Deno.env.get("URL") ?? "http://localhost:4507";
+const trackingID = Deno.env.get("TRACKING_ID");
 
 interface Page {
   path: string;
@@ -60,6 +61,7 @@ function generateHTML(page: Page): Promise<string> {
   return dejs.renderToString(template, {
     ...page,
     top: url,
+    trackingID,
   });
 }
 
