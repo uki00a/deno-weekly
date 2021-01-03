@@ -25,9 +25,11 @@ async function main() {
   }));
   for (const article of articles) {
     await writePage(article);
+    console.info(`[info] Generated ${article.path}`);
   }
   const indexPage = createIndex(articles);
   await writePage(indexPage);
+  console.info(`[info] Generated ${indexPage.path}`);
 }
 
 function sortStringsDesc(items: string[]): string[] {
