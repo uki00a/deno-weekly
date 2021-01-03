@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://uki00a.github.io/deno-weekly</id>
     <title>Deno Weekly</title>
-    <updated>2021-01-03T05:53:37.383Z</updated>
+    <updated>2021-01-03T06:55:53.789Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>uki00a</name>
@@ -19,7 +19,7 @@
     <entry>
         <title type="html"><![CDATA[2020/01/03の最新情報]]></title>
         <id>2</id>
-        <link href="https://uki00a.github.io/deno-weekly/2020/01/03.html"/>
+        <link href="https://uki00a.github.io/deno-weekly/2021/01/03.html"/>
         <updated>2020-01-03T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[2020/01/03の最新情報]]></summary>
         <author>
@@ -31,7 +31,7 @@
     <entry>
         <title type="html"><![CDATA[はじめに]]></title>
         <id>1</id>
-        <link href="https://uki00a.github.io/deno-weekly/2020/01/02.html"/>
+        <link href="https://uki00a.github.io/deno-weekly/2021/01/02.html"/>
         <updated>2020-01-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[はじめに]]></summary>
         <author>
