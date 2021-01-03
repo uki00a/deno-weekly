@@ -1,0 +1,21 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: denolib/setup-deno@master
+      with:
+        deno-version: 1.6.3
+    - name: Build
+      run: |
+        make generate
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
