@@ -1,4 +1,4 @@
-import { dejs, ensureDir, frontMatter, marked, path } from "./deps.ts";
+import { dejs, ensureDir, Feed, frontMatter, marked, path } from "./deps.ts";
 
 const rootDir = path.dirname(path.fromFileUrl(import.meta.url));
 const articlesDir = path.join(rootDir, "articles");
@@ -17,14 +17,12 @@ interface Page {
 
 interface Article extends Page {
   id: number;
+  publishedAt?: Date | null;
 }
 
 async function main() {
   const articleFiles = sortStringsDesc(await collectFiles(articlesDir));
-  const articles = await Promise.all(articleFiles.map((file, index) => {
-    const id = articleFiles.length - index;
-    return createArticle(id, file);
-  }));
+  const articles = await Promise.all(articleFiles.map(createArticle));
   for (const article of articles) {
     await writePage(article);
     console.info(`[info] Generated ${article.path}`);
@@ -32,6 +30,10 @@ async function main() {
   const indexPage = createIndex(articles);
   await writePage(indexPage);
   console.info(`[info] Generated ${indexPage.path}`);
+
+  const feed = generateFeed(articles);
+  await write("feed", feed);
+  console.info(`[info] Generated feed`);
 }
 
 function sortStringsDesc(items: string[]): string[] {
@@ -52,17 +54,72 @@ function replaceExtname(fileName: string, newExtname: string): string {
 }
 
 async function writePage(page: Page): Promise<void> {
-  const distFilename = path.join(distDir, page.path);
+  await write(page.path, await generateHTML(page));
+}
+
+async function write(filename: string, contents: string): Promise<void> {
+  const distFilename = path.join(distDir, filename);
   await ensureDir(path.dirname(distFilename));
-  await Deno.writeTextFile(distFilename, await generateHTML(page));
+  await Deno.writeTextFile(distFilename, contents);
 }
 
 function generateHTML(page: Page): Promise<string> {
   return dejs.renderToString(template, {
     ...page,
-    top: url,
+    home: url,
+    feed: feedURL(),
     trackingID,
   });
+}
+
+function buildURL(path: string): string {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  const normalizedURL = url.endsWith("/") ? url.slice(0, -1) : url;
+  return normalizedURL + normalizedPath;
+}
+
+function feedURL(): string {
+  return buildURL("/feed");
+}
+
+function generateFeed(articles: Article[]): string {
+  const author = {
+    name: "uki00a",
+    email: "uki00a@gmail.com",
+    link: "https://github.com/uki00a",
+  };
+  const image =
+    "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png";
+  const favicon =
+    "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico";
+  const feed = new Feed({
+    title: "Deno Weekly",
+    description: "Weekly News for Deno",
+    id: url,
+    link: url,
+    language: "ja",
+    image,
+    favicon,
+    copyright: "All rights reserved 2021, uki00a",
+    feedLinks: {
+      atom: feedURL(),
+    },
+    author,
+  });
+  for (const article of articles.slice(0, 20)) {
+    feed.addItem({
+      id: String(article.id),
+      title: article.title,
+      link: buildURL(article.path),
+      description: article.description,
+      // content: article.contents,
+      author: [author],
+      contributor: [],
+      date: article.publishedAt,
+    });
+  }
+  feed.addCategory("IT");
+  return feed.atom1();
 }
 
 async function collectFiles(dir: string): Promise<string[]> {
@@ -74,29 +131,37 @@ async function collectFiles(dir: string): Promise<string[]> {
 }
 
 async function createArticle(
-  id: number,
   articleFile: string,
 ): Promise<Article> {
   const contents = await Deno.readTextFile(articleFile);
   const { attributes, body } = frontMatter(contents);
   const {
+    id,
     title = path.basename(articleFile),
     description = title,
     type = "article",
+    publishedAt,
   } = attributes as {
+    id: string;
     description: string;
     title: string;
     type?: string;
+    publishedAt?: string;
   };
 
+  if (id == null) {
+    throw new Error(title + ": id is missing");
+  }
+
   return {
-    id,
+    id: Number(id),
     path: replaceExtname(path.relative(articlesDir, articleFile), ".html"),
     contents: marked(`# #${id} ${title}
 
 ${body}`),
     description,
     title: `${title}`,
+    publishedAt: publishedAt ? new Date(publishedAt) : null,
     type,
   };
 }
@@ -125,12 +190,7 @@ async function iterate(
   dir: string,
   fn: (fileName: string) => Promise<void> | void,
 ): Promise<void> {
-  const entries = [] as Array<Deno.DirEntry>;
   for await (const entry of Deno.readDir(dir)) {
-    entries.push(entry);
-  }
-
-  for (const entry of entries) {
     const entryName = path.join(dir, entry.name);
     if (entry.isDirectory) {
       await iterate(entryName, fn);
