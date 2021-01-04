@@ -18,19 +18,15 @@ jobs:
     - name: Run fmt
       run: |
         deno fmt --check
-    - name: REMOVE_ME
-      run: |
-        echo $EVENT_NAME
-      env:
-        EVENT_NAME: ${{ github.event_name }}
     - name: Build
       env:
         URL: https://uki00a.github.io/deno-weekly
         TRACKING_ID: G-MK2K2MRMBF
       run: |
         make generate
-        #    - name: Deploy
-        #      uses: peaceiris/actions-gh-pages@v3
-        #      with:
-        #        github_token: ${{ secrets.GITHUB_TOKEN }}
-        #        publish_dir: ./dist
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      if: ${{ github.event_name == 'push' }}
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
