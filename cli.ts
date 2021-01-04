@@ -21,7 +21,9 @@ interface Article extends Page {
 }
 
 async function main() {
-  const articleFiles = sortStringsDesc(await collectFiles(articlesDir));
+  const articleFiles = Deno.args.length === 0 // TODO Use `std/flags`.
+    ? sortStringsDesc(await collectFiles(articlesDir))
+    : [path.resolve(Deno.args[0])];
   const articles = await Promise.all(articleFiles.map(createArticle));
   for (const article of articles) {
     await writePage(article);
