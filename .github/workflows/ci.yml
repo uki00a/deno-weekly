@@ -15,7 +15,6 @@ jobs:
     - uses: denolib/setup-deno@master
       with:
         deno-version: 1.6.3
-    - name:
     - name: Run fmt
       run: |
         deno fmt --check
