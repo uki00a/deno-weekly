@@ -18,6 +18,9 @@ jobs:
     - name: Run fmt
       run: |
         deno fmt --check
+    - name: Run lint
+      run: |
+        deno lint --unstable --ignore=articles
     - name: Build
       env:
         URL: https://uki00a.github.io/deno-weekly
