@@ -18,6 +18,7 @@ interface Page {
 interface Article extends Page {
   id: number;
   publishedAt?: Date | null;
+  summary?: string;
 }
 
 async function main() {
@@ -114,7 +115,7 @@ function generateFeed(articles: Article[]): string {
       title: article.title,
       link: buildURL(article.path),
       description: article.description,
-      // content: article.contents,
+      content: article.summary ?? null,
       author: [author],
       contributor: [],
       date: article.publishedAt,
@@ -143,17 +144,10 @@ async function createArticle(
     description = title,
     type = "article",
     publishedAt,
-  } = attributes as {
-    id: string;
-    description: string;
-    title: string;
-    type?: string;
-    publishedAt?: string;
-  };
+    summary = "",
+  } = attributes as Partial<Article>;
 
-  if (id == null) {
-    throw new Error(title + ": id is missing");
-  }
+  validateArticle(attributes as Article);
 
   return {
     id: Number(id),
@@ -163,14 +157,37 @@ async function createArticle(
 ${body}`),
     description,
     title: `${title}`,
+    summary,
     publishedAt: publishedAt ? new Date(publishedAt) : null,
     type,
   };
 }
 
+function validateArticle(article: Partial<Article>): void {
+  const {
+    id,
+    title,
+    summary,
+    publishedAt,
+  } = article;
+
+  if (id == null) {
+    throw new Error(title + ': "id" is missing');
+  }
+
+  if (title == null) {
+    throw new Error(`Article ${id}: "title" is missing`);
+  }
+
+  if (publishedAt == null) {
+    throw new Error(`Article ${id}: "publishedAt" is missing`);
+  }
+}
+
 function createIndex(articles: Article[]): Page {
   const links = articles.map((article) => {
-    return `* ${generateLink(article)}`;
+    const link = `#### ${generateLink(article)}`;
+    return article.summary == null ? link : link + `\n${article.summary}`;
   });
 
   return {
