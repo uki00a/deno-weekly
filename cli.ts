@@ -197,9 +197,7 @@ function createIndex(articles: Article[]): Page {
 
   return {
     path: "index.html",
-    contents: marked(`# Deno Weekly
-
-${links.join("\n")}`),
+    contents: marked(links.join("\n")),
     description: "Deno Weekly",
     title: "TOP",
     type: "website",
