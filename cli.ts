@@ -37,6 +37,10 @@ async function main() {
   const feed = generateFeed(articles);
   await write("feed", feed);
   console.info(`[info] Generated feed`);
+
+  const aboutPage = createAbout();
+  await writePage(aboutPage);
+  console.info(`[info] Generated about.html`);
 }
 
 function sortStringsDesc(items: string[]): string[] {
@@ -70,6 +74,7 @@ function generateHTML(page: Page): Promise<string> {
   return dejs.renderToString(template, {
     ...page,
     home: url,
+    about: buildURL("/about.html"),
     feed: feedURL(),
     trackingID,
   });
@@ -197,6 +202,28 @@ function createIndex(articles: Article[]): Page {
 ${links.join("\n")}`),
     description: "Deno Weekly",
     title: "TOP",
+    type: "website",
+  };
+}
+
+function createAbout(): Page {
+  const contents = marked(`## このサイトについて
+
+隔週でDenoに関する最新情報を発信しています。
+
+## 指摘や誤りについて
+
+もしこのサイトについて気になる点(記述の誤り、タイポなど)や改善事項などがありましたら、以下などの手段で連絡いただけると幸いです😊
+
+* [GitHub issue](https://github.com/uki00a/deno-weekly/issues)
+* [Twitter](https://twitter.com/uki00a)
+`);
+
+  return {
+    path: "about.html",
+    contents,
+    description: "About",
+    title: "About",
     type: "website",
   };
 }
