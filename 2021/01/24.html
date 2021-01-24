@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Deno Weekly: 2021/01/24の最新情報</title>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="2021/01/24の最新情報" />
+    <meta property="og:title" content="Deno Weekly: 2021/01/24の最新情報" />
+    <meta property="og:description" content="2021/01/24の最新情報" />
+    <meta property="og:type" content="article" />
+    <!-- FIXME! -->
+    <meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@uki00a" />
+    <meta name="twitter:creator" content="@uki00a" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"></link>
+    <!-- FIXME! -->
+    <link rel="icon" href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"></link>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MK2K2MRMBF');
+    </script>
+    
+  </head>
+  <body>
+    <header>
+      <h2><a href="https://uki00a.github.io/deno-weekly">Deno Weekly</a></h2>
+    </header>
+    <main>
+      <h1 id="5-20210124の最新情報">#5 2021/01/24の最新情報</h1>
+<h2 id="deno-v170がリリース"><a href="https://deno.land/posts/v1.7">Deno v1.7.0がリリース</a></h2>
+<p>Deno v1.7.0がリリースされました。</p>
+<p>以下は変更点の要約です:</p>
+<ul>
+<li><code>deno compile</code>コマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた</li>
+<li><code>import</code>及びWorkerでData URLがサポートされた</li>
+<li><code>Deno.resolveDns</code>が実装された</li>
+<li><code>Deno.transpileOnly</code>/<code>bundle</code>/<code>compile</code>が、<code>Deno.emit</code>という単一のAPIに統合された</li>
+<li><code>deno fmt</code>コマンドでマークダウンファイルがサポートされた</li>
+<li><code>ReadableStream</code>で<code>asyncIterator</code>プロトコルが実装された</li>
+<li><code>ReadableStream#getIterator</code>が非推奨になった(v1.8で削除されることが予定されています)</li>
+<li><code>Worker</code>を起動する際に、パーミッションを指定できるようになった</li>
+<li><code>globalThis.location</code>及び<code>--location</code>フラグがサポートされた</li>
+<li><code>fetch</code>及び<code>Worker</code>で相対URLを指定できるようになった</li>
+<li><code>fetch</code>でリクエストボディのストリミーングがサポートされた</li>
+<li>TLSセッションキャッシュが実装された</li>
+</ul>
+<p>また、<a href="https://zenn.dev/magurotuna">magurotuna</a>さんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。</p>
+<ul>
+<li><a href="https://zenn.dev/magurotuna/articles/55575eb16ae422">Deno 1.7.0 がリリースされたので新機能や変更点の紹介</a></li>
+</ul>
+<h2 id="deno-rollup---rollupのdenoポート"><a href="https://github.com/cmorten/deno-rollup">deno-rollup</a> - RollupのDenoポート</h2>
+<p><code>deno-rollup</code>はRollupをDenoから使用できるようにしたパッケージです。</p>
+<p>内部的にはRollupのブラウザビルドが利用されています。</p>
+<p>CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。</p>
+<p><a href="https://github.com/cmorten/deno-rollup">https://github.com/cmorten/deno-rollup</a></p>
+<h2 id="code-block-writer---javascripttypescriptコードの生成をサポートするモジュール"><a href="https://github.com/dsherret/code-block-writer">code-block-writer</a> - JavaScript/TypeScriptコードの生成をサポートするモジュール</h2>
+<p><code>code-block-writer</code>はJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。</p>
+<p>設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。</p>
+<p>また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。</p>
+<p><a href="https://github.com/dsherret/code-block-writer">https://github.com/dsherret/code-block-writer</a></p>
+
+    </main>
+    <hr />
+    <footer style="text-align: right">
+      <a href="https://uki00a.github.io/deno-weekly">Home</a>
+      <a href="https://uki00a.github.io/deno-weekly/about.html">About</a>
+      <a href="https://github.com/uki00a/deno-weekly">Source</a>
+      <a href="https://uki00a.github.io/deno-weekly/feed">Feed</a>
+    </footer>
+  </body>
+</html>
