@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>Deno Weekly: 2021/01/31の最新情報</title>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="2021/01/31の最新情報" />
+    <meta property="og:title" content="Deno Weekly: 2021/01/31の最新情報" />
+    <meta property="og:description" content="2021/01/31の最新情報" />
+    <meta property="og:type" content="article" />
+    <!-- FIXME! -->
+    <meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@uki00a" />
+    <meta name="twitter:creator" content="@uki00a" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"></link>
+    <!-- FIXME! -->
+    <link rel="icon" href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"></link>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MK2K2MRMBF');
+    </script>
+    
+  </head>
+  <body>
+    <header>
+      <h2><a href="https://uki00a.github.io/deno-weekly">Deno Weekly</a></h2>
+    </header>
+    <main>
+      <h1 id="6-20210131の最新情報">#6 2021/01/31の最新情報</h1>
+<h2 id="deno-v171がリリース"><a href="https://github.com/denoland/deno/releases/tag/v1.7.1">Deno v1.7.1がリリース</a></h2>
+<p>Denoのv1.7.1がリリースされました。</p>
+<p>このリリースに合わせて、<a href="https://deno.land/std@0.85.0">stdのv0.85.0</a>もリリースされています。</p>
+<ul>
+<li>v1.7.0でリリースされた<code>Deno.emit</code>や<code>Deno.resolveDns</code>の安定性の向上</li>
+<li><code>deno lsp</code>のバグ修正・安定性の向上</li>
+<li><code>std/node</code>で<code>process.on(&quot;exit&quot;)</code>がサポートされた</li>
+</ul>
+<p><a href="https://github.com/denoland/deno/releases/tag/v1.7.1">https://github.com/denoland/deno/releases/tag/v1.7.1</a></p>
+<h2 id="deno-postgresのv050v060がリリース">deno-postgresのv0.5.0/v0.6.0がリリース</h2>
+<p><a href="https://github.com/denodrivers/postgres">deno-postgres</a>のv0.5.0及びv0.6.0がリリースされました。</p>
+<ul>
+<li><a href="https://github.com/denodrivers/postgres/releases/tag/v0.5.0">v0.5.0</a></li>
+<li><a href="https://github.com/denodrivers/postgres/releases/tag/v0.6.0">v0.6.0</a></li>
+</ul>
+<p>これらのリリースにはいくつかの破壊的変更が含まれています:</p>
+<ul>
+<li><code>Client#query</code>メソッドが削除され、<code>Client#queryArray</code>と<code>Client#queryObject</code>メソッドが追加された<ul>
+<li><code>Client#queryArray</code>はクエリの結果をネストされた配列として返却します</li>
+<li><code>Client#queryObject</code>はクエリの結果をオブジェクトの配列として返却します</li>
+</ul>
+</li>
+<li><code>Client#multiQuery</code>メソッドが削除された</li>
+<li>PostgreSQLの<code>bigint</code>型がJavaScriptの<code>BigInt</code>として返却されるように変更された<ul>
+<li>v0.4.0までは<code>JavaScript</code>の<code>String</code>型として返却されていました</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://github.com/denodrivers/postgres">https://github.com/denodrivers/postgres</a></p>
+<h2 id="harmony---discord-apiライブラリ"><a href="https://github.com/harmonyland/harmony">Harmony</a> - Discord APIライブラリ</h2>
+<p>HarmonyというDiscord APIライブラリが公開されました。</p>
+<p>このライブラリを使うことで、Discordボットの開発などを行うことができます。</p>
+<p><a href="https://github.com/harmonyland/harmony">https://github.com/harmonyland/harmony</a></p>
+
+    </main>
+    <hr />
+    <footer style="text-align: right">
+      <a href="https://uki00a.github.io/deno-weekly">Home</a>
+      <a href="https://uki00a.github.io/deno-weekly/about.html">About</a>
+      <a href="https://github.com/uki00a/deno-weekly">Source</a>
+      <a href="https://uki00a.github.io/deno-weekly/feed">Feed</a>
+    </footer>
+  </body>
+</html>
