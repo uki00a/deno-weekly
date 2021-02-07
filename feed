@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://uki00a.github.io/deno-weekly</id>
     <title>Deno Weekly</title>
-    <updated>2021-01-31T06:41:19.181Z</updated>
+    <updated>2021-02-07T06:53:39.182Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>uki00a</name>
@@ -16,6 +16,19 @@
     <icon>https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico</icon>
     <rights>All rights reserved 2021, uki00a</rights>
     <category term="IT"/>
+    <entry>
+        <title type="html"><![CDATA[2021/02/07の最新情報]]></title>
+        <id>7</id>
+        <link href="https://uki00a.github.io/deno-weekly/2021/02/07.html"/>
+        <updated>2021-02-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2021/02/07の最新情報]]></summary>
+        <content type="html"><![CDATA[Deno 1.7.2がリリース、deno_stdがdeno本体のリポジトリから分離、emacs-ng、deno-postgres v0.7.0、Trex v1.5.0、Deno Module Visualizer]]></content>
+        <author>
+            <name>uki00a</name>
+            <email>uki00a@gmail.com</email>
+            <uri>https://github.com/uki00a</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2021/01/31の最新情報]]></title>
         <id>6</id>
