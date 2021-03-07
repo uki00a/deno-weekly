@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <title>Deno Weekly: 2021/03/07の最新情報</title>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="2021/03/07の最新情報" />
+    <meta property="og:title" content="Deno Weekly: 2021/03/07の最新情報" />
+    <meta property="og:description" content="2021/03/07の最新情報" />
+    <meta property="og:type" content="article" />
+    <!-- FIXME! -->
+    <meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@uki00a" />
+    <meta name="twitter:creator" content="@uki00a" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"></link>
+    <!-- FIXME! -->
+    <link rel="icon" href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"></link>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MK2K2MRMBF');
+    </script>
+    
+  </head>
+  <body>
+    <header>
+      <h2><a href="https://uki00a.github.io/deno-weekly">Deno Weekly</a></h2>
+    </header>
+    <main>
+      <h1 id="11-20210307の最新情報">#11 2021/03/07の最新情報</h1>
+<h2 id="deno本体の最新情報">Deno本体の最新情報</h2>
+<h3 id="deno-v180がリリースされました">Deno v1.8.0がリリースされました</h3>
+<p>Deno v1.8.0がリリースされました。</p>
+<p><a href="https://zenn.dev/magurotuna">magurotunaさん</a>による<a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-8-0">Deno v1.8.0のまとめ</a>が公開されていますので、よろしければそちらも参照ください。</p>
+<p><strong>主な変更点</strong>:</p>
+<ul>
+<li>WebGPUがサポートされました(experimental)</li>
+<li>ICUサポートが追加されました。</li>
+<li>テストカバレッジの収集と集計が個別のコマンドに分離されました(収集は<code>deno test --coverage</code>、集計は<code>deno coverage</code>コマンドで行います)</li>
+<li>lcov形式でのカバレッジの集計がサポートされました。</li>
+<li>Import maps/<code>Deno.permissions</code>/<code>Deno.link</code>/<code>Deno.symlink</code>/<code>deno lsp</code>が安定化されました(<code>--unstable</code>オプションが不要になった)</li>
+<li>リモートモジュールをダウンロードする際に、<code>Authorization</code>ヘッダにトークンを設定できるようになりました(<code>DENO_AUTH_TOKENS</code>)</li>
+<li>テストコード中で<code>Deno.exit()</code>の呼び出しがチェックされるようになりました(exitサニタイザ)</li>
+<li><code>Deno.metrics()</code>で収集できる情報がより詳細化されました(<code>--unstable</code>を付与したときのみ)</li>
+<li><code>deno fmt</code>でJSONファイルのフォーマットがサポートされました。</li>
+<li><code>Deno.emit</code>でIIFE形式の出力サポートされました。</li>
+<li>TypeScriptが4.2にアップグレードされました。</li>
+</ul>
+<hr>
+<ul>
+<li><a href="https://github.com/denoland/deno/releases/tag/v1.8.0">https://github.com/denoland/deno/releases/tag/v1.8.0</a></li>
+<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-8-0">https://zenn.dev/magurotuna/articles/deno-release-note-1-8-0</a></li>
+</ul>
+<h3 id="deno_std-v0890がリリース">deno_std v0.89.0がリリース</h3>
+<p>Deno v1.8.0のリリースに合わせ、deno_stdのv0.89.0がリリースされました。</p>
+<p><code>std/node</code>への機能追加などに加え、<code>std/io/streams</code>モジュールに破壊的変更が加わっています。</p>
+<p><strong>主な変更点:</strong></p>
+<ul>
+<li><code>io/streams</code>: <code>readableStreamFromAsyncIterator()</code>が削除され、代わりに<code>readableStreamFromIterable()</code>が追加されました。</li>
+<li><code>node</code>: <code>constants</code>モジュールが追加されました。</li>
+<li><code>node/crypto</code>: <code>createHash()</code>関数が実装されました。</li>
+<li><code>node</code>: <code>process.hrtime()</code>が実装されました。</li>
+<li><code>node/fs</code>: <code>truncate</code>/<code>truncateSync</code>が実装されました。</li>
+<li><code>node/util</code>: <code>callbackify</code>/<code>promisify</code>/<code>types</code>が公開されました。</li>
+<li><code>node/events</code>: <code>require(&#39;events&#39;).EventEmitter</code>が<code>undefined</code>になる問題が修正されました。</li>
+<li><code>node</code>: <code>require</code>でshebangの書かれたJSファイルを読めるようになりました。</li>
+<li><code>node</code>: <code>process.argv</code>が<code>Proxy</code>から配列へ変更されました。</li>
+</ul>
+<hr>
+<p><a href="https://github.com/denoland/deno_std/pull/780">https://github.com/denoland/deno_std/pull/780</a></p>
+<h2 id="サードパーティモジュールなどの最新情報">サードパーティモジュールなどの最新情報</h2>
+<h3 id="ts_morphがdenoをサポート"><a href="https://github.com/dsherret/ts-morph/releases/tag/10.0.1">ts_morphがDenoをサポート</a></h3>
+<p><a href="https://github.com/dsherret/ts-morph">ts_morph</a>にDenoのサポートが追加されました。</p>
+<p>ts_morphは<a href="https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API">TypeScriptのコンパイラAPI</a>のラッパライブラリです。</p>
+<hr>
+<ul>
+<li><a href="https://github.com/dsherret/ts-morph/releases/tag/10.0.1">https://github.com/dsherret/ts-morph/releases/tag/10.0.1</a></li>
+<li><a href="https://deno.land/x/ts_morph@10.0.1">https://deno.land/x/ts_morph@10.0.1</a></li>
+</ul>
+<h3 id="vnoがvue-3をサポート"><a href="https://github.com/open-source-labs/vno/releases/tag/v1.1.0">vnoがVue 3をサポート</a></h3>
+<p><a href="https://github.com/open-source-labs/vno">vno</a>にVue 3のサポートが追加されました。</p>
+<p><code>vno.config.json</code>で<code>&quot;vue&quot;: 3</code>の設定を記述すると、Vue 3が使用できるようになります。</p>
+<hr>
+<ul>
+<li><a href="https://github.com/open-source-labs/vno/releases/tag/v1.1.0">https://github.com/open-source-labs/vno/releases/tag/v1.1.0</a></li>
+<li><a href="https://twitter.com/vno_land/status/1366762314309984261">https://twitter.com/vno_land/status/1366762314309984261</a></li>
+</ul>
+<h3 id="elsaの開発が再開されました"><a href="https://github.com/elsaland/elsa/issues/113">elsaの開発が再開されました</a></h3>
+<p>elsaは<a href="https://bellard.org/quickjs/">QuickJS</a>とGoをベースにしたTypeScript/JavaScriptランタイムです。</p>
+<p>ここ数ヶ月程開発が若干停滞している状況でしたが、先週より徐々に開発が再開されています。</p>
+<p>詳しくは<a href="https://github.com/elsaland/elsa">こちら</a>のGitHub issueを参照ください。</p>
+<hr>
+<ul>
+<li><a href="https://github.com/elsaland/elsa">https://github.com/elsaland/elsa</a></li>
+<li><a href="https://github.com/elsaland/elsa/issues/113">https://github.com/elsaland/elsa/issues/113</a></li>
+</ul>
+<h3 id="xdatabasesql"><a href="https://github.com/jeremyBanks/database/blob/0.1.0-dev/docs/rfcs/0003-initial.md">x/database/sql</a></h3>
+<p>データベースドライバの共通インターフェースを定めることを目的として、有志により<a href="https://github.com/jeremyBanks/database/blob/0.1.0-dev/docs/rfcs/0003-initial.md">x/database/sql</a>の仕様の策定が始まりました。</p>
+<p>DenoでGoの<a href="https://golang.org/src/database/sql/doc.txt">database/sql</a>に相当するパッケージを提供する試みのようです。</p>
+<hr>
+<p><a href="https://github.com/jeremyBanks/database/blob/0.1.0-dev/docs/rfcs/0003-initial.md">https://github.com/jeremyBanks/database/blob/0.1.0-dev/docs/rfcs/0003-initial.md</a></p>
+
+    </main>
+    <hr />
+    <footer style="text-align: right">
+      <a href="https://uki00a.github.io/deno-weekly">Home</a>
+      <a href="https://uki00a.github.io/deno-weekly/about.html">About</a>
+      <a href="https://github.com/uki00a/deno-weekly">Source</a>
+      <a href="https://uki00a.github.io/deno-weekly/feed">Feed</a>
+    </footer>
+  </body>
+</html>
