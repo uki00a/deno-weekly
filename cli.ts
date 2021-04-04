@@ -209,7 +209,7 @@ function createIndex(articles: Article[]): Page {
   return {
     path: "index.html",
     contents: marked(links.join("\n")),
-    description: "Deno Weekly",
+    description: "毎週Denoの最新情報を発信します",
     title: "TOP",
     type: "website",
   };
