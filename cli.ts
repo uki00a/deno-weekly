@@ -1,4 +1,12 @@
-import { dejs, ensureDir, Feed, frontMatter, marked, path } from "./deps.ts";
+import {
+  dejs,
+  ensureDir,
+  Feed,
+  frontMatter,
+  htmlParser,
+  marked,
+  path,
+} from "./deps.ts";
 
 const rootDir = path.dirname(path.fromFileUrl(import.meta.url));
 const articlesDir = path.join(rootDir, "articles");
@@ -154,12 +162,15 @@ async function createArticle(
 
   validateArticle(attributes as Article);
 
+  const bodyHTML = marked(body);
+  const titleHTML = `<h1>#${id} ${title}</h1>`;
+  const tocHTML = generateTOCFromHTML(bodyHTML);
+  const html = `${titleHTML}\n${tocHTML}\n${bodyHTML}`;
+
   return {
     id: Number(id),
     path: replaceExtname(path.relative(articlesDir, articleFile), ".html"),
-    contents: marked(`# #${id} ${title}
-
-${body}`),
+    contents: html,
     description,
     title: `${title}`,
     summary,
@@ -228,6 +239,55 @@ function createAbout(): Page {
 
 function generateLink(article: Article): string {
   return `#${article.id} [${article.title}](${article.path})`;
+}
+
+// deno-lint-ignore no-explicit-any
+type HTMLElement = any;
+function generateTOCFromHTML(html: string) {
+  // deno-lint-ignore no-explicit-any
+  const root = (htmlParser as any).parse(html) as any;
+  const headings = root.querySelectorAll("h2, h3");
+  const headingHierarchy = {} as { [heading: string]: string[] };
+  const headingById = {} as { [heading: string]: HTMLElement };
+  let currentMiddleHeading = null;
+  for (const h of headings) {
+    headingById[h.id] = h;
+    if (h.tagName === "H2") {
+      currentMiddleHeading = h;
+      headingHierarchy[h.id] = [];
+    } else if (h.tagName === "H3" && currentMiddleHeading) {
+      headingHierarchy[currentMiddleHeading.id].push(h.id);
+    }
+  }
+
+  const links = Object.keys(headingHierarchy).map((middleHeadingId) => {
+    const subHeadingIds = headingHierarchy[middleHeadingId];
+    const middleHeading = headingById[middleHeadingId];
+    const middleHeadingLink = generateMarkdownLinkForHeading(middleHeading);
+    const subHeadlingLinks = subHeadingIds.map((subHeadingId) => {
+      const subHeading = headingById[subHeadingId];
+      return generateMarkdownLinkForHeading(subHeading);
+    });
+    return [
+      `* ${middleHeadingLink}`,
+      ...subHeadlingLinks.map((subHeadingLink) => {
+        return `  * ${subHeadingLink}`;
+      }),
+    ].join("\n");
+  });
+
+  console.log(links);
+  // TODO: Generate HTML directly
+  const toc = marked(`<details><summary>目次</summary>
+
+${links.join("\n")}
+</details>
+  `);
+  return toc;
+}
+
+function generateMarkdownLinkForHeading(heading: HTMLElement): string {
+  return `[${heading.text}](#${heading.id})`;
 }
 
 async function iterate(
