@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://uki00a.github.io/deno-weekly</id>
     <title>Deno Weekly</title>
-    <updated>2021-04-04T10:58:29.806Z</updated>
+    <updated>2021-04-11T06:12:11.059Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>uki00a</name>
@@ -16,6 +16,19 @@
     <icon>https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico</icon>
     <rights>All rights reserved 2021, uki00a</rights>
     <category term="IT"/>
+    <entry>
+        <title type="html"><![CDATA[2021/04/11の最新情報]]></title>
+        <id>16</id>
+        <link href="https://uki00a.github.io/deno-weekly/2021/04/11.html"/>
+        <updated>2021-04-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2021/04/11の最新情報]]></summary>
+        <content type="html"><![CDATA[Deno v1.9.0のリリーススケジュール, denoland/setup-deno, deno-postgres v0.9.0/v0.10.0, rollup-plugin-deno]]></content>
+        <author>
+            <name>uki00a</name>
+            <email>uki00a@gmail.com</email>
+            <uri>https://github.com/uki00a</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2021/04/04の最新情報]]></title>
         <id>15</id>

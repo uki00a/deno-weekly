@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>Deno Weekly: 2021/04/11の最新情報</title>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="2021/04/11の最新情報" />
+    <meta property="og:title" content="Deno Weekly: 2021/04/11の最新情報" />
+    <meta property="og:description" content="2021/04/11の最新情報" />
+    <meta property="og:type" content="article" />
+    <!-- FIXME! -->
+    <meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@uki00a" />
+    <meta name="twitter:creator" content="@uki00a" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css"></link>
+    <!-- FIXME! -->
+    <link rel="icon" href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"></link>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MK2K2MRMBF');
+    </script>
+    
+  </head>
+  <body>
+    <header>
+      <h2><a href="https://uki00a.github.io/deno-weekly">Deno Weekly</a></h2>
+    </header>
+    <main>
+      <h1>#16 2021/04/11の最新情報</h1>
+<details><summary>目次</summary>
+
+<ul>
+<li><a href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報</a><ul>
+<li><a href="#deno-v190%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">Deno v1.9.0のリリースについて</a></li>
+</ul>
+</li>
+<li><a href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報</a><ul>
+<li><a href="#denolandsetup-deno">denoland/setup-deno</a></li>
+<li><a href="#deno-postgres-v090%E5%8F%8A%E3%81%B3v0100%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno-postgres v0.9.0及びv0.10.0がリリース</a></li>
+<li><a href="#rollup-plugin-deno">rollup-plugin-deno</a></details>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2 id="deno本体の最新情報">Deno本体の最新情報</h2>
+<h3 id="deno-v190のリリースについて">Deno v1.9.0のリリースについて</h3>
+<p>今週は特にリリースはありませんが、<a href="https://github.com/denoland/deno/blob/v1.8.3/docs/contributing/release_schedule.md">2021/4/13にv1.9.0のリリースが予定されています。</a></p>
+<p>また、v1.9.0のリリースに向けて、以下の機能がmainブランチにマージされています:</p>
+<ul>
+<li><a href="https://github.com/denoland/deno/pull/9935">ネイティブHTTPバインディング</a></li>
+<li><a href="https://github.com/denoland/deno/pull/10045">BLOB URLのサポート</a></li>
+<li><a href="https://github.com/denoland/deno/pull/10054">fetch APIでのdata URLのサポート</a></li>
+</ul>
+<hr>
+<p><a href="https://github.com/denoland/deno/blob/v1.8.3/docs/contributing/release_schedule.md">https://github.com/denoland/deno/blob/v1.8.3/docs/contributing/release_schedule.md</a></p>
+<h2 id="サードパーティモジュールなどの最新情報">サードパーティモジュールなどの最新情報</h2>
+<h3 id="denolandsetup-deno"><a href="https://github.com/denoland/setup-deno">denoland/setup-deno</a></h3>
+<p><a href="https://github.com/denoland/setup-deno">denoland/setup-deno</a>というGitHub ActionsでDenoを利用するためのアクションがdenoland Organizationにて公開されました。</p>
+<hr>
+<ul>
+<li><a href="https://github.com/denoland/setup-deno">https://github.com/denoland/setup-deno</a></li>
+<li><a href="https://github.com/denolib/setup-deno">denolib/setup-deno</a> - <code>denoland/setup-deno</code>と同様、GitHub ActionsからDenoを利用するためのアクション</li>
+</ul>
+<h3 id="deno-postgres-v090及びv0100がリリース">deno-postgres v0.9.0及びv0.10.0がリリース</h3>
+<p><a href="https://github.com/denodrivers/postgres">deno-postgres</a>の<a href="https://github.com/denodrivers/postgres/releases/tag/v0.9.0">v0.9.0</a>及び<a href="https://github.com/denodrivers/postgres/releases/tag/v0.10.0">v0.10.0</a>がリリースされました。</p>
+<p>これらのリリースでは、以下の機能が追加されています:</p>
+<ul>
+<li>scram-sha-256認証のサポート</li>
+<li><code>Client#createTransaction</code>が実装され、トランザクションがより扱いやすくなった</li>
+</ul>
+<hr>
+<ul>
+<li><a href="https://github.com/denodrivers/postgres/releases/tag/v0.9.0">https://github.com/denodrivers/postgres/releases/tag/v0.9.0</a></li>
+<li><a href="https://github.com/denodrivers/postgres/releases/tag/v0.10.0">https://github.com/denodrivers/postgres/releases/tag/v0.10.0</a></li>
+</ul>
+<h3 id="rollup-plugin-deno"><a href="https://github.com/egoist/rollup-plugin-deno">rollup-plugin-deno</a></h3>
+<p><a href="https://github.com/egoist/rollup-plugin-deno">rollup-plugin-deno</a>は、RollupでDeno向けのバンドルを生成するためのRollupプラグインです。</p>
+<p>Node.jsのビルトインモジュールの読み込みを<a href="https://github.com/denoland/deno_std/tree/main/node">deno_std/node</a>に置換することで、それらに依存したモジュールをDenoで実行できるようにしてくれます。</p>
+<hr>
+<p><a href="https://github.com/egoist/rollup-plugin-deno">https://github.com/egoist/rollup-plugin-deno</a></p>
+
+    </main>
+    <hr />
+    <footer style="text-align: right">
+      <a href="https://uki00a.github.io/deno-weekly">Home</a>
+      <a href="https://uki00a.github.io/deno-weekly/about.html">About</a>
+      <a href="https://github.com/uki00a/deno-weekly">Source</a>
+      <a href="https://uki00a.github.io/deno-weekly/feed">Feed</a>
+    </footer>
+  </body>
+</html>
