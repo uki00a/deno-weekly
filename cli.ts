@@ -183,7 +183,6 @@ function validateArticle(article: Partial<Article>): void {
   const {
     id,
     title,
-    summary,
     publishedAt,
   } = article;
 
