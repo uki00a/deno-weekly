@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://uki00a.github.io/deno-weekly</id>
     <title>Deno Weekly</title>
-    <updated>2021-05-02T10:29:50.604Z</updated>
+    <updated>2021-05-06T18:20:41.402Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>uki00a</name>
@@ -17,11 +17,11 @@
     <rights>All rights reserved 2021, uki00a</rights>
     <category term="IT"/>
     <entry>
-        <title type="html"><![CDATA[2021/05/02の最新情報]]></title>
+        <title type="html"><![CDATA[2021/04/26〜2021/05/02の最新情報]]></title>
         <id>19</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/05/02.html"/>
         <updated>2021-05-02T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/05/02の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/04/26〜2021/05/02の最新情報]]></summary>
         <content type="html"><![CDATA[gql, deno-libs/tinyhttp, crux.land, terraform-deploy-provider]]></content>
         <author>
             <name>uki00a</name>
@@ -30,11 +30,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/04/25の最新情報]]></title>
+        <title type="html"><![CDATA[2021/04/19〜2021/04/25の最新情報]]></title>
         <id>18</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/04/25.html"/>
         <updated>2021-04-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/04/25の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/04/19〜2021/04/25の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.9.1/v1.9.2のリリース, deno_std v0.94.0/v0.95.0のリリース, deno-puppeteer v9.0.0, deno-postgres v0.11.0/v0.11.1, land - deno.land/xで公開されているモジュールを直接実行するツール]]></content>
         <author>
             <name>uki00a</name>
@@ -43,11 +43,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/04/18の最新情報]]></title>
+        <title type="html"><![CDATA[2021/04/12〜2021/04/18の最新情報]]></title>
         <id>17</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/04/18.html"/>
         <updated>2021-04-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/04/18の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/04/12〜2021/04/18の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.9.0, deno_std v0.93.0, Oak v7.0.0及びv7.1.0, Servest v1.3.0, esbuildがDenoの実験的サポートを追加]]></content>
         <author>
             <name>uki00a</name>
@@ -56,11 +56,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/04/11の最新情報]]></title>
+        <title type="html"><![CDATA[2021/04/05〜2021/04/11の最新情報]]></title>
         <id>16</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/04/11.html"/>
         <updated>2021-04-11T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/04/11の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/04/05〜2021/04/11の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.9.0のリリーススケジュール, denoland/setup-deno, deno-postgres v0.9.0/v0.10.0, rollup-plugin-deno]]></content>
         <author>
             <name>uki00a</name>
@@ -69,11 +69,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/04/04の最新情報]]></title>
+        <title type="html"><![CDATA[2021/03/29〜2021/04/04の最新情報]]></title>
         <id>15</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/04/04.html"/>
         <updated>2021-04-04T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/04/04の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/03/29〜2021/04/04の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.8.3, deno_std v0.92.0, Deno Deploy, Snel, Sift, deno-dom, Trex v1.6.0]]></content>
         <author>
             <name>uki00a</name>
@@ -82,11 +82,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/03/28の最新情報]]></title>
+        <title type="html"><![CDATA[2021/03/22〜2021/03/28の最新情報]]></title>
         <id>14</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/03/28.html"/>
         <updated>2021-03-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/03/28の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/03/22〜2021/03/28の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.8.2, deno_std v0.91.0, status.deno.land, swdev, deno-sqlite v2.4.0, deno-redis v0.21.0]]></content>
         <author>
             <name>uki00a</name>
@@ -95,11 +95,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/03/21の最新情報]]></title>
+        <title type="html"><![CDATA[2021/03/15〜2021/03/21の最新情報]]></title>
         <id>13</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/03/21.html"/>
         <updated>2021-03-21T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/03/21の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/03/15〜2021/03/21の最新情報]]></summary>
         <content type="html"><![CDATA[luath, estest, Servest v1.2.0, deno-bin]]></content>
         <author>
             <name>uki00a</name>
@@ -108,11 +108,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/03/14の最新情報]]></title>
+        <title type="html"><![CDATA[2021/03/08〜2021/03/14の最新情報]]></title>
         <id>12</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/03/14.html"/>
         <updated>2021-03-14T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/03/14の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/03/08〜2021/03/14の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.8.1, deno_std v0.90.0, nano, depsbot, wizard, deno-redis v0.20.0, deno-codeview]]></content>
         <author>
             <name>uki00a</name>
@@ -121,11 +121,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/03/07の最新情報]]></title>
+        <title type="html"><![CDATA[2021/03/01〜2021/03/07の最新情報]]></title>
         <id>11</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/03/07.html"/>
         <updated>2021-03-07T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/03/07の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/03/01〜2021/03/07の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.8.0, deno_std v0.89.0, ts_morphがDenoをサポート, vnoがVue 3をサポート, elsaの開発が再開, x/database/sql]]></content>
         <author>
             <name>uki00a</name>
@@ -134,11 +134,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/02/28の最新情報]]></title>
+        <title type="html"><![CDATA[2021/02/22〜2021/02/28の最新情報]]></title>
         <id>10</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/02/28.html"/>
         <updated>2021-02-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/02/28の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/02/22〜2021/02/28の最新情報]]></summary>
         <content type="html"><![CDATA[Dashport, pngs, deno_license_checker, deno-redis v0.19.0]]></content>
         <author>
             <name>uki00a</name>
@@ -147,11 +147,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/02/21の最新情報]]></title>
+        <title type="html"><![CDATA[2021/02/15〜2021/02/21の最新情報]]></title>
         <id>9</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/02/21.html"/>
         <updated>2021-02-21T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/02/21の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/02/15〜2021/02/21の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.7.5, vscode_deno v3.0.0, deno_mysql v2.8.0, Sinco v1.1.0, little_crony]]></content>
         <author>
             <name>uki00a</name>
@@ -160,11 +160,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/02/14の最新情報]]></title>
+        <title type="html"><![CDATA[2021/02/08〜2021/02/14の最新情報]]></title>
         <id>8</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/02/14.html"/>
         <updated>2021-02-14T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/02/14の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/02/08〜2021/02/14の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.7.3/v1.7.4のリリース, denops.vim, slack_web_api, deno-redis v0.18.0, deno-postgres v0.8.0]]></content>
         <author>
             <name>uki00a</name>
@@ -173,11 +173,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/02/07の最新情報]]></title>
+        <title type="html"><![CDATA[2021/02/01〜2021/02/07の最新情報]]></title>
         <id>7</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/02/07.html"/>
         <updated>2021-02-07T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/02/07の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/02/01〜2021/02/07の最新情報]]></summary>
         <content type="html"><![CDATA[Deno 1.7.2がリリース、deno_stdがdeno本体のリポジトリから分離、emacs-ng、deno-postgres v0.7.0、Trex v1.5.0、Deno Module Visualizer]]></content>
         <author>
             <name>uki00a</name>
@@ -186,11 +186,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/01/31の最新情報]]></title>
+        <title type="html"><![CDATA[2021/01/25〜2021/01/31の最新情報]]></title>
         <id>6</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/01/31.html"/>
         <updated>2021-01-31T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/01/31の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/01/25〜2021/01/31の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.7.1がリリース、deno-postgres v0.6.0がリリース 他]]></content>
         <author>
             <name>uki00a</name>
@@ -199,11 +199,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/01/24の最新情報]]></title>
+        <title type="html"><![CDATA[2021/01/18〜2021/01/24の最新情報]]></title>
         <id>5</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/01/24.html"/>
         <updated>2021-01-24T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/01/24の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/01/18〜2021/01/24の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.7.0がリリース、deno-rollup 他]]></content>
         <author>
             <name>uki00a</name>
@@ -212,11 +212,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/01/17の最新情報]]></title>
+        <title type="html"><![CDATA[2021/01/11〜2021/01/17の最新情報]]></title>
         <id>4</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/01/17.html"/>
         <updated>2021-01-17T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/01/17の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/01/11〜2021/01/17の最新情報]]></summary>
         <content type="html"><![CDATA[Deno in 2020、Obsidian - DenoのGraphQLモジュール、他]]></content>
         <author>
             <name>uki00a</name>
@@ -225,11 +225,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/01/10の最新情報]]></title>
+        <title type="html"><![CDATA[2021/01/04〜2021/01/10の最新情報]]></title>
         <id>3</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/01/10.html"/>
         <updated>2021-01-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/01/10の最新情報]]></summary>
+        <summary type="html"><![CDATA[2021/01/04〜2021/01/10の最新情報]]></summary>
         <content type="html"><![CDATA[vno - DenoのVue.js向けビルドツール、Lume - スタティックサイトジェネレータ、他]]></content>
         <author>
             <name>uki00a</name>
@@ -238,11 +238,11 @@
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2021/01/03の最新情報]]></title>
+        <title type="html"><![CDATA[2020/12/28〜2021/01/03の最新情報]]></title>
         <id>2</id>
         <link href="https://uki00a.github.io/deno-weekly/2021/01/03.html"/>
         <updated>2021-01-03T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[2021/01/03の最新情報]]></summary>
+        <summary type="html"><![CDATA[2020/12/28〜2021/01/03の最新情報]]></summary>
         <content type="html"><![CDATA[Deno v1.6.3のリリース]]></content>
         <author>
             <name>uki00a</name>
