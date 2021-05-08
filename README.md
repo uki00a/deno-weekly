@@ -1,31 +1,10 @@
-# deno-weekly
+---
+title: 週間Deno
+toc: null
+---
 
-## ビルド
+# 週間Deno
 
-全ての記事をビルドする:
+## 記事の一覧
 
-```shell
-$ make generate
-```
-
-記事を個別でビルドする:
-
-```shell
-$ deno run -A cli.ts articles/2021/01/10.md
-```
-
-## サーバの起動
-
-ビルドを実行後に、下記を実行するとサーバが起動します。
-
-http://localhost:4507 から記事を閲覧できます。
-
-```shell
-$ make serve
-```
-
-## ビルドによって生成されたファイルの削除
-
-```shell
-$ make clean
-```
+[アーカイブページ](/archives/README.md)を参照ください。

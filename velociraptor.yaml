@@ -1,0 +1,10 @@
+scripts:
+  pagic:
+    cmd: https://deno.land/x/pagic@v1.2.1/mod.ts
+    unstable: true
+    allow:
+      read: true
+      write: true
+      net: true
+      run: true
+      env: true
