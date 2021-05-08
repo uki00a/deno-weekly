@@ -1,0 +1,77 @@
+<!doctype html><html class="" data-reactroot=""><head><script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+            window.GoogleAnalyticsObject="ga";(window.ga=window.ga||function(){(window.ga.q=window.ga.q||[]).push(arguments);}),(window.ga.l=1*new Date());
+
+            ga('create', 'G-MK2K2MRMBF', 'auto');
+            ga('send', 'pageview');</script><link rel="icon" href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"/>
+<meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="x-ua-compatible" content="ie=edge"/><meta data-react-helmet="true" name="description" content="このサイトでは、毎週Denoに関わる最新情報を発信しています。"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
+<title data-react-helmet="true">2021/03/22〜2021/03/28の最新情報 · 週間Deno</title>
+<link data-react-helmet="true" rel="stylesheet" href="/assets/index.css"/><link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="/assets/prism.css"/>
+<script data-react-helmet="true" >
+    const shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (shouldSetIsDark) {
+      document.documentElement.classList.add('is_dark');
+      document.getElementById('prismTheme').href = "/assets/prism_tomorrow.css";
+    }
+  </script>
+</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="/">週間Deno</a><aside class="hide_on_mobile"><div class="aside_card"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;/assets/czs-close-l.svg&quot;)"></a><h1><a href="/">週間Deno</a></h1><p class="description">このサイトでは、毎週Denoに関わる最新情報を発信しています。</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-github-logo" href="https://github.com/uki00a/deno-weekly" target="_blank" style="background-image:url(&quot;/assets/czs-github-logo.svg&quot;)"></a></li><li class="flex_center"><a class="czs-message-l" href="mailto:uki00a@gmail.com" target="_blank" style="background-image:url(&quot;/assets/czs-message-l.svg&quot;)"></a></li><li class="flex_center"><a class="czs-twitter" href="https://twitter.com/uki00a" target="_blank" style="background-image:url(&quot;/assets/czs-twitter.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="/"><span class="czs-home-l" style="background-image:url(&quot;/assets/czs-home-l.svg&quot;)"></span>ホーム</a></li><li><a class="flex_center" href="/tags"><span class="czs-tag-l" style="background-image:url(&quot;/assets/czs-tag-l.svg&quot;)"></span>タグ一覧</a></li><li><a class="flex_center" href="/categories"><span class="czs-category-l" style="background-image:url(&quot;/assets/czs-category-l.svg&quot;)"></span>カテゴリ一覧</a></li><li><a class="flex_center" href="/archives"><span class="czs-box-l" style="background-image:url(&quot;/assets/czs-box-l.svg&quot;)"></span>アーカイブ</a></li><li><a class="flex_center" href="/about/index.html"><span class="czs-about-l" style="background-image:url(&quot;/assets/czs-about-l.svg&quot;)"></span>このサイトについて</a></li></ul></nav></div><nav class="toc"><ol><li><a href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報</a><ol><li><a href="#deno-v182%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.8.2がリリース</a></li><li><a href="#deno_std-v0910%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.91.0がリリース</a></li><li><a href="#statusdenoland%E3%81%8C%E5%85%AC%E9%96%8B%E3%81%95%E3%82%8C%E3%81%9F">status.deno.landが公開された</a></li></ol></li><li><a href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報</a><ol><li><a href="#swdev---service-worker%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AEno-bundle%E3%83%93%E3%83%AB%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB">swdev - Service WorkerベースのNo bundleビルドツール</a></li><li><a href="#deno-sqlite-v240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno-sqlite v2.4.0がリリース</a></li><li><a href="#deno-redis-v0210%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno-redis v0.21.0がリリース</a></li></ol></li></ol></nav></aside><section class="main"><h1>2021/03/22〜2021/03/28の最新情報</h1><div class="main_post_meta"><time dateTime="Sat May 08 2021 18:16:52 GMT+0000 (Coordinated Universal Time)">2021-05-08</time> · <!-- -->Yuki Tanaka</div><article><nav class="toc"><ol><li><a href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報</a><ol><li><a href="#deno-v182%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.8.2がリリース</a></li><li><a href="#deno_std-v0910%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.91.0がリリース</a></li><li><a href="#statusdenoland%E3%81%8C%E5%85%AC%E9%96%8B%E3%81%95%E3%82%8C%E3%81%9F">status.deno.landが公開された</a></li></ol></li><li><a href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報</a><ol><li><a href="#swdev---service-worker%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AEno-bundle%E3%83%93%E3%83%AB%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB">swdev - Service WorkerベースのNo bundleビルドツール</a></li><li><a href="#deno-sqlite-v240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno-sqlite v2.4.0がリリース</a></li><li><a href="#deno-redis-v0210%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno-redis v0.21.0がリリース</a></li></ol></li></ol></nav><h2 id="deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報<a class="anchor" href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>
+<h3 id="deno-v182%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno/releases/tag/v1.8.2">Deno v1.8.2がリリース</a><a class="anchor" href="#deno-v182%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>
+<p>Deno v1.8.2がリリースされました。</p>
+<p>このリリースでは、バグ修正などを中心に実施されています。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li><code>Deno.createHttpClient</code>を使用した際に、<code>User-Agent</code>ヘッダが設定されない問題が修正された</li>
+<li><code>deno fmt</code>でmarkdownファイルのスペースなどが適切にフォーマットされない問題が修正された</li>
+<li><code>deno lsp</code>でエディタ以外でファイルが編集されていると、&quot;The current snapshot version is
+missing.&quot;エラーが発生する問題が修正された</li>
+<li><code>deno lsp</code>でファイルの診断(diagnostics)が固有のスレッドで実行されるようになった</li>
+</ul>
+<hr>
+<p><a href="https://github.com/denoland/deno/releases/tag/v1.8.2">https://github.com/denoland/deno/releases/tag/v1.8.2</a></p>
+<h3 id="deno_std-v0910%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/releases/tag/0.91.0">deno_std v0.91.0がリリース</a><a class="anchor" href="#deno_std-v0910%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>
+<p>deno_std v0.91.0がリリースされました。</p>
+<p><strong>主な変更点:</strong></p>
+<ul>
+<li>encoding/yaml: <code>EXTENDED_SCHEMA</code>が追加され、Yamlファイル内でJSの関数や正規表現などを使用できるようになった</li>
+<li>io/streams: <code>readerFromIterable()</code>が追加された</li>
+<li>node/fs: <code>utimes</code>/<code>utimesSync</code>が実装された</li>
+</ul>
+<p>など</p>
+<hr>
+<p><a href="https://github.com/denoland/deno_std/releases/tag/0.91.0">https://github.com/denoland/deno_std/releases/tag/0.91.0</a></p>
+<h3 id="statusdenoland%E3%81%8C%E5%85%AC%E9%96%8B%E3%81%95%E3%82%8C%E3%81%9F"><a href="https://status.deno.land">status.deno.land</a>が公開された<a class="anchor" href="#statusdenoland%E3%81%8C%E5%85%AC%E9%96%8B%E3%81%95%E3%82%8C%E3%81%9F">§</a></h3>
+<p><a href="https://status.deno.land">status.deno.land</a>が公開されました。</p>
+<p>このサイトでは、<a href="https://deno.land/x">Denoのモジュールレジストリ</a>などの運用状況を確認することができます。</p>
+<hr>
+<p><a href="https://status.deno.land">https://status.deno.land</a></p>
+<h2 id="%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報<a class="anchor" href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>
+<h3 id="swdev---service-worker%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AEno-bundle%E3%83%93%E3%83%AB%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB"><a href="https://github.com/mizchi/swdev">swdev</a> - Service WorkerベースのNo bundleビルドツール<a class="anchor" href="#swdev---service-worker%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AEno-bundle%E3%83%93%E3%83%AB%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB">§</a></h3>
+<p>swdevという、Service WorkerベースのNo bundleビルドツールが公開されました。</p>
+<p>以下のようが機能が提供されているようです:</p>
+<ul>
+<li>Service Workerを利用したTypeScriptやSvelteファイルの変換</li>
+<li><code>Deno.watchFs()</code>ベースのCache Busting</li>
+<li>Rollupベースのプロダクションビルド</li>
+</ul>
+<hr>
+<p><a href="https://github.com/mizchi/swdev">https://github.com/mizchi/swdev</a></p>
+<h3 id="deno-sqlite-v240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/dyedgreen/deno-sqlite/releases/tag/v2.4.0">deno-sqlite v2.4.0</a>がリリース<a class="anchor" href="#deno-sqlite-v240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>
+<p><a href="https://github.com/dyedgreen/deno-sqlite">deno-sqlite</a> v2.4.0がリリースされました。</p>
+<p>このリリースでは、以下のような変更が加わっています:</p>
+<ul>
+<li>SQLiteのv3.35.0への更新</li>
+<li><code>DB.prepareQuery()</code>の追加</li>
+<li><a href="https://www.sqlite.org/json1.html">JSON1拡張</a>の有効化</li>
+</ul>
+<hr>
+<p><a href="https://github.com/dyedgreen/deno-sqlite/releases/tag/v2.4.0">https://github.com/dyedgreen/deno-sqlite/releases/tag/v2.4.0</a></p>
+<h3 id="deno-redis-v0210%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denodrivers/redis/releases/tag/v0.21.0">deno-redis v0.21.0</a>がリリース<a class="anchor" href="#deno-redis-v0210%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>
+<p><a href="https://github.com/denodrivers/redis">deno-redis</a> v0.21.0がリリースされました。</p>
+<p>このリリースでは、Redisコマンドを実行するための低レベルインターフェースである<code>CommandExecutor</code>に破壊的変更が加わっています。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li><code>CommandExecutor#exec()</code>の戻り値の型が変更された</li>
+<li>一部のコマンドの引数として<code>Number</code>及び<code>Uint8Array</code>を渡せるようになった</li>
+<li><a href="https://redis.io/commands/client-kill">CLIENT KILLコマンド</a>がサポートされた</li>
+</ul>
+<hr>
+<p><a href="https://github.com/denodrivers/redis/releases/tag/v0.21.0">https://github.com/denodrivers/redis/releases/tag/v0.21.0</a></p></article></section><footer>Powered by <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="/index.js"></script></body></html>
