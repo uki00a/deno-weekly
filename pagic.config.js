@@ -26,28 +26,23 @@ export default {
     nav: [
         {
             text: "ホーム",
-            link: "/",
-            icon: "czs-home-l",
+            link: "https://uki00a.github.io/deno-weekly",
         },
         {
             text: "タグ一覧",
-            link: "/tags",
-            icon: "czs-tag-l",
+            link: "https://uki00a.github.io/deno-weekly/tags",
         },
         {
             text: "カテゴリ一覧",
-            link: "/categories",
-            icon: "czs-category-l",
+            link: "https://uki00a.github.io/deno-weekly/categories",
         },
         {
             text: "アーカイブ",
-            link: "/archives",
-            icon: "czs-box-l",
+            link: "https://uki00a.github.io/deno-weekly/archives",
         },
         {
             text: "このサイトについて",
-            link: "/about/index.html",
-            icon: "czs-about-l",
+            link: "https://uki00a.github.io/deno-weekly/about/index.html",
         },
     ],
 };
