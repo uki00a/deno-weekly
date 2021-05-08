@@ -31,28 +31,28 @@ export default {
   nav: [
     {
       text: "ホーム",
-      link: "/",
-      icon: "czs-home-l",
+      link: "https://uki00a.github.io/deno-weekly",
+      // icon: "czs-home-l",
     },
     {
       text: "タグ一覧",
-      link: "/tags",
-      icon: "czs-tag-l",
+      link: "https://uki00a.github.io/deno-weekly/tags",
+      // icon: "czs-tag-l",
     },
     {
       text: "カテゴリ一覧",
-      link: "/categories",
-      icon: "czs-category-l",
+      link: "https://uki00a.github.io/deno-weekly/categories",
+      // icon: "czs-category-l",
     },
     {
       text: "アーカイブ",
-      link: "/archives",
-      icon: "czs-box-l",
+      link: "https://uki00a.github.io/deno-weekly/archives",
+      // icon: "czs-box-l",
     },
     {
       text: "このサイトについて",
-      link: "/about/index.html",
-      icon: "czs-about-l",
+      link: "https://uki00a.github.io/deno-weekly/about/index.html",
+      // icon: "czs-about-l",
     },
   ],
 };
