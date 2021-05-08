@@ -25,7 +25,7 @@ export default {
   blog: {
     root: "/articles",
     social: {
-      github: "uki00a/deno-weekly",
+      github: "uki00a",
       email: "uki00a@gmail.com",
       twitter: "uki00a",
     },
