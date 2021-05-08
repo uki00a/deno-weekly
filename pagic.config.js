@@ -5,7 +5,12 @@ export default {
     srcDir: ".",
     theme: "blog",
     plugins: ["blog", "ga"],
-    head: React.createElement("link", { rel: "icon", href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico" }),
+    head: (React.createElement(React.Fragment, null,
+        React.createElement("link", { rel: "icon", href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico" }),
+        React.createElement("meta", { property: "og:image", content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png" }),
+        React.createElement("meta", { name: "twitter:card", content: "summary" }),
+        React.createElement("meta", { name: "twitter:site", content: "@uki00a" }),
+        React.createElement("meta", { name: "twitter:creator", content: "@uki00a" }))),
     blog: {
         root: "/articles",
         social: {
