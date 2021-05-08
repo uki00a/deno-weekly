@@ -1,5 +1,5 @@
-import projectConfig from '/pagic.config.js';
-import Ga from '/_ga.js';
+import projectConfig from 'https://uki00a.github.io/deno-weeklypagic.config.js';
+import Ga from 'https://uki00a.github.io/deno-weekly_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "articles/2021/01/24.md",
@@ -15,7 +15,7 @@ export default {
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
-        React.createElement("script", { src: "/index.js", type: "module" })),
+        React.createElement("script", { src: "https://uki00a.github.io/deno-weeklyindex.js", type: "module" })),
     'contentTitle': React.createElement("h1", { key: "0" }, "2021/01/18\u301C2021/01/24\u306E\u6700\u65B0\u60C5\u5831"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<nav class="toc"><ol><li><a href="#deno-v170%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.7.0がリリース</a></li><li><a href="#deno-rollup---rollup%E3%81%AEdeno%E3%83%9D%E3%83%BC%E3%83%88">deno-rollup - RollupのDenoポート</a></li><li><a href="#code-block-writer---javascripttypescript%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E7%94%9F%E6%88%90%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%99%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール</a></li></ol></nav><h2 id="deno-v170%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://deno.land/posts/v1.7">Deno v1.7.0がリリース</a><a class="anchor" href="#deno-v170%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.7.0がリリースされました。</p>\n<p>以下は変更点の要約です:</p>\n<ul>\n<li><code>deno compile</code>コマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた</li>\n<li><code>import</code>及びWorkerでData URLがサポートされた</li>\n<li><code>Deno.resolveDns</code>が実装された</li>\n<li><code>Deno.transpileOnly</code>/<code>bundle</code>/<code>compile</code>が、<code>Deno.emit</code>という単一のAPIに統合された</li>\n<li><code>deno fmt</code>コマンドでマークダウンファイルがサポートされた</li>\n<li><code>ReadableStream</code>で<code>asyncIterator</code>プロトコルが実装された</li>\n<li><code>ReadableStream#getIterator</code>が非推奨になった(v1.8で削除されることが予定されています)</li>\n<li><code>Worker</code>を起動する際に、パーミッションを指定できるようになった</li>\n<li><code>globalThis.location</code>及び<code>--location</code>フラグがサポートされた</li>\n<li><code>fetch</code>及び<code>Worker</code>で相対URLを指定できるようになった</li>\n<li><code>fetch</code>でリクエストボディのストリミーングがサポートされた</li>\n<li>TLSセッションキャッシュが実装された</li>\n</ul>\n<p>また、<a href="https://zenn.dev/magurotuna">magurotuna</a>さんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。</p>\n<ul>\n<li><a href="https://zenn.dev/magurotuna/articles/55575eb16ae422">Deno 1.7.0 がリリースされたので新機能や変更点の紹介</a></li>\n</ul>\n<h2 id="deno-rollup---rollup%E3%81%AEdeno%E3%83%9D%E3%83%BC%E3%83%88"><a href="https://github.com/cmorten/deno-rollup">deno-rollup</a> - RollupのDenoポート<a class="anchor" href="#deno-rollup---rollup%E3%81%AEdeno%E3%83%9D%E3%83%BC%E3%83%88">§</a></h2>\n<p><code>deno-rollup</code>はRollupをDenoから使用できるようにしたパッケージです。</p>\n<p>内部的にはRollupのブラウザビルドが利用されています。</p>\n<p>CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。</p>\n<p><a href="https://github.com/cmorten/deno-rollup">https://github.com/cmorten/deno-rollup</a></p>\n<h2 id="code-block-writer---javascripttypescript%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E7%94%9F%E6%88%90%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%99%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB"><a href="https://github.com/dsherret/code-block-writer">code-block-writer</a> - JavaScript/TypeScriptコードの生成をサポートするモジュール<a class="anchor" href="#code-block-writer---javascripttypescript%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E7%94%9F%E6%88%90%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%99%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">§</a></h2>\n<p><code>code-block-writer</code>はJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。</p>\n<p>設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。</p>\n<p>また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。</p>\n<p><a href="https://github.com/dsherret/code-block-writer">https://github.com/dsherret/code-block-writer</a></p>'
@@ -32,7 +32,7 @@ export default {
     'contributors': [
         "uki00a"
     ],
-    'date': "2021-05-08T18:24:50.000Z",
+    'date': "2021-05-08T18:32:39.000Z",
     'updated': null,
     'excerpt': " 1. Deno v1.7.0がリリース 2. deno-rollup - RollupのDenoポート 3. code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール Deno v1.7.0がリリース Deno v1.7.0がリリースされました。 以下は変更点...",
     'cover': undefined,
@@ -50,7 +50,7 @@ export default {
                 "pagePath": "articles/2021/05/02.md",
                 "title": "2021/04/26〜2021/05/02の最新情報",
                 "link": "articles/2021/05/02.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -71,7 +71,7 @@ export default {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -93,7 +93,7 @@ export default {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -117,7 +117,7 @@ export default {
                 "pagePath": "articles/2021/04/18.md",
                 "title": "2021/04/12〜2021/04/18の最新情報",
                 "link": "articles/2021/04/18.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -139,7 +139,7 @@ export default {
                 "pagePath": "articles/2021/04/11.md",
                 "title": "2021/04/05〜2021/04/11の最新情報",
                 "link": "articles/2021/04/11.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -160,7 +160,7 @@ export default {
                 "pagePath": "articles/2021/01/10.md",
                 "title": "2021/01/04〜2021/01/10の最新情報",
                 "link": "articles/2021/01/10.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -179,7 +179,7 @@ export default {
                 "pagePath": "articles/2021/01/17.md",
                 "title": "2021/01/11〜2021/01/17の最新情報",
                 "link": "articles/2021/01/17.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -194,7 +194,7 @@ export default {
                 "pagePath": "articles/2021/01/31.md",
                 "title": "2021/01/25〜2021/01/31の最新情報",
                 "link": "articles/2021/01/31.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -213,7 +213,7 @@ export default {
                 "pagePath": "articles/2021/01/24.md",
                 "title": "2021/01/18〜2021/01/24の最新情報",
                 "link": "articles/2021/01/24.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -232,7 +232,7 @@ export default {
                 "pagePath": "articles/2021/01/03.md",
                 "title": "2020/12/28〜2021/01/03の最新情報",
                 "link": "articles/2021/01/03.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -250,7 +250,7 @@ export default {
                 "pagePath": "articles/2021/01/02.md",
                 "title": "はじめに",
                 "link": "articles/2021/01/02.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -265,7 +265,7 @@ export default {
                 "pagePath": "articles/2021/02/28.md",
                 "title": "2021/02/22〜2021/02/28の最新情報",
                 "link": "articles/2021/02/28.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -286,7 +286,7 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -308,7 +308,7 @@ export default {
                 "pagePath": "articles/2021/02/21.md",
                 "title": "2021/02/15〜2021/02/21の最新情報",
                 "link": "articles/2021/02/21.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -330,7 +330,7 @@ export default {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -352,7 +352,7 @@ export default {
                 "pagePath": "articles/2021/03/28.md",
                 "title": "2021/03/22〜2021/03/28の最新情報",
                 "link": "articles/2021/03/28.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -374,7 +374,7 @@ export default {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -398,7 +398,7 @@ export default {
                 "pagePath": "articles/2021/03/21.md",
                 "title": "2021/03/15〜2021/03/21の最新情報",
                 "link": "articles/2021/03/21.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -419,7 +419,7 @@ export default {
                 "pagePath": "articles/2021/03/07.md",
                 "title": "2021/03/01〜2021/03/07の最新情報",
                 "link": "articles/2021/03/07.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [

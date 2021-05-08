@@ -1,5 +1,5 @@
-import projectConfig from '/pagic.config.js';
-import Ga from '/_ga.js';
+import projectConfig from 'https://uki00a.github.io/deno-weeklypagic.config.js';
+import Ga from 'https://uki00a.github.io/deno-weekly_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "categories/notice/",
@@ -10,7 +10,7 @@ export default {
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
-        React.createElement("script", { src: "/index.js", type: "module" })),
+        React.createElement("script", { src: "https://uki00a.github.io/deno-weeklyindex.js", type: "module" })),
     'title': "notice",
     'content': null,
     'blog': {
@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/01/02.md",
                 "title": "はじめに",
                 "link": "articles/2021/01/02.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [

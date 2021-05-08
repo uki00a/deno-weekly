@@ -1,5 +1,5 @@
-import projectConfig from '/pagic.config.js';
-import Ga from '/_ga.js';
+import projectConfig from 'https://uki00a.github.io/deno-weeklypagic.config.js';
+import Ga from 'https://uki00a.github.io/deno-weekly_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "tags/deno-postgres/",
@@ -10,7 +10,7 @@ export default {
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
-        React.createElement("script", { src: "/index.js", type: "module" })),
+        React.createElement("script", { src: "https://uki00a.github.io/deno-weeklyindex.js", type: "module" })),
     'title': "deno-postgres",
     'content': null,
     'blog': {
@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -42,7 +42,7 @@ export default {
                 "pagePath": "articles/2021/04/11.md",
                 "title": "2021/04/05〜2021/04/11の最新情報",
                 "link": "articles/2021/04/11.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -63,7 +63,7 @@ export default {
                 "pagePath": "articles/2021/01/31.md",
                 "title": "2021/01/25〜2021/01/31の最新情報",
                 "link": "articles/2021/01/31.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -82,7 +82,7 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -104,7 +104,7 @@ export default {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [

@@ -1,5 +1,5 @@
-import projectConfig from '/pagic.config.js';
-import Ga from '/_ga.js';
+import projectConfig from 'https://uki00a.github.io/deno-weeklypagic.config.js';
+import Ga from 'https://uki00a.github.io/deno-weekly_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "articles/2021/04/18.md",
@@ -15,7 +15,7 @@ export default {
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
-        React.createElement("script", { src: "/index.js", type: "module" })),
+        React.createElement("script", { src: "https://uki00a.github.io/deno-weeklyindex.js", type: "module" })),
     'contentTitle': React.createElement("h1", { key: "0" }, "2021/04/12\u301C2021/04/18\u306E\u6700\u65B0\u60C5\u5831"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<nav class="toc"><ol><li><a href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報</a><ol><li><a href="#deno-v190%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.9.0がリリース</a></li><li><a href="#deno_std-v0930%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.93.0がリリース</a></li></ol></li><li><a href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報</a><ol><li><a href="#oak-v700%E5%8F%8A%E3%81%B3v710%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Oak v7.0.0及びv7.1.0のリリース</a></li><li><a href="#servest-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Servest v1.3.0がリリース</a></li><li><a href="#esbuild%E3%81%8Cdeno%E3%81%B8%E3%81%AE%E5%AE%9F%E9%A8%93%E7%9A%84%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%82%92%E8%BF%BD%E5%8A%A0">esbuildがDenoへの実験的サポートを追加</a></li></ol></li></ol></nav><h2 id="deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報<a class="anchor" href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="deno-v190%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.9.0がリリース<a class="anchor" href="#deno-v190%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>\n<p>Deno v1.9.0がリリースされました。このリリースでは、様々な機能の追加やパフォーマンスチューニングなどが実施されています。</p>\n<p>また、<a href="https://zenn.dev/magurotuna">magurotuna</a>さんによる<a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-9-0">Deno v1.9.0の解説記事</a>が公開されています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>Deno本体にネイティブのHTTP/2サーバの実装が組み込まれた</li>\n<li>Deno内部のJavaScriptとRust間のメッセージングの仕組みが改善され、最大で98%程のパフォーマンス向上が実現された</li>\n<li>BLOB URLやData URLがサポートされた</li>\n<li>deno lspのimport補完が向上した</li>\n<li>deno lspで<code>textDocument/foldingRange</code>及び<code>textDocument/selectionRange</code>が実装された</li>\n<li><code>--allow-read</code>や<code>--allow-net</code>などと同様、<code>--allow-env</code>や<code>--allow-run</code>で許可リストを指定できるようになった</li>\n<li><code>deno run</code>コマンドで<code>--prompt</code>オプションがサポートされ、対話的に権限を与えられるようになった</li>\n<li><code>Deno.fstat(Sync)/ftruncate(Sync)</code>が安定化された</li>\n<li><code>Deno.File</code>に<code>stat(Sync)/truncate(Sync)</code>メソッドが追加された</li>\n<li><code>Deno.Buffer/readAll(Sync)/writeAll(Sync)/iter(Sync)</code>が非推奨化された\n<ul>\n<li>これらのAPIはv2.0で削除される予定です</li>\n<li>これらのAPIは<code>deno_std/io</code>に移動されています</li>\n</ul>\n</li>\n<li><code>Deno.memoryUsage()</code>が実装された(unstable)</li>\n<li>TypeScriptの<code>useDefineForClassFields</code>オプションが有効化された</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://deno.com/blog/v1.9">https://deno.com/blog/v1.9</a></li>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.9.0">https://github.com/denoland/deno/releases/tag/v1.9.0</a></li>\n<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-">https://zenn.dev/magurotuna/articles/deno-release-note-</a></li>\n</ul>\n<h3 id="deno_std-v0930%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/pull/850">deno_std v0.93.0がリリース</a><a class="anchor" href="#deno_std-v0930%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>\n<p>Deno v1.9.0のリリースに合わせて、<code>deno_std</code> v0.93.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>io/util: Deno v1.9.0での<code>Deno.iter</code>の非推奨化に合わせて、io/utilに<code>iter</code>が追加された</li>\n<li>node/fs: <code>fdatasync</code>/<code>fsync</code>/<code>ftuncate</code>/<code>futimes</code>が実装された</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/pull/850">https://github.com/denoland/deno_std/pull/850</a></p>\n<h2 id="%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報<a class="anchor" href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="oak-v700%E5%8F%8A%E3%81%B3v710%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Oak v7.0.0及びv7.1.0のリリース<a class="anchor" href="#oak-v700%E5%8F%8A%E3%81%B3v710%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>\n<p>DenoのWebフレームワークである<a href="https://github.com/oakserver/oak">Oak</a>のv7.0.0及びv7.1.0がリリースされました。</p>\n<p><strong>主な変更点:</strong></p>\n<ul>\n<li>Deno v1.9で実装されたネイティブHTTPサーバがサポートされた</li>\n<li>Deno Deployのサポート</li>\n<li><code>context.state</code>が<code>app.state</code>から深いコピーが行われるようになった</li>\n<li>ETagサポートが追加された</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/oakserver/oak/commit/2a68eda28cb93bfb099a5f27dfad728f2183e0df">https://github.com/oakserver/oak/commit/2a68eda28cb93bfb099a5f27dfad728f2183e0df</a></li>\n<li><a href="https://github.com/oakserver/oak/commit/4ae51e28e04490cc639e887659b8626c05c9b0bb">https://github.com/oakserver/oak/commit/4ae51e28e04490cc639e887659b8626c05c9b0bb</a></li>\n</ul>\n<h3 id="servest-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/keroxp/servest/releases/tag/v1.3.0">Servest v1.3.0がリリース</a><a class="anchor" href="#servest-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>\n<p><a href="https://servestjs.org/">Servest</a> v1.3.0がリリースされました。こちらもDeno v1.9.0のリリースに合わせて、ネイティブHTTPサーバのサポートが追加されています。</p>\n<hr>\n<p><a href="https://github.com/keroxp/servest/releases/tag/v1.3.0">https://github.com/keroxp/servest/releases/tag/v1.3.0</a></p>\n<h3 id="esbuild%E3%81%8Cdeno%E3%81%B8%E3%81%AE%E5%AE%9F%E9%A8%93%E7%9A%84%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%82%92%E8%BF%BD%E5%8A%A0">esbuildがDenoへの実験的サポートを追加<a class="anchor" href="#esbuild%E3%81%8Cdeno%E3%81%B8%E3%81%AE%E5%AE%9F%E9%A8%93%E7%9A%84%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%82%92%E8%BF%BD%E5%8A%A0">§</a></h3>\n<p>まだ実験的ではありますが、<a href="https://github.com/evanw/esbuild">esbuild</a>でDenoのサポートが追加されました。</p>\n<p>それに合わせて、esbuildが<a href="https://deno.land/x/esbuild">deno.land/x</a>で公開されています。</p>\n<hr>\n<ul>\n<li><a href="https://github.com/evanw/esbuild/issues/936#issuecomment-818620960">https://github.com/evanw/esbuild/issues/936#issuecomment-818620960</a></li>\n<li><a href="https://twitter.com/evanwallace/status/1381926114189172737">https://twitter.com/evanwallace/status/1381926114189172737</a></li>\n<li><a href="https://github.com/esbuild/deno-esbuild">https://github.com/esbuild/deno-esbuild</a></li>\n</ul>'
@@ -42,7 +42,7 @@ export default {
     'contributors': [
         "uki00a"
     ],
-    'date': "2021-05-08T18:24:50.000Z",
+    'date': "2021-05-08T18:32:39.000Z",
     'updated': null,
     'excerpt': " 1. Deno本体の最新情報 1. Deno v1.9.0がリリース 2. deno_std v0.93.0がリリース 2. サードパーティモジュールなどの最新情報 1. Oak v7.0.0及びv7.1.0のリリース 2. Servest v1.3.0がリリース 3. esbuildがDenoへの実験的サ...",
     'cover': undefined,
@@ -63,7 +63,7 @@ export default {
                 "pagePath": "articles/2021/05/02.md",
                 "title": "2021/04/26〜2021/05/02の最新情報",
                 "link": "articles/2021/05/02.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -84,7 +84,7 @@ export default {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -106,7 +106,7 @@ export default {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -130,7 +130,7 @@ export default {
                 "pagePath": "articles/2021/04/18.md",
                 "title": "2021/04/12〜2021/04/18の最新情報",
                 "link": "articles/2021/04/18.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -152,7 +152,7 @@ export default {
                 "pagePath": "articles/2021/04/11.md",
                 "title": "2021/04/05〜2021/04/11の最新情報",
                 "link": "articles/2021/04/11.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -173,7 +173,7 @@ export default {
                 "pagePath": "articles/2021/01/10.md",
                 "title": "2021/01/04〜2021/01/10の最新情報",
                 "link": "articles/2021/01/10.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -192,7 +192,7 @@ export default {
                 "pagePath": "articles/2021/01/17.md",
                 "title": "2021/01/11〜2021/01/17の最新情報",
                 "link": "articles/2021/01/17.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -207,7 +207,7 @@ export default {
                 "pagePath": "articles/2021/01/31.md",
                 "title": "2021/01/25〜2021/01/31の最新情報",
                 "link": "articles/2021/01/31.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -226,7 +226,7 @@ export default {
                 "pagePath": "articles/2021/01/24.md",
                 "title": "2021/01/18〜2021/01/24の最新情報",
                 "link": "articles/2021/01/24.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -245,7 +245,7 @@ export default {
                 "pagePath": "articles/2021/01/03.md",
                 "title": "2020/12/28〜2021/01/03の最新情報",
                 "link": "articles/2021/01/03.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -263,7 +263,7 @@ export default {
                 "pagePath": "articles/2021/01/02.md",
                 "title": "はじめに",
                 "link": "articles/2021/01/02.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -278,7 +278,7 @@ export default {
                 "pagePath": "articles/2021/02/28.md",
                 "title": "2021/02/22〜2021/02/28の最新情報",
                 "link": "articles/2021/02/28.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -299,7 +299,7 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -321,7 +321,7 @@ export default {
                 "pagePath": "articles/2021/02/21.md",
                 "title": "2021/02/15〜2021/02/21の最新情報",
                 "link": "articles/2021/02/21.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -343,7 +343,7 @@ export default {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -365,7 +365,7 @@ export default {
                 "pagePath": "articles/2021/03/28.md",
                 "title": "2021/03/22〜2021/03/28の最新情報",
                 "link": "articles/2021/03/28.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -387,7 +387,7 @@ export default {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -411,7 +411,7 @@ export default {
                 "pagePath": "articles/2021/03/21.md",
                 "title": "2021/03/15〜2021/03/21の最新情報",
                 "link": "articles/2021/03/21.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -432,7 +432,7 @@ export default {
                 "pagePath": "articles/2021/03/07.md",
                 "title": "2021/03/01〜2021/03/07の最新情報",
                 "link": "articles/2021/03/07.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [

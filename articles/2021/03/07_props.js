@@ -1,5 +1,5 @@
-import projectConfig from '/pagic.config.js';
-import Ga from '/_ga.js';
+import projectConfig from 'https://uki00a.github.io/deno-weeklypagic.config.js';
+import Ga from 'https://uki00a.github.io/deno-weekly_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "articles/2021/03/07.md",
@@ -15,7 +15,7 @@ export default {
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
-        React.createElement("script", { src: "/index.js", type: "module" })),
+        React.createElement("script", { src: "https://uki00a.github.io/deno-weeklyindex.js", type: "module" })),
     'contentTitle': React.createElement("h1", { key: "0" }, "2021/03/01\u301C2021/03/07\u306E\u6700\u65B0\u60C5\u5831"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<nav class="toc"><ol><li><a href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報</a><ol><li><a href="#deno-v180%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">Deno v1.8.0がリリースされました</a></li><li><a href="#deno_std-v0890%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.89.0がリリース</a></li></ol></li><li><a href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報</a><ol><li><a href="#ts_morph%E3%81%8Cdeno%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88">ts_morphがDenoをサポート</a></li><li><a href="#vno%E3%81%8Cvue-3%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88">vnoがVue 3をサポート</a></li><li><a href="#elsa%E3%81%AE%E9%96%8B%E7%99%BA%E3%81%8C%E5%86%8D%E9%96%8B%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">elsaの開発が再開されました</a></li><li><a href="#xdatabasesql">x/database/sql</a></li></ol></li></ol></nav><h2 id="deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報<a class="anchor" href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="deno-v180%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">Deno v1.8.0がリリースされました<a class="anchor" href="#deno-v180%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">§</a></h3>\n<p>Deno v1.8.0がリリースされました。</p>\n<p><a href="https://zenn.dev/magurotuna">magurotunaさん</a>による<a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-8-0">Deno v1.8.0のまとめ</a>が公開されていますので、よろしければそちらも参照ください。</p>\n<p><strong>主な変更点</strong>:</p>\n<ul>\n<li>WebGPUがサポートされました(experimental)</li>\n<li>ICUサポートが追加されました。</li>\n<li>テストカバレッジの収集と集計が個別のコマンドに分離されました(収集は<code>deno test --coverage</code>、集計は<code>deno coverage</code>コマンドで行います)</li>\n<li>lcov形式でのカバレッジの集計がサポートされました。</li>\n<li>Import maps/<code>Deno.permissions</code>/<code>Deno.link</code>/<code>Deno.symlink</code>/<code>deno lsp</code>が安定化されました(<code>--unstable</code>オプションが不要になった)</li>\n<li>リモートモジュールをダウンロードする際に、<code>Authorization</code>ヘッダにトークンを設定できるようになりました(<code>DENO_AUTH_TOKENS</code>)</li>\n<li>テストコード中で<code>Deno.exit()</code>の呼び出しがチェックされるようになりました(exitサニタイザ)</li>\n<li><code>Deno.metrics()</code>で収集できる情報がより詳細化されました(<code>--unstable</code>を付与したときのみ)</li>\n<li><code>deno fmt</code>でJSONファイルのフォーマットがサポートされました。</li>\n<li><code>Deno.emit</code>でIIFE形式の出力サポートされました。</li>\n<li>TypeScriptが4.2にアップグレードされました。</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.8.0">https://github.com/denoland/deno/releases/tag/v1.8.0</a></li>\n<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-8-0">https://zenn.dev/magurotuna/articles/deno-release-note-1-8-0</a></li>\n</ul>\n<h3 id="deno_std-v0890%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.89.0がリリース<a class="anchor" href="#deno_std-v0890%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>\n<p>Deno v1.8.0のリリースに合わせ、deno_stdのv0.89.0がリリースされました。</p>\n<p><code>std/node</code>への機能追加などに加え、<code>std/io/streams</code>モジュールに破壊的変更が加わっています。</p>\n<p><strong>主な変更点:</strong></p>\n<ul>\n<li><code>io/streams</code>: <code>readableStreamFromAsyncIterator()</code>が削除され、代わりに<code>readableStreamFromIterable()</code>が追加されました。</li>\n<li><code>node</code>: <code>constants</code>モジュールが追加されました。</li>\n<li><code>node/crypto</code>: <code>createHash()</code>関数が実装されました。</li>\n<li><code>node</code>: <code>process.hrtime()</code>が実装されました。</li>\n<li><code>node/fs</code>: <code>truncate</code>/<code>truncateSync</code>が実装されました。</li>\n<li><code>node/util</code>: <code>callbackify</code>/<code>promisify</code>/<code>types</code>が公開されました。</li>\n<li><code>node/events</code>: <code>require(\'events\').EventEmitter</code>が<code>undefined</code>になる問題が修正されました。</li>\n<li><code>node</code>: <code>require</code>でshebangの書かれたJSファイルを読めるようになりました。</li>\n<li><code>node</code>: <code>process.argv</code>が<code>Proxy</code>から配列へ変更されました。</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/pull/780">https://github.com/denoland/deno_std/pull/780</a></p>\n<h2 id="%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報<a class="anchor" href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="ts_morph%E3%81%8Cdeno%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"><a href="https://github.com/dsherret/ts-morph/releases/tag/10.0.1">ts_morphがDenoをサポート</a><a class="anchor" href="#ts_morph%E3%81%8Cdeno%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88">§</a></h3>\n<p><a href="https://github.com/dsherret/ts-morph">ts_morph</a>にDenoのサポートが追加されました。</p>\n<p>ts_morphは<a href="https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API">TypeScriptのコンパイラAPI</a>のラッパライブラリです。</p>\n<hr>\n<ul>\n<li><a href="https://github.com/dsherret/ts-morph/releases/tag/10.0.1">https://github.com/dsherret/ts-morph/releases/tag/10.0.1</a></li>\n<li><a href="https://deno.land/x/ts_morph@10.0.1">https://deno.land/x/ts_morph@10.0.1</a></li>\n</ul>\n<h3 id="vno%E3%81%8Cvue-3%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"><a href="https://github.com/open-source-labs/vno/releases/tag/v1.1.0">vnoがVue 3をサポート</a><a class="anchor" href="#vno%E3%81%8Cvue-3%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88">§</a></h3>\n<p><a href="https://github.com/open-source-labs/vno">vno</a>にVue 3のサポートが追加されました。</p>\n<p><code>vno.config.json</code>で<code>&quot;vue&quot;: 3</code>の設定を記述すると、Vue 3が使用できるようになります。</p>\n<hr>\n<ul>\n<li><a href="https://github.com/open-source-labs/vno/releases/tag/v1.1.0">https://github.com/open-source-labs/vno/releases/tag/v1.1.0</a></li>\n<li><a href="https://twitter.com/vno_land/status/1366762314309984261">https://twitter.com/vno_land/status/1366762314309984261</a></li>\n</ul>\n<h3 id="elsa%E3%81%AE%E9%96%8B%E7%99%BA%E3%81%8C%E5%86%8D%E9%96%8B%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F"><a href="https://github.com/elsaland/elsa/issues/113">elsaの開発が再開されました</a><a class="anchor" href="#elsa%E3%81%AE%E9%96%8B%E7%99%BA%E3%81%8C%E5%86%8D%E9%96%8B%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">§</a></h3>\n<p>elsaは<a href="https://bellard.org/quickjs/">QuickJS</a>とGoをベースにしたTypeScript/JavaScriptランタイムです。</p>\n<p>ここ数ヶ月程開発が若干停滞している状況でしたが、先週より徐々に開発が再開されています。</p>\n<p>詳しくは<a href="https://github.com/elsaland/elsa">こちら</a>のGitHub issueを参照ください。</p>\n<hr>\n<ul>\n<li><a href="https://github.com/elsaland/elsa">https://github.com/elsaland/elsa</a></li>\n<li><a href="https://github.com/elsaland/elsa/issues/113">https://github.com/elsaland/elsa/issues/113</a></li>\n</ul>\n<h3 id="xdatabasesql"><a href="https://github.com/jeremyBanks/database/blob/0.1.0-dev/docs/rfcs/0003-initial.md">x/database/sql</a><a class="anchor" href="#xdatabasesql">§</a></h3>\n<p>データベースドライバの共通インターフェースを定めることを目的として、有志により<a href="https://github.com/jeremyBanks/database/blob/0.1.0-dev/docs/rfcs/0003-initial.md">x/database/sql</a>の仕様の策定が始まりました。</p>\n<p>DenoでGoの<a href="https://golang.org/src/database/sql/doc.txt">database/sql</a>に相当するパッケージを提供する試みのようです。</p>\n<hr>\n<p><a href="https://github.com/jeremyBanks/database/blob/0.1.0-dev/docs/rfcs/0003-initial.md">https://github.com/jeremyBanks/database/blob/0.1.0-dev/docs/rfcs/0003-initial.md</a></p>'
@@ -44,7 +44,7 @@ export default {
     'contributors': [
         "uki00a"
     ],
-    'date': "2021-05-08T18:24:50.000Z",
+    'date': "2021-05-08T18:32:39.000Z",
     'updated': null,
     'excerpt': " 1. Deno本体の最新情報 1. Deno v1.8.0がリリースされました 2. deno_std v0.89.0がリリース 2. サードパーティモジュールなどの最新情報 1. ts_morphがDenoをサポート 2. vnoがVue 3をサポート 3. elsaの開発が再開されました...",
     'cover': undefined,
@@ -66,7 +66,7 @@ export default {
                 "pagePath": "articles/2021/05/02.md",
                 "title": "2021/04/26〜2021/05/02の最新情報",
                 "link": "articles/2021/05/02.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -87,7 +87,7 @@ export default {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -109,7 +109,7 @@ export default {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -133,7 +133,7 @@ export default {
                 "pagePath": "articles/2021/04/18.md",
                 "title": "2021/04/12〜2021/04/18の最新情報",
                 "link": "articles/2021/04/18.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -155,7 +155,7 @@ export default {
                 "pagePath": "articles/2021/04/11.md",
                 "title": "2021/04/05〜2021/04/11の最新情報",
                 "link": "articles/2021/04/11.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -176,7 +176,7 @@ export default {
                 "pagePath": "articles/2021/01/10.md",
                 "title": "2021/01/04〜2021/01/10の最新情報",
                 "link": "articles/2021/01/10.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -195,7 +195,7 @@ export default {
                 "pagePath": "articles/2021/01/17.md",
                 "title": "2021/01/11〜2021/01/17の最新情報",
                 "link": "articles/2021/01/17.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -210,7 +210,7 @@ export default {
                 "pagePath": "articles/2021/01/31.md",
                 "title": "2021/01/25〜2021/01/31の最新情報",
                 "link": "articles/2021/01/31.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -229,7 +229,7 @@ export default {
                 "pagePath": "articles/2021/01/24.md",
                 "title": "2021/01/18〜2021/01/24の最新情報",
                 "link": "articles/2021/01/24.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -248,7 +248,7 @@ export default {
                 "pagePath": "articles/2021/01/03.md",
                 "title": "2020/12/28〜2021/01/03の最新情報",
                 "link": "articles/2021/01/03.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -266,7 +266,7 @@ export default {
                 "pagePath": "articles/2021/01/02.md",
                 "title": "はじめに",
                 "link": "articles/2021/01/02.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -281,7 +281,7 @@ export default {
                 "pagePath": "articles/2021/02/28.md",
                 "title": "2021/02/22〜2021/02/28の最新情報",
                 "link": "articles/2021/02/28.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -302,7 +302,7 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -324,7 +324,7 @@ export default {
                 "pagePath": "articles/2021/02/21.md",
                 "title": "2021/02/15〜2021/02/21の最新情報",
                 "link": "articles/2021/02/21.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -346,7 +346,7 @@ export default {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -368,7 +368,7 @@ export default {
                 "pagePath": "articles/2021/03/28.md",
                 "title": "2021/03/22〜2021/03/28の最新情報",
                 "link": "articles/2021/03/28.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -390,7 +390,7 @@ export default {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -414,7 +414,7 @@ export default {
                 "pagePath": "articles/2021/03/21.md",
                 "title": "2021/03/15〜2021/03/21の最新情報",
                 "link": "articles/2021/03/21.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -435,7 +435,7 @@ export default {
                 "pagePath": "articles/2021/03/07.md",
                 "title": "2021/03/01〜2021/03/07の最新情報",
                 "link": "articles/2021/03/07.html",
-                "date": "2021-05-08T18:24:50.000Z",
+                "date": "2021-05-08T18:32:39.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
