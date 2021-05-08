@@ -1,5 +1,5 @@
-import projectConfig from 'https://uki00a.github.io/deno-weeklypagic.config.js';
-import Ga from 'https://uki00a.github.io/deno-weekly_ga.js';
+import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
+import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "tags/deno_mysql/",
@@ -10,7 +10,7 @@ export default {
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
-        React.createElement("script", { src: "https://uki00a.github.io/deno-weeklyindex.js", type: "module" })),
+        React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
     'title': "deno_mysql",
     'content': null,
     'blog': {
@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/02/21.md",
                 "title": "2021/02/15〜2021/02/21の最新情報",
                 "link": "articles/2021/02/21.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [

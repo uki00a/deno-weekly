@@ -1,5 +1,5 @@
 export default {
-    root: "https://uki00a.github.io/deno-weekly",
+    root: "https://uki00a.github.io/deno-weekly/",
     title: "週間Deno",
     description: "このサイトでは、毎週Denoに関わる最新情報を発信しています。",
     srcDir: ".",
@@ -28,22 +28,27 @@ export default {
         {
             text: "ホーム",
             link: "https://uki00a.github.io/deno-weekly",
+            icon: "czs-home-l",
         },
         {
             text: "タグ一覧",
             link: "https://uki00a.github.io/deno-weekly/tags",
+            icon: "czs-tag-l",
         },
         {
             text: "カテゴリ一覧",
             link: "https://uki00a.github.io/deno-weekly/categories",
+            icon: "czs-category-l",
         },
         {
             text: "アーカイブ",
             link: "https://uki00a.github.io/deno-weekly/archives",
+            icon: "czs-box-l",
         },
         {
             text: "このサイトについて",
             link: "https://uki00a.github.io/deno-weekly/about/index.html",
+            icon: "czs-about-l",
         },
     ],
 };

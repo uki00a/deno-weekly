@@ -1,5 +1,5 @@
-import projectConfig from 'https://uki00a.github.io/deno-weeklypagic.config.js';
-import Ga from 'https://uki00a.github.io/deno-weekly_ga.js';
+import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
+import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "articles/2021/01/10.md",
@@ -15,7 +15,7 @@ export default {
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
-        React.createElement("script", { src: "https://uki00a.github.io/deno-weeklyindex.js", type: "module" })),
+        React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
     'contentTitle': React.createElement("h1", { key: "0" }, "2021/01/04\u301C2021/01/10\u306E\u6700\u65B0\u60C5\u5831"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
             __html: '<nav class="toc"><ol><li><a href="#vno">vno</a></li><li><a href="#lume">Lume</a></li><li><a href="#bench---deno%E3%81%A8nodejs%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E3%83%99%E3%83%B3%E3%83%81%E3%83%9E%E3%83%BC%E3%82%AF">bench - DenoとNode.jsフレームワークのベンチマーク</a></li></ol></nav><h2 id="vno"><a href="https://github.com/oslabs-beta/vno">vno</a><a class="anchor" href="#vno">§</a></h2>\n<p>vnoはDenoでVue.jsを用いた開発を行うためのビルドツールです。</p>\n<p>現時点では以下のような機能が提供されているようです。</p>\n<ul>\n<li>シングルファイルコンポーネントのビルド・バンドル</li>\n<li>Devサーバ</li>\n</ul>\n<p>まだ実装されてはいないものの、将来的にはSSRを実装することも検討されているようです。</p>\n<h2 id="lume"><a href="https://github.com/lumeland/lume">Lume</a><a class="anchor" href="#lume">§</a></h2>\n<p>LumeはDenoで実装されたシンプルなスタティックサイトジェネレータです。</p>\n<ul>\n<li>markdown, <a href="https://github.com/mozilla/nunjucks">nunjucks</a>, jsxなど様々な形式でページを記述できる。</li>\n<li>プラグインシステムにより拡張が可能。</li>\n</ul>\n<h2 id="bench---deno%E3%81%A8nodejs%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E3%83%99%E3%83%B3%E3%83%81%E3%83%9E%E3%83%BC%E3%82%AF"><a href="https://github.com/denosaurs/bench">bench</a> - DenoとNode.jsフレームワークのベンチマーク<a class="anchor" href="#bench---deno%E3%81%A8nodejs%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%AE%E3%83%99%E3%83%B3%E3%83%81%E3%83%9E%E3%83%BC%E3%82%AF">§</a></h2>\n<p><a href="https://github.com/denosaurs/bench">bench</a>は、Deno及びNode.jsフレームワークのベンチマークを公開しています。</p>\n<p>GitHub Actionsを使用して、毎日、それぞれのフレームワークに対してベンチマークが実行されています。</p>\n<p>現時点では、以下のフレームワークに対するベンチマークが公開されています:</p>\n<ul>\n<li><a href="https://github.com/zhmushan/abc">abc</a></li>\n<li><a href="https://github.com/alosaur/alosaur">alosaur</a></li>\n<li>deno (<a href="https://deno.land/std/http">std/http</a>)</li>\n<li><a href="https://github.com/syumai/dinatra">dinatra</a></li>\n<li><a href="https://github.com/drashland/deno-drash">drash</a></li>\n<li><a href="https://github.com/expressjs/express">express</a></li>\n<li><a href="https://github.com/fastify/fastify">fastify</a></li>\n<li>node (<a href="https://nodejs.org/api/http.html">httpモジュール</a>)</li>\n<li><a href="https://github.com/oakserver/oak">oak</a></li>\n<li><a href="https://github.com/keroxp/servest">servest</a></li>\n<li><a href="https://github.com/mandarineorg/mandarinets">mandarinets</a></li>\n<li><a href="https://github.com/l2ig/aqua">aqua</a></li>\n<li><a href="https://github.com/reno-router/reno">reno</a></li>\n</ul>'
@@ -32,7 +32,7 @@ export default {
     'contributors': [
         "uki00a"
     ],
-    'date': "2021-05-08T18:32:39.000Z",
+    'date': "2021-05-08T18:37:42.000Z",
     'updated': null,
     'excerpt': " 1. vno 2. Lume 3. bench - DenoとNode.jsフレームワークのベンチマーク vno vnoはDenoでVue.jsを用いた開発を行うためのビルドツールです。 現時点では以下のような機能が提供されているようです。 - シングルファイルコンポ...",
     'cover': undefined,
@@ -50,7 +50,7 @@ export default {
                 "pagePath": "articles/2021/05/02.md",
                 "title": "2021/04/26〜2021/05/02の最新情報",
                 "link": "articles/2021/05/02.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -71,7 +71,7 @@ export default {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -93,7 +93,7 @@ export default {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -117,7 +117,7 @@ export default {
                 "pagePath": "articles/2021/04/18.md",
                 "title": "2021/04/12〜2021/04/18の最新情報",
                 "link": "articles/2021/04/18.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -139,7 +139,7 @@ export default {
                 "pagePath": "articles/2021/04/11.md",
                 "title": "2021/04/05〜2021/04/11の最新情報",
                 "link": "articles/2021/04/11.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -160,7 +160,7 @@ export default {
                 "pagePath": "articles/2021/01/10.md",
                 "title": "2021/01/04〜2021/01/10の最新情報",
                 "link": "articles/2021/01/10.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -179,7 +179,7 @@ export default {
                 "pagePath": "articles/2021/01/17.md",
                 "title": "2021/01/11〜2021/01/17の最新情報",
                 "link": "articles/2021/01/17.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -194,7 +194,7 @@ export default {
                 "pagePath": "articles/2021/01/31.md",
                 "title": "2021/01/25〜2021/01/31の最新情報",
                 "link": "articles/2021/01/31.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -213,7 +213,7 @@ export default {
                 "pagePath": "articles/2021/01/24.md",
                 "title": "2021/01/18〜2021/01/24の最新情報",
                 "link": "articles/2021/01/24.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -232,7 +232,7 @@ export default {
                 "pagePath": "articles/2021/01/03.md",
                 "title": "2020/12/28〜2021/01/03の最新情報",
                 "link": "articles/2021/01/03.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -250,7 +250,7 @@ export default {
                 "pagePath": "articles/2021/01/02.md",
                 "title": "はじめに",
                 "link": "articles/2021/01/02.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -265,7 +265,7 @@ export default {
                 "pagePath": "articles/2021/02/28.md",
                 "title": "2021/02/22〜2021/02/28の最新情報",
                 "link": "articles/2021/02/28.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -286,7 +286,7 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -308,7 +308,7 @@ export default {
                 "pagePath": "articles/2021/02/21.md",
                 "title": "2021/02/15〜2021/02/21の最新情報",
                 "link": "articles/2021/02/21.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -330,7 +330,7 @@ export default {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -352,7 +352,7 @@ export default {
                 "pagePath": "articles/2021/03/28.md",
                 "title": "2021/03/22〜2021/03/28の最新情報",
                 "link": "articles/2021/03/28.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -374,7 +374,7 @@ export default {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -398,7 +398,7 @@ export default {
                 "pagePath": "articles/2021/03/21.md",
                 "title": "2021/03/15〜2021/03/21の最新情報",
                 "link": "articles/2021/03/21.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -419,7 +419,7 @@ export default {
                 "pagePath": "articles/2021/03/07.md",
                 "title": "2021/03/01〜2021/03/07の最新情報",
                 "link": "articles/2021/03/07.html",
-                "date": "2021-05-08T18:32:39.000Z",
+                "date": "2021-05-08T18:37:42.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
