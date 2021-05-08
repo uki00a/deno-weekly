@@ -7,10 +7,21 @@ export default {
   srcDir: ".",
   theme: "blog",
   plugins: ["blog", "ga"],
-  head: <link
-    rel="icon"
-    href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"
-  />,
+  head: (
+    <>
+      <link
+        rel="icon"
+        href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"
+      />
+      <meta
+        property="og:image"
+        content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"
+      />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@uki00a" />
+      <meta name="twitter:creator" content="@uki00a" />
+    </>
+  ),
   blog: {
     root: "/articles",
     social: {
