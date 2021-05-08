@@ -1,9 +1,15 @@
+import { React } from "./deps.ts";
+
 export default {
   title: "週間Deno",
   description: "このサイトでは、毎週Denoに関わる最新情報を発信しています。",
   srcDir: ".",
   theme: "blog",
   plugins: ["blog", "ga"],
+  head: <link
+    rel="icon"
+    href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"
+  />,
   blog: {
     root: "/articles",
     social: {
