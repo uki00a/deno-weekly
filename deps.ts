@@ -7,4 +7,5 @@ export type {
   PagicLayout,
 } from "https://deno.land/x/pagic@v1.2.1/src/Pagic.ts";
 
-export { Feed } from "https://esm.sh/feed@4.2.1?no-check";
+// TODO: Automatically generate RSS feed
+// export { Feed } from "https://esm.sh/feed@4.2.1?no-check";
