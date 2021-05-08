@@ -1,6 +1,7 @@
 import { React } from "./deps.ts";
 
 export default {
+  root: "https://uki00a.github.io/deno-weekly",
   title: "週間Deno",
   description: "このサイトでは、毎週Denoに関わる最新情報を発信しています。",
   srcDir: ".",
