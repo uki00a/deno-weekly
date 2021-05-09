@@ -1,5 +1,5 @@
 ---
-title: 週間Deno
+title: 週刊Deno
 toc: null
 ---
 
