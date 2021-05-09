@@ -1,0 +1,43 @@
+<!doctype html><html class="" data-reactroot=""><head><script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+            window.GoogleAnalyticsObject="ga";(window.ga=window.ga||function(){(window.ga.q=window.ga.q||[]).push(arguments);}),(window.ga.l=1*new Date());
+
+            ga('create', 'G-MK2K2MRMBF', 'auto');
+            ga('send', 'pageview');</script><link rel="icon" href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"/><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@uki00a"/><meta name="twitter:creator" content="@uki00a"/>
+<meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="x-ua-compatible" content="ie=edge"/><meta data-react-helmet="true" name="description" content="このサイトでは、毎週Denoに関わる最新情報を発信しています。"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/>
+<title data-react-helmet="true">2021/05/03〜2021/05/09の最新情報 · 週間Deno</title>
+<link data-react-helmet="true" rel="stylesheet" href="https://uki00a.github.io/deno-weekly/assets/index.css"/><link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="https://uki00a.github.io/deno-weekly/assets/prism.css"/>
+<script data-react-helmet="true" >
+    const shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (shouldSetIsDark) {
+      document.documentElement.classList.add('is_dark');
+      document.getElementById('prismTheme').href = "https://uki00a.github.io/deno-weekly/assets/prism_tomorrow.css";
+    }
+  </script>
+</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="https://uki00a.github.io/deno-weekly/">週間Deno</a><aside class="hide_on_mobile"><div class="aside_card"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-close-l.svg&quot;)"></a><h1><a href="https://uki00a.github.io/deno-weekly/">週間Deno</a></h1><p class="description">このサイトでは、毎週Denoに関わる最新情報を発信しています。</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-github-logo" href="https://github.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-github-logo.svg&quot;)"></a></li><li class="flex_center"><a class="czs-message-l" href="mailto:uki00a@gmail.com" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-message-l.svg&quot;)"></a></li><li class="flex_center"><a class="czs-twitter" href="https://twitter.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-twitter.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly"><span class="czs-home-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-home-l.svg&quot;)"></span>ホーム</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/tags"><span class="czs-tag-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-tag-l.svg&quot;)"></span>タグ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/categories"><span class="czs-category-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-category-l.svg&quot;)"></span>カテゴリ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/archives"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>アーカイブ</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/about/index.html"><span class="czs-about-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-about-l.svg&quot;)"></span>このサイトについて</a></li></ul></nav></div><nav class="toc"><ol><li><a href="#alosaur-v0310%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">alosaur v0.31.0がリリース</a></li><li><a href="#alosaur-lite">alosaur-lite</a></li><li><a href="#oak-v740%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Oak v7.4.0がリリース</a></li><li><a href="#effective-deno">Effective Deno</a></li></ol></nav></aside><section class="main"><h1>2021/05/03〜2021/05/09の最新情報</h1><div class="main_post_meta"><time dateTime="Sun May 09 2021 07:30:49 GMT+0000 (Coordinated Universal Time)">2021-05-09</time> · <!-- -->Yuki Tanaka</div><article><nav class="toc"><ol><li><a href="#alosaur-v0310%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">alosaur v0.31.0がリリース</a></li><li><a href="#alosaur-lite">alosaur-lite</a></li><li><a href="#oak-v740%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Oak v7.4.0がリリース</a></li><li><a href="#effective-deno">Effective Deno</a></li></ol></nav><h2 id="alosaur-v0310%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/alosaur/alosaur/releases/tag/v0.31.0">alosaur v0.31.0がリリース</a><a class="anchor" href="#alosaur-v0310%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>
+<p>DenoのWebフレームワークである<a href="https://github.com/alosaur/alosaur">alosaur</a>のv0.31.0がリリースされました。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li><code>Context</code>が<code>HttpContext</code>にリネームされました</li>
+<li><a href="https://github.com/alosaur/alosaur/tree/master/examples/microservice">Microservice</a>クラスが実装されました (<a href="https://github.com/alosaur/alosaur/tree/master/examples/microservice">https://github.com/alosaur/alosaur/tree/master/examples/microservice</a>)</li>
+<li>OAuthサポートが追加されました</li>
+</ul>
+<hr>
+<p><a href="https://github.com/alosaur/alosaur/releases/tag/v0.31.0">https://github.com/alosaur/alosaur/releases/tag/v0.31.0</a></p>
+<h2 id="alosaur-lite"><a href="https://github.com/alosaur/alosaur-lite">alosaur-lite</a><a class="anchor" href="#alosaur-lite">§</a></h2>
+<p>alosaur-liteはDenoのWebフレームワークである<a href="https://github.com/alosaur/alosaur">alosaur</a>の軽量版です。(gzip圧縮込みで2.6KB)</p>
+<p>Deno Deployでの使用を想定されているようです。</p>
+<hr>
+<p><a href="https://github.com/alosaur/alosaur-lite">https://github.com/alosaur/alosaur-lite</a></p>
+<h2 id="oak-v740%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/oakserver/oak/releases/tag/v7.4.0">Oak v7.4.0がリリース</a><a class="anchor" href="#oak-v740%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>
+<p>Oakのv7.4.0がリリースされました。</p>
+<p><strong>主な変更点:</strong></p>
+<ul>
+<li><code>send()</code>で<code>Range</code>及び<code>If-Range</code>HTTPヘッダのサポートが追加されました。</li>
+<li>ルーターをネストできるようになりました。(<a href="https://github.com/oakserver/oak/pull/275">#275</a>)</li>
+</ul>
+<hr>
+<p><a href="https://github.com/oakserver/oak/commit/eefd2fdb4a3fc6dfbb52fb1c6d74ff3de4b1b85b">https://github.com/oakserver/oak/commit/eefd2fdb4a3fc6dfbb52fb1c6d74ff3de4b1b85b</a></p>
+<h2 id="effective-deno"><a href="https://zenn.dev/uki00a/books/effective-deno">Effective Deno</a><a class="anchor" href="#effective-deno">§</a></h2>
+<p>Denoを有効に活用するためのノウハウをまとめた本をZennで公開しました。</p>
+<hr>
+<p><a href="https://zenn.dev/uki00a/books/effective-deno">https://zenn.dev/uki00a/books/effective-deno</a></p></article></section><footer>Powered by <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="https://uki00a.github.io/deno-weekly/index.js"></script></body></html>

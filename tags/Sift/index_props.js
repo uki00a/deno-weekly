@@ -20,11 +20,11 @@ export default {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-05-08T18:55:30.000Z",
+                "date": "2021-05-09T07:30:49.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -44,7 +44,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 18
+                "count": 19
             },
             {
                 "name": "notice",
@@ -69,6 +69,10 @@ export default {
                 "count": 4
             },
             {
+                "name": "Oak",
+                "count": 2
+            },
+            {
                 "name": "Servest",
                 "count": 2
             },
@@ -79,6 +83,14 @@ export default {
             {
                 "name": "vno",
                 "count": 2
+            },
+            {
+                "name": "alosaur",
+                "count": 1
+            },
+            {
+                "name": "book",
+                "count": 1
             },
             {
                 "name": "crux.land",
@@ -178,10 +190,6 @@ export default {
             },
             {
                 "name": "nano",
-                "count": 1
-            },
-            {
-                "name": "Oak",
                 "count": 1
             },
             {
