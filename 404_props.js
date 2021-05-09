@@ -2,12 +2,12 @@ import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js'
 import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
-    'pagePath': "articles/2021/03/21.md",
+    'pagePath': "404.md",
     'layoutPath': "_layout.tsx",
-    'outputPath': "articles/2021/03/21.html",
-    'title': "2021/03/15〜2021/03/21の最新情報",
+    'outputPath': "404.html",
+    'title': 404,
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h1>2021/03/15〜2021/03/21の最新情報</h1>\n<nav class="toc"><ol><li><a href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報</a><ol><li><a href="#luath---vitewmr%E3%83%A9%E3%82%A4%E3%82%AF%E3%81%AA%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%83%93%E3%83%AB%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB">luath - Vite/WMRライクなフロントエンドビルドツール</a></li><li><a href="#estest---deno%E3%82%84nodejs%E3%81%AA%E3%81%A9%E3%81%A7%E5%8B%95%E4%BD%9C%E3%81%99%E3%82%8B%E3%83%86%E3%82%B9%E3%83%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF">estest - DenoやNode.jsなどで動作するテストフレームワーク</a></li><li><a href="#servest-v120">Servest v1.2.0</a></li><li><a href="#deno-bin">deno-bin</a></li></ol></li><li><a href="#%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E6%83%85%E5%A0%B1">その他の情報</a><ol><li><a href="#%E7%AC%AC10%E5%9B%9E-deno%E5%8B%89%E5%BC%B7%E4%BC%9A%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3">第10回 Deno勉強会@オンライン</a></li></ol></li></ol></nav><h2 id="%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報<a class="anchor" href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="luath---vitewmr%E3%83%A9%E3%82%A4%E3%82%AF%E3%81%AA%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%83%93%E3%83%AB%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB"><a href="https://github.com/cmorten/luath">luath</a> - Vite/WMRライクなフロントエンドビルドツール<a class="anchor" href="#luath---vitewmr%E3%83%A9%E3%82%A4%E3%82%AF%E3%81%AA%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%83%93%E3%83%AB%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB">§</a></h3>\n<p><code>luath</code>というフロントエンド開発用のビルドツールが公開されました。</p>\n<p><a href="https://github.com/vitejs/vite">Vite</a>や<a href="https://github.com/preactjs/wmr">WMR</a>に影響を受けており、以下のような機能が提供されています:</p>\n<ul>\n<li>HMR及びオンデマンドビルドなどの機能を提供するdevサーバ</li>\n<li>Rollup互換のプラグインシステム</li>\n<li>PostCSSやCSS Modulesのサポート</li>\n</ul>\n<hr>\n<p><a href="https://github.com/cmorten/luath">https://github.com/cmorten/luath</a></p>\n<h3 id="estest---deno%E3%82%84nodejs%E3%81%AA%E3%81%A9%E3%81%A7%E5%8B%95%E4%BD%9C%E3%81%99%E3%82%8B%E3%83%86%E3%82%B9%E3%83%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF"><a href="https://github.com/mikeal/estest">estest</a> - DenoやNode.jsなどで動作するテストフレームワーク<a class="anchor" href="#estest---deno%E3%82%84nodejs%E3%81%AA%E3%81%A9%E3%81%A7%E5%8B%95%E4%BD%9C%E3%81%99%E3%82%8B%E3%83%86%E3%82%B9%E3%83%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF">§</a></h3>\n<p><code>estest</code>はDenoやNode.jsなどのES Modulesをサポートする環境で動作するテストフレームワークです。</p>\n<p>将来的にはブラウザもサポートされる予定のようです。</p>\n<hr>\n<p><a href="https://github.com/mikeal/estest">https://github.com/mikeal/estest</a></p>\n<h3 id="servest-v120"><a href="https://github.com/keroxp/servest/releases/tag/v1.2.0">Servest v1.2.0</a><a class="anchor" href="#servest-v120">§</a></h3>\n<p>DenoのHTTPモジュールである<a href="https://servestjs.org/">Servest</a>の<a href="https://github.com/keroxp/servest/releases/tag/v1.2.0">v1.2.0</a>がリリースされました。</p>\n<p>このリリースでは、<code>Router.options()</code>が実装されています。</p>\n<hr>\n<p><a href="https://github.com/keroxp/servest/releases/tag/v1.2.0">https://github.com/keroxp/servest/releases/tag/v1.2.0</a></p>\n<h3 id="deno-bin"><a href="https://github.com/kt3k/deno-bin">deno-bin</a><a class="anchor" href="#deno-bin">§</a></h3>\n<p><code>deno-bin</code>という、npm/npx経由でDenoを実行するためのツールが公開されました。</p>\n<p>Node.jsプロジェクトにおいて<code>deno lint</code>や<code>deno fmt</code>などを利用する用途などが想定されているようです。</p>\n<hr>\n<p><a href="https://github.com/kt3k/deno-bin">https://github.com/kt3k/deno-bin</a></p>\n<h2 id="%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E6%83%85%E5%A0%B1">その他の情報<a class="anchor" href="#%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="%E7%AC%AC10%E5%9B%9E-deno%E5%8B%89%E5%BC%B7%E4%BC%9A%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3">第10回 Deno勉強会@オンライン<a class="anchor" href="#%E7%AC%AC10%E5%9B%9E-deno%E5%8B%89%E5%BC%B7%E4%BC%9A%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3">§</a></h3>\n<p>2021/04/03(土)に、第10回 Deno勉強会が開催されます。</p>\n<p>詳しくは以下のページを参照ください:</p>\n<p><a href="https://deno-ja.connpass.com/event/208138/">https://deno-ja.connpass.com/event/208138/</a></p>'
+            __html: '<h1>ページが見つかりませんでした</h1>\n<ul>\n<li><a href="/index.html">TOPページ</a></li>\n<li><a href="/tags/index.html">タグ一覧</a></li>\n<li><a href="/archives/index.html">アーカイブ</a></li>\n</ul>'
         } }),
     'head': React.createElement(React.Fragment, null,
         React.createElement(Ga, { id: "G-MK2K2MRMBF" }),
@@ -21,47 +21,21 @@ export default {
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
-    'contentTitle': React.createElement("h1", { key: "0" }, "2021/03/15\u301C2021/03/21\u306E\u6700\u65B0\u60C5\u5831"),
+    'contentTitle': React.createElement("h1", { key: "0" }, "\u30DA\u30FC\u30B8\u304C\u898B\u3064\u304B\u308A\u307E\u305B\u3093\u3067\u3057\u305F"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報</a><ol><li><a href="#luath---vitewmr%E3%83%A9%E3%82%A4%E3%82%AF%E3%81%AA%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%83%93%E3%83%AB%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB">luath - Vite/WMRライクなフロントエンドビルドツール</a></li><li><a href="#estest---deno%E3%82%84nodejs%E3%81%AA%E3%81%A9%E3%81%A7%E5%8B%95%E4%BD%9C%E3%81%99%E3%82%8B%E3%83%86%E3%82%B9%E3%83%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF">estest - DenoやNode.jsなどで動作するテストフレームワーク</a></li><li><a href="#servest-v120">Servest v1.2.0</a></li><li><a href="#deno-bin">deno-bin</a></li></ol></li><li><a href="#%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E6%83%85%E5%A0%B1">その他の情報</a><ol><li><a href="#%E7%AC%AC10%E5%9B%9E-deno%E5%8B%89%E5%BC%B7%E4%BC%9A%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3">第10回 Deno勉強会@オンライン</a></li></ol></li></ol></nav><h2 id="%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報<a class="anchor" href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="luath---vitewmr%E3%83%A9%E3%82%A4%E3%82%AF%E3%81%AA%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%83%93%E3%83%AB%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB"><a href="https://github.com/cmorten/luath">luath</a> - Vite/WMRライクなフロントエンドビルドツール<a class="anchor" href="#luath---vitewmr%E3%83%A9%E3%82%A4%E3%82%AF%E3%81%AA%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%83%93%E3%83%AB%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB">§</a></h3>\n<p><code>luath</code>というフロントエンド開発用のビルドツールが公開されました。</p>\n<p><a href="https://github.com/vitejs/vite">Vite</a>や<a href="https://github.com/preactjs/wmr">WMR</a>に影響を受けており、以下のような機能が提供されています:</p>\n<ul>\n<li>HMR及びオンデマンドビルドなどの機能を提供するdevサーバ</li>\n<li>Rollup互換のプラグインシステム</li>\n<li>PostCSSやCSS Modulesのサポート</li>\n</ul>\n<hr>\n<p><a href="https://github.com/cmorten/luath">https://github.com/cmorten/luath</a></p>\n<h3 id="estest---deno%E3%82%84nodejs%E3%81%AA%E3%81%A9%E3%81%A7%E5%8B%95%E4%BD%9C%E3%81%99%E3%82%8B%E3%83%86%E3%82%B9%E3%83%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF"><a href="https://github.com/mikeal/estest">estest</a> - DenoやNode.jsなどで動作するテストフレームワーク<a class="anchor" href="#estest---deno%E3%82%84nodejs%E3%81%AA%E3%81%A9%E3%81%A7%E5%8B%95%E4%BD%9C%E3%81%99%E3%82%8B%E3%83%86%E3%82%B9%E3%83%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF">§</a></h3>\n<p><code>estest</code>はDenoやNode.jsなどのES Modulesをサポートする環境で動作するテストフレームワークです。</p>\n<p>将来的にはブラウザもサポートされる予定のようです。</p>\n<hr>\n<p><a href="https://github.com/mikeal/estest">https://github.com/mikeal/estest</a></p>\n<h3 id="servest-v120"><a href="https://github.com/keroxp/servest/releases/tag/v1.2.0">Servest v1.2.0</a><a class="anchor" href="#servest-v120">§</a></h3>\n<p>DenoのHTTPモジュールである<a href="https://servestjs.org/">Servest</a>の<a href="https://github.com/keroxp/servest/releases/tag/v1.2.0">v1.2.0</a>がリリースされました。</p>\n<p>このリリースでは、<code>Router.options()</code>が実装されています。</p>\n<hr>\n<p><a href="https://github.com/keroxp/servest/releases/tag/v1.2.0">https://github.com/keroxp/servest/releases/tag/v1.2.0</a></p>\n<h3 id="deno-bin"><a href="https://github.com/kt3k/deno-bin">deno-bin</a><a class="anchor" href="#deno-bin">§</a></h3>\n<p><code>deno-bin</code>という、npm/npx経由でDenoを実行するためのツールが公開されました。</p>\n<p>Node.jsプロジェクトにおいて<code>deno lint</code>や<code>deno fmt</code>などを利用する用途などが想定されているようです。</p>\n<hr>\n<p><a href="https://github.com/kt3k/deno-bin">https://github.com/kt3k/deno-bin</a></p>\n<h2 id="%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E6%83%85%E5%A0%B1">その他の情報<a class="anchor" href="#%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="%E7%AC%AC10%E5%9B%9E-deno%E5%8B%89%E5%BC%B7%E4%BC%9A%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3">第10回 Deno勉強会@オンライン<a class="anchor" href="#%E7%AC%AC10%E5%9B%9E-deno%E5%8B%89%E5%BC%B7%E4%BC%9A%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3">§</a></h3>\n<p>2021/04/03(土)に、第10回 Deno勉強会が開催されます。</p>\n<p>詳しくは以下のページを参照ください:</p>\n<p><a href="https://deno-ja.connpass.com/event/208138/">https://deno-ja.connpass.com/event/208138/</a></p>'
+            __html: '<ul>\n<li><a href="/index.html">TOPページ</a></li>\n<li><a href="/tags/index.html">タグ一覧</a></li>\n<li><a href="/archives/index.html">アーカイブ</a></li>\n</ul>'
         } }),
-    'toc': React.createElement("nav", { key: "0", className: "toc" },
-        React.createElement("ol", null,
-            React.createElement("li", null,
-                React.createElement("a", { href: "#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1" }, "\u30B5\u30FC\u30C9\u30D1\u30FC\u30C6\u30A3\u30E2\u30B8\u30E5\u30FC\u30EB\u306A\u3069\u306E\u6700\u65B0\u60C5\u5831"),
-                React.createElement("ol", null,
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#luath---vitewmr%E3%83%A9%E3%82%A4%E3%82%AF%E3%81%AA%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89%E3%83%93%E3%83%AB%E3%83%89%E3%83%84%E3%83%BC%E3%83%AB" }, "luath - Vite/WMR\u30E9\u30A4\u30AF\u306A\u30D5\u30ED\u30F3\u30C8\u30A8\u30F3\u30C9\u30D3\u30EB\u30C9\u30C4\u30FC\u30EB")),
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#estest---deno%E3%82%84nodejs%E3%81%AA%E3%81%A9%E3%81%A7%E5%8B%95%E4%BD%9C%E3%81%99%E3%82%8B%E3%83%86%E3%82%B9%E3%83%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF" }, "estest - Deno\u3084Node.js\u306A\u3069\u3067\u52D5\u4F5C\u3059\u308B\u30C6\u30B9\u30C8\u30D5\u30EC\u30FC\u30E0\u30EF\u30FC\u30AF")),
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#servest-v120" }, "Servest v1.2.0")),
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#deno-bin" }, "deno-bin")))),
-            React.createElement("li", null,
-                React.createElement("a", { href: "#%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E6%83%85%E5%A0%B1" }, "\u305D\u306E\u4ED6\u306E\u60C5\u5831"),
-                React.createElement("ol", null,
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#%E7%AC%AC10%E5%9B%9E-deno%E5%8B%89%E5%BC%B7%E4%BC%9A%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3" }, "\u7B2C10\u56DE Deno\u52C9\u5F37\u4F1A@\u30AA\u30F3\u30E9\u30A4\u30F3")))))),
+    'toc': null,
     'author': "uki00a",
     'contributors': [
         "uki00a"
     ],
     'date': "2021-05-09T10:23:57.000Z",
     'updated': null,
-    'excerpt': " 1. サードパーティモジュールなどの最新情報 1. luath - Vite/WMRライクなフロントエンドビルドツール 2. estest - DenoやNode.jsなどで動作するテストフレームワーク 3. Servest v1.2.0 4. deno-bin 2. その他の情報 1. 第10...",
+    'excerpt': " - TOPページ - タグ一覧 - アーカイブ",
     'cover': undefined,
-    'tags': [
-        "luath",
-        "estest",
-        "Servest",
-        "deno-bin"
-    ],
-    'categories': [
-        "news"
-    ],
     'blog': {
-        "isPost": true,
+        "isPost": false,
         "posts": [
             {
                 "pagePath": "articles/2021/05/09.md",
