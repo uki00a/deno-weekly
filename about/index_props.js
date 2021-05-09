@@ -30,7 +30,7 @@ export default {
     'contributors': [
         "uki00a"
     ],
-    'date': "2021-05-09T10:23:57.000Z",
+    'date': "2021-05-09T10:34:29.000Z",
     'updated': null,
     'excerpt': "このサイトでは、毎週Denoに関わる最新情報を発信しています。 指摘や誤りについて もしこのサイトについて気になる点(記述の誤り、タイポなど)や改善事項などがありましたら、以下などの手段で連絡いただけると幸いです😊 -...",
     'cover': undefined,
@@ -41,7 +41,7 @@ export default {
                 "pagePath": "articles/2021/05/09.md",
                 "title": "2021/05/03〜2021/05/09の最新情報",
                 "link": "articles/2021/05/09.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -61,7 +61,7 @@ export default {
                 "pagePath": "articles/2021/05/02.md",
                 "title": "2021/04/26〜2021/05/02の最新情報",
                 "link": "articles/2021/05/02.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -82,7 +82,7 @@ export default {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -104,7 +104,7 @@ export default {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -128,7 +128,7 @@ export default {
                 "pagePath": "articles/2021/04/18.md",
                 "title": "2021/04/12〜2021/04/18の最新情報",
                 "link": "articles/2021/04/18.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -150,7 +150,7 @@ export default {
                 "pagePath": "articles/2021/04/11.md",
                 "title": "2021/04/05〜2021/04/11の最新情報",
                 "link": "articles/2021/04/11.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -171,7 +171,7 @@ export default {
                 "pagePath": "articles/2021/01/10.md",
                 "title": "2021/01/04〜2021/01/10の最新情報",
                 "link": "articles/2021/01/10.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -190,7 +190,7 @@ export default {
                 "pagePath": "articles/2021/01/17.md",
                 "title": "2021/01/11〜2021/01/17の最新情報",
                 "link": "articles/2021/01/17.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -205,7 +205,7 @@ export default {
                 "pagePath": "articles/2021/01/31.md",
                 "title": "2021/01/25〜2021/01/31の最新情報",
                 "link": "articles/2021/01/31.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -224,7 +224,7 @@ export default {
                 "pagePath": "articles/2021/01/24.md",
                 "title": "2021/01/18〜2021/01/24の最新情報",
                 "link": "articles/2021/01/24.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -243,7 +243,7 @@ export default {
                 "pagePath": "articles/2021/01/03.md",
                 "title": "2020/12/28〜2021/01/03の最新情報",
                 "link": "articles/2021/01/03.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -261,7 +261,7 @@ export default {
                 "pagePath": "articles/2021/01/02.md",
                 "title": "はじめに",
                 "link": "articles/2021/01/02.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -276,7 +276,7 @@ export default {
                 "pagePath": "articles/2021/02/28.md",
                 "title": "2021/02/22〜2021/02/28の最新情報",
                 "link": "articles/2021/02/28.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -297,7 +297,7 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -319,7 +319,7 @@ export default {
                 "pagePath": "articles/2021/02/21.md",
                 "title": "2021/02/15〜2021/02/21の最新情報",
                 "link": "articles/2021/02/21.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -341,7 +341,7 @@ export default {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -363,7 +363,7 @@ export default {
                 "pagePath": "articles/2021/03/28.md",
                 "title": "2021/03/22〜2021/03/28の最新情報",
                 "link": "articles/2021/03/28.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -385,7 +385,7 @@ export default {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -409,7 +409,7 @@ export default {
                 "pagePath": "articles/2021/03/21.md",
                 "title": "2021/03/15〜2021/03/21の最新情報",
                 "link": "articles/2021/03/21.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -430,7 +430,7 @@ export default {
                 "pagePath": "articles/2021/03/07.md",
                 "title": "2021/03/01〜2021/03/07の最新情報",
                 "link": "articles/2021/03/07.html",
-                "date": "2021-05-09T10:23:57.000Z",
+                "date": "2021-05-09T10:34:29.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
