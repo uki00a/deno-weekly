@@ -5,6 +5,19 @@ toc: null
 
 # 週刊Deno
 
-## 記事の一覧
+## 必要なもの
 
-[アーカイブページ](/archives/README.md)を参照ください。
+* Deno
+* [Velociraptor](https://github.com/jurassiscripts/velociraptor)
+
+## devサーバの起動
+
+```shell
+$ vr dev
+```
+
+## ビルド
+
+```shell
+$ vr build
+```
