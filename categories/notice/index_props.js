@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/01/02.md",
                 "title": "はじめに",
                 "link": "articles/2021/01/02.html",
-                "date": "2021-05-10T14:16:11.000Z",
+                "date": "2021-05-10T14:19:43.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [

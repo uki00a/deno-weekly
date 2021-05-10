@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/01/24.md",
                 "title": "2021/01/18〜2021/01/24の最新情報",
                 "link": "articles/2021/01/24.html",
-                "date": "2021-05-10T14:16:11.000Z",
+                "date": "2021-05-10T14:19:43.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
