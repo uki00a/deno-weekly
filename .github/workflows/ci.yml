@@ -26,7 +26,7 @@ jobs:
         URL: https://uki00a.github.io/deno-weekly
         TRACKING_ID: G-MK2K2MRMBF
       run: |
-        deno run --unstable --allow-read --allow-write --allow-net --allow-run --allow-env https://deno.land/x/pagic@v1.2.1/mod.ts build
+        deno run --unstable --allow-read --allow-write --allow-net --allow-run --allow-env https://deno.land/x/pagic@v1.3.1/mod.ts build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.event_name == 'push' }}
