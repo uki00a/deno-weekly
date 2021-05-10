@@ -20,11 +20,11 @@ export default {
                 "pagePath": "articles/2021/04/18.md",
                 "title": "2021/04/12〜2021/04/18の最新情報",
                 "link": "articles/2021/04/18.html",
-                "date": "2021-05-09T16:03:47.000Z",
+                "date": "2021-05-10T14:03:49.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -42,11 +42,11 @@ export default {
                 "pagePath": "articles/2021/03/21.md",
                 "title": "2021/03/15〜2021/03/21の最新情報",
                 "link": "articles/2021/03/21.html",
-                "date": "2021-05-09T16:03:47.000Z",
+                "date": "2021-05-10T14:03:49.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
