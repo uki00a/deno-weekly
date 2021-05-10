@@ -17,9 +17,6 @@ export default {
         property="og:image"
         content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"
       />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@uki00a" />
-      <meta name="twitter:creator" content="@uki00a" />
     </>
   ),
   blog: {
