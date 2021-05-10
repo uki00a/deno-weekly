@@ -7,8 +7,8 @@ toc: null
 
 ## 必要なもの
 
-* Deno
-* [Velociraptor](https://github.com/jurassiscripts/velociraptor)
+- Deno
+- [Velociraptor](https://github.com/jurassiscripts/velociraptor)
 
 ## devサーバの起動
 
