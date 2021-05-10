@@ -1,6 +1,20 @@
 scripts:
-  pagic:
-    cmd: https://deno.land/x/pagic@v1.3.1/mod.ts
+  clean:
+    desc: Remove dist directory
+    cmd: rm -rf ./dist
+  dev:
+    desc: Run dev server
+    cmd: https://deno.land/x/pagic@v1.3.1/mod.ts build --watch --serve
+    unstable: true
+    allow:
+      read: true
+      write: true
+      net: true
+      run: true
+      env: true
+  build:
+    desc: Build static files
+    cmd: https://deno.land/x/pagic@v1.3.1/mod.ts build
     unstable: true
     allow:
       read: true
