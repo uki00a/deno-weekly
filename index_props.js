@@ -23,11 +23,11 @@ export default {
             __html: '<h2 id="%E5%BF%85%E8%A6%81%E3%81%AA%E3%82%82%E3%81%AE">必要なもの<a class="anchor" href="#%E5%BF%85%E8%A6%81%E3%81%AA%E3%82%82%E3%81%AE">§</a></h2>\n<ul>\n<li>Deno</li>\n<li><a href="https://github.com/jurassiscripts/velociraptor">Velociraptor</a></li>\n</ul>\n<h2 id="dev%E3%82%B5%E3%83%BC%E3%83%90%E3%81%AE%E8%B5%B7%E5%8B%95">devサーバの起動<a class="anchor" href="#dev%E3%82%B5%E3%83%BC%E3%83%90%E3%81%AE%E8%B5%B7%E5%8B%95">§</a></h2>\n<pre class="language-shell"><code class="language-shell">$ vr dev\n</code></pre>\n<h2 id="%E3%83%93%E3%83%AB%E3%83%89">ビルド<a class="anchor" href="#%E3%83%93%E3%83%AB%E3%83%89">§</a></h2>\n<pre class="language-shell"><code class="language-shell">$ vr build\n</code></pre>'
         } }),
     'toc': null,
-    'author': "uki00a",
+    'author': "Yuki Tanaka",
     'contributors': [
-        "uki00a"
+        "Yuki Tanaka"
     ],
-    'date': "2021-05-10T14:19:43.000Z",
+    'date': "2021-05-16T14:48:19.000Z",
     'updated': null,
     'excerpt': "必要なもの - Deno - Velociraptor devサーバの起動 $ vr dev ビルド $ vr build ",
     'cover': undefined,
@@ -38,11 +38,11 @@ export default {
                 "pagePath": "articles/2021/05/09.md",
                 "title": "2021/05/03〜2021/05/09の最新情報",
                 "link": "articles/2021/05/09.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -58,11 +58,11 @@ export default {
                 "pagePath": "articles/2021/05/02.md",
                 "title": "2021/04/26〜2021/05/02の最新情報",
                 "link": "articles/2021/05/02.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -76,14 +76,36 @@ export default {
                 "excerpt": " 1. gql - DenoのGraphQLサーバモジュール 2. deno-libs/tinyhttp - tinyhttpのDenoポート 3. crux.land 4. terraform-deploy-provider - Deno Deploy向けのTerraformプロパイダ gql - DenoのGraphQLサーバモジュール gqlはDen..."
             },
             {
+                "pagePath": "articles/2021/05/16.md",
+                "title": "2021/05/10〜2021/05/16の最新情報",
+                "link": "articles/2021/05/16.html",
+                "date": "2021-05-16T14:48:19.000Z",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "deno_std",
+                    "angular_deno",
+                    "sono.io",
+                    "pagic"
+                ],
+                "excerpt": "Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。 このリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。 変更点: - deno testコマンドに--jobsオプションが..."
+            },
+            {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -101,11 +123,11 @@ export default {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -125,11 +147,11 @@ export default {
                 "pagePath": "articles/2021/04/18.md",
                 "title": "2021/04/12〜2021/04/18の最新情報",
                 "link": "articles/2021/04/18.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -147,11 +169,11 @@ export default {
                 "pagePath": "articles/2021/04/11.md",
                 "title": "2021/04/05〜2021/04/11の最新情報",
                 "link": "articles/2021/04/11.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -168,11 +190,11 @@ export default {
                 "pagePath": "articles/2021/01/10.md",
                 "title": "2021/01/04〜2021/01/10の最新情報",
                 "link": "articles/2021/01/10.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -187,11 +209,11 @@ export default {
                 "pagePath": "articles/2021/01/17.md",
                 "title": "2021/01/11〜2021/01/17の最新情報",
                 "link": "articles/2021/01/17.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -202,11 +224,11 @@ export default {
                 "pagePath": "articles/2021/01/31.md",
                 "title": "2021/01/25〜2021/01/31の最新情報",
                 "link": "articles/2021/01/31.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -221,11 +243,11 @@ export default {
                 "pagePath": "articles/2021/01/24.md",
                 "title": "2021/01/18〜2021/01/24の最新情報",
                 "link": "articles/2021/01/24.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -240,11 +262,11 @@ export default {
                 "pagePath": "articles/2021/01/03.md",
                 "title": "2020/12/28〜2021/01/03の最新情報",
                 "link": "articles/2021/01/03.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -258,11 +280,11 @@ export default {
                 "pagePath": "articles/2021/01/02.md",
                 "title": "はじめに",
                 "link": "articles/2021/01/02.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "notice"
@@ -273,11 +295,11 @@ export default {
                 "pagePath": "articles/2021/02/28.md",
                 "title": "2021/02/22〜2021/02/28の最新情報",
                 "link": "articles/2021/02/28.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -294,11 +316,11 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -316,11 +338,11 @@ export default {
                 "pagePath": "articles/2021/02/21.md",
                 "title": "2021/02/15〜2021/02/21の最新情報",
                 "link": "articles/2021/02/21.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -338,11 +360,11 @@ export default {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -360,11 +382,11 @@ export default {
                 "pagePath": "articles/2021/03/28.md",
                 "title": "2021/03/22〜2021/03/28の最新情報",
                 "link": "articles/2021/03/28.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -382,11 +404,11 @@ export default {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -406,11 +428,11 @@ export default {
                 "pagePath": "articles/2021/03/21.md",
                 "title": "2021/03/15〜2021/03/21の最新情報",
                 "link": "articles/2021/03/21.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -427,11 +449,11 @@ export default {
                 "pagePath": "articles/2021/03/07.md",
                 "title": "2021/03/01〜2021/03/07の最新情報",
                 "link": "articles/2021/03/07.html",
-                "date": "2021-05-10T14:19:43.000Z",
+                "date": "2021-05-16T14:48:19.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -450,7 +472,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 19
+                "count": 20
             },
             {
                 "name": "notice",
@@ -460,11 +482,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 13
+                "count": 14
             },
             {
                 "name": "deno_std",
-                "count": 7
+                "count": 8
             },
             {
                 "name": "deno-postgres",
@@ -492,6 +514,10 @@ export default {
             },
             {
                 "name": "alosaur",
+                "count": 1
+            },
+            {
+                "name": "angular_deno",
                 "count": 1
             },
             {
@@ -599,6 +625,10 @@ export default {
                 "count": 1
             },
             {
+                "name": "pagic",
+                "count": 1
+            },
+            {
                 "name": "pngs",
                 "count": 1
             },
@@ -620,6 +650,10 @@ export default {
             },
             {
                 "name": "Snel",
+                "count": 1
+            },
+            {
+                "name": "sono.io",
                 "count": 1
             },
             {
