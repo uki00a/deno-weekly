@@ -7,7 +7,7 @@ export default {
     'outputPath': "articles/2021/05/16.html",
     'title': "2021/05/10〜2021/05/16の最新情報",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h2 id="deno-v1101%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.10.1がリリース<a class="anchor" href="#deno-v1101%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.10.0及びv1.10.1がリリースされました。</p>\n<p>このリリースでは、<code>deno test</code>コマンドの大幅な拡張やWebStorage APIの実装などが実施されています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>deno test</code>コマンドに<code>--jobs</code>オプションが追加され、テストの並行実行がサポートされた</li>\n<li><code>deno test</code>コマンドに<code>--doc</code>オプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた</li>\n<li><code>deno test</code>コマンドに<code>--watch</code>オプションが追加された</li>\n<li><code>Deno.test</code>に<code>permissions</code>オプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable)</li>\n<li>Web Workerで<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">structured clone algorithm</a>がサポートされた</li>\n<li><code>localStorage</code>と<code>sessionStorage</code>が実装された</li>\n<li>Markdownファイルで<code>deno-fmt-ignore-file</code>ディレクティブがサポートされた</li>\n<li><code>WebAssembly.Memory</code>で<code>shared</code>オプションがサポートされ、<code>SharedArrayBuffer</code>を受け付けるようになった</li>\n<li><code>--import-map</code>オプションでリモートURLを指定できるようになった</li>\n<li>ネイティブプラグインAPIに変更が行われた</li>\n<li><code>deno lint</code>や<code>deno compile</code>で<code>--unstable</code>オプションの指定が必須でなくなった</li>\n<li><code>TextEncoder#encodeInto</code>のパフォーマンス及びWeb標準との互換性の向上が行われた</li>\n<li><code>Deno.emit</code>の<code>bundle</code>オプションの型が<code>&quot;esm&quot; | &quot;iife&quot;</code>から<code>&quot;module&quot; | &quot;classic&quot;</code>に変更された</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://deno.com/blog/v1.10">公式ブログポスト</a></li>\n<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-10-1">Deno 1.10.1 がリリースされたので新機能や変更点の紹介</a></li>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.10.1">v1.10.1のリリースノート</a></li>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.10.0">v1.10.0のリリースノート</a></li>\n</ul>\n<h2 id="deno_std-v0960%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511">deno_std v0.96.0がリリース</a><a class="anchor" href="#deno_std-v0960%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>deno_stdのv0.96.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>http: カスタムのレスポンステキストを指定できるようになった</li>\n<li>io/util: <code>readRange()</code>関数が実装された</li>\n<li>mime/multipart: <code>MultipartReader#readForm()</code>で<code>ReadFormOptions</code>というオブジェクト形式の引数がサポートされた</li>\n<li>node: <code>console</code>モジュールが追加された</li>\n<li>node/assert: <code>rejects()</code>と<code>doesNotReject()</code>が実装された</li>\n<li>node/assert: <code>fail()</code>が実装された</li>\n<li>node/os: <code>homedir()</code>が実装された</li>\n<li>io/streams: <code>readableStreamFromReader()</code>でバイトReadableStreamが使用されないように修正された</li>\n<li>io/bufio: <code>readDelim()</code>のパフォーマンスが向上した</li>\n<li>bytes: <code>readDelim()</code>のパフォーマンス向上のため、<code>bytes_list.ts</code>が追加された</li>\n<li>node/stream: <code>Stream</code>がdefault exportされるようになった</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511">https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511</a></p>\n<h2 id="angular_deno"><a href="https://github.com/alosaur/angular_deno">angular_deno</a><a class="anchor" href="#angular_deno">§</a></h2>\n<p><code>angular_deno</code>はDenoで動作するAngularコンポーネントのレンダリングエンジンです。</p>\n<hr>\n<p><a href="https://github.com/alosaur/angular_deno">https://github.com/alosaur/angular_deno</a></p>\n<h2 id="sonoio"><a href="https://github.com/oslabs-beta/sono.io">sono.io</a><a class="anchor" href="#sonoio">§</a></h2>\n<p><code>sono.io</code>はWebSocketを使ったリアルタイムアプリケーションを実装するためのモジュールです。</p>\n<p>実験的ではありますが、WebRTCのサポートも提供されています。</p>\n<hr>\n<ul>\n<li><a href="https://github.com/oslabs-beta/sono.io">https://github.com/oslabs-beta/sono.io</a></li>\n<li><a href="https://sono.land/">公式ドキュメント</a></li>\n</ul>\n<h2 id="pagic-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/xcatliu/pagic/releases/tag/v1.3.0">Pagic v1.3.0がリリース</a><a class="anchor" href="#pagic-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>DenoのスタティックサイトジェネレータであるPagicのv1.3.0がリリースされました。</p>\n<p>このリリースでは、SEO関連のmetaタグのサポートが追加されています。</p>\n<hr>\n<p><a href="https://github.com/xcatliu/pagic/releases/tag/v1.3.0">https://github.com/xcatliu/pagic/releases/tag/v1.3.0</a></p>'
+            __html: '<nav class="toc"><ol><li><a href="#deno-v1101%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.10.1がリリース</a></li><li><a href="#deno_std-v0960%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.96.0がリリース</a></li><li><a href="#angular_deno">angular_deno</a></li><li><a href="#sonoio">sono.io</a></li><li><a href="#pagic-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Pagic v1.3.0がリリース</a></li></ol></nav><h2 id="deno-v1101%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.10.1がリリース<a class="anchor" href="#deno-v1101%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.10.0及びv1.10.1がリリースされました。</p>\n<p>このリリースでは、<code>deno test</code>コマンドの大幅な拡張やWebStorage APIの実装などが実施されています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>deno test</code>コマンドに<code>--jobs</code>オプションが追加され、テストの並行実行がサポートされた</li>\n<li><code>deno test</code>コマンドに<code>--doc</code>オプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた</li>\n<li><code>deno test</code>コマンドに<code>--watch</code>オプションが追加された</li>\n<li><code>Deno.test</code>に<code>permissions</code>オプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable)</li>\n<li>Web Workerで<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">structured clone algorithm</a>がサポートされた</li>\n<li><code>localStorage</code>と<code>sessionStorage</code>が実装された</li>\n<li>Markdownファイルで<code>deno-fmt-ignore-file</code>ディレクティブがサポートされた</li>\n<li><code>WebAssembly.Memory</code>で<code>shared</code>オプションがサポートされ、<code>SharedArrayBuffer</code>を受け付けるようになった</li>\n<li><code>--import-map</code>オプションでリモートURLを指定できるようになった</li>\n<li>ネイティブプラグインAPIに変更が行われた</li>\n<li><code>deno lint</code>や<code>deno compile</code>で<code>--unstable</code>オプションの指定が必須でなくなった</li>\n<li><code>TextEncoder#encodeInto</code>のパフォーマンス及びWeb標準との互換性の向上が行われた</li>\n<li><code>Deno.emit</code>の<code>bundle</code>オプションの型が<code>&quot;esm&quot; | &quot;iife&quot;</code>から<code>&quot;module&quot; | &quot;classic&quot;</code>に変更された</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://deno.com/blog/v1.10">公式ブログポスト</a></li>\n<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-10-1">Deno 1.10.1 がリリースされたので新機能や変更点の紹介</a></li>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.10.1">v1.10.1のリリースノート</a></li>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.10.0">v1.10.0のリリースノート</a></li>\n</ul>\n<h2 id="deno_std-v0960%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511">deno_std v0.96.0がリリース</a><a class="anchor" href="#deno_std-v0960%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>deno_stdのv0.96.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>http: カスタムのレスポンステキストを指定できるようになった</li>\n<li>io/util: <code>readRange()</code>関数が実装された</li>\n<li>mime/multipart: <code>MultipartReader#readForm()</code>で<code>ReadFormOptions</code>というオブジェクト形式の引数がサポートされた</li>\n<li>node: <code>console</code>モジュールが追加された</li>\n<li>node/assert: <code>rejects()</code>と<code>doesNotReject()</code>が実装された</li>\n<li>node/assert: <code>fail()</code>が実装された</li>\n<li>node/os: <code>homedir()</code>が実装された</li>\n<li>io/streams: <code>readableStreamFromReader()</code>でバイトReadableStreamが使用されないように修正された</li>\n<li>io/bufio: <code>readDelim()</code>のパフォーマンスが向上した</li>\n<li>bytes: <code>readDelim()</code>のパフォーマンス向上のため、<code>bytes_list.ts</code>が追加された</li>\n<li>node/stream: <code>Stream</code>がdefault exportされるようになった</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511">https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511</a></p>\n<h2 id="angular_deno"><a href="https://github.com/alosaur/angular_deno">angular_deno</a><a class="anchor" href="#angular_deno">§</a></h2>\n<p><code>angular_deno</code>はDenoで動作するAngularコンポーネントのレンダリングエンジンです。</p>\n<hr>\n<p><a href="https://github.com/alosaur/angular_deno">https://github.com/alosaur/angular_deno</a></p>\n<h2 id="sonoio"><a href="https://github.com/oslabs-beta/sono.io">sono.io</a><a class="anchor" href="#sonoio">§</a></h2>\n<p><code>sono.io</code>はWebSocketを使ったリアルタイムアプリケーションを実装するためのモジュールです。</p>\n<p>実験的ではありますが、WebRTCのサポートも提供されています。</p>\n<hr>\n<ul>\n<li><a href="https://github.com/oslabs-beta/sono.io">https://github.com/oslabs-beta/sono.io</a></li>\n<li><a href="https://sono.land/">公式ドキュメント</a></li>\n</ul>\n<h2 id="pagic-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/xcatliu/pagic/releases/tag/v1.3.0">Pagic v1.3.0がリリース</a><a class="anchor" href="#pagic-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>DenoのスタティックサイトジェネレータであるPagicのv1.3.0がリリースされました。</p>\n<p>このリリースでは、SEO関連のmetaタグのサポートが追加されています。</p>\n<hr>\n<p><a href="https://github.com/xcatliu/pagic/releases/tag/v1.3.0">https://github.com/xcatliu/pagic/releases/tag/v1.3.0</a></p>'
         } }),
     'head': React.createElement(React.Fragment, null,
         React.createElement(Ga, { id: "G-MK2K2MRMBF" }),
@@ -20,7 +20,7 @@ export default {
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
     'contentTitle': undefined,
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h2 id="deno-v1101%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.10.1がリリース<a class="anchor" href="#deno-v1101%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.10.0及びv1.10.1がリリースされました。</p>\n<p>このリリースでは、<code>deno test</code>コマンドの大幅な拡張やWebStorage APIの実装などが実施されています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>deno test</code>コマンドに<code>--jobs</code>オプションが追加され、テストの並行実行がサポートされた</li>\n<li><code>deno test</code>コマンドに<code>--doc</code>オプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた</li>\n<li><code>deno test</code>コマンドに<code>--watch</code>オプションが追加された</li>\n<li><code>Deno.test</code>に<code>permissions</code>オプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable)</li>\n<li>Web Workerで<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">structured clone algorithm</a>がサポートされた</li>\n<li><code>localStorage</code>と<code>sessionStorage</code>が実装された</li>\n<li>Markdownファイルで<code>deno-fmt-ignore-file</code>ディレクティブがサポートされた</li>\n<li><code>WebAssembly.Memory</code>で<code>shared</code>オプションがサポートされ、<code>SharedArrayBuffer</code>を受け付けるようになった</li>\n<li><code>--import-map</code>オプションでリモートURLを指定できるようになった</li>\n<li>ネイティブプラグインAPIに変更が行われた</li>\n<li><code>deno lint</code>や<code>deno compile</code>で<code>--unstable</code>オプションの指定が必須でなくなった</li>\n<li><code>TextEncoder#encodeInto</code>のパフォーマンス及びWeb標準との互換性の向上が行われた</li>\n<li><code>Deno.emit</code>の<code>bundle</code>オプションの型が<code>&quot;esm&quot; | &quot;iife&quot;</code>から<code>&quot;module&quot; | &quot;classic&quot;</code>に変更された</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://deno.com/blog/v1.10">公式ブログポスト</a></li>\n<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-10-1">Deno 1.10.1 がリリースされたので新機能や変更点の紹介</a></li>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.10.1">v1.10.1のリリースノート</a></li>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.10.0">v1.10.0のリリースノート</a></li>\n</ul>\n<h2 id="deno_std-v0960%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511">deno_std v0.96.0がリリース</a><a class="anchor" href="#deno_std-v0960%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>deno_stdのv0.96.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>http: カスタムのレスポンステキストを指定できるようになった</li>\n<li>io/util: <code>readRange()</code>関数が実装された</li>\n<li>mime/multipart: <code>MultipartReader#readForm()</code>で<code>ReadFormOptions</code>というオブジェクト形式の引数がサポートされた</li>\n<li>node: <code>console</code>モジュールが追加された</li>\n<li>node/assert: <code>rejects()</code>と<code>doesNotReject()</code>が実装された</li>\n<li>node/assert: <code>fail()</code>が実装された</li>\n<li>node/os: <code>homedir()</code>が実装された</li>\n<li>io/streams: <code>readableStreamFromReader()</code>でバイトReadableStreamが使用されないように修正された</li>\n<li>io/bufio: <code>readDelim()</code>のパフォーマンスが向上した</li>\n<li>bytes: <code>readDelim()</code>のパフォーマンス向上のため、<code>bytes_list.ts</code>が追加された</li>\n<li>node/stream: <code>Stream</code>がdefault exportされるようになった</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511">https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511</a></p>\n<h2 id="angular_deno"><a href="https://github.com/alosaur/angular_deno">angular_deno</a><a class="anchor" href="#angular_deno">§</a></h2>\n<p><code>angular_deno</code>はDenoで動作するAngularコンポーネントのレンダリングエンジンです。</p>\n<hr>\n<p><a href="https://github.com/alosaur/angular_deno">https://github.com/alosaur/angular_deno</a></p>\n<h2 id="sonoio"><a href="https://github.com/oslabs-beta/sono.io">sono.io</a><a class="anchor" href="#sonoio">§</a></h2>\n<p><code>sono.io</code>はWebSocketを使ったリアルタイムアプリケーションを実装するためのモジュールです。</p>\n<p>実験的ではありますが、WebRTCのサポートも提供されています。</p>\n<hr>\n<ul>\n<li><a href="https://github.com/oslabs-beta/sono.io">https://github.com/oslabs-beta/sono.io</a></li>\n<li><a href="https://sono.land/">公式ドキュメント</a></li>\n</ul>\n<h2 id="pagic-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/xcatliu/pagic/releases/tag/v1.3.0">Pagic v1.3.0がリリース</a><a class="anchor" href="#pagic-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>DenoのスタティックサイトジェネレータであるPagicのv1.3.0がリリースされました。</p>\n<p>このリリースでは、SEO関連のmetaタグのサポートが追加されています。</p>\n<hr>\n<p><a href="https://github.com/xcatliu/pagic/releases/tag/v1.3.0">https://github.com/xcatliu/pagic/releases/tag/v1.3.0</a></p>'
+            __html: '<nav class="toc"><ol><li><a href="#deno-v1101%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.10.1がリリース</a></li><li><a href="#deno_std-v0960%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.96.0がリリース</a></li><li><a href="#angular_deno">angular_deno</a></li><li><a href="#sonoio">sono.io</a></li><li><a href="#pagic-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Pagic v1.3.0がリリース</a></li></ol></nav><h2 id="deno-v1101%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.10.1がリリース<a class="anchor" href="#deno-v1101%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.10.0及びv1.10.1がリリースされました。</p>\n<p>このリリースでは、<code>deno test</code>コマンドの大幅な拡張やWebStorage APIの実装などが実施されています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>deno test</code>コマンドに<code>--jobs</code>オプションが追加され、テストの並行実行がサポートされた</li>\n<li><code>deno test</code>コマンドに<code>--doc</code>オプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた</li>\n<li><code>deno test</code>コマンドに<code>--watch</code>オプションが追加された</li>\n<li><code>Deno.test</code>に<code>permissions</code>オプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable)</li>\n<li>Web Workerで<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">structured clone algorithm</a>がサポートされた</li>\n<li><code>localStorage</code>と<code>sessionStorage</code>が実装された</li>\n<li>Markdownファイルで<code>deno-fmt-ignore-file</code>ディレクティブがサポートされた</li>\n<li><code>WebAssembly.Memory</code>で<code>shared</code>オプションがサポートされ、<code>SharedArrayBuffer</code>を受け付けるようになった</li>\n<li><code>--import-map</code>オプションでリモートURLを指定できるようになった</li>\n<li>ネイティブプラグインAPIに変更が行われた</li>\n<li><code>deno lint</code>や<code>deno compile</code>で<code>--unstable</code>オプションの指定が必須でなくなった</li>\n<li><code>TextEncoder#encodeInto</code>のパフォーマンス及びWeb標準との互換性の向上が行われた</li>\n<li><code>Deno.emit</code>の<code>bundle</code>オプションの型が<code>&quot;esm&quot; | &quot;iife&quot;</code>から<code>&quot;module&quot; | &quot;classic&quot;</code>に変更された</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://deno.com/blog/v1.10">公式ブログポスト</a></li>\n<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-10-1">Deno 1.10.1 がリリースされたので新機能や変更点の紹介</a></li>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.10.1">v1.10.1のリリースノート</a></li>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.10.0">v1.10.0のリリースノート</a></li>\n</ul>\n<h2 id="deno_std-v0960%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511">deno_std v0.96.0がリリース</a><a class="anchor" href="#deno_std-v0960%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>deno_stdのv0.96.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>http: カスタムのレスポンステキストを指定できるようになった</li>\n<li>io/util: <code>readRange()</code>関数が実装された</li>\n<li>mime/multipart: <code>MultipartReader#readForm()</code>で<code>ReadFormOptions</code>というオブジェクト形式の引数がサポートされた</li>\n<li>node: <code>console</code>モジュールが追加された</li>\n<li>node/assert: <code>rejects()</code>と<code>doesNotReject()</code>が実装された</li>\n<li>node/assert: <code>fail()</code>が実装された</li>\n<li>node/os: <code>homedir()</code>が実装された</li>\n<li>io/streams: <code>readableStreamFromReader()</code>でバイトReadableStreamが使用されないように修正された</li>\n<li>io/bufio: <code>readDelim()</code>のパフォーマンスが向上した</li>\n<li>bytes: <code>readDelim()</code>のパフォーマンス向上のため、<code>bytes_list.ts</code>が追加された</li>\n<li>node/stream: <code>Stream</code>がdefault exportされるようになった</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511">https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511</a></p>\n<h2 id="angular_deno"><a href="https://github.com/alosaur/angular_deno">angular_deno</a><a class="anchor" href="#angular_deno">§</a></h2>\n<p><code>angular_deno</code>はDenoで動作するAngularコンポーネントのレンダリングエンジンです。</p>\n<hr>\n<p><a href="https://github.com/alosaur/angular_deno">https://github.com/alosaur/angular_deno</a></p>\n<h2 id="sonoio"><a href="https://github.com/oslabs-beta/sono.io">sono.io</a><a class="anchor" href="#sonoio">§</a></h2>\n<p><code>sono.io</code>はWebSocketを使ったリアルタイムアプリケーションを実装するためのモジュールです。</p>\n<p>実験的ではありますが、WebRTCのサポートも提供されています。</p>\n<hr>\n<ul>\n<li><a href="https://github.com/oslabs-beta/sono.io">https://github.com/oslabs-beta/sono.io</a></li>\n<li><a href="https://sono.land/">公式ドキュメント</a></li>\n</ul>\n<h2 id="pagic-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/xcatliu/pagic/releases/tag/v1.3.0">Pagic v1.3.0がリリース</a><a class="anchor" href="#pagic-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>DenoのスタティックサイトジェネレータであるPagicのv1.3.0がリリースされました。</p>\n<p>このリリースでは、SEO関連のmetaタグのサポートが追加されています。</p>\n<hr>\n<p><a href="https://github.com/xcatliu/pagic/releases/tag/v1.3.0">https://github.com/xcatliu/pagic/releases/tag/v1.3.0</a></p>'
         } }),
     'toc': React.createElement("nav", { key: "0", className: "toc" },
         React.createElement("ol", null,
@@ -34,13 +34,13 @@ export default {
                 React.createElement("a", { href: "#sonoio" }, "sono.io")),
             React.createElement("li", null,
                 React.createElement("a", { href: "#pagic-v130%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9" }, "Pagic v1.3.0\u304C\u30EA\u30EA\u30FC\u30B9")))),
-    'author': "Yuki Tanaka",
+    'author': "uki00a",
     'contributors': [
-        "Yuki Tanaka"
+        "uki00a"
     ],
-    'date': "2021-05-16T14:48:19.000Z",
+    'date': "2021-05-16T19:18:25.000Z",
     'updated': null,
-    'excerpt': "Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。 このリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。 変更点: - deno testコマンドに--jobsオプションが...",
+    'excerpt': " 1. Deno v1.10.1がリリース 2. deno_std v0.96.0がリリース 3. angular_deno 4. sono.io 5. Pagic v1.3.0がリリース Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。 このリリースでは、deno testコマ...",
     'cover': undefined,
     'tags': [
         "deno",
@@ -59,11 +59,11 @@ export default {
                 "pagePath": "articles/2021/05/09.md",
                 "title": "2021/05/03〜2021/05/09の最新情報",
                 "link": "articles/2021/05/09.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -79,11 +79,11 @@ export default {
                 "pagePath": "articles/2021/05/02.md",
                 "title": "2021/04/26〜2021/05/02の最新情報",
                 "link": "articles/2021/05/02.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -100,11 +100,11 @@ export default {
                 "pagePath": "articles/2021/05/16.md",
                 "title": "2021/05/10〜2021/05/16の最新情報",
                 "link": "articles/2021/05/16.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -116,17 +116,17 @@ export default {
                     "sono.io",
                     "pagic"
                 ],
-                "excerpt": "Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。 このリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。 変更点: - deno testコマンドに--jobsオプションが..."
+                "excerpt": " 1. Deno v1.10.1がリリース 2. deno_std v0.96.0がリリース 3. angular_deno 4. sono.io 5. Pagic v1.3.0がリリース Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。 このリリースでは、deno testコマ..."
             },
             {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -144,11 +144,11 @@ export default {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -168,11 +168,11 @@ export default {
                 "pagePath": "articles/2021/04/18.md",
                 "title": "2021/04/12〜2021/04/18の最新情報",
                 "link": "articles/2021/04/18.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -190,11 +190,11 @@ export default {
                 "pagePath": "articles/2021/04/11.md",
                 "title": "2021/04/05〜2021/04/11の最新情報",
                 "link": "articles/2021/04/11.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -211,11 +211,11 @@ export default {
                 "pagePath": "articles/2021/01/10.md",
                 "title": "2021/01/04〜2021/01/10の最新情報",
                 "link": "articles/2021/01/10.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -230,11 +230,11 @@ export default {
                 "pagePath": "articles/2021/01/17.md",
                 "title": "2021/01/11〜2021/01/17の最新情報",
                 "link": "articles/2021/01/17.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -245,11 +245,11 @@ export default {
                 "pagePath": "articles/2021/01/31.md",
                 "title": "2021/01/25〜2021/01/31の最新情報",
                 "link": "articles/2021/01/31.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -264,11 +264,11 @@ export default {
                 "pagePath": "articles/2021/01/24.md",
                 "title": "2021/01/18〜2021/01/24の最新情報",
                 "link": "articles/2021/01/24.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -283,11 +283,11 @@ export default {
                 "pagePath": "articles/2021/01/03.md",
                 "title": "2020/12/28〜2021/01/03の最新情報",
                 "link": "articles/2021/01/03.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -301,11 +301,11 @@ export default {
                 "pagePath": "articles/2021/01/02.md",
                 "title": "はじめに",
                 "link": "articles/2021/01/02.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "notice"
@@ -316,11 +316,11 @@ export default {
                 "pagePath": "articles/2021/02/28.md",
                 "title": "2021/02/22〜2021/02/28の最新情報",
                 "link": "articles/2021/02/28.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -337,11 +337,11 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -359,11 +359,11 @@ export default {
                 "pagePath": "articles/2021/02/21.md",
                 "title": "2021/02/15〜2021/02/21の最新情報",
                 "link": "articles/2021/02/21.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -381,11 +381,11 @@ export default {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -403,11 +403,11 @@ export default {
                 "pagePath": "articles/2021/03/28.md",
                 "title": "2021/03/22〜2021/03/28の最新情報",
                 "link": "articles/2021/03/28.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -425,11 +425,11 @@ export default {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -449,11 +449,11 @@ export default {
                 "pagePath": "articles/2021/03/21.md",
                 "title": "2021/03/15〜2021/03/21の最新情報",
                 "link": "articles/2021/03/21.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -470,11 +470,11 @@ export default {
                 "pagePath": "articles/2021/03/07.md",
                 "title": "2021/03/01〜2021/03/07の最新情報",
                 "link": "articles/2021/03/07.html",
-                "date": "2021-05-16T14:48:19.000Z",
+                "date": "2021-05-16T19:18:25.000Z",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
