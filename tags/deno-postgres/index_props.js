@@ -17,10 +17,29 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "articles/2021/01/31.md",
+                "title": "2021/01/25〜2021/01/31の最新情報",
+                "link": "articles/2021/01/31.html",
+                "date": "2021-05-22T15:25:24.000Z",
+                "updated": null,
+                "author": "uki00a",
+                "contributors": [
+                    "uki00a"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "deno-postgres"
+                ],
+                "excerpt": " 1. Deno v1.7.1がリリース 2. deno-postgresのv0.5.0/v0.6.0がリリース 3. Harmony - Discord APIライブラリ Deno v1.7.1がリリース Denoのv1.7.1がリリースされました。 このリリースに合わせて、stdのv0.85.0もリリースされ..."
+            },
+            {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-05-16T19:18:25.000Z",
+                "date": "2021-05-22T15:25:24.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -42,7 +61,7 @@ export default {
                 "pagePath": "articles/2021/04/11.md",
                 "title": "2021/04/05〜2021/04/11の最新情報",
                 "link": "articles/2021/04/11.html",
-                "date": "2021-05-16T19:18:25.000Z",
+                "date": "2021-05-22T15:25:24.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -60,51 +79,10 @@ export default {
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.9.0のリリースについて 2. サードパーティモジュールなどの最新情報 1. denoland/setup-deno 2. deno-postgres v0.9.0及びv0.10.0がリリース 3. rollup-plugin-deno Deno本体の最新情報 Den..."
             },
             {
-                "pagePath": "articles/2021/01/31.md",
-                "title": "2021/01/25〜2021/01/31の最新情報",
-                "link": "articles/2021/01/31.html",
-                "date": "2021-05-16T19:18:25.000Z",
-                "updated": null,
-                "author": "uki00a",
-                "contributors": [
-                    "uki00a"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "deno",
-                    "deno-postgres"
-                ],
-                "excerpt": " 1. Deno v1.7.1がリリース 2. deno-postgresのv0.5.0/v0.6.0がリリース 3. Harmony - Discord APIライブラリ Deno v1.7.1がリリース Denoのv1.7.1がリリースされました。 このリリースに合わせて、stdのv0.85.0もリリースされ..."
-            },
-            {
-                "pagePath": "articles/2021/02/14.md",
-                "title": "2021/02/08〜2021/02/14の最新情報",
-                "link": "articles/2021/02/14.html",
-                "date": "2021-05-16T19:18:25.000Z",
-                "updated": null,
-                "author": "uki00a",
-                "contributors": [
-                    "uki00a"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "deno",
-                    "denops.vim",
-                    "slack_web_api",
-                    "deno-redis",
-                    "deno-postgres"
-                ],
-                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.7.3/v1.7.4がリリースされました 2. deno_std v0.87.0がリリースされました 2. サードパーティモジュールの最新情報 1. denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム ..."
-            },
-            {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-05-16T19:18:25.000Z",
+                "date": "2021-05-22T15:25:24.000Z",
                 "updated": null,
                 "author": "uki00a",
                 "contributors": [
@@ -121,6 +99,28 @@ export default {
                     "Trex"
                 ],
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.7.2がリリース 2. deno_stdのリポジトリがdeno本体のリポジトリから分離された 2. サードパーティモジュールの最新情報 1. emacs-ng 2. deno-postgres v0.7.0がリリースされた 3. Trex v1.5..."
+            },
+            {
+                "pagePath": "articles/2021/02/14.md",
+                "title": "2021/02/08〜2021/02/14の最新情報",
+                "link": "articles/2021/02/14.html",
+                "date": "2021-05-22T15:25:24.000Z",
+                "updated": null,
+                "author": "uki00a",
+                "contributors": [
+                    "uki00a"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "denops.vim",
+                    "slack_web_api",
+                    "deno-redis",
+                    "deno-postgres"
+                ],
+                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.7.3/v1.7.4がリリースされました 2. deno_std v0.87.0がリリースされました 2. サードパーティモジュールの最新情報 1. denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム ..."
             }
         ],
         "categories": [
