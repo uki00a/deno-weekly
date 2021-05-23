@@ -20,11 +20,11 @@ export default {
                 "pagePath": "articles/2021/05/09.md",
                 "title": "2021/05/03〜2021/05/09の最新情報",
                 "link": "articles/2021/05/09.html",
-                "date": "2021-05-22T15:25:24.000Z",
+                "date": "2021-05-23T08:33:03.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -40,7 +40,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 20
+                "count": 21
             },
             {
                 "name": "notice",
@@ -50,11 +50,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 14
+                "count": 15
             },
             {
                 "name": "deno_std",
-                "count": 8
+                "count": 9
             },
             {
                 "name": "deno-postgres",
@@ -63,6 +63,10 @@ export default {
             {
                 "name": "deno-redis",
                 "count": 4
+            },
+            {
+                "name": "luath",
+                "count": 2
             },
             {
                 "name": "Oak",
@@ -169,6 +173,10 @@ export default {
                 "count": 1
             },
             {
+                "name": "Flat Data",
+                "count": 1
+            },
+            {
                 "name": "gql",
                 "count": 1
             },
@@ -181,15 +189,15 @@ export default {
                 "count": 1
             },
             {
-                "name": "luath",
-                "count": 1
-            },
-            {
                 "name": "Lume",
                 "count": 1
             },
             {
                 "name": "nano",
+                "count": 1
+            },
+            {
+                "name": "packup",
                 "count": 1
             },
             {

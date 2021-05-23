@@ -17,14 +17,36 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "articles/2021/05/23.md",
+                "title": "2021/05/17〜2021/05/23の最新情報",
+                "link": "articles/2021/05/23.html",
+                "date": "2021-05-23T08:33:03.000Z",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "deno_std",
+                    "Flat Data",
+                    "packup",
+                    "luath"
+                ],
+                "excerpt": " 1. Deno v1.10.2がリリース 2. deno_std v0.97.0がリリース 3. denoland/setup-deno v1.0.0がリリース 4. Flat Data 5. packup - Parcelライクなビルドツール 6. luath v0.6.0/v0.7.0/v0.8.0がリリース Deno v1.10.2がリリース..."
+            },
+            {
                 "pagePath": "articles/2021/03/21.md",
                 "title": "2021/03/15〜2021/03/21の最新情報",
                 "link": "articles/2021/03/21.html",
-                "date": "2021-05-22T15:25:24.000Z",
+                "date": "2021-05-23T08:33:03.000Z",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -41,7 +63,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 20
+                "count": 21
             },
             {
                 "name": "notice",
@@ -51,11 +73,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 14
+                "count": 15
             },
             {
                 "name": "deno_std",
-                "count": 8
+                "count": 9
             },
             {
                 "name": "deno-postgres",
@@ -64,6 +86,10 @@ export default {
             {
                 "name": "deno-redis",
                 "count": 4
+            },
+            {
+                "name": "luath",
+                "count": 2
             },
             {
                 "name": "Oak",
@@ -170,6 +196,10 @@ export default {
                 "count": 1
             },
             {
+                "name": "Flat Data",
+                "count": 1
+            },
+            {
                 "name": "gql",
                 "count": 1
             },
@@ -182,15 +212,15 @@ export default {
                 "count": 1
             },
             {
-                "name": "luath",
-                "count": 1
-            },
-            {
                 "name": "Lume",
                 "count": 1
             },
             {
                 "name": "nano",
+                "count": 1
+            },
+            {
+                "name": "packup",
                 "count": 1
             },
             {
