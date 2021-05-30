@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/03/07.md",
                 "title": "2021/03/01〜2021/03/07の最新情報",
                 "link": "articles/2021/03/07.html",
-                "date": "2021-05-23T08:33:03.000Z",
+                "date": "2021-05-30T10:47:14.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -43,7 +43,7 @@ export default {
                 "pagePath": "articles/2021/01/10.md",
                 "title": "2021/01/04〜2021/01/10の最新情報",
                 "link": "articles/2021/01/10.html",
-                "date": "2021-05-23T08:33:03.000Z",
+                "date": "2021-05-30T10:47:14.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -62,7 +62,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 21
+                "count": 22
             },
             {
                 "name": "notice",
@@ -87,6 +87,10 @@ export default {
                 "count": 4
             },
             {
+                "name": "Deno Deploy",
+                "count": 2
+            },
+            {
                 "name": "luath",
                 "count": 2
             },
@@ -96,6 +100,10 @@ export default {
             },
             {
                 "name": "Servest",
+                "count": 2
+            },
+            {
+                "name": "Sinco",
                 "count": 2
             },
             {
@@ -119,15 +127,15 @@ export default {
                 "count": 1
             },
             {
+                "name": "Cliffy",
+                "count": 1
+            },
+            {
                 "name": "crux.land",
                 "count": 1
             },
             {
                 "name": "Dashport",
-                "count": 1
-            },
-            {
-                "name": "Deno Deploy",
                 "count": 1
             },
             {
@@ -239,10 +247,6 @@ export default {
                 "count": 1
             },
             {
-                "name": "Sinco",
-                "count": 1
-            },
-            {
                 "name": "slack_web_api",
                 "count": 1
             },
@@ -264,6 +268,10 @@ export default {
             },
             {
                 "name": "ts_morph",
+                "count": 1
+            },
+            {
+                "name": "Velociraptor",
                 "count": 1
             },
             {
