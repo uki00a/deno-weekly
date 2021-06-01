@@ -1,4 +1,4 @@
-import { React } from "./deps.ts";
+import { React } from "pagic";
 
 export default {
   root: "https://uki00a.github.io/deno-weekly/",

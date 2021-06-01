@@ -4,8 +4,9 @@ scripts:
     cmd: rm -rf ./dist
   dev:
     desc: Run dev server
-    cmd: https://deno.land/x/pagic@v1.3.1/mod.ts build --watch --serve
+    cmd: dev.ts
     unstable: true
+    imap: import_map.json
     allow:
       read: true
       write: true
@@ -13,9 +14,10 @@ scripts:
       run: true
       env: true
   build:
-    desc: Build static files
-    cmd: https://deno.land/x/pagic@v1.3.1/mod.ts build
+    desc: Generate static files
+    cmd: build.ts
     unstable: true
+    imap: import_map.json
     allow:
       read: true
       write: true

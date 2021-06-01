@@ -1,5 +1,5 @@
-import { React } from "./deps.ts";
-import type { PagicLayout } from "./deps.ts";
+import { React } from "pagic";
+import type { PagicLayout } from "pagic";
 
 const NotFoundPage: PagicLayout = ({ config }) => (
   <>
