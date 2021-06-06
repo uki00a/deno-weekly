@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/05/09.md",
                 "title": "2021/05/03〜2021/05/09の最新情報",
                 "link": "articles/2021/05/09.html",
-                "date": "2021-06-01T20:09:19.000Z",
+                "date": "2021-06-06T10:51:12.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -40,7 +40,7 @@ export default {
                 "pagePath": "articles/2021/04/18.md",
                 "title": "2021/04/12〜2021/04/18の最新情報",
                 "link": "articles/2021/04/18.html",
-                "date": "2021-06-01T20:09:19.000Z",
+                "date": "2021-06-06T10:51:12.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -62,7 +62,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 22
+                "count": 23
             },
             {
                 "name": "notice",
@@ -72,7 +72,7 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 15
+                "count": 16
             },
             {
                 "name": "deno_std",
@@ -203,6 +203,10 @@ export default {
                 "count": 1
             },
             {
+                "name": "Eta",
+                "count": 1
+            },
+            {
                 "name": "Flat Data",
                 "count": 1
             },
@@ -268,6 +272,10 @@ export default {
             },
             {
                 "name": "ts_morph",
+                "count": 1
+            },
+            {
+                "name": "twd",
                 "count": 1
             },
             {

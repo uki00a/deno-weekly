@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/01/31.md",
                 "title": "2021/01/25〜2021/01/31の最新情報",
                 "link": "articles/2021/01/31.html",
-                "date": "2021-06-01T20:09:19.000Z",
+                "date": "2021-06-06T10:51:12.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -39,7 +39,7 @@ export default {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-06-01T20:09:19.000Z",
+                "date": "2021-06-06T10:51:12.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -61,7 +61,7 @@ export default {
                 "pagePath": "articles/2021/04/11.md",
                 "title": "2021/04/05〜2021/04/11の最新情報",
                 "link": "articles/2021/04/11.html",
-                "date": "2021-06-01T20:09:19.000Z",
+                "date": "2021-06-06T10:51:12.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -82,7 +82,7 @@ export default {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-06-01T20:09:19.000Z",
+                "date": "2021-06-06T10:51:12.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -104,7 +104,7 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-06-01T20:09:19.000Z",
+                "date": "2021-06-06T10:51:12.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -126,7 +126,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 22
+                "count": 23
             },
             {
                 "name": "notice",
@@ -136,7 +136,7 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 15
+                "count": 16
             },
             {
                 "name": "deno_std",
@@ -267,6 +267,10 @@ export default {
                 "count": 1
             },
             {
+                "name": "Eta",
+                "count": 1
+            },
+            {
                 "name": "Flat Data",
                 "count": 1
             },
@@ -332,6 +336,10 @@ export default {
             },
             {
                 "name": "ts_morph",
+                "count": 1
+            },
+            {
+                "name": "twd",
                 "count": 1
             },
             {
