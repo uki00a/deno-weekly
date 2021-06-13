@@ -1,0 +1,81 @@
+<!doctype html><html class="" data-reactroot=""><head><script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+            window.GoogleAnalyticsObject="ga";(window.ga=window.ga||function(){(window.ga.q=window.ga.q||[]).push(arguments);}),(window.ga.l=1*new Date());
+
+            ga('create', 'G-MK2K2MRMBF', 'auto');
+            ga('send', 'pageview');</script><link rel="icon" href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"/><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"/>
+<meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="x-ua-compatible" content="ie=edge"/><meta data-react-helmet="true" name="description" content="このサイトでは、毎週Denoに関わる最新情報を発信しています。"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/><meta data-react-helmet="true" property="og:title" content="2021/06/07〜2021/06/13の最新情報 · 週刊Deno"/><meta data-react-helmet="true" property="og:description" content="このサイトでは、毎週Denoに関わる最新情報を発信しています。"/><meta data-react-helmet="true" property="og:type" content="article"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:site" content="@uki00a"/>
+<title data-react-helmet="true">2021/06/07〜2021/06/13の最新情報 · 週刊Deno</title>
+<link data-react-helmet="true" rel="stylesheet" href="https://uki00a.github.io/deno-weekly/assets/index.css"/><link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="https://uki00a.github.io/deno-weekly/assets/prism.css"/>
+<script data-react-helmet="true" >
+    const shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (shouldSetIsDark) {
+      document.documentElement.classList.add('is_dark');
+      document.getElementById('prismTheme').href = "https://uki00a.github.io/deno-weekly/assets/prism_tomorrow.css";
+    }
+  </script>
+</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="https://uki00a.github.io/deno-weekly/">週刊Deno</a><aside class="hide_on_mobile"><div class="aside_card"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-close-l.svg&quot;)"></a><h1><a href="https://uki00a.github.io/deno-weekly/">週刊Deno</a></h1><p class="description">このサイトでは、毎週Denoに関わる最新情報を発信しています。</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-github-logo" href="https://github.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-github-logo.svg&quot;)"></a></li><li class="flex_center"><a class="czs-message-l" href="mailto:uki00a@gmail.com" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-message-l.svg&quot;)"></a></li><li class="flex_center"><a class="czs-twitter" href="https://twitter.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-twitter.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly"><span class="czs-home-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-home-l.svg&quot;)"></span>ホーム</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/tags"><span class="czs-tag-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-tag-l.svg&quot;)"></span>タグ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/categories"><span class="czs-category-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-category-l.svg&quot;)"></span>カテゴリ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/archives"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>アーカイブ</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/about/index.html"><span class="czs-about-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-about-l.svg&quot;)"></span>このサイトについて</a></li></ul></nav></div><nav class="toc"><ol><li><a href="#deno-v1110%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">Deno v1.11.0がリリースされました</a></li><li><a href="#deno_std-v0980%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">deno_std v0.98.0がリリースされました</a></li><li><a href="#denolanddeno_docker">denoland/deno_docker</a></li><li><a href="#twd-v030%E5%8F%8A%E3%81%B3v040%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">twd v0.3.0及びv0.4.0がリリース</a></li></ol></nav></aside><section class="main"><div class="main_post_meta"><time dateTime="Sun Jun 13 2021 11:38:59 GMT+0000 (Coordinated Universal Time)">2021-06-13</time> · <!-- -->Yuki Tanaka</div><article><nav class="toc"><ol><li><a href="#deno-v1110%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">Deno v1.11.0がリリースされました</a></li><li><a href="#deno_std-v0980%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">deno_std v0.98.0がリリースされました</a></li><li><a href="#denolanddeno_docker">denoland/deno_docker</a></li><li><a href="#twd-v030%E5%8F%8A%E3%81%B3v040%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">twd v0.3.0及びv0.4.0がリリース</a></li></ol></nav><h2 id="deno-v1110%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F"><a href="https://github.com/denoland/deno/releases/tag/v1.11.0">Deno v1.11.0がリリースされました</a><a class="anchor" href="#deno-v1110%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">§</a></h2>
+<p>Deno v1.11.0がリリースされました。</p>
+<p>このリリースでは、<code>deno compile</code>や<code>deno lsp</code>への新機能の追加などが実施されています。</p>
+<ul>
+<li>TypeScriptがv4.3にアップグレードされました</li>
+<li><code>Crypto.randomUUID()</code>が実装されました</li>
+<li><code>SubtleCrypto.digest()</code>が実装されました</li>
+<li><code>fetch()</code>でabortがサポートされました</li>
+<li><code>TextDecoderStream</code>と<code>TextEncoderStream</code>がサポートされました。</li>
+<li><code>Deno.watchFs</code>が<code>FsWatcher</code>インターフェースを返却されるように修正されました
+<ul>
+<li><code>FsWatcher.return</code>メソッドはv2.0にて削除される予定のようです</li>
+</ul>
+</li>
+<li><code>deno info</code>コマンドでlocalStorageの保存先が表示されるようになりました</li>
+<li><code>deno lint</code>がstableという扱いになりました</li>
+<li><code>deno compile</code>で<code>data:</code>URLのダイナミックimportがサポートされました</li>
+<li><code>deno compile</code>で<code>Deno.emit()</code>がサポートされました</li>
+<li><code>deno lsp</code>のCodeLensでテストコードの実行がサポートされました</li>
+<li><code>deno lsp</code>でモジュールレジストリの自動検出が実装されました</li>
+<li><code>BroadcastChannel</code>が実装されました(unstable)</li>
+</ul>
+<hr>
+<ul>
+<li><a href="https://deno.com/blog/v1.11">Deno 1.11 Release Notes</a></li>
+<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-11-0">Deno 1.11.0 がリリースされたので新機能や変更点の紹介</a></li>
+</ul>
+<h2 id="deno_std-v0980%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F"><a href="https://github.com/denoland/deno_std/releases/tag/0.98.0">deno_std v0.98.0がリリースされました</a><a class="anchor" href="#deno_std-v0980%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">§</a></h2>
+<p>deno_stdのv0.98.0がリリースされました。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>async: async/teeモジュールが追加されました</li>
+<li>async/mux: <code>MuxAsyncIterator.add</code>で<code>AsyncIterable</code>がサポートされました</li>
+<li>io/bufio: <code>readLines</code>と<code>readStringDelim</code>にオプションが追加され、<code>TextDecoder</code>の挙動を詳細に制御できるようになりました</li>
+<li>encoding/binary: <code>readExact</code>関数が追加されました</li>
+<li>encoding/binary: <code>getNBytes</code>関数において、初回の<code>Deno.Reader.read</code>の呼び出しで指定したバイト数未満のデータしか読めなかった際に、即座に例外が投げられる問題が修正されました</li>
+<li>encoding/binary: <code>varnum</code>などの関数で<code>Uint8Array.byteOffset</code>が無視される問題が修正されました</li>
+<li>node: perf_hooksモジュールが追加されました</li>
+<li>node/events: <code>EventEmitter#once/getMaxListeners/setMaxListeners</code>がNode.jsと同じ挙動をするように修正されました</li>
+<li>testing/asserts: <code>WeakMap</code>や<code>WeakSet</code>などのオブジェクト同士を比較しようとすると、例外が投げられるように変更されました</li>
+</ul>
+<hr>
+<p><a href="https://github.com/denoland/deno_std/releases/tag/0.98.0">https://github.com/denoland/deno_std/releases/tag/0.98.0</a></p>
+<h2 id="denolanddeno_docker"><a href="https://github.com/denoland/deno_docker">denoland/deno_docker</a><a class="anchor" href="#denolanddeno_docker">§</a></h2>
+<p>今まで、DenoのDockerイメージは<a href="https://github.com/hayd">Andy Hayden</a>氏によって個人でメンテナンスされていました。</p>
+<p>この度、このDockerイメージのGitHubリポジトリが、denoland Organizationに移管され、Deno公式のDockerイメージとなりました。</p>
+<p>そのため、今後、DockerでDenoを動かしたいときは、このイメージを使用するとよいと思います。</p>
+<hr>
+<ul>
+<li><a href="https://github.com/denoland/deno_docker">https://github.com/denoland/deno_docker</a></li>
+<li><a href="https://hub.docker.com/r/denoland/deno">https://hub.docker.com/r/denoland/deno</a></li>
+</ul>
+<h2 id="twd-v030%E5%8F%8A%E3%81%B3v040%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">twd v0.3.0及びv0.4.0がリリース<a class="anchor" href="#twd-v030%E5%8F%8A%E3%81%B3v040%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>
+<p>Tailwind CSSライクなCLIツールである<a href="https://github.com/kt3k/twd">twd</a>のv0.3.0とv0.4.0がリリースされました。</p>
+<ul>
+<li><code>twd.ts</code>によってテーマやリセットスタイルシートなどの挙動をカスタマイズできるようになりました。</li>
+<li><code>twd -i</code>で<code>twd.ts</code>の雛形を生成できるようになりました。</li>
+<li><code>twd/colors.ts</code>が追加されました。</li>
+<li><code>twd</code>コマンドの引数としてディレクトリを指定できるようになりました。</li>
+<li><a href="https://twind.dev/handbook/plugins.html">twind互換のプラグインシステム</a>がサポートされました。</li>
+</ul>
+<hr>
+<ul>
+<li><a href="https://github.com/kt3k/twd/compare/v0.2.0...v0.3.0">https://github.com/kt3k/twd/compare/v0.2.0...v0.3.0</a></li>
+<li><a href="https://github.com/kt3k/twd/compare/v0.3.0...v0.4.0">https://github.com/kt3k/twd/compare/v0.3.0...v0.4.0</a></li>
+</ul></article></section><footer>Powered by <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="https://uki00a.github.io/deno-weekly/index.js"></script></body></html>

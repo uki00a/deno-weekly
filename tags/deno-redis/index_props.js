@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -44,7 +44,7 @@ export default {
                 "pagePath": "articles/2021/03/28.md",
                 "title": "2021/03/22〜2021/03/28の最新情報",
                 "link": "articles/2021/03/28.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -66,7 +66,7 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -88,7 +88,7 @@ export default {
                 "pagePath": "articles/2021/02/28.md",
                 "title": "2021/02/22〜2021/02/28の最新情報",
                 "link": "articles/2021/02/28.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -109,7 +109,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 23
+                "count": 24
             },
             {
                 "name": "notice",
@@ -119,11 +119,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 16
+                "count": 17
             },
             {
                 "name": "deno_std",
-                "count": 9
+                "count": 10
             },
             {
                 "name": "deno-postgres",
@@ -155,6 +155,10 @@ export default {
             },
             {
                 "name": "Trex",
+                "count": 2
+            },
+            {
+                "name": "twd",
                 "count": 2
             },
             {
@@ -319,10 +323,6 @@ export default {
             },
             {
                 "name": "ts_morph",
-                "count": 1
-            },
-            {
-                "name": "twd",
                 "count": 1
             },
             {

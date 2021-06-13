@@ -44,7 +44,7 @@ export default {
     'contributors': [
         "Yuki Tanaka"
     ],
-    'date': "2021-06-06T10:51:12.000Z",
+    'date': "2021-06-13T11:38:59.000Z",
     'updated': null,
     'excerpt': " 1. サードパーティモジュールなどの最新情報 1. luath - Vite/WMRライクなフロントエンドビルドツール 2. estest - DenoやNode.jsなどで動作するテストフレームワーク 3. Servest v1.2.0 4. deno-bin 2. その他の情報 1. 第10...",
     'cover': undefined,
@@ -64,7 +64,7 @@ export default {
                 "pagePath": "articles/2021/05/16.md",
                 "title": "2021/05/10〜2021/05/16の最新情報",
                 "link": "articles/2021/05/16.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -86,7 +86,7 @@ export default {
                 "pagePath": "articles/2021/05/09.md",
                 "title": "2021/05/03〜2021/05/09の最新情報",
                 "link": "articles/2021/05/09.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -106,7 +106,7 @@ export default {
                 "pagePath": "articles/2021/05/23.md",
                 "title": "2021/05/17〜2021/05/23の最新情報",
                 "link": "articles/2021/05/23.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -128,7 +128,7 @@ export default {
                 "pagePath": "articles/2021/05/02.md",
                 "title": "2021/04/26〜2021/05/02の最新情報",
                 "link": "articles/2021/05/02.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -149,7 +149,7 @@ export default {
                 "pagePath": "articles/2021/05/30.md",
                 "title": "2021/05/24〜2021/05/30の最新情報",
                 "link": "articles/2021/05/30.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -170,7 +170,7 @@ export default {
                 "pagePath": "articles/2021/03/07.md",
                 "title": "2021/03/01〜2021/03/07の最新情報",
                 "link": "articles/2021/03/07.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -193,7 +193,7 @@ export default {
                 "pagePath": "articles/2021/03/21.md",
                 "title": "2021/03/15〜2021/03/21の最新情報",
                 "link": "articles/2021/03/21.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -214,7 +214,7 @@ export default {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -238,7 +238,7 @@ export default {
                 "pagePath": "articles/2021/03/28.md",
                 "title": "2021/03/22〜2021/03/28の最新情報",
                 "link": "articles/2021/03/28.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -260,7 +260,7 @@ export default {
                 "pagePath": "articles/2021/01/10.md",
                 "title": "2021/01/04〜2021/01/10の最新情報",
                 "link": "articles/2021/01/10.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -279,7 +279,7 @@ export default {
                 "pagePath": "articles/2021/01/17.md",
                 "title": "2021/01/11〜2021/01/17の最新情報",
                 "link": "articles/2021/01/17.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -294,7 +294,7 @@ export default {
                 "pagePath": "articles/2021/01/03.md",
                 "title": "2020/12/28〜2021/01/03の最新情報",
                 "link": "articles/2021/01/03.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -312,7 +312,7 @@ export default {
                 "pagePath": "articles/2021/01/31.md",
                 "title": "2021/01/25〜2021/01/31の最新情報",
                 "link": "articles/2021/01/31.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -331,7 +331,7 @@ export default {
                 "pagePath": "articles/2021/01/24.md",
                 "title": "2021/01/18〜2021/01/24の最新情報",
                 "link": "articles/2021/01/24.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -350,7 +350,7 @@ export default {
                 "pagePath": "articles/2021/01/02.md",
                 "title": "はじめに",
                 "link": "articles/2021/01/02.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -365,7 +365,7 @@ export default {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -387,7 +387,7 @@ export default {
                 "pagePath": "articles/2021/04/18.md",
                 "title": "2021/04/12〜2021/04/18の最新情報",
                 "link": "articles/2021/04/18.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -409,7 +409,7 @@ export default {
                 "pagePath": "articles/2021/04/11.md",
                 "title": "2021/04/05〜2021/04/11の最新情報",
                 "link": "articles/2021/04/11.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -430,7 +430,7 @@ export default {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -454,7 +454,7 @@ export default {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -476,7 +476,7 @@ export default {
                 "pagePath": "articles/2021/02/21.md",
                 "title": "2021/02/15〜2021/02/21の最新情報",
                 "link": "articles/2021/02/21.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -498,7 +498,7 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -520,7 +520,7 @@ export default {
                 "pagePath": "articles/2021/02/28.md",
                 "title": "2021/02/22〜2021/02/28の最新情報",
                 "link": "articles/2021/02/28.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -541,7 +541,7 @@ export default {
                 "pagePath": "articles/2021/06/06.md",
                 "title": "2021/06/01〜2021/06/06の最新情報",
                 "link": "articles/2021/06/06.html",
-                "date": "2021-06-06T10:51:12.000Z",
+                "date": "2021-06-13T11:38:59.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -556,12 +556,32 @@ export default {
                     "Eta"
                 ],
                 "excerpt": " 1. Deno v1.10.3がリリース 2. wpt.deno.land 3. twd 4. Eta Deno v1.10.3がリリース Deno v1.10.3がリリースされました。 deno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。 変更点: - deno lspで..."
+            },
+            {
+                "pagePath": "articles/2021/06/13.md",
+                "title": "2021/06/07〜2021/06/13の最新情報",
+                "link": "articles/2021/06/13.html",
+                "date": "2021-06-13T11:38:59.000Z",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "deno_std",
+                    "twd"
+                ],
+                "excerpt": " 1. Deno v1.11.0がリリースされました 2. deno_std v0.98.0がリリースされました 3. denoland/deno_docker 4. twd v0.3.0及びv0.4.0がリリース Deno v1.11.0がリリースされました Deno v1.11.0がリリースされました。 このリリ..."
             }
         ],
         "categories": [
             {
                 "name": "news",
-                "count": 23
+                "count": 24
             },
             {
                 "name": "notice",
@@ -571,11 +591,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 16
+                "count": 17
             },
             {
                 "name": "deno_std",
-                "count": 9
+                "count": 10
             },
             {
                 "name": "deno-postgres",
@@ -607,6 +627,10 @@ export default {
             },
             {
                 "name": "Trex",
+                "count": 2
+            },
+            {
+                "name": "twd",
                 "count": 2
             },
             {
@@ -771,10 +795,6 @@ export default {
             },
             {
                 "name": "ts_morph",
-                "count": 1
-            },
-            {
-                "name": "twd",
                 "count": 1
             },
             {
