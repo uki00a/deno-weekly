@@ -17,7 +17,7 @@ jobs:
         deno-version: 1.10.2
     - name: Run fmt
       run: |
-        deno fmt --check --ignore=articles
+        deno fmt --check --ignore=articles,gallery.md
     - name: Run lint
       run: |
         deno lint --unstable --ignore=articles
