@@ -25,6 +25,7 @@ ${toc}
 |[Cliffy](https://github.com/c4spar/deno-cliffy)|CLIフレームワーク|
 |[ts-morph](https://github.com/dsherret/ts-morph)|TypeScriptコンパイラAPIのラッパ|
 |[code-block-writer](https://github.com/dsherret/code-block-writer)|TypeScript/JavaScriptコードの生成をサポート|
+|[packup](https://github.com/kt3k/packup)|Parcelライクなビルドツール|
 |[luath](https://github.com/cmorten/luath)|フロントエンドビルドツール|
 |[swdev](https://github.com/mizchi/swdev)|Service Workerベースのフロントエンドビルドツール|
 |[deno-rollup](https://github.com/cmorten/deno-rollup)|RollupのDenoポート|
@@ -48,6 +49,7 @@ ${toc}
 |[slack_web_api](https://deno.land/x/slack_web_api)|Slack APIのクライアント|
 |[wizard](https://github.com/deno-libs/wizard)|BDDスタイルのテストライブラリ|
 |[estest](https://github.com/mikeal/estest)|Deno・Node.jsなどで動作するテストフレームワーク|
+|[Flat Data](https://github.com/githubocto/flat)|HTTPエンドポイントまたはSQLクエリからデータを取得し、GitHubリポジトリに格納するためのGitHubアクション|
 |[denoland/setup-deno](https://github.com/denoland/setup-deno)|GitHub ActionsからDenoを使用する|
 |[depsbot](https://github.com/denosaurs/depsbot)|モジュールの更新状態をチェックしてくれるGitHubアクション|
 |[terraform-deploy-provider](https://github.com/wperron/terraform-deploy-provider)|Deno DeployのTerraformプロパイダ|
@@ -56,7 +58,9 @@ ${toc}
 |[deno_license_checker](https://github.com/kt3k/deno_license_checker)|ライセンスヘッダのチェックツール|
 |[land](https://github.com/postui/land)|deno.land/xで公開されているツールを保存せずに実行するツール|
 |[deno-codeview](https://github.com/c4spar/deno-codeview)|カバレッジレポートの閲覧ツール|
+|[vscode_deno](https://github.com/denoland/vscode_deno)|Denoのvscode拡張|
 |[denops.vim](https://github.com/vim-denops/denops.vim)|DenoでVimプラグインを書くためのエコシステム|
+|[emacs-ng](https://github.com/emacs-ng/emacs-ng)|Denoを搭載したEmacsのフォーク|
 
 ## Webサイト
 
