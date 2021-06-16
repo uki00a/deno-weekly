@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/04/25.md",
                 "title": "2021/04/19〜2021/04/25の最新情報",
                 "link": "articles/2021/04/25.html",
-                "date": "2021-06-13T11:38:59.000Z",
+                "date": "2021-06-16T16:10:58.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [

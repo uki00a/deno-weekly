@@ -48,6 +48,11 @@ export default {
             icon: "czs-box-l",
         },
         {
+            text: "ギャラリー",
+            link: "https://uki00a.github.io/deno-weekly/gallery.html",
+            icon: "czs-box-l",
+        },
+        {
             text: "このサイトについて",
             link: "https://uki00a.github.io/deno-weekly/about/index.html",
             icon: "czs-about-l",

@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/06/06.md",
                 "title": "2021/06/01〜2021/06/06の最新情報",
                 "link": "articles/2021/06/06.html",
-                "date": "2021-06-13T11:38:59.000Z",
+                "date": "2021-06-16T16:10:58.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -40,7 +40,7 @@ export default {
                 "pagePath": "articles/2021/06/13.md",
                 "title": "2021/06/07〜2021/06/13の最新情報",
                 "link": "articles/2021/06/13.html",
-                "date": "2021-06-13T11:38:59.000Z",
+                "date": "2021-06-16T16:10:58.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [

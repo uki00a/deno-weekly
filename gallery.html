@@ -1,0 +1,251 @@
+<!doctype html><html class="" data-reactroot=""><head><script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+            window.GoogleAnalyticsObject="ga";(window.ga=window.ga||function(){(window.ga.q=window.ga.q||[]).push(arguments);}),(window.ga.l=1*new Date());
+
+            ga('create', 'G-MK2K2MRMBF', 'auto');
+            ga('send', 'pageview');</script><link rel="icon" href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"/><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"/>
+<meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="x-ua-compatible" content="ie=edge"/><meta data-react-helmet="true" name="description" content="このサイトでは、毎週Denoに関わる最新情報を発信しています。"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/><meta data-react-helmet="true" property="og:title" content="ギャラリー · 週刊Deno"/><meta data-react-helmet="true" property="og:description" content="このサイトでは、毎週Denoに関わる最新情報を発信しています。"/><meta data-react-helmet="true" property="og:type" content="article"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:site" content="@uki00a"/>
+<title data-react-helmet="true">ギャラリー · 週刊Deno</title>
+<link data-react-helmet="true" rel="stylesheet" href="https://uki00a.github.io/deno-weekly/assets/index.css"/><link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="https://uki00a.github.io/deno-weekly/assets/prism.css"/>
+<script data-react-helmet="true" >
+    const shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (shouldSetIsDark) {
+      document.documentElement.classList.add('is_dark');
+      document.getElementById('prismTheme').href = "https://uki00a.github.io/deno-weekly/assets/prism_tomorrow.css";
+    }
+  </script>
+</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="https://uki00a.github.io/deno-weekly/">週刊Deno</a><aside class="hide_on_mobile"><div class="aside_card"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-close-l.svg&quot;)"></a><h1><a href="https://uki00a.github.io/deno-weekly/">週刊Deno</a></h1><p class="description">このサイトでは、毎週Denoに関わる最新情報を発信しています。</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-github-logo" href="https://github.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-github-logo.svg&quot;)"></a></li><li class="flex_center"><a class="czs-message-l" href="mailto:uki00a@gmail.com" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-message-l.svg&quot;)"></a></li><li class="flex_center"><a class="czs-twitter" href="https://twitter.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-twitter.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly"><span class="czs-home-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-home-l.svg&quot;)"></span>ホーム</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/tags"><span class="czs-tag-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-tag-l.svg&quot;)"></span>タグ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/categories"><span class="czs-category-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-category-l.svg&quot;)"></span>カテゴリ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/archives"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>アーカイブ</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/gallery.html"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>ギャラリー</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/about/index.html"><span class="czs-about-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-about-l.svg&quot;)"></span>このサイトについて</a></li></ul></nav></div><nav class="toc"><ol><li><a href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール</a></li><li><a href="#web%E3%82%B5%E3%82%A4%E3%83%88">Webサイト</a></li></ol></nav></aside><section class="main"><article><h1>ギャラリー</h1>
+<nav class="toc"><ol><li><a href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール</a></li><li><a href="#web%E3%82%B5%E3%82%A4%E3%83%88">Webサイト</a></li></ol></nav><p>このページには、このサイトで紹介したことのあるDenoモジュールなどの一覧を掲載しています。</p>
+<h2 id="%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール<a class="anchor" href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">§</a></h2>
+<div class="table_wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:center">名前</th>
+<th style="text-align:center">概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://github.com/denodrivers/postgres">deno-postgres</a></td>
+<td style="text-align:center">PostgreSQLクライアント</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/denodrivers/mysql">deno_mysql</a></td>
+<td style="text-align:center">MySQLクライアント</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/dyedgreen/deno-sqlite">deno-sqlite</a></td>
+<td style="text-align:center">SQLiteライブラリ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/denodrivers/redis">deno-redis</a></td>
+<td style="text-align:center">Redisクライアント</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/jeremyBanks/database">x/database</a></td>
+<td style="text-align:center">データベースドライバの共通インターフェース</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/oakserver/oak">Oak</a></td>
+<td style="text-align:center">Webフレームワーク</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/keroxp/servest">Servest</a></td>
+<td style="text-align:center">Webサーバ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/alosaur/alosaur">alosaur</a></td>
+<td style="text-align:center">Webフレームワーク</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/jurassiscripts/velociraptor">Velociraptor</a></td>
+<td style="text-align:center">タスクランナ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/crewdevio/Trex">Trex</a></td>
+<td style="text-align:center">パッケージマネージャ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/c4spar/deno-cliffy">Cliffy</a></td>
+<td style="text-align:center">CLIフレームワーク</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/dsherret/ts-morph">ts-morph</a></td>
+<td style="text-align:center">TypeScriptコンパイラAPIのラッパ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/dsherret/code-block-writer">code-block-writer</a></td>
+<td style="text-align:center">TypeScript/JavaScriptコードの生成をサポート</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/kt3k/packup">packup</a></td>
+<td style="text-align:center">Parcelライクなビルドツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/cmorten/luath">luath</a></td>
+<td style="text-align:center">フロントエンドビルドツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/mizchi/swdev">swdev</a></td>
+<td style="text-align:center">Service Workerベースのフロントエンドビルドツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/cmorten/deno-rollup">deno-rollup</a></td>
+<td style="text-align:center">RollupのDenoポート</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/kt3k/twd">twd</a></td>
+<td style="text-align:center">Tailwind CSSライクなCLIツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/open-source-labs/vno">vno</a></td>
+<td style="text-align:center">Vue.jsアプリの開発ツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/crewdevio/Snel">Snel</a></td>
+<td style="text-align:center">Svelteアプリの開発ツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/alosaur/angular_deno">angular_deno</a></td>
+<td style="text-align:center">Angularのレンダリングエンジン</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/nanojsx/nano">Nano JSX</a></td>
+<td style="text-align:center">Deno・Node.jsで動作するJSXライブラリ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/xcatliu/pagic">Pagic</a></td>
+<td style="text-align:center">Reactベースのスタティックサイトジェネレータ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/lumeland/lume">Lume</a></td>
+<td style="text-align:center">スタティックサイトジェネレータ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/eta-dev/eta">Eta</a></td>
+<td style="text-align:center">Deno・Node.jsなどで動作するテンプレートエンジン</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/oslabs-beta/sono.io">sono.io</a></td>
+<td style="text-align:center">WebSocketを使ったリアルタイムアプリケーション用のモジュール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/oslabs-beta/dashport">Dashport</a></td>
+<td style="text-align:center">Passport.jsライクな認証モジュール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/deno-libs/gql">deno-libs/gql</a></td>
+<td style="text-align:center">GraphQLサーバ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/b-fuze/deno-dom">deno-dom</a></td>
+<td style="text-align:center">DOM実装</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/lucacasonato/deno-puppeteer">deno-puppeteer</a></td>
+<td style="text-align:center">PuppeteerのDenoポート</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/drashland/sinco">Sinco</a></td>
+<td style="text-align:center">ブラウザオートメーションツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/satyarohith/sift">Sift</a></td>
+<td style="text-align:center">Deno Deployのルーティングモジュール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/mandarineorg/little-crony">little_crony</a></td>
+<td style="text-align:center">CRONライブラリ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/denosaurs/pngs">pngs</a></td>
+<td style="text-align:center">pngイメージのエンコード/デコード</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://deno.land/x/slack_web_api">slack_web_api</a></td>
+<td style="text-align:center">Slack APIのクライアント</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/deno-libs/wizard">wizard</a></td>
+<td style="text-align:center">BDDスタイルのテストライブラリ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/mikeal/estest">estest</a></td>
+<td style="text-align:center">Deno・Node.jsなどで動作するテストフレームワーク</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/githubocto/flat">Flat Data</a></td>
+<td style="text-align:center">HTTPエンドポイントまたはSQLクエリからデータを取得し、GitHubリポジトリに格納するためのGitHubアクション</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/denoland/setup-deno">denoland/setup-deno</a></td>
+<td style="text-align:center">GitHub ActionsからDenoを使用する</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/denosaurs/depsbot">depsbot</a></td>
+<td style="text-align:center">モジュールの更新状態をチェックしてくれるGitHubアクション</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/wperron/terraform-deploy-provider">terraform-deploy-provider</a></td>
+<td style="text-align:center">Deno DeployのTerraformプロパイダ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/kt3k/deploy_dir">deploy_dir</a></td>
+<td style="text-align:center">Deno Deployへのデプロイツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/kt3k/deno-bin">deno-bin</a></td>
+<td style="text-align:center">Node.jsからDenoを使用するためのツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/kt3k/deno_license_checker">deno_license_checker</a></td>
+<td style="text-align:center">ライセンスヘッダのチェックツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/postui/land">land</a></td>
+<td style="text-align:center">deno.land/xで公開されているツールを保存せずに実行するツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/c4spar/deno-codeview">deno-codeview</a></td>
+<td style="text-align:center">カバレッジレポートの閲覧ツール</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/denoland/vscode_deno">vscode_deno</a></td>
+<td style="text-align:center">Denoのvscode拡張</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/vim-denops/denops.vim">denops.vim</a></td>
+<td style="text-align:center">DenoでVimプラグインを書くためのエコシステム</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/emacs-ng/emacs-ng">emacs-ng</a></td>
+<td style="text-align:center">Denoを搭載したEmacsのフォーク</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="web%E3%82%B5%E3%82%A4%E3%83%88">Webサイト<a class="anchor" href="#web%E3%82%B5%E3%82%A4%E3%83%88">§</a></h2>
+<div class="table_wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:center">名前</th>
+<th style="text-align:center">概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://wpt.deno.land/">wpt.deno.land</a></td>
+<td style="text-align:center">DenoのWPTの網羅率を掲載しています</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://status.deno.land/">status.deno.land</a></td>
+<td style="text-align:center">Denoのモジュールレジストリなどの稼働状況を掲載</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://crux.land/">crux.land</a></td>
+<td style="text-align:center">スクリプトレジストリ</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://zenn.dev/uki00a/books/effective-deno">Effective Deno</a></td>
+<td style="text-align:center">Denoの本</td>
+</tr>
+</tbody>
+</table></div></article></section><footer>Powered by <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="https://uki00a.github.io/deno-weekly/index.js"></script></body></html>
