@@ -17,10 +17,10 @@ export default {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/05/09.md",
-                "title": "2021/05/03〜2021/05/09の最新情報",
-                "link": "articles/2021/05/09.html",
-                "date": "2021-06-16T16:10:58.000Z",
+                "pagePath": "articles/2021/06/20.md",
+                "title": "2021/06/14〜2021/06/20の最新情報",
+                "link": "articles/2021/06/20.html",
+                "date": "2021-06-20T10:42:00.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -30,17 +30,17 @@ export default {
                     "news"
                 ],
                 "tags": [
-                    "alosaur",
-                    "book",
+                    "deno",
+                    "deno_std",
                     "Oak"
                 ],
-                "excerpt": " 1. alosaur v0.31.0がリリース 2. alosaur-lite 3. Oak v7.4.0がリリース 4. Effective Deno alosaur v0.31.0がリリース DenoのWebフレームワークであるalosaurのv0.31.0がリリースされました。 変更点: - ContextがHttpConte..."
+                "excerpt": " 1. Deno v1.11.1がリリースされました 2. deno_std v0.99.0がリリースされました 3. Oak v7.6.0がリリースされました 4. Deno internals - how modern JavaScript runtime is built Deno v1.11.1がリリースされました Denoのv..."
             },
             {
                 "pagePath": "articles/2021/04/18.md",
                 "title": "2021/04/12〜2021/04/18の最新情報",
                 "link": "articles/2021/04/18.html",
-                "date": "2021-06-16T16:10:58.000Z",
+                "date": "2021-06-20T10:42:00.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -57,12 +57,32 @@ export default {
                     "esbuild"
                 ],
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.9.0がリリース 2. deno_std v0.93.0がリリース 2. サードパーティモジュールなどの最新情報 1. Oak v7.0.0及びv7.1.0のリリース 2. Servest v1.3.0がリリース 3. esbuildがDenoへの実験的サ..."
+            },
+            {
+                "pagePath": "articles/2021/05/09.md",
+                "title": "2021/05/03〜2021/05/09の最新情報",
+                "link": "articles/2021/05/09.html",
+                "date": "2021-06-20T10:42:00.000Z",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "alosaur",
+                    "book",
+                    "Oak"
+                ],
+                "excerpt": " 1. alosaur v0.31.0がリリース 2. alosaur-lite 3. Oak v7.4.0がリリース 4. Effective Deno alosaur v0.31.0がリリース DenoのWebフレームワークであるalosaurのv0.31.0がリリースされました。 変更点: - ContextがHttpConte..."
             }
         ],
         "categories": [
             {
                 "name": "news",
-                "count": 24
+                "count": 25
             },
             {
                 "name": "notice",
@@ -72,11 +92,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 17
+                "count": 18
             },
             {
                 "name": "deno_std",
-                "count": 10
+                "count": 11
             },
             {
                 "name": "deno-postgres",
@@ -87,15 +107,15 @@ export default {
                 "count": 4
             },
             {
+                "name": "Oak",
+                "count": 3
+            },
+            {
                 "name": "Deno Deploy",
                 "count": 2
             },
             {
                 "name": "luath",
-                "count": 2
-            },
-            {
-                "name": "Oak",
                 "count": 2
             },
             {

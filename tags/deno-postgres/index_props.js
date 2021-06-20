@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/01/31.md",
                 "title": "2021/01/25〜2021/01/31の最新情報",
                 "link": "articles/2021/01/31.html",
-                "date": "2021-06-16T16:10:58.000Z",
+                "date": "2021-06-20T10:42:00.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -36,53 +36,10 @@ export default {
                 "excerpt": " 1. Deno v1.7.1がリリース 2. deno-postgresのv0.5.0/v0.6.0がリリース 3. Harmony - Discord APIライブラリ Deno v1.7.1がリリース Denoのv1.7.1がリリースされました。 このリリースに合わせて、stdのv0.85.0もリリースされ..."
             },
             {
-                "pagePath": "articles/2021/04/25.md",
-                "title": "2021/04/19〜2021/04/25の最新情報",
-                "link": "articles/2021/04/25.html",
-                "date": "2021-06-16T16:10:58.000Z",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "deno",
-                    "deno_std",
-                    "deno-puppeteer",
-                    "deno-postgres",
-                    "land"
-                ],
-                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.9.1/1.9.2のリリース 2. deno_std v0.94.0/0.95.0のリリース 2. サードパーティモジュールなどの最新情報 1. deno-puppeteer v9.0.0のリリース 2. deno-postgres v0.11.0/v0.11.1がリリース..."
-            },
-            {
-                "pagePath": "articles/2021/04/11.md",
-                "title": "2021/04/05〜2021/04/11の最新情報",
-                "link": "articles/2021/04/11.html",
-                "date": "2021-06-16T16:10:58.000Z",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "deno",
-                    "denoland/setup-deno",
-                    "deno-postgres",
-                    "rollup-plugin-deno"
-                ],
-                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.9.0のリリースについて 2. サードパーティモジュールなどの最新情報 1. denoland/setup-deno 2. deno-postgres v0.9.0及びv0.10.0がリリース 3. rollup-plugin-deno Deno本体の最新情報 Den..."
-            },
-            {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-06-16T16:10:58.000Z",
+                "date": "2021-06-20T10:42:00.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -104,7 +61,7 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-06-16T16:10:58.000Z",
+                "date": "2021-06-20T10:42:00.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -121,12 +78,55 @@ export default {
                     "deno-postgres"
                 ],
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.7.3/v1.7.4がリリースされました 2. deno_std v0.87.0がリリースされました 2. サードパーティモジュールの最新情報 1. denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム ..."
+            },
+            {
+                "pagePath": "articles/2021/04/25.md",
+                "title": "2021/04/19〜2021/04/25の最新情報",
+                "link": "articles/2021/04/25.html",
+                "date": "2021-06-20T10:42:00.000Z",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "deno_std",
+                    "deno-puppeteer",
+                    "deno-postgres",
+                    "land"
+                ],
+                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.9.1/1.9.2のリリース 2. deno_std v0.94.0/0.95.0のリリース 2. サードパーティモジュールなどの最新情報 1. deno-puppeteer v9.0.0のリリース 2. deno-postgres v0.11.0/v0.11.1がリリース..."
+            },
+            {
+                "pagePath": "articles/2021/04/11.md",
+                "title": "2021/04/05〜2021/04/11の最新情報",
+                "link": "articles/2021/04/11.html",
+                "date": "2021-06-20T10:42:00.000Z",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "denoland/setup-deno",
+                    "deno-postgres",
+                    "rollup-plugin-deno"
+                ],
+                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.9.0のリリースについて 2. サードパーティモジュールなどの最新情報 1. denoland/setup-deno 2. deno-postgres v0.9.0及びv0.10.0がリリース 3. rollup-plugin-deno Deno本体の最新情報 Den..."
             }
         ],
         "categories": [
             {
                 "name": "news",
-                "count": 24
+                "count": 25
             },
             {
                 "name": "notice",
@@ -136,11 +136,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 17
+                "count": 18
             },
             {
                 "name": "deno_std",
-                "count": 10
+                "count": 11
             },
             {
                 "name": "deno-postgres",
@@ -151,15 +151,15 @@ export default {
                 "count": 4
             },
             {
+                "name": "Oak",
+                "count": 3
+            },
+            {
                 "name": "Deno Deploy",
                 "count": 2
             },
             {
                 "name": "luath",
-                "count": 2
-            },
-            {
-                "name": "Oak",
                 "count": 2
             },
             {
