@@ -70,3 +70,4 @@ ${toc}
 |[status.deno.land](https://status.deno.land/)|Denoのモジュールレジストリなどの稼働状況を掲載|
 |[crux.land](https://crux.land/)|スクリプトレジストリ|
 |[Effective Deno](https://zenn.dev/uki00a/books/effective-deno)|Denoの本|
+|[Deno internals - how modern JavaScript runtime is built](https://www.youtube.com/watch?v=LoknuwupOIE)|Denoの内部構造について|
