@@ -18,6 +18,7 @@ ${toc}
 |[deno-redis](https://github.com/denodrivers/redis)|Redisクライアント|
 |[x/database](https://github.com/jeremyBanks/database)|データベースドライバの共通インターフェース|
 |[Oak](https://github.com/oakserver/oak)|Webフレームワーク|
+|[fresh](https://github.com/lucacasonato/fresh)|Deno Deployで動作するPreactベースのフレームワーク|
 |[Servest](https://github.com/keroxp/servest)|Webサーバ|
 |[alosaur](https://github.com/alosaur/alosaur)|Webフレームワーク|
 |[Velociraptor](https://github.com/jurassiscripts/velociraptor)|タスクランナ|
@@ -46,6 +47,7 @@ ${toc}
 |[Sift](https://github.com/satyarohith/sift)|Deno Deployのルーティングモジュール|
 |[little_crony](https://github.com/mandarineorg/little-crony)|CRONライブラリ|
 |[pngs](https://github.com/denosaurs/pngs)|pngイメージのエンコード/デコード|
+|[xml](https://github.com/lowlighter/xml)|Denoで動作するXMLモジュール|
 |[slack_web_api](https://deno.land/x/slack_web_api)|Slack APIのクライアント|
 |[wizard](https://github.com/deno-libs/wizard)|BDDスタイルのテストライブラリ|
 |[estest](https://github.com/mikeal/estest)|Deno・Node.jsなどで動作するテストフレームワーク|
