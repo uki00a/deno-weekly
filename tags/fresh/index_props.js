@@ -2,24 +2,24 @@ import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js'
 import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
-    'pagePath': "tags/x/database/",
+    'pagePath': "tags/fresh/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/x/database/index.html",
+    'outputPath': "tags/fresh/index.html",
     'head': React.createElement(React.Fragment, null,
         React.createElement(Ga, { id: "G-MK2K2MRMBF" })),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
-    'title': "x/database",
+    'title': "fresh",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/03/07.md",
-                "title": "2021/03/01〜2021/03/07の最新情報",
-                "link": "articles/2021/03/07.html",
+                "pagePath": "articles/2021/06/27.md",
+                "title": "2021/06/21〜2021/06/27の最新情報",
+                "link": "articles/2021/06/27.html",
                 "date": "2021-06-27T10:26:05.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
@@ -31,13 +31,10 @@ export default {
                 ],
                 "tags": [
                     "deno",
-                    "deno_std",
-                    "ts_morph",
-                    "vno",
-                    "elsa",
-                    "x/database"
+                    "Deno Deploy",
+                    "fresh"
                 ],
-                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.0がリリースされました 2. deno_std v0.89.0がリリース 2. サードパーティモジュールなどの最新情報 1. ts_morphがDenoをサポート 2. vnoがVue 3をサポート 3. elsaの開発が再開されました..."
+                "excerpt": " 1. Deno v1.11.2がリリースされました 2. Deno DeployのBeta 1がリリースされました 3. fresh - Deno Deployで動作するWebフレームワーク 4. xml - Denoで動作するXMLモジュール Deno v1.11.2がリリースされました Deno v1.11..."
             }
         ],
         "categories": [
