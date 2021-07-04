@@ -17,30 +17,10 @@ export default {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/06/27.md",
-                "title": "2021/06/21〜2021/06/27の最新情報",
-                "link": "articles/2021/06/27.html",
-                "date": "2021-06-27T10:26:05.000Z",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "deno",
-                    "Deno Deploy",
-                    "fresh"
-                ],
-                "excerpt": " 1. Deno v1.11.2がリリースされました 2. Deno DeployのBeta 1がリリースされました 3. fresh - Deno Deployで動作するWebフレームワーク 4. xml - Denoで動作するXMLモジュール Deno v1.11.2がリリースされました Deno v1.11..."
-            },
-            {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-06-27T10:26:05.000Z",
+                "date": "2021-07-04T10:33:20.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -61,10 +41,30 @@ export default {
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.3がリリース 2. deno_std v0.92.0がリリース 3. Deno Deployが公開された 2. サードパーティモジュールなどの最新情報 1. Snel - DenoでSvelteアプリを開発するためのツール 2. Sift - De..."
             },
             {
+                "pagePath": "articles/2021/06/27.md",
+                "title": "2021/06/21〜2021/06/27の最新情報",
+                "link": "articles/2021/06/27.html",
+                "date": "2021-07-04T10:33:20.000Z",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "Deno Deploy",
+                    "fresh"
+                ],
+                "excerpt": " 1. Deno v1.11.2がリリースされました 2. Deno DeployのBeta 1がリリースされました 3. fresh - Deno Deployで動作するWebフレームワーク 4. xml - Denoで動作するXMLモジュール Deno v1.11.2がリリースされました Deno v1.11..."
+            },
+            {
                 "pagePath": "articles/2021/05/30.md",
                 "title": "2021/05/24〜2021/05/30の最新情報",
                 "link": "articles/2021/05/30.html",
-                "date": "2021-06-27T10:26:05.000Z",
+                "date": "2021-07-04T10:33:20.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -85,7 +85,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 26
+                "count": 27
             },
             {
                 "name": "notice",
@@ -95,11 +95,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 19
+                "count": 20
             },
             {
                 "name": "deno_std",
-                "count": 11
+                "count": 12
             },
             {
                 "name": "deno-postgres",
@@ -110,11 +110,15 @@ export default {
                 "count": 4
             },
             {
+                "name": "Oak",
+                "count": 4
+            },
+            {
                 "name": "Deno Deploy",
                 "count": 3
             },
             {
-                "name": "Oak",
+                "name": "Trex",
                 "count": 3
             },
             {
@@ -127,10 +131,6 @@ export default {
             },
             {
                 "name": "Sinco",
-                "count": 2
-            },
-            {
-                "name": "Trex",
                 "count": 2
             },
             {
@@ -259,6 +259,10 @@ export default {
             },
             {
                 "name": "nano",
+                "count": 1
+            },
+            {
+                "name": "Nessie",
                 "count": 1
             },
             {

@@ -17,29 +17,10 @@ export default {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/01/10.md",
-                "title": "2021/01/04〜2021/01/10の最新情報",
-                "link": "articles/2021/01/10.html",
-                "date": "2021-06-27T10:26:05.000Z",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "vno",
-                    "Lume"
-                ],
-                "excerpt": " 1. vno 2. Lume 3. bench - DenoとNode.jsフレームワークのベンチマーク vno vnoはDenoでVue.jsを用いた開発を行うためのビルドツールです。 現時点では以下のような機能が提供されているようです。 - シングルファイルコンポ..."
-            },
-            {
                 "pagePath": "articles/2021/03/07.md",
                 "title": "2021/03/01〜2021/03/07の最新情報",
                 "link": "articles/2021/03/07.html",
-                "date": "2021-06-27T10:26:05.000Z",
+                "date": "2021-07-04T10:33:20.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -57,12 +38,31 @@ export default {
                     "x/database"
                 ],
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.0がリリースされました 2. deno_std v0.89.0がリリース 2. サードパーティモジュールなどの最新情報 1. ts_morphがDenoをサポート 2. vnoがVue 3をサポート 3. elsaの開発が再開されました..."
+            },
+            {
+                "pagePath": "articles/2021/01/10.md",
+                "title": "2021/01/04〜2021/01/10の最新情報",
+                "link": "articles/2021/01/10.html",
+                "date": "2021-07-04T10:33:20.000Z",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "vno",
+                    "Lume"
+                ],
+                "excerpt": " 1. vno 2. Lume 3. bench - DenoとNode.jsフレームワークのベンチマーク vno vnoはDenoでVue.jsを用いた開発を行うためのビルドツールです。 現時点では以下のような機能が提供されているようです。 - シングルファイルコンポ..."
             }
         ],
         "categories": [
             {
                 "name": "news",
-                "count": 26
+                "count": 27
             },
             {
                 "name": "notice",
@@ -72,11 +72,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 19
+                "count": 20
             },
             {
                 "name": "deno_std",
-                "count": 11
+                "count": 12
             },
             {
                 "name": "deno-postgres",
@@ -87,11 +87,15 @@ export default {
                 "count": 4
             },
             {
+                "name": "Oak",
+                "count": 4
+            },
+            {
                 "name": "Deno Deploy",
                 "count": 3
             },
             {
-                "name": "Oak",
+                "name": "Trex",
                 "count": 3
             },
             {
@@ -104,10 +108,6 @@ export default {
             },
             {
                 "name": "Sinco",
-                "count": 2
-            },
-            {
-                "name": "Trex",
                 "count": 2
             },
             {
@@ -236,6 +236,10 @@ export default {
             },
             {
                 "name": "nano",
+                "count": 1
+            },
+            {
+                "name": "Nessie",
                 "count": 1
             },
             {

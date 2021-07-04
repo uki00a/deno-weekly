@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/02/28.md",
                 "title": "2021/02/22〜2021/02/28の最新情報",
                 "link": "articles/2021/02/28.html",
-                "date": "2021-06-27T10:26:05.000Z",
+                "date": "2021-07-04T10:33:20.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -41,7 +41,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 26
+                "count": 27
             },
             {
                 "name": "notice",
@@ -51,11 +51,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 19
+                "count": 20
             },
             {
                 "name": "deno_std",
-                "count": 11
+                "count": 12
             },
             {
                 "name": "deno-postgres",
@@ -66,11 +66,15 @@ export default {
                 "count": 4
             },
             {
+                "name": "Oak",
+                "count": 4
+            },
+            {
                 "name": "Deno Deploy",
                 "count": 3
             },
             {
-                "name": "Oak",
+                "name": "Trex",
                 "count": 3
             },
             {
@@ -83,10 +87,6 @@ export default {
             },
             {
                 "name": "Sinco",
-                "count": 2
-            },
-            {
-                "name": "Trex",
                 "count": 2
             },
             {
@@ -215,6 +215,10 @@ export default {
             },
             {
                 "name": "nano",
+                "count": 1
+            },
+            {
+                "name": "Nessie",
                 "count": 1
             },
             {

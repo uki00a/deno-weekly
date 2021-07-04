@@ -17,10 +17,10 @@ export default {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/02/14.md",
-                "title": "2021/02/08〜2021/02/14の最新情報",
-                "link": "articles/2021/02/14.html",
-                "date": "2021-06-27T10:26:05.000Z",
+                "pagePath": "articles/2021/03/28.md",
+                "title": "2021/03/22〜2021/03/28の最新情報",
+                "link": "articles/2021/03/28.html",
+                "date": "2021-07-04T10:33:20.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -31,39 +31,18 @@ export default {
                 ],
                 "tags": [
                     "deno",
-                    "denops.vim",
-                    "slack_web_api",
-                    "deno-redis",
-                    "deno-postgres"
-                ],
-                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.7.3/v1.7.4がリリースされました 2. deno_std v0.87.0がリリースされました 2. サードパーティモジュールの最新情報 1. denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム ..."
-            },
-            {
-                "pagePath": "articles/2021/02/28.md",
-                "title": "2021/02/22〜2021/02/28の最新情報",
-                "link": "articles/2021/02/28.html",
-                "date": "2021-06-27T10:26:05.000Z",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "Dashport",
-                    "pngs",
-                    "deno_license_checker",
+                    "deno_std",
+                    "swdev",
+                    "deno-sqlite",
                     "deno-redis"
                 ],
-                "excerpt": " 1. Deno本体の最新情報 2. サードパーティモジュールの最新情報 1. Dashport - Passport.jsライクな認証モジュール 3. pngs 4. deno_license_checker - ライセンスヘッダーのチェックを行うツール 1. deno-redis v0.19.0がリリ..."
+                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.2がリリース 2. deno_std v0.91.0がリリース 3. status.deno.landが公開された 2. サードパーティモジュールなどの最新情報 1. swdev - Service WorkerベースのNo bundleビルドツール 2. ..."
             },
             {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
-                "date": "2021-06-27T10:26:05.000Z",
+                "date": "2021-07-04T10:33:20.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -84,10 +63,31 @@ export default {
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.1のリリース 2. deno_std v0.90.0のリリース 2. サードパーティモジュールなどの最新情報 1. nano 2. depsbot 3. wizard 4. deno-redis v0.20.0 5. deno-codeview Deno本体の最新情報 Den..."
             },
             {
-                "pagePath": "articles/2021/03/28.md",
-                "title": "2021/03/22〜2021/03/28の最新情報",
-                "link": "articles/2021/03/28.html",
-                "date": "2021-06-27T10:26:05.000Z",
+                "pagePath": "articles/2021/02/28.md",
+                "title": "2021/02/22〜2021/02/28の最新情報",
+                "link": "articles/2021/02/28.html",
+                "date": "2021-07-04T10:33:20.000Z",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "Dashport",
+                    "pngs",
+                    "deno_license_checker",
+                    "deno-redis"
+                ],
+                "excerpt": " 1. Deno本体の最新情報 2. サードパーティモジュールの最新情報 1. Dashport - Passport.jsライクな認証モジュール 3. pngs 4. deno_license_checker - ライセンスヘッダーのチェックを行うツール 1. deno-redis v0.19.0がリリ..."
+            },
+            {
+                "pagePath": "articles/2021/02/14.md",
+                "title": "2021/02/08〜2021/02/14の最新情報",
+                "link": "articles/2021/02/14.html",
+                "date": "2021-07-04T10:33:20.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -98,18 +98,18 @@ export default {
                 ],
                 "tags": [
                     "deno",
-                    "deno_std",
-                    "swdev",
-                    "deno-sqlite",
-                    "deno-redis"
+                    "denops.vim",
+                    "slack_web_api",
+                    "deno-redis",
+                    "deno-postgres"
                 ],
-                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.2がリリース 2. deno_std v0.91.0がリリース 3. status.deno.landが公開された 2. サードパーティモジュールなどの最新情報 1. swdev - Service WorkerベースのNo bundleビルドツール 2. ..."
+                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.7.3/v1.7.4がリリースされました 2. deno_std v0.87.0がリリースされました 2. サードパーティモジュールの最新情報 1. denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム ..."
             }
         ],
         "categories": [
             {
                 "name": "news",
-                "count": 26
+                "count": 27
             },
             {
                 "name": "notice",
@@ -119,11 +119,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 19
+                "count": 20
             },
             {
                 "name": "deno_std",
-                "count": 11
+                "count": 12
             },
             {
                 "name": "deno-postgres",
@@ -134,11 +134,15 @@ export default {
                 "count": 4
             },
             {
+                "name": "Oak",
+                "count": 4
+            },
+            {
                 "name": "Deno Deploy",
                 "count": 3
             },
             {
-                "name": "Oak",
+                "name": "Trex",
                 "count": 3
             },
             {
@@ -151,10 +155,6 @@ export default {
             },
             {
                 "name": "Sinco",
-                "count": 2
-            },
-            {
-                "name": "Trex",
                 "count": 2
             },
             {
@@ -283,6 +283,10 @@ export default {
             },
             {
                 "name": "nano",
+                "count": 1
+            },
+            {
+                "name": "Nessie",
                 "count": 1
             },
             {
