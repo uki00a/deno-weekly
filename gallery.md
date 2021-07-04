@@ -17,6 +17,7 @@ ${toc}
 |[deno-sqlite](https://github.com/dyedgreen/deno-sqlite)|SQLiteライブラリ|
 |[deno-redis](https://github.com/denodrivers/redis)|Redisクライアント|
 |[x/database](https://github.com/jeremyBanks/database)|データベースドライバの共通インターフェース|
+|[Nessie](https://github.com/halvardssm/deno-nessie)|データベースマイグレーションツール|
 |[Oak](https://github.com/oakserver/oak)|Webフレームワーク|
 |[fresh](https://github.com/lucacasonato/fresh)|Deno Deployで動作するPreactベースのフレームワーク|
 |[Servest](https://github.com/keroxp/servest)|Webサーバ|
