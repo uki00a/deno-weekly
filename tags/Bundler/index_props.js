@@ -2,24 +2,24 @@ import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js'
 import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
-    'pagePath': "tags/book/",
+    'pagePath': "tags/Bundler/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/book/index.html",
+    'outputPath': "tags/Bundler/index.html",
     'head': React.createElement(React.Fragment, null,
         React.createElement(Ga, { id: "G-MK2K2MRMBF" })),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
-    'title': "book",
+    'title': "Bundler",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/05/09.md",
-                "title": "2021/05/03〜2021/05/09の最新情報",
-                "link": "articles/2021/05/09.html",
+                "pagePath": "articles/2021/07/11.md",
+                "title": "2021/07/05〜2021/07/11の最新情報",
+                "link": "articles/2021/07/11.html",
                 "date": "2021-07-11T10:59:03.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
@@ -30,11 +30,11 @@ export default {
                     "news"
                 ],
                 "tags": [
-                    "alosaur",
-                    "book",
-                    "Oak"
+                    "deno",
+                    "deno-redis",
+                    "Bundler"
                 ],
-                "excerpt": " 1. alosaur v0.31.0がリリース 2. alosaur-lite 3. Oak v7.4.0がリリース 4. Effective Deno alosaur v0.31.0がリリース DenoのWebフレームワークであるalosaurのv0.31.0がリリースされました。 変更点: - ContextがHttpConte..."
+                "excerpt": " 1. Denoのデフォルトの型チェックの挙動について 2. Bundler v0.8.0 3. deno-redis v0.23.0がリリース 4. xhr Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を..."
             }
         ],
         "categories": [

@@ -2,12 +2,12 @@ import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js'
 import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
-    'pagePath': "archives/README.md",
-    'layoutPath': "archives/_layout.tsx",
-    'outputPath': "archives/index.html",
-    'title': "Archives",
+    'pagePath': "articles/2021/07/11.md",
+    'layoutPath': "_layout.tsx",
+    'outputPath': "articles/2021/07/11.html",
+    'title': "2021/07/05〜2021/07/11の最新情報",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h1>Archives</h1>'
+            __html: '<nav class="toc"><ol><li><a href="#deno%E3%81%AE%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%AE%E5%9E%8B%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%AE%E6%8C%99%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">Denoのデフォルトの型チェックの挙動について</a></li><li><a href="#bundler-v080">Bundler v0.8.0</a></li><li><a href="#deno-redis-v0230%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno-redis v0.23.0がリリース</a></li><li><a href="#xhr">xhr</a></li></ol></nav><h2 id="deno%E3%81%AE%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%AE%E5%9E%8B%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%AE%E6%8C%99%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><a href="https://github.com/denoland/deno/issues/11340">Denoのデフォルトの型チェックの挙動について</a><a class="anchor" href="#deno%E3%81%AE%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%AE%E5%9E%8B%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%AE%E6%8C%99%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">§</a></h2>\n<p>DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を変更することが検討されています。</p>\n<ul>\n<li><a href="https://github.com/denoland/deno/issues/11340">https://github.com/denoland/deno/issues/11340</a></li>\n</ul>\n<p>このissueでは、以下のような方向性が示されています。</p>\n<ul>\n<li>DenoのTypeScriptによる型チェックをデフォルトで無効化したい (現状の<code>--no-check</code>オプションを付けた際の挙動をデフォルトにしたい)</li>\n<li>TypeScriptによる型チェックは、<code>--check</code>オプションを指定したときのみ実施する</li>\n<li><code>--no-check</code>オプションは非推奨化する</li>\n</ul>\n<p>より詳細な内容や議論などについては上記issueを参照いただければと思います。</p>\n<hr>\n<p><a href="https://github.com/denoland/deno/issues/11340">https://github.com/denoland/deno/issues/11340</a></p>\n<h2 id="bundler-v080"><a href="https://github.com/timreichen/Bundler/releases/tag/0.8.0">Bundler v0.8.0</a><a class="anchor" href="#bundler-v080">§</a></h2>\n<p>Denoのフロントエンドビルドツールである<a href="https://github.com/timreichen/Bundler">Bundler</a>のv0.8.0がリリースされました。</p>\n<p>このリリースでは、<a href="https://github.com/timreichen/Bundler/tree/0.8.0#dev-server-cli">Devサーバ</a>のサポートが追加されています。</p>\n<hr>\n<p><a href="https://github.com/timreichen/Bundler/releases/tag/0.8.0">https://github.com/timreichen/Bundler/releases/tag/0.8.0</a></p>\n<h2 id="deno-redis-v0230%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denodrivers/redis/releases/tag/v0.23.0">deno-redis v0.23.0がリリース</a><a class="anchor" href="#deno-redis-v0230%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p><a href="https://github.com/denodrivers/redis">deno-redis</a>のv0.23.0がリリースされました。</p>\n<p>このリリースでは、いくつかの破壊的変更が実施されています。</p>\n<ul>\n<li><a href="https://redis.io/topics/cluster-tutorial">Redis Cluster</a>のクライアント実装が追加されました。</li>\n<li><code>Redis.connection</code>プロパティが削除されました。(破壊的変更)</li>\n<li><code>RedisImpl</code>クラスが非公開になり、代わりに<code>create</code>関数が追加されました。 (破壊的変更)</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denodrivers/redis/releases/tag/v0.23.0">https://github.com/denodrivers/redis/releases/tag/v0.23.0</a></p>\n<h2 id="xhr"><a href="https://github.com/kitsonk/xhr">xhr</a><a class="anchor" href="#xhr">§</a></h2>\n<p><code>xhr</code>はDenoとDeno Deploy向けの<code>XMLHttpRequest</code>のポリフィルです。</p>\n<p>以下のドキュメントにて、このモジュールを利用してDeno Deploy上でFirebase SDKを使用する方法が紹介されています。</p>\n<ul>\n<li><a href="https://deno.com/deploy/docs/tutorial-firebase">https://deno.com/deploy/docs/tutorial-firebase</a></li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/kitsonk/xhr">https://github.com/kitsonk/xhr</a></li>\n<li><a href="https://deno.com/deploy/docs/tutorial-firebase">https://deno.com/deploy/docs/tutorial-firebase</a></li>\n</ul>'
         } }),
     'head': React.createElement(React.Fragment, null,
         React.createElement(Ga, { id: "G-MK2K2MRMBF" }),
@@ -18,21 +18,38 @@ export default {
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
-    'contentTitle': React.createElement("h1", { key: "0" }, "Archives"),
+    'contentTitle': undefined,
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: ''
+            __html: '<nav class="toc"><ol><li><a href="#deno%E3%81%AE%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%AE%E5%9E%8B%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%AE%E6%8C%99%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">Denoのデフォルトの型チェックの挙動について</a></li><li><a href="#bundler-v080">Bundler v0.8.0</a></li><li><a href="#deno-redis-v0230%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno-redis v0.23.0がリリース</a></li><li><a href="#xhr">xhr</a></li></ol></nav><h2 id="deno%E3%81%AE%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%AE%E5%9E%8B%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%AE%E6%8C%99%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><a href="https://github.com/denoland/deno/issues/11340">Denoのデフォルトの型チェックの挙動について</a><a class="anchor" href="#deno%E3%81%AE%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%AE%E5%9E%8B%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%AE%E6%8C%99%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">§</a></h2>\n<p>DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を変更することが検討されています。</p>\n<ul>\n<li><a href="https://github.com/denoland/deno/issues/11340">https://github.com/denoland/deno/issues/11340</a></li>\n</ul>\n<p>このissueでは、以下のような方向性が示されています。</p>\n<ul>\n<li>DenoのTypeScriptによる型チェックをデフォルトで無効化したい (現状の<code>--no-check</code>オプションを付けた際の挙動をデフォルトにしたい)</li>\n<li>TypeScriptによる型チェックは、<code>--check</code>オプションを指定したときのみ実施する</li>\n<li><code>--no-check</code>オプションは非推奨化する</li>\n</ul>\n<p>より詳細な内容や議論などについては上記issueを参照いただければと思います。</p>\n<hr>\n<p><a href="https://github.com/denoland/deno/issues/11340">https://github.com/denoland/deno/issues/11340</a></p>\n<h2 id="bundler-v080"><a href="https://github.com/timreichen/Bundler/releases/tag/0.8.0">Bundler v0.8.0</a><a class="anchor" href="#bundler-v080">§</a></h2>\n<p>Denoのフロントエンドビルドツールである<a href="https://github.com/timreichen/Bundler">Bundler</a>のv0.8.0がリリースされました。</p>\n<p>このリリースでは、<a href="https://github.com/timreichen/Bundler/tree/0.8.0#dev-server-cli">Devサーバ</a>のサポートが追加されています。</p>\n<hr>\n<p><a href="https://github.com/timreichen/Bundler/releases/tag/0.8.0">https://github.com/timreichen/Bundler/releases/tag/0.8.0</a></p>\n<h2 id="deno-redis-v0230%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denodrivers/redis/releases/tag/v0.23.0">deno-redis v0.23.0がリリース</a><a class="anchor" href="#deno-redis-v0230%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p><a href="https://github.com/denodrivers/redis">deno-redis</a>のv0.23.0がリリースされました。</p>\n<p>このリリースでは、いくつかの破壊的変更が実施されています。</p>\n<ul>\n<li><a href="https://redis.io/topics/cluster-tutorial">Redis Cluster</a>のクライアント実装が追加されました。</li>\n<li><code>Redis.connection</code>プロパティが削除されました。(破壊的変更)</li>\n<li><code>RedisImpl</code>クラスが非公開になり、代わりに<code>create</code>関数が追加されました。 (破壊的変更)</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denodrivers/redis/releases/tag/v0.23.0">https://github.com/denodrivers/redis/releases/tag/v0.23.0</a></p>\n<h2 id="xhr"><a href="https://github.com/kitsonk/xhr">xhr</a><a class="anchor" href="#xhr">§</a></h2>\n<p><code>xhr</code>はDenoとDeno Deploy向けの<code>XMLHttpRequest</code>のポリフィルです。</p>\n<p>以下のドキュメントにて、このモジュールを利用してDeno Deploy上でFirebase SDKを使用する方法が紹介されています。</p>\n<ul>\n<li><a href="https://deno.com/deploy/docs/tutorial-firebase">https://deno.com/deploy/docs/tutorial-firebase</a></li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/kitsonk/xhr">https://github.com/kitsonk/xhr</a></li>\n<li><a href="https://deno.com/deploy/docs/tutorial-firebase">https://deno.com/deploy/docs/tutorial-firebase</a></li>\n</ul>'
         } }),
-    'toc': null,
+    'toc': React.createElement("nav", { key: "0", className: "toc" },
+        React.createElement("ol", null,
+            React.createElement("li", null,
+                React.createElement("a", { href: "#deno%E3%81%AE%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%81%AE%E5%9E%8B%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%AE%E6%8C%99%E5%8B%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" }, "Deno\u306E\u30C7\u30D5\u30A9\u30EB\u30C8\u306E\u578B\u30C1\u30A7\u30C3\u30AF\u306E\u6319\u52D5\u306B\u3064\u3044\u3066")),
+            React.createElement("li", null,
+                React.createElement("a", { href: "#bundler-v080" }, "Bundler v0.8.0")),
+            React.createElement("li", null,
+                React.createElement("a", { href: "#deno-redis-v0230%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9" }, "deno-redis v0.23.0\u304C\u30EA\u30EA\u30FC\u30B9")),
+            React.createElement("li", null,
+                React.createElement("a", { href: "#xhr" }, "xhr")))),
     'author': "Yuki Tanaka",
     'contributors': [
         "Yuki Tanaka"
     ],
     'date': "2021-07-11T10:59:03.000Z",
     'updated': null,
-    'excerpt': "",
+    'excerpt': " 1. Denoのデフォルトの型チェックの挙動について 2. Bundler v0.8.0 3. deno-redis v0.23.0がリリース 4. xhr Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を...",
     'cover': undefined,
+    'tags': [
+        "deno",
+        "deno-redis",
+        "Bundler"
+    ],
+    'categories': [
+        "news"
+    ],
     'blog': {
-        "isPost": false,
+        "isPost": true,
         "posts": [
             {
                 "pagePath": "articles/2021/03/21.md",

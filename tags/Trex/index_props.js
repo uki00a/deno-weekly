@@ -20,7 +20,7 @@ export default {
                 "pagePath": "articles/2021/02/07.md",
                 "title": "2021/02/01〜2021/02/07の最新情報",
                 "link": "articles/2021/02/07.html",
-                "date": "2021-07-04T10:33:20.000Z",
+                "date": "2021-07-11T10:59:03.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -42,7 +42,7 @@ export default {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-07-04T10:33:20.000Z",
+                "date": "2021-07-11T10:59:03.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -66,7 +66,7 @@ export default {
                 "pagePath": "articles/2021/07/04.md",
                 "title": "2021/06/28〜2021/07/04の最新情報",
                 "link": "articles/2021/07/04.html",
-                "date": "2021-07-04T10:33:20.000Z",
+                "date": "2021-07-11T10:59:03.000Z",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -88,7 +88,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 27
+                "count": 28
             },
             {
                 "name": "notice",
@@ -98,7 +98,7 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 20
+                "count": 21
             },
             {
                 "name": "deno_std",
@@ -110,7 +110,7 @@ export default {
             },
             {
                 "name": "deno-redis",
-                "count": 4
+                "count": 5
             },
             {
                 "name": "Oak",
@@ -154,6 +154,10 @@ export default {
             },
             {
                 "name": "book",
+                "count": 1
+            },
+            {
+                "name": "Bundler",
                 "count": 1
             },
             {
