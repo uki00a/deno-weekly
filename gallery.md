@@ -31,6 +31,7 @@ ${toc}
 |[luath](https://github.com/cmorten/luath)|フロントエンドビルドツール|
 |[swdev](https://github.com/mizchi/swdev)|Service Workerベースのフロントエンドビルドツール|
 |[deno-rollup](https://github.com/cmorten/deno-rollup)|RollupのDenoポート|
+|[Bundler](https://github.com/timreichen/Bundler)|フロントエンド開発向けのバンドラ|
 |[twd](https://github.com/kt3k/twd)|Tailwind CSSライクなCLIツール|
 |[vno](https://github.com/open-source-labs/vno)|Vue.jsアプリの開発ツール|
 |[Snel](https://github.com/crewdevio/Snel)|Svelteアプリの開発ツール|
@@ -49,6 +50,7 @@ ${toc}
 |[little_crony](https://github.com/mandarineorg/little-crony)|CRONライブラリ|
 |[pngs](https://github.com/denosaurs/pngs)|pngイメージのエンコード/デコード|
 |[xml](https://github.com/lowlighter/xml)|Denoで動作するXMLモジュール|
+|[xhr](https://github.com/kitsonk/xhr)|`XMLHttpRequest`のポリフィル|
 |[slack_web_api](https://deno.land/x/slack_web_api)|Slack APIのクライアント|
 |[wizard](https://github.com/deno-libs/wizard)|BDDスタイルのテストライブラリ|
 |[estest](https://github.com/mikeal/estest)|Deno・Node.jsなどで動作するテストフレームワーク|
