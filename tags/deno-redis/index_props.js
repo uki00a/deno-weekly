@@ -17,10 +17,30 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "articles/2021/07/11.md",
+                "title": "2021/07/05〜2021/07/11の最新情報",
+                "link": "articles/2021/07/11.html",
+                "date": "2021/07/11",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "deno-redis",
+                    "Bundler"
+                ],
+                "excerpt": " 1. Denoのデフォルトの型チェックの挙動について 2. Bundler v0.8.0 3. deno-redis v0.23.0がリリース 4. xhr Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を..."
+            },
+            {
                 "pagePath": "articles/2021/03/28.md",
                 "title": "2021/03/22〜2021/03/28の最新情報",
                 "link": "articles/2021/03/28.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "date": "2021/03/28",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -42,7 +62,7 @@ export default {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "date": "2021/03/14",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -66,7 +86,7 @@ export default {
                 "pagePath": "articles/2021/02/28.md",
                 "title": "2021/02/22〜2021/02/28の最新情報",
                 "link": "articles/2021/02/28.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "date": "2021/02/28",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -87,7 +107,7 @@ export default {
                 "pagePath": "articles/2021/02/14.md",
                 "title": "2021/02/08〜2021/02/14の最新情報",
                 "link": "articles/2021/02/14.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "date": "2021/02/14",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -104,26 +124,6 @@ export default {
                     "deno-postgres"
                 ],
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.7.3/v1.7.4がリリースされました 2. deno_std v0.87.0がリリースされました 2. サードパーティモジュールの最新情報 1. denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム ..."
-            },
-            {
-                "pagePath": "articles/2021/07/11.md",
-                "title": "2021/07/05〜2021/07/11の最新情報",
-                "link": "articles/2021/07/11.html",
-                "date": "2021-07-11T10:59:03.000Z",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "deno",
-                    "deno-redis",
-                    "Bundler"
-                ],
-                "excerpt": " 1. Denoのデフォルトの型チェックの挙動について 2. Bundler v0.8.0 3. deno-redis v0.23.0がリリース 4. xhr Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を..."
             }
         ],
         "categories": [

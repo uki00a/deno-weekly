@@ -17,10 +17,31 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "articles/2021/05/30.md",
+                "title": "2021/05/24〜2021/05/30の最新情報",
+                "link": "articles/2021/05/30.html",
+                "date": "2021/05/30",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "Sinco",
+                    "Deno Deploy",
+                    "Velociraptor",
+                    "Cliffy"
+                ],
+                "excerpt": " 1. Sinco v2.0.0のリリース 2. Velociraptor v1.0.0のリリース 3. zeno.zsh 4. Cliffy v0.19.0のリリース 5. deploy_dir Sinco v2.0.0のリリース ブラウザのオートメーション・テスト用モジュールであるSincoのv2.0.0がリリー..."
+            },
+            {
                 "pagePath": "articles/2021/02/21.md",
                 "title": "2021/02/15〜2021/02/21の最新情報",
                 "link": "articles/2021/02/21.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "date": "2021/02/21",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -37,27 +58,6 @@ export default {
                     "little_crony"
                 ],
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.7.5がリリース 2. deno_std v0.88.0がリリース 3. vscode_deno v3.0.0がリリース 2. サードパーティモジュールの最新情報 1. deno_mysql v2.8.0がリリース 2. Sinco v1.1.0がリリース 3. li..."
-            },
-            {
-                "pagePath": "articles/2021/05/30.md",
-                "title": "2021/05/24〜2021/05/30の最新情報",
-                "link": "articles/2021/05/30.html",
-                "date": "2021-07-11T10:59:03.000Z",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "Sinco",
-                    "Deno Deploy",
-                    "Velociraptor",
-                    "Cliffy"
-                ],
-                "excerpt": " 1. Sinco v2.0.0のリリース 2. Velociraptor v1.0.0のリリース 3. zeno.zsh 4. Cliffy v0.19.0のリリース 5. deploy_dir Sinco v2.0.0のリリース ブラウザのオートメーション・テスト用モジュールであるSincoのv2.0.0がリリー..."
             }
         ],
         "categories": [

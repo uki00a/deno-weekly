@@ -17,30 +17,10 @@ export default {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/06/06.md",
-                "title": "2021/06/01〜2021/06/06の最新情報",
-                "link": "articles/2021/06/06.html",
-                "date": "2021-07-11T10:59:03.000Z",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "deno",
-                    "twd",
-                    "Eta"
-                ],
-                "excerpt": " 1. Deno v1.10.3がリリース 2. wpt.deno.land 3. twd 4. Eta Deno v1.10.3がリリース Deno v1.10.3がリリースされました。 deno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。 変更点: - deno lspで..."
-            },
-            {
                 "pagePath": "articles/2021/06/13.md",
                 "title": "2021/06/07〜2021/06/13の最新情報",
                 "link": "articles/2021/06/13.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "date": "2021/06/13",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -55,6 +35,26 @@ export default {
                     "twd"
                 ],
                 "excerpt": " 1. Deno v1.11.0がリリースされました 2. deno_std v0.98.0がリリースされました 3. denoland/deno_docker 4. twd v0.3.0及びv0.4.0がリリース Deno v1.11.0がリリースされました Deno v1.11.0がリリースされました。 このリリ..."
+            },
+            {
+                "pagePath": "articles/2021/06/06.md",
+                "title": "2021/06/01〜2021/06/06の最新情報",
+                "link": "articles/2021/06/06.html",
+                "date": "2021/06/06",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "twd",
+                    "Eta"
+                ],
+                "excerpt": " 1. Deno v1.10.3がリリース 2. wpt.deno.land 3. twd 4. Eta Deno v1.10.3がリリース Deno v1.10.3がリリースされました。 deno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。 変更点: - deno lspで..."
             }
         ],
         "categories": [

@@ -17,10 +17,10 @@ export default {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/04/18.md",
-                "title": "2021/04/12〜2021/04/18の最新情報",
-                "link": "articles/2021/04/18.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "pagePath": "articles/2021/07/04.md",
+                "title": "2021/06/28〜2021/07/04の最新情報",
+                "link": "articles/2021/07/04.html",
+                "date": "2021/07/04",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -33,16 +33,16 @@ export default {
                     "deno",
                     "deno_std",
                     "Oak",
-                    "Servest",
-                    "esbuild"
+                    "Trex",
+                    "Nessie"
                 ],
-                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.9.0がリリース 2. deno_std v0.93.0がリリース 2. サードパーティモジュールなどの最新情報 1. Oak v7.0.0及びv7.1.0のリリース 2. Servest v1.3.0がリリース 3. esbuildがDenoへの実験的サ..."
+                "excerpt": " 1. Deno v1.11.3のリリース 2. Denoの2021年Q3ロードマップが公開 3. deno_std v0.100.0のリリース 4. Oak v7.7.0 5. Trex v1.8.0 6. Nessie v2.0.0のリリース Deno v1.11.3のリリース Denoのv1.11.3がリリースされました。 こ..."
             },
             {
                 "pagePath": "articles/2021/06/20.md",
                 "title": "2021/06/14〜2021/06/20の最新情報",
                 "link": "articles/2021/06/20.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "date": "2021/06/20",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -62,7 +62,7 @@ export default {
                 "pagePath": "articles/2021/05/09.md",
                 "title": "2021/05/03〜2021/05/09の最新情報",
                 "link": "articles/2021/05/09.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "date": "2021/05/09",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -79,10 +79,10 @@ export default {
                 "excerpt": " 1. alosaur v0.31.0がリリース 2. alosaur-lite 3. Oak v7.4.0がリリース 4. Effective Deno alosaur v0.31.0がリリース DenoのWebフレームワークであるalosaurのv0.31.0がリリースされました。 変更点: - ContextがHttpConte..."
             },
             {
-                "pagePath": "articles/2021/07/04.md",
-                "title": "2021/06/28〜2021/07/04の最新情報",
-                "link": "articles/2021/07/04.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "pagePath": "articles/2021/04/18.md",
+                "title": "2021/04/12〜2021/04/18の最新情報",
+                "link": "articles/2021/04/18.html",
+                "date": "2021/04/18",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -95,10 +95,10 @@ export default {
                     "deno",
                     "deno_std",
                     "Oak",
-                    "Trex",
-                    "Nessie"
+                    "Servest",
+                    "esbuild"
                 ],
-                "excerpt": " 1. Deno v1.11.3のリリース 2. Denoの2021年Q3ロードマップが公開 3. deno_std v0.100.0のリリース 4. Oak v7.7.0 5. Trex v1.8.0 6. Nessie v2.0.0のリリース Deno v1.11.3のリリース Denoのv1.11.3がリリースされました。 こ..."
+                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.9.0がリリース 2. deno_std v0.93.0がリリース 2. サードパーティモジュールなどの最新情報 1. Oak v7.0.0及びv7.1.0のリリース 2. Servest v1.3.0がリリース 3. esbuildがDenoへの実験的サ..."
             }
         ],
         "categories": [

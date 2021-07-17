@@ -17,34 +17,10 @@ export default {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/04/04.md",
-                "title": "2021/03/29〜2021/04/04の最新情報",
-                "link": "articles/2021/04/04.html",
-                "date": "2021-07-11T10:59:03.000Z",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "deno",
-                    "deno_std",
-                    "Deno Deploy",
-                    "Snel",
-                    "Sift",
-                    "deno-dom",
-                    "Trex"
-                ],
-                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.3がリリース 2. deno_std v0.92.0がリリース 3. Deno Deployが公開された 2. サードパーティモジュールなどの最新情報 1. Snel - DenoでSvelteアプリを開発するためのツール 2. Sift - De..."
-            },
-            {
                 "pagePath": "articles/2021/06/27.md",
                 "title": "2021/06/21〜2021/06/27の最新情報",
                 "link": "articles/2021/06/27.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "date": "2021/06/27",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -64,7 +40,7 @@ export default {
                 "pagePath": "articles/2021/05/30.md",
                 "title": "2021/05/24〜2021/05/30の最新情報",
                 "link": "articles/2021/05/30.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "date": "2021/05/30",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -80,6 +56,30 @@ export default {
                     "Cliffy"
                 ],
                 "excerpt": " 1. Sinco v2.0.0のリリース 2. Velociraptor v1.0.0のリリース 3. zeno.zsh 4. Cliffy v0.19.0のリリース 5. deploy_dir Sinco v2.0.0のリリース ブラウザのオートメーション・テスト用モジュールであるSincoのv2.0.0がリリー..."
+            },
+            {
+                "pagePath": "articles/2021/04/04.md",
+                "title": "2021/03/29〜2021/04/04の最新情報",
+                "link": "articles/2021/04/04.html",
+                "date": "2021/04/04",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "deno_std",
+                    "Deno Deploy",
+                    "Snel",
+                    "Sift",
+                    "deno-dom",
+                    "Trex"
+                ],
+                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.3がリリース 2. deno_std v0.92.0がリリース 3. Deno Deployが公開された 2. サードパーティモジュールなどの最新情報 1. Snel - DenoでSvelteアプリを開発するためのツール 2. Sift - De..."
             }
         ],
         "categories": [

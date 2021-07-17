@@ -17,10 +17,10 @@ export default {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/02/07.md",
-                "title": "2021/02/01〜2021/02/07の最新情報",
-                "link": "articles/2021/02/07.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "pagePath": "articles/2021/07/04.md",
+                "title": "2021/06/28〜2021/07/04の最新情報",
+                "link": "articles/2021/07/04.html",
+                "date": "2021/07/04",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -32,17 +32,17 @@ export default {
                 "tags": [
                     "deno",
                     "deno_std",
-                    "emacs-ng",
-                    "deno-postgres",
-                    "Trex"
+                    "Oak",
+                    "Trex",
+                    "Nessie"
                 ],
-                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.7.2がリリース 2. deno_stdのリポジトリがdeno本体のリポジトリから分離された 2. サードパーティモジュールの最新情報 1. emacs-ng 2. deno-postgres v0.7.0がリリースされた 3. Trex v1.5..."
+                "excerpt": " 1. Deno v1.11.3のリリース 2. Denoの2021年Q3ロードマップが公開 3. deno_std v0.100.0のリリース 4. Oak v7.7.0 5. Trex v1.8.0 6. Nessie v2.0.0のリリース Deno v1.11.3のリリース Denoのv1.11.3がリリースされました。 こ..."
             },
             {
                 "pagePath": "articles/2021/04/04.md",
                 "title": "2021/03/29〜2021/04/04の最新情報",
                 "link": "articles/2021/04/04.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "date": "2021/04/04",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -63,10 +63,10 @@ export default {
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.3がリリース 2. deno_std v0.92.0がリリース 3. Deno Deployが公開された 2. サードパーティモジュールなどの最新情報 1. Snel - DenoでSvelteアプリを開発するためのツール 2. Sift - De..."
             },
             {
-                "pagePath": "articles/2021/07/04.md",
-                "title": "2021/06/28〜2021/07/04の最新情報",
-                "link": "articles/2021/07/04.html",
-                "date": "2021-07-11T10:59:03.000Z",
+                "pagePath": "articles/2021/02/07.md",
+                "title": "2021/02/01〜2021/02/07の最新情報",
+                "link": "articles/2021/02/07.html",
+                "date": "2021/02/07",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -78,11 +78,11 @@ export default {
                 "tags": [
                     "deno",
                     "deno_std",
-                    "Oak",
-                    "Trex",
-                    "Nessie"
+                    "emacs-ng",
+                    "deno-postgres",
+                    "Trex"
                 ],
-                "excerpt": " 1. Deno v1.11.3のリリース 2. Denoの2021年Q3ロードマップが公開 3. deno_std v0.100.0のリリース 4. Oak v7.7.0 5. Trex v1.8.0 6. Nessie v2.0.0のリリース Deno v1.11.3のリリース Denoのv1.11.3がリリースされました。 こ..."
+                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.7.2がリリース 2. deno_stdのリポジトリがdeno本体のリポジトリから分離された 2. サードパーティモジュールの最新情報 1. emacs-ng 2. deno-postgres v0.7.0がリリースされた 3. Trex v1.5..."
             }
         ],
         "categories": [
