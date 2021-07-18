@@ -7,7 +7,7 @@ export default {
     'outputPath': "articles/2021/07/18.html",
     'title': "2021/07/12〜2021/07/18の最新情報",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.12.0のリリース</a></li><li><a href="#deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.101.0のリリース</a></li><li><a href="#wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89">wpt.fyiにDenoが掲載</a></li><li><a href="#deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno-unknownutil v1.0.0のリリース</a></li></ol></nav><h2 id="deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno/releases/tag/v1.12.0">Deno v1.12.0のリリース</a><a class="anchor" href="#deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.12.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><a href="%5Bhttps://developer.mozilla.org/ja/docs/Web/API/MessageChannel%5D(https://developer.mozilla.org/ja/docs/Web/API/MessageChannel)">MessageChannel</a>と<a href="%5Bhttps://developer.mozilla.org/ja/docs/Web/API/MessagePort%5D(https://developer.mozilla.org/ja/docs/Web/API/MessagePort)">MessagePort</a>がサポートされました</li>\n<li><code>Deno</code>名前空間の<code>Object.freeze</code>による凍結が解除され、<code>configurable</code>になりました</li>\n<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming">WebAssembly.instantiateStreaming</a>がサポートされました</li>\n<li><code>tsconfig.json</code>や<code>Deno.emit</code>で<code>types</code>オプションがサポートされました</li>\n<li><a href="https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html#-reference-types-">/// <reference types="..." /></a>がサポートされました</li>\n<li><code>SharedArrayBuffer</code>のworker間での共有がサポートされました</li>\n<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/generateKey">SubtleCrypto.generateKey</a>と<a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/sign">SubtleCrypto.sign</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/verify">SubtleCrypto.verify</a>がサポートされました</li>\n<li><code>Deno.createHttpClient</code>で<code>proxy</code>オプションがサポートされました</li>\n<li>ネイティブHTTPサーバでWebSocketがサポートされました (<code>Deno.upgradeWebSocket</code>)</li>\n<li>Denoのデバッグ機能(<code>--inspect/--inspect-brk</code>)が改善され、コンソールへの出力がDevToolsとターミナルの両方に出力されるようになりました</li>\n<li><code>deno lsp</code>の<code>textDocument/hover</code>メソッドで依存モジュールの情報を表示できるようになりました</li>\n<li>REPLの補完の挙動が改善されました</li>\n<li>REPLでimport宣言がサポートされました</li>\n<li>REPLでTypeScriptがサポートされました</li>\n<li>REPLなどで<code>Event</code>や<code>Request</code>などのクラスの<code>prototype</code>を評価しようとすると、プロセスがクラッシュする問題が修正されました</li>\n<li><code>deno test</code>で<code>--shuffle</code>と<code>--fail-fast=&lt;N&gt;</code>オプションがサポートされました</li>\n<li><code>DedicatedWorkerGlobalScope</code>のイベントハンドラが仕様通りに動作するように修正されました</li>\n<li><code>Deno.ppid</code>と<code>Deno.memoryUsage</code>がstableになりました</li>\n<li><code>console.table</code>の出力が改善されました</li>\n<li>fetch APIでユーザが指定したHOSTヘッダが無視されるようになりました</li>\n<li>fetch APIでOPTIONSリクエストを送信したときに、レスポンスボディが設定されるように修正されました</li>\n<li><a href="https://w3c.github.io/perf-timing-primer/">performance API</a>のWeb標準との互換性が向上しました</li>\n<li><code>SignalStream#dispose</code>を呼んだ後にも<code>SignalStream#then</code>で登録したコールバックが呼ばれてしまう問題が修正されました</li>\n<li><code>Deno.copy</code>が非推奨化されました</li>\n<li>循環依存の関係にある複数のモジュールを平行で動的importすると、プロセスがクラッシュする問題が修正されました</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.12.0">https://github.com/denoland/deno/releases/tag/v1.12.0</a></li>\n<li><a href="https://deno.com/blog/v1.12">https://deno.com/blog/v1.12</a></li>\n<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-12-0">Deno 1.12.0 がリリースされたので新機能や変更点の紹介</a></li>\n</ul>\n<h2 id="deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/releases/tag/0.101.0">deno_std v0.101.0のリリース</a><a class="anchor" href="#deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>deno_stdのv0.101.0がリリースされました。</p>\n<p>このリリースにはいくつかの破壊的変更が含まれています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>encoding/hex: <code>encodedLen</code>, <code>encodeToString</code>, <code>decodedLen</code>, <code>decodeString</code>が削除され、<code>errInvalidByte</code>と<code>errLength</code>が非公開になりました (<strong>破壊的変更</strong>)</li>\n<li>mime/multipart: <code>MultipartReader#readForm</code>の戻り値である<code>MultipartFormData</code>の各メソッドが配列を返却するように変更されました。それに合わせて、<code>file</code>と<code>value</code>メソッドがそれぞれ<code>files</code>と<code>values</code>にリネームされています (<strong>破壊的変更</strong>)</li>\n<li>uuid/v4: <code>generate</code>関数が非推奨化されました (Web Crypto APIが実装されたため)</li>\n<li>uuid/v5: Web Crypto APIの実装に合わせ、<code>generate</code>関数のシグネチャが変更されました (<strong>破壊的変更</strong>)</li>\n<li>async: <code>deadline</code>関数と<code>debounce</code>関数が追加されました</li>\n<li>encoding/toml: 不適切な形式の文字列が適切に取り扱われるよう修正されました</li>\n<li>encoding/toml: <code>stringify</code>で複数の型が混在した配列が適切にシリアライズされない問題が修正されました</li>\n<li>encoding/toml: 不適切な空白文字が含まれていた際に、例外が投げられるように修正されました</li>\n<li>hash: BLAKE3ハッシュ関数がサポートされました</li>\n<li>http/cookie: Domain属性に不適切な形式の値が設定されていないかチェックされるようになりました</li>\n<li>http/cookie: <code>deleteCookie</code>でPath属性とDomain属性の指定がサポートされました</li>\n<li>http/cookie: <code>setCookie</code>で<code>maxAge</code>オプションに<code>0</code>を指定するとエラーが発生する問題が修正されました</li>\n<li>io/bufio: <code>readLines</code>関数で、EOFに達した際に余分な空文字列が<code>yield</code>される問題が修正されました</li>\n<li>io/util: Deno v1.12.0における<code>Deno.copy</code>の非推奨化に合わせ、<code>copy</code>関数が追加されました</li>\n<li>io/streams: <code>writableStreamFromWriter</code>に<code>autoClose</code>オプションが追加され、ストリームが閉じた際に<code>Writer</code>も自動で閉じるかを制御できるようになりました</li>\n<li>node/module: <code>createRequire</code>に不正なURLを指定した際のエラーメッセージが親切になりました</li>\n<li>path/glob: <code>?</code>で任意の文字へのマッチがサポートされました</li>\n<li>testing/asserts: <code>fail</code>の戻り値の型が<code>never</code>に変更されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/releases/tag/0.101.0">https://github.com/denoland/deno_std/releases/tag/0.101.0</a></p>\n<h2 id="wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89"><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyiにDenoが掲載</a><a class="anchor" href="#wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89">§</a></h2>\n<p><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyi</a>にDenoが掲載されました。</p>\n<p>このサイトでは、ブラウザなどの各プラットフォームにおける<a href="https://web-platform-tests.org/">web platform tests</a>への準拠度を確認することが出来ます。</p>\n<hr>\n<ul>\n<li><a href="https://deno.com/blog/v1.12">https://deno.com/blog/v1.12</a></li>\n<li><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyi</a></li>\n</ul>\n<h2 id="deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/lambdalisue/deno-unknownutil">deno-unknownutil v1.0.0のリリース</a><a class="anchor" href="#deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p><code>deno-unknownutil</code>はDenoで<code>unknown</code>型を取り扱うためのユーティリティです。</p>\n<p><a href="https://github.com/vim-denops/denops.vim">denops.vim</a>のプラグイン開発など、<code>unknown</code>型を頻繁に取り扱う必要があるケースにおいて便利そうです。</p>\n<hr>\n<p><a href="https://github.com/lambdalisue/deno-unknownutil">https://github.com/lambdalisue/deno-unknownutil</a></p>'
+            __html: '<nav class="toc"><ol><li><a href="#deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.12.0のリリース</a></li><li><a href="#deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.101.0のリリース</a></li><li><a href="#wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89">wpt.fyiにDenoが掲載</a></li><li><a href="#deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno-unknownutil v1.0.0のリリース</a></li></ol></nav><h2 id="deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno/releases/tag/v1.12.0">Deno v1.12.0のリリース</a><a class="anchor" href="#deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.12.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><a href="https://developer.mozilla.org/ja/docs/Web/API/MessageChannel">MessageChannel</a>と<a href="https://developer.mozilla.org/ja/docs/Web/API/MessagePort">MessagePort</a>がサポートされました</li>\n<li><code>Deno</code>名前空間の<code>Object.freeze</code>による凍結が解除され、<code>configurable</code>になりました</li>\n<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming">WebAssembly.instantiateStreaming</a>がサポートされました</li>\n<li><code>tsconfig.json</code>や<code>Deno.emit</code>で<code>types</code>オプションがサポートされました</li>\n<li><code>/// &lt;reference types=&quot;...&quot; /&gt;</code>がサポートされました</li>\n<li><code>SharedArrayBuffer</code>のworker間での共有がサポートされました</li>\n<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/generateKey">SubtleCrypto.generateKey</a>と<a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/sign">SubtleCrypto.sign</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/verify">SubtleCrypto.verify</a>がサポートされました</li>\n<li><code>Deno.createHttpClient</code>で<code>proxy</code>オプションがサポートされました</li>\n<li>ネイティブHTTPサーバでWebSocketがサポートされました (<code>Deno.upgradeWebSocket</code>)</li>\n<li>Denoのデバッグ機能(<code>--inspect/--inspect-brk</code>)が改善され、コンソールへの出力がDevToolsとターミナルの両方に出力されるようになりました</li>\n<li><code>deno lsp</code>の<code>textDocument/hover</code>メソッドで依存モジュールの情報を表示できるようになりました</li>\n<li>REPLの補完の挙動が改善されました</li>\n<li>REPLでimport宣言がサポートされました</li>\n<li>REPLでTypeScriptがサポートされました</li>\n<li>REPLなどで<code>Event</code>や<code>Request</code>などのクラスの<code>prototype</code>を評価しようとすると、プロセスがクラッシュする問題が修正されました</li>\n<li><code>deno test</code>で<code>--shuffle</code>と<code>--fail-fast=&lt;N&gt;</code>オプションがサポートされました</li>\n<li><code>DedicatedWorkerGlobalScope</code>のイベントハンドラが仕様通りに動作するように修正されました</li>\n<li><code>Deno.ppid</code>と<code>Deno.memoryUsage</code>がstableになりました</li>\n<li><code>console.table</code>の出力が改善されました</li>\n<li>fetch APIでユーザが指定したHOSTヘッダが無視されるようになりました</li>\n<li>fetch APIでOPTIONSリクエストを送信したときに、レスポンスボディが設定されるように修正されました</li>\n<li><a href="https://w3c.github.io/perf-timing-primer/">performance API</a>のWeb標準との互換性が向上しました</li>\n<li><code>SignalStream#dispose</code>を呼んだ後にも<code>SignalStream#then</code>で登録したコールバックが呼ばれてしまう問題が修正されました</li>\n<li><code>Deno.copy</code>が非推奨化されました</li>\n<li>循環依存の関係にある複数のモジュールを平行で動的importすると、プロセスがクラッシュする問題が修正されました</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.12.0">https://github.com/denoland/deno/releases/tag/v1.12.0</a></li>\n<li><a href="https://deno.com/blog/v1.12">https://deno.com/blog/v1.12</a></li>\n<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-12-0">Deno 1.12.0 がリリースされたので新機能や変更点の紹介</a></li>\n</ul>\n<h2 id="deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/releases/tag/0.101.0">deno_std v0.101.0のリリース</a><a class="anchor" href="#deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>deno_stdのv0.101.0がリリースされました。</p>\n<p>このリリースにはいくつかの破壊的変更が含まれています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>encoding/hex: <code>encodedLen</code>, <code>encodeToString</code>, <code>decodedLen</code>, <code>decodeString</code>が削除され、<code>errInvalidByte</code>と<code>errLength</code>が非公開になりました (<strong>破壊的変更</strong>)</li>\n<li>mime/multipart: <code>MultipartReader#readForm</code>の戻り値である<code>MultipartFormData</code>の各メソッドが配列を返却するように変更されました。それに合わせて、<code>file</code>と<code>value</code>メソッドがそれぞれ<code>files</code>と<code>values</code>にリネームされています (<strong>破壊的変更</strong>)</li>\n<li>uuid/v4: <code>generate</code>関数が非推奨化されました (Web Crypto APIが実装されたため)</li>\n<li>uuid/v5: Web Crypto APIの実装に合わせ、<code>generate</code>関数のシグネチャが変更されました (<strong>破壊的変更</strong>)</li>\n<li>async: <code>deadline</code>関数と<code>debounce</code>関数が追加されました</li>\n<li>encoding/toml: 不適切な形式の文字列が適切に取り扱われるよう修正されました</li>\n<li>encoding/toml: <code>stringify</code>で複数の型が混在した配列が適切にシリアライズされない問題が修正されました</li>\n<li>encoding/toml: 不適切な空白文字が含まれていた際に、例外が投げられるように修正されました</li>\n<li>hash: BLAKE3ハッシュ関数がサポートされました</li>\n<li>http/cookie: Domain属性に不適切な形式の値が設定されていないかチェックされるようになりました</li>\n<li>http/cookie: <code>deleteCookie</code>でPath属性とDomain属性の指定がサポートされました</li>\n<li>http/cookie: <code>setCookie</code>で<code>maxAge</code>オプションに<code>0</code>を指定するとエラーが発生する問題が修正されました</li>\n<li>io/bufio: <code>readLines</code>関数で、EOFに達した際に余分な空文字列が<code>yield</code>される問題が修正されました</li>\n<li>io/util: Deno v1.12.0における<code>Deno.copy</code>の非推奨化に合わせ、<code>copy</code>関数が追加されました</li>\n<li>io/streams: <code>writableStreamFromWriter</code>に<code>autoClose</code>オプションが追加され、ストリームが閉じた際に<code>Writer</code>も自動で閉じるかを制御できるようになりました</li>\n<li>node/module: <code>createRequire</code>に不正なURLを指定した際のエラーメッセージが親切になりました</li>\n<li>path/glob: <code>?</code>で任意の文字へのマッチがサポートされました</li>\n<li>testing/asserts: <code>fail</code>の戻り値の型が<code>never</code>に変更されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/releases/tag/0.101.0">https://github.com/denoland/deno_std/releases/tag/0.101.0</a></p>\n<h2 id="wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89"><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyiにDenoが掲載</a><a class="anchor" href="#wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89">§</a></h2>\n<p><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyi</a>にDenoが掲載されました。</p>\n<p>このサイトでは、ブラウザなどの各プラットフォームにおける<a href="https://web-platform-tests.org/">web platform tests</a>への準拠度を確認することが出来ます。</p>\n<hr>\n<ul>\n<li><a href="https://deno.com/blog/v1.12">https://deno.com/blog/v1.12</a></li>\n<li><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyi</a></li>\n</ul>\n<h2 id="deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/lambdalisue/deno-unknownutil">deno-unknownutil v1.0.0のリリース</a><a class="anchor" href="#deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p><code>deno-unknownutil</code>はDenoで<code>unknown</code>型を取り扱うためのユーティリティです。</p>\n<p><a href="https://github.com/vim-denops/denops.vim">denops.vim</a>のプラグイン開発など、<code>unknown</code>型を頻繁に取り扱う必要があるケースにおいて便利そうです。</p>\n<hr>\n<p><a href="https://github.com/lambdalisue/deno-unknownutil">https://github.com/lambdalisue/deno-unknownutil</a></p>'
         } }),
     'head': React.createElement(React.Fragment, null,
         React.createElement(Ga, { id: "G-MK2K2MRMBF" }),
@@ -20,7 +20,7 @@ export default {
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
     'contentTitle': undefined,
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.12.0のリリース</a></li><li><a href="#deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.101.0のリリース</a></li><li><a href="#wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89">wpt.fyiにDenoが掲載</a></li><li><a href="#deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno-unknownutil v1.0.0のリリース</a></li></ol></nav><h2 id="deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno/releases/tag/v1.12.0">Deno v1.12.0のリリース</a><a class="anchor" href="#deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.12.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><a href="%5Bhttps://developer.mozilla.org/ja/docs/Web/API/MessageChannel%5D(https://developer.mozilla.org/ja/docs/Web/API/MessageChannel)">MessageChannel</a>と<a href="%5Bhttps://developer.mozilla.org/ja/docs/Web/API/MessagePort%5D(https://developer.mozilla.org/ja/docs/Web/API/MessagePort)">MessagePort</a>がサポートされました</li>\n<li><code>Deno</code>名前空間の<code>Object.freeze</code>による凍結が解除され、<code>configurable</code>になりました</li>\n<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming">WebAssembly.instantiateStreaming</a>がサポートされました</li>\n<li><code>tsconfig.json</code>や<code>Deno.emit</code>で<code>types</code>オプションがサポートされました</li>\n<li><a href="https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html#-reference-types-">/// <reference types="..." /></a>がサポートされました</li>\n<li><code>SharedArrayBuffer</code>のworker間での共有がサポートされました</li>\n<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/generateKey">SubtleCrypto.generateKey</a>と<a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/sign">SubtleCrypto.sign</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/verify">SubtleCrypto.verify</a>がサポートされました</li>\n<li><code>Deno.createHttpClient</code>で<code>proxy</code>オプションがサポートされました</li>\n<li>ネイティブHTTPサーバでWebSocketがサポートされました (<code>Deno.upgradeWebSocket</code>)</li>\n<li>Denoのデバッグ機能(<code>--inspect/--inspect-brk</code>)が改善され、コンソールへの出力がDevToolsとターミナルの両方に出力されるようになりました</li>\n<li><code>deno lsp</code>の<code>textDocument/hover</code>メソッドで依存モジュールの情報を表示できるようになりました</li>\n<li>REPLの補完の挙動が改善されました</li>\n<li>REPLでimport宣言がサポートされました</li>\n<li>REPLでTypeScriptがサポートされました</li>\n<li>REPLなどで<code>Event</code>や<code>Request</code>などのクラスの<code>prototype</code>を評価しようとすると、プロセスがクラッシュする問題が修正されました</li>\n<li><code>deno test</code>で<code>--shuffle</code>と<code>--fail-fast=&lt;N&gt;</code>オプションがサポートされました</li>\n<li><code>DedicatedWorkerGlobalScope</code>のイベントハンドラが仕様通りに動作するように修正されました</li>\n<li><code>Deno.ppid</code>と<code>Deno.memoryUsage</code>がstableになりました</li>\n<li><code>console.table</code>の出力が改善されました</li>\n<li>fetch APIでユーザが指定したHOSTヘッダが無視されるようになりました</li>\n<li>fetch APIでOPTIONSリクエストを送信したときに、レスポンスボディが設定されるように修正されました</li>\n<li><a href="https://w3c.github.io/perf-timing-primer/">performance API</a>のWeb標準との互換性が向上しました</li>\n<li><code>SignalStream#dispose</code>を呼んだ後にも<code>SignalStream#then</code>で登録したコールバックが呼ばれてしまう問題が修正されました</li>\n<li><code>Deno.copy</code>が非推奨化されました</li>\n<li>循環依存の関係にある複数のモジュールを平行で動的importすると、プロセスがクラッシュする問題が修正されました</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.12.0">https://github.com/denoland/deno/releases/tag/v1.12.0</a></li>\n<li><a href="https://deno.com/blog/v1.12">https://deno.com/blog/v1.12</a></li>\n<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-12-0">Deno 1.12.0 がリリースされたので新機能や変更点の紹介</a></li>\n</ul>\n<h2 id="deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/releases/tag/0.101.0">deno_std v0.101.0のリリース</a><a class="anchor" href="#deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>deno_stdのv0.101.0がリリースされました。</p>\n<p>このリリースにはいくつかの破壊的変更が含まれています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>encoding/hex: <code>encodedLen</code>, <code>encodeToString</code>, <code>decodedLen</code>, <code>decodeString</code>が削除され、<code>errInvalidByte</code>と<code>errLength</code>が非公開になりました (<strong>破壊的変更</strong>)</li>\n<li>mime/multipart: <code>MultipartReader#readForm</code>の戻り値である<code>MultipartFormData</code>の各メソッドが配列を返却するように変更されました。それに合わせて、<code>file</code>と<code>value</code>メソッドがそれぞれ<code>files</code>と<code>values</code>にリネームされています (<strong>破壊的変更</strong>)</li>\n<li>uuid/v4: <code>generate</code>関数が非推奨化されました (Web Crypto APIが実装されたため)</li>\n<li>uuid/v5: Web Crypto APIの実装に合わせ、<code>generate</code>関数のシグネチャが変更されました (<strong>破壊的変更</strong>)</li>\n<li>async: <code>deadline</code>関数と<code>debounce</code>関数が追加されました</li>\n<li>encoding/toml: 不適切な形式の文字列が適切に取り扱われるよう修正されました</li>\n<li>encoding/toml: <code>stringify</code>で複数の型が混在した配列が適切にシリアライズされない問題が修正されました</li>\n<li>encoding/toml: 不適切な空白文字が含まれていた際に、例外が投げられるように修正されました</li>\n<li>hash: BLAKE3ハッシュ関数がサポートされました</li>\n<li>http/cookie: Domain属性に不適切な形式の値が設定されていないかチェックされるようになりました</li>\n<li>http/cookie: <code>deleteCookie</code>でPath属性とDomain属性の指定がサポートされました</li>\n<li>http/cookie: <code>setCookie</code>で<code>maxAge</code>オプションに<code>0</code>を指定するとエラーが発生する問題が修正されました</li>\n<li>io/bufio: <code>readLines</code>関数で、EOFに達した際に余分な空文字列が<code>yield</code>される問題が修正されました</li>\n<li>io/util: Deno v1.12.0における<code>Deno.copy</code>の非推奨化に合わせ、<code>copy</code>関数が追加されました</li>\n<li>io/streams: <code>writableStreamFromWriter</code>に<code>autoClose</code>オプションが追加され、ストリームが閉じた際に<code>Writer</code>も自動で閉じるかを制御できるようになりました</li>\n<li>node/module: <code>createRequire</code>に不正なURLを指定した際のエラーメッセージが親切になりました</li>\n<li>path/glob: <code>?</code>で任意の文字へのマッチがサポートされました</li>\n<li>testing/asserts: <code>fail</code>の戻り値の型が<code>never</code>に変更されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/releases/tag/0.101.0">https://github.com/denoland/deno_std/releases/tag/0.101.0</a></p>\n<h2 id="wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89"><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyiにDenoが掲載</a><a class="anchor" href="#wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89">§</a></h2>\n<p><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyi</a>にDenoが掲載されました。</p>\n<p>このサイトでは、ブラウザなどの各プラットフォームにおける<a href="https://web-platform-tests.org/">web platform tests</a>への準拠度を確認することが出来ます。</p>\n<hr>\n<ul>\n<li><a href="https://deno.com/blog/v1.12">https://deno.com/blog/v1.12</a></li>\n<li><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyi</a></li>\n</ul>\n<h2 id="deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/lambdalisue/deno-unknownutil">deno-unknownutil v1.0.0のリリース</a><a class="anchor" href="#deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p><code>deno-unknownutil</code>はDenoで<code>unknown</code>型を取り扱うためのユーティリティです。</p>\n<p><a href="https://github.com/vim-denops/denops.vim">denops.vim</a>のプラグイン開発など、<code>unknown</code>型を頻繁に取り扱う必要があるケースにおいて便利そうです。</p>\n<hr>\n<p><a href="https://github.com/lambdalisue/deno-unknownutil">https://github.com/lambdalisue/deno-unknownutil</a></p>'
+            __html: '<nav class="toc"><ol><li><a href="#deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.12.0のリリース</a></li><li><a href="#deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.101.0のリリース</a></li><li><a href="#wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89">wpt.fyiにDenoが掲載</a></li><li><a href="#deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno-unknownutil v1.0.0のリリース</a></li></ol></nav><h2 id="deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno/releases/tag/v1.12.0">Deno v1.12.0のリリース</a><a class="anchor" href="#deno-v1120%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.12.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><a href="https://developer.mozilla.org/ja/docs/Web/API/MessageChannel">MessageChannel</a>と<a href="https://developer.mozilla.org/ja/docs/Web/API/MessagePort">MessagePort</a>がサポートされました</li>\n<li><code>Deno</code>名前空間の<code>Object.freeze</code>による凍結が解除され、<code>configurable</code>になりました</li>\n<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming">WebAssembly.instantiateStreaming</a>がサポートされました</li>\n<li><code>tsconfig.json</code>や<code>Deno.emit</code>で<code>types</code>オプションがサポートされました</li>\n<li><code>/// &lt;reference types=&quot;...&quot; /&gt;</code>がサポートされました</li>\n<li><code>SharedArrayBuffer</code>のworker間での共有がサポートされました</li>\n<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/generateKey">SubtleCrypto.generateKey</a>と<a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/sign">SubtleCrypto.sign</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/verify">SubtleCrypto.verify</a>がサポートされました</li>\n<li><code>Deno.createHttpClient</code>で<code>proxy</code>オプションがサポートされました</li>\n<li>ネイティブHTTPサーバでWebSocketがサポートされました (<code>Deno.upgradeWebSocket</code>)</li>\n<li>Denoのデバッグ機能(<code>--inspect/--inspect-brk</code>)が改善され、コンソールへの出力がDevToolsとターミナルの両方に出力されるようになりました</li>\n<li><code>deno lsp</code>の<code>textDocument/hover</code>メソッドで依存モジュールの情報を表示できるようになりました</li>\n<li>REPLの補完の挙動が改善されました</li>\n<li>REPLでimport宣言がサポートされました</li>\n<li>REPLでTypeScriptがサポートされました</li>\n<li>REPLなどで<code>Event</code>や<code>Request</code>などのクラスの<code>prototype</code>を評価しようとすると、プロセスがクラッシュする問題が修正されました</li>\n<li><code>deno test</code>で<code>--shuffle</code>と<code>--fail-fast=&lt;N&gt;</code>オプションがサポートされました</li>\n<li><code>DedicatedWorkerGlobalScope</code>のイベントハンドラが仕様通りに動作するように修正されました</li>\n<li><code>Deno.ppid</code>と<code>Deno.memoryUsage</code>がstableになりました</li>\n<li><code>console.table</code>の出力が改善されました</li>\n<li>fetch APIでユーザが指定したHOSTヘッダが無視されるようになりました</li>\n<li>fetch APIでOPTIONSリクエストを送信したときに、レスポンスボディが設定されるように修正されました</li>\n<li><a href="https://w3c.github.io/perf-timing-primer/">performance API</a>のWeb標準との互換性が向上しました</li>\n<li><code>SignalStream#dispose</code>を呼んだ後にも<code>SignalStream#then</code>で登録したコールバックが呼ばれてしまう問題が修正されました</li>\n<li><code>Deno.copy</code>が非推奨化されました</li>\n<li>循環依存の関係にある複数のモジュールを平行で動的importすると、プロセスがクラッシュする問題が修正されました</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/denoland/deno/releases/tag/v1.12.0">https://github.com/denoland/deno/releases/tag/v1.12.0</a></li>\n<li><a href="https://deno.com/blog/v1.12">https://deno.com/blog/v1.12</a></li>\n<li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-12-0">Deno 1.12.0 がリリースされたので新機能や変更点の紹介</a></li>\n</ul>\n<h2 id="deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/releases/tag/0.101.0">deno_std v0.101.0のリリース</a><a class="anchor" href="#deno_std-v01010%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>deno_stdのv0.101.0がリリースされました。</p>\n<p>このリリースにはいくつかの破壊的変更が含まれています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>encoding/hex: <code>encodedLen</code>, <code>encodeToString</code>, <code>decodedLen</code>, <code>decodeString</code>が削除され、<code>errInvalidByte</code>と<code>errLength</code>が非公開になりました (<strong>破壊的変更</strong>)</li>\n<li>mime/multipart: <code>MultipartReader#readForm</code>の戻り値である<code>MultipartFormData</code>の各メソッドが配列を返却するように変更されました。それに合わせて、<code>file</code>と<code>value</code>メソッドがそれぞれ<code>files</code>と<code>values</code>にリネームされています (<strong>破壊的変更</strong>)</li>\n<li>uuid/v4: <code>generate</code>関数が非推奨化されました (Web Crypto APIが実装されたため)</li>\n<li>uuid/v5: Web Crypto APIの実装に合わせ、<code>generate</code>関数のシグネチャが変更されました (<strong>破壊的変更</strong>)</li>\n<li>async: <code>deadline</code>関数と<code>debounce</code>関数が追加されました</li>\n<li>encoding/toml: 不適切な形式の文字列が適切に取り扱われるよう修正されました</li>\n<li>encoding/toml: <code>stringify</code>で複数の型が混在した配列が適切にシリアライズされない問題が修正されました</li>\n<li>encoding/toml: 不適切な空白文字が含まれていた際に、例外が投げられるように修正されました</li>\n<li>hash: BLAKE3ハッシュ関数がサポートされました</li>\n<li>http/cookie: Domain属性に不適切な形式の値が設定されていないかチェックされるようになりました</li>\n<li>http/cookie: <code>deleteCookie</code>でPath属性とDomain属性の指定がサポートされました</li>\n<li>http/cookie: <code>setCookie</code>で<code>maxAge</code>オプションに<code>0</code>を指定するとエラーが発生する問題が修正されました</li>\n<li>io/bufio: <code>readLines</code>関数で、EOFに達した際に余分な空文字列が<code>yield</code>される問題が修正されました</li>\n<li>io/util: Deno v1.12.0における<code>Deno.copy</code>の非推奨化に合わせ、<code>copy</code>関数が追加されました</li>\n<li>io/streams: <code>writableStreamFromWriter</code>に<code>autoClose</code>オプションが追加され、ストリームが閉じた際に<code>Writer</code>も自動で閉じるかを制御できるようになりました</li>\n<li>node/module: <code>createRequire</code>に不正なURLを指定した際のエラーメッセージが親切になりました</li>\n<li>path/glob: <code>?</code>で任意の文字へのマッチがサポートされました</li>\n<li>testing/asserts: <code>fail</code>の戻り値の型が<code>never</code>に変更されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/releases/tag/0.101.0">https://github.com/denoland/deno_std/releases/tag/0.101.0</a></p>\n<h2 id="wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89"><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyiにDenoが掲載</a><a class="anchor" href="#wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89">§</a></h2>\n<p><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyi</a>にDenoが掲載されました。</p>\n<p>このサイトでは、ブラウザなどの各プラットフォームにおける<a href="https://web-platform-tests.org/">web platform tests</a>への準拠度を確認することが出来ます。</p>\n<hr>\n<ul>\n<li><a href="https://deno.com/blog/v1.12">https://deno.com/blog/v1.12</a></li>\n<li><a href="https://wpt.fyi/results/url?label=master&amp;label=experimental&amp;product=chrome&amp;product=firefox&amp;product=safari&amp;product=deno&amp;aligned">wpt.fyi</a></li>\n</ul>\n<h2 id="deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/lambdalisue/deno-unknownutil">deno-unknownutil v1.0.0のリリース</a><a class="anchor" href="#deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p><code>deno-unknownutil</code>はDenoで<code>unknown</code>型を取り扱うためのユーティリティです。</p>\n<p><a href="https://github.com/vim-denops/denops.vim">denops.vim</a>のプラグイン開発など、<code>unknown</code>型を頻繁に取り扱う必要があるケースにおいて便利そうです。</p>\n<hr>\n<p><a href="https://github.com/lambdalisue/deno-unknownutil">https://github.com/lambdalisue/deno-unknownutil</a></p>'
         } }),
     'toc': React.createElement("nav", { key: "0", className: "toc" },
         React.createElement("ol", null,
@@ -32,9 +32,9 @@ export default {
                 React.createElement("a", { href: "#wptfyi%E3%81%ABdeno%E3%81%8C%E6%8E%B2%E8%BC%89" }, "wpt.fyi\u306BDeno\u304C\u63B2\u8F09")),
             React.createElement("li", null,
                 React.createElement("a", { href: "#deno-unknownutil-v100%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9" }, "deno-unknownutil v1.0.0\u306E\u30EA\u30EA\u30FC\u30B9")))),
-    'author': "Yuki Tanaka",
+    'author': "uki00a",
     'contributors': [
-        "Yuki Tanaka"
+        "uki00a"
     ],
     'date': "2021/07/18",
     'updated': null,
@@ -56,9 +56,9 @@ export default {
                 "link": "articles/2021/07/18.html",
                 "date": "2021/07/18",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -75,9 +75,9 @@ export default {
                 "link": "articles/2021/07/11.html",
                 "date": "2021/07/11",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -95,9 +95,9 @@ export default {
                 "link": "articles/2021/07/04.html",
                 "date": "2021/07/04",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -117,9 +117,9 @@ export default {
                 "link": "articles/2021/06/27.html",
                 "date": "2021/06/27",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -137,9 +137,9 @@ export default {
                 "link": "articles/2021/06/20.html",
                 "date": "2021/06/20",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -157,9 +157,9 @@ export default {
                 "link": "articles/2021/06/13.html",
                 "date": "2021/06/13",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -177,9 +177,9 @@ export default {
                 "link": "articles/2021/06/06.html",
                 "date": "2021/06/06",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -197,9 +197,9 @@ export default {
                 "link": "articles/2021/05/30.html",
                 "date": "2021/05/30",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -218,9 +218,9 @@ export default {
                 "link": "articles/2021/05/23.html",
                 "date": "2021/05/23",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -240,9 +240,9 @@ export default {
                 "link": "articles/2021/05/16.html",
                 "date": "2021/05/16",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -262,9 +262,9 @@ export default {
                 "link": "articles/2021/05/09.html",
                 "date": "2021/05/09",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -282,9 +282,9 @@ export default {
                 "link": "articles/2021/05/02.html",
                 "date": "2021/05/02",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -303,9 +303,9 @@ export default {
                 "link": "articles/2021/04/25.html",
                 "date": "2021/04/25",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -325,9 +325,9 @@ export default {
                 "link": "articles/2021/04/18.html",
                 "date": "2021/04/18",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -347,9 +347,9 @@ export default {
                 "link": "articles/2021/04/11.html",
                 "date": "2021/04/11",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -368,9 +368,9 @@ export default {
                 "link": "articles/2021/04/04.html",
                 "date": "2021/04/04",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -392,9 +392,9 @@ export default {
                 "link": "articles/2021/03/28.html",
                 "date": "2021/03/28",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -414,9 +414,9 @@ export default {
                 "link": "articles/2021/03/21.html",
                 "date": "2021/03/21",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -435,9 +435,9 @@ export default {
                 "link": "articles/2021/03/14.html",
                 "date": "2021/03/14",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -459,9 +459,9 @@ export default {
                 "link": "articles/2021/03/07.html",
                 "date": "2021/03/07",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -482,9 +482,9 @@ export default {
                 "link": "articles/2021/02/28.html",
                 "date": "2021/02/28",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -503,9 +503,9 @@ export default {
                 "link": "articles/2021/02/21.html",
                 "date": "2021/02/21",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -525,9 +525,9 @@ export default {
                 "link": "articles/2021/02/14.html",
                 "date": "2021/02/14",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -547,9 +547,9 @@ export default {
                 "link": "articles/2021/02/07.html",
                 "date": "2021/02/07",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -569,9 +569,9 @@ export default {
                 "link": "articles/2021/01/31.html",
                 "date": "2021/01/31",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -588,9 +588,9 @@ export default {
                 "link": "articles/2021/01/24.html",
                 "date": "2021/01/24",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -607,9 +607,9 @@ export default {
                 "link": "articles/2021/01/17.html",
                 "date": "2021/01/17",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -622,9 +622,9 @@ export default {
                 "link": "articles/2021/01/10.html",
                 "date": "2021/01/10",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -641,9 +641,9 @@ export default {
                 "link": "articles/2021/01/03.html",
                 "date": "2021/01/03",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -659,9 +659,9 @@ export default {
                 "link": "articles/2021/01/02.html",
                 "date": "2021/01/02",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "notice"
