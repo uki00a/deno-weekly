@@ -58,6 +58,25 @@ export default {
         "isPost": true,
         "posts": [
             {
+                "pagePath": "articles/2021/07/18.md",
+                "title": "2021/07/12〜2021/07/18の最新情報",
+                "link": "articles/2021/07/18.html",
+                "date": "2021/07/18",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "deno_std"
+                ],
+                "excerpt": " 1. Deno v1.12.0のリリース 2. deno_std v0.101.0のリリース 3. wpt.fyiにDenoが掲載 4. deno-unknownutil v1.0.0のリリース Deno v1.12.0のリリース Deno v1.12.0がリリースされました。 変更点: - MessageChannelとMessageP..."
+            },
+            {
                 "pagePath": "articles/2021/07/11.md",
                 "title": "2021/07/05〜2021/07/11の最新情報",
                 "link": "articles/2021/07/11.html",
@@ -660,7 +679,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 28
+                "count": 29
             },
             {
                 "name": "notice",
@@ -670,11 +689,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 21
+                "count": 22
             },
             {
                 "name": "deno_std",
-                "count": 12
+                "count": 13
             },
             {
                 "name": "deno-postgres",

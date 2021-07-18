@@ -126,7 +126,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 28
+                "count": 29
             },
             {
                 "name": "notice",
@@ -136,11 +136,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 21
+                "count": 22
             },
             {
                 "name": "deno_std",
-                "count": 12
+                "count": 13
             },
             {
                 "name": "deno-postgres",
