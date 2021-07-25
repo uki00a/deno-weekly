@@ -16,6 +16,7 @@ ${toc}
 |[deno_mysql](https://github.com/denodrivers/mysql)|MySQLクライアント|
 |[deno-sqlite](https://github.com/dyedgreen/deno-sqlite)|SQLiteライブラリ|
 |[deno-redis](https://github.com/denodrivers/redis)|Redisクライアント|
+|[deno_mongo](https://github.com/denodrivers/deno_mongo)|MongoDBクライアント|
 |[x/database](https://github.com/jeremyBanks/database)|データベースドライバの共通インターフェース|
 |[Nessie](https://github.com/halvardssm/deno-nessie)|データベースマイグレーションツール|
 |[Oak](https://github.com/oakserver/oak)|Webフレームワーク|
