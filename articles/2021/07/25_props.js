@@ -7,7 +7,7 @@ export default {
     'outputPath': "articles/2021/07/25.html",
     'title': "2021/07/19〜2021/07/25の最新情報",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#deno-v1121%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.12.1のリリース</a></li><li><a href="#deno_std-v01020">deno_std v0.102.0</a></li><li><a href="#oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Oak v8.0.0がリリース</a></li><li><a href="#deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_mongo v0.24.0がリリース</a></li></ol></nav><h2 id="deno-v1121%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno/releases/tag/v1.12.1">Deno v1.12.1のリリース</a><a class="anchor" href="#deno-v1121%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>crypto.getRandomValues</code>で<code>BigInt64Array</code>と<code>BigUint64Array</code>がサポートされました</li>\n<li>ネイティブHTTPサーバで、<code>Cookie</code>ヘッダの値と名前の組が、セミコロンではなくコンマ区切りで設定されてしまう問題が修正されました</li>\n<li><code>FileReader#abort()</code>が現在の読み込み操作のみを中止するように修正されました</li>\n<li><code>Array#at</code>や<code>String#at</code>などの型定義が追加されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno/releases/tag/v1.12.1">https://github.com/denoland/deno/releases/tag/v1.12.1</a></p>\n<h2 id="deno_std-v01020"><a href="https://github.com/denoland/deno_std/releases/tag/0.102.0">deno_std v0.102.0</a><a class="anchor" href="#deno_std-v01020">§</a></h2>\n<p>deno_std v0.102.0がリリースされました。</p>\n<p>新規モジュールとして、<a href="https://doc.deno.land/https/deno.land/std@0.102.0/collections/mod.ts">std/collections</a>が追加されています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>新しく<code>std/collections</code>モジュールが追加されました</li>\n<li><code>encoding/toml</code>: コメントのみを含む行で<code>#</code>の前に空白が含まれていると、それがコメントではなくキーとして解析されてしまう問題が修正されました</li>\n<li><code>encoding/toml</code>: クォートや空白などを含むキーが仕様通りに解析されない問題が修正されました</li>\n<li><code>hash</code>: <code>Hash#update</code>で<code>Uint8Array</code>以外のTypedArrayが適切に取り扱われない問題が修正されました</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/denoland/deno_std/releases/tag/0.102.0">https://github.com/denoland/deno_std/releases/tag/0.102.0</a></li>\n<li><a href="https://zenn.dev/kawarimidoll/articles/7d1fc9f0fb6538">Deno標準ライブラリ0.102.0で追加されたcollectionsの紹介</a></li>\n</ul>\n<h2 id="oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba">Oak v8.0.0がリリース</a><a class="anchor" href="#oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Oak v8.0.0がリリースされました。</p>\n<p>このリリースには破壊的変更が含まれます。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>Deno v1.12.0で実装された<code>Deno.upgradeWebSocket()</code>ベースのWebSocketサポートが追加されました\n<ul>\n<li>それに伴い、<code>Context.#upgrade</code>が標準の<code>WebSocket</code>オブジェクトを返却するように変更されています (<strong>破壊的変更</strong>)</li>\n</ul>\n</li>\n<li><code>Application</code>オブジェクトを作成する際に、<code>contextState</code>オプションによって<code>Context.state</code>が作成される際の挙動を制御できるようになりました。</li>\n<li><code>Context#send</code>で<code>contentTypes</code>オプションがサポートされ、<code>Content-Type</code>ヘッダの内容をカスタマイズできるようになりました。</li>\n<li>デフォルトで、補足されなかった例外が標準エラーに出力されるようになりました (この挙動は<code>logErrors</code>オプションに<code>false</code>を設定することで無効化できます)</li>\n</ul>\n<hr>\n<p><a href="https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba">https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba</a></p>\n<h2 id="deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0">deno_mongo v0.24.0がリリース</a><a class="anchor" href="#deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>DenoのMongoDBクライアントであるdeno_mongoのv0.24.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>Collection#dropIndexes</code>が実装されました</li>\n<li><code>Collection#findAndModify</code>が実装されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0">https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0</a></p>'
+            __html: '<nav class="toc"><ol><li><a href="#deno-v1121%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.12.1がリリース</a></li><li><a href="#deno_std-v01020%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.102.0がリリース</a></li><li><a href="#oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Oak v8.0.0がリリース</a></li><li><a href="#deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_mongo v0.24.0がリリース</a></li></ol></nav><h2 id="deno-v1121%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno/releases/tag/v1.12.1">Deno v1.12.1がリリース</a><a class="anchor" href="#deno-v1121%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>crypto.getRandomValues</code>で<code>BigInt64Array</code>と<code>BigUint64Array</code>がサポートされました</li>\n<li>ネイティブHTTPサーバで、<code>Cookie</code>ヘッダの値と名前の組が、セミコロンではなくコンマ区切りで設定されてしまう問題が修正されました</li>\n<li><code>FileReader#abort()</code>が現在の読み込み操作のみを中止するように修正されました</li>\n<li><code>Array#at</code>や<code>String#at</code>などの型定義が追加されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno/releases/tag/v1.12.1">https://github.com/denoland/deno/releases/tag/v1.12.1</a></p>\n<h2 id="deno_std-v01020%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/releases/tag/0.102.0">deno_std v0.102.0がリリース</a><a class="anchor" href="#deno_std-v01020%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>deno_std v0.102.0がリリースされました。</p>\n<p>新規モジュールとして、<a href="https://doc.deno.land/https/deno.land/std@0.102.0/collections/mod.ts">std/collections</a>が追加されています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>新しく<code>std/collections</code>モジュールが追加されました</li>\n<li><code>encoding/toml</code>: コメントのみを含む行で<code>#</code>の前に空白が含まれていると、それがコメントではなくキーとして解析されてしまう問題が修正されました</li>\n<li><code>encoding/toml</code>: クォートや空白などを含むキーが仕様通りに解析されない問題が修正されました</li>\n<li><code>hash</code>: <code>Hash#update</code>で<code>Uint8Array</code>以外のTypedArrayが適切に取り扱われない問題が修正されました</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/denoland/deno_std/releases/tag/0.102.0">https://github.com/denoland/deno_std/releases/tag/0.102.0</a></li>\n<li><a href="https://zenn.dev/kawarimidoll/articles/7d1fc9f0fb6538">Deno標準ライブラリ0.102.0で追加されたcollectionsの紹介</a></li>\n</ul>\n<h2 id="oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba">Oak v8.0.0がリリース</a><a class="anchor" href="#oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Oak v8.0.0がリリースされました。</p>\n<p>このリリースには破壊的変更が含まれます。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>Deno v1.12.0で実装された<code>Deno.upgradeWebSocket()</code>ベースのWebSocketサポートが追加されました\n<ul>\n<li>それに伴い、<code>Context.#upgrade</code>が標準の<code>WebSocket</code>オブジェクトを返却するように変更されています (<strong>破壊的変更</strong>)</li>\n</ul>\n</li>\n<li><code>Application</code>オブジェクトを作成する際に、<code>contextState</code>オプションによって<code>Context.state</code>が作成される際の挙動を制御できるようになりました。</li>\n<li><code>Context#send</code>で<code>contentTypes</code>オプションがサポートされ、<code>Content-Type</code>ヘッダの内容をカスタマイズできるようになりました。</li>\n<li>デフォルトで、補足されなかった例外が標準エラーに出力されるようになりました (この挙動は<code>logErrors</code>オプションに<code>false</code>を設定することで無効化できます)</li>\n</ul>\n<hr>\n<p><a href="https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba">https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba</a></p>\n<h2 id="deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0">deno_mongo v0.24.0がリリース</a><a class="anchor" href="#deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>DenoのMongoDBクライアントであるdeno_mongoのv0.24.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>Collection#dropIndexes</code>が実装されました</li>\n<li><code>Collection#findAndModify</code>が実装されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0">https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0</a></p>'
         } }),
     'head': React.createElement(React.Fragment, null,
         React.createElement(Ga, { id: "G-MK2K2MRMBF" }),
@@ -20,25 +20,25 @@ export default {
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
     'contentTitle': undefined,
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#deno-v1121%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.12.1のリリース</a></li><li><a href="#deno_std-v01020">deno_std v0.102.0</a></li><li><a href="#oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Oak v8.0.0がリリース</a></li><li><a href="#deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_mongo v0.24.0がリリース</a></li></ol></nav><h2 id="deno-v1121%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno/releases/tag/v1.12.1">Deno v1.12.1のリリース</a><a class="anchor" href="#deno-v1121%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>crypto.getRandomValues</code>で<code>BigInt64Array</code>と<code>BigUint64Array</code>がサポートされました</li>\n<li>ネイティブHTTPサーバで、<code>Cookie</code>ヘッダの値と名前の組が、セミコロンではなくコンマ区切りで設定されてしまう問題が修正されました</li>\n<li><code>FileReader#abort()</code>が現在の読み込み操作のみを中止するように修正されました</li>\n<li><code>Array#at</code>や<code>String#at</code>などの型定義が追加されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno/releases/tag/v1.12.1">https://github.com/denoland/deno/releases/tag/v1.12.1</a></p>\n<h2 id="deno_std-v01020"><a href="https://github.com/denoland/deno_std/releases/tag/0.102.0">deno_std v0.102.0</a><a class="anchor" href="#deno_std-v01020">§</a></h2>\n<p>deno_std v0.102.0がリリースされました。</p>\n<p>新規モジュールとして、<a href="https://doc.deno.land/https/deno.land/std@0.102.0/collections/mod.ts">std/collections</a>が追加されています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>新しく<code>std/collections</code>モジュールが追加されました</li>\n<li><code>encoding/toml</code>: コメントのみを含む行で<code>#</code>の前に空白が含まれていると、それがコメントではなくキーとして解析されてしまう問題が修正されました</li>\n<li><code>encoding/toml</code>: クォートや空白などを含むキーが仕様通りに解析されない問題が修正されました</li>\n<li><code>hash</code>: <code>Hash#update</code>で<code>Uint8Array</code>以外のTypedArrayが適切に取り扱われない問題が修正されました</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/denoland/deno_std/releases/tag/0.102.0">https://github.com/denoland/deno_std/releases/tag/0.102.0</a></li>\n<li><a href="https://zenn.dev/kawarimidoll/articles/7d1fc9f0fb6538">Deno標準ライブラリ0.102.0で追加されたcollectionsの紹介</a></li>\n</ul>\n<h2 id="oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba">Oak v8.0.0がリリース</a><a class="anchor" href="#oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Oak v8.0.0がリリースされました。</p>\n<p>このリリースには破壊的変更が含まれます。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>Deno v1.12.0で実装された<code>Deno.upgradeWebSocket()</code>ベースのWebSocketサポートが追加されました\n<ul>\n<li>それに伴い、<code>Context.#upgrade</code>が標準の<code>WebSocket</code>オブジェクトを返却するように変更されています (<strong>破壊的変更</strong>)</li>\n</ul>\n</li>\n<li><code>Application</code>オブジェクトを作成する際に、<code>contextState</code>オプションによって<code>Context.state</code>が作成される際の挙動を制御できるようになりました。</li>\n<li><code>Context#send</code>で<code>contentTypes</code>オプションがサポートされ、<code>Content-Type</code>ヘッダの内容をカスタマイズできるようになりました。</li>\n<li>デフォルトで、補足されなかった例外が標準エラーに出力されるようになりました (この挙動は<code>logErrors</code>オプションに<code>false</code>を設定することで無効化できます)</li>\n</ul>\n<hr>\n<p><a href="https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba">https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba</a></p>\n<h2 id="deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0">deno_mongo v0.24.0がリリース</a><a class="anchor" href="#deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>DenoのMongoDBクライアントであるdeno_mongoのv0.24.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>Collection#dropIndexes</code>が実装されました</li>\n<li><code>Collection#findAndModify</code>が実装されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0">https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0</a></p>'
+            __html: '<nav class="toc"><ol><li><a href="#deno-v1121%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.12.1がリリース</a></li><li><a href="#deno_std-v01020%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.102.0がリリース</a></li><li><a href="#oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Oak v8.0.0がリリース</a></li><li><a href="#deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_mongo v0.24.0がリリース</a></li></ol></nav><h2 id="deno-v1121%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno/releases/tag/v1.12.1">Deno v1.12.1がリリース</a><a class="anchor" href="#deno-v1121%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>crypto.getRandomValues</code>で<code>BigInt64Array</code>と<code>BigUint64Array</code>がサポートされました</li>\n<li>ネイティブHTTPサーバで、<code>Cookie</code>ヘッダの値と名前の組が、セミコロンではなくコンマ区切りで設定されてしまう問題が修正されました</li>\n<li><code>FileReader#abort()</code>が現在の読み込み操作のみを中止するように修正されました</li>\n<li><code>Array#at</code>や<code>String#at</code>などの型定義が追加されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno/releases/tag/v1.12.1">https://github.com/denoland/deno/releases/tag/v1.12.1</a></p>\n<h2 id="deno_std-v01020%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/releases/tag/0.102.0">deno_std v0.102.0がリリース</a><a class="anchor" href="#deno_std-v01020%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>deno_std v0.102.0がリリースされました。</p>\n<p>新規モジュールとして、<a href="https://doc.deno.land/https/deno.land/std@0.102.0/collections/mod.ts">std/collections</a>が追加されています。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>新しく<code>std/collections</code>モジュールが追加されました</li>\n<li><code>encoding/toml</code>: コメントのみを含む行で<code>#</code>の前に空白が含まれていると、それがコメントではなくキーとして解析されてしまう問題が修正されました</li>\n<li><code>encoding/toml</code>: クォートや空白などを含むキーが仕様通りに解析されない問題が修正されました</li>\n<li><code>hash</code>: <code>Hash#update</code>で<code>Uint8Array</code>以外のTypedArrayが適切に取り扱われない問題が修正されました</li>\n</ul>\n<hr>\n<ul>\n<li><a href="https://github.com/denoland/deno_std/releases/tag/0.102.0">https://github.com/denoland/deno_std/releases/tag/0.102.0</a></li>\n<li><a href="https://zenn.dev/kawarimidoll/articles/7d1fc9f0fb6538">Deno標準ライブラリ0.102.0で追加されたcollectionsの紹介</a></li>\n</ul>\n<h2 id="oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba">Oak v8.0.0がリリース</a><a class="anchor" href="#oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>Oak v8.0.0がリリースされました。</p>\n<p>このリリースには破壊的変更が含まれます。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>Deno v1.12.0で実装された<code>Deno.upgradeWebSocket()</code>ベースのWebSocketサポートが追加されました\n<ul>\n<li>それに伴い、<code>Context.#upgrade</code>が標準の<code>WebSocket</code>オブジェクトを返却するように変更されています (<strong>破壊的変更</strong>)</li>\n</ul>\n</li>\n<li><code>Application</code>オブジェクトを作成する際に、<code>contextState</code>オプションによって<code>Context.state</code>が作成される際の挙動を制御できるようになりました。</li>\n<li><code>Context#send</code>で<code>contentTypes</code>オプションがサポートされ、<code>Content-Type</code>ヘッダの内容をカスタマイズできるようになりました。</li>\n<li>デフォルトで、補足されなかった例外が標準エラーに出力されるようになりました (この挙動は<code>logErrors</code>オプションに<code>false</code>を設定することで無効化できます)</li>\n</ul>\n<hr>\n<p><a href="https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba">https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba</a></p>\n<h2 id="deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0">deno_mongo v0.24.0がリリース</a><a class="anchor" href="#deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h2>\n<p>DenoのMongoDBクライアントであるdeno_mongoのv0.24.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>Collection#dropIndexes</code>が実装されました</li>\n<li><code>Collection#findAndModify</code>が実装されました</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0">https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0</a></p>'
         } }),
     'toc': React.createElement("nav", { key: "0", className: "toc" },
         React.createElement("ol", null,
             React.createElement("li", null,
-                React.createElement("a", { href: "#deno-v1121%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9" }, "Deno v1.12.1\u306E\u30EA\u30EA\u30FC\u30B9")),
+                React.createElement("a", { href: "#deno-v1121%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9" }, "Deno v1.12.1\u304C\u30EA\u30EA\u30FC\u30B9")),
             React.createElement("li", null,
-                React.createElement("a", { href: "#deno_std-v01020" }, "deno_std v0.102.0")),
+                React.createElement("a", { href: "#deno_std-v01020%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9" }, "deno_std v0.102.0\u304C\u30EA\u30EA\u30FC\u30B9")),
             React.createElement("li", null,
                 React.createElement("a", { href: "#oak-v800%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9" }, "Oak v8.0.0\u304C\u30EA\u30EA\u30FC\u30B9")),
             React.createElement("li", null,
                 React.createElement("a", { href: "#deno_mongo-v0240%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9" }, "deno_mongo v0.24.0\u304C\u30EA\u30EA\u30FC\u30B9")))),
-    'author': "Yuki Tanaka",
+    'author': "uki00a",
     'contributors': [
-        "Yuki Tanaka"
+        "uki00a"
     ],
     'date': "2021/07/25",
     'updated': null,
-    'excerpt': " 1. Deno v1.12.1のリリース 2. deno_std v0.102.0 3. Oak v8.0.0がリリース 4. deno_mongo v0.24.0がリリース Deno v1.12.1のリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。...",
+    'excerpt': " 1. Deno v1.12.1がリリース 2. deno_std v0.102.0がリリース 3. Oak v8.0.0がリリース 4. deno_mongo v0.24.0がリリース Deno v1.12.1がリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われ...",
     'cover': undefined,
     'tags': [
         "deno",
@@ -58,9 +58,9 @@ export default {
                 "link": "articles/2021/07/25.html",
                 "date": "2021/07/25",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -71,7 +71,7 @@ export default {
                     "Oak",
                     "deno_mongo"
                 ],
-                "excerpt": " 1. Deno v1.12.1のリリース 2. deno_std v0.102.0 3. Oak v8.0.0がリリース 4. deno_mongo v0.24.0がリリース Deno v1.12.1のリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。..."
+                "excerpt": " 1. Deno v1.12.1がリリース 2. deno_std v0.102.0がリリース 3. Oak v8.0.0がリリース 4. deno_mongo v0.24.0がリリース Deno v1.12.1がリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われ..."
             },
             {
                 "pagePath": "articles/2021/07/18.md",
@@ -79,9 +79,9 @@ export default {
                 "link": "articles/2021/07/18.html",
                 "date": "2021/07/18",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -98,9 +98,9 @@ export default {
                 "link": "articles/2021/07/11.html",
                 "date": "2021/07/11",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -118,9 +118,9 @@ export default {
                 "link": "articles/2021/07/04.html",
                 "date": "2021/07/04",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -140,9 +140,9 @@ export default {
                 "link": "articles/2021/06/27.html",
                 "date": "2021/06/27",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -160,9 +160,9 @@ export default {
                 "link": "articles/2021/06/20.html",
                 "date": "2021/06/20",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -180,9 +180,9 @@ export default {
                 "link": "articles/2021/06/13.html",
                 "date": "2021/06/13",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -200,9 +200,9 @@ export default {
                 "link": "articles/2021/06/06.html",
                 "date": "2021/06/06",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -220,9 +220,9 @@ export default {
                 "link": "articles/2021/05/30.html",
                 "date": "2021/05/30",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -241,9 +241,9 @@ export default {
                 "link": "articles/2021/05/23.html",
                 "date": "2021/05/23",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -263,9 +263,9 @@ export default {
                 "link": "articles/2021/05/16.html",
                 "date": "2021/05/16",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -285,9 +285,9 @@ export default {
                 "link": "articles/2021/05/09.html",
                 "date": "2021/05/09",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -305,9 +305,9 @@ export default {
                 "link": "articles/2021/05/02.html",
                 "date": "2021/05/02",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -326,9 +326,9 @@ export default {
                 "link": "articles/2021/04/25.html",
                 "date": "2021/04/25",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -348,9 +348,9 @@ export default {
                 "link": "articles/2021/04/18.html",
                 "date": "2021/04/18",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -370,9 +370,9 @@ export default {
                 "link": "articles/2021/04/11.html",
                 "date": "2021/04/11",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -391,9 +391,9 @@ export default {
                 "link": "articles/2021/04/04.html",
                 "date": "2021/04/04",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -415,9 +415,9 @@ export default {
                 "link": "articles/2021/03/28.html",
                 "date": "2021/03/28",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -437,9 +437,9 @@ export default {
                 "link": "articles/2021/03/21.html",
                 "date": "2021/03/21",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -458,9 +458,9 @@ export default {
                 "link": "articles/2021/03/14.html",
                 "date": "2021/03/14",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -482,9 +482,9 @@ export default {
                 "link": "articles/2021/03/07.html",
                 "date": "2021/03/07",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -505,9 +505,9 @@ export default {
                 "link": "articles/2021/02/28.html",
                 "date": "2021/02/28",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -526,9 +526,9 @@ export default {
                 "link": "articles/2021/02/21.html",
                 "date": "2021/02/21",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -548,9 +548,9 @@ export default {
                 "link": "articles/2021/02/14.html",
                 "date": "2021/02/14",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -570,9 +570,9 @@ export default {
                 "link": "articles/2021/02/07.html",
                 "date": "2021/02/07",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -592,9 +592,9 @@ export default {
                 "link": "articles/2021/01/31.html",
                 "date": "2021/01/31",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -611,9 +611,9 @@ export default {
                 "link": "articles/2021/01/24.html",
                 "date": "2021/01/24",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -630,9 +630,9 @@ export default {
                 "link": "articles/2021/01/17.html",
                 "date": "2021/01/17",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -645,9 +645,9 @@ export default {
                 "link": "articles/2021/01/10.html",
                 "date": "2021/01/10",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -664,9 +664,9 @@ export default {
                 "link": "articles/2021/01/03.html",
                 "date": "2021/01/03",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -682,9 +682,9 @@ export default {
                 "link": "articles/2021/01/02.html",
                 "date": "2021/01/02",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "notice"

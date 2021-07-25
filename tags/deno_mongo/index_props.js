@@ -22,9 +22,9 @@ export default {
                 "link": "articles/2021/07/25.html",
                 "date": "2021/07/25",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -35,7 +35,7 @@ export default {
                     "Oak",
                     "deno_mongo"
                 ],
-                "excerpt": " 1. Deno v1.12.1のリリース 2. deno_std v0.102.0 3. Oak v8.0.0がリリース 4. deno_mongo v0.24.0がリリース Deno v1.12.1のリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。..."
+                "excerpt": " 1. Deno v1.12.1がリリース 2. deno_std v0.102.0がリリース 3. Oak v8.0.0がリリース 4. deno_mongo v0.24.0がリリース Deno v1.12.1がリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われ..."
             }
         ],
         "categories": [
