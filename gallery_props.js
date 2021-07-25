@@ -7,7 +7,7 @@ export default {
     'outputPath': "gallery.html",
     'title': "ギャラリー",
     'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h1>ギャラリー</h1>\n<nav class="toc"><ol><li><a href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール</a></li><li><a href="#web%E3%82%B5%E3%82%A4%E3%83%88">Webサイト</a></li></ol></nav><p>このページには、このサイトで紹介したことのあるDenoモジュールなどの一覧を掲載しています。</p>\n<h2 id="%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール<a class="anchor" href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">§</a></h2>\n<div class="table_wrapper"><table>\n<thead>\n<tr>\n<th style="text-align:center">名前</th>\n<th style="text-align:center">概要</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/postgres">deno-postgres</a></td>\n<td style="text-align:center">PostgreSQLクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/mysql">deno_mysql</a></td>\n<td style="text-align:center">MySQLクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dyedgreen/deno-sqlite">deno-sqlite</a></td>\n<td style="text-align:center">SQLiteライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/redis">deno-redis</a></td>\n<td style="text-align:center">Redisクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/jeremyBanks/database">x/database</a></td>\n<td style="text-align:center">データベースドライバの共通インターフェース</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/halvardssm/deno-nessie">Nessie</a></td>\n<td style="text-align:center">データベースマイグレーションツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oakserver/oak">Oak</a></td>\n<td style="text-align:center">Webフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lucacasonato/fresh">fresh</a></td>\n<td style="text-align:center">Deno Deployで動作するPreactベースのフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/keroxp/servest">Servest</a></td>\n<td style="text-align:center">Webサーバ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/alosaur/alosaur">alosaur</a></td>\n<td style="text-align:center">Webフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/jurassiscripts/velociraptor">Velociraptor</a></td>\n<td style="text-align:center">タスクランナ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/crewdevio/Trex">Trex</a></td>\n<td style="text-align:center">パッケージマネージャ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/c4spar/deno-cliffy">Cliffy</a></td>\n<td style="text-align:center">CLIフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dsherret/ts-morph">ts-morph</a></td>\n<td style="text-align:center">TypeScriptコンパイラAPIのラッパ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dsherret/code-block-writer">code-block-writer</a></td>\n<td style="text-align:center">TypeScript/JavaScriptコードの生成をサポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/packup">packup</a></td>\n<td style="text-align:center">Parcelライクなビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/cmorten/luath">luath</a></td>\n<td style="text-align:center">フロントエンドビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mizchi/swdev">swdev</a></td>\n<td style="text-align:center">Service Workerベースのフロントエンドビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/cmorten/deno-rollup">deno-rollup</a></td>\n<td style="text-align:center">RollupのDenoポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/timreichen/Bundler">Bundler</a></td>\n<td style="text-align:center">フロントエンド開発向けのバンドラ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/twd">twd</a></td>\n<td style="text-align:center">Tailwind CSSライクなCLIツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/open-source-labs/vno">vno</a></td>\n<td style="text-align:center">Vue.jsアプリの開発ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/crewdevio/Snel">Snel</a></td>\n<td style="text-align:center">Svelteアプリの開発ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/alosaur/angular_deno">angular_deno</a></td>\n<td style="text-align:center">Angularのレンダリングエンジン</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/nanojsx/nano">Nano JSX</a></td>\n<td style="text-align:center">Deno・Node.jsで動作するJSXライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/xcatliu/pagic">Pagic</a></td>\n<td style="text-align:center">Reactベースのスタティックサイトジェネレータ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lumeland/lume">Lume</a></td>\n<td style="text-align:center">スタティックサイトジェネレータ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/eta-dev/eta">Eta</a></td>\n<td style="text-align:center">Deno・Node.jsなどで動作するテンプレートエンジン</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oslabs-beta/sono.io">sono.io</a></td>\n<td style="text-align:center">WebSocketを使ったリアルタイムアプリケーション用のモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oslabs-beta/dashport">Dashport</a></td>\n<td style="text-align:center">Passport.jsライクな認証モジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/deno-libs/gql">deno-libs/gql</a></td>\n<td style="text-align:center">GraphQLサーバ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/b-fuze/deno-dom">deno-dom</a></td>\n<td style="text-align:center">DOM実装</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lucacasonato/deno-puppeteer">deno-puppeteer</a></td>\n<td style="text-align:center">PuppeteerのDenoポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/drashland/sinco">Sinco</a></td>\n<td style="text-align:center">ブラウザオートメーションツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/satyarohith/sift">Sift</a></td>\n<td style="text-align:center">Deno Deployのルーティングモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mandarineorg/little-crony">little_crony</a></td>\n<td style="text-align:center">CRONライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denosaurs/pngs">pngs</a></td>\n<td style="text-align:center">pngイメージのエンコード/デコード</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lowlighter/xml">xml</a></td>\n<td style="text-align:center">Denoで動作するXMLモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kitsonk/xhr">xhr</a></td>\n<td style="text-align:center"><code>XMLHttpRequest</code>のポリフィル</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://deno.land/x/slack_web_api">slack_web_api</a></td>\n<td style="text-align:center">Slack APIのクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/deno-libs/wizard">wizard</a></td>\n<td style="text-align:center">BDDスタイルのテストライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mikeal/estest">estest</a></td>\n<td style="text-align:center">Deno・Node.jsなどで動作するテストフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/githubocto/flat">Flat Data</a></td>\n<td style="text-align:center">HTTPエンドポイントまたはSQLクエリからデータを取得し、GitHubリポジトリに格納するためのGitHubアクション</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denoland/setup-deno">denoland/setup-deno</a></td>\n<td style="text-align:center">GitHub ActionsからDenoを使用する</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denosaurs/depsbot">depsbot</a></td>\n<td style="text-align:center">モジュールの更新状態をチェックしてくれるGitHubアクション</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/wperron/terraform-deploy-provider">terraform-deploy-provider</a></td>\n<td style="text-align:center">Deno DeployのTerraformプロパイダ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deploy_dir">deploy_dir</a></td>\n<td style="text-align:center">Deno Deployへのデプロイツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deno-bin">deno-bin</a></td>\n<td style="text-align:center">Node.jsからDenoを使用するためのツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deno_license_checker">deno_license_checker</a></td>\n<td style="text-align:center">ライセンスヘッダのチェックツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/postui/land">land</a></td>\n<td style="text-align:center">deno.land/xで公開されているツールを保存せずに実行するツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/c4spar/deno-codeview">deno-codeview</a></td>\n<td style="text-align:center">カバレッジレポートの閲覧ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denoland/vscode_deno">vscode_deno</a></td>\n<td style="text-align:center">Denoのvscode拡張</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/vim-denops/denops.vim">denops.vim</a></td>\n<td style="text-align:center">DenoでVimプラグインを書くためのエコシステム</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/emacs-ng/emacs-ng">emacs-ng</a></td>\n<td style="text-align:center">Denoを搭載したEmacsのフォーク</td>\n</tr>\n</tbody>\n</table></div>\n<h2 id="web%E3%82%B5%E3%82%A4%E3%83%88">Webサイト<a class="anchor" href="#web%E3%82%B5%E3%82%A4%E3%83%88">§</a></h2>\n<div class="table_wrapper"><table>\n<thead>\n<tr>\n<th style="text-align:center">名前</th>\n<th style="text-align:center">概要</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style="text-align:center"><a href="https://wpt.deno.land/">wpt.deno.land</a></td>\n<td style="text-align:center">DenoのWPTの網羅率を掲載しています</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://status.deno.land/">status.deno.land</a></td>\n<td style="text-align:center">Denoのモジュールレジストリなどの稼働状況を掲載</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://crux.land/">crux.land</a></td>\n<td style="text-align:center">スクリプトレジストリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://zenn.dev/uki00a/books/effective-deno">Effective Deno</a></td>\n<td style="text-align:center">Denoの本</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://www.youtube.com/watch?v=LoknuwupOIE">Deno internals - how modern JavaScript runtime is built</a></td>\n<td style="text-align:center">Denoの内部構造について</td>\n</tr>\n</tbody>\n</table></div>'
+            __html: '<h1>ギャラリー</h1>\n<nav class="toc"><ol><li><a href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール</a></li><li><a href="#web%E3%82%B5%E3%82%A4%E3%83%88">Webサイト</a></li></ol></nav><p>このページには、このサイトで紹介したことのあるDenoモジュールなどの一覧を掲載しています。</p>\n<h2 id="%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール<a class="anchor" href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">§</a></h2>\n<div class="table_wrapper"><table>\n<thead>\n<tr>\n<th style="text-align:center">名前</th>\n<th style="text-align:center">概要</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/postgres">deno-postgres</a></td>\n<td style="text-align:center">PostgreSQLクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/mysql">deno_mysql</a></td>\n<td style="text-align:center">MySQLクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dyedgreen/deno-sqlite">deno-sqlite</a></td>\n<td style="text-align:center">SQLiteライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/redis">deno-redis</a></td>\n<td style="text-align:center">Redisクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/deno_mongo">deno_mongo</a></td>\n<td style="text-align:center">MongoDBクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/jeremyBanks/database">x/database</a></td>\n<td style="text-align:center">データベースドライバの共通インターフェース</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/halvardssm/deno-nessie">Nessie</a></td>\n<td style="text-align:center">データベースマイグレーションツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oakserver/oak">Oak</a></td>\n<td style="text-align:center">Webフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lucacasonato/fresh">fresh</a></td>\n<td style="text-align:center">Deno Deployで動作するPreactベースのフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/keroxp/servest">Servest</a></td>\n<td style="text-align:center">Webサーバ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/alosaur/alosaur">alosaur</a></td>\n<td style="text-align:center">Webフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/jurassiscripts/velociraptor">Velociraptor</a></td>\n<td style="text-align:center">タスクランナ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/crewdevio/Trex">Trex</a></td>\n<td style="text-align:center">パッケージマネージャ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/c4spar/deno-cliffy">Cliffy</a></td>\n<td style="text-align:center">CLIフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dsherret/ts-morph">ts-morph</a></td>\n<td style="text-align:center">TypeScriptコンパイラAPIのラッパ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dsherret/code-block-writer">code-block-writer</a></td>\n<td style="text-align:center">TypeScript/JavaScriptコードの生成をサポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/packup">packup</a></td>\n<td style="text-align:center">Parcelライクなビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/cmorten/luath">luath</a></td>\n<td style="text-align:center">フロントエンドビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mizchi/swdev">swdev</a></td>\n<td style="text-align:center">Service Workerベースのフロントエンドビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/cmorten/deno-rollup">deno-rollup</a></td>\n<td style="text-align:center">RollupのDenoポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/timreichen/Bundler">Bundler</a></td>\n<td style="text-align:center">フロントエンド開発向けのバンドラ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/twd">twd</a></td>\n<td style="text-align:center">Tailwind CSSライクなCLIツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/open-source-labs/vno">vno</a></td>\n<td style="text-align:center">Vue.jsアプリの開発ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/crewdevio/Snel">Snel</a></td>\n<td style="text-align:center">Svelteアプリの開発ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/alosaur/angular_deno">angular_deno</a></td>\n<td style="text-align:center">Angularのレンダリングエンジン</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/nanojsx/nano">Nano JSX</a></td>\n<td style="text-align:center">Deno・Node.jsで動作するJSXライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/xcatliu/pagic">Pagic</a></td>\n<td style="text-align:center">Reactベースのスタティックサイトジェネレータ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lumeland/lume">Lume</a></td>\n<td style="text-align:center">スタティックサイトジェネレータ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/eta-dev/eta">Eta</a></td>\n<td style="text-align:center">Deno・Node.jsなどで動作するテンプレートエンジン</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oslabs-beta/sono.io">sono.io</a></td>\n<td style="text-align:center">WebSocketを使ったリアルタイムアプリケーション用のモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oslabs-beta/dashport">Dashport</a></td>\n<td style="text-align:center">Passport.jsライクな認証モジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/deno-libs/gql">deno-libs/gql</a></td>\n<td style="text-align:center">GraphQLサーバ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/b-fuze/deno-dom">deno-dom</a></td>\n<td style="text-align:center">DOM実装</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lucacasonato/deno-puppeteer">deno-puppeteer</a></td>\n<td style="text-align:center">PuppeteerのDenoポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/drashland/sinco">Sinco</a></td>\n<td style="text-align:center">ブラウザオートメーションツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/satyarohith/sift">Sift</a></td>\n<td style="text-align:center">Deno Deployのルーティングモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mandarineorg/little-crony">little_crony</a></td>\n<td style="text-align:center">CRONライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denosaurs/pngs">pngs</a></td>\n<td style="text-align:center">pngイメージのエンコード/デコード</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lowlighter/xml">xml</a></td>\n<td style="text-align:center">Denoで動作するXMLモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kitsonk/xhr">xhr</a></td>\n<td style="text-align:center"><code>XMLHttpRequest</code>のポリフィル</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://deno.land/x/slack_web_api">slack_web_api</a></td>\n<td style="text-align:center">Slack APIのクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/deno-libs/wizard">wizard</a></td>\n<td style="text-align:center">BDDスタイルのテストライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mikeal/estest">estest</a></td>\n<td style="text-align:center">Deno・Node.jsなどで動作するテストフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/githubocto/flat">Flat Data</a></td>\n<td style="text-align:center">HTTPエンドポイントまたはSQLクエリからデータを取得し、GitHubリポジトリに格納するためのGitHubアクション</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denoland/setup-deno">denoland/setup-deno</a></td>\n<td style="text-align:center">GitHub ActionsからDenoを使用する</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denosaurs/depsbot">depsbot</a></td>\n<td style="text-align:center">モジュールの更新状態をチェックしてくれるGitHubアクション</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/wperron/terraform-deploy-provider">terraform-deploy-provider</a></td>\n<td style="text-align:center">Deno DeployのTerraformプロパイダ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deploy_dir">deploy_dir</a></td>\n<td style="text-align:center">Deno Deployへのデプロイツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deno-bin">deno-bin</a></td>\n<td style="text-align:center">Node.jsからDenoを使用するためのツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deno_license_checker">deno_license_checker</a></td>\n<td style="text-align:center">ライセンスヘッダのチェックツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/postui/land">land</a></td>\n<td style="text-align:center">deno.land/xで公開されているツールを保存せずに実行するツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/c4spar/deno-codeview">deno-codeview</a></td>\n<td style="text-align:center">カバレッジレポートの閲覧ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denoland/vscode_deno">vscode_deno</a></td>\n<td style="text-align:center">Denoのvscode拡張</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/vim-denops/denops.vim">denops.vim</a></td>\n<td style="text-align:center">DenoでVimプラグインを書くためのエコシステム</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/emacs-ng/emacs-ng">emacs-ng</a></td>\n<td style="text-align:center">Denoを搭載したEmacsのフォーク</td>\n</tr>\n</tbody>\n</table></div>\n<h2 id="web%E3%82%B5%E3%82%A4%E3%83%88">Webサイト<a class="anchor" href="#web%E3%82%B5%E3%82%A4%E3%83%88">§</a></h2>\n<div class="table_wrapper"><table>\n<thead>\n<tr>\n<th style="text-align:center">名前</th>\n<th style="text-align:center">概要</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style="text-align:center"><a href="https://wpt.deno.land/">wpt.deno.land</a></td>\n<td style="text-align:center">DenoのWPTの網羅率を掲載しています</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://status.deno.land/">status.deno.land</a></td>\n<td style="text-align:center">Denoのモジュールレジストリなどの稼働状況を掲載</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://crux.land/">crux.land</a></td>\n<td style="text-align:center">スクリプトレジストリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://zenn.dev/uki00a/books/effective-deno">Effective Deno</a></td>\n<td style="text-align:center">Denoの本</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://www.youtube.com/watch?v=LoknuwupOIE">Deno internals - how modern JavaScript runtime is built</a></td>\n<td style="text-align:center">Denoの内部構造について</td>\n</tr>\n</tbody>\n</table></div>'
         } }),
     'head': React.createElement(React.Fragment, null,
         React.createElement(Ga, { id: "G-MK2K2MRMBF" }),
@@ -20,7 +20,7 @@ export default {
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
     'contentTitle': React.createElement("h1", { key: "0" }, "\u30AE\u30E3\u30E9\u30EA\u30FC"),
     'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール</a></li><li><a href="#web%E3%82%B5%E3%82%A4%E3%83%88">Webサイト</a></li></ol></nav><p>このページには、このサイトで紹介したことのあるDenoモジュールなどの一覧を掲載しています。</p>\n<h2 id="%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール<a class="anchor" href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">§</a></h2>\n<div class="table_wrapper"><table>\n<thead>\n<tr>\n<th style="text-align:center">名前</th>\n<th style="text-align:center">概要</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/postgres">deno-postgres</a></td>\n<td style="text-align:center">PostgreSQLクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/mysql">deno_mysql</a></td>\n<td style="text-align:center">MySQLクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dyedgreen/deno-sqlite">deno-sqlite</a></td>\n<td style="text-align:center">SQLiteライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/redis">deno-redis</a></td>\n<td style="text-align:center">Redisクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/jeremyBanks/database">x/database</a></td>\n<td style="text-align:center">データベースドライバの共通インターフェース</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/halvardssm/deno-nessie">Nessie</a></td>\n<td style="text-align:center">データベースマイグレーションツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oakserver/oak">Oak</a></td>\n<td style="text-align:center">Webフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lucacasonato/fresh">fresh</a></td>\n<td style="text-align:center">Deno Deployで動作するPreactベースのフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/keroxp/servest">Servest</a></td>\n<td style="text-align:center">Webサーバ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/alosaur/alosaur">alosaur</a></td>\n<td style="text-align:center">Webフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/jurassiscripts/velociraptor">Velociraptor</a></td>\n<td style="text-align:center">タスクランナ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/crewdevio/Trex">Trex</a></td>\n<td style="text-align:center">パッケージマネージャ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/c4spar/deno-cliffy">Cliffy</a></td>\n<td style="text-align:center">CLIフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dsherret/ts-morph">ts-morph</a></td>\n<td style="text-align:center">TypeScriptコンパイラAPIのラッパ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dsherret/code-block-writer">code-block-writer</a></td>\n<td style="text-align:center">TypeScript/JavaScriptコードの生成をサポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/packup">packup</a></td>\n<td style="text-align:center">Parcelライクなビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/cmorten/luath">luath</a></td>\n<td style="text-align:center">フロントエンドビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mizchi/swdev">swdev</a></td>\n<td style="text-align:center">Service Workerベースのフロントエンドビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/cmorten/deno-rollup">deno-rollup</a></td>\n<td style="text-align:center">RollupのDenoポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/timreichen/Bundler">Bundler</a></td>\n<td style="text-align:center">フロントエンド開発向けのバンドラ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/twd">twd</a></td>\n<td style="text-align:center">Tailwind CSSライクなCLIツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/open-source-labs/vno">vno</a></td>\n<td style="text-align:center">Vue.jsアプリの開発ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/crewdevio/Snel">Snel</a></td>\n<td style="text-align:center">Svelteアプリの開発ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/alosaur/angular_deno">angular_deno</a></td>\n<td style="text-align:center">Angularのレンダリングエンジン</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/nanojsx/nano">Nano JSX</a></td>\n<td style="text-align:center">Deno・Node.jsで動作するJSXライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/xcatliu/pagic">Pagic</a></td>\n<td style="text-align:center">Reactベースのスタティックサイトジェネレータ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lumeland/lume">Lume</a></td>\n<td style="text-align:center">スタティックサイトジェネレータ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/eta-dev/eta">Eta</a></td>\n<td style="text-align:center">Deno・Node.jsなどで動作するテンプレートエンジン</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oslabs-beta/sono.io">sono.io</a></td>\n<td style="text-align:center">WebSocketを使ったリアルタイムアプリケーション用のモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oslabs-beta/dashport">Dashport</a></td>\n<td style="text-align:center">Passport.jsライクな認証モジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/deno-libs/gql">deno-libs/gql</a></td>\n<td style="text-align:center">GraphQLサーバ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/b-fuze/deno-dom">deno-dom</a></td>\n<td style="text-align:center">DOM実装</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lucacasonato/deno-puppeteer">deno-puppeteer</a></td>\n<td style="text-align:center">PuppeteerのDenoポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/drashland/sinco">Sinco</a></td>\n<td style="text-align:center">ブラウザオートメーションツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/satyarohith/sift">Sift</a></td>\n<td style="text-align:center">Deno Deployのルーティングモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mandarineorg/little-crony">little_crony</a></td>\n<td style="text-align:center">CRONライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denosaurs/pngs">pngs</a></td>\n<td style="text-align:center">pngイメージのエンコード/デコード</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lowlighter/xml">xml</a></td>\n<td style="text-align:center">Denoで動作するXMLモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kitsonk/xhr">xhr</a></td>\n<td style="text-align:center"><code>XMLHttpRequest</code>のポリフィル</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://deno.land/x/slack_web_api">slack_web_api</a></td>\n<td style="text-align:center">Slack APIのクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/deno-libs/wizard">wizard</a></td>\n<td style="text-align:center">BDDスタイルのテストライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mikeal/estest">estest</a></td>\n<td style="text-align:center">Deno・Node.jsなどで動作するテストフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/githubocto/flat">Flat Data</a></td>\n<td style="text-align:center">HTTPエンドポイントまたはSQLクエリからデータを取得し、GitHubリポジトリに格納するためのGitHubアクション</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denoland/setup-deno">denoland/setup-deno</a></td>\n<td style="text-align:center">GitHub ActionsからDenoを使用する</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denosaurs/depsbot">depsbot</a></td>\n<td style="text-align:center">モジュールの更新状態をチェックしてくれるGitHubアクション</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/wperron/terraform-deploy-provider">terraform-deploy-provider</a></td>\n<td style="text-align:center">Deno DeployのTerraformプロパイダ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deploy_dir">deploy_dir</a></td>\n<td style="text-align:center">Deno Deployへのデプロイツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deno-bin">deno-bin</a></td>\n<td style="text-align:center">Node.jsからDenoを使用するためのツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deno_license_checker">deno_license_checker</a></td>\n<td style="text-align:center">ライセンスヘッダのチェックツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/postui/land">land</a></td>\n<td style="text-align:center">deno.land/xで公開されているツールを保存せずに実行するツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/c4spar/deno-codeview">deno-codeview</a></td>\n<td style="text-align:center">カバレッジレポートの閲覧ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denoland/vscode_deno">vscode_deno</a></td>\n<td style="text-align:center">Denoのvscode拡張</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/vim-denops/denops.vim">denops.vim</a></td>\n<td style="text-align:center">DenoでVimプラグインを書くためのエコシステム</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/emacs-ng/emacs-ng">emacs-ng</a></td>\n<td style="text-align:center">Denoを搭載したEmacsのフォーク</td>\n</tr>\n</tbody>\n</table></div>\n<h2 id="web%E3%82%B5%E3%82%A4%E3%83%88">Webサイト<a class="anchor" href="#web%E3%82%B5%E3%82%A4%E3%83%88">§</a></h2>\n<div class="table_wrapper"><table>\n<thead>\n<tr>\n<th style="text-align:center">名前</th>\n<th style="text-align:center">概要</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style="text-align:center"><a href="https://wpt.deno.land/">wpt.deno.land</a></td>\n<td style="text-align:center">DenoのWPTの網羅率を掲載しています</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://status.deno.land/">status.deno.land</a></td>\n<td style="text-align:center">Denoのモジュールレジストリなどの稼働状況を掲載</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://crux.land/">crux.land</a></td>\n<td style="text-align:center">スクリプトレジストリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://zenn.dev/uki00a/books/effective-deno">Effective Deno</a></td>\n<td style="text-align:center">Denoの本</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://www.youtube.com/watch?v=LoknuwupOIE">Deno internals - how modern JavaScript runtime is built</a></td>\n<td style="text-align:center">Denoの内部構造について</td>\n</tr>\n</tbody>\n</table></div>'
+            __html: '<nav class="toc"><ol><li><a href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール</a></li><li><a href="#web%E3%82%B5%E3%82%A4%E3%83%88">Webサイト</a></li></ol></nav><p>このページには、このサイトで紹介したことのあるDenoモジュールなどの一覧を掲載しています。</p>\n<h2 id="%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール<a class="anchor" href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">§</a></h2>\n<div class="table_wrapper"><table>\n<thead>\n<tr>\n<th style="text-align:center">名前</th>\n<th style="text-align:center">概要</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/postgres">deno-postgres</a></td>\n<td style="text-align:center">PostgreSQLクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/mysql">deno_mysql</a></td>\n<td style="text-align:center">MySQLクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dyedgreen/deno-sqlite">deno-sqlite</a></td>\n<td style="text-align:center">SQLiteライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/redis">deno-redis</a></td>\n<td style="text-align:center">Redisクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denodrivers/deno_mongo">deno_mongo</a></td>\n<td style="text-align:center">MongoDBクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/jeremyBanks/database">x/database</a></td>\n<td style="text-align:center">データベースドライバの共通インターフェース</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/halvardssm/deno-nessie">Nessie</a></td>\n<td style="text-align:center">データベースマイグレーションツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oakserver/oak">Oak</a></td>\n<td style="text-align:center">Webフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lucacasonato/fresh">fresh</a></td>\n<td style="text-align:center">Deno Deployで動作するPreactベースのフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/keroxp/servest">Servest</a></td>\n<td style="text-align:center">Webサーバ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/alosaur/alosaur">alosaur</a></td>\n<td style="text-align:center">Webフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/jurassiscripts/velociraptor">Velociraptor</a></td>\n<td style="text-align:center">タスクランナ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/crewdevio/Trex">Trex</a></td>\n<td style="text-align:center">パッケージマネージャ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/c4spar/deno-cliffy">Cliffy</a></td>\n<td style="text-align:center">CLIフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dsherret/ts-morph">ts-morph</a></td>\n<td style="text-align:center">TypeScriptコンパイラAPIのラッパ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/dsherret/code-block-writer">code-block-writer</a></td>\n<td style="text-align:center">TypeScript/JavaScriptコードの生成をサポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/packup">packup</a></td>\n<td style="text-align:center">Parcelライクなビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/cmorten/luath">luath</a></td>\n<td style="text-align:center">フロントエンドビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mizchi/swdev">swdev</a></td>\n<td style="text-align:center">Service Workerベースのフロントエンドビルドツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/cmorten/deno-rollup">deno-rollup</a></td>\n<td style="text-align:center">RollupのDenoポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/timreichen/Bundler">Bundler</a></td>\n<td style="text-align:center">フロントエンド開発向けのバンドラ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/twd">twd</a></td>\n<td style="text-align:center">Tailwind CSSライクなCLIツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/open-source-labs/vno">vno</a></td>\n<td style="text-align:center">Vue.jsアプリの開発ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/crewdevio/Snel">Snel</a></td>\n<td style="text-align:center">Svelteアプリの開発ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/alosaur/angular_deno">angular_deno</a></td>\n<td style="text-align:center">Angularのレンダリングエンジン</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/nanojsx/nano">Nano JSX</a></td>\n<td style="text-align:center">Deno・Node.jsで動作するJSXライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/xcatliu/pagic">Pagic</a></td>\n<td style="text-align:center">Reactベースのスタティックサイトジェネレータ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lumeland/lume">Lume</a></td>\n<td style="text-align:center">スタティックサイトジェネレータ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/eta-dev/eta">Eta</a></td>\n<td style="text-align:center">Deno・Node.jsなどで動作するテンプレートエンジン</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oslabs-beta/sono.io">sono.io</a></td>\n<td style="text-align:center">WebSocketを使ったリアルタイムアプリケーション用のモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/oslabs-beta/dashport">Dashport</a></td>\n<td style="text-align:center">Passport.jsライクな認証モジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/deno-libs/gql">deno-libs/gql</a></td>\n<td style="text-align:center">GraphQLサーバ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/b-fuze/deno-dom">deno-dom</a></td>\n<td style="text-align:center">DOM実装</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lucacasonato/deno-puppeteer">deno-puppeteer</a></td>\n<td style="text-align:center">PuppeteerのDenoポート</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/drashland/sinco">Sinco</a></td>\n<td style="text-align:center">ブラウザオートメーションツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/satyarohith/sift">Sift</a></td>\n<td style="text-align:center">Deno Deployのルーティングモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mandarineorg/little-crony">little_crony</a></td>\n<td style="text-align:center">CRONライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denosaurs/pngs">pngs</a></td>\n<td style="text-align:center">pngイメージのエンコード/デコード</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/lowlighter/xml">xml</a></td>\n<td style="text-align:center">Denoで動作するXMLモジュール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kitsonk/xhr">xhr</a></td>\n<td style="text-align:center"><code>XMLHttpRequest</code>のポリフィル</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://deno.land/x/slack_web_api">slack_web_api</a></td>\n<td style="text-align:center">Slack APIのクライアント</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/deno-libs/wizard">wizard</a></td>\n<td style="text-align:center">BDDスタイルのテストライブラリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/mikeal/estest">estest</a></td>\n<td style="text-align:center">Deno・Node.jsなどで動作するテストフレームワーク</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/githubocto/flat">Flat Data</a></td>\n<td style="text-align:center">HTTPエンドポイントまたはSQLクエリからデータを取得し、GitHubリポジトリに格納するためのGitHubアクション</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denoland/setup-deno">denoland/setup-deno</a></td>\n<td style="text-align:center">GitHub ActionsからDenoを使用する</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denosaurs/depsbot">depsbot</a></td>\n<td style="text-align:center">モジュールの更新状態をチェックしてくれるGitHubアクション</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/wperron/terraform-deploy-provider">terraform-deploy-provider</a></td>\n<td style="text-align:center">Deno DeployのTerraformプロパイダ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deploy_dir">deploy_dir</a></td>\n<td style="text-align:center">Deno Deployへのデプロイツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deno-bin">deno-bin</a></td>\n<td style="text-align:center">Node.jsからDenoを使用するためのツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/kt3k/deno_license_checker">deno_license_checker</a></td>\n<td style="text-align:center">ライセンスヘッダのチェックツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/postui/land">land</a></td>\n<td style="text-align:center">deno.land/xで公開されているツールを保存せずに実行するツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/c4spar/deno-codeview">deno-codeview</a></td>\n<td style="text-align:center">カバレッジレポートの閲覧ツール</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/denoland/vscode_deno">vscode_deno</a></td>\n<td style="text-align:center">Denoのvscode拡張</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/vim-denops/denops.vim">denops.vim</a></td>\n<td style="text-align:center">DenoでVimプラグインを書くためのエコシステム</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://github.com/emacs-ng/emacs-ng">emacs-ng</a></td>\n<td style="text-align:center">Denoを搭載したEmacsのフォーク</td>\n</tr>\n</tbody>\n</table></div>\n<h2 id="web%E3%82%B5%E3%82%A4%E3%83%88">Webサイト<a class="anchor" href="#web%E3%82%B5%E3%82%A4%E3%83%88">§</a></h2>\n<div class="table_wrapper"><table>\n<thead>\n<tr>\n<th style="text-align:center">名前</th>\n<th style="text-align:center">概要</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style="text-align:center"><a href="https://wpt.deno.land/">wpt.deno.land</a></td>\n<td style="text-align:center">DenoのWPTの網羅率を掲載しています</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://status.deno.land/">status.deno.land</a></td>\n<td style="text-align:center">Denoのモジュールレジストリなどの稼働状況を掲載</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://crux.land/">crux.land</a></td>\n<td style="text-align:center">スクリプトレジストリ</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://zenn.dev/uki00a/books/effective-deno">Effective Deno</a></td>\n<td style="text-align:center">Denoの本</td>\n</tr>\n<tr>\n<td style="text-align:center"><a href="https://www.youtube.com/watch?v=LoknuwupOIE">Deno internals - how modern JavaScript runtime is built</a></td>\n<td style="text-align:center">Denoの内部構造について</td>\n</tr>\n</tbody>\n</table></div>'
         } }),
     'toc': React.createElement("nav", { key: "0", className: "toc" },
         React.createElement("ol", null,
@@ -28,11 +28,11 @@ export default {
                 React.createElement("a", { href: "#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB" }, "\u30E2\u30B8\u30E5\u30FC\u30EB")),
             React.createElement("li", null,
                 React.createElement("a", { href: "#web%E3%82%B5%E3%82%A4%E3%83%88" }, "Web\u30B5\u30A4\u30C8")))),
-    'author': "uki00a",
+    'author': "Yuki Tanaka",
     'contributors': [
-        "uki00a"
+        "Yuki Tanaka"
     ],
-    'date': "2021-07-18T10:47:45.000Z",
+    'date': "2021-07-25T10:22:44.000Z",
     'updated': null,
     'excerpt': " 1. モジュール 2. Webサイト このページには、このサイトで紹介したことのあるDenoモジュールなどの一覧を掲載しています。 モジュール 名前 概要 deno-postgres PostgreSQLクライアント deno_mysql MySQLクライアント deno-s...",
     'cover': undefined,
@@ -40,14 +40,35 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "articles/2021/07/25.md",
+                "title": "2021/07/19〜2021/07/25の最新情報",
+                "link": "articles/2021/07/25.html",
+                "date": "2021/07/25",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "deno_std",
+                    "Oak",
+                    "deno_mongo"
+                ],
+                "excerpt": " 1. Deno v1.12.1のリリース 2. deno_std v0.102.0 3. Oak v8.0.0がリリース 4. deno_mongo v0.24.0がリリース Deno v1.12.1のリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。..."
+            },
+            {
                 "pagePath": "articles/2021/07/18.md",
                 "title": "2021/07/12〜2021/07/18の最新情報",
                 "link": "articles/2021/07/18.html",
                 "date": "2021/07/18",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -64,9 +85,9 @@ export default {
                 "link": "articles/2021/07/11.html",
                 "date": "2021/07/11",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -84,9 +105,9 @@ export default {
                 "link": "articles/2021/07/04.html",
                 "date": "2021/07/04",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -106,9 +127,9 @@ export default {
                 "link": "articles/2021/06/27.html",
                 "date": "2021/06/27",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -126,9 +147,9 @@ export default {
                 "link": "articles/2021/06/20.html",
                 "date": "2021/06/20",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -146,9 +167,9 @@ export default {
                 "link": "articles/2021/06/13.html",
                 "date": "2021/06/13",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -166,9 +187,9 @@ export default {
                 "link": "articles/2021/06/06.html",
                 "date": "2021/06/06",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -186,9 +207,9 @@ export default {
                 "link": "articles/2021/05/30.html",
                 "date": "2021/05/30",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -207,9 +228,9 @@ export default {
                 "link": "articles/2021/05/23.html",
                 "date": "2021/05/23",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -229,9 +250,9 @@ export default {
                 "link": "articles/2021/05/16.html",
                 "date": "2021/05/16",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -251,9 +272,9 @@ export default {
                 "link": "articles/2021/05/09.html",
                 "date": "2021/05/09",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -271,9 +292,9 @@ export default {
                 "link": "articles/2021/05/02.html",
                 "date": "2021/05/02",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -292,9 +313,9 @@ export default {
                 "link": "articles/2021/04/25.html",
                 "date": "2021/04/25",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -314,9 +335,9 @@ export default {
                 "link": "articles/2021/04/18.html",
                 "date": "2021/04/18",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -336,9 +357,9 @@ export default {
                 "link": "articles/2021/04/11.html",
                 "date": "2021/04/11",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -357,9 +378,9 @@ export default {
                 "link": "articles/2021/04/04.html",
                 "date": "2021/04/04",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -381,9 +402,9 @@ export default {
                 "link": "articles/2021/03/28.html",
                 "date": "2021/03/28",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -403,9 +424,9 @@ export default {
                 "link": "articles/2021/03/21.html",
                 "date": "2021/03/21",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -424,9 +445,9 @@ export default {
                 "link": "articles/2021/03/14.html",
                 "date": "2021/03/14",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -448,9 +469,9 @@ export default {
                 "link": "articles/2021/03/07.html",
                 "date": "2021/03/07",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -471,9 +492,9 @@ export default {
                 "link": "articles/2021/02/28.html",
                 "date": "2021/02/28",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -492,9 +513,9 @@ export default {
                 "link": "articles/2021/02/21.html",
                 "date": "2021/02/21",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -514,9 +535,9 @@ export default {
                 "link": "articles/2021/02/14.html",
                 "date": "2021/02/14",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -536,9 +557,9 @@ export default {
                 "link": "articles/2021/02/07.html",
                 "date": "2021/02/07",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -558,9 +579,9 @@ export default {
                 "link": "articles/2021/01/31.html",
                 "date": "2021/01/31",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -577,9 +598,9 @@ export default {
                 "link": "articles/2021/01/24.html",
                 "date": "2021/01/24",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -596,9 +617,9 @@ export default {
                 "link": "articles/2021/01/17.html",
                 "date": "2021/01/17",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -611,9 +632,9 @@ export default {
                 "link": "articles/2021/01/10.html",
                 "date": "2021/01/10",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -630,9 +651,9 @@ export default {
                 "link": "articles/2021/01/03.html",
                 "date": "2021/01/03",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -648,9 +669,9 @@ export default {
                 "link": "articles/2021/01/02.html",
                 "date": "2021/01/02",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "notice"
@@ -661,7 +682,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 29
+                "count": 30
             },
             {
                 "name": "notice",
@@ -671,11 +692,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 22
+                "count": 23
             },
             {
                 "name": "deno_std",
-                "count": 13
+                "count": 14
             },
             {
                 "name": "deno-postgres",
@@ -687,7 +708,7 @@ export default {
             },
             {
                 "name": "Oak",
-                "count": 4
+                "count": 5
             },
             {
                 "name": "Deno Deploy",
@@ -775,6 +796,10 @@ export default {
             },
             {
                 "name": "deno_license_checker",
+                "count": 1
+            },
+            {
+                "name": "deno_mongo",
                 "count": 1
             },
             {

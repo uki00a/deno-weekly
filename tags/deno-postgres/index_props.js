@@ -22,9 +22,9 @@ export default {
                 "link": "articles/2021/04/25.html",
                 "date": "2021/04/25",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -44,9 +44,9 @@ export default {
                 "link": "articles/2021/04/11.html",
                 "date": "2021/04/11",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -65,9 +65,9 @@ export default {
                 "link": "articles/2021/02/14.html",
                 "date": "2021/02/14",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -87,9 +87,9 @@ export default {
                 "link": "articles/2021/02/07.html",
                 "date": "2021/02/07",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -109,9 +109,9 @@ export default {
                 "link": "articles/2021/01/31.html",
                 "date": "2021/01/31",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -126,7 +126,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 29
+                "count": 30
             },
             {
                 "name": "notice",
@@ -136,11 +136,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 22
+                "count": 23
             },
             {
                 "name": "deno_std",
-                "count": 13
+                "count": 14
             },
             {
                 "name": "deno-postgres",
@@ -152,7 +152,7 @@ export default {
             },
             {
                 "name": "Oak",
-                "count": 4
+                "count": 5
             },
             {
                 "name": "Deno Deploy",
@@ -240,6 +240,10 @@ export default {
             },
             {
                 "name": "deno_license_checker",
+                "count": 1
+            },
+            {
+                "name": "deno_mongo",
                 "count": 1
             },
             {

@@ -17,14 +17,35 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "articles/2021/07/25.md",
+                "title": "2021/07/19〜2021/07/25の最新情報",
+                "link": "articles/2021/07/25.html",
+                "date": "2021/07/25",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "deno_std",
+                    "Oak",
+                    "deno_mongo"
+                ],
+                "excerpt": " 1. Deno v1.12.1のリリース 2. deno_std v0.102.0 3. Oak v8.0.0がリリース 4. deno_mongo v0.24.0がリリース Deno v1.12.1のリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。..."
+            },
+            {
                 "pagePath": "articles/2021/07/04.md",
                 "title": "2021/06/28〜2021/07/04の最新情報",
                 "link": "articles/2021/07/04.html",
                 "date": "2021/07/04",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -44,9 +65,9 @@ export default {
                 "link": "articles/2021/06/20.html",
                 "date": "2021/06/20",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -64,9 +85,9 @@ export default {
                 "link": "articles/2021/05/09.html",
                 "date": "2021/05/09",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -84,9 +105,9 @@ export default {
                 "link": "articles/2021/04/18.html",
                 "date": "2021/04/18",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -104,7 +125,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 29
+                "count": 30
             },
             {
                 "name": "notice",
@@ -114,11 +135,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 22
+                "count": 23
             },
             {
                 "name": "deno_std",
-                "count": 13
+                "count": 14
             },
             {
                 "name": "deno-postgres",
@@ -130,7 +151,7 @@ export default {
             },
             {
                 "name": "Oak",
-                "count": 4
+                "count": 5
             },
             {
                 "name": "Deno Deploy",
@@ -218,6 +239,10 @@ export default {
             },
             {
                 "name": "deno_license_checker",
+                "count": 1
+            },
+            {
+                "name": "deno_mongo",
                 "count": 1
             },
             {
