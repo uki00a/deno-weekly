@@ -49,6 +49,7 @@ ${toc}
 |[Sinco](https://github.com/drashland/sinco)|ブラウザオートメーションツール|
 |[Sift](https://github.com/satyarohith/sift)|Deno Deployのルーティングモジュール|
 |[little_crony](https://github.com/mandarineorg/little-crony)|CRONライブラリ|
+|[deno_sdl2](https://github.com/littledivy/deno_sdl2)|SDL2へのバインディング|
 |[pngs](https://github.com/denosaurs/pngs)|pngイメージのエンコード/デコード|
 |[xml](https://github.com/lowlighter/xml)|Denoで動作するXMLモジュール|
 |[xhr](https://github.com/kitsonk/xhr)|`XMLHttpRequest`のポリフィル|
