@@ -27,13 +27,32 @@ export default {
     'contributors': [
         "Yuki Tanaka"
     ],
-    'date': "2021-08-01T10:57:53.000Z",
+    'date': "2021-08-08T10:30:24.000Z",
     'updated': null,
     'excerpt': "このサイトでは、毎週Denoに関わる最新情報を発信しています。 指摘や誤りについて もしこのサイトについて気になる点(記述の誤り、タイポなど)や改善事項などがありましたら、以下などの手段で連絡いただけると幸いです😊 -...",
     'cover': undefined,
     'blog': {
         "isPost": false,
         "posts": [
+            {
+                "pagePath": "articles/2021/08/08.md",
+                "title": "2021/08/02〜2021/08/08の最新情報",
+                "link": "articles/2021/08/08.html",
+                "date": "2021/08/08",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno-sqlite",
+                    "Velociraptor"
+                ],
+                "excerpt": " 1. deno-sqlite v3.0.0がリリース 2. Velociraptor v1.1.0がリリース 3. deno_sdl2 deno-sqlite v3.0.0がリリース deno-sqliteのv3.0.0がリリースされました。 このリリースではRowsタイプへの破壊的変更やパフォーマンスの向..."
+            },
             {
                 "pagePath": "articles/2021/08/01.md",
                 "title": "2021/07/26〜2021/08/01の最新情報",
@@ -698,7 +717,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 31
+                "count": 32
             },
             {
                 "name": "notice",
@@ -731,12 +750,12 @@ export default {
                 "count": 4
             },
             {
-                "name": "Trex",
+                "name": "deno-sqlite",
                 "count": 3
             },
             {
-                "name": "deno-sqlite",
-                "count": 2
+                "name": "Trex",
+                "count": 3
             },
             {
                 "name": "luath",
@@ -752,6 +771,10 @@ export default {
             },
             {
                 "name": "twd",
+                "count": 2
+            },
+            {
+                "name": "Velociraptor",
                 "count": 2
             },
             {
@@ -928,10 +951,6 @@ export default {
             },
             {
                 "name": "ts_morph",
-                "count": 1
-            },
-            {
-                "name": "Velociraptor",
                 "count": 1
             },
             {

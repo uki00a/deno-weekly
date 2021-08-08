@@ -60,7 +60,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 31
+                "count": 32
             },
             {
                 "name": "notice",
@@ -93,12 +93,12 @@ export default {
                 "count": 4
             },
             {
-                "name": "Trex",
+                "name": "deno-sqlite",
                 "count": 3
             },
             {
-                "name": "deno-sqlite",
-                "count": 2
+                "name": "Trex",
+                "count": 3
             },
             {
                 "name": "luath",
@@ -114,6 +114,10 @@ export default {
             },
             {
                 "name": "twd",
+                "count": 2
+            },
+            {
+                "name": "Velociraptor",
                 "count": 2
             },
             {
@@ -290,10 +294,6 @@ export default {
             },
             {
                 "name": "ts_morph",
-                "count": 1
-            },
-            {
-                "name": "Velociraptor",
                 "count": 1
             },
             {
