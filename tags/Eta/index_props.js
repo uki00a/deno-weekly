@@ -40,7 +40,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 32
+                "count": 33
             },
             {
                 "name": "notice",
@@ -50,11 +50,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 24
+                "count": 25
             },
             {
                 "name": "deno_std",
-                "count": 15
+                "count": 16
             },
             {
                 "name": "deno-postgres",
@@ -190,6 +190,10 @@ export default {
             },
             {
                 "name": "esbuild",
+                "count": 1
+            },
+            {
+                "name": "esm.sh",
                 "count": 1
             },
             {

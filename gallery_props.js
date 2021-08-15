@@ -32,13 +32,33 @@ export default {
     'contributors': [
         "Yuki Tanaka"
     ],
-    'date': "2021-08-08T10:30:24.000Z",
+    'date': "2021-08-15T10:34:26.000Z",
     'updated': null,
     'excerpt': " 1. モジュール 2. Webサイト このページには、このサイトで紹介したことのあるDenoモジュールなどの一覧を掲載しています。 モジュール 名前 概要 deno-postgres PostgreSQLクライアント deno_mysql MySQLクライアント deno-s...",
     'cover': undefined,
     'blog': {
         "isPost": false,
         "posts": [
+            {
+                "pagePath": "articles/2021/08/15.md",
+                "title": "2021/08/09〜2021/08/15の最新情報",
+                "link": "articles/2021/08/15.html",
+                "date": "2021/08/15",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno",
+                    "deno_std",
+                    "esm.sh"
+                ],
+                "excerpt": " 1. Deno v1.13.0 2. deno_std v0.104.0 3. esm.sh v44 Deno v1.13.0 Deno v1.13.0がリリースされました。 大きな変更点として、ネイティブHTTPサーバ(Deno.serveHttp)の安定化やTLS関連の機能の強化、プラグインシステムの廃止..."
+            },
             {
                 "pagePath": "articles/2021/08/08.md",
                 "title": "2021/08/02〜2021/08/08の最新情報",
@@ -722,7 +742,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 32
+                "count": 33
             },
             {
                 "name": "notice",
@@ -732,11 +752,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 24
+                "count": 25
             },
             {
                 "name": "deno_std",
-                "count": 15
+                "count": 16
             },
             {
                 "name": "deno-postgres",
@@ -872,6 +892,10 @@ export default {
             },
             {
                 "name": "esbuild",
+                "count": 1
+            },
+            {
+                "name": "esm.sh",
                 "count": 1
             },
             {

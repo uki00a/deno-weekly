@@ -2,25 +2,25 @@ import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js'
 import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
-    'pagePath': "tags/Deno Deploy/",
+    'pagePath': "tags/esm.sh/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/Deno Deploy/index.html",
+    'outputPath': "tags/esm.sh/index.html",
     'head': React.createElement(React.Fragment, null,
         React.createElement(Ga, { id: "G-MK2K2MRMBF" })),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
-    'title': "Deno Deploy",
+    'title': "esm.sh",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/08/01.md",
-                "title": "2021/07/26〜2021/08/01の最新情報",
-                "link": "articles/2021/08/01.html",
-                "date": "2021/08/01",
+                "pagePath": "articles/2021/08/15.md",
+                "title": "2021/08/09〜2021/08/15の最新情報",
+                "link": "articles/2021/08/15.html",
+                "date": "2021/08/15",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -32,75 +32,9 @@ export default {
                 "tags": [
                     "deno",
                     "deno_std",
-                    "deno-sqlite",
-                    "Deno Deploy"
+                    "esm.sh"
                 ],
-                "excerpt": " 1. Deno v1.12.2がリリース 2. deno_std v0.103.0がリリース 3. deno-sqlite v2.5.0がリリース 4. depcheck 5. deno-github-contributions-api Deno v1.12.2がリリース Deno v1.12.2がリリースされました。 今回のリリースでは..."
-            },
-            {
-                "pagePath": "articles/2021/06/27.md",
-                "title": "2021/06/21〜2021/06/27の最新情報",
-                "link": "articles/2021/06/27.html",
-                "date": "2021/06/27",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "deno",
-                    "Deno Deploy",
-                    "fresh"
-                ],
-                "excerpt": " 1. Deno v1.11.2がリリースされました 2. Deno DeployのBeta 1がリリースされました 3. fresh - Deno Deployで動作するWebフレームワーク 4. xml - Denoで動作するXMLモジュール Deno v1.11.2がリリースされました Deno v1.11..."
-            },
-            {
-                "pagePath": "articles/2021/05/30.md",
-                "title": "2021/05/24〜2021/05/30の最新情報",
-                "link": "articles/2021/05/30.html",
-                "date": "2021/05/30",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "Sinco",
-                    "Deno Deploy",
-                    "Velociraptor",
-                    "Cliffy"
-                ],
-                "excerpt": " 1. Sinco v2.0.0のリリース 2. Velociraptor v1.0.0のリリース 3. zeno.zsh 4. Cliffy v0.19.0のリリース 5. deploy_dir Sinco v2.0.0のリリース ブラウザのオートメーション・テスト用モジュールであるSincoのv2.0.0がリリー..."
-            },
-            {
-                "pagePath": "articles/2021/04/04.md",
-                "title": "2021/03/29〜2021/04/04の最新情報",
-                "link": "articles/2021/04/04.html",
-                "date": "2021/04/04",
-                "updated": null,
-                "author": "Yuki Tanaka",
-                "contributors": [
-                    "Yuki Tanaka"
-                ],
-                "categories": [
-                    "news"
-                ],
-                "tags": [
-                    "deno",
-                    "deno_std",
-                    "Deno Deploy",
-                    "Snel",
-                    "Sift",
-                    "deno-dom",
-                    "Trex"
-                ],
-                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.3がリリース 2. deno_std v0.92.0がリリース 3. Deno Deployが公開された 2. サードパーティモジュールなどの最新情報 1. Snel - DenoでSvelteアプリを開発するためのツール 2. Sift - De..."
+                "excerpt": " 1. Deno v1.13.0 2. deno_std v0.104.0 3. esm.sh v44 Deno v1.13.0 Deno v1.13.0がリリースされました。 大きな変更点として、ネイティブHTTPサーバ(Deno.serveHttp)の安定化やTLS関連の機能の強化、プラグインシステムの廃止..."
             }
         ],
         "categories": [
