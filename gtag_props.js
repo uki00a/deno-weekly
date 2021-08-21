@@ -2,13 +2,99 @@ import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js'
 import Gtag from 'https://uki00a.github.io/deno-weekly/_gtag.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
-    'pagePath': "articles/2021/03/14.md",
+    'pagePath': "gtag.tsx",
     'layoutPath': "_layout.tsx",
-    'outputPath': "articles/2021/03/14.html",
-    'title': "2021/03/08〜2021/03/14の最新情報",
-    'content': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<h1>2021/03/08〜2021/03/14の最新情報</h1>\n<nav class="toc"><ol><li><a href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報</a><ol><li><a href="#deno-v181%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.8.1のリリース</a></li><li><a href="#deno_std-v0900%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.90.0のリリース</a></li></ol></li><li><a href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報</a><ol><li><a href="#nano">nano</a></li><li><a href="#depsbot">depsbot</a></li><li><a href="#wizard">wizard</a></li><li><a href="#deno-redis-v0200">deno-redis v0.20.0</a></li><li><a href="#deno-codeview">deno-codeview</a></li></ol></li></ol></nav><h2 id="deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報<a class="anchor" href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="deno-v181%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno/releases/tag/v1.8.1">Deno v1.8.1のリリース</a><a class="anchor" href="#deno-v181%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>\n<p>Deno v1.8.1がリリースされました。このリリースでは、バグの修正を中心に実施されています。</p>\n<p><strong>主な変更点:</strong></p>\n<ul>\n<li>importsNotUsedAsValuesオプションがswcに渡されるようになりました。</li>\n<li>Windows上で<code>deno compile</code>を実行すると、ターゲットに関わらず常に.exeが拡張子として付与される問題が修正されました。</li>\n<li><code>Worker</code>内でトップレベルawaitが使用されていると、ブロックが発生する問題が修正されました。</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno/releases/tag/v1.8.1">https://github.com/denoland/deno/releases/tag/v1.8.1</a></p>\n<h3 id="deno_std-v0900%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/commit/3f9714bf05a75303355fddd22cad9794be50e47d">deno_std v0.90.0のリリース</a><a class="anchor" href="#deno_std-v0900%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>\n<p><code>deno_std</code> v0.90.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>node: <a href="https://nodejs.org/api/module.html">module</a>モジュールを<code>require</code>で読み込めるようになりました。</li>\n<li>node: Node.jsで書かれたスクリプトを実行するためのCLIツールが実装されました。(<code>node/cli.ts</code>)</li>\n<li>node: <code>assert</code>モジュールの互換性が向上しました。</li>\n<li>http: v0.88.0で発生したパフォーマンスに関する問題が修正されました。</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/commit/3f9714bf05a75303355fddd22cad9794be50e47d">https://github.com/denoland/deno_std/commit/3f9714bf05a75303355fddd22cad9794be50e47d</a></p>\n<h2 id="%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報<a class="anchor" href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="nano"><a href="https://github.com/nanojsx/nano">nano</a><a class="anchor" href="#nano">§</a></h3>\n<p><code>nano</code>は軽量のJSXライブラリです。以下のような機能をサポートしています:</p>\n<ul>\n<li>SSRをサポート(DenoとNode.jsの両方で動作します)</li>\n<li>組み込みのRouterやStoreなどを提供</li>\n<li>コンポーネントのpre-fetch</li>\n</ul>\n<hr>\n<p><a href="https://github.com/nanojsx/nano">https://github.com/nanojsx/nano</a></p>\n<h3 id="depsbot"><a href="https://github.com/denosaurs/depsbot">depsbot</a><a class="anchor" href="#depsbot">§</a></h3>\n<p>モジュールなどの依存関係の更新状態をチェックをしてくれるGitHub actionです。</p>\n<p>npmにも公開されており、コマンドラインから直接実行することもできます。</p>\n<hr>\n<p><a href="https://github.com/denosaurs/depsbot">https://github.com/denosaurs/depsbot</a></p>\n<h3 id="wizard"><a href="https://github.com/deno-libs/wizard">wizard</a><a class="anchor" href="#wizard">§</a></h3>\n<p><code>wizard</code>というBDDスタイルのAPIを提供するテストライブラリが公開されました。</p>\n<p>まだ開発が開始したばかりではありますが、<code>Deno.test()</code>をベースにしているため、各種サニタイザやDenoのCLIをそのまま利用することができます。</p>\n<hr>\n<p><a href="https://github.com/deno-libs/wizard">https://github.com/deno-libs/wizard</a></p>\n<h3 id="deno-redis-v0200"><a href="https://github.com/denodrivers/redis/releases/tag/v0.20.0">deno-redis v0.20.0</a><a class="anchor" href="#deno-redis-v0200">§</a></h3>\n<p><code>deno-redis</code> v0.20.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>CLIENT PAUSE</code>コマンドでMODEを指定できるようになりました</li>\n<li>以下のコマンドがサポートされました:\n<ul>\n<li><code>CLIENT UNBLOCK</code></li>\n<li><code>CLIENT UNPAUSE</code></li>\n<li><code>CLIENT INFO</code></li>\n<li><code>CLIENT TRACKINGINFO</code></li>\n<li><code>CLIENT LIST</code></li>\n</ul>\n</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denodrivers/redis/releases/tag/v0.20.0">https://github.com/denodrivers/redis/releases/tag/v0.20.0</a></p>\n<h3 id="deno-codeview"><a href="https://github.com/c4spar/deno-codeview">deno-codeview</a><a class="anchor" href="#deno-codeview">§</a></h3>\n<p><code>deno-codeview</code>は、<code>deno test --coverage</code>によって生成されたカバレッジプロファイルを解析し、<a href="https://github.com/webview/webview_deno">WebView</a>にカバレッジレポートを表示するツールです。</p>\n<hr>\n<p><a href="https://github.com/c4spar/deno-codeview">https://github.com/c4spar/deno-codeview</a></p>'
-        } }),
+    'outputPath': "gtag.html",
+    'title': "",
+    'content': React.createElement(Gtag, { config: {
+            blog: {
+                root: '/articles',
+                social: {
+                    email: 'uki00a@gmail.com',
+                    github: 'uki00a',
+                    twitter: 'uki00a'
+                }
+            },
+            branch: 'main',
+            description: 'このサイトでは、毎週Denoに関わる最新情報を発信しています。',
+            exclude: [
+                '**/.*',
+                '**/package.json',
+                '**/package-lock.json',
+                '**/node_modules',
+                'pagic.config.ts',
+                'pagic.config.tsx',
+                '**/config.gypi',
+                '**/CVS',
+                '**/npm-debug.log',
+                'dist'
+            ],
+            head: React.createElement(React.Fragment, null,
+                React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
+                React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }),
+                React.createElement(Gtag, { id: "G-MK2K2MRMBF" })),
+            include: undefined,
+            md: {
+                tocEnabled: true
+            },
+            nav: [
+                {
+                    icon: 'czs-home-l',
+                    link: 'https://uki00a.github.io/deno-weekly',
+                    text: 'ホーム'
+                },
+                {
+                    icon: 'czs-tag-l',
+                    link: 'https://uki00a.github.io/deno-weekly/tags',
+                    text: 'タグ一覧'
+                },
+                {
+                    icon: 'czs-category-l',
+                    link: 'https://uki00a.github.io/deno-weekly/categories',
+                    text: 'カテゴリ一覧'
+                },
+                {
+                    icon: 'czs-box-l',
+                    link: 'https://uki00a.github.io/deno-weekly/archives',
+                    text: 'アーカイブ'
+                },
+                {
+                    icon: 'czs-box-l',
+                    link: 'https://uki00a.github.io/deno-weekly/gallery.html',
+                    text: 'ギャラリー'
+                },
+                {
+                    icon: 'czs-about-l',
+                    link: 'https://uki00a.github.io/deno-weekly/about/index.html',
+                    text: 'このサイトについて'
+                }
+            ],
+            outDir: 'dist',
+            plugins: [
+                'clean',
+                'init',
+                'md',
+                'tsx',
+                'script',
+                'layout',
+                'out',
+                'blog'
+            ],
+            port: 8000,
+            root: 'https://uki00a.github.io/deno-weekly/',
+            serve: false,
+            srcDir: '.',
+            theme: 'blog',
+            title: '週刊Deno',
+            tools: {
+                backToTop: true,
+                editOnGitHub: true
+            },
+            watch: false
+        }, content: null, head: React.createElement(React.Fragment, null,
+            React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
+            React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }),
+            React.createElement(Gtag, { id: "G-MK2K2MRMBF" })), layoutPath: "_layout.tsx", outputPath: "gtag.html", pagePath: "gtag.tsx", script: null, title: "" }),
     'head': React.createElement(React.Fragment, null,
         React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
         React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }),
@@ -17,54 +103,8 @@ export default {
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
-    'contentTitle': React.createElement("h1", { key: "0" }, "2021/03/08\u301C2021/03/14\u306E\u6700\u65B0\u60C5\u5831"),
-    'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
-            __html: '<nav class="toc"><ol><li><a href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報</a><ol><li><a href="#deno-v181%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">Deno v1.8.1のリリース</a></li><li><a href="#deno_std-v0900%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">deno_std v0.90.0のリリース</a></li></ol></li><li><a href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報</a><ol><li><a href="#nano">nano</a></li><li><a href="#depsbot">depsbot</a></li><li><a href="#wizard">wizard</a></li><li><a href="#deno-redis-v0200">deno-redis v0.20.0</a></li><li><a href="#deno-codeview">deno-codeview</a></li></ol></li></ol></nav><h2 id="deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">Deno本体の最新情報<a class="anchor" href="#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="deno-v181%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno/releases/tag/v1.8.1">Deno v1.8.1のリリース</a><a class="anchor" href="#deno-v181%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>\n<p>Deno v1.8.1がリリースされました。このリリースでは、バグの修正を中心に実施されています。</p>\n<p><strong>主な変更点:</strong></p>\n<ul>\n<li>importsNotUsedAsValuesオプションがswcに渡されるようになりました。</li>\n<li>Windows上で<code>deno compile</code>を実行すると、ターゲットに関わらず常に.exeが拡張子として付与される問題が修正されました。</li>\n<li><code>Worker</code>内でトップレベルawaitが使用されていると、ブロックが発生する問題が修正されました。</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno/releases/tag/v1.8.1">https://github.com/denoland/deno/releases/tag/v1.8.1</a></p>\n<h3 id="deno_std-v0900%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><a href="https://github.com/denoland/deno_std/commit/3f9714bf05a75303355fddd22cad9794be50e47d">deno_std v0.90.0のリリース</a><a class="anchor" href="#deno_std-v0900%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9">§</a></h3>\n<p><code>deno_std</code> v0.90.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li>node: <a href="https://nodejs.org/api/module.html">module</a>モジュールを<code>require</code>で読み込めるようになりました。</li>\n<li>node: Node.jsで書かれたスクリプトを実行するためのCLIツールが実装されました。(<code>node/cli.ts</code>)</li>\n<li>node: <code>assert</code>モジュールの互換性が向上しました。</li>\n<li>http: v0.88.0で発生したパフォーマンスに関する問題が修正されました。</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno_std/commit/3f9714bf05a75303355fddd22cad9794be50e47d">https://github.com/denoland/deno_std/commit/3f9714bf05a75303355fddd22cad9794be50e47d</a></p>\n<h2 id="%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">サードパーティモジュールなどの最新情報<a class="anchor" href="#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1">§</a></h2>\n<h3 id="nano"><a href="https://github.com/nanojsx/nano">nano</a><a class="anchor" href="#nano">§</a></h3>\n<p><code>nano</code>は軽量のJSXライブラリです。以下のような機能をサポートしています:</p>\n<ul>\n<li>SSRをサポート(DenoとNode.jsの両方で動作します)</li>\n<li>組み込みのRouterやStoreなどを提供</li>\n<li>コンポーネントのpre-fetch</li>\n</ul>\n<hr>\n<p><a href="https://github.com/nanojsx/nano">https://github.com/nanojsx/nano</a></p>\n<h3 id="depsbot"><a href="https://github.com/denosaurs/depsbot">depsbot</a><a class="anchor" href="#depsbot">§</a></h3>\n<p>モジュールなどの依存関係の更新状態をチェックをしてくれるGitHub actionです。</p>\n<p>npmにも公開されており、コマンドラインから直接実行することもできます。</p>\n<hr>\n<p><a href="https://github.com/denosaurs/depsbot">https://github.com/denosaurs/depsbot</a></p>\n<h3 id="wizard"><a href="https://github.com/deno-libs/wizard">wizard</a><a class="anchor" href="#wizard">§</a></h3>\n<p><code>wizard</code>というBDDスタイルのAPIを提供するテストライブラリが公開されました。</p>\n<p>まだ開発が開始したばかりではありますが、<code>Deno.test()</code>をベースにしているため、各種サニタイザやDenoのCLIをそのまま利用することができます。</p>\n<hr>\n<p><a href="https://github.com/deno-libs/wizard">https://github.com/deno-libs/wizard</a></p>\n<h3 id="deno-redis-v0200"><a href="https://github.com/denodrivers/redis/releases/tag/v0.20.0">deno-redis v0.20.0</a><a class="anchor" href="#deno-redis-v0200">§</a></h3>\n<p><code>deno-redis</code> v0.20.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>CLIENT PAUSE</code>コマンドでMODEを指定できるようになりました</li>\n<li>以下のコマンドがサポートされました:\n<ul>\n<li><code>CLIENT UNBLOCK</code></li>\n<li><code>CLIENT UNPAUSE</code></li>\n<li><code>CLIENT INFO</code></li>\n<li><code>CLIENT TRACKINGINFO</code></li>\n<li><code>CLIENT LIST</code></li>\n</ul>\n</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denodrivers/redis/releases/tag/v0.20.0">https://github.com/denodrivers/redis/releases/tag/v0.20.0</a></p>\n<h3 id="deno-codeview"><a href="https://github.com/c4spar/deno-codeview">deno-codeview</a><a class="anchor" href="#deno-codeview">§</a></h3>\n<p><code>deno-codeview</code>は、<code>deno test --coverage</code>によって生成されたカバレッジプロファイルを解析し、<a href="https://github.com/webview/webview_deno">WebView</a>にカバレッジレポートを表示するツールです。</p>\n<hr>\n<p><a href="https://github.com/c4spar/deno-codeview">https://github.com/c4spar/deno-codeview</a></p>'
-        } }),
-    'toc': React.createElement("nav", { key: "0", className: "toc" },
-        React.createElement("ol", null,
-            React.createElement("li", null,
-                React.createElement("a", { href: "#deno%E6%9C%AC%E4%BD%93%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1" }, "Deno\u672C\u4F53\u306E\u6700\u65B0\u60C5\u5831"),
-                React.createElement("ol", null,
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#deno-v181%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9" }, "Deno v1.8.1\u306E\u30EA\u30EA\u30FC\u30B9")),
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#deno_std-v0900%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9" }, "deno_std v0.90.0\u306E\u30EA\u30EA\u30FC\u30B9")))),
-            React.createElement("li", null,
-                React.createElement("a", { href: "#%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AA%E3%81%A9%E3%81%AE%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1" }, "\u30B5\u30FC\u30C9\u30D1\u30FC\u30C6\u30A3\u30E2\u30B8\u30E5\u30FC\u30EB\u306A\u3069\u306E\u6700\u65B0\u60C5\u5831"),
-                React.createElement("ol", null,
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#nano" }, "nano")),
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#depsbot" }, "depsbot")),
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#wizard" }, "wizard")),
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#deno-redis-v0200" }, "deno-redis v0.20.0")),
-                    React.createElement("li", null,
-                        React.createElement("a", { href: "#deno-codeview" }, "deno-codeview")))))),
-    'author': "uki00a",
-    'contributors': [
-        "uki00a"
-    ],
-    'date': "2021/03/14",
-    'updated': null,
-    'excerpt': " 1. Deno本体の最新情報 1. Deno v1.8.1のリリース 2. deno_std v0.90.0のリリース 2. サードパーティモジュールなどの最新情報 1. nano 2. depsbot 3. wizard 4. deno-redis v0.20.0 5. deno-codeview Deno本体の最新情報 Den...",
-    'cover': undefined,
-    'tags': [
-        "deno",
-        "deno_std",
-        "nano",
-        "depsbot",
-        "wizard",
-        "deno-redis",
-        "deno-codeview"
-    ],
-    'categories': [
-        "news"
-    ],
     'blog': {
-        "isPost": true,
+        "isPost": false,
         "posts": [
             {
                 "pagePath": "articles/2021/08/15.md",
