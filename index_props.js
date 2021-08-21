@@ -1,5 +1,5 @@
 import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
-import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
+import Gtag from 'https://uki00a.github.io/deno-weekly/_gtag.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "README.md",
@@ -10,10 +10,9 @@ export default {
             __html: '<h1>週刊Deno</h1>\n<h2 id="%E5%BF%85%E8%A6%81%E3%81%AA%E3%82%82%E3%81%AE">必要なもの<a class="anchor" href="#%E5%BF%85%E8%A6%81%E3%81%AA%E3%82%82%E3%81%AE">§</a></h2>\n<ul>\n<li>Deno</li>\n<li><a href="https://github.com/jurassiscripts/velociraptor">Velociraptor</a></li>\n</ul>\n<h2 id="dev%E3%82%B5%E3%83%BC%E3%83%90%E3%81%AE%E8%B5%B7%E5%8B%95">devサーバの起動<a class="anchor" href="#dev%E3%82%B5%E3%83%BC%E3%83%90%E3%81%AE%E8%B5%B7%E5%8B%95">§</a></h2>\n<pre class="language-shell"><code class="language-shell">$ vr dev\n</code></pre>\n<h2 id="%E3%83%93%E3%83%AB%E3%83%89">ビルド<a class="anchor" href="#%E3%83%93%E3%83%AB%E3%83%89">§</a></h2>\n<pre class="language-shell"><code class="language-shell">$ vr build\n</code></pre>'
         } }),
     'head': React.createElement(React.Fragment, null,
-        React.createElement(Ga, { id: "G-MK2K2MRMBF" }),
-        React.createElement(React.Fragment, { key: ".1" },
-            React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
-            React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }))),
+        React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
+        React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }),
+        React.createElement(Gtag, { id: "G-MK2K2MRMBF" })),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
@@ -27,7 +26,7 @@ export default {
     'contributors': [
         "Yuki Tanaka"
     ],
-    'date': "2021-08-15T10:34:26.000Z",
+    'date': "2021-08-21T07:24:07.000Z",
     'updated': null,
     'excerpt': "必要なもの - Deno - Velociraptor devサーバの起動 $ vr dev ビルド $ vr build ",
     'cover': undefined,

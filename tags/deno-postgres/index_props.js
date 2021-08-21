@@ -1,12 +1,10 @@
 import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
-import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "tags/deno-postgres/",
     'layoutPath': "archives/_layout.tsx",
     'outputPath': "tags/deno-postgres/index.html",
-    'head': React.createElement(React.Fragment, null,
-        React.createElement(Ga, { id: "G-MK2K2MRMBF" })),
+    'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),

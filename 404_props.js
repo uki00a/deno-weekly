@@ -1,6 +1,6 @@
 import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
 import NotFoundPage from './404_content.js';
-import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
+import Gtag from 'https://uki00a.github.io/deno-weekly/_gtag.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "404.tsx",
@@ -30,12 +30,10 @@ export default {
                 '**/npm-debug.log',
                 'dist'
             ],
-            ga: {
-                id: 'G-MK2K2MRMBF'
-            },
             head: React.createElement(React.Fragment, null,
                 React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
-                React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" })),
+                React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }),
+                React.createElement(Gtag, { id: "G-MK2K2MRMBF" })),
             include: undefined,
             md: {
                 tocEnabled: true
@@ -81,8 +79,7 @@ export default {
                 'script',
                 'layout',
                 'out',
-                'blog',
-                'ga'
+                'blog'
             ],
             port: 8000,
             root: 'https://uki00a.github.io/deno-weekly/',
@@ -97,12 +94,12 @@ export default {
             watch: false
         }, content: null, head: React.createElement(React.Fragment, null,
             React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
-            React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" })), layoutPath: "_layout.tsx", outputPath: "404.html", pagePath: "404.tsx", script: null, title: "" }),
+            React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }),
+            React.createElement(Gtag, { id: "G-MK2K2MRMBF" })), layoutPath: "_layout.tsx", outputPath: "404.html", pagePath: "404.tsx", script: null, title: "" }),
     'head': React.createElement(React.Fragment, null,
-        React.createElement(Ga, { id: "G-MK2K2MRMBF" }),
-        React.createElement(React.Fragment, { key: ".1" },
-            React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
-            React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }))),
+        React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
+        React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }),
+        React.createElement(Gtag, { id: "G-MK2K2MRMBF" })),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),

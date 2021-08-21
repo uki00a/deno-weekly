@@ -1,5 +1,5 @@
 import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
-import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
+import Gtag from 'https://uki00a.github.io/deno-weekly/_gtag.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "articles/2021/01/02.md",
@@ -10,10 +10,9 @@ export default {
             __html: '<h1>はじめに</h1>\n<p>このサイトでは、Denoに関する最新情報を定期的に発信しようと思います。</p>\n<p>日頃からDenoに関するリポジトリや情報などをウォッチしており、どうせならそれに関する情報をアウトプットしてみようと思い、始めた試みです。</p>\n<p>これから隔週程度の間隔で情報を発信していこうと思います。</p>'
         } }),
     'head': React.createElement(React.Fragment, null,
-        React.createElement(Ga, { id: "G-MK2K2MRMBF" }),
-        React.createElement(React.Fragment, { key: ".1" },
-            React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
-            React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }))),
+        React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
+        React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }),
+        React.createElement(Gtag, { id: "G-MK2K2MRMBF" })),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),

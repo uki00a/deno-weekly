@@ -1,5 +1,5 @@
 import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
-import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
+import Gtag from 'https://uki00a.github.io/deno-weekly/_gtag.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "about/README.md",
@@ -10,10 +10,9 @@ export default {
             __html: '<h1>このサイトについて</h1>\n<p>このサイトでは、毎週Denoに関わる最新情報を発信しています。</p>\n<h1>指摘や誤りについて</h1>\n<p>もしこのサイトについて気になる点(記述の誤り、タイポなど)や改善事項などがありましたら、以下などの手段で連絡いただけると幸いです😊</p>\n<ul>\n<li>GitHub issue: <a href="https://github.com/uki00a/deno-weekly/issues">https://github.com/uki00a/deno-weekly/issues</a></li>\n<li>Twitter: <a href="https://twitter.com/uki00a">https://twitter.com/uki00a</a></li>\n<li>Discord: <code>uki00a#5461</code></li>\n</ul>'
         } }),
     'head': React.createElement(React.Fragment, null,
-        React.createElement(Ga, { id: "G-MK2K2MRMBF" }),
-        React.createElement(React.Fragment, { key: ".1" },
-            React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
-            React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }))),
+        React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
+        React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }),
+        React.createElement(Gtag, { id: "G-MK2K2MRMBF" })),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
@@ -27,7 +26,7 @@ export default {
     'contributors': [
         "Yuki Tanaka"
     ],
-    'date': "2021-08-15T10:34:26.000Z",
+    'date': "2021-08-21T07:24:07.000Z",
     'updated': null,
     'excerpt': "このサイトでは、毎週Denoに関わる最新情報を発信しています。 指摘や誤りについて もしこのサイトについて気になる点(記述の誤り、タイポなど)や改善事項などがありましたら、以下などの手段で連絡いただけると幸いです😊 -...",
     'cover': undefined,

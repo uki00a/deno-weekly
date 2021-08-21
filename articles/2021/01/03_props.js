@@ -1,5 +1,5 @@
 import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
-import Ga from 'https://uki00a.github.io/deno-weekly/_ga.js';
+import Gtag from 'https://uki00a.github.io/deno-weekly/_gtag.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
     'pagePath': "articles/2021/01/03.md",
@@ -10,10 +10,9 @@ export default {
             __html: '<h1>2020/12/28〜2021/01/03の最新情報</h1>\n<nav class="toc"><ol><li><a href="#denov163%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%9F">Deno@v1.6.3がリリースされた</a><ol><li><a href="#%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88">ハイライト</a></li></ol></li><li><a href="#deno-puppeteer%E3%81%8C%E5%85%AC%E9%96%8B%E3%81%95%E3%82%8C%E3%81%9F">deno-puppeteerが公開された</a></li></ol></nav><h2 id="denov163%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%9F"><a href="https://github.com/denoland/deno/releases/tag/v1.6.3">Deno@v1.6.3がリリースされた</a><a class="anchor" href="#denov163%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%95%E3%82%8C%E3%81%9F">§</a></h2>\n<p>Denoのv1.6.3がリリースされました。</p>\n<h3 id="%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88">ハイライト<a class="anchor" href="#%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88">§</a></h3>\n<ul>\n<li><code>deno lsp</code>に<code>textDocument/rename</code>やcacheコマンドが実装されました。</li>\n<li><a href="https://deno.land/std@0.83.0">std@0.83.0</a>も同時にリリースされました。<code>std/node/fs</code>に<code>mkdtemp</code>と<code>mkdtempSync</code>が実装されています。</li>\n</ul>\n<h2 id="deno-puppeteer%E3%81%8C%E5%85%AC%E9%96%8B%E3%81%95%E3%82%8C%E3%81%9F"><a href="https://github.com/lucacasonato/deno-puppeteer/releases/tag/5.5.0">deno-puppeteerが公開された</a><a class="anchor" href="#deno-puppeteer%E3%81%8C%E5%85%AC%E9%96%8B%E3%81%95%E3%82%8C%E3%81%9F">§</a></h2>\n<p><a href="https://github.com/puppeteer/puppeteer">puppeteer</a>のDenoポートである<a href="https://github.com/lucacasonato/deno-puppeteer">deno-puppeteer</a>が公開されました。</p>'
         } }),
     'head': React.createElement(React.Fragment, null,
-        React.createElement(Ga, { id: "G-MK2K2MRMBF" }),
-        React.createElement(React.Fragment, { key: ".1" },
-            React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
-            React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }))),
+        React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
+        React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }),
+        React.createElement(Gtag, { id: "G-MK2K2MRMBF" })),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
