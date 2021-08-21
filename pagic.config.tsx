@@ -1,12 +1,36 @@
 import { React } from "pagic";
 
+interface GtagProps {
+  id: string;
+}
+
+const Gtag = ({ id }: GtagProps) => {
+  return (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${id}');`,
+        }}
+      />
+    </>
+  );
+};
+
+const maybeTrackingID = typeof Deno === "undefined"
+  ? undefined
+  : Deno.env.get("TRACKING_ID");
+
 export default {
   root: "https://uki00a.github.io/deno-weekly/",
   title: "週刊Deno",
   description: "このサイトでは、毎週Denoに関わる最新情報を発信しています。",
   srcDir: ".",
   theme: "blog",
-  plugins: ["blog", "ga"],
+  plugins: ["blog"],
   head: (
     <>
       <link
@@ -17,6 +41,7 @@ export default {
         property="og:image"
         content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"
       />
+      {maybeTrackingID ? <Gtag id={maybeTrackingID} /> : null}
     </>
   ),
   blog: {
@@ -26,9 +51,6 @@ export default {
       email: "uki00a@gmail.com",
       twitter: "uki00a",
     },
-  },
-  ga: typeof Deno === "undefined" ? undefined : {
-    id: Deno.env.get("TRACKING_ID"),
   },
   tools: {
     editOnGitHub: true,
