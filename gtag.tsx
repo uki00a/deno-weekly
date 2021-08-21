@@ -1,3 +1,5 @@
+import { React } from "pagic";
+
 export interface GtagProps {
   id: string;
 }
