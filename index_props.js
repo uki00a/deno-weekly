@@ -26,7 +26,7 @@ export default {
     'contributors': [
         "uki00a"
     ],
-    'date': "2021-08-21T07:45:47.000Z",
+    'date': "2021-08-21T07:49:57.000Z",
     'updated': null,
     'excerpt': "必要なもの - Deno - Velociraptor devサーバの起動 $ vr dev ビルド $ vr build ",
     'cover': undefined,

@@ -1,4 +1,4 @@
-import Gtag from "./gtag_content.js";
+import Gtag from "./_gtag.js";
 const maybeTrackingID = typeof Deno === "undefined"
     ? undefined
     : Deno.env.get("TRACKING_ID");
