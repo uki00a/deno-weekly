@@ -1,5 +1,5 @@
 import { React } from "pagic";
-import Gtag from "./gtag.tsx";
+import Gtag from "./_gtag.tsx";
 
 const maybeTrackingID = typeof Deno === "undefined"
   ? undefined
