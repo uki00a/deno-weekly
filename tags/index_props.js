@@ -26,7 +26,7 @@ export default {
     'contributors': [
         "uki00a"
     ],
-    'date': "2021-08-21T07:49:57.000Z",
+    'date': "2021-08-21T08:04:53.000Z",
     'updated': null,
     'excerpt': "",
     'cover': undefined,
