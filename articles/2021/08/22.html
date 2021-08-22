@@ -18,9 +18,10 @@
 <p><strong>変更点:</strong></p>
 <ul>
 <li><code>deno test --doc</code>でMarkdownファイルを引数に指定できるようになりました</li>
-<li><code>deno test --doc</code>で以下のように<code>ignore</code>が指定されていると、そのコードブロックが無視されるようになりました<pre class="language-ts"><code class="language-ts">  <span class="token operator">...</span>
-</code></pre>
-</li>
+<li><code>deno test --doc</code>で以下のように<code>ignore</code>が指定されていると、そのコードブロックが無視されるようになりました
+```ts ignore
+...
+```</li>
 <li><code>deno test</code>で<code>load</code>イベントが発火しない問題が修正されました</li>
 <li><code>localStorage</code>への書き込みのスループットがおよそ150倍高速化されました</li>
 <li><code>deno lint</code>やREPLにおけるハイライトが改善されました</li>
