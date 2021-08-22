@@ -23,6 +23,7 @@ ${toc}
 |[fresh](https://github.com/lucacasonato/fresh)|Deno Deployで動作するPreactベースのフレームワーク|
 |[Servest](https://github.com/keroxp/servest)|Webサーバ|
 |[alosaur](https://github.com/alosaur/alosaur)|Webフレームワーク|
+|[djwt](https://github.com/timonson/djwt)|JWTモジュール|
 |[Velociraptor](https://github.com/jurassiscripts/velociraptor)|タスクランナ|
 |[Trex](https://github.com/crewdevio/Trex)|パッケージマネージャ|
 |[Cliffy](https://github.com/c4spar/deno-cliffy)|CLIフレームワーク|
