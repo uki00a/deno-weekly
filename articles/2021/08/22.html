@@ -1,0 +1,104 @@
+<!doctype html><html class="" data-reactroot=""><head><link rel="icon" href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"/><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script><script>window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MK2K2MRMBF');</script>
+<meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="x-ua-compatible" content="ie=edge"/><meta data-react-helmet="true" name="description" content="このサイトでは、毎週Denoに関わる最新情報を発信しています。"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/><meta data-react-helmet="true" property="og:title" content="2021/08/16〜2021/08/22の最新情報 · 週刊Deno"/><meta data-react-helmet="true" property="og:description" content="このサイトでは、毎週Denoに関わる最新情報を発信しています。"/><meta data-react-helmet="true" property="og:type" content="article"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:site" content="@uki00a"/>
+<title data-react-helmet="true">2021/08/16〜2021/08/22の最新情報 · 週刊Deno</title>
+<link data-react-helmet="true" rel="stylesheet" href="https://uki00a.github.io/deno-weekly/assets/index.css"/><link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="https://uki00a.github.io/deno-weekly/assets/prism.css"/>
+<script data-react-helmet="true" >
+    const shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (shouldSetIsDark) {
+      document.documentElement.classList.add('is_dark');
+      document.getElementById('prismTheme').href = "https://uki00a.github.io/deno-weekly/assets/prism_tomorrow.css";
+    }
+  </script>
+</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="https://uki00a.github.io/deno-weekly/">週刊Deno</a><aside class="hide_on_mobile"><div class="aside_card"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-close-l.svg&quot;)"></a><h1><a href="https://uki00a.github.io/deno-weekly/">週刊Deno</a></h1><p class="description">このサイトでは、毎週Denoに関わる最新情報を発信しています。</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-github-logo" href="https://github.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-github-logo.svg&quot;)"></a></li><li class="flex_center"><a class="czs-message-l" href="mailto:uki00a@gmail.com" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-message-l.svg&quot;)"></a></li><li class="flex_center"><a class="czs-twitter" href="https://twitter.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-twitter.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly"><span class="czs-home-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-home-l.svg&quot;)"></span>ホーム</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/tags"><span class="czs-tag-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-tag-l.svg&quot;)"></span>タグ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/categories"><span class="czs-category-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-category-l.svg&quot;)"></span>カテゴリ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/archives"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>アーカイブ</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/gallery.html"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>ギャラリー</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/about/index.html"><span class="czs-about-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-about-l.svg&quot;)"></span>このサイトについて</a></li></ul></nav></div><nav class="toc"><ol><li><a href="#deno-v1131">Deno v1.13.1</a></li><li><a href="#deno_std-v01050">deno_std v0.105.0</a></li><li><a href="#deno_doc-v0110">deno_doc v0.11.0</a></li><li><a href="#oak-v900">Oak v9.0.0</a></li><li><a href="#alosaur-v0330">Alosaur v0.33.0</a></li><li><a href="#djwt-v23">djwt v2.3</a></li><li><a href="#deno_postgres-v0120">deno_postgres v0.12.0</a></li><li><a href="#deno_mongo-v0250">deno_mongo v0.25.0</a></li></ol></nav></aside><section class="main"><div class="main_post_meta"><time dateTime="2021/08/22">2021-08-22</time> · <!-- -->Yuki Tanaka</div><article><nav class="toc"><ol><li><a href="#deno-v1131">Deno v1.13.1</a></li><li><a href="#deno_std-v01050">deno_std v0.105.0</a></li><li><a href="#deno_doc-v0110">deno_doc v0.11.0</a></li><li><a href="#oak-v900">Oak v9.0.0</a></li><li><a href="#alosaur-v0330">Alosaur v0.33.0</a></li><li><a href="#djwt-v23">djwt v2.3</a></li><li><a href="#deno_postgres-v0120">deno_postgres v0.12.0</a></li><li><a href="#deno_mongo-v0250">deno_mongo v0.25.0</a></li></ol></nav><h2 id="deno-v1131"><a href="https://github.com/denoland/deno/releases/tag/v1.13.1">Deno v1.13.1</a><a class="anchor" href="#deno-v1131">§</a></h2>
+<p>Deno v1.13.1がリリースされました。</p>
+<p><code>deno test</code>やWeb Crypto APIのバグ修正などがメインです。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li><code>deno test --doc</code>でMarkdownファイルを引数に指定できるようになりました</li>
+<li><code>deno test --doc</code>で````ts ignore<code>のように</code>ignore`が指定されていると、そのコードブロックが無視されるようになりました</li>
+<li><code>deno test</code>で<code>load</code>イベントが発火しない問題が修正されました</li>
+<li><code>localStorage</code>への書き込みのスループットがおよそ150倍高速化されました</li>
+<li><code>deno lint</code>やREPLにおけるハイライトが改善されました</li>
+<li><code>SubtleCrypto</code>の<code>importKey</code>や<code>generateKey</code>メソッドの<code>extractable</code>引数で<code>false</code>がサポートされました</li>
+<li><code>SubtleCrypto#importKey</code>で<code>ArrayBuffer</code>をキーとして渡せるようになりました</li>
+<li><code>WebAssembly.instantiateStreaming</code>に渡された<code>Response</code>オブジェクトに<code>Content-Type</code>が設定されていなかった場合のエラーメッセージが改善されました</li>
+</ul>
+<hr>
+<p><a href="https://github.com/denoland/deno/releases/tag/v1.13.1">https://github.com/denoland/deno/releases/tag/v1.13.1</a></p>
+<h2 id="deno_std-v01050"><a href="https://github.com/denoland/deno_std/releases/tag/0.105.0">deno_std v0.105.0</a><a class="anchor" href="#deno_std-v01050">§</a></h2>
+<p>deno_std v0.105.0がリリースされました。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li><code>bytes</code>: <code>contains</code>が<code>includes</code>にリネームされました</li>
+<li><code>bytes</code>: <code>indexOf</code>と<code>includes</code>で<code>fromIndex</code>引数がサポートされました</li>
+<li><code>collections</code>: <code>intersect</code>で先頭の配列における重複が適切に取り扱われない問題が修正されました</li>
+</ul>
+<hr>
+<p><a href="https://github.com/denoland/deno_std/releases/tag/0.105.0">https://github.com/denoland/deno_std/releases/tag/0.105.0</a></p>
+<h2 id="deno_doc-v0110"><a href="https://github.com/denoland/deno_doc/releases/tag/v0.11.0">deno_doc v0.11.0</a><a class="anchor" href="#deno_doc-v0110">§</a></h2>
+<p>deno_doc v0.11.0がリリースされました。</p>
+<p>このリリースに合わせて、JavaScriptから利用できるAPIが公開されています。</p>
+<ul>
+<li><a href="https://deno.land/x/deno_doc@v0.11.0">https://deno.land/x/deno_doc@v0.11.0</a></li>
+</ul>
+<hr>
+<p><a href="https://github.com/denoland/deno_doc/releases/tag/v0.11.0">https://github.com/denoland/deno_doc/releases/tag/v0.11.0</a></p>
+<h2 id="oak-v900"><a href="https://github.com/oakserver/oak/commit/dd8f4a1579b808345b52f76c2b270ed3d31d53bc">Oak v9.0.0</a><a class="anchor" href="#oak-v900">§</a></h2>
+<p>Oak v9.0.0がリリースされました。</p>
+<p>Cookie関連のAPIへの破壊的変更やDeno Deployサポートの改善などが実施されています。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>(<strong>破壊的変更</strong>) Cookieの署名にWeb Crypto APIが使用されるようになった関係で<code>Cookies</code>オブジェクトの<code>get</code>や<code>set</code>などのメソッドが非同期になりました (<code>Context.cookies</code>)</li>
+<li>Deno Deploy上でも通常のDeno CLIと同様に<code>Application#listen</code>によってリクエストをハンドリングできるようになりました。またその影響により、<code>Application#fetchEventHandler</code>が非推奨化されています</li>
+<li><code>Application#listen</code>で<code>port: 0</code>を指定した際に<code>&quot;listen&quot;</code>イベントで適切なポート番号が報告されるように修正されました。</li>
+<li><code>&quot;listen&quot;</code>イベントがTCPサーバが作成されたタイミングで発火されるように修正されました</li>
+<li><code>Range</code>ヘッダでコンテンツの最後のバイトを取得するように指定した場合、416レスポンスが返却される問題が修正されました</li>
+<li><code>request.body({ type: &quot;stream&quot; })</code>を複数回呼ぶと読み込みが適切に行われない問題が修正されました</li>
+<li>リクエストに不正な形式の<code>Host</code>ヘッダが含まれているとプロセスがクラッシュする問題が修正されました</li>
+</ul>
+<hr>
+<p><a href="https://github.com/oakserver/oak/commit/dd8f4a1579b808345b52f76c2b270ed3d31d53bc">https://github.com/oakserver/oak/commit/dd8f4a1579b808345b52f76c2b270ed3d31d53bc</a></p>
+<h2 id="alosaur-v0330"><a href="https://github.com/alosaur/alosaur/releases/tag/v0.33.0">Alosaur v0.33.0</a><a class="anchor" href="#alosaur-v0330">§</a></h2>
+<p>Alosaur v0.33.0がリリースされました。</p>
+<p>内部実装がstd/httpからネイティブHTTPサーバへ移行した関係で、破壊的変更が含まれています。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>(<strong>破壊的変更</strong>) 内部実装がstd/http/server.tsからネイティブHTTPサーバ(<code>Deno.serveHTTP</code>)へ移行されました</li>
+<li>(<strong>破壊的変更</strong>) <code>Request</code>が<code>AlosaurRequest</code>に、<code>Response</code>が<code>AlosaurResponse</code>にリネームされました</li>
+<li>ドキュメンテーションサイトが公開されました(<a href="https://alosaur.github.io/">https://alosaur.github.io/</a>)</li>
+</ul>
+<hr>
+<ul>
+<li><a href="https://github.com/alosaur/alosaur/releases/tag/v0.33.0">https://github.com/alosaur/alosaur/releases/tag/v0.33.0</a></li>
+<li><a href="https://alosaur.github.io/">https://alosaur.github.io/</a></li>
+</ul>
+<h2 id="djwt-v23"><a href="https://github.com/timonson/djwt/releases/tag/v2.3">djwt v2.3</a><a class="anchor" href="#djwt-v23">§</a></h2>
+<p>DenoのJWTモジュールであるdjwtのv2.3がリリースされました。</p>
+<p>各APIがWeb Crypto APIをベースに再実装されています。</p>
+<p>また、破壊的変更が入っていることもあり、このリリースは実験的という位置づけのようです。</p>
+<hr>
+<p><a href="https://github.com/timonson/djwt/releases/tag/v2.3">https://github.com/timonson/djwt/releases/tag/v2.3</a></p>
+<h2 id="deno_postgres-v0120"><a href="https://github.com/denodrivers/postgres/releases/tag/v0.12.0">deno_postgres v0.12.0</a><a class="anchor" href="#deno_postgres-v0120">§</a></h2>
+<p>deno_postgres v0.12.0がリリースされました。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>コネクションの再接続機能が実装されました。<code>connection.attempts</code>オプションによって試行回数を調節できます(デフォルトは<code>1</code>)</li>
+<li><code>Client.session</code>が実装され、サーバプロセスのpidなどを参照できるようになりました</li>
+<li><code>Client#queryObject</code>メソッドの<code>fields</code>オプションで、アルファベットの大文字と小文字が区別されるようになりました</li>
+<li>TLS接続関連の取り扱いの強化 (不正なTLS接続失敗時に警告を表示する、SSLRequestに対してエラーが発生した際にコネクションをクローズするなど)</li>
+<li><code>Client#queryObject</code>メソッドの<code>fields</code>オプションで単一の文字がフィールドとして指定できない問題が修正されました</li>
+</ul>
+<hr>
+<p><a href="https://github.com/denodrivers/postgres/releases/tag/v0.12.0">https://github.com/denodrivers/postgres/releases/tag/v0.12.0</a></p>
+<h2 id="deno_mongo-v0250"><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.25.0">deno_mongo v0.25.0</a><a class="anchor" href="#deno_mongo-v0250">§</a></h2>
+<p>deno_mongo v0.25.0がリリースされました。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li><code>Collection#countDocuments</code>と<code>Collection#estimatedDocumentCount</code>が追加されました。また、<code>Collection#count</code>が非推奨化されています。</li>
+<li><code>MongoClient#connect</code>で指定した<code>db</code>がデフォルトのデータベース名として使用されるようになりました。</li>
+</ul>
+<hr>
+<p><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.25.0">https://github.com/denodrivers/deno_mongo/releases/tag/v0.25.0</a></p></article></section><footer>Powered by <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="https://uki00a.github.io/deno-weekly/index.js"></script></body></html>

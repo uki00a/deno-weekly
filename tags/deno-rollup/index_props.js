@@ -20,9 +20,9 @@ export default {
                 "link": "articles/2021/01/24.html",
                 "date": "2021/01/24",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -37,7 +37,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 33
+                "count": 34
             },
             {
                 "name": "notice",
@@ -47,22 +47,22 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 25
+                "count": 26
             },
             {
                 "name": "deno_std",
-                "count": 16
+                "count": 17
             },
             {
                 "name": "deno-postgres",
-                "count": 5
-            },
-            {
-                "name": "deno-redis",
-                "count": 5
+                "count": 6
             },
             {
                 "name": "Oak",
+                "count": 6
+            },
+            {
+                "name": "deno-redis",
                 "count": 5
             },
             {
@@ -76,6 +76,14 @@ export default {
             {
                 "name": "Trex",
                 "count": 3
+            },
+            {
+                "name": "alosaur",
+                "count": 2
+            },
+            {
+                "name": "deno_mongo",
+                "count": 2
             },
             {
                 "name": "luath",
@@ -100,10 +108,6 @@ export default {
             {
                 "name": "vno",
                 "count": 2
-            },
-            {
-                "name": "alosaur",
-                "count": 1
             },
             {
                 "name": "angular_deno",
@@ -154,11 +158,11 @@ export default {
                 "count": 1
             },
             {
-                "name": "deno_license_checker",
+                "name": "deno_doc",
                 "count": 1
             },
             {
-                "name": "deno_mongo",
+                "name": "deno_license_checker",
                 "count": 1
             },
             {
@@ -175,6 +179,10 @@ export default {
             },
             {
                 "name": "depsbot",
+                "count": 1
+            },
+            {
+                "name": "djwt",
                 "count": 1
             },
             {
