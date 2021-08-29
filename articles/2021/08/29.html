@@ -1,0 +1,76 @@
+<!doctype html><html class="" data-reactroot=""><head><link rel="icon" href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"/><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script><script>window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MK2K2MRMBF');</script>
+<meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" http-equiv="x-ua-compatible" content="ie=edge"/><meta data-react-helmet="true" name="description" content="このサイトでは、毎週Denoに関わる最新情報を発信しています。"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/><meta data-react-helmet="true" property="og:title" content="2021/08/23〜2021/08/29の最新情報 · 週刊Deno"/><meta data-react-helmet="true" property="og:description" content="このサイトでは、毎週Denoに関わる最新情報を発信しています。"/><meta data-react-helmet="true" property="og:type" content="article"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:site" content="@uki00a"/>
+<title data-react-helmet="true">2021/08/23〜2021/08/29の最新情報 · 週刊Deno</title>
+<link data-react-helmet="true" rel="stylesheet" href="https://uki00a.github.io/deno-weekly/assets/index.css"/><link data-react-helmet="true" id="prismTheme" rel="stylesheet" href="https://uki00a.github.io/deno-weekly/assets/prism.css"/>
+<script data-react-helmet="true" >
+    const shouldSetIsDark = document.cookie.includes('is_dark=1') ? true : document.cookie.includes('is_dark=0') ? false : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (shouldSetIsDark) {
+      document.documentElement.classList.add('is_dark');
+      document.getElementById('prismTheme').href = "https://uki00a.github.io/deno-weekly/assets/prism_tomorrow.css";
+    }
+  </script>
+</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="https://uki00a.github.io/deno-weekly/">週刊Deno</a><aside class="hide_on_mobile"><div class="aside_card"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-close-l.svg&quot;)"></a><h1><a href="https://uki00a.github.io/deno-weekly/">週刊Deno</a></h1><p class="description">このサイトでは、毎週Denoに関わる最新情報を発信しています。</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-github-logo" href="https://github.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-github-logo.svg&quot;)"></a></li><li class="flex_center"><a class="czs-message-l" href="mailto:uki00a@gmail.com" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-message-l.svg&quot;)"></a></li><li class="flex_center"><a class="czs-twitter" href="https://twitter.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-twitter.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly"><span class="czs-home-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-home-l.svg&quot;)"></span>ホーム</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/tags"><span class="czs-tag-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-tag-l.svg&quot;)"></span>タグ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/categories"><span class="czs-category-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-category-l.svg&quot;)"></span>カテゴリ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/archives"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>アーカイブ</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/gallery.html"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>ギャラリー</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/about/index.html"><span class="czs-about-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-about-l.svg&quot;)"></span>このサイトについて</a></li></ul></nav></div><nav class="toc"><ol><li><a href="#deno-v1132">Deno v1.13.2</a></li><li><a href="#deno_std-v01060">deno_std v0.106.0</a></li><li><a href="#mdn%E3%81%A7deno%E3%81%8C%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">MDNでDenoがサポートされました</a></li><li><a href="#alephjs-v030-beta%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3">Aleph.js v0.3.0 betaバージョン</a></li></ol></nav></aside><section class="main"><div class="main_post_meta"><time dateTime="2021/08/29">2021-08-29</time> · <!-- -->Yuki Tanaka</div><article><nav class="toc"><ol><li><a href="#deno-v1132">Deno v1.13.2</a></li><li><a href="#deno_std-v01060">deno_std v0.106.0</a></li><li><a href="#mdn%E3%81%A7deno%E3%81%8C%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">MDNでDenoがサポートされました</a></li><li><a href="#alephjs-v030-beta%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3">Aleph.js v0.3.0 betaバージョン</a></li></ol></nav><h2 id="deno-v1132"><a href="https://github.com/denoland/deno/releases/tag/v1.13.2">Deno v1.13.2</a><a class="anchor" href="#deno-v1132">§</a></h2>
+<p>Deno v1.13.2がリリースされました。</p>
+<p>このリリースではバグ修正を中心に行われています。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li><code>SubtleCrypto#exportKey</code>でHMACがサポートされました</li>
+<li><code>deno test</code>の<code>--jobs</code>オプションで<code>0</code>を指定するとエラーが発生するように修正されました</li>
+<li><code>Deno.dlopen</code>に不正な型の引数を渡した際に、プロセスがパニックする問題が修正されました</li>
+<li>リソースリークを防止するために、<code>Deno.HttpConn#close</code>を実行した際に、該当の<code>Deno.HttpConn</code>オブジェクトを経由して割り当てられた全てのリソースが開放されるように修正されました</li>
+<li><code>deno lsp</code>でlanguageIdとして<code>jsx</code>と<code>tsx</code>がサポートされました (<a href="https://nova.app/">Nova</a> などのエディタが標準のlanguageIdである<code>javascriptreact</code>や<code>typescriptreact</code>ではなく、jsxやtsxを使用するために対応されたようです)</li>
+<li><code>deno lsp</code>がサポートしないlanguageIdが指定された場合、エディタ上で診断が表示されないように修正されました (<code>deno lsp</code>が解釈できないlanguageIdをエディタが指定した場合、Denoはそのファイルをtypescriptとして解釈していたため、誤って診断が表示されてしまう問題があったようです)</li>
+<li><a href="https://github.com/denoland/deno/pull/11756">https://github.com/denoland/deno/pull/11756</a></li>
+<li>クラシックWorkerで<code>setTimeout</code>などのAPIを使用するとプロセスがクラッシュする問題が修正されました</li>
+<li><code>URL</code>や<code>URLSearchParams</code>のパフォーマンスが向上しました</li>
+</ul>
+<h2 id="deno_std-v01060"><a href="https://github.com/denoland/deno_std/pull/1155">deno_std v0.106.0</a><a class="anchor" href="#deno_std-v01060">§</a></h2>
+<p>deno_std v0.106.0がリリースされました。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li><code>async</code>: <code>delay</code>関数で<code>AbortSignal</code>を使用した中断がサポートされました</li>
+<li><code>collection</code>: <code>findLastIndex</code>でマッチする要素が見つからなかったときに<code>-1</code>ではなく<code>undefined</code>が返却されるように修正されました</li>
+<li><code>testing</code>: <code>assertEquals</code>で、一方のオブジェクトには<code>constructor</code>が設定されているがもう一方には設定されていない場合に、保持しているプロパティが一致すればそれらのオブジェクトは同一と判断されるように変更されました</li>
+<li><code>node/buffer</code>: 定数などのいくつかのAPIがexportされました</li>
+<li><code>node/perf_hooks</code>: <code>PerformanceEntry</code>がdefault exportされるオブジェクトに追加されました</li>
+</ul>
+<hr>
+<ul>
+<li><a href="https://github.com/denoland/deno_std/pull/1155">https://github.com/denoland/deno_std/pull/1155</a></li>
+<li><a href="https://github.com/denoland/deno_std/releases/tag/0.106.0">https://github.com/denoland/deno_std/releases/tag/0.106.0</a></li>
+</ul>
+<h2 id="mdn%E3%81%A7deno%E3%81%8C%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F"><a href="https://deno.com/blog/deno-on-mdn">MDNでDenoがサポートされました</a><a class="anchor" href="#mdn%E3%81%A7deno%E3%81%8C%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F">§</a></h2>
+<p>MDN Web Docsの「ブラウザーの互換性」欄にDenoの情報が表示されるようになりました。</p>
+<p>あるWeb APIがDenoのどのバージョンからサポートされているかを確認することができます。</p>
+<p>例)</p>
+<ul>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/API/URL">https://developer.mozilla.org/ja/docs/Web/API/URL</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/API/TextDecoder">https://developer.mozilla.org/ja/docs/Web/API/TextDecoder</a></li>
+</ul>
+<hr>
+<p><a href="https://deno.com/blog/deno-on-mdn">https://deno.com/blog/deno-on-mdn</a></p>
+<h2 id="alephjs-v030-beta%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3">Aleph.js v0.3.0 betaバージョン<a class="anchor" href="#alephjs-v030-beta%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3">§</a></h2>
+<p>Next.jsライクなフレームワークであるAleph.jsのv0.3.0 betaバージョンが公開されました。</p>
+<p>様々な機能の追加やパフォーマンスの向上などが図られています。</p>
+<p><strong>主な変更点:</strong></p>
+<ul>
+<li>新しいプラグインシステムの提供 (Aleph.jsのランタイムを拡張し、コードの変換プロセスに介入したりカスタムファイルタイプのサポートなどを追加できる仕組み)</li>
+<li>deno_std/http/serverからネイティブHTTP(<code>Deno.serveHttp</code>)への移行</li>
+<li>APIミドルウェアがサポートされました。<code>api/_middlewares.ts</code>または<code>aleph.config.ts</code>でAPIミドルウェアを定義できます。</li>
+<li>Pageコンポーネントで<code>ssr</code>オプションを宣言できるようになりました。(Next.jsにおける<code>getStaticProps</code>/<code>getStaticPaths</code>相当の機能)</li>
+<li><a href="https://github.com/alephjs/alephjs.org/blob/5297a70c4f36e024181898d376a9e580bf8f8962/pages/docs/basic-features/built-in-css-support.md#css-modules">linkタグを使用したScoped CSSのサポート</a></li>
+<li><a href="https://github.com/alephjs/vercel-aleph">VercelのServerless Functionsのサポート</a></li>
+<li><code>aleph.config.ts</code>でImport mapsが使用できない問題が修正されました</li>
+<li><code>useDeno</code>を使用したページにおけるHMRサポートの向上</li>
+<li>devサーバの起動に関するパフォーマンス向上</li>
+</ul>
+<hr>
+<ul>
+<li><a href="https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.1">https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.1</a></li>
+<li><a href="https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.2">https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.2</a></li>
+<li><a href="https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.3">https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.3</a></li>
+<li><a href="https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.6">https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.6</a></li>
+</ul></article></section><footer>Powered by <a href="https://github.com/xcatliu/pagic" target="_blank">Pagic</a></footer><script src="https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js"></script><script src="https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js"></script><script type="module" src="https://uki00a.github.io/deno-weekly/index.js"></script></body></html>

@@ -1,24 +1,24 @@
 import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
-    'pagePath': "tags/fresh/",
+    'pagePath': "tags/Aleph.js/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/fresh/index.html",
+    'outputPath': "tags/Aleph.js/index.html",
     'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
-    'title': "fresh",
+    'title': "Aleph.js",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/06/27.md",
-                "title": "2021/06/21〜2021/06/27の最新情報",
-                "link": "articles/2021/06/27.html",
-                "date": "2021/06/27",
+                "pagePath": "articles/2021/08/29.md",
+                "title": "2021/08/23〜2021/08/29の最新情報",
+                "link": "articles/2021/08/29.html",
+                "date": "2021/08/29",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -29,10 +29,10 @@ export default {
                 ],
                 "tags": [
                     "deno",
-                    "Deno Deploy",
-                    "fresh"
+                    "deno_std",
+                    "Aleph.js"
                 ],
-                "excerpt": " 1. Deno v1.11.2がリリースされました 2. Deno DeployのBeta 1がリリースされました 3. fresh - Deno Deployで動作するWebフレームワーク 4. xml - Denoで動作するXMLモジュール Deno v1.11.2がリリースされました Deno v1.11..."
+                "excerpt": " 1. Deno v1.13.2 2. deno_std v0.106.0 3. MDNでDenoがサポートされました 4. Aleph.js v0.3.0 betaバージョン Deno v1.13.2 Deno v1.13.2がリリースされました。 このリリースではバグ修正を中心に行われています。 変更点: ..."
             }
         ],
         "categories": [

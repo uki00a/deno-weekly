@@ -20,9 +20,9 @@ export default {
                 "link": "articles/2021/08/01.html",
                 "date": "2021/08/01",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -41,9 +41,9 @@ export default {
                 "link": "articles/2021/06/27.html",
                 "date": "2021/06/27",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -61,9 +61,9 @@ export default {
                 "link": "articles/2021/05/30.html",
                 "date": "2021/05/30",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -82,9 +82,9 @@ export default {
                 "link": "articles/2021/04/04.html",
                 "date": "2021/04/04",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -104,7 +104,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 34
+                "count": 35
             },
             {
                 "name": "notice",
@@ -114,11 +114,11 @@ export default {
         "tags": [
             {
                 "name": "deno",
-                "count": 26
+                "count": 27
             },
             {
                 "name": "deno_std",
-                "count": 17
+                "count": 18
             },
             {
                 "name": "deno-postgres",
@@ -175,6 +175,10 @@ export default {
             {
                 "name": "vno",
                 "count": 2
+            },
+            {
+                "name": "Aleph.js",
+                "count": 1
             },
             {
                 "name": "angular_deno",
