@@ -20,9 +20,9 @@ export default {
                 "link": "articles/2021/08/08.html",
                 "date": "2021/08/08",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -39,9 +39,9 @@ export default {
                 "link": "articles/2021/08/01.html",
                 "date": "2021/08/01",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -60,9 +60,9 @@ export default {
                 "link": "articles/2021/03/28.html",
                 "date": "2021/03/28",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
