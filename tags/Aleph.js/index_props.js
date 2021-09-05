@@ -15,14 +15,34 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "articles/2021/09/05.md",
+                "title": "2021/08/30〜2021/09/05の最新情報",
+                "link": "articles/2021/09/05.html",
+                "date": "2021/09/05",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "Deno Deploy",
+                    "Aleph.js",
+                    "Ultra"
+                ],
+                "excerpt": " 1. [Aleph.js v0.3.0-beta.9] 2. Deno Deploy Beta2 3. deployctl v0.4.0 4. Ultra [Aleph.js v0.3.0-beta.9] Aleph.jsのv0.3.0-beta.9がリリースされました。 主な変更点として、サーバから返却されるCache-Controlの値がpub..."
+            },
+            {
                 "pagePath": "articles/2021/08/29.md",
                 "title": "2021/08/23〜2021/08/29の最新情報",
                 "link": "articles/2021/08/29.html",
                 "date": "2021/08/29",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -38,7 +58,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 35
+                "count": 36
             },
             {
                 "name": "notice",
@@ -63,12 +83,12 @@ export default {
                 "count": 6
             },
             {
-                "name": "deno-redis",
+                "name": "Deno Deploy",
                 "count": 5
             },
             {
-                "name": "Deno Deploy",
-                "count": 4
+                "name": "deno-redis",
+                "count": 5
             },
             {
                 "name": "deno-sqlite",
@@ -77,6 +97,10 @@ export default {
             {
                 "name": "Trex",
                 "count": 3
+            },
+            {
+                "name": "Aleph.js",
+                "count": 2
             },
             {
                 "name": "alosaur",
@@ -109,10 +133,6 @@ export default {
             {
                 "name": "vno",
                 "count": 2
-            },
-            {
-                "name": "Aleph.js",
-                "count": 1
             },
             {
                 "name": "angular_deno",
@@ -288,6 +308,10 @@ export default {
             },
             {
                 "name": "ts_morph",
+                "count": 1
+            },
+            {
+                "name": "Ultra",
                 "count": 1
             },
             {

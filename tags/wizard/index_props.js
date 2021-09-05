@@ -20,9 +20,9 @@ export default {
                 "link": "articles/2021/03/14.html",
                 "date": "2021/03/14",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -42,7 +42,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 35
+                "count": 36
             },
             {
                 "name": "notice",
@@ -67,12 +67,12 @@ export default {
                 "count": 6
             },
             {
-                "name": "deno-redis",
+                "name": "Deno Deploy",
                 "count": 5
             },
             {
-                "name": "Deno Deploy",
-                "count": 4
+                "name": "deno-redis",
+                "count": 5
             },
             {
                 "name": "deno-sqlite",
@@ -81,6 +81,10 @@ export default {
             {
                 "name": "Trex",
                 "count": 3
+            },
+            {
+                "name": "Aleph.js",
+                "count": 2
             },
             {
                 "name": "alosaur",
@@ -113,10 +117,6 @@ export default {
             {
                 "name": "vno",
                 "count": 2
-            },
-            {
-                "name": "Aleph.js",
-                "count": 1
             },
             {
                 "name": "angular_deno",
@@ -292,6 +292,10 @@ export default {
             },
             {
                 "name": "ts_morph",
+                "count": 1
+            },
+            {
+                "name": "Ultra",
                 "count": 1
             },
             {

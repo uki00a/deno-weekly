@@ -1,24 +1,24 @@
 import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
-    'pagePath': "tags/land/",
+    'pagePath': "tags/Ultra/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/land/index.html",
+    'outputPath': "tags/Ultra/index.html",
     'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
-    'title': "land",
+    'title': "Ultra",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/04/25.md",
-                "title": "2021/04/19〜2021/04/25の最新情報",
-                "link": "articles/2021/04/25.html",
-                "date": "2021/04/25",
+                "pagePath": "articles/2021/09/05.md",
+                "title": "2021/08/30〜2021/09/05の最新情報",
+                "link": "articles/2021/09/05.html",
+                "date": "2021/09/05",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -28,13 +28,11 @@ export default {
                     "news"
                 ],
                 "tags": [
-                    "deno",
-                    "deno_std",
-                    "deno-puppeteer",
-                    "deno-postgres",
-                    "land"
+                    "Deno Deploy",
+                    "Aleph.js",
+                    "Ultra"
                 ],
-                "excerpt": " 1. Deno本体の最新情報 1. Deno v1.9.1/1.9.2のリリース 2. deno_std v0.94.0/0.95.0のリリース 2. サードパーティモジュールなどの最新情報 1. deno-puppeteer v9.0.0のリリース 2. deno-postgres v0.11.0/v0.11.1がリリース..."
+                "excerpt": " 1. [Aleph.js v0.3.0-beta.9] 2. Deno Deploy Beta2 3. deployctl v0.4.0 4. Ultra [Aleph.js v0.3.0-beta.9] Aleph.jsのv0.3.0-beta.9がリリースされました。 主な変更点として、サーバから返却されるCache-Controlの値がpub..."
             }
         ],
         "categories": [
