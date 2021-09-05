@@ -27,11 +27,11 @@ export default {
                 React.createElement("a", { href: "#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB" }, "\u30E2\u30B8\u30E5\u30FC\u30EB")),
             React.createElement("li", null,
                 React.createElement("a", { href: "#web%E3%82%B5%E3%82%A4%E3%83%88" }, "Web\u30B5\u30A4\u30C8")))),
-    'author': "Yuki Tanaka",
+    'author': "uki00a",
     'contributors': [
-        "Yuki Tanaka"
+        "uki00a"
     ],
-    'date': "2021-09-05T11:05:11.000Z",
+    'date': "2021-09-05T11:08:10.000Z",
     'updated': null,
     'excerpt': " 1. モジュール 2. Webサイト このページには、このサイトで紹介したことのあるDenoモジュールなどの一覧を掲載しています。 モジュール 名前 概要 deno-postgres PostgreSQLクライアント deno_mysql MySQLクライアント deno-s...",
     'cover': undefined,
@@ -44,9 +44,9 @@ export default {
                 "link": "articles/2021/09/05.html",
                 "date": "2021/09/05",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -56,7 +56,7 @@ export default {
                     "Aleph.js",
                     "Ultra"
                 ],
-                "excerpt": " 1. [Aleph.js v0.3.0-beta.9] 2. Deno Deploy Beta2 3. deployctl v0.4.0 4. Ultra [Aleph.js v0.3.0-beta.9] Aleph.jsのv0.3.0-beta.9がリリースされました。 主な変更点として、サーバから返却されるCache-Controlの値がpub..."
+                "excerpt": " 1. Aleph.js v0.3.0-beta.9 2. Deno Deploy Beta2 3. deployctl v0.4.0 4. Ultra Aleph.js v0.3.0-beta.9 Aleph.jsのv0.3.0-beta.9がリリースされました。 主な変更点として、サーバから返却されるCache-Controlの値がpublic,..."
             },
             {
                 "pagePath": "articles/2021/08/29.md",
@@ -64,9 +64,9 @@ export default {
                 "link": "articles/2021/08/29.html",
                 "date": "2021/08/29",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -84,9 +84,9 @@ export default {
                 "link": "articles/2021/08/22.html",
                 "date": "2021/08/22",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -109,9 +109,9 @@ export default {
                 "link": "articles/2021/08/15.html",
                 "date": "2021/08/15",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -129,9 +129,9 @@ export default {
                 "link": "articles/2021/08/08.html",
                 "date": "2021/08/08",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -148,9 +148,9 @@ export default {
                 "link": "articles/2021/08/01.html",
                 "date": "2021/08/01",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -169,9 +169,9 @@ export default {
                 "link": "articles/2021/07/25.html",
                 "date": "2021/07/25",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -190,9 +190,9 @@ export default {
                 "link": "articles/2021/07/18.html",
                 "date": "2021/07/18",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -209,9 +209,9 @@ export default {
                 "link": "articles/2021/07/11.html",
                 "date": "2021/07/11",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -229,9 +229,9 @@ export default {
                 "link": "articles/2021/07/04.html",
                 "date": "2021/07/04",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -251,9 +251,9 @@ export default {
                 "link": "articles/2021/06/27.html",
                 "date": "2021/06/27",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -271,9 +271,9 @@ export default {
                 "link": "articles/2021/06/20.html",
                 "date": "2021/06/20",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -291,9 +291,9 @@ export default {
                 "link": "articles/2021/06/13.html",
                 "date": "2021/06/13",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -311,9 +311,9 @@ export default {
                 "link": "articles/2021/06/06.html",
                 "date": "2021/06/06",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -331,9 +331,9 @@ export default {
                 "link": "articles/2021/05/30.html",
                 "date": "2021/05/30",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -352,9 +352,9 @@ export default {
                 "link": "articles/2021/05/23.html",
                 "date": "2021/05/23",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -374,9 +374,9 @@ export default {
                 "link": "articles/2021/05/16.html",
                 "date": "2021/05/16",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -396,9 +396,9 @@ export default {
                 "link": "articles/2021/05/09.html",
                 "date": "2021/05/09",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -416,9 +416,9 @@ export default {
                 "link": "articles/2021/05/02.html",
                 "date": "2021/05/02",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -437,9 +437,9 @@ export default {
                 "link": "articles/2021/04/25.html",
                 "date": "2021/04/25",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -459,9 +459,9 @@ export default {
                 "link": "articles/2021/04/18.html",
                 "date": "2021/04/18",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -481,9 +481,9 @@ export default {
                 "link": "articles/2021/04/11.html",
                 "date": "2021/04/11",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -502,9 +502,9 @@ export default {
                 "link": "articles/2021/04/04.html",
                 "date": "2021/04/04",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -526,9 +526,9 @@ export default {
                 "link": "articles/2021/03/28.html",
                 "date": "2021/03/28",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -548,9 +548,9 @@ export default {
                 "link": "articles/2021/03/21.html",
                 "date": "2021/03/21",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -569,9 +569,9 @@ export default {
                 "link": "articles/2021/03/14.html",
                 "date": "2021/03/14",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -593,9 +593,9 @@ export default {
                 "link": "articles/2021/03/07.html",
                 "date": "2021/03/07",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -616,9 +616,9 @@ export default {
                 "link": "articles/2021/02/28.html",
                 "date": "2021/02/28",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -637,9 +637,9 @@ export default {
                 "link": "articles/2021/02/21.html",
                 "date": "2021/02/21",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -659,9 +659,9 @@ export default {
                 "link": "articles/2021/02/14.html",
                 "date": "2021/02/14",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -681,9 +681,9 @@ export default {
                 "link": "articles/2021/02/07.html",
                 "date": "2021/02/07",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -703,9 +703,9 @@ export default {
                 "link": "articles/2021/01/31.html",
                 "date": "2021/01/31",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -722,9 +722,9 @@ export default {
                 "link": "articles/2021/01/24.html",
                 "date": "2021/01/24",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -741,9 +741,9 @@ export default {
                 "link": "articles/2021/01/17.html",
                 "date": "2021/01/17",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -756,9 +756,9 @@ export default {
                 "link": "articles/2021/01/10.html",
                 "date": "2021/01/10",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -775,9 +775,9 @@ export default {
                 "link": "articles/2021/01/03.html",
                 "date": "2021/01/03",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -793,9 +793,9 @@ export default {
                 "link": "articles/2021/01/02.html",
                 "date": "2021/01/02",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "notice"

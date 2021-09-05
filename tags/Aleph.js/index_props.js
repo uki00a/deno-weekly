@@ -20,9 +20,9 @@ export default {
                 "link": "articles/2021/09/05.html",
                 "date": "2021/09/05",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
@@ -32,7 +32,7 @@ export default {
                     "Aleph.js",
                     "Ultra"
                 ],
-                "excerpt": " 1. [Aleph.js v0.3.0-beta.9] 2. Deno Deploy Beta2 3. deployctl v0.4.0 4. Ultra [Aleph.js v0.3.0-beta.9] Aleph.jsのv0.3.0-beta.9がリリースされました。 主な変更点として、サーバから返却されるCache-Controlの値がpub..."
+                "excerpt": " 1. Aleph.js v0.3.0-beta.9 2. Deno Deploy Beta2 3. deployctl v0.4.0 4. Ultra Aleph.js v0.3.0-beta.9 Aleph.jsのv0.3.0-beta.9がリリースされました。 主な変更点として、サーバから返却されるCache-Controlの値がpublic,..."
             },
             {
                 "pagePath": "articles/2021/08/29.md",
@@ -40,9 +40,9 @@ export default {
                 "link": "articles/2021/08/29.html",
                 "date": "2021/08/29",
                 "updated": null,
-                "author": "Yuki Tanaka",
+                "author": "uki00a",
                 "contributors": [
-                    "Yuki Tanaka"
+                    "uki00a"
                 ],
                 "categories": [
                     "news"
