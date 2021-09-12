@@ -1,24 +1,24 @@
 import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
-    'pagePath': "tags/deno-libs/tinyhttp/",
+    'pagePath': "tags/Deno/",
     'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/deno-libs/tinyhttp/index.html",
+    'outputPath': "tags/Deno/index.html",
     'head': null,
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
-    'title': "deno-libs/tinyhttp",
+    'title': "Deno",
     'content': null,
     'blog': {
         "isPost": false,
         "posts": [
             {
-                "pagePath": "articles/2021/05/02.md",
-                "title": "2021/04/26〜2021/05/02の最新情報",
-                "link": "articles/2021/05/02.html",
-                "date": "2021/05/02",
+                "pagePath": "articles/2021/09/12.md",
+                "title": "2021/09/06〜2021/09/12の最新情報",
+                "link": "articles/2021/09/12.html",
+                "date": "2021/09/12",
                 "updated": null,
                 "author": "Yuki Tanaka",
                 "contributors": [
@@ -28,12 +28,10 @@ export default {
                     "news"
                 ],
                 "tags": [
-                    "gql",
-                    "deno-libs/tinyhttp",
-                    "crux.land",
-                    "terraform-deploy-provider"
+                    "Deno",
+                    "deno_mongo"
                 ],
-                "excerpt": " 1. gql - DenoのGraphQLサーバモジュール 2. deno-libs/tinyhttp - tinyhttpのDenoポート 3. crux.land 4. terraform-deploy-provider - Deno Deploy向けのTerraformプロパイダ gql - DenoのGraphQLサーバモジュール gqlはDen..."
+                "excerpt": " 1. Deno 2.0のスコープについて 1. Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に...) 2. vercel-deno v1.0.0 3. deno_mongo v0.26.0 Deno 2.0のスコープについて GitHub Discussionsに..."
             }
         ],
         "categories": [

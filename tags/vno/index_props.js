@@ -20,9 +20,9 @@ export default {
                 "link": "articles/2021/03/07.html",
                 "date": "2021/03/07",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -43,9 +43,9 @@ export default {
                 "link": "articles/2021/01/10.html",
                 "date": "2021/01/10",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -60,7 +60,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 36
+                "count": 37
             },
             {
                 "name": "notice",
@@ -97,6 +97,10 @@ export default {
                 "count": 3
             },
             {
+                "name": "deno_mongo",
+                "count": 3
+            },
+            {
                 "name": "Trex",
                 "count": 3
             },
@@ -106,10 +110,6 @@ export default {
             },
             {
                 "name": "alosaur",
-                "count": 2
-            },
-            {
-                "name": "deno_mongo",
                 "count": 2
             },
             {
@@ -158,6 +158,10 @@ export default {
             },
             {
                 "name": "Dashport",
+                "count": 1
+            },
+            {
+                "name": "Deno",
                 "count": 1
             },
             {

@@ -15,14 +15,33 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "articles/2021/09/12.md",
+                "title": "2021/09/06〜2021/09/12の最新情報",
+                "link": "articles/2021/09/12.html",
+                "date": "2021/09/12",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "Deno",
+                    "deno_mongo"
+                ],
+                "excerpt": " 1. Deno 2.0のスコープについて 1. Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に...) 2. vercel-deno v1.0.0 3. deno_mongo v0.26.0 Deno 2.0のスコープについて GitHub Discussionsに..."
+            },
+            {
                 "pagePath": "articles/2021/08/22.md",
                 "title": "2021/08/16〜2021/08/22の最新情報",
                 "link": "articles/2021/08/22.html",
                 "date": "2021/08/22",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -45,9 +64,9 @@ export default {
                 "link": "articles/2021/07/25.html",
                 "date": "2021/07/25",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -64,7 +83,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 36
+                "count": 37
             },
             {
                 "name": "notice",
@@ -101,6 +120,10 @@ export default {
                 "count": 3
             },
             {
+                "name": "deno_mongo",
+                "count": 3
+            },
+            {
                 "name": "Trex",
                 "count": 3
             },
@@ -110,10 +133,6 @@ export default {
             },
             {
                 "name": "alosaur",
-                "count": 2
-            },
-            {
-                "name": "deno_mongo",
                 "count": 2
             },
             {
@@ -162,6 +181,10 @@ export default {
             },
             {
                 "name": "Dashport",
+                "count": 1
+            },
+            {
+                "name": "Deno",
                 "count": 1
             },
             {

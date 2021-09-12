@@ -20,9 +20,9 @@ export default {
                 "link": "articles/2021/09/05.html",
                 "date": "2021/09/05",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -40,9 +40,9 @@ export default {
                 "link": "articles/2021/08/01.html",
                 "date": "2021/08/01",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -61,9 +61,9 @@ export default {
                 "link": "articles/2021/06/27.html",
                 "date": "2021/06/27",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -81,9 +81,9 @@ export default {
                 "link": "articles/2021/05/30.html",
                 "date": "2021/05/30",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -102,9 +102,9 @@ export default {
                 "link": "articles/2021/04/04.html",
                 "date": "2021/04/04",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -124,7 +124,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 36
+                "count": 37
             },
             {
                 "name": "notice",
@@ -161,6 +161,10 @@ export default {
                 "count": 3
             },
             {
+                "name": "deno_mongo",
+                "count": 3
+            },
+            {
                 "name": "Trex",
                 "count": 3
             },
@@ -170,10 +174,6 @@ export default {
             },
             {
                 "name": "alosaur",
-                "count": 2
-            },
-            {
-                "name": "deno_mongo",
                 "count": 2
             },
             {
@@ -222,6 +222,10 @@ export default {
             },
             {
                 "name": "Dashport",
+                "count": 1
+            },
+            {
+                "name": "Deno",
                 "count": 1
             },
             {

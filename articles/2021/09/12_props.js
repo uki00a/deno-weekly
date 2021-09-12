@@ -1,19 +1,94 @@
 import projectConfig from 'https://uki00a.github.io/deno-weekly/pagic.config.js';
+import Gtag from 'https://uki00a.github.io/deno-weekly/_gtag.js';
 export default {
     config: { "root": "/", ...projectConfig, branch: 'main' },
-    'pagePath': "tags/deno/",
-    'layoutPath': "archives/_layout.tsx",
-    'outputPath': "tags/deno/index.html",
-    'head': null,
+    'pagePath': "articles/2021/09/12.md",
+    'layoutPath': "_layout.tsx",
+    'outputPath': "articles/2021/09/12.html",
+    'title': "2021/09/06〜2021/09/12の最新情報",
+    'content': React.createElement("article", { dangerouslySetInnerHTML: {
+            __html: '<nav class="toc"><ol><li><a href="#deno-20%E3%81%AE%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">Deno 2.0のスコープについて</a><ol><li><a href="#deno-20%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6%E6%A4%9C%E8%A8%8E%E4%B8%AD%E3%81%AE%E6%A9%9F%E8%83%BD%E3%81%AE%E4%BE%8B-%E4%BB%8A%E5%BE%8C%E5%A4%89%E6%9B%B4%E3%81%95%E3%82%8C%E3%82%8B%E5%8F%AF%E8%83%BD%E6%80%A7%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AE%E3%81%A7%E5%8F%82%E8%80%83%E7%A8%8B%E5%BA%A6%E3%81%AB">Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に...)</a></li></ol></li><li><a href="#vercel-deno-v100">vercel-deno v1.0.0</a></li><li><a href="#deno_mongo-v0260">deno_mongo v0.26.0</a></li></ol></nav><h2 id="deno-20%E3%81%AE%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><a href="https://github.com/denoland/deno/discussions/11972">Deno 2.0のスコープについて</a><a class="anchor" href="#deno-20%E3%81%AE%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">§</a></h2>\n<p>GitHub DiscussionsにてDeno 2.0のスコープやリリース予定時期について公開されました。</p>\n<ul>\n<li><a href="https://github.com/denoland/deno/discussions/11972">https://github.com/denoland/deno/discussions/11972</a></li>\n</ul>\n<p>現時点では、今年の11月に2.0のリリースが検討されているようです。</p>\n<h3 id="deno-20%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6%E6%A4%9C%E8%A8%8E%E4%B8%AD%E3%81%AE%E6%A9%9F%E8%83%BD%E3%81%AE%E4%BE%8B-%E4%BB%8A%E5%BE%8C%E5%A4%89%E6%9B%B4%E3%81%95%E3%82%8C%E3%82%8B%E5%8F%AF%E8%83%BD%E6%80%A7%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AE%E3%81%A7%E5%8F%82%E8%80%83%E7%A8%8B%E5%BA%A6%E3%81%AB">Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に...)<a class="anchor" href="#deno-20%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6%E6%A4%9C%E8%A8%8E%E4%B8%AD%E3%81%AE%E6%A9%9F%E8%83%BD%E3%81%AE%E4%BE%8B-%E4%BB%8A%E5%BE%8C%E5%A4%89%E6%9B%B4%E3%81%95%E3%82%8C%E3%82%8B%E5%8F%AF%E8%83%BD%E6%80%A7%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AE%E3%81%A7%E5%8F%82%E8%80%83%E7%A8%8B%E5%BA%A6%E3%81%AB">§</a></h3>\n<ul>\n<li><code>Deno.Reader</code>などのJSのみで実装されたIO関連のAPIを削除(<a href="https://github.com/denoland/deno/issues/9795">https://github.com/denoland/deno/issues/9795</a>)\n<ul>\n<li>一部のAPIはすでに<a href="https://deno.land/std@0.106.0/io/util.ts">std/io/util.ts</a>などへ移動されています</li>\n</ul>\n</li>\n<li>デフォルトでのWorker内でDeno名前空間の有効化</li>\n<li>TypeScriptの<code>useUnknownInCatchVariables</code>を有効化</li>\n<li><code>Deno.customInspect</code>を削除</li>\n<li>デフォルトで型チェックをスキップする(<a href="https://github.com/denoland/deno/issues/11340">https://github.com/denoland/deno/issues/11340</a>)</li>\n<li><code>--config</code>オプションを削除 (<a href="https://github.com/denoland/deno/discussions/7732">https://github.com/denoland/deno/discussions/7732</a>)</li>\n<li>デフォルトでのロックファイルの生成・検証</li>\n<li><code>localStorage</code>や将来のIndexedDBなどの追加に備えたInternal Originの導入</li>\n<li>TypeScriptの<code>compilerOptions.jsxFactory</code>と<code>compilerOptions.jsxFragmentFactory</code>のデフォルト値をそれぞれ<code>h</code>と <code>Fragment</code>に変更 (<a href="https://github.com/denoland/deno/issues/11186">https://github.com/denoland/deno/issues/11186</a>)</li>\n<li>デフォルトで外部のTypeScriptコードへの型エラーなどを報告させない (<a href="https://github.com/denoland/deno/issues/11970">https://github.com/denoland/deno/issues/11970</a>)</li>\n<li>dynamic importとWorker向けに<code>--allow-import</code>の導入 (<a href="https://github.com/denoland/deno/issues/8266">https://github.com/denoland/deno/issues/8266</a>)</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno/discussions/11972">https://github.com/denoland/deno/discussions/11972</a></p>\n<h2 id="vercel-deno-v100"><a href="https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0">vercel-deno v1.0.0</a><a class="anchor" href="#vercel-deno-v100">§</a></h2>\n<p>Vercel serverless functionsのDenoランタイム</p>\n<p><a href="https://github.com/vercel-community/deno/tree/1.0.0/api">apiディレクトリ</a>に各フレームワークなどを使用したサンプルコードが配置されています。</p>\n<hr>\n<p><a href="https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0">https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0</a></p>\n<h2 id="deno_mongo-v0260"><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0">deno_mongo v0.26.0</a><a class="anchor" href="#deno_mongo-v0260">§</a></h2>\n<p>deno_mongo v0.26.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>Collection#insert</code>が非推奨化されました (代わりに<code>insertOne</code>や<code>insertMany</code>などの使用が推奨されます)</li>\n<li><code>Bson.ObjectId</code>の型定義が削除されました (<code>Bson.ObjectID</code> の方は残っています)</li>\n<li><code>MongoClient.buildInfo</code>がサポートされました (<a href="https://docs.mongodb.com/manual/reference/command/buildInfo/">https://docs.mongodb.com/manual/reference/command/buildInfo/</a>)</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0">https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0</a></p>'
+        } }),
+    'head': React.createElement(React.Fragment, null,
+        React.createElement("link", { href: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico", rel: "icon" }),
+        React.createElement("meta", { content: "https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png", property: "og:image" }),
+        React.createElement(Gtag, { id: "G-MK2K2MRMBF" })),
     'script': React.createElement(React.Fragment, null,
         React.createElement("script", { src: "https://cdn.pagic.org/react@16.13.1/umd/react.production.min.js" }),
         React.createElement("script", { src: "https://cdn.pagic.org/react-dom@16.13.1/umd/react-dom.production.min.js" }),
         React.createElement("script", { src: "https://uki00a.github.io/deno-weekly/index.js", type: "module" })),
-    'title': "deno",
-    'content': null,
+    'contentTitle': undefined,
+    'contentBody': React.createElement("article", { dangerouslySetInnerHTML: {
+            __html: '<nav class="toc"><ol><li><a href="#deno-20%E3%81%AE%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">Deno 2.0のスコープについて</a><ol><li><a href="#deno-20%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6%E6%A4%9C%E8%A8%8E%E4%B8%AD%E3%81%AE%E6%A9%9F%E8%83%BD%E3%81%AE%E4%BE%8B-%E4%BB%8A%E5%BE%8C%E5%A4%89%E6%9B%B4%E3%81%95%E3%82%8C%E3%82%8B%E5%8F%AF%E8%83%BD%E6%80%A7%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AE%E3%81%A7%E5%8F%82%E8%80%83%E7%A8%8B%E5%BA%A6%E3%81%AB">Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に...)</a></li></ol></li><li><a href="#vercel-deno-v100">vercel-deno v1.0.0</a></li><li><a href="#deno_mongo-v0260">deno_mongo v0.26.0</a></li></ol></nav><h2 id="deno-20%E3%81%AE%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><a href="https://github.com/denoland/deno/discussions/11972">Deno 2.0のスコープについて</a><a class="anchor" href="#deno-20%E3%81%AE%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">§</a></h2>\n<p>GitHub DiscussionsにてDeno 2.0のスコープやリリース予定時期について公開されました。</p>\n<ul>\n<li><a href="https://github.com/denoland/deno/discussions/11972">https://github.com/denoland/deno/discussions/11972</a></li>\n</ul>\n<p>現時点では、今年の11月に2.0のリリースが検討されているようです。</p>\n<h3 id="deno-20%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6%E6%A4%9C%E8%A8%8E%E4%B8%AD%E3%81%AE%E6%A9%9F%E8%83%BD%E3%81%AE%E4%BE%8B-%E4%BB%8A%E5%BE%8C%E5%A4%89%E6%9B%B4%E3%81%95%E3%82%8C%E3%82%8B%E5%8F%AF%E8%83%BD%E6%80%A7%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AE%E3%81%A7%E5%8F%82%E8%80%83%E7%A8%8B%E5%BA%A6%E3%81%AB">Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に...)<a class="anchor" href="#deno-20%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6%E6%A4%9C%E8%A8%8E%E4%B8%AD%E3%81%AE%E6%A9%9F%E8%83%BD%E3%81%AE%E4%BE%8B-%E4%BB%8A%E5%BE%8C%E5%A4%89%E6%9B%B4%E3%81%95%E3%82%8C%E3%82%8B%E5%8F%AF%E8%83%BD%E6%80%A7%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AE%E3%81%A7%E5%8F%82%E8%80%83%E7%A8%8B%E5%BA%A6%E3%81%AB">§</a></h3>\n<ul>\n<li><code>Deno.Reader</code>などのJSのみで実装されたIO関連のAPIを削除(<a href="https://github.com/denoland/deno/issues/9795">https://github.com/denoland/deno/issues/9795</a>)\n<ul>\n<li>一部のAPIはすでに<a href="https://deno.land/std@0.106.0/io/util.ts">std/io/util.ts</a>などへ移動されています</li>\n</ul>\n</li>\n<li>デフォルトでのWorker内でDeno名前空間の有効化</li>\n<li>TypeScriptの<code>useUnknownInCatchVariables</code>を有効化</li>\n<li><code>Deno.customInspect</code>を削除</li>\n<li>デフォルトで型チェックをスキップする(<a href="https://github.com/denoland/deno/issues/11340">https://github.com/denoland/deno/issues/11340</a>)</li>\n<li><code>--config</code>オプションを削除 (<a href="https://github.com/denoland/deno/discussions/7732">https://github.com/denoland/deno/discussions/7732</a>)</li>\n<li>デフォルトでのロックファイルの生成・検証</li>\n<li><code>localStorage</code>や将来のIndexedDBなどの追加に備えたInternal Originの導入</li>\n<li>TypeScriptの<code>compilerOptions.jsxFactory</code>と<code>compilerOptions.jsxFragmentFactory</code>のデフォルト値をそれぞれ<code>h</code>と <code>Fragment</code>に変更 (<a href="https://github.com/denoland/deno/issues/11186">https://github.com/denoland/deno/issues/11186</a>)</li>\n<li>デフォルトで外部のTypeScriptコードへの型エラーなどを報告させない (<a href="https://github.com/denoland/deno/issues/11970">https://github.com/denoland/deno/issues/11970</a>)</li>\n<li>dynamic importとWorker向けに<code>--allow-import</code>の導入 (<a href="https://github.com/denoland/deno/issues/8266">https://github.com/denoland/deno/issues/8266</a>)</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denoland/deno/discussions/11972">https://github.com/denoland/deno/discussions/11972</a></p>\n<h2 id="vercel-deno-v100"><a href="https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0">vercel-deno v1.0.0</a><a class="anchor" href="#vercel-deno-v100">§</a></h2>\n<p>Vercel serverless functionsのDenoランタイム</p>\n<p><a href="https://github.com/vercel-community/deno/tree/1.0.0/api">apiディレクトリ</a>に各フレームワークなどを使用したサンプルコードが配置されています。</p>\n<hr>\n<p><a href="https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0">https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0</a></p>\n<h2 id="deno_mongo-v0260"><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0">deno_mongo v0.26.0</a><a class="anchor" href="#deno_mongo-v0260">§</a></h2>\n<p>deno_mongo v0.26.0がリリースされました。</p>\n<p><strong>変更点:</strong></p>\n<ul>\n<li><code>Collection#insert</code>が非推奨化されました (代わりに<code>insertOne</code>や<code>insertMany</code>などの使用が推奨されます)</li>\n<li><code>Bson.ObjectId</code>の型定義が削除されました (<code>Bson.ObjectID</code> の方は残っています)</li>\n<li><code>MongoClient.buildInfo</code>がサポートされました (<a href="https://docs.mongodb.com/manual/reference/command/buildInfo/">https://docs.mongodb.com/manual/reference/command/buildInfo/</a>)</li>\n</ul>\n<hr>\n<p><a href="https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0">https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0</a></p>'
+        } }),
+    'toc': React.createElement("nav", { key: "0", className: "toc" },
+        React.createElement("ol", null,
+            React.createElement("li", null,
+                React.createElement("a", { href: "#deno-20%E3%81%AE%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" }, "Deno 2.0\u306E\u30B9\u30B3\u30FC\u30D7\u306B\u3064\u3044\u3066"),
+                React.createElement("ol", null,
+                    React.createElement("li", null,
+                        React.createElement("a", { href: "#deno-20%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6%E6%A4%9C%E8%A8%8E%E4%B8%AD%E3%81%AE%E6%A9%9F%E8%83%BD%E3%81%AE%E4%BE%8B-%E4%BB%8A%E5%BE%8C%E5%A4%89%E6%9B%B4%E3%81%95%E3%82%8C%E3%82%8B%E5%8F%AF%E8%83%BD%E6%80%A7%E3%81%8C%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AE%E3%81%A7%E5%8F%82%E8%80%83%E7%A8%8B%E5%BA%A6%E3%81%AB" }, "Deno 2.0\u306B\u5411\u3051\u3066\u691C\u8A0E\u4E2D\u306E\u6A5F\u80FD\u306E\u4F8B (\u4ECA\u5F8C\u3001\u5909\u66F4\u3055\u308C\u308B\u53EF\u80FD\u6027\u304C\u3042\u308A\u307E\u3059\u306E\u3067\u53C2\u8003\u7A0B\u5EA6\u306B...)")))),
+            React.createElement("li", null,
+                React.createElement("a", { href: "#vercel-deno-v100" }, "vercel-deno v1.0.0")),
+            React.createElement("li", null,
+                React.createElement("a", { href: "#deno_mongo-v0260" }, "deno_mongo v0.26.0")))),
+    'author': "Yuki Tanaka",
+    'contributors': [
+        "Yuki Tanaka"
+    ],
+    'date': "2021/09/12",
+    'updated': null,
+    'excerpt': " 1. Deno 2.0のスコープについて 1. Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に...) 2. vercel-deno v1.0.0 3. deno_mongo v0.26.0 Deno 2.0のスコープについて GitHub Discussionsに...",
+    'cover': undefined,
+    'tags': [
+        "Deno",
+        "deno_mongo"
+    ],
+    'categories': [
+        "news"
+    ],
     'blog': {
-        "isPost": false,
+        "isPost": true,
         "posts": [
+            {
+                "pagePath": "articles/2021/09/12.md",
+                "title": "2021/09/06〜2021/09/12の最新情報",
+                "link": "articles/2021/09/12.html",
+                "date": "2021/09/12",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "Deno",
+                    "deno_mongo"
+                ],
+                "excerpt": " 1. Deno 2.0のスコープについて 1. Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に...) 2. vercel-deno v1.0.0 3. deno_mongo v0.26.0 Deno 2.0のスコープについて GitHub Discussionsに..."
+            },
+            {
+                "pagePath": "articles/2021/09/05.md",
+                "title": "2021/08/30〜2021/09/05の最新情報",
+                "link": "articles/2021/09/05.html",
+                "date": "2021/09/05",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "Deno Deploy",
+                    "Aleph.js",
+                    "Ultra"
+                ],
+                "excerpt": " 1. Aleph.js v0.3.0-beta.9 2. Deno Deploy Beta2 3. deployctl v0.4.0 4. Ultra Aleph.js v0.3.0-beta.9 Aleph.jsのv0.3.0-beta.9がリリースされました。 主な変更点として、サーバから返却されるCache-Controlの値がpublic,..."
+            },
             {
                 "pagePath": "articles/2021/08/29.md",
                 "title": "2021/08/23〜2021/08/29の最新情報",
@@ -78,6 +153,25 @@ export default {
                     "esm.sh"
                 ],
                 "excerpt": " 1. Deno v1.13.0 2. deno_std v0.104.0 3. esm.sh v44 Deno v1.13.0 Deno v1.13.0がリリースされました。 大きな変更点として、ネイティブHTTPサーバ(Deno.serveHttp)の安定化やTLS関連の機能の強化、プラグインシステムの廃止..."
+            },
+            {
+                "pagePath": "articles/2021/08/08.md",
+                "title": "2021/08/02〜2021/08/08の最新情報",
+                "link": "articles/2021/08/08.html",
+                "date": "2021/08/08",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "deno-sqlite",
+                    "Velociraptor"
+                ],
+                "excerpt": " 1. deno-sqlite v3.0.0がリリース 2. Velociraptor v1.1.0がリリース 3. deno_sdl2 deno-sqlite v3.0.0がリリース deno-sqliteのv3.0.0がリリースされました。 このリリースではRowsタイプへの破壊的変更やパフォーマンスの向..."
             },
             {
                 "pagePath": "articles/2021/08/01.md",
@@ -263,6 +357,27 @@ export default {
                 "excerpt": " 1. Deno v1.10.3がリリース 2. wpt.deno.land 3. twd 4. Eta Deno v1.10.3がリリース Deno v1.10.3がリリースされました。 deno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。 変更点: - deno lspで..."
             },
             {
+                "pagePath": "articles/2021/05/30.md",
+                "title": "2021/05/24〜2021/05/30の最新情報",
+                "link": "articles/2021/05/30.html",
+                "date": "2021/05/30",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "Sinco",
+                    "Deno Deploy",
+                    "Velociraptor",
+                    "Cliffy"
+                ],
+                "excerpt": " 1. Sinco v2.0.0のリリース 2. Velociraptor v1.0.0のリリース 3. zeno.zsh 4. Cliffy v0.19.0のリリース 5. deploy_dir Sinco v2.0.0のリリース ブラウザのオートメーション・テスト用モジュールであるSincoのv2.0.0がリリー..."
+            },
+            {
                 "pagePath": "articles/2021/05/23.md",
                 "title": "2021/05/17〜2021/05/23の最新情報",
                 "link": "articles/2021/05/23.html",
@@ -305,6 +420,47 @@ export default {
                     "pagic"
                 ],
                 "excerpt": " 1. Deno v1.10.1がリリース 2. deno_std v0.96.0がリリース 3. angular_deno 4. sono.io 5. Pagic v1.3.0がリリース Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。 このリリースでは、deno testコマ..."
+            },
+            {
+                "pagePath": "articles/2021/05/09.md",
+                "title": "2021/05/03〜2021/05/09の最新情報",
+                "link": "articles/2021/05/09.html",
+                "date": "2021/05/09",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "alosaur",
+                    "book",
+                    "Oak"
+                ],
+                "excerpt": " 1. alosaur v0.31.0がリリース 2. alosaur-lite 3. Oak v7.4.0がリリース 4. Effective Deno alosaur v0.31.0がリリース DenoのWebフレームワークであるalosaurのv0.31.0がリリースされました。 変更点: - ContextがHttpConte..."
+            },
+            {
+                "pagePath": "articles/2021/05/02.md",
+                "title": "2021/04/26〜2021/05/02の最新情報",
+                "link": "articles/2021/05/02.html",
+                "date": "2021/05/02",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "gql",
+                    "deno-libs/tinyhttp",
+                    "crux.land",
+                    "terraform-deploy-provider"
+                ],
+                "excerpt": " 1. gql - DenoのGraphQLサーバモジュール 2. deno-libs/tinyhttp - tinyhttpのDenoポート 3. crux.land 4. terraform-deploy-provider - Deno Deploy向けのTerraformプロパイダ gql - DenoのGraphQLサーバモジュール gqlはDen..."
             },
             {
                 "pagePath": "articles/2021/04/25.md",
@@ -418,6 +574,27 @@ export default {
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.2がリリース 2. deno_std v0.91.0がリリース 3. status.deno.landが公開された 2. サードパーティモジュールなどの最新情報 1. swdev - Service WorkerベースのNo bundleビルドツール 2. ..."
             },
             {
+                "pagePath": "articles/2021/03/21.md",
+                "title": "2021/03/15〜2021/03/21の最新情報",
+                "link": "articles/2021/03/21.html",
+                "date": "2021/03/21",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "luath",
+                    "estest",
+                    "Servest",
+                    "deno-bin"
+                ],
+                "excerpt": " 1. サードパーティモジュールなどの最新情報 1. luath - Vite/WMRライクなフロントエンドビルドツール 2. estest - DenoやNode.jsなどで動作するテストフレームワーク 3. Servest v1.2.0 4. deno-bin 2. その他の情報 1. 第10..."
+            },
+            {
                 "pagePath": "articles/2021/03/14.md",
                 "title": "2021/03/08〜2021/03/14の最新情報",
                 "link": "articles/2021/03/14.html",
@@ -463,6 +640,27 @@ export default {
                     "x/database"
                 ],
                 "excerpt": " 1. Deno本体の最新情報 1. Deno v1.8.0がリリースされました 2. deno_std v0.89.0がリリース 2. サードパーティモジュールなどの最新情報 1. ts_morphがDenoをサポート 2. vnoがVue 3をサポート 3. elsaの開発が再開されました..."
+            },
+            {
+                "pagePath": "articles/2021/02/28.md",
+                "title": "2021/02/22〜2021/02/28の最新情報",
+                "link": "articles/2021/02/28.html",
+                "date": "2021/02/28",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "Dashport",
+                    "pngs",
+                    "deno_license_checker",
+                    "deno-redis"
+                ],
+                "excerpt": " 1. Deno本体の最新情報 2. サードパーティモジュールの最新情報 1. Dashport - Passport.jsライクな認証モジュール 3. pngs 4. deno_license_checker - ライセンスヘッダーのチェックを行うツール 1. deno-redis v0.19.0がリリ..."
             },
             {
                 "pagePath": "articles/2021/02/21.md",
@@ -569,6 +767,40 @@ export default {
                 "excerpt": " 1. Deno v1.7.0がリリース 2. deno-rollup - RollupのDenoポート 3. code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール Deno v1.7.0がリリース Deno v1.7.0がリリースされました。 以下は変更点..."
             },
             {
+                "pagePath": "articles/2021/01/17.md",
+                "title": "2021/01/11〜2021/01/17の最新情報",
+                "link": "articles/2021/01/17.html",
+                "date": "2021/01/17",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "excerpt": " 1. Deno in 2020 2. Obsidian - GraphQLクライアント/サーバモジュール 3. Sinco - ブラウザのオートメーション・テストツール Deno in 2020 Denoの公式ブログポストにて、Deno in 2020という記事が公開されました。 この記事..."
+            },
+            {
+                "pagePath": "articles/2021/01/10.md",
+                "title": "2021/01/04〜2021/01/10の最新情報",
+                "link": "articles/2021/01/10.html",
+                "date": "2021/01/10",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "vno",
+                    "Lume"
+                ],
+                "excerpt": " 1. vno 2. Lume 3. bench - DenoとNode.jsフレームワークのベンチマーク vno vnoはDenoでVue.jsを用いた開発を行うためのビルドツールです。 現時点では以下のような機能が提供されているようです。 - シングルファイルコンポ..."
+            },
+            {
                 "pagePath": "articles/2021/01/03.md",
                 "title": "2020/12/28〜2021/01/03の最新情報",
                 "link": "articles/2021/01/03.html",
@@ -585,6 +817,21 @@ export default {
                     "deno"
                 ],
                 "excerpt": " 1. Deno@v1.6.3がリリースされた 1. ハイライト 2. deno-puppeteerが公開された Deno@v1.6.3がリリースされた Denoのv1.6.3がリリースされました。 ハイライト - deno lspにtextDocument/renameやcacheコマンドが実装されまし..."
+            },
+            {
+                "pagePath": "articles/2021/01/02.md",
+                "title": "はじめに",
+                "link": "articles/2021/01/02.html",
+                "date": "2021/01/02",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "notice"
+                ],
+                "excerpt": "このサイトでは、Denoに関する最新情報を定期的に発信しようと思います。 日頃からDenoに関するリポジトリや情報などをウォッチしており、どうせならそれに関する情報をアウトプットしてみようと思い、始めた試みです。 これか..."
             }
         ],
         "categories": [
