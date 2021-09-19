@@ -20,9 +20,9 @@ export default {
                 "link": "articles/2021/06/13.html",
                 "date": "2021/06/13",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
@@ -40,9 +40,9 @@ export default {
                 "link": "articles/2021/06/06.html",
                 "date": "2021/06/06",
                 "updated": null,
-                "author": "uki00a",
+                "author": "Yuki Tanaka",
                 "contributors": [
-                    "uki00a"
+                    "Yuki Tanaka"
                 ],
                 "categories": [
                     "news"
