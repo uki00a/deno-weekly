@@ -14,6 +14,9 @@ export default {
   plugins: ["blog"],
   head: (
     <>
+      <script type="importmap">
+        {await Deno.readTextFile("./import_map.json")}
+      </script>
       <link
         rel="icon"
         href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"
