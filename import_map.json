@@ -1,11 +1,6 @@
 {
   "imports": {
     "pagic": "https://deno.land/x/pagic@v1.3.1/mod.ts",
-    "https://cdn.pagic.org/react@16.13.1/esnext/react.development.js": "https://esm.sh/react@16.13.1",
-    "https://cdn.pagic.org/react-dom@16.13.1/esnext/react-dom.development.js": "https://esm.sh/react-dom@16.13.1",
-    "https://cdn.pagic.org/react-dom@16.13.1/esnext/server.development.js": "https://esm.sh/react-dom@16.13.1/server",
-    "https://cdn.pagic.org/@types/react@16.9.50/index.d.ts": "https://cdn.esm.sh/v53/@types/react@17.0.21/index.d.ts",
-    "https://cdn.pagic.org/@types/react-dom@16.9.8/index.d.ts": "https://cdn.esm.sh/v53/@types/react-dom@17.0.9/index.d.ts",
-    "https://cdn.pagic.org/@types/react-dom@16.9.8/server/index.d.ts": "https://cdn.esm.sh/v53/@types/react-dom@17.0.9/server...d.ts"
+    "https://cdn.pagic.org/": "https://raw.githubusercontent.com/xcatliu/pagic/v1.4.0/cdn.pagic.org/"
   }
 }
