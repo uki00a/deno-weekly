@@ -1,5 +1,6 @@
 {
   "imports": {
-    "pagic": "https://deno.land/x/pagic@v1.3.1/mod.ts"
+    "pagic": "https://deno.land/x/pagic@v1.3.1/mod.ts",
+    "https://cdn.pagic.org/react@16.13.1/esnext/react.development.js": "https://esm.sh/react@16.13.1"
   }
 }
