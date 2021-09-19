@@ -1,6 +1,7 @@
 {
   "imports": {
     "pagic": "https://deno.land/x/pagic@v1.3.1/mod.ts",
-    "https://cdn.pagic.org/": "https://raw.githubusercontent.com/xcatliu/pagic/v1.4.0/cdn.pagic.org/"
+    "https://cdn.pagic.org/": "https://raw.githubusercontent.com/xcatliu/pagic/v1.4.0/cdn.pagic.org/",
+    "https://raw.githubusercontent.com/csstype@3.0.3/index.d.ts": "https://raw.githubusercontent.com/xcatliu/pagic/v1.4.0/cdn.pagic.org/csstype@3.0.3/index.d.ts"
   }
 }
