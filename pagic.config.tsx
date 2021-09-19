@@ -4,9 +4,10 @@ import Gtag from "./_gtag.tsx";
 const maybeTrackingID = typeof Deno === "undefined"
   ? undefined
   : Deno.env.get("TRACKING_ID");
+const root = "https://uki00a.github.io/deno-weekly/";
 
 export default {
-  root: "https://uki00a.github.io/deno-weekly/",
+  root,
   title: "週刊Deno",
   description: "このサイトでは、毎週Denoに関わる最新情報を発信しています。",
   srcDir: ".",
@@ -14,9 +15,10 @@ export default {
   plugins: ["blog"],
   head: (
     <>
-      <script type="importmap">
-        {await Deno.readTextFile("./import_map.json")}
-      </script>
+      <script
+        type="importmap"
+        src={`${root}import_map.json`}
+      />
       <link
         rel="icon"
         href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"
