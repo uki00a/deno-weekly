@@ -12,7 +12,7 @@
       document.getElementById('prismTheme').href = "https://uki00a.github.io/deno-weekly/assets/prism_tomorrow.css";
     }
   </script>
-</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="https://uki00a.github.io/deno-weekly/">週刊Deno</a><aside class="hide_on_mobile"><div class="aside_card"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-close-l.svg&quot;)"></a><h1><a href="https://uki00a.github.io/deno-weekly/">週刊Deno</a></h1><p class="description">このサイトでは、毎週Denoに関わる最新情報を発信しています。</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-github-logo" href="https://github.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-github-logo.svg&quot;)"></a></li><li class="flex_center"><a class="czs-message-l" href="mailto:uki00a@gmail.com" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-message-l.svg&quot;)"></a></li><li class="flex_center"><a class="czs-twitter" href="https://twitter.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-twitter.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly"><span class="czs-home-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-home-l.svg&quot;)"></span>ホーム</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/tags"><span class="czs-tag-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-tag-l.svg&quot;)"></span>タグ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/categories"><span class="czs-category-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-category-l.svg&quot;)"></span>カテゴリ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/archives"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>アーカイブ</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/gallery.html"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>ギャラリー</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/about/index.html"><span class="czs-about-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-about-l.svg&quot;)"></span>このサイトについて</a></li></ul></nav></div><nav class="toc"><ol><li><a href="#deno-v2%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">Deno v2のリリースプランについて</a></li><li><a href="#deno-v1140">Deno v1.14.0</a></li><li><a href="#deno_std-v01070">deno_std v0.107.0</a></li><li><a href="#alephjs-v030-beta15">Aleph.js v0.3.0-beta.15</a></li><li><a href="#packup-v010">packup v0.1.0</a></li><li><a href="#deno-diplodocus">deno-diplodocus</a></li></ol></nav></aside><section class="main"><div class="main_post_meta"><time dateTime="2021/09/19">2021-09-19</time> · <!-- -->Yuki Tanaka</div><article><nav class="toc"><ol><li><a href="#deno-v2%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">Deno v2のリリースプランについて</a></li><li><a href="#deno-v1140">Deno v1.14.0</a></li><li><a href="#deno_std-v01070">deno_std v0.107.0</a></li><li><a href="#alephjs-v030-beta15">Aleph.js v0.3.0-beta.15</a></li><li><a href="#packup-v010">packup v0.1.0</a></li><li><a href="#deno-diplodocus">deno-diplodocus</a></li></ol></nav><h2 id="deno-v2%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><a href="https://github.com/denoland/deno/issues/12110">Deno v2のリリースプランについて</a><a class="anchor" href="#deno-v2%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">§</a></h2>
+</head><body><a class="czs-menu-l show_on_mobile aside_button_open" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-menu-l.svg&quot;)"></a><a class="show_on_mobile aside_button_text" href="https://uki00a.github.io/deno-weekly/">週刊Deno</a><aside class="hide_on_mobile"><div class="aside_card"><a class="czs-menu-l show_on_mobile aside_button_close" href="#" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-close-l.svg&quot;)"></a><h1><a href="https://uki00a.github.io/deno-weekly/">週刊Deno</a></h1><p class="description">このサイトでは、毎週Denoに関わる最新情報を発信しています。</p><ul class="social list_style_none"><li class="flex_center"><a class="czs-github-logo" href="https://github.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-github-logo.svg&quot;)"></a></li><li class="flex_center"><a class="czs-message-l" href="mailto:uki00a@gmail.com" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-message-l.svg&quot;)"></a></li><li class="flex_center"><a class="czs-twitter" href="https://twitter.com/uki00a" target="_blank" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-twitter.svg&quot;)"></a></li><li style="flex-grow:1"></li><li class="toggle_dark flex_center"><span class="czs-sun" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun.svg&quot;)"></span><span class="czs-sun-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-sun-l.svg&quot;)"></span><span class="czs-moon" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon.svg&quot;)"></span><span class="czs-moon-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-moon-l.svg&quot;)"></span></li></ul><nav><ul class="menu list_style_none"><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly"><span class="czs-home-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-home-l.svg&quot;)"></span>ホーム</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/tags"><span class="czs-tag-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-tag-l.svg&quot;)"></span>タグ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/categories"><span class="czs-category-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-category-l.svg&quot;)"></span>カテゴリ一覧</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/archives"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>アーカイブ</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/gallery.html"><span class="czs-box-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-box-l.svg&quot;)"></span>ギャラリー</a></li><li><a class="flex_center" href="https://uki00a.github.io/deno-weekly/about/index.html"><span class="czs-about-l" style="background-image:url(&quot;https://uki00a.github.io/deno-weekly/assets/czs-about-l.svg&quot;)"></span>このサイトについて</a></li></ul></nav></div><nav class="toc"><ol><li><a href="#deno-v2%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">Deno v2のリリースプランについて</a></li><li><a href="#deno-v1140">Deno v1.14.0</a></li><li><a href="#deno_std-v01070">deno_std v0.107.0</a></li><li><a href="#alephjs-v030-beta15">Aleph.js v0.3.0-beta.15</a></li><li><a href="#packup-v010">packup v0.1.0</a></li><li><a href="#deno-diplodocus">deno-diplodocus</a></li></ol></nav></aside><section class="main"><div class="main_post_meta"><time dateTime="2021/09/19">2021-09-19</time> · <!-- -->uki00a</div><article><nav class="toc"><ol><li><a href="#deno-v2%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">Deno v2のリリースプランについて</a></li><li><a href="#deno-v1140">Deno v1.14.0</a></li><li><a href="#deno_std-v01070">deno_std v0.107.0</a></li><li><a href="#alephjs-v030-beta15">Aleph.js v0.3.0-beta.15</a></li><li><a href="#packup-v010">packup v0.1.0</a></li><li><a href="#deno-diplodocus">deno-diplodocus</a></li></ol></nav><h2 id="deno-v2%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><a href="https://github.com/denoland/deno/issues/12110">Deno v2のリリースプランについて</a><a class="anchor" href="#deno-v2%E3%81%AE%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">§</a></h2>
 <p>Deno v2のリリースプランが公開されました。</p>
 <ul>
 <li><a href="https://github.com/denoland/deno/issues/12110">https://github.com/denoland/deno/issues/12110</a></li>
@@ -39,57 +39,84 @@
 <p>Deno v1.14.0がリリースされました。</p>
 <p>TypeScript v4.4への更新、<code>deno fmt</code>や<code>deno lint</code>で設定ファイルがサポート、Web Crypto APIの強化、<code>Deno.upgradeWebSocket</code>の安定化、<a href="https://wicg.github.io/urlpattern/">URLPattern</a>の実装、シグナルAPI(unstable)への破壊的変更などが実施されています。</p>
 <p>また、magurotunaさんによる日本語の紹介記事が公開されています(<a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-14-0">https://zenn.dev/magurotuna/articles/deno-release-note-1-14-0</a>)</p>
-<details>
-<summary>変更点:</summary>
-- `deno fmt`/`deno lint`
-  - `deno fmt` でJSDocコメントへの基本的なサポートが追加されました
-  - `deno fmt`と`deno lint`の挙動を設定ファイルやCLIオプションで変更できるようになりました
-- ネイティブHTTPサーバ
-  - `Deno.upgradeWebSocket`が安定化されました
-  - `Deno.upgradeWebSocket` でUpgradeヘッダの大文字・小文字の違いを区別しないように修正されました
-  - ネイティブHTTPサーバでリクエストボディが消費されなかった場合に発生するリソースリークが修正されました
-- FFI
-  - `Deno.FFIPermissionDescriptor`が`Deno.FfiPermissionDescriptor`にリネームされました (**破壊的変更**)
-  - `Deno.dlopen`の引数として`URL`オブジェクトがサポートされました
-- Web Crypto API
-  - `SubtleCrypto#generateKey` でAESキーの生成がサポートされました
-  - `SubtleCrypto#exportKey` でRSAキーをPKCS #8形式でエクスポートできるようになりました
-  - `SubtleCrypto#generateKey`でECDHがサポートされました
-  - `SubtleCrypto#importKey/deriveBits` でHKDFとPBKDF2がサポートされました
-  - `SubtleCrypto#encrypt/decrypt/generateKey`でRSA-OAEPがサポートされました
-  - `SubtleCrypto#importKey`でRSAキーをPKCS #8フォーマットでインポートできるようになりました
-  - `SubtleCrypto#importKey`でJWK形式のHMACキーのインポートがサポートされました
-  - `SubtleCrypto#exportKey`でHMACキーをJWK形式でエクスポートできるようになりました
-  - `SubtleCrypto.verify` でECDSAがサポートされました
-- Worker
-  - Worker内でDeno名前空間がconfigurableに変更されました
-  - Worker内でDeno名前空間の`Object.freeze`による凍結が実施されなくなりました
-  - `postMessage`の`transfer`引数で`ArrayBuffer`を指定した場合、それがコピーされずにWorkerに転送されるようになりました
-  - `self.close` によってWorkerが閉じられると、それよりも前に送信されたメッセージが親のワーカーに送信されない問題が修正されました
-- シグナルAPI
-  - Deno.SignalがenumからUnion型に変更されました (**破壊的変更**) それに合わせて、`Deno.Process#kill`の引数が`number`型から`string`型へ変更されています
-  - `Deno.signals`が削除されました (**破壊的変更**)
-  - `Deno.kill`の第２引数(`signal`パラメータ)が`number`型から`Deno.Signal`型へ変更されました (**破壊的変更**)
-  - Windows上でシグナルAPIを使用した際に、プロセスをパニックさせずにエラーを返却するように修正されました
-- `deno test`
-  - `--ignore`オプションがサポートされました
-  - 全テストケースの終了時に、未解決の`Promise`やopが存在する場合でもプロセスが終了するように変更されました
-- 新規API
-  - (unstable) `URLPattern` がサポートされました
-  - (unstable) `Deno.run`で`uid`や`gid`の指定がサポートされました
-  - (unstable) ファイルのロックAPIが実装されました (`Deno.flock/flockSync/funlock/funlockSync`)
-- その他
-  - 内部のTypeScriptが4.4に更新されました
-  - `Deno.createHttpClient` でクライアント証明書を指定できるようになりました
-  - `console.table` で数値のみを含む列が右寄せで表示されるように修正されました
-  - `--watch`オプション使用時に、再起動前に`unload`イベントが発火しない問題が修正されました
-  - `DENO_AUTH_TOKENS`環境変数でBASIC認証がサポートされました
-  - `DOMException`が出力される際のフォーマットが改善されました
-  - `DiagnosticMessageChain` の`message`プロパティが`messageText`にリネームされました
-  - `FileReader`のWeb標準との互換性が向上しました
-  - Import mapsを使用している際に、import節で指定されたURLにクエリ文字列などが含まれていると、それがパーセントエンコードされてしまう問題が修正されました
-  - `Deno.permissions.request`の使用時に、プロンプトを表示する前にstdinの内容がクリアされるように修正されました
-</details>
+<p><strong>変更点:</strong></p>
+<ul>
+<li><code>deno fmt</code>/<code>deno lint</code>
+<ul>
+<li><code>deno fmt</code> でJSDocコメントへの基本的なサポートが追加されました</li>
+<li><code>deno fmt</code>と<code>deno lint</code>の挙動を設定ファイルやCLIオプションで変更できるようになりました</li>
+</ul>
+</li>
+<li>ネイティブHTTPサーバ
+<ul>
+<li><code>Deno.upgradeWebSocket</code>が安定化されました</li>
+<li><code>Deno.upgradeWebSocket</code> でUpgradeヘッダの大文字・小文字の違いを区別しないように修正されました</li>
+<li>ネイティブHTTPサーバでリクエストボディが消費されなかった場合に発生するリソースリークが修正されました</li>
+</ul>
+</li>
+<li>FFI
+<ul>
+<li><code>Deno.FFIPermissionDescriptor</code>が<code>Deno.FfiPermissionDescriptor</code>にリネームされました (<strong>破壊的変更</strong>)</li>
+<li><code>Deno.dlopen</code>の引数として<code>URL</code>オブジェクトがサポートされました</li>
+</ul>
+</li>
+<li>Web Crypto API
+<ul>
+<li><code>SubtleCrypto#generateKey</code> でAESキーの生成がサポートされました</li>
+<li><code>SubtleCrypto#exportKey</code> でRSAキーをPKCS #8形式でエクスポートできるようになりました</li>
+<li><code>SubtleCrypto#generateKey</code>でECDHがサポートされました</li>
+<li><code>SubtleCrypto#importKey/deriveBits</code> でHKDFとPBKDF2がサポートされました</li>
+<li><code>SubtleCrypto#encrypt/decrypt/generateKey</code>でRSA-OAEPがサポートされました</li>
+<li><code>SubtleCrypto#importKey</code>でRSAキーをPKCS #8フォーマットでインポートできるようになりました</li>
+<li><code>SubtleCrypto#importKey</code>でJWK形式のHMACキーのインポートがサポートされました</li>
+<li><code>SubtleCrypto#exportKey</code>でHMACキーをJWK形式でエクスポートできるようになりました</li>
+<li><code>SubtleCrypto.verify</code> でECDSAがサポートされました</li>
+</ul>
+</li>
+<li>Worker
+<ul>
+<li>Worker内でDeno名前空間がconfigurableに変更されました</li>
+<li>Worker内でDeno名前空間の<code>Object.freeze</code>による凍結が実施されなくなりました</li>
+<li><code>postMessage</code>の<code>transfer</code>引数で<code>ArrayBuffer</code>を指定した場合、それがコピーされずにWorkerに転送されるようになりました</li>
+<li><code>self.close</code> によってWorkerが閉じられると、それよりも前に送信されたメッセージが親のワーカーに送信されない問題が修正されました</li>
+</ul>
+</li>
+<li>シグナルAPI
+<ul>
+<li>Deno.SignalがenumからUnion型に変更されました (<strong>破壊的変更</strong>) それに合わせて、<code>Deno.Process#kill</code>の引数が<code>number</code>型から<code>string</code>型へ変更されています</li>
+<li><code>Deno.signals</code>が削除されました (<strong>破壊的変更</strong>)</li>
+<li><code>Deno.kill</code>の第２引数(<code>signal</code>パラメータ)が<code>number</code>型から<code>Deno.Signal</code>型へ変更されました (<strong>破壊的変更</strong>)</li>
+<li>Windows上でシグナルAPIを使用した際に、プロセスをパニックさせずにエラーを返却するように修正されました</li>
+</ul>
+</li>
+<li><code>deno test</code>
+<ul>
+<li><code>--ignore</code>オプションがサポートされました</li>
+<li>全テストケースの終了時に、未解決の<code>Promise</code>やopが存在する場合でもプロセスが終了するように変更されました</li>
+</ul>
+</li>
+<li>新規API
+<ul>
+<li>(unstable) <code>URLPattern</code> がサポートされました</li>
+<li>(unstable) <code>Deno.run</code>で<code>uid</code>や<code>gid</code>の指定がサポートされました</li>
+<li>(unstable) ファイルのロックAPIが実装されました (<code>Deno.flock/flockSync/funlock/funlockSync</code>)</li>
+</ul>
+</li>
+<li>その他
+<ul>
+<li>内部のTypeScriptが4.4に更新されました</li>
+<li><code>Deno.createHttpClient</code> でクライアント証明書を指定できるようになりました</li>
+<li><code>console.table</code> で数値のみを含む列が右寄せで表示されるように修正されました</li>
+<li><code>--watch</code>オプション使用時に、再起動前に<code>unload</code>イベントが発火しない問題が修正されました</li>
+<li><code>DENO_AUTH_TOKENS</code>環境変数でBASIC認証がサポートされました</li>
+<li><code>DOMException</code>が出力される際のフォーマットが改善されました</li>
+<li><code>DiagnosticMessageChain</code> の<code>message</code>プロパティが<code>messageText</code>にリネームされました</li>
+<li><code>FileReader</code>のWeb標準との互換性が向上しました</li>
+<li>Import mapsを使用している際に、import節で指定されたURLにクエリ文字列などが含まれていると、それがパーセントエンコードされてしまう問題が修正されました</li>
+<li><code>Deno.permissions.request</code>の使用時に、プロンプトを表示する前にstdinの内容がクリアされるように修正されました</li>
+</ul>
+</li>
+</ul>
 <hr>
 <ul>
 <li><a href="https://zenn.dev/magurotuna/articles/deno-release-note-1-14-0">Deno 1.14.0 がリリースされたので新機能や変更点の紹介</a></li>
