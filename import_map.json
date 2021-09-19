@@ -1,5 +1,5 @@
 {
   "imports": {
-    "pagic": "https://deno.land/x/pagic@v1.3.1/mod.ts"
+    "pagic": "https://raw.githubusercontent.com/uki00a/pagic/migrate-cdn.pagic.org-to-esm.sh/mod.ts"
   }
 }
