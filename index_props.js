@@ -26,7 +26,7 @@ export default {
     'contributors': [
         "Yuki Tanaka"
     ],
-    'date': "2021-09-12T11:09:03.000Z",
+    'date': "2021-09-19T12:23:59.000Z",
     'updated': null,
     'excerpt': "必要なもの - Deno - Velociraptor devサーバの起動 $ vr dev ビルド $ vr build ",
     'cover': undefined,
