@@ -15,6 +15,27 @@ export default {
         "isPost": false,
         "posts": [
             {
+                "pagePath": "articles/2021/09/19.md",
+                "title": "2021/09/13〜2021/09/19の最新情報",
+                "link": "articles/2021/09/19.html",
+                "date": "2021/09/19",
+                "updated": null,
+                "author": "Yuki Tanaka",
+                "contributors": [
+                    "Yuki Tanaka"
+                ],
+                "categories": [
+                    "news"
+                ],
+                "tags": [
+                    "Deno",
+                    "deno_std",
+                    "Aleph.js",
+                    "packup"
+                ],
+                "excerpt": " 1. Deno v2のリリースプランについて 2. Deno v1.14.0 3. deno_std v0.107.0 4. Aleph.js v0.3.0-beta.15 5. packup v0.1.0 6. deno-diplodocus Deno v2のリリースプランについて Deno v2のリリースプランが公開されました。 ..."
+            },
+            {
                 "pagePath": "articles/2021/09/05.md",
                 "title": "2021/08/30〜2021/09/05の最新情報",
                 "link": "articles/2021/09/05.html",
@@ -58,7 +79,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 37
+                "count": 38
             },
             {
                 "name": "notice",
@@ -72,7 +93,7 @@ export default {
             },
             {
                 "name": "deno_std",
-                "count": 18
+                "count": 19
             },
             {
                 "name": "deno-postgres",
@@ -91,6 +112,10 @@ export default {
                 "count": 5
             },
             {
+                "name": "Aleph.js",
+                "count": 3
+            },
+            {
                 "name": "deno-sqlite",
                 "count": 3
             },
@@ -103,15 +128,19 @@ export default {
                 "count": 3
             },
             {
-                "name": "Aleph.js",
-                "count": 2
-            },
-            {
                 "name": "alosaur",
                 "count": 2
             },
             {
+                "name": "Deno",
+                "count": 2
+            },
+            {
                 "name": "luath",
+                "count": 2
+            },
+            {
+                "name": "packup",
                 "count": 2
             },
             {
@@ -156,10 +185,6 @@ export default {
             },
             {
                 "name": "Dashport",
-                "count": 1
-            },
-            {
-                "name": "Deno",
                 "count": 1
             },
             {
@@ -268,10 +293,6 @@ export default {
             },
             {
                 "name": "Nessie",
-                "count": 1
-            },
-            {
-                "name": "packup",
                 "count": 1
             },
             {

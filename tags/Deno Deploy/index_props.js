@@ -124,7 +124,7 @@ export default {
         "categories": [
             {
                 "name": "news",
-                "count": 37
+                "count": 38
             },
             {
                 "name": "notice",
@@ -138,7 +138,7 @@ export default {
             },
             {
                 "name": "deno_std",
-                "count": 18
+                "count": 19
             },
             {
                 "name": "deno-postgres",
@@ -157,6 +157,10 @@ export default {
                 "count": 5
             },
             {
+                "name": "Aleph.js",
+                "count": 3
+            },
+            {
                 "name": "deno-sqlite",
                 "count": 3
             },
@@ -169,15 +173,19 @@ export default {
                 "count": 3
             },
             {
-                "name": "Aleph.js",
-                "count": 2
-            },
-            {
                 "name": "alosaur",
                 "count": 2
             },
             {
+                "name": "Deno",
+                "count": 2
+            },
+            {
                 "name": "luath",
+                "count": 2
+            },
+            {
+                "name": "packup",
                 "count": 2
             },
             {
@@ -222,10 +230,6 @@ export default {
             },
             {
                 "name": "Dashport",
-                "count": 1
-            },
-            {
-                "name": "Deno",
                 "count": 1
             },
             {
@@ -334,10 +338,6 @@ export default {
             },
             {
                 "name": "Nessie",
-                "count": 1
-            },
-            {
-                "name": "packup",
                 "count": 1
             },
             {
