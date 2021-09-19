@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: denolib/setup-deno@master
       with:
-        deno-version: 1.10.2
+        deno-version: 1.14.0
     - name: Run fmt
       run: |
         deno fmt --check --ignore=articles,gallery.md
@@ -26,7 +26,7 @@ jobs:
         URL: https://uki00a.github.io/deno-weekly
         TRACKING_ID: G-MK2K2MRMBF
       run: |
-        deno run --unstable --allow-read --allow-write --allow-net --allow-run --allow-env --import-map ./import_map.json ./build.ts
+        deno run --unstable --allow-read --allow-write --allow-net --allow-run --allow-env --unsafely-ignore-certificate-errors=cdn.pagic.org --import-map ./import_map.json ./build.ts
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.event_name == 'push' }}
