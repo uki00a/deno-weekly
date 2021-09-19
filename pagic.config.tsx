@@ -15,10 +15,6 @@ export default {
   plugins: ["blog"],
   head: (
     <>
-      <script
-        type="importmap"
-        src={`${root}import_map.json`}
-      />
       <link
         rel="icon"
         href="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"
