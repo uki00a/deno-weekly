@@ -1,0 +1,245 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>2021/02/08〜2021/02/14の最新情報 | 週刊Deno</title>
+<meta name=keywords content="deno,denops.vim,slack_web_api,deno-redis,deno-postgres">
+<meta name=description content="Deno本体の最新情報 Deno v1.7.3/v1.7.4がリリースされました Deno v1.7.3がリリースされました。
+その後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。
+v1.7.3/v1.7.4の主な変更点:
+ deno lspでcodeAction/resolveが実装されました。 deno lspにdeno.cacheコードアクションが実装されました。 deno lspにImplementationscode lensが実装されました。 Import mapsがデータURL(data:)を適切にハンドリングするように修正されました。    https://github.com/denoland/deno/releases/tag/v1.7.4  deno_std v0.87.0がリリースされました Deno v1.7.3のリリースに合わせ、deno_std v0.87.0がリリースされました。
+このリリースにはhttp/cookieモジュールに対する破壊的変更が含まれています。
+変更点:
+ http/cookie: Cookies及びSameSiteの型エイリアスが削除されました。 http/file_server: SVGファイルに対して適切なContent-Typeが設定されるように修正されました。   https://github.com/denoland/deno_std/releases/tag/0.87.0
+サードパーティモジュールの最新情報 denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム denops.vimという、Denoを使ってVim/Neovimプラグインを書くためのエコシステムが公開されました。
+coc.nvimに影響を受けているようです。
+サンプルプラグインも公開されているため、興味のある方は見てみるとよいかもしれません。
+ https://github.com/vim-denops/denops-helloworld.vim    https://github.com/vim-denops/denops.vim https://github.com/vim-denops/denops-deno https://github.com/vim-denops/denops-std-deno  slack_web_api - DenoのSlack APIクライアント slack_web_apiはNode.jsの@slack/web-apiをDenoにポートしたモジュールです。
+このモジュールを使用することで、DenoからSlack APIを叩くことができます。
+ https://deno.land/x/slack_web_api@1.0.1
+deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。
+このリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。
+変更点:">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/02/14.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://uki00a.github.io/deno-weekly/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.0">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="2021/02/08〜2021/02/14の最新情報">
+<meta property="og:description" content="Deno本体の最新情報 Deno v1.7.3/v1.7.4がリリースされました Deno v1.7.3がリリースされました。
+その後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。
+v1.7.3/v1.7.4の主な変更点:
+ deno lspでcodeAction/resolveが実装されました。 deno lspにdeno.cacheコードアクションが実装されました。 deno lspにImplementationscode lensが実装されました。 Import mapsがデータURL(data:)を適切にハンドリングするように修正されました。    https://github.com/denoland/deno/releases/tag/v1.7.4  deno_std v0.87.0がリリースされました Deno v1.7.3のリリースに合わせ、deno_std v0.87.0がリリースされました。
+このリリースにはhttp/cookieモジュールに対する破壊的変更が含まれています。
+変更点:
+ http/cookie: Cookies及びSameSiteの型エイリアスが削除されました。 http/file_server: SVGファイルに対して適切なContent-Typeが設定されるように修正されました。   https://github.com/denoland/deno_std/releases/tag/0.87.0
+サードパーティモジュールの最新情報 denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム denops.vimという、Denoを使ってVim/Neovimプラグインを書くためのエコシステムが公開されました。
+coc.nvimに影響を受けているようです。
+サンプルプラグインも公開されているため、興味のある方は見てみるとよいかもしれません。
+ https://github.com/vim-denops/denops-helloworld.vim    https://github.com/vim-denops/denops.vim https://github.com/vim-denops/denops-deno https://github.com/vim-denops/denops-std-deno  slack_web_api - DenoのSlack APIクライアント slack_web_apiはNode.jsの@slack/web-apiをDenoにポートしたモジュールです。
+このモジュールを使用することで、DenoからSlack APIを叩くことができます。
+ https://deno.land/x/slack_web_api@1.0.1
+deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。
+このリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。
+変更点:">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/02/14.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2021-02-14T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-02-14T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="2021/02/08〜2021/02/14の最新情報">
+<meta name=twitter:description content="Deno本体の最新情報 Deno v1.7.3/v1.7.4がリリースされました Deno v1.7.3がリリースされました。
+その後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。
+v1.7.3/v1.7.4の主な変更点:
+ deno lspでcodeAction/resolveが実装されました。 deno lspにdeno.cacheコードアクションが実装されました。 deno lspにImplementationscode lensが実装されました。 Import mapsがデータURL(data:)を適切にハンドリングするように修正されました。    https://github.com/denoland/deno/releases/tag/v1.7.4  deno_std v0.87.0がリリースされました Deno v1.7.3のリリースに合わせ、deno_std v0.87.0がリリースされました。
+このリリースにはhttp/cookieモジュールに対する破壊的変更が含まれています。
+変更点:
+ http/cookie: Cookies及びSameSiteの型エイリアスが削除されました。 http/file_server: SVGファイルに対して適切なContent-Typeが設定されるように修正されました。   https://github.com/denoland/deno_std/releases/tag/0.87.0
+サードパーティモジュールの最新情報 denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム denops.vimという、Denoを使ってVim/Neovimプラグインを書くためのエコシステムが公開されました。
+coc.nvimに影響を受けているようです。
+サンプルプラグインも公開されているため、興味のある方は見てみるとよいかもしれません。
+ https://github.com/vim-denops/denops-helloworld.vim    https://github.com/vim-denops/denops.vim https://github.com/vim-denops/denops-deno https://github.com/vim-denops/denops-std-deno  slack_web_api - DenoのSlack APIクライアント slack_web_apiはNode.jsの@slack/web-apiをDenoにポートしたモジュールです。
+このモジュールを使用することで、DenoからSlack APIを叩くことができます。
+ https://deno.land/x/slack_web_api@1.0.1
+deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。
+このリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。
+変更点:">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/02/08〜2021/02/14の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/02/14.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/02/08〜2021/02/14の最新情報","name":"2021\/02\/08〜2021\/02\/14の最新情報","description":"Deno本体の最新情報 Deno v1.7.3/v1.7.4がリリースされました Deno v1.7.3がリリースされました。\nその後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。\nv1.7.3/v1.7.4の主な変更点:\n deno lspでcodeAction/resolveが実装されました。 deno lspにdeno.cacheコードアクションが実装されました。 deno lspにImplementationscode lensが実装されました。 Import mapsがデータURL(data:)を適切にハンドリングするように修正されました。    https://github.com/denoland/deno/releases/tag/v1.7.4  deno_std v0.87.0がリリースされました Deno v1.7.3のリリースに合わせ、deno_std v0.87.0がリリースされました。\nこのリリースにはhttp/cookieモジュールに対する破壊的変更が含まれています。\n変更点:\n http/cookie: Cookies及びSameSiteの型エイリアスが削除されました。 http/file_server: SVGファイルに対して適切なContent-Typeが設定されるように修正されました。   https://github.com/denoland/deno_std/releases/tag/0.87.0\nサードパーティモジュールの最新情報 denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム denops.vimという、Denoを使ってVim/Neovimプラグインを書くためのエコシステムが公開されました。\ncoc.nvimに影響を受けているようです。\nサンプルプラグインも公開されているため、興味のある方は見てみるとよいかもしれません。\n https://github.com/vim-denops/denops-helloworld.vim    https://github.com/vim-denops/denops.vim https://github.com/vim-denops/denops-deno https://github.com/vim-denops/denops-std-deno  slack_web_api - DenoのSlack APIクライアント slack_web_apiはNode.jsの@slack/web-apiをDenoにポートしたモジュールです。\nこのモジュールを使用することで、DenoからSlack APIを叩くことができます。\n https://deno.land/x/slack_web_api@1.0.1\ndeno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。\nこのリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。\n変更点:","keywords":["deno","denops.vim","slack_web_api","deno-redis","deno-postgres"],"articleBody":"Deno本体の最新情報 Deno v1.7.3/v1.7.4がリリースされました Deno v1.7.3がリリースされました。\nその後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。\nv1.7.3/v1.7.4の主な変更点:\n deno lspでcodeAction/resolveが実装されました。 deno lspにdeno.cacheコードアクションが実装されました。 deno lspにImplementationscode lensが実装されました。 Import mapsがデータURL(data:)を適切にハンドリングするように修正されました。    https://github.com/denoland/deno/releases/tag/v1.7.4  deno_std v0.87.0がリリースされました Deno v1.7.3のリリースに合わせ、deno_std v0.87.0がリリースされました。\nこのリリースにはhttp/cookieモジュールに対する破壊的変更が含まれています。\n変更点:\n http/cookie: Cookies及びSameSiteの型エイリアスが削除されました。 http/file_server: SVGファイルに対して適切なContent-Typeが設定されるように修正されました。   https://github.com/denoland/deno_std/releases/tag/0.87.0\nサードパーティモジュールの最新情報 denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム denops.vimという、Denoを使ってVim/Neovimプラグインを書くためのエコシステムが公開されました。\ncoc.nvimに影響を受けているようです。\nサンプルプラグインも公開されているため、興味のある方は見てみるとよいかもしれません。\n https://github.com/vim-denops/denops-helloworld.vim    https://github.com/vim-denops/denops.vim https://github.com/vim-denops/denops-deno https://github.com/vim-denops/denops-std-deno  slack_web_api - DenoのSlack APIクライアント slack_web_apiはNode.jsの@slack/web-apiをDenoにポートしたモジュールです。\nこのモジュールを使用することで、DenoからSlack APIを叩くことができます。\n https://deno.land/x/slack_web_api@1.0.1\ndeno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。\nこのリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。\n変更点:\n 全メソッド・プロパティがキャメルケース形式へリネームされました。 CLIENT PAUSEコマンドが実装されました。   https://github.com/denodrivers/redis/releases/tag/v0.18.0\ndeno-postgres v0.8.0がリリース deno-postgres v0.8.0がリリースされました。\nこのリリースでは、いくつかの新機能が追加されています。\n変更点:\n SSL/TLS接続がサポートされました(Deno.startTlsに依存するため、現時点では--unstableフラグが必要です) テンプレートリテラルを使用したSQLの実行がサポートされました。 name_too_longエラーが発生した際に、例外が発生しないように修正されました。   https://github.com/denodrivers/postgres/releases/tag/v0.8.0\n","wordCount":"70","inLanguage":"en","datePublished":"2021-02-14T00:00:00Z","dateModified":"2021-02-14T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/02/14.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://uki00a.github.io/deno-weekly/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+2021/02/08〜2021/02/14の最新情報
+</h1>
+<div class=post-meta>February 14, 2021
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#deno%e6%9c%ac%e4%bd%93%e3%81%ae%e6%9c%80%e6%96%b0%e6%83%85%e5%a0%b1 aria-label=Deno本体の最新情報>Deno本体の最新情報</a><ul>
+<li>
+<a href=#deno-v173v174%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9%e3%81%95%e3%82%8c%e3%81%be%e3%81%97%e3%81%9f aria-label="Deno v1.7.3/v1.7.4がリリースされました">Deno v1.7.3/v1.7.4がリリースされました</a></li>
+<li>
+<a href=#deno_std-v0870%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9%e3%81%95%e3%82%8c%e3%81%be%e3%81%97%e3%81%9f aria-label="deno_std v0.87.0がリリースされました">deno_std v0.87.0がリリースされました</a></li></ul>
+</li>
+<li>
+<a href=#%e3%82%b5%e3%83%bc%e3%83%89%e3%83%91%e3%83%bc%e3%83%86%e3%82%a3%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%ae%e6%9c%80%e6%96%b0%e6%83%85%e5%a0%b1 aria-label=サードパーティモジュールの最新情報>サードパーティモジュールの最新情報</a><ul>
+<li>
+<a href=#denopsvimhttpsgithubcomvim-denopsdenopsvim---deno%e3%81%a7vimneovim%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%82%92%e6%9b%b8%e3%81%8f%e3%81%9f%e3%82%81%e3%81%ae%e3%82%a8%e3%82%b3%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0 aria-label="denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム"><a href=https://github.com/vim-denops/denops.vim>denops.vim</a> - DenoでVim/Neovimプラグインを書くためのエコシステム</a></li>
+<li>
+<a href=#slack_web_apihttpsdenolandxslack_web_api101---deno%e3%81%aeslack-api%e3%82%af%e3%83%a9%e3%82%a4%e3%82%a2%e3%83%b3%e3%83%88 aria-label="slack_web_api - DenoのSlack APIクライアント"><a href=https://deno.land/x/slack_web_api@1.0.1>slack_web_api</a> - DenoのSlack APIクライアント</a></li>
+<li>
+<a href=#deno-redis-v0180%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9httpsgithubcomdenodriversredisreleasestagv0180 aria-label="deno-redis v0.18.0がリリース"><a href=https://github.com/denodrivers/redis/releases/tag/v0.18.0>deno-redis v0.18.0がリリース</a></a></li>
+<li>
+<a href=#deno-postgres-v080%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9httpsgithubcomdenodriverspostgresreleasestagv080 aria-label="deno-postgres v0.8.0がリリース"><a href=https://github.com/denodrivers/postgres/releases/tag/v0.8.0>deno-postgres v0.8.0がリリース</a></a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=deno本体の最新情報>Deno本体の最新情報<a hidden class=anchor aria-hidden=true href=#deno本体の最新情報>#</a></h2>
+<h3 id=deno-v173v174がリリースされました>Deno v1.7.3/v1.7.4がリリースされました<a hidden class=anchor aria-hidden=true href=#deno-v173v174がリリースされました>#</a></h3>
+<p>Deno v1.7.3がリリースされました。</p>
+<p>その後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。</p>
+<p><strong>v1.7.3/v1.7.4の主な変更点:</strong></p>
+<ul>
+<li><code>deno lsp</code>で<code>codeAction/resolve</code>が実装されました。</li>
+<li><code>deno lsp</code>に<code>deno.cache</code>コードアクションが実装されました。</li>
+<li><code>deno lsp</code>に<code>Implementations</code>code lensが実装されました。</li>
+<li>Import mapsがデータURL(<code>data:</code>)を適切にハンドリングするように修正されました。</li>
+</ul>
+<hr>
+<ul>
+<li><a href=https://github.com/denoland/deno/releases/tag/v1.7.4>https://github.com/denoland/deno/releases/tag/v1.7.4</a></li>
+</ul>
+<h3 id=deno_std-v0870がリリースされました>deno_std v0.87.0がリリースされました<a hidden class=anchor aria-hidden=true href=#deno_std-v0870がリリースされました>#</a></h3>
+<p>Deno v1.7.3のリリースに合わせ、<code>deno_std</code> v0.87.0がリリースされました。</p>
+<p>このリリースには<code>http/cookie</code>モジュールに対する破壊的変更が含まれています。</p>
+<p><strong>変更点</strong>:</p>
+<ul>
+<li><code>http/cookie</code>: <code>Cookies</code>及び<code>SameSite</code>の型エイリアスが削除されました。</li>
+<li><code>http/file_server</code>: SVGファイルに対して適切な<code>Content-Type</code>が設定されるように修正されました。</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denoland/deno_std/releases/tag/0.87.0>https://github.com/denoland/deno_std/releases/tag/0.87.0</a></p>
+<h2 id=サードパーティモジュールの最新情報>サードパーティモジュールの最新情報<a hidden class=anchor aria-hidden=true href=#サードパーティモジュールの最新情報>#</a></h2>
+<h3 id=denopsvimhttpsgithubcomvim-denopsdenopsvim---denoでvimneovimプラグインを書くためのエコシステム><a href=https://github.com/vim-denops/denops.vim>denops.vim</a> - DenoでVim/Neovimプラグインを書くためのエコシステム<a hidden class=anchor aria-hidden=true href=#denopsvimhttpsgithubcomvim-denopsdenopsvim---denoでvimneovimプラグインを書くためのエコシステム>#</a></h3>
+<p><code>denops.vim</code>という、Denoを使ってVim/Neovimプラグインを書くためのエコシステムが公開されました。</p>
+<p><a href=https://github.com/neoclide/coc.nvim>coc.nvim</a>に影響を受けているようです。</p>
+<p>サンプルプラグインも公開されているため、興味のある方は見てみるとよいかもしれません。</p>
+<ul>
+<li><a href=https://github.com/vim-denops/denops-helloworld.vim>https://github.com/vim-denops/denops-helloworld.vim</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href=https://github.com/vim-denops/denops.vim>https://github.com/vim-denops/denops.vim</a></li>
+<li><a href=https://github.com/vim-denops/denops-deno>https://github.com/vim-denops/denops-deno</a></li>
+<li><a href=https://github.com/vim-denops/denops-std-deno>https://github.com/vim-denops/denops-std-deno</a></li>
+</ul>
+<h3 id=slack_web_apihttpsdenolandxslack_web_api101---denoのslack-apiクライアント><a href=https://deno.land/x/slack_web_api@1.0.1>slack_web_api</a> - DenoのSlack APIクライアント<a hidden class=anchor aria-hidden=true href=#slack_web_apihttpsdenolandxslack_web_api101---denoのslack-apiクライアント>#</a></h3>
+<p><code>slack_web_api</code>はNode.jsの<a href=https://www.npmjs.com/package/@slack/web-api>@slack/web-api</a>をDenoにポートしたモジュールです。</p>
+<p>このモジュールを使用することで、DenoからSlack APIを叩くことができます。</p>
+<hr>
+<p><a href=https://deno.land/x/slack_web_api@1.0.1>https://deno.land/x/slack_web_api@1.0.1</a></p>
+<h3 id=deno-redis-v0180がリリースhttpsgithubcomdenodriversredisreleasestagv0180><a href=https://github.com/denodrivers/redis/releases/tag/v0.18.0>deno-redis v0.18.0がリリース</a><a hidden class=anchor aria-hidden=true href=#deno-redis-v0180がリリースhttpsgithubcomdenodriversredisreleasestagv0180>#</a></h3>
+<p><code>deno-redis</code> v0.18.0がリリースされました。</p>
+<p>このリリースでは、<code>deno lint</code>でcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>全メソッド・プロパティがキャメルケース形式へリネームされました。</li>
+<li><a href=https://redis.io/commands/client-pause>CLIENT PAUSEコマンド</a>が実装されました。</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denodrivers/redis/releases/tag/v0.18.0>https://github.com/denodrivers/redis/releases/tag/v0.18.0</a></p>
+<h3 id=deno-postgres-v080がリリースhttpsgithubcomdenodriverspostgresreleasestagv080><a href=https://github.com/denodrivers/postgres/releases/tag/v0.8.0>deno-postgres v0.8.0がリリース</a><a hidden class=anchor aria-hidden=true href=#deno-postgres-v080がリリースhttpsgithubcomdenodriverspostgresreleasestagv080>#</a></h3>
+<p><code>deno-postgres</code> v0.8.0がリリースされました。</p>
+<p>このリリースでは、いくつかの新機能が追加されています。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>SSL/TLS接続がサポートされました(<code>Deno.startTls</code>に依存するため、現時点では<code>--unstable</code>フラグが必要です)</li>
+<li>テンプレートリテラルを使用したSQLの実行がサポートされました。</li>
+<li><code>name_too_long</code>エラーが発生した際に、例外が発生しないように修正されました。</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denodrivers/postgres/releases/tag/v0.8.0>https://github.com/denodrivers/postgres/releases/tag/v0.8.0</a></p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/denops.vim.html>denops.vim</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/slack_web_api.html>slack_web_api</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno-redis.html>deno-redis</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno-postgres.html>deno-postgres</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

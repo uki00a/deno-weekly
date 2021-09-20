@@ -1,0 +1,226 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>deno-postgres | 週刊Deno</title>
+<meta name=keywords content>
+<meta name=description content>
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno-postgres.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
+<link rel=icon href=https://uki00a.github.io/deno-weekly/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.0">
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/deno-postgres/index.xml>
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="deno-postgres">
+<meta property="og:description" content>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/deno-postgres.html">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="deno-postgres">
+<meta name=twitter:description content>
+</head>
+<body class=list id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<header class=page-header>
+<h1>deno-postgres</h1>
+</header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/08/16〜2021/08/22の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.13.1 Deno v1.13.1がリリースされました。
+deno testやWeb Crypto APIのバグ修正などがメインです。
+変更点:
+deno test --docでMarkdownファイルを引数に指定できるようになりました deno test --docで以下のようにignoreが指定されていると、そのコードブロックが無視されるようになりました \`\`\`ts ignore ... \`\`\` deno testでloadイベントが発火しない問題が修正されました localStorageへの書き込みのスループットがおよそ150倍高速化されました deno lintやREPLにおけるハイライトが改善されました SubtleCryptoのimportKeyやgenerateKeyメソッドのextractable引数でfalseがサポートされました SubtleCrypto#importKeyでArrayBufferをキーとして渡せるようになりました WebAssembly.instantiateStreamingに渡されたResponseオブジェクトにContent-Typeが設定されていなかった場合のエラーメッセージが改善されました https://github.com/denoland/deno/releases/tag/v1.13.1
+deno_std v0.105.0 deno_std v0.105.0がリリースされました。
+変更点:
+bytes: containsがincludesにリネームされました bytes: indexOfとincludesでfromIndex引数がサポートされました collections: intersectで先頭の配列における重複が適切に取り扱われない問題が修正されました https://github.com/denoland/deno_std/releases/tag/0.105.0
+deno_doc v0.11.0 deno_doc v0.11.0がリリースされました。
+このリリースに合わせて、JavaScriptから利用できるAPIが公開されています。
+https://deno.land/x/deno_doc@v0.11.0 https://github.com/denoland/deno_doc/releases/tag/v0.11.0
+Oak v9.0.0 Oak v9.0.0がリリースされました。
+Cookie関連のAPIへの破壊的変更やDeno Deployサポートの改善などが実施されています。
+変更点:
+(破壊的変更) Cookieの署名にWeb Crypto APIが使用されるようになった関係でCookiesオブジェクトのgetやsetなどのメソッドが非同期になりました (Context.cookies) Deno Deploy上でも通常のDeno CLIと同様にApplication#listenによってリクエストをハンドリングできるようになりました。またその影響により、Application#fetchEventHandlerが非推奨化されています Application#listenでport: 0を指定した際に"listen"イベントで適切なポート番号が報告されるように修正されました。 "listen"イベントがTCPサーバが作成されたタイミングで発火されるように修正されました Rangeヘッダでコンテンツの最後のバイトを取得するように指定した場合、416レスポンスが返却される問題が修正されました request....</p>
+</section>
+<footer class=entry-footer>August 22, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/08/16〜2021/08/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/22.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/04/19〜2021/04/25の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。
+v1.9.1の変更点:
+deno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された v1.9.2の変更点:
+WebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2 deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。
+v0.94.0の変更点:
+node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された v0.95.0の変更点:
+node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0 サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。
+変更点:
+内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された https://github....</p>
+</section>
+<footer class=entry-footer>April 25, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/04/19〜2021/04/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/25.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/04/05〜2021/04/11の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.9.0のリリースについて 今週は特にリリースはありませんが、2021/4/13にv1.9.0のリリースが予定されています。
+また、v1.9.0のリリースに向けて、以下の機能がmainブランチにマージされています:
+ネイティブHTTPバインディング BLOB URLのサポート fetch APIでのdata URLのサポート https://github.com/denoland/deno/blob/v1.8.3/docs/contributing/release_schedule.md
+サードパーティモジュールなどの最新情報 denoland/setup-deno denoland/setup-denoというGitHub ActionsでDenoを利用するためのアクションがdenoland Organizationにて公開されました。
+https://github.com/denoland/setup-deno denolib/setup-deno - denoland/setup-denoと同様、GitHub ActionsからDenoを利用するためのアクション deno-postgres v0.9.0及びv0.10.0がリリース deno-postgresのv0.9.0及びv0.10.0がリリースされました。
+これらのリリースでは、以下の機能が追加されています:
+scram-sha-256認証のサポート Client#createTransactionが実装され、トランザクションがより扱いやすくなった https://github.com/denodrivers/postgres/releases/tag/v0.9.0 https://github.com/denodrivers/postgres/releases/tag/v0.10.0 rollup-plugin-deno rollup-plugin-denoは、RollupでDeno向けのバンドルを生成するためのRollupプラグインです。
+Node.jsのビルトインモジュールの読み込みをdeno_std/nodeに置換することで、それらに依存したモジュールをDenoで実行できるようにしてくれます。
+https://github.com/egoist/rollup-plugin-deno</p>
+</section>
+<footer class=entry-footer>April 11, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/04/05〜2021/04/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/11.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/02/08〜2021/02/14の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.7.3/v1.7.4がリリースされました Deno v1.7.3がリリースされました。
+その後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。
+v1.7.3/v1.7.4の主な変更点:
+deno lspでcodeAction/resolveが実装されました。 deno lspにdeno.cacheコードアクションが実装されました。 deno lspにImplementationscode lensが実装されました。 Import mapsがデータURL(data:)を適切にハンドリングするように修正されました。 https://github.com/denoland/deno/releases/tag/v1.7.4 deno_std v0.87.0がリリースされました Deno v1.7.3のリリースに合わせ、deno_std v0.87.0がリリースされました。
+このリリースにはhttp/cookieモジュールに対する破壊的変更が含まれています。
+変更点:
+http/cookie: Cookies及びSameSiteの型エイリアスが削除されました。 http/file_server: SVGファイルに対して適切なContent-Typeが設定されるように修正されました。 https://github.com/denoland/deno_std/releases/tag/0.87.0
+サードパーティモジュールの最新情報 denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム denops.vimという、Denoを使ってVim/Neovimプラグインを書くためのエコシステムが公開されました。
+coc.nvimに影響を受けているようです。
+サンプルプラグインも公開されているため、興味のある方は見てみるとよいかもしれません。
+https://github.com/vim-denops/denops-helloworld.vim https://github.com/vim-denops/denops.vim https://github.com/vim-denops/denops-deno https://github.com/vim-denops/denops-std-deno slack_web_api - DenoのSlack APIクライアント slack_web_apiはNode.jsの@slack/web-apiをDenoにポートしたモジュールです。
+このモジュールを使用することで、DenoからSlack APIを叩くことができます。
+https://deno.land/x/slack_web_api@1.0.1
+deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。
+このリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。
+変更点:...</p>
+</section>
+<footer class=entry-footer>February 14, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/02/08〜2021/02/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/14.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/02/01〜2021/02/07の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.7.2がリリース Deno v1.7.2がリリースされました。これに合わせて、deno_std v0.86.0もリリースされています。
+主な変更点:
+deno lspでtextDocument/codeLens及びtextDocument/codeActionが実装された WPTにパスするよう、File及びBlobの実装がリライトされた https://github.com/denoland/deno/releases/tag/v1.7.2 https://github.com/denoland/deno_std/releases/tag/0.86.0 deno_stdのリポジトリがdeno本体のリポジトリから分離された Denoには標準モジュールとしてdeno_stdが存在します。
+今まで、このdeno_stdの開発は、deno本体と同じリポジトリ内(denoland/deno)で行われていました。
+この度、deno_stdが個別のリポジトリへと分離されました。
+これにより、deno_stdの開発時にRustのセットアップが必要なくなるため、deno_stdへのコントリビューションが行いやすくなるのではないかと思われます。
+https://github.com/denoland/deno_std
+サードパーティモジュールの最新情報 emacs-ng emacs-ngはEmacsのフォークです。
+以下のような機能を備えているようです:
+Denoを組み込むことで、Emacs内でJavaScript/TypeScriptコードの実行を可能とする MozillaのWebRenderをサポート https://github.com/emacs-ng/emacs-ng
+deno-postgres v0.7.0がリリースされた deno-postgres v0.7.0がリリースされました。
+v0.6.0までは、deno-postgresがサポートしていないデータ型を利用しようとすると、例外が発生しました。
+このリリースにおいて、現時点でdeno-postgresでサポートされていない全てのデータ型が、JavaScriptのStringとして返却されるように挙動が変更されました。
+将来的には、ライブラリの利用者が各データ型のハンドリング方法を制御できるようにするために、カスタムのハンドラを登録できるようにすることも検討されているようです。
+https://github.com/denodrivers/postgres/issues/239
+https://github.com/denodrivers/postgres/releases/tag/v0.7.0
+Trex v1.5.0がリリースされた TrexはDenoのパッケージマネージャです。
+このリリースではtrex lsコマンドが実装され、インストールされた依存パッケージの一覧を表示できるようになりました。
+https://github.com/crewdevio/Trex/releases/tag/v1.5.0
+Deno Module Visualizer Deno Module Visualizerが公開されました。
+Deno Module Visualizerは、あるモジュールとその依存関係をGraphvizを使って可視化してくれます。
+使用例:
+deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
+</section>
+<footer class=entry-footer>February 7, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/02/01〜2021/02/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/07.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/01/25〜2021/01/31の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.7.1がリリース Denoのv1.7.1がリリースされました。
+このリリースに合わせて、stdのv0.85.0もリリースされています。
+v1.7.0でリリースされたDeno.emitやDeno.resolveDnsの安定性の向上 deno lspのバグ修正・安定性の向上 std/nodeでprocess.on("exit")がサポートされた https://github.com/denoland/deno/releases/tag/v1.7.1
+deno-postgresのv0.5.0/v0.6.0がリリース deno-postgresのv0.5.0及びv0.6.0がリリースされました。
+v0.5.0 v0.6.0 これらのリリースにはいくつかの破壊的変更が含まれています:
+Client#queryメソッドが削除され、Client#queryArrayとClient#queryObjectメソッドが追加された Client#queryArrayはクエリの結果をネストされた配列として返却します Client#queryObjectはクエリの結果をオブジェクトの配列として返却します Client#multiQueryメソッドが削除された PostgreSQLのbigint型がJavaScriptのBigIntとして返却されるように変更された v0.4.0まではJavaScriptのString型として返却されていました https://github.com/denodrivers/postgres
+Harmony - Discord APIライブラリ HarmonyというDiscord APIライブラリが公開されました。
+このライブラリを使うことで、Discordボットの開発などを行うことができます。
+https://github.com/harmonyland/harmony</p>
+</section>
+<footer class=entry-footer>January 31, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/01/25〜2021/01/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/31.html></a>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

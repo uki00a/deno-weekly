@@ -1,0 +1,304 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>deno_std | 週刊Deno</title>
+<meta name=keywords content>
+<meta name=description content>
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
+<link rel=icon href=https://uki00a.github.io/deno-weekly/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.0">
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml>
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="deno_std">
+<meta property="og:description" content>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/deno_std.html">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="deno_std">
+<meta name=twitter:description content>
+</head>
+<body class=list id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<header class=page-header>
+<h1>deno_std</h1>
+</header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/05/17〜2021/05/23の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.10.2がリリース Denoのv1.10.2がリリースされました。
+このリリースではCVE-2021-32619へのセキュリティ上の修正が含まれるため、できるだけ早くこのバージョンへアップグレードすることを推奨されています。
+その他の変更点:
+.vscode/settings.jsonなどでdeno.configに相対パスが設定されていた場合、deno lspで適切に設定が読まれない問題が修正されました。 TypeScriptファイルをimportする際は、X-TypeScript-Typesヘッダが無視されるようになりました。 https://github.com/denoland/deno/releases/tag/v1.10.2 https://twitter.com/deno_land/status/1394353166863454213 deno_std v0.97.0がリリース io/buffer: Deno Deployでも型エラーなしで使えるようになりました。 io: types.d.tsが追加されました。 io/bufio: readDelimやreadStringDelimでデリミタが内部で複数のチャンクにまたがった際に、誤った結果を返す問題が修正されました。 node/events: EventEmitter#onなどにリスナとして関数以外の値を渡すと、エラーが発生するようになりました。 testing: assertObjectMatchで配列が適切に取り扱われるようになりました。 https://github.com/denoland/deno_std/releases/tag/0.97.0
+denoland/setup-deno v1.0.0がリリース denoland/setup-denoはGitHub ActionsからDenoを利用するためのアクションです。
+v1.0.0がリリースされたため、すでにdenolib/setup-denoをお使いの場合は、そちらから移行するとよさそうです。
+https://github.com/denoland/setup-deno/releases/tag/v1.0.0
+Flat Data Flat Dataは、HTTPエンドポイントまたはSQLクエリからデータを取得し、GitHubリポジトリに格納するためのGitHubアクションです。
+Denoを使用したJavaScript/TypeScriptファイルの実行がサポートされており、ダウンロードされたデータを変換することができます。
+また、GitHubリポジトリに格納されたデータを可視化するために、Flat Viewerというツールも提供されています。
+https://github.com/githubocto/flat Flat Dataについて Flat Viewer packup - Parcelライクなビルドツール packupというParcelビルドツールが公開されました。
+Parcelに影響を受けているようで、以下のような特徴があります。
+設定なしでアプリケーションコードをバンドルできる TypeScriptをサポート esbuildを使用した高速なビルド https://github.com/kt3k/packup
+luath v0.6.0/v0.7.0/v0.8.0がリリース Denoで実装されたフロントエンドビルドツールであるluathのv0.6.0/v0.7.0/v0.8.0がリリースされました。
+変更点:...</p>
+</section>
+<footer class=entry-footer>May 23, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/05/17〜2021/05/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/23.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/05/10〜2021/05/16の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。
+このリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。
+変更点:
+deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が"esm" | "iife"から"module" | "classic"に変更された 公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。
+変更点:
+http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった https://github....</p>
+</section>
+<footer class=entry-footer>May 16, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/05/10〜2021/05/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/16.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/04/19〜2021/04/25の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。
+v1.9.1の変更点:
+deno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された v1.9.2の変更点:
+WebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2 deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。
+v0.94.0の変更点:
+node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された v0.95.0の変更点:
+node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0 サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。
+変更点:
+内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された https://github....</p>
+</section>
+<footer class=entry-footer>April 25, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/04/19〜2021/04/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/25.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/04/12〜2021/04/18の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.9.0がリリース Deno v1.9.0がリリースされました。このリリースでは、様々な機能の追加やパフォーマンスチューニングなどが実施されています。
+また、magurotunaさんによるDeno v1.9.0の解説記事が公開されています。
+変更点:
+Deno本体にネイティブのHTTP/2サーバの実装が組み込まれた Deno内部のJavaScriptとRust間のメッセージングの仕組みが改善され、最大で98%程のパフォーマンス向上が実現された BLOB URLやData URLがサポートされた deno lspのimport補完が向上した deno lspでtextDocument/foldingRange及びtextDocument/selectionRangeが実装された --allow-readや--allow-netなどと同様、--allow-envや--allow-runで許可リストを指定できるようになった deno runコマンドで--promptオプションがサポートされ、対話的に権限を与えられるようになった Deno.fstat(Sync)/ftruncate(Sync)が安定化された Deno.Fileにstat(Sync)/truncate(Sync)メソッドが追加された Deno.Buffer/readAll(Sync)/writeAll(Sync)/iter(Sync)が非推奨化された これらのAPIはv2.0で削除される予定です これらのAPIはdeno_std/ioに移動されています Deno.memoryUsage()が実装された(unstable) TypeScriptのuseDefineForClassFieldsオプションが有効化された https://deno.com/blog/v1.9 https://github.com/denoland/deno/releases/tag/v1.9.0 https://zenn.dev/magurotuna/articles/deno-release-note- deno_std v0.93.0がリリース Deno v1.9.0のリリースに合わせて、deno_std v0.93.0がリリースされました。
+変更点:
+io/util: Deno v1.9.0でのDeno.iterの非推奨化に合わせて、io/utilにiterが追加された node/fs: fdatasync/fsync/ftuncate/futimesが実装された https://github.com/denoland/deno_std/pull/850
+サードパーティモジュールなどの最新情報 Oak v7.0.0及びv7.1.0のリリース DenoのWebフレームワークであるOakのv7.0.0及びv7.1.0がリリースされました。
+主な変更点:
+Deno v1.9で実装されたネイティブHTTPサーバがサポートされた Deno Deployのサポート context.stateがapp.stateから深いコピーが行われるようになった ETagサポートが追加された https://github.com/oakserver/oak/commit/2a68eda28cb93bfb099a5f27dfad728f2183e0df https://github.com/oakserver/oak/commit/4ae51e28e04490cc639e887659b8626c05c9b0bb Servest v1....</p>
+</section>
+<footer class=entry-footer>April 18, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/04/12〜2021/04/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/18.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/03/29〜2021/04/04の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.8.3がリリース Deno v1.8.3がリリースされました。このリリースでは、deno lspへの機能の追加やバグ修正などが行われています。
+変更点:
+deno lspでimportの補完がサポートされた deno lspでtextDocument/selectionRangeが実装された WebSocket#closeですでに閉じているコネクションを再び閉じようとしたときに、例外が投げられないように修正された AbortController.abort()が追加された TypeScriptのlibとしてdom.asynciterableが追加された(Denoのいずれかのバージョンで誤って削除されてしまったようです) https://github.com/denoland/deno/releases/tag/v1.8.3
+deno_std v0.92.0がリリース deno_stdのv0.92.0がリリースされました。
+変更点:
+io/bufio: Deno Deployに対応した node/fs: symlinkとsymlinkSyncが実装された node/util: format関数が実装された io: io/buffer及びio/utilが追加された (Deno v2.0に向けて、Deno.Buffer/readAll/readAllSync/writeAll/writeAllSyncをDeno名前空間からstdへ移行することが目的のようです) https://github.com/denoland/deno_std/releases/tag/0.92.0
+Deno Deployが公開された Deno Deployが公開されました。
+Deno DeployはCDN Edge上でTypeScriptやWebAssemblyなどを動作させることができるサービスです。Cloudflare WorkersのAPIと互換性があります。
+https://deno.com/deploy/docs サードパーティモジュールなどの最新情報 Snel - DenoでSvelteアプリを開発するためのツール SnelはDenoでSvelteアプリを開発するためのツール/フレームワークです。
+.svelteファイルをJavaScriptファイルへコンパイルしたり、HMRを搭載したdevサーバなどが提供されています。
+将来的にはSSRやSSGなどの機能も提供される予定のようです。
+https://github.com/crewdevio/Snel
+Sift - Deno Deployのルーティングライブラリ SiftはDeno Deployのルーティングライブラリです。
+path-to-regexpでサポートされている形式で、ルーティングを定義することができます。
+他にも、静的ファイルの配信やJSXのレンダリングなどがサポートされています。
+https://github.com/satyarohith/sift
+deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用することのできるDOM APIの実装を提供しています。...</p>
+</section>
+<footer class=entry-footer>April 4, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/03/29〜2021/04/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/04.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/03/22〜2021/03/28の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.8.2がリリース Deno v1.8.2がリリースされました。
+このリリースでは、バグ修正などを中心に実施されています。
+変更点:
+Deno.createHttpClientを使用した際に、User-Agentヘッダが設定されない問題が修正された deno fmtでmarkdownファイルのスペースなどが適切にフォーマットされない問題が修正された deno lspでエディタ以外でファイルが編集されていると、“The current snapshot version is missing.“エラーが発生する問題が修正された deno lspでファイルの診断(diagnostics)が固有のスレッドで実行されるようになった https://github.com/denoland/deno/releases/tag/v1.8.2
+deno_std v0.91.0がリリース deno_std v0.91.0がリリースされました。
+主な変更点:
+encoding/yaml: EXTENDED_SCHEMAが追加され、Yamlファイル内でJSの関数や正規表現などを使用できるようになった io/streams: readerFromIterable()が追加された node/fs: utimes/utimesSyncが実装された など
+https://github.com/denoland/deno_std/releases/tag/0.91.0
+status.deno.landが公開された status.deno.landが公開されました。
+このサイトでは、Denoのモジュールレジストリなどの運用状況を確認することができます。
+https://status.deno.land
+サードパーティモジュールなどの最新情報 swdev - Service WorkerベースのNo bundleビルドツール swdevという、Service WorkerベースのNo bundleビルドツールが公開されました。
+以下のようが機能が提供されているようです:
+Service Workerを利用したTypeScriptやSvelteファイルの変換 Deno.watchFs()ベースのCache Busting Rollupベースのプロダクションビルド https://github.com/mizchi/swdev
+deno-sqlite v2.4.0がリリース deno-sqlite v2.4.0がリリースされました。
+このリリースでは、以下のような変更が加わっています:
+SQLiteのv3.35.0への更新 DB....</p>
+</section>
+<footer class=entry-footer>March 28, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/03/22〜2021/03/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/28.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/03/08〜2021/03/14の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.8.1のリリース Deno v1.8.1がリリースされました。このリリースでは、バグの修正を中心に実施されています。
+主な変更点:
+importsNotUsedAsValuesオプションがswcに渡されるようになりました。 Windows上でdeno compileを実行すると、ターゲットに関わらず常に.exeが拡張子として付与される問題が修正されました。 Worker内でトップレベルawaitが使用されていると、ブロックが発生する問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.8.1
+deno_std v0.90.0のリリース deno_std v0.90.0がリリースされました。
+変更点:
+node: moduleモジュールをrequireで読み込めるようになりました。 node: Node.jsで書かれたスクリプトを実行するためのCLIツールが実装されました。(node/cli.ts) node: assertモジュールの互換性が向上しました。 http: v0.88.0で発生したパフォーマンスに関する問題が修正されました。 https://github.com/denoland/deno_std/commit/3f9714bf05a75303355fddd22cad9794be50e47d
+サードパーティモジュールなどの最新情報 nano nanoは軽量のJSXライブラリです。以下のような機能をサポートしています:
+SSRをサポート(DenoとNode.jsの両方で動作します) 組み込みのRouterやStoreなどを提供 コンポーネントのpre-fetch https://github.com/nanojsx/nano
+depsbot モジュールなどの依存関係の更新状態をチェックをしてくれるGitHub actionです。
+npmにも公開されており、コマンドラインから直接実行することもできます。
+https://github.com/denosaurs/depsbot
+wizard wizardというBDDスタイルのAPIを提供するテストライブラリが公開されました。
+まだ開発が開始したばかりではありますが、Deno.test()をベースにしているため、各種サニタイザやDenoのCLIをそのまま利用することができます。
+https://github.com/deno-libs/wizard
+deno-redis v0.20.0 deno-redis v0.20.0がリリースされました。
+変更点:
+CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下のコマンドがサポートされました: CLIENT UNBLOCK CLIENT UNPAUSE CLIENT INFO CLIENT TRACKINGINFO CLIENT LIST https://github....</p>
+</section>
+<footer class=entry-footer>March 14, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/03/08〜2021/03/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/14.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/03/01〜2021/03/07の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.8.0がリリースされました Deno v1.8.0がリリースされました。
+magurotunaさんによるDeno v1.8.0のまとめが公開されていますので、よろしければそちらも参照ください。
+主な変更点:
+WebGPUがサポートされました(experimental) ICUサポートが追加されました。 テストカバレッジの収集と集計が個別のコマンドに分離されました(収集はdeno test --coverage、集計はdeno coverageコマンドで行います) lcov形式でのカバレッジの集計がサポートされました。 Import maps/Deno.permissions/Deno.link/Deno.symlink/deno lspが安定化されました(--unstableオプションが不要になった) リモートモジュールをダウンロードする際に、Authorizationヘッダにトークンを設定できるようになりました(DENO_AUTH_TOKENS) テストコード中でDeno.exit()の呼び出しがチェックされるようになりました(exitサニタイザ) Deno.metrics()で収集できる情報がより詳細化されました(--unstableを付与したときのみ) deno fmtでJSONファイルのフォーマットがサポートされました。 Deno.emitでIIFE形式の出力サポートされました。 TypeScriptが4.2にアップグレードされました。 https://github.com/denoland/deno/releases/tag/v1.8.0 https://zenn.dev/magurotuna/articles/deno-release-note-1-8-0 deno_std v0.89.0がリリース Deno v1.8.0のリリースに合わせ、deno_stdのv0.89.0がリリースされました。
+std/nodeへの機能追加などに加え、std/io/streamsモジュールに破壊的変更が加わっています。
+主な変更点:
+io/streams: readableStreamFromAsyncIterator()が削除され、代わりにreadableStreamFromIterable()が追加されました。 node: constantsモジュールが追加されました。 node/crypto: createHash()関数が実装されました。 node: process.hrtime()が実装されました。 node/fs: truncate/truncateSyncが実装されました。 node/util: callbackify/promisify/typesが公開されました。 node/events: require('events').EventEmitterがundefinedになる問題が修正されました。 node: requireでshebangの書かれたJSファイルを読めるようになりました。 node: process.argvがProxyから配列へ変更されました。 https://github.com/denoland/deno_std/pull/780
+サードパーティモジュールなどの最新情報 ts_morphがDenoをサポート ts_morphにDenoのサポートが追加されました。
+ts_morphはTypeScriptのコンパイラAPIのラッパライブラリです。
+https://github.com/dsherret/ts-morph/releases/tag/10.0.1 https://deno.land/x/ts_morph@10.0.1 vnoがVue 3をサポート vnoにVue 3のサポートが追加されました。...</p>
+</section>
+<footer class=entry-footer>March 7, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/03/01〜2021/03/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/07.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/02/01〜2021/02/07の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.7.2がリリース Deno v1.7.2がリリースされました。これに合わせて、deno_std v0.86.0もリリースされています。
+主な変更点:
+deno lspでtextDocument/codeLens及びtextDocument/codeActionが実装された WPTにパスするよう、File及びBlobの実装がリライトされた https://github.com/denoland/deno/releases/tag/v1.7.2 https://github.com/denoland/deno_std/releases/tag/0.86.0 deno_stdのリポジトリがdeno本体のリポジトリから分離された Denoには標準モジュールとしてdeno_stdが存在します。
+今まで、このdeno_stdの開発は、deno本体と同じリポジトリ内(denoland/deno)で行われていました。
+この度、deno_stdが個別のリポジトリへと分離されました。
+これにより、deno_stdの開発時にRustのセットアップが必要なくなるため、deno_stdへのコントリビューションが行いやすくなるのではないかと思われます。
+https://github.com/denoland/deno_std
+サードパーティモジュールの最新情報 emacs-ng emacs-ngはEmacsのフォークです。
+以下のような機能を備えているようです:
+Denoを組み込むことで、Emacs内でJavaScript/TypeScriptコードの実行を可能とする MozillaのWebRenderをサポート https://github.com/emacs-ng/emacs-ng
+deno-postgres v0.7.0がリリースされた deno-postgres v0.7.0がリリースされました。
+v0.6.0までは、deno-postgresがサポートしていないデータ型を利用しようとすると、例外が発生しました。
+このリリースにおいて、現時点でdeno-postgresでサポートされていない全てのデータ型が、JavaScriptのStringとして返却されるように挙動が変更されました。
+将来的には、ライブラリの利用者が各データ型のハンドリング方法を制御できるようにするために、カスタムのハンドラを登録できるようにすることも検討されているようです。
+https://github.com/denodrivers/postgres/issues/239
+https://github.com/denodrivers/postgres/releases/tag/v0.7.0
+Trex v1.5.0がリリースされた TrexはDenoのパッケージマネージャです。
+このリリースではtrex lsコマンドが実装され、インストールされた依存パッケージの一覧を表示できるようになりました。
+https://github.com/crewdevio/Trex/releases/tag/v1.5.0
+Deno Module Visualizer Deno Module Visualizerが公開されました。
+Deno Module Visualizerは、あるモジュールとその依存関係をGraphvizを使って可視化してくれます。
+使用例:
+deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
+</section>
+<footer class=entry-footer>February 7, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/02/01〜2021/02/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/07.html></a>
+</article>
+<footer class=page-footer>
+<nav class=pagination>
+<a class=prev href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>« Prev Page</a>
+</nav>
+</footer>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

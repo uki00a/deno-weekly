@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Lume on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/lume.html</link><description>Recent content in Lume on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/lume/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/01/04〜2021/01/10の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/01/10.html</link><pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/01/10.html</guid><description>vno vnoはDenoでVue.jsを用いた開発を行うためのビルドツールです。
+現時点では以下のような機能が提供されているようです。
+シングルファイルコンポーネントのビルド・バンドル Devサーバ まだ実装されてはいないものの、将来的にはSSRを実装することも検討されているようです。
+Lume LumeはDenoで実装されたシンプルなスタティックサイトジェネレータです。
+markdown, nunjucks, jsxなど様々な形式でページを記述できる。 プラグインシステムにより拡張が可能。 bench - DenoとNode.jsフレームワークのベンチマーク benchは、Deno及びNode.jsフレームワークのベンチマークを公開しています。
+GitHub Actionsを使用して、毎日、それぞれのフレームワークに対してベンチマークが実行されています。
+現時点では、以下のフレームワークに対するベンチマークが公開されています:
+abc alosaur deno (std/http) dinatra drash express fastify node (httpモジュール) oak servest mandarinets aqua reno</description></item></channel></rss>

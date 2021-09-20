@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Bundler on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/bundler.html</link><description>Recent content in Bundler on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 11 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/bundler/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/07/05〜2021/07/11の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/07/11.html</link><pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/07/11.html</guid><description>Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を変更することが検討されています。
+https://github.com/denoland/deno/issues/11340 このissueでは、以下のような方向性が示されています。
+DenoのTypeScriptによる型チェックをデフォルトで無効化したい (現状の--no-checkオプションを付けた際の挙動をデフォルトにしたい) TypeScriptによる型チェックは、--checkオプションを指定したときのみ実施する --no-checkオプションは非推奨化する より詳細な内容や議論などについては上記issueを参照いただければと思います。
+https://github.com/denoland/deno/issues/11340
+Bundler v0.8.0 DenoのフロントエンドビルドツールであるBundlerのv0.8.0がリリースされました。
+このリリースでは、Devサーバのサポートが追加されています。
+https://github.com/timreichen/Bundler/releases/tag/0.8.0
+deno-redis v0.23.0がリリース deno-redisのv0.23.0がリリースされました。
+このリリースでは、いくつかの破壊的変更が実施されています。
+Redis Clusterのクライアント実装が追加されました。 Redis.connectionプロパティが削除されました。(破壊的変更) RedisImplクラスが非公開になり、代わりにcreate関数が追加されました。 (破壊的変更) https://github.com/denodrivers/redis/releases/tag/v0.23.0
+xhr xhrはDenoとDeno Deploy向けのXMLHttpRequestのポリフィルです。
+以下のドキュメントにて、このモジュールを利用してDeno Deploy上でFirebase SDKを使用する方法が紹介されています。
+https://deno.com/deploy/docs/tutorial-firebase https://github.com/kitsonk/xhr https://deno.com/deploy/docs/tutorial-firebase</description></item></channel></rss>

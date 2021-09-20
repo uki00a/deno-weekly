@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>rollup-plugin-deno on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/rollup-plugin-deno.html</link><description>Recent content in rollup-plugin-deno on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/rollup-plugin-deno/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/04/05〜2021/04/11の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/04/11.html</link><pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/04/11.html</guid><description>Deno本体の最新情報 Deno v1.9.0のリリースについて 今週は特にリリースはありませんが、2021/4/13にv1.9.0のリリースが予定されています。
+また、v1.9.0のリリースに向けて、以下の機能がmainブランチにマージされています:
+ネイティブHTTPバインディング BLOB URLのサポート fetch APIでのdata URLのサポート https://github.com/denoland/deno/blob/v1.8.3/docs/contributing/release_schedule.md
+サードパーティモジュールなどの最新情報 denoland/setup-deno denoland/setup-denoというGitHub ActionsでDenoを利用するためのアクションがdenoland Organizationにて公開されました。
+https://github.com/denoland/setup-deno denolib/setup-deno - denoland/setup-denoと同様、GitHub ActionsからDenoを利用するためのアクション deno-postgres v0.9.0及びv0.10.0がリリース deno-postgresのv0.9.0及びv0.10.0がリリースされました。
+これらのリリースでは、以下の機能が追加されています:
+scram-sha-256認証のサポート Client#createTransactionが実装され、トランザクションがより扱いやすくなった https://github.com/denodrivers/postgres/releases/tag/v0.9.0 https://github.com/denodrivers/postgres/releases/tag/v0.10.0 rollup-plugin-deno rollup-plugin-denoは、RollupでDeno向けのバンドルを生成するためのRollupプラグインです。
+Node.jsのビルトインモジュールの読み込みをdeno_std/nodeに置換することで、それらに依存したモジュールをDenoで実行できるようにしてくれます。
+https://github.com/egoist/rollup-plugin-deno</description></item></channel></rss>

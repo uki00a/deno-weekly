@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 19 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/09/13〜2021/09/19の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/09/19.html</link><pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/09/19.html</guid><description>Deno v2のリリースプランについて Deno v2のリリースプランが公開されました。
+https://github.com/denoland/deno/issues/12110 10/12にDeno v1.15, 11/22にDeno v2がリリース予定とのことです
+また、GitHub Discussionsにて、v2で実施予定の追加の変更点やDenoのエコシステムの拡大に関する議論内容などについて公開されています。
+追加の変更点(今後、内容が変わる可能性があります！):
+NotCapableエラーの導入 DenoのパーミッションエラーとOSによって発生したパーミッションエラーを区別できるようにすることが目的のようです Deno.read()のDeno.write()などの削除 Import AssertionsとJSON Modules opメトリクスのリファクタリング/整頓 Deno 2.0 Release Plan Design Meeting 2021-09-16 Deno v1.14.0 Deno v1.14.0がリリースされました。
+TypeScript v4.4への更新、deno fmtやdeno lintで設定ファイルがサポート、Web Crypto APIの強化、Deno.upgradeWebSocketの安定化、URLPatternの実装、シグナルAPI(unstable)への破壊的変更などが実施されています。
+また、magurotunaさんによる日本語の紹介記事が公開されています(https://zenn.dev/magurotuna/articles/deno-release-note-1-14-0)
+変更点:
+deno fmt/deno lint deno fmt でJSDocコメントへの基本的なサポートが追加されました deno fmtとdeno lintの挙動を設定ファイルやCLIオプションで変更できるようになりました ネイティブHTTPサーバ Deno.upgradeWebSocketが安定化されました Deno.upgradeWebSocket でUpgradeヘッダの大文字・小文字の違いを区別しないように修正されました ネイティブHTTPサーバでリクエストボディが消費されなかった場合に発生するリソースリークが修正されました FFI Deno.</description></item><item><title>2021/09/06〜2021/09/12の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/09/12.html</link><pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/09/12.html</guid><description>Deno 2.0のスコープについて GitHub DiscussionsにてDeno 2.0のスコープやリリース予定時期について公開されました。
+https://github.com/denoland/deno/discussions/11972 現時点では、今年の11月に2.0のリリースが検討されているようです。
+Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に&amp;hellip;) Deno.ReaderなどのJSのみで実装されたIO関連のAPIを削除(https://github.com/denoland/deno/issues/9795) 一部のAPIはすでにstd/io/util.tsなどへ移動されています デフォルトでのWorker内でDeno名前空間の有効化 TypeScriptのuseUnknownInCatchVariablesを有効化 Deno.customInspectを削除 デフォルトで型チェックをスキップする(https://github.com/denoland/deno/issues/11340) --configオプションを削除 (https://github.com/denoland/deno/discussions/7732) デフォルトでのロックファイルの生成・検証 localStorageや将来のIndexedDBなどの追加に備えたInternal Originの導入 TypeScriptのcompilerOptions.jsxFactoryとcompilerOptions.jsxFragmentFactoryのデフォルト値をそれぞれhと Fragmentに変更 (https://github.com/denoland/deno/issues/11186) デフォルトで外部のTypeScriptコードへの型エラーなどを報告させない (https://github.com/denoland/deno/issues/11970) dynamic importとWorker向けに--allow-importの導入 (https://github.com/denoland/deno/issues/8266) https://github.com/denoland/deno/discussions/11972
+vercel-deno v1.0.0 Vercel serverless functionsのDenoランタイム
+apiディレクトリに各フレームワークなどを使用したサンプルコードが配置されています。
+https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0
+deno_mongo v0.26.0 deno_mongo v0.26.0がリリースされました。
+変更点:
+Collection#insertが非推奨化されました (代わりにinsertOneやinsertManyなどの使用が推奨されます) Bson.ObjectIdの型定義が削除されました (Bson.ObjectID の方は残っています) MongoClient.buildInfoがサポートされました (https://docs.mongodb.com/manual/reference/command/buildInfo/) https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0</description></item><item><title>2021/08/30〜2021/09/05の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/09/05.html</link><pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/09/05.html</guid><description>Aleph.js v0.3.0-beta.9 Aleph.jsのv0.3.0-beta.9がリリースされました。
+主な変更点として、サーバから返却されるCache-Controlの値がpublic, max-age=0, must-revalidateに変更されています。
+また、このリリースに合わせてWindi CSS向けのプラグインが公開されています (https://github.com/ije/aleph-plugin-windicss)
+https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.9 https://github.com/ije/aleph-plugin-windicss Deno Deploy Beta2 Deno DeployのBeta2がリリースされました。
+変更点:
+Deno.readFileによって、デプロイに紐づくGitHubリポジトリ内のファイルの読み込みがサポートされました Deno.listenとDeno.serveHttpがサポートされました インスタンスがクラッシュした際のデバッグを容易にするため、クラッシュレポートが追加されました https://deno.com/blog/deploy-beta2 Deno Deploy Beta 2が来たぞ deployctl v0.4.0 Deno Deployのコマンドラインツールであるdeployctlのv0.4.0がリリースされました。
+このリリースでは、コマンドの実行時に新バージョンを通知する機能が実装されています。
+また、現時点では、このバージョンをインストールする際に--unstableが必要になります。
+https://github.com/denoland/deployctl/releases/tag/0.4.0
+Ultra UltraというDeno+ReactベースのWebフレームワークが公開されました。
+まだメジャーリリースはされていませんが、以下のような特徴があるようです。
+ReactDOM.renderToReadableStreamベースのSSR Viteなどと同様のオンデマンドでのコード変換 (SWCやesbuildがベース) SWR向けのキャッシュプロパイダを提供 /examplesディレクトリに使用例があるため、もし興味がありましたら見てみるとよいかもしれません。
+https://github.com/exhibitionist-digital/ultra</description></item><item><title>2021/08/23〜2021/08/29の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/08/29.html</link><pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/08/29.html</guid><description>Deno v1.13.2 Deno v1.13.2がリリースされました。
+このリリースではバグ修正を中心に行われています。
+変更点:
+SubtleCrypto#exportKeyでHMACがサポートされました deno testの--jobsオプションで0を指定するとエラーが発生するように修正されました Deno.dlopenに不正な型の引数を渡した際に、プロセスがパニックする問題が修正されました リソースリークを防止するために、Deno.HttpConn#closeを実行した際に、該当のDeno.HttpConnオブジェクトを経由して割り当てられた全てのリソースが開放されるように修正されました deno lspでlanguageIdとしてjsxとtsxがサポートされました (Nova などのエディタが標準のlanguageIdであるjavascriptreactやtypescriptreactではなく、jsxやtsxを使用するために対応されたようです) deno lspがサポートしないlanguageIdが指定された場合、エディタ上で診断が表示されないように修正されました (deno lspが解釈できないlanguageIdをエディタが指定した場合、Denoはそのファイルをtypescriptとして解釈していたため、誤って診断が表示されてしまう問題があったようです) クラシックWorkerでsetTimeoutなどのAPIを使用するとプロセスがクラッシュする問題が修正されました URLやURLSearchParamsのパフォーマンスが向上しました deno_std v0.106.0 deno_std v0.106.0がリリースされました。
+変更点:
+async: delay関数でAbortSignalを使用した中断がサポートされました collection: findLastIndexでマッチする要素が見つからなかったときに-1ではなくundefinedが返却されるように修正されました testing: assertEqualsで、一方のオブジェクトにはconstructorが設定されているがもう一方には設定されていない場合に、保持しているプロパティが一致すればそれらのオブジェクトは同一と判断されるように変更されました node/buffer: 定数などのいくつかのAPIがexportされました node/perf_hooks: PerformanceEntryがdefault exportされるオブジェクトに追加されました https://github.com/denoland/deno_std/pull/1155 https://github.com/denoland/deno_std/releases/tag/0.106.0 MDNでDenoがサポートされました MDN Web Docsの「ブラウザーの互換性」欄にDenoの情報が表示されるようになりました。
+あるWeb APIがDenoのどのバージョンからサポートされているかを確認することができます。
+例)
+https://developer.mozilla.org/ja/docs/Web/API/URL https://developer.mozilla.org/ja/docs/Web/API/TextDecoder https://deno.com/blog/deno-on-mdn
+Aleph.js v0.3.0 betaバージョン Next.jsライクなフレームワークであるAleph.jsのv0.3.0 betaバージョンが公開されました。
+様々な機能の追加やパフォーマンスの向上などが図られています。
+主な変更点:
+新しいプラグインシステムの提供 (Aleph.jsのランタイムを拡張し、コードの変換プロセスに介入したりカスタムファイルタイプのサポートなどを追加できる仕組み) deno_std/http/serverからネイティブHTTP(Deno.serveHttp)への移行 APIミドルウェアがサポートされました。api/_middlewares.</description></item><item><title>2021/08/16〜2021/08/22の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/08/22.html</link><pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/08/22.html</guid><description>Deno v1.13.1 Deno v1.13.1がリリースされました。
+deno testやWeb Crypto APIのバグ修正などがメインです。
+変更点:
+deno test --docでMarkdownファイルを引数に指定できるようになりました deno test --docで以下のようにignoreが指定されていると、そのコードブロックが無視されるようになりました \`\`\`ts ignore ... \`\`\` deno testでloadイベントが発火しない問題が修正されました localStorageへの書き込みのスループットがおよそ150倍高速化されました deno lintやREPLにおけるハイライトが改善されました SubtleCryptoのimportKeyやgenerateKeyメソッドのextractable引数でfalseがサポートされました SubtleCrypto#importKeyでArrayBufferをキーとして渡せるようになりました WebAssembly.instantiateStreamingに渡されたResponseオブジェクトにContent-Typeが設定されていなかった場合のエラーメッセージが改善されました https://github.com/denoland/deno/releases/tag/v1.13.1
+deno_std v0.105.0 deno_std v0.105.0がリリースされました。
+変更点:
+bytes: containsがincludesにリネームされました bytes: indexOfとincludesでfromIndex引数がサポートされました collections: intersectで先頭の配列における重複が適切に取り扱われない問題が修正されました https://github.com/denoland/deno_std/releases/tag/0.105.0
+deno_doc v0.11.0 deno_doc v0.11.0がリリースされました。
+このリリースに合わせて、JavaScriptから利用できるAPIが公開されています。
+https://deno.land/x/deno_doc@v0.11.0 https://github.com/denoland/deno_doc/releases/tag/v0.11.0
+Oak v9.0.0 Oak v9.0.0がリリースされました。
+Cookie関連のAPIへの破壊的変更やDeno Deployサポートの改善などが実施されています。
+変更点:
+(破壊的変更) Cookieの署名にWeb Crypto APIが使用されるようになった関係でCookiesオブジェクトのgetやsetなどのメソッドが非同期になりました (Context.cookies) Deno Deploy上でも通常のDeno CLIと同様にApplication#listenによってリクエストをハンドリングできるようになりました。またその影響により、Application#fetchEventHandlerが非推奨化されています Application#listenでport: 0を指定した際に&amp;quot;listen&amp;quot;イベントで適切なポート番号が報告されるように修正されました。 &amp;quot;listen&amp;quot;イベントがTCPサーバが作成されたタイミングで発火されるように修正されました Rangeヘッダでコンテンツの最後のバイトを取得するように指定した場合、416レスポンスが返却される問題が修正されました request.</description></item><item><title>2021/08/09〜2021/08/15の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/08/15.html</link><pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/08/15.html</guid><description>Deno v1.13.0 Deno v1.13.0がリリースされました。
+大きな変更点として、ネイティブHTTPサーバ(Deno.serveHttp)の安定化やTLS関連の機能の強化、プラグインシステムの廃止やFFIの導入などが行われています。
+また、このリリースに合わせて、magurotunaさんによる日本語の紹介記事も公開されています:
+Deno 1.13.0 がリリースされたので新機能や変更点の紹介 変更点:
+Deno.serveHttpが安定化されました Deno.upgradeWebSocketで返却されるオブジェクトのwebsocketプロパティがsocketにリネームされました Deno.upgradeWebSocketで返却されたWebSocketオブジェクトのcloseメソッドを呼ぶ際に、任意のコードを指定できるようになりました WebSocketStreamが実装されました (unstable) プラグインシステムが削除され、代わりにFFIが導入されました (unstable) --unsafely-treat-insecure-origin-as-secureオプションがサポートされ、TLS証明書の検証を無効化できるようになりました Deno.connectTlsでクライアント認証用の証明書と秘密鍵を渡せるようになりました DENO_TLS_CA_STORE環境変数が導入され、TLS接続時にシステムの証明書ストアを使用できるようになりました Deno.runでclearEnvオプションがサポートされ、子プロセスの環境変数をクリアできるようになりました (unstable) Deno.writeFileでAbortSignalがサポートされ、書き込みを中断できるようになりました Deno.permissions配下のAPIが引数としてURLオブジェクトをサポートしました Deno.systemCpuInfoが削除され、代わりにnavigator.hardwareConcurrencyがサポートされました Deno.errors配下の各エラーがErrorクラスを継承するように修正されました SubtleCrypto#importKey/exportKeyが実装されました(HMACキーのみサポート) SubtleCrypto#verifyでHMACキーがサポートされました --locationが指定された場合は、fetchでHTTPリクエストを送信する際にOriginヘッダが設定されるようになりました deno test --docでMarkdownファイル内のtsコードブロックの型チェックがサポートされました structuredCloneが実装されました initializeリクエスト発生時にinitializationOptions.cacheを指定することで、deno lspがDENO_DIRとして認識するディレクトリを指定できるようになりました deno lspでリファクタリングコードアクションがサポートされました —evalオプションがサポートされ、REPL起動時に指定したコードを実行できるようになりました REPLがコードに含まれるexport宣言を無視されるようになりました Import mapsでWindows形式のファイルパスがサポートされました deno docコマンドで不正なURLを指定するとプロセスがパニックする問題が修正されました Deno 1.13.0 がリリースされたので新機能や変更点の紹介 https://deno.com/blog/v1.13 deno_std v0.104.0 deno_stdのv0.104.0がリリースされました。
+新機能としてcryptoモジュールの追加やcollectionsモジュールのさらなる拡張などが行われています。
+また、assertThrows/assertThrowsAsyncのシグネチャの変更やassertThrowsAsyncの非推奨化も実施されています。
+変更点:
+標準のCrypto/SubtleCryptoを拡張することを目的としてcryptoモジュールが追加されました collections: deepMerge, mapNotNullish, findLastIndex, sumOf, associateBy, 及びsortBy関数が実装されました testing: assertThrowsの戻り値がErrorからvoidに変更されました testing: assertThrowsAsyncの戻り値がPromise&amp;lt;Error&amp;gt;からPromise&amp;lt;void&amp;gt;に変更されました testing: assertRejectsが追加され、代わりにassertThrowsAsyncが非推奨化されました http/file_server: If-Modified-Sinceヘッダに応じて304を返却するようになりました node: assert/strict, path/posix, path/win32, fs/promises, stream/promises, timers/promises, util/types, 及びperf_hooksモジュールが追加されました async: deadlineに渡したPromiseがすでにrejectされていた場合、プロセスがクラッシュする問題が修正されました Deno標準ライブラリ0.</description></item><item><title>2021/08/02〜2021/08/08の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/08/08.html</link><pubDate>Sun, 08 Aug 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/08/08.html</guid><description>deno-sqlite v3.0.0がリリース deno-sqliteのv3.0.0がリリースされました。
+このリリースではRowsタイプへの破壊的変更やパフォーマンスの向上などが実施されています。
+変更点:
+DB#queryメソッドで型パラメータがサポートされました DB#queryメソッドの戻り値がRowsタイプからRowタイプの配列へ変更されました DB#prepareQueryメソッドで型パラメータがサポートされました DB#prepareQueryの戻り値であるPreparedQueryタイプが大幅に変更され、より詳細にクエリの実行方法を制御できるようになりました v3.0.0 v2.5.0 DB#queryEntriesメソッドが追加され、問い合わせ結果をオブジェクトの配列として取得できるようになりました localtime修飾子がローカルのタイムゾーンを参照するように修正されました https://github.com/dyedgreen/deno-sqlite/releases/tag/v3.0.0
+Velociraptor v1.1.0がリリース DenoのタスクランナであるVelociraptorのv1.1.0がリリースされました。
+変更点:
+スクリプトを実行する際に--option=value形式の引数が—-option value形式に正規化されてしまう問題が修正されました vrコマンドを引数なしで実行した際に、Composite scriptsのdescプロパティで定義した説明文が表示されるように修正されました https://github.com/jurassiscripts/velociraptor/releases/tag/1.1.0
+deno_sdl2 SDL2へのバインディング
+まだ開発途中のようですが、Denoのプラグインシステム(Deno v1.13.0にて削除される予定です)に依存せず、Canvas互換のAPIを介してRustで実装されたTCPサーバとやり取りしているようです。
+https://github.com/littledivy/deno_sdl2</description></item><item><title>2021/07/26〜2021/08/01の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/08/01.html</link><pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/08/01.html</guid><description>Deno v1.12.2がリリース Deno v1.12.2がリリースされました。
+今回のリリースでは、主にバグ修正をメインに実施されています。
+変更点:
+deno lspのdeno/virtualTextDocumentメソッドでdeno:/status.mdを表示する際に、Workspace Settingsセクションが表示されるようになりました --inspectオプションで表示されたデバッグ用URLに対してHTTPなどの非WebSocketリクエストを送信すると、Denoがクラッシュする問題が修正されました Deno.connectTls及びDeno.startTlsで--certオプションで指定した証明書が使用されるように修正されました deno infoコマンドでX-TypeScript-Typesヘッダなどで読み込まれたTypeScriptファイルの情報も表示されるようになりました deno testコマンドの引数に指定したモジュールが、メインモジュールとして読まれる問題が修正されました(import.meta.mainがtrueに設定されてしまう) GCのタイミングで不要になったResponseオブジェクトのボディに紐づくリソースが開放されるようになりました Deno.upgradeWebSocketで、リクエストのConnectionヘッダにカンマ区切りで複数の値が含まれていた場合も、適切に動作するように修正されました Deno.upgradeWebSocketがリクエストのConnectionヘッダの大文字・小文字を区別しなくなりました deno lspでX-TypeScript-Typesによって型定義が提供されるモジュールとimport typeやexport typeなどを併用していると、ホバーなどがうまく機能しなくなる問題が修正されました deno lspでImport mapsファイルが更新された際に、依存関係や診断内容が再計算されない問題などが修正されました https://github.com/denoland/deno/releases/tag/v1.12.2
+deno_std v0.103.0がリリース deno_std v0.103.0がリリースされました
+変更点:
+async/deferred: Deferredオブジェクトにstateプロパティが追加され、Promiseの現在の状態を問い合わせられるようになりました http/file_server: ETagとIf-None-Matchヘッダへのサポートが追加されました http/file_server: Rangeヘッダがサポートされました encoding/base64url: 不正な形式のbase64url文字列が渡された際に、TypeErrorを投げるように修正されました encoding/toml: TOMLパーサが書き直され、ネストされたテーブルなどが適切に取り扱われるように修正されました encoding/yaml: parseAll関数の型定義が改善されました testing/asserts: assertThrowsAsyncのエラーメッセージで実際に投げられたエラーではなく、常にErrorクラスが表示される問題が修正されました testing/asserts: assertEqualsがクラスの違いを考慮するように修正されました https://github.com/denoland/deno_std/releases/tag/0.103.0
+deno-sqlite v2.5.0がリリース deno-sqliteのv2.5.0がリリースされました。
+変更点:
+DBクラスのコンストラクタにoptionsパラメータが追加され、データベースを開く際の挙動を詳細に制御できるようになりました PreparedQueryタイプにcolumnsメソッドが定義されました Deno.fdatasyncSyncを使って、SQLiteがファイルのデータを適切にディスクに同期できるようになりました https://github.com/dyedgreen/deno-sqlite/releases/tag/v2.5.0
+depcheck depcheckはソースコード中の未使用の依存関係を検出するためのDenoモジュールです
+https://github.com/ebebbington/depcheck
+deno-github-contributions-api deno-github-contributions-apiは、Deno Deployで動作するGitHub上でのコントリビューション数を取得するためのAPIです。</description></item><item><title>2021/07/19〜2021/07/25の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/07/25.html</link><pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/07/25.html</guid><description>Deno v1.12.1がリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。
+変更点:
+crypto.getRandomValuesでBigInt64ArrayとBigUint64Arrayがサポートされました ネイティブHTTPサーバで、Cookieヘッダの値と名前の組が、セミコロンではなくコンマ区切りで設定されてしまう問題が修正されました FileReader#abort()が現在の読み込み操作のみを中止するように修正されました Array#atやString#atなどの型定義が追加されました https://github.com/denoland/deno/releases/tag/v1.12.1
+deno_std v0.102.0がリリース deno_std v0.102.0がリリースされました。
+新規モジュールとして、std/collectionsが追加されています。
+変更点:
+新しくstd/collectionsモジュールが追加されました encoding/toml: コメントのみを含む行で#の前に空白が含まれていると、それがコメントではなくキーとして解析されてしまう問題が修正されました encoding/toml: クォートや空白などを含むキーが仕様通りに解析されない問題が修正されました hash: Hash#updateでUint8Array以外のTypedArrayが適切に取り扱われない問題が修正されました https://github.com/denoland/deno_std/releases/tag/0.102.0 Deno標準ライブラリ0.102.0で追加されたcollectionsの紹介 Oak v8.0.0がリリース Oak v8.0.0がリリースされました。
+このリリースには破壊的変更が含まれます。
+変更点:
+Deno v1.12.0で実装されたDeno.upgradeWebSocket()ベースのWebSocketサポートが追加されました それに伴い、Context.#upgradeが標準のWebSocketオブジェクトを返却するように変更されています (破壊的変更) Applicationオブジェクトを作成する際に、contextStateオプションによってContext.stateが作成される際の挙動を制御できるようになりました。 Context#sendでcontentTypesオプションがサポートされ、Content-Typeヘッダの内容をカスタマイズできるようになりました。 デフォルトで、補足されなかった例外が標準エラーに出力されるようになりました (この挙動はlogErrorsオプションにfalseを設定することで無効化できます) https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba
+deno_mongo v0.24.0がリリース DenoのMongoDBクライアントであるdeno_mongoのv0.24.0がリリースされました。
+変更点:
+Collection#dropIndexesが実装されました Collection#findAndModifyが実装されました https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0</description></item><item><title>2021/07/12〜2021/07/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/07/18.html</link><pubDate>Sun, 18 Jul 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/07/18.html</guid><description>Deno v1.12.0のリリース Deno v1.12.0がリリースされました。
+変更点:
+MessageChannelとMessagePortがサポートされました Deno名前空間のObject.freezeによる凍結が解除され、configurableになりました WebAssembly.instantiateStreamingがサポートされました tsconfig.jsonやDeno.emitでtypesオプションがサポートされました /// &amp;lt;reference types=&amp;quot;...&amp;quot; /&amp;gt;がサポートされました SharedArrayBufferのworker間での共有がサポートされました SubtleCrypto.generateKeyとSubtleCrypto.sign、SubtleCrypto.verifyがサポートされました Deno.createHttpClientでproxyオプションがサポートされました ネイティブHTTPサーバでWebSocketがサポートされました (Deno.upgradeWebSocket) Denoのデバッグ機能(--inspect/--inspect-brk)が改善され、コンソールへの出力がDevToolsとターミナルの両方に出力されるようになりました deno lspのtextDocument/hoverメソッドで依存モジュールの情報を表示できるようになりました REPLの補完の挙動が改善されました REPLでimport宣言がサポートされました REPLでTypeScriptがサポートされました REPLなどでEventやRequestなどのクラスのprototypeを評価しようとすると、プロセスがクラッシュする問題が修正されました deno testで--shuffleと--fail-fast=&amp;lt;N&amp;gt;オプションがサポートされました DedicatedWorkerGlobalScopeのイベントハンドラが仕様通りに動作するように修正されました Deno.ppidとDeno.memoryUsageがstableになりました console.tableの出力が改善されました fetch APIでユーザが指定したHOSTヘッダが無視されるようになりました fetch APIでOPTIONSリクエストを送信したときに、レスポンスボディが設定されるように修正されました performance APIのWeb標準との互換性が向上しました SignalStream#disposeを呼んだ後にもSignalStream#thenで登録したコールバックが呼ばれてしまう問題が修正されました Deno.copyが非推奨化されました 循環依存の関係にある複数のモジュールを平行で動的importすると、プロセスがクラッシュする問題が修正されました https://github.com/denoland/deno/releases/tag/v1.12.0 https://deno.com/blog/v1.12 Deno 1.12.0 がリリースされたので新機能や変更点の紹介 deno_std v0.101.0のリリース deno_stdのv0.101.0がリリースされました。
+このリリースにはいくつかの破壊的変更が含まれています。
+変更点:
+encoding/hex: encodedLen, encodeToString, decodedLen, decodeStringが削除され、errInvalidByteとerrLengthが非公開になりました (破壊的変更) mime/multipart: MultipartReader#readFormの戻り値であるMultipartFormDataの各メソッドが配列を返却するように変更されました。それに合わせて、fileとvalueメソッドがそれぞれfilesとvaluesにリネームされています (破壊的変更) uuid/v4: generate関数が非推奨化されました (Web Crypto APIが実装されたため) uuid/v5: Web Crypto APIの実装に合わせ、generate関数のシグネチャが変更されました (破壊的変更) async: deadline関数とdebounce関数が追加されました encoding/toml: 不適切な形式の文字列が適切に取り扱われるよう修正されました encoding/toml: stringifyで複数の型が混在した配列が適切にシリアライズされない問題が修正されました encoding/toml: 不適切な空白文字が含まれていた際に、例外が投げられるように修正されました hash: BLAKE3ハッシュ関数がサポートされました http/cookie: Domain属性に不適切な形式の値が設定されていないかチェックされるようになりました http/cookie: deleteCookieでPath属性とDomain属性の指定がサポートされました http/cookie: setCookieでmaxAgeオプションに0を指定するとエラーが発生する問題が修正されました io/bufio: readLines関数で、EOFに達した際に余分な空文字列がyieldされる問題が修正されました io/util: Deno v1.</description></item><item><title>2021/07/05〜2021/07/11の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/07/11.html</link><pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/07/11.html</guid><description>Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を変更することが検討されています。
+https://github.com/denoland/deno/issues/11340 このissueでは、以下のような方向性が示されています。
+DenoのTypeScriptによる型チェックをデフォルトで無効化したい (現状の--no-checkオプションを付けた際の挙動をデフォルトにしたい) TypeScriptによる型チェックは、--checkオプションを指定したときのみ実施する --no-checkオプションは非推奨化する より詳細な内容や議論などについては上記issueを参照いただければと思います。
+https://github.com/denoland/deno/issues/11340
+Bundler v0.8.0 DenoのフロントエンドビルドツールであるBundlerのv0.8.0がリリースされました。
+このリリースでは、Devサーバのサポートが追加されています。
+https://github.com/timreichen/Bundler/releases/tag/0.8.0
+deno-redis v0.23.0がリリース deno-redisのv0.23.0がリリースされました。
+このリリースでは、いくつかの破壊的変更が実施されています。
+Redis Clusterのクライアント実装が追加されました。 Redis.connectionプロパティが削除されました。(破壊的変更) RedisImplクラスが非公開になり、代わりにcreate関数が追加されました。 (破壊的変更) https://github.com/denodrivers/redis/releases/tag/v0.23.0
+xhr xhrはDenoとDeno Deploy向けのXMLHttpRequestのポリフィルです。
+以下のドキュメントにて、このモジュールを利用してDeno Deploy上でFirebase SDKを使用する方法が紹介されています。
+https://deno.com/deploy/docs/tutorial-firebase https://github.com/kitsonk/xhr https://deno.com/deploy/docs/tutorial-firebase</description></item><item><title>2021/06/28〜2021/07/04の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/07/04.html</link><pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/07/04.html</guid><description>Deno v1.11.3のリリース Denoのv1.11.3がリリースされました。
+このリリースではバグ修正などを中心に実施されています。
+変更点:
+Deno.emit()でグラフエラーの内容がdiagnostics配列に含まれるようになりました。 存在しないファイルをimportしようとした際などに、その内容がdiagnostics配列で報告されるようになりました。 https://github.com/denoland/deno/security/advisories/GHSA-xpwj-7v8q-mcgj の修正により、&amp;ndash;allow-netパーミッションなしでDeno.emitを実行すると、リモート依存がバンドルに含まれないように修正されたことによる影響のようです console.logなどの呼び出し時にエラーが発生すると、denoプロセスがパニックする問題が修正されました fetch APIでユーザが指定したHostヘッダが無視されるように修正されました。 SignalStream#disposeを呼んだあとにもSignalStream#thenに渡したコールバックが呼ばれてしまう問題が修正されました。 SignalStreamはDeno.signal()で返却されるオブジェクトです。 Deno.signal(s)がdenoプロセスを終了しないようブロックしてしまう問題が修正されました。 localstorageの最大容量が5MBから10MBに拡大されました。 REPLなどでEvent.prototypeを評価しようとすると例外が発生する問題が修正されました。 Eventの読み込み専用プロパティへ書き込みができなくなりました。(https://developer.mozilla.org/en-US/docs/Web/API/Event) deno lspコマンドから--parent-pidフラグが削除されました。 https://github.com/denoland/deno/releases/tag/v1.11.3
+Denoの2021年Q3ロードマップが公開 Denoの2021年Q3のロードマップが公開されました。
+今後、Denoの本体やdeno lspなどで実施される予定の変更内容が公開されています。
+https://github.com/denoland/deno/issues/11168
+deno_std v0.100.0のリリース deno_stdのv0.100.0がリリースされました。
+変更点:
+testing: assertEqualsなどの関数で文字列どうしを比較した際に、差分が大幅に見やすくなりました。 testing: assertExists関数のシグネチャがType Guardを使用して宣言されるように修正されました。 node/events: EventEmitter#addListenerがNode.jsと同様の挙動をするように修正されました。 path/glob: tsconfig.jsonで&amp;quot;noImplicitAny&amp;quot;: falseを指定した際にタイプエラーが発生する問題が修正されました。 https://github.com/denoland/deno_std/pull/987
+Oak v7.7.0 DenoのWebフレームワークであるOakのv7.7.0がリリースされました。
+主な変更点:
+Context#sendEventsでkeepAliveオプションが追加され、Server-Sent Eventsサーバでコネクションのポーリングが行えるようになりました。 proxyミドルウェアでクエリパラメータが送信されない問題が修正されました。 https://github.com/oakserver/oak/commit/5403ac08ddf295cda388ac4f1f12f630d2e77a2f
+Trex v1.8.0 Denoのパッケージ管理ツールであるTrexのv1.8.0がリリースされました。
+このリリースではtrex execコマンドがサポートされ、deno.land/xで公開されているCLIツールをインストールせずに直接実行できるようになりました。</description></item><item><title>2021/06/21〜2021/06/27の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/06/27.html</link><pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/06/27.html</guid><description>Deno v1.11.2がリリースされました Deno v1.11.2がリリースされました。
+このリリースでは、deno lspへの機能追加やWeb標準との互換性の向上などが実施されています。
+変更点:
+deno lspでリントエラーを無視するためのクイックフィックスアクションが実装されました。 deno lspで文字列やコメント中に現れた識別子がリネームされないように修正されました。 Deno.emit()のmoduleオプションで&amp;quot;es2020&amp;quot;がサポートされました。 Console, URL, URLSearchParams, 及びWebsocketオブジェクトがWPTにパスするように修正されました。 fetchでHEADまたはOPTIONSリクエストを送信する際はレスポンスボディが空になるように修正されました。 WorkerがURLオブジェクトを受け付けるようになりました。 https://github.com/denoland/deno/releases/tag/v1.11.2
+Deno DeployのBeta 1がリリースされました Deno DeployのBeta 1がリリースされました。
+主な変更点:
+BroadcastChannelを使用したエッジワーカー間での通信がサポートされました。(https://deno.com/deploy/docs/runtime-broadcast-channel) カスタムのTLS証明書のサポート https://deno.com/blog/deploy-beta1
+fresh - Deno Deployで動作するWebフレームワーク freshというDeno Deploy上で動作するPreactをベースにしたWebフレームワークが公開されました。
+特徴:
+設定が不要 Next.jsライクなファイルシステムベースのルーティングやAPI Routesなどをサポートしています。 ページのレンダリングはエッジワーカー上で実行されるため、事前のビルドステップが必要ありません。 https://github.com/lucacasonato/fresh
+xml - Denoで動作するXMLモジュール xmlはDenoで動作するXMLモジュールです。
+XMLドキュメントのパースやJavaScriptオブジェクトからXMLドキュメントへの変換などがサポートされています。
+https://github.com/lowlighter/xml</description></item><item><title>2021/06/14〜2021/06/20の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/06/20.html</link><pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/06/20.html</guid><description>Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。
+このリリースでは、バグ修正などを中心に行われています。
+主な変更点:
+Deno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。 https://github.com/denoland/deno/releases/tag/v1.11.1
+deno_std v0.99.0がリリースされました deno_stdのv0.99.0がリリースされました。
+変更点:
+mime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました) https://github.com/denoland/deno_std/releases/tag/0.99.0
+Oak v7.6.0がリリースされました Oakのv7.6.0がリリースされました。
+主な変更点:
+ユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。 https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e
+Deno internals - how modern JavaScript runtime is built Node.js Wroclaw #10でのBartek Iwańczuk氏の公演がYoutubeで公開されました。
+Denoランタイムの内部構造などついて解説されています。
+https://www.youtube.com/watch?v=LoknuwupOIE</description></item><item><title>2021/06/07〜2021/06/13の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/06/13.html</link><pubDate>Sun, 13 Jun 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/06/13.html</guid><description>Deno v1.11.0がリリースされました Deno v1.11.0がリリースされました。
+このリリースでは、deno compileやdeno lspへの新機能の追加などが実施されています。
+TypeScriptがv4.3にアップグレードされました Crypto.randomUUID()が実装されました SubtleCrypto.digest()が実装されました fetch()でabortがサポートされました TextDecoderStreamとTextEncoderStreamがサポートされました。 Deno.watchFsがFsWatcherインターフェースを返却されるように修正されました FsWatcher.returnメソッドはv2.0にて削除される予定のようです deno infoコマンドでlocalStorageの保存先が表示されるようになりました deno lintがstableという扱いになりました deno compileでdata:URLのダイナミックimportがサポートされました deno compileでDeno.emit()がサポートされました deno lspのCodeLensでテストコードの実行がサポートされました deno lspでモジュールレジストリの自動検出が実装されました BroadcastChannelが実装されました(unstable) Deno 1.11 Release Notes Deno 1.11.0 がリリースされたので新機能や変更点の紹介 deno_std v0.98.0がリリースされました deno_stdのv0.98.0がリリースされました。
+変更点:
+async: async/teeモジュールが追加されました async/mux: MuxAsyncIterator.addでAsyncIterableがサポートされました io/bufio: readLinesとreadStringDelimにオプションが追加され、TextDecoderの挙動を詳細に制御できるようになりました encoding/binary: readExact関数が追加されました encoding/binary: getNBytes関数において、初回のDeno.Reader.readの呼び出しで指定したバイト数未満のデータしか読めなかった際に、即座に例外が投げられる問題が修正されました encoding/binary: varnumなどの関数でUint8Array.byteOffsetが無視される問題が修正されました node: perf_hooksモジュールが追加されました node/events: EventEmitter#once/getMaxListeners/setMaxListenersがNode.jsと同じ挙動をするように修正されました testing/asserts: WeakMapやWeakSetなどのオブジェクト同士を比較しようとすると、例外が投げられるように変更されました https://github.com/denoland/deno_std/releases/tag/0.98.0
+denoland/deno_docker 今まで、DenoのDockerイメージはAndy Hayden氏によって個人でメンテナンスされていました。</description></item><item><title>2021/06/01〜2021/06/06の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/06/06.html</link><pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/06/06.html</guid><description>Deno v1.10.3がリリース Deno v1.10.3がリリースされました。
+deno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。
+変更点:
+deno lspで// @deno-types=&amp;quot;&amp;quot; と /// &amp;lt;references types=&amp;quot;&amp;quot; /&amp;gt;に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=&amp;lt;dir&amp;gt;で&amp;lt;dir&amp;gt;が存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました wpt.deno.land wpt.deno.landというWebページが公開されました。
+このページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。
+https://wpt.deno.land/ https://github.com/denoland/wpt.deno.land twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。
+引数として与えられたHTMLファイルの内容を元に、twindを使用してスタイルシートが生成されます。
+https://github.com/kt3k/twd https://github.com/tw-in-js/twind Eta Etaは軽量性や速度を重視したテンプレートエンジンです。
+レイアウトによるテンプレートの再利用や、プラグインによるレンダリングの挙動のカスタマイズなどがサポートされています。
+また、Denoだけでなく、ブラウザやNode.jsもサポートされています。
+https://github.com/eta-dev/eta https://eta.js.org/</description></item><item><title>2021/05/24〜2021/05/30の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/05/30.html</link><pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/05/30.html</guid><description>Sinco v2.0.0のリリース ブラウザのオートメーション・テスト用モジュールであるSincoのv2.0.0がリリースされました。
+変更点:
+Firefoxがサポートされました。 使用するブラウザの実行可能ファイルへのパスを指定できるようになりました(binaryPathオプション) https://github.com/drashland/sinco/releases/tag/v2.0.0
+Velociraptor v1.0.0のリリース Velociraptor v1.0.0がリリースされました。
+変更点:
+Git フックのサポートが追加されました。 vr upgradeコマンドでアップグレードできるようになりました。 Windows環境ではデフォルトでPowerShellが使用されるようになりました。 https://github.com/jurassiscripts/velociraptor/releases/tag/1.0.0
+zeno.zsh fzfを使用した入力補完やスニペット展開などの機能を提供するzshプラグインが公開されました。
+DenoとTypeScriptで実装されているようです。
+詳しくは、Deno + TypeScriptでzshプラグインを実装して最高になったの記事で解説されています。
+https://github.com/yuki-yano/zeno.zsh https://zenn.dev/yano/articles/zsh_plugin_from_deno Cliffy v0.19.0のリリース DenoのCLIフレームワークであるCliffy v0.19.0がリリースされました。
+変更点:
+keycodeモジュールでKeyEvent型がKeyCodeにリネームされました。 commandモジュールにEnumTypeが追加されました。 commandモジュールで、upgradeコマンドの実装を容易にするためのUpgradeCommandクラスが追加されました。 commandモジュールでinteger型がサポートされました。 keypressモジュールが追加されました。 https://github.com/c4spar/deno-cliffy/releases/tag/v0.19.0
+deploy_dir deploy_dirという静的なWebサイトをDeno DeployへデプロイするためのCLIツールが公開されました。
+指定されたディレクトリの内容を読み込み、Deno Deployへ公開できる形式へパッケージングしてくれます。
+https://github.com/kt3k/deploy_dir</description></item><item><title>2021/05/17〜2021/05/23の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/05/23.html</link><pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/05/23.html</guid><description>Deno v1.10.2がリリース Denoのv1.10.2がリリースされました。
+このリリースではCVE-2021-32619へのセキュリティ上の修正が含まれるため、できるだけ早くこのバージョンへアップグレードすることを推奨されています。
+その他の変更点:
+.vscode/settings.jsonなどでdeno.configに相対パスが設定されていた場合、deno lspで適切に設定が読まれない問題が修正されました。 TypeScriptファイルをimportする際は、X-TypeScript-Typesヘッダが無視されるようになりました。 https://github.com/denoland/deno/releases/tag/v1.10.2 https://twitter.com/deno_land/status/1394353166863454213 deno_std v0.97.0がリリース io/buffer: Deno Deployでも型エラーなしで使えるようになりました。 io: types.d.tsが追加されました。 io/bufio: readDelimやreadStringDelimでデリミタが内部で複数のチャンクにまたがった際に、誤った結果を返す問題が修正されました。 node/events: EventEmitter#onなどにリスナとして関数以外の値を渡すと、エラーが発生するようになりました。 testing: assertObjectMatchで配列が適切に取り扱われるようになりました。 https://github.com/denoland/deno_std/releases/tag/0.97.0
+denoland/setup-deno v1.0.0がリリース denoland/setup-denoはGitHub ActionsからDenoを利用するためのアクションです。
+v1.0.0がリリースされたため、すでにdenolib/setup-denoをお使いの場合は、そちらから移行するとよさそうです。
+https://github.com/denoland/setup-deno/releases/tag/v1.0.0
+Flat Data Flat Dataは、HTTPエンドポイントまたはSQLクエリからデータを取得し、GitHubリポジトリに格納するためのGitHubアクションです。
+Denoを使用したJavaScript/TypeScriptファイルの実行がサポートされており、ダウンロードされたデータを変換することができます。
+また、GitHubリポジトリに格納されたデータを可視化するために、Flat Viewerというツールも提供されています。
+https://github.com/githubocto/flat Flat Dataについて Flat Viewer packup - Parcelライクなビルドツール packupというParcelビルドツールが公開されました。
+Parcelに影響を受けているようで、以下のような特徴があります。
+設定なしでアプリケーションコードをバンドルできる TypeScriptをサポート esbuildを使用した高速なビルド https://github.com/kt3k/packup
+luath v0.6.0/v0.7.0/v0.8.0がリリース Denoで実装されたフロントエンドビルドツールであるluathのv0.6.0/v0.7.0/v0.8.0がリリースされました。
+変更点:</description></item><item><title>2021/05/10〜2021/05/16の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/05/16.html</link><pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/05/16.html</guid><description>Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。
+このリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。
+変更点:
+deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が&amp;quot;esm&amp;quot; | &amp;quot;iife&amp;quot;から&amp;quot;module&amp;quot; | &amp;quot;classic&amp;quot;に変更された 公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。
+変更点:
+http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった https://github.</description></item><item><title>2021/05/03〜2021/05/09の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/05/09.html</link><pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/05/09.html</guid><description>alosaur v0.31.0がリリース DenoのWebフレームワークであるalosaurのv0.31.0がリリースされました。
+変更点:
+ContextがHttpContextにリネームされました Microserviceクラスが実装されました (https://github.com/alosaur/alosaur/tree/master/examples/microservice) OAuthサポートが追加されました https://github.com/alosaur/alosaur/releases/tag/v0.31.0
+alosaur-lite alosaur-liteはDenoのWebフレームワークであるalosaurの軽量版です。(gzip圧縮込みで2.6KB)
+Deno Deployでの使用を想定されているようです。
+https://github.com/alosaur/alosaur-lite
+Oak v7.4.0がリリース Oakのv7.4.0がリリースされました。
+主な変更点:
+send()でRange及びIf-RangeHTTPヘッダのサポートが追加されました。 ルーターをネストできるようになりました。(#275) https://github.com/oakserver/oak/commit/eefd2fdb4a3fc6dfbb52fb1c6d74ff3de4b1b85b
+Effective Deno Denoを有効に活用するためのノウハウをまとめた本をZennで公開しました。
+https://zenn.dev/uki00a/books/effective-deno</description></item><item><title>2021/04/26〜2021/05/02の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/05/02.html</link><pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/05/02.html</guid><description>gql - DenoのGraphQLサーバモジュール gqlはDenoでGraphQLサーバを実装するためのモジュールです。以下のライブラリ・フレームワークがサポートされています。
+std/http Oak Abc Opine deno-libs/tinyhttp https://github.com/deno-libs/gql
+deno-libs/tinyhttp - tinyhttpのDenoポート deno-libs/tinyhttpはNode.jsのtinyhttpパッケージのDenoポートです。
+先述したgqlモジュールでもサポートされています。
+https://github.com/deno-libs/tinyhttp
+crux.land Deno Deployで動作するDenoのスクリプトレジストリ。
+20KB未満の軽量なスクリプトをホストすることを目的としているようです。
+https://crux.land/
+terraform-deploy-provider - Deno Deploy向けのTerraformプロパイダ terraform-deploy-providerはDeno Deploy向けのTerraformプロパイダです。
+https://github.com/wperron/terraform-deploy-provider</description></item><item><title>2021/04/19〜2021/04/25の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/04/25.html</link><pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/04/25.html</guid><description>Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。
+v1.9.1の変更点:
+deno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された v1.9.2の変更点:
+WebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2 deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。
+v0.94.0の変更点:
+node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された v0.95.0の変更点:
+node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0 サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。
+変更点:
+内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された https://github.</description></item><item><title>2021/04/12〜2021/04/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/04/18.html</link><pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/04/18.html</guid><description>Deno本体の最新情報 Deno v1.9.0がリリース Deno v1.9.0がリリースされました。このリリースでは、様々な機能の追加やパフォーマンスチューニングなどが実施されています。
+また、magurotunaさんによるDeno v1.9.0の解説記事が公開されています。
+変更点:
+Deno本体にネイティブのHTTP/2サーバの実装が組み込まれた Deno内部のJavaScriptとRust間のメッセージングの仕組みが改善され、最大で98%程のパフォーマンス向上が実現された BLOB URLやData URLがサポートされた deno lspのimport補完が向上した deno lspでtextDocument/foldingRange及びtextDocument/selectionRangeが実装された --allow-readや--allow-netなどと同様、--allow-envや--allow-runで許可リストを指定できるようになった deno runコマンドで--promptオプションがサポートされ、対話的に権限を与えられるようになった Deno.fstat(Sync)/ftruncate(Sync)が安定化された Deno.Fileにstat(Sync)/truncate(Sync)メソッドが追加された Deno.Buffer/readAll(Sync)/writeAll(Sync)/iter(Sync)が非推奨化された これらのAPIはv2.0で削除される予定です これらのAPIはdeno_std/ioに移動されています Deno.memoryUsage()が実装された(unstable) TypeScriptのuseDefineForClassFieldsオプションが有効化された https://deno.com/blog/v1.9 https://github.com/denoland/deno/releases/tag/v1.9.0 https://zenn.dev/magurotuna/articles/deno-release-note- deno_std v0.93.0がリリース Deno v1.9.0のリリースに合わせて、deno_std v0.93.0がリリースされました。
+変更点:
+io/util: Deno v1.9.0でのDeno.iterの非推奨化に合わせて、io/utilにiterが追加された node/fs: fdatasync/fsync/ftuncate/futimesが実装された https://github.com/denoland/deno_std/pull/850
+サードパーティモジュールなどの最新情報 Oak v7.0.0及びv7.1.0のリリース DenoのWebフレームワークであるOakのv7.0.0及びv7.1.0がリリースされました。
+主な変更点:
+Deno v1.9で実装されたネイティブHTTPサーバがサポートされた Deno Deployのサポート context.stateがapp.stateから深いコピーが行われるようになった ETagサポートが追加された https://github.com/oakserver/oak/commit/2a68eda28cb93bfb099a5f27dfad728f2183e0df https://github.com/oakserver/oak/commit/4ae51e28e04490cc639e887659b8626c05c9b0bb Servest v1.</description></item><item><title>2021/04/05〜2021/04/11の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/04/11.html</link><pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/04/11.html</guid><description>Deno本体の最新情報 Deno v1.9.0のリリースについて 今週は特にリリースはありませんが、2021/4/13にv1.9.0のリリースが予定されています。
+また、v1.9.0のリリースに向けて、以下の機能がmainブランチにマージされています:
+ネイティブHTTPバインディング BLOB URLのサポート fetch APIでのdata URLのサポート https://github.com/denoland/deno/blob/v1.8.3/docs/contributing/release_schedule.md
+サードパーティモジュールなどの最新情報 denoland/setup-deno denoland/setup-denoというGitHub ActionsでDenoを利用するためのアクションがdenoland Organizationにて公開されました。
+https://github.com/denoland/setup-deno denolib/setup-deno - denoland/setup-denoと同様、GitHub ActionsからDenoを利用するためのアクション deno-postgres v0.9.0及びv0.10.0がリリース deno-postgresのv0.9.0及びv0.10.0がリリースされました。
+これらのリリースでは、以下の機能が追加されています:
+scram-sha-256認証のサポート Client#createTransactionが実装され、トランザクションがより扱いやすくなった https://github.com/denodrivers/postgres/releases/tag/v0.9.0 https://github.com/denodrivers/postgres/releases/tag/v0.10.0 rollup-plugin-deno rollup-plugin-denoは、RollupでDeno向けのバンドルを生成するためのRollupプラグインです。
+Node.jsのビルトインモジュールの読み込みをdeno_std/nodeに置換することで、それらに依存したモジュールをDenoで実行できるようにしてくれます。
+https://github.com/egoist/rollup-plugin-deno</description></item><item><title>2021/03/29〜2021/04/04の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/04/04.html</link><pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/04/04.html</guid><description>Deno本体の最新情報 Deno v1.8.3がリリース Deno v1.8.3がリリースされました。このリリースでは、deno lspへの機能の追加やバグ修正などが行われています。
+変更点:
+deno lspでimportの補完がサポートされた deno lspでtextDocument/selectionRangeが実装された WebSocket#closeですでに閉じているコネクションを再び閉じようとしたときに、例外が投げられないように修正された AbortController.abort()が追加された TypeScriptのlibとしてdom.asynciterableが追加された(Denoのいずれかのバージョンで誤って削除されてしまったようです) https://github.com/denoland/deno/releases/tag/v1.8.3
+deno_std v0.92.0がリリース deno_stdのv0.92.0がリリースされました。
+変更点:
+io/bufio: Deno Deployに対応した node/fs: symlinkとsymlinkSyncが実装された node/util: format関数が実装された io: io/buffer及びio/utilが追加された (Deno v2.0に向けて、Deno.Buffer/readAll/readAllSync/writeAll/writeAllSyncをDeno名前空間からstdへ移行することが目的のようです) https://github.com/denoland/deno_std/releases/tag/0.92.0
+Deno Deployが公開された Deno Deployが公開されました。
+Deno DeployはCDN Edge上でTypeScriptやWebAssemblyなどを動作させることができるサービスです。Cloudflare WorkersのAPIと互換性があります。
+https://deno.com/deploy/docs サードパーティモジュールなどの最新情報 Snel - DenoでSvelteアプリを開発するためのツール SnelはDenoでSvelteアプリを開発するためのツール/フレームワークです。
+.svelteファイルをJavaScriptファイルへコンパイルしたり、HMRを搭載したdevサーバなどが提供されています。
+将来的にはSSRやSSGなどの機能も提供される予定のようです。
+https://github.com/crewdevio/Snel
+Sift - Deno Deployのルーティングライブラリ SiftはDeno Deployのルーティングライブラリです。
+path-to-regexpでサポートされている形式で、ルーティングを定義することができます。
+他にも、静的ファイルの配信やJSXのレンダリングなどがサポートされています。
+https://github.com/satyarohith/sift
+deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用することのできるDOM APIの実装を提供しています。</description></item><item><title>2021/03/22〜2021/03/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/28.html</link><pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/28.html</guid><description>Deno本体の最新情報 Deno v1.8.2がリリース Deno v1.8.2がリリースされました。
+このリリースでは、バグ修正などを中心に実施されています。
+変更点:
+Deno.createHttpClientを使用した際に、User-Agentヘッダが設定されない問題が修正された deno fmtでmarkdownファイルのスペースなどが適切にフォーマットされない問題が修正された deno lspでエディタ以外でファイルが編集されていると、&amp;ldquo;The current snapshot version is missing.&amp;ldquo;エラーが発生する問題が修正された deno lspでファイルの診断(diagnostics)が固有のスレッドで実行されるようになった https://github.com/denoland/deno/releases/tag/v1.8.2
+deno_std v0.91.0がリリース deno_std v0.91.0がリリースされました。
+主な変更点:
+encoding/yaml: EXTENDED_SCHEMAが追加され、Yamlファイル内でJSの関数や正規表現などを使用できるようになった io/streams: readerFromIterable()が追加された node/fs: utimes/utimesSyncが実装された など
+https://github.com/denoland/deno_std/releases/tag/0.91.0
+status.deno.landが公開された status.deno.landが公開されました。
+このサイトでは、Denoのモジュールレジストリなどの運用状況を確認することができます。
+https://status.deno.land
+サードパーティモジュールなどの最新情報 swdev - Service WorkerベースのNo bundleビルドツール swdevという、Service WorkerベースのNo bundleビルドツールが公開されました。
+以下のようが機能が提供されているようです:
+Service Workerを利用したTypeScriptやSvelteファイルの変換 Deno.watchFs()ベースのCache Busting Rollupベースのプロダクションビルド https://github.com/mizchi/swdev
+deno-sqlite v2.4.0がリリース deno-sqlite v2.4.0がリリースされました。
+このリリースでは、以下のような変更が加わっています:
+SQLiteのv3.35.0への更新 DB.</description></item><item><title>2021/03/15〜2021/03/21の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/21.html</link><pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/21.html</guid><description>サードパーティモジュールなどの最新情報 luath - Vite/WMRライクなフロントエンドビルドツール luathというフロントエンド開発用のビルドツールが公開されました。
+ViteやWMRに影響を受けており、以下のような機能が提供されています:
+HMR及びオンデマンドビルドなどの機能を提供するdevサーバ Rollup互換のプラグインシステム PostCSSやCSS Modulesのサポート https://github.com/cmorten/luath
+estest - DenoやNode.jsなどで動作するテストフレームワーク estestはDenoやNode.jsなどのES Modulesをサポートする環境で動作するテストフレームワークです。
+将来的にはブラウザもサポートされる予定のようです。
+https://github.com/mikeal/estest
+Servest v1.2.0 DenoのHTTPモジュールであるServestのv1.2.0がリリースされました。
+このリリースでは、Router.options()が実装されています。
+https://github.com/keroxp/servest/releases/tag/v1.2.0
+deno-bin deno-binという、npm/npx経由でDenoを実行するためのツールが公開されました。
+Node.jsプロジェクトにおいてdeno lintやdeno fmtなどを利用する用途などが想定されているようです。
+https://github.com/kt3k/deno-bin
+その他の情報 第10回 Deno勉強会@オンライン 2021/04/03(土)に、第10回 Deno勉強会が開催されます。
+詳しくは以下のページを参照ください:
+https://deno-ja.connpass.com/event/208138/</description></item><item><title>2021/03/08〜2021/03/14の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/14.html</link><pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/14.html</guid><description>Deno本体の最新情報 Deno v1.8.1のリリース Deno v1.8.1がリリースされました。このリリースでは、バグの修正を中心に実施されています。
+主な変更点:
+importsNotUsedAsValuesオプションがswcに渡されるようになりました。 Windows上でdeno compileを実行すると、ターゲットに関わらず常に.exeが拡張子として付与される問題が修正されました。 Worker内でトップレベルawaitが使用されていると、ブロックが発生する問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.8.1
+deno_std v0.90.0のリリース deno_std v0.90.0がリリースされました。
+変更点:
+node: moduleモジュールをrequireで読み込めるようになりました。 node: Node.jsで書かれたスクリプトを実行するためのCLIツールが実装されました。(node/cli.ts) node: assertモジュールの互換性が向上しました。 http: v0.88.0で発生したパフォーマンスに関する問題が修正されました。 https://github.com/denoland/deno_std/commit/3f9714bf05a75303355fddd22cad9794be50e47d
+サードパーティモジュールなどの最新情報 nano nanoは軽量のJSXライブラリです。以下のような機能をサポートしています:
+SSRをサポート(DenoとNode.jsの両方で動作します) 組み込みのRouterやStoreなどを提供 コンポーネントのpre-fetch https://github.com/nanojsx/nano
+depsbot モジュールなどの依存関係の更新状態をチェックをしてくれるGitHub actionです。
+npmにも公開されており、コマンドラインから直接実行することもできます。
+https://github.com/denosaurs/depsbot
+wizard wizardというBDDスタイルのAPIを提供するテストライブラリが公開されました。
+まだ開発が開始したばかりではありますが、Deno.test()をベースにしているため、各種サニタイザやDenoのCLIをそのまま利用することができます。
+https://github.com/deno-libs/wizard
+deno-redis v0.20.0 deno-redis v0.20.0がリリースされました。
+変更点:
+CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下のコマンドがサポートされました: CLIENT UNBLOCK CLIENT UNPAUSE CLIENT INFO CLIENT TRACKINGINFO CLIENT LIST https://github.</description></item><item><title>2021/03/01〜2021/03/07の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/07.html</link><pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/07.html</guid><description>Deno本体の最新情報 Deno v1.8.0がリリースされました Deno v1.8.0がリリースされました。
+magurotunaさんによるDeno v1.8.0のまとめが公開されていますので、よろしければそちらも参照ください。
+主な変更点:
+WebGPUがサポートされました(experimental) ICUサポートが追加されました。 テストカバレッジの収集と集計が個別のコマンドに分離されました(収集はdeno test --coverage、集計はdeno coverageコマンドで行います) lcov形式でのカバレッジの集計がサポートされました。 Import maps/Deno.permissions/Deno.link/Deno.symlink/deno lspが安定化されました(--unstableオプションが不要になった) リモートモジュールをダウンロードする際に、Authorizationヘッダにトークンを設定できるようになりました(DENO_AUTH_TOKENS) テストコード中でDeno.exit()の呼び出しがチェックされるようになりました(exitサニタイザ) Deno.metrics()で収集できる情報がより詳細化されました(--unstableを付与したときのみ) deno fmtでJSONファイルのフォーマットがサポートされました。 Deno.emitでIIFE形式の出力サポートされました。 TypeScriptが4.2にアップグレードされました。 https://github.com/denoland/deno/releases/tag/v1.8.0 https://zenn.dev/magurotuna/articles/deno-release-note-1-8-0 deno_std v0.89.0がリリース Deno v1.8.0のリリースに合わせ、deno_stdのv0.89.0がリリースされました。
+std/nodeへの機能追加などに加え、std/io/streamsモジュールに破壊的変更が加わっています。
+主な変更点:
+io/streams: readableStreamFromAsyncIterator()が削除され、代わりにreadableStreamFromIterable()が追加されました。 node: constantsモジュールが追加されました。 node/crypto: createHash()関数が実装されました。 node: process.hrtime()が実装されました。 node/fs: truncate/truncateSyncが実装されました。 node/util: callbackify/promisify/typesが公開されました。 node/events: require('events').EventEmitterがundefinedになる問題が修正されました。 node: requireでshebangの書かれたJSファイルを読めるようになりました。 node: process.argvがProxyから配列へ変更されました。 https://github.com/denoland/deno_std/pull/780
+サードパーティモジュールなどの最新情報 ts_morphがDenoをサポート ts_morphにDenoのサポートが追加されました。
+ts_morphはTypeScriptのコンパイラAPIのラッパライブラリです。
+https://github.com/dsherret/ts-morph/releases/tag/10.0.1 https://deno.land/x/ts_morph@10.0.1 vnoがVue 3をサポート vnoにVue 3のサポートが追加されました。</description></item><item><title>2021/02/22〜2021/02/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/02/28.html</link><pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/02/28.html</guid><description>Deno本体の最新情報 今週は特にリリースなどは行われていません。
+来週の3月2日にDeno v1.8.0のリリースが予定されています。
+https://github.com/denoland/deno/blob/v1.7.5/docs/contributing/release_schedule.md
+サードパーティモジュールの最新情報 Dashport - Passport.jsライクな認証モジュール DashportはNode.jsのPassport.jsに影響を受けた認証モジュールです。
+Passport.js同様、ストラテジによって柔軟に拡張することができます。
+現時点で公式でサポートされているWebフレームワークはOakのみです。
+https://github.com/oslabs-beta/dashport
+pngs pngsはpngイメージのエンコード/デコード用のDenoモジュールです。
+WebAssemblyを使用して実装されています。
+https://github.com/denosaurs/pngs
+deno_license_checker - ライセンスヘッダーのチェックを行うツール deno_license_checkerは、各ソースファイルにライセンスヘッダーが正しい形式で記述されていることをチェックするツールです。
+設定ファイル(.licenserc.json)によって、挙動を細かくカスタマイズすることが出来ます。
+https://github.com/kt3k/deno_license_checker
+deno-redis v0.19.0がリリース deno-redis v0.19.0がリリースされました。
+変更点:
+クライアントサイドキャッシングがサポートされました subscribe及びpsubscribeメソッドがジェネリクスメソッドに変更されました https://github.com/denodrivers/redis/releases/tag/v0.19.0</description></item><item><title>2021/02/15〜2021/02/21の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/02/21.html</link><pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/02/21.html</guid><description>Deno本体の最新情報 Deno v1.7.5がリリース Deno v1.7.5がリリースされました。 このリリースではバグ修正などを中心に実施されています。
+変更点:
+btoa()関数とEventクラスがWPTにパスするように修正され、Web標準との互換性が増しました。 deno lspでデータURLが適切に扱われない問題などが修正されました。 Dynamic importsで発生した例外をcatchできるようになりました。 https://github.com/denoland/deno/releases/tag/v1.7.5
+deno_std v0.88.0がリリース deno_std v0.88.0がリリースされました。
+変更点:
+std/encoding/utf8モジュールが削除されました。 std/testing/asserts: assertEquals()などの関数で、シンボルが適切に取り扱われない問題が修正されました。 std/node: url及びcryptoモジュールをrequire()で読み込めるようになりました。 std/node: ttyモジュールが部分的に実装されました。 std/node: Conditional exportsが実装されました。 https://github.com/denoland/deno_std/releases/tag/0.88.0 https://github.com/denoland/deno_std/compare/0.87.0...0.88.0 vscode_deno v3.0.0がリリース vscode_deno v3.0.0がリリースされました。
+このリリースにおける主要な変更点として、Canaryバージョン同様、deno lspを使用するように変更されています。
+サードパーティモジュールの最新情報 deno_mysql v2.8.0がリリース deno_mysql v2.8.0がリリースされました。
+変更点:
+MariaDB v10.0のサポートが追加されました。 MySQLのTINYINT型がJavaScriptのBoolean型へ変換されないように修正されました。 caching_sha2_password認証プラグインがサポートされました。 configLogger()が実装され、ロギングの挙動をカスタマイズできるようになりました。 https://github.com/denodrivers/mysql/releases/tag/v2.8.0
+Sinco v1.1.0がリリース Since v1.1.0がリリースされました。
+SincoはDenoで実装されたブラウザのオートメーション・テスティングライブラリです。
+変更点:
+HeadlessBrowser#evaluatePage()が実装され、現在のページ内での関数や式の実行がサポートされました。 Dockerコンテナ内での実行がサポートされました。 https://github.</description></item><item><title>2021/02/08〜2021/02/14の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/02/14.html</link><pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/02/14.html</guid><description>Deno本体の最新情報 Deno v1.7.3/v1.7.4がリリースされました Deno v1.7.3がリリースされました。
+その後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。
+v1.7.3/v1.7.4の主な変更点:
+deno lspでcodeAction/resolveが実装されました。 deno lspにdeno.cacheコードアクションが実装されました。 deno lspにImplementationscode lensが実装されました。 Import mapsがデータURL(data:)を適切にハンドリングするように修正されました。 https://github.com/denoland/deno/releases/tag/v1.7.4 deno_std v0.87.0がリリースされました Deno v1.7.3のリリースに合わせ、deno_std v0.87.0がリリースされました。
+このリリースにはhttp/cookieモジュールに対する破壊的変更が含まれています。
+変更点:
+http/cookie: Cookies及びSameSiteの型エイリアスが削除されました。 http/file_server: SVGファイルに対して適切なContent-Typeが設定されるように修正されました。 https://github.com/denoland/deno_std/releases/tag/0.87.0
+サードパーティモジュールの最新情報 denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム denops.vimという、Denoを使ってVim/Neovimプラグインを書くためのエコシステムが公開されました。
+coc.nvimに影響を受けているようです。
+サンプルプラグインも公開されているため、興味のある方は見てみるとよいかもしれません。
+https://github.com/vim-denops/denops-helloworld.vim https://github.com/vim-denops/denops.vim https://github.com/vim-denops/denops-deno https://github.com/vim-denops/denops-std-deno slack_web_api - DenoのSlack APIクライアント slack_web_apiはNode.jsの@slack/web-apiをDenoにポートしたモジュールです。
+このモジュールを使用することで、DenoからSlack APIを叩くことができます。
+https://deno.land/x/slack_web_api@1.0.1
+deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。
+このリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。
+変更点:</description></item><item><title>2021/02/01〜2021/02/07の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/02/07.html</link><pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/02/07.html</guid><description>Deno本体の最新情報 Deno v1.7.2がリリース Deno v1.7.2がリリースされました。これに合わせて、deno_std v0.86.0もリリースされています。
+主な変更点:
+deno lspでtextDocument/codeLens及びtextDocument/codeActionが実装された WPTにパスするよう、File及びBlobの実装がリライトされた https://github.com/denoland/deno/releases/tag/v1.7.2 https://github.com/denoland/deno_std/releases/tag/0.86.0 deno_stdのリポジトリがdeno本体のリポジトリから分離された Denoには標準モジュールとしてdeno_stdが存在します。
+今まで、このdeno_stdの開発は、deno本体と同じリポジトリ内(denoland/deno)で行われていました。
+この度、deno_stdが個別のリポジトリへと分離されました。
+これにより、deno_stdの開発時にRustのセットアップが必要なくなるため、deno_stdへのコントリビューションが行いやすくなるのではないかと思われます。
+https://github.com/denoland/deno_std
+サードパーティモジュールの最新情報 emacs-ng emacs-ngはEmacsのフォークです。
+以下のような機能を備えているようです:
+Denoを組み込むことで、Emacs内でJavaScript/TypeScriptコードの実行を可能とする MozillaのWebRenderをサポート https://github.com/emacs-ng/emacs-ng
+deno-postgres v0.7.0がリリースされた deno-postgres v0.7.0がリリースされました。
+v0.6.0までは、deno-postgresがサポートしていないデータ型を利用しようとすると、例外が発生しました。
+このリリースにおいて、現時点でdeno-postgresでサポートされていない全てのデータ型が、JavaScriptのStringとして返却されるように挙動が変更されました。
+将来的には、ライブラリの利用者が各データ型のハンドリング方法を制御できるようにするために、カスタムのハンドラを登録できるようにすることも検討されているようです。
+https://github.com/denodrivers/postgres/issues/239
+https://github.com/denodrivers/postgres/releases/tag/v0.7.0
+Trex v1.5.0がリリースされた TrexはDenoのパッケージマネージャです。
+このリリースではtrex lsコマンドが実装され、インストールされた依存パッケージの一覧を表示できるようになりました。
+https://github.com/crewdevio/Trex/releases/tag/v1.5.0
+Deno Module Visualizer Deno Module Visualizerが公開されました。
+Deno Module Visualizerは、あるモジュールとその依存関係をGraphvizを使って可視化してくれます。
+使用例:
+deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</description></item><item><title>2021/01/25〜2021/01/31の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/01/31.html</link><pubDate>Sun, 31 Jan 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/01/31.html</guid><description>Deno v1.7.1がリリース Denoのv1.7.1がリリースされました。
+このリリースに合わせて、stdのv0.85.0もリリースされています。
+v1.7.0でリリースされたDeno.emitやDeno.resolveDnsの安定性の向上 deno lspのバグ修正・安定性の向上 std/nodeでprocess.on(&amp;quot;exit&amp;quot;)がサポートされた https://github.com/denoland/deno/releases/tag/v1.7.1
+deno-postgresのv0.5.0/v0.6.0がリリース deno-postgresのv0.5.0及びv0.6.0がリリースされました。
+v0.5.0 v0.6.0 これらのリリースにはいくつかの破壊的変更が含まれています:
+Client#queryメソッドが削除され、Client#queryArrayとClient#queryObjectメソッドが追加された Client#queryArrayはクエリの結果をネストされた配列として返却します Client#queryObjectはクエリの結果をオブジェクトの配列として返却します Client#multiQueryメソッドが削除された PostgreSQLのbigint型がJavaScriptのBigIntとして返却されるように変更された v0.4.0まではJavaScriptのString型として返却されていました https://github.com/denodrivers/postgres
+Harmony - Discord APIライブラリ HarmonyというDiscord APIライブラリが公開されました。
+このライブラリを使うことで、Discordボットの開発などを行うことができます。
+https://github.com/harmonyland/harmony</description></item><item><title>2021/01/18〜2021/01/24の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/01/24.html</link><pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/01/24.html</guid><description>Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
+以下は変更点の要約です:
+deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
+Deno 1.7.0 がリリースされたので新機能や変更点の紹介 deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
+内部的にはRollupのブラウザビルドが利用されています。
+CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。
+https://github.com/cmorten/deno-rollup
+code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。
+設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。
+また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。
+https://github.com/dsherret/code-block-writer</description></item><item><title>2021/01/11〜2021/01/17の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/01/17.html</link><pubDate>Sun, 17 Jan 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/01/17.html</guid><description>Deno in 2020 Denoの公式ブログポストにて、Deno in 2020という記事が公開されました。
+この記事では、2020年中にDenoに行われた変更点がまとめられています。
+また、この記事の公開に合わせて、Deno Surveyというアンケートも実施されています。
+https://deno.land/posts/deno-in-2020
+Obsidian - GraphQLクライアント/サーバモジュール ObsidianはDenoで実装されたGraphQLクライアント/サーバモジュールです。
+SSRされたReactアプリケーション向けに最適化されています。
+現時点では、以下のような機能が提供されています:
+Reactとの統合(useObsidianフック、ObsidianWrapperコンポーネント) Oakフレームワークとの統合 クライアントサイド及びサーバサイドでのキャッシュ(サーバサイドキャッシュではRedisが使用されています) GraphQL Playground https://github.com/open-source-labs/obsidian
+Sinco - ブラウザのオートメーション・テストツール SincoはDenoで動作するブラウザのオートメーション・テストツールです。
+現時点ではヘッドレスモードのChromeのみに対応しています。
+https://github.com/drashland/sinco</description></item><item><title>2021/01/04〜2021/01/10の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/01/10.html</link><pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/01/10.html</guid><description>vno vnoはDenoでVue.jsを用いた開発を行うためのビルドツールです。
+現時点では以下のような機能が提供されているようです。
+シングルファイルコンポーネントのビルド・バンドル Devサーバ まだ実装されてはいないものの、将来的にはSSRを実装することも検討されているようです。
+Lume LumeはDenoで実装されたシンプルなスタティックサイトジェネレータです。
+markdown, nunjucks, jsxなど様々な形式でページを記述できる。 プラグインシステムにより拡張が可能。 bench - DenoとNode.jsフレームワークのベンチマーク benchは、Deno及びNode.jsフレームワークのベンチマークを公開しています。
+GitHub Actionsを使用して、毎日、それぞれのフレームワークに対してベンチマークが実行されています。
+現時点では、以下のフレームワークに対するベンチマークが公開されています:
+abc alosaur deno (std/http) dinatra drash express fastify node (httpモジュール) oak servest mandarinets aqua reno</description></item><item><title>2020/12/28〜2021/01/03の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/01/03.html</link><pubDate>Sun, 03 Jan 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/01/03.html</guid><description>Deno@v1.6.3がリリースされた Denoのv1.6.3がリリースされました。
+ハイライト deno lspにtextDocument/renameやcacheコマンドが実装されました。 std@0.83.0も同時にリリースされました。std/node/fsにmkdtempとmkdtempSyncが実装されています。 deno-puppeteerが公開された puppeteerのDenoポートであるdeno-puppeteerが公開されました。</description></item><item><title>はじめに</title><link>https://uki00a.github.io/deno-weekly/articles/2021/01/02.html</link><pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/01/02.html</guid><description>はじめに このサイトでは、Denoに関する最新情報を定期的に発信しようと思います。
+日頃からDenoに関するリポジトリや情報などをウォッチしており、どうせならそれに関する情報をアウトプットしてみようと思い、始めた試みです。
+これから隔週程度の間隔で情報を発信していこうと思います。</description></item></channel></rss>

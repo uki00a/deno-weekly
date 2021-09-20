@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Nessie on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/nessie.html</link><description>Recent content in Nessie on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 04 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/nessie/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/06/28〜2021/07/04の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/07/04.html</link><pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/07/04.html</guid><description>Deno v1.11.3のリリース Denoのv1.11.3がリリースされました。
+このリリースではバグ修正などを中心に実施されています。
+変更点:
+Deno.emit()でグラフエラーの内容がdiagnostics配列に含まれるようになりました。 存在しないファイルをimportしようとした際などに、その内容がdiagnostics配列で報告されるようになりました。 https://github.com/denoland/deno/security/advisories/GHSA-xpwj-7v8q-mcgj の修正により、&amp;ndash;allow-netパーミッションなしでDeno.emitを実行すると、リモート依存がバンドルに含まれないように修正されたことによる影響のようです console.logなどの呼び出し時にエラーが発生すると、denoプロセスがパニックする問題が修正されました fetch APIでユーザが指定したHostヘッダが無視されるように修正されました。 SignalStream#disposeを呼んだあとにもSignalStream#thenに渡したコールバックが呼ばれてしまう問題が修正されました。 SignalStreamはDeno.signal()で返却されるオブジェクトです。 Deno.signal(s)がdenoプロセスを終了しないようブロックしてしまう問題が修正されました。 localstorageの最大容量が5MBから10MBに拡大されました。 REPLなどでEvent.prototypeを評価しようとすると例外が発生する問題が修正されました。 Eventの読み込み専用プロパティへ書き込みができなくなりました。(https://developer.mozilla.org/en-US/docs/Web/API/Event) deno lspコマンドから--parent-pidフラグが削除されました。 https://github.com/denoland/deno/releases/tag/v1.11.3
+Denoの2021年Q3ロードマップが公開 Denoの2021年Q3のロードマップが公開されました。
+今後、Denoの本体やdeno lspなどで実施される予定の変更内容が公開されています。
+https://github.com/denoland/deno/issues/11168
+deno_std v0.100.0のリリース deno_stdのv0.100.0がリリースされました。
+変更点:
+testing: assertEqualsなどの関数で文字列どうしを比較した際に、差分が大幅に見やすくなりました。 testing: assertExists関数のシグネチャがType Guardを使用して宣言されるように修正されました。 node/events: EventEmitter#addListenerがNode.jsと同様の挙動をするように修正されました。 path/glob: tsconfig.jsonで&amp;quot;noImplicitAny&amp;quot;: falseを指定した際にタイプエラーが発生する問題が修正されました。 https://github.com/denoland/deno_std/pull/987
+Oak v7.7.0 DenoのWebフレームワークであるOakのv7.7.0がリリースされました。
+主な変更点:
+Context#sendEventsでkeepAliveオプションが追加され、Server-Sent Eventsサーバでコネクションのポーリングが行えるようになりました。 proxyミドルウェアでクエリパラメータが送信されない問題が修正されました。 https://github.com/oakserver/oak/commit/5403ac08ddf295cda388ac4f1f12f630d2e77a2f
+Trex v1.8.0 Denoのパッケージ管理ツールであるTrexのv1.8.0がリリースされました。
+このリリースではtrex execコマンドがサポートされ、deno.land/xで公開されているCLIツールをインストールせずに直接実行できるようになりました。</description></item></channel></rss>

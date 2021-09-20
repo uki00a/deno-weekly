@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno-rollup on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno-rollup.html</link><description>Recent content in deno-rollup on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno-rollup/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/01/18〜2021/01/24の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/01/24.html</link><pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/01/24.html</guid><description>Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
+以下は変更点の要約です:
+deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
+Deno 1.7.0 がリリースされたので新機能や変更点の紹介 deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
+内部的にはRollupのブラウザビルドが利用されています。
+CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。
+https://github.com/cmorten/deno-rollup
+code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。
+設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。
+また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。
+https://github.com/dsherret/code-block-writer</description></item></channel></rss>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>pngs on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/pngs.html</link><description>Recent content in pngs on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/pngs/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/02/22〜2021/02/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/02/28.html</link><pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/02/28.html</guid><description>Deno本体の最新情報 今週は特にリリースなどは行われていません。
+来週の3月2日にDeno v1.8.0のリリースが予定されています。
+https://github.com/denoland/deno/blob/v1.7.5/docs/contributing/release_schedule.md
+サードパーティモジュールの最新情報 Dashport - Passport.jsライクな認証モジュール DashportはNode.jsのPassport.jsに影響を受けた認証モジュールです。
+Passport.js同様、ストラテジによって柔軟に拡張することができます。
+現時点で公式でサポートされているWebフレームワークはOakのみです。
+https://github.com/oslabs-beta/dashport
+pngs pngsはpngイメージのエンコード/デコード用のDenoモジュールです。
+WebAssemblyを使用して実装されています。
+https://github.com/denosaurs/pngs
+deno_license_checker - ライセンスヘッダーのチェックを行うツール deno_license_checkerは、各ソースファイルにライセンスヘッダーが正しい形式で記述されていることをチェックするツールです。
+設定ファイル(.licenserc.json)によって、挙動を細かくカスタマイズすることが出来ます。
+https://github.com/kt3k/deno_license_checker
+deno-redis v0.19.0がリリース deno-redis v0.19.0がリリースされました。
+変更点:
+クライアントサイドキャッシングがサポートされました subscribe及びpsubscribeメソッドがジェネリクスメソッドに変更されました https://github.com/denodrivers/redis/releases/tag/v0.19.0</description></item></channel></rss>

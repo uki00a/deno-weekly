@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_mongo on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_mongo.html</link><description>Recent content in deno_mongo on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 12 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_mongo/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/09/06〜2021/09/12の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/09/12.html</link><pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/09/12.html</guid><description>Deno 2.0のスコープについて GitHub DiscussionsにてDeno 2.0のスコープやリリース予定時期について公開されました。
+https://github.com/denoland/deno/discussions/11972 現時点では、今年の11月に2.0のリリースが検討されているようです。
+Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に&amp;hellip;) Deno.ReaderなどのJSのみで実装されたIO関連のAPIを削除(https://github.com/denoland/deno/issues/9795) 一部のAPIはすでにstd/io/util.tsなどへ移動されています デフォルトでのWorker内でDeno名前空間の有効化 TypeScriptのuseUnknownInCatchVariablesを有効化 Deno.customInspectを削除 デフォルトで型チェックをスキップする(https://github.com/denoland/deno/issues/11340) --configオプションを削除 (https://github.com/denoland/deno/discussions/7732) デフォルトでのロックファイルの生成・検証 localStorageや将来のIndexedDBなどの追加に備えたInternal Originの導入 TypeScriptのcompilerOptions.jsxFactoryとcompilerOptions.jsxFragmentFactoryのデフォルト値をそれぞれhと Fragmentに変更 (https://github.com/denoland/deno/issues/11186) デフォルトで外部のTypeScriptコードへの型エラーなどを報告させない (https://github.com/denoland/deno/issues/11970) dynamic importとWorker向けに--allow-importの導入 (https://github.com/denoland/deno/issues/8266) https://github.com/denoland/deno/discussions/11972
+vercel-deno v1.0.0 Vercel serverless functionsのDenoランタイム
+apiディレクトリに各フレームワークなどを使用したサンプルコードが配置されています。
+https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0
+deno_mongo v0.26.0 deno_mongo v0.26.0がリリースされました。
+変更点:
+Collection#insertが非推奨化されました (代わりにinsertOneやinsertManyなどの使用が推奨されます) Bson.ObjectIdの型定義が削除されました (Bson.ObjectID の方は残っています) MongoClient.buildInfoがサポートされました (https://docs.mongodb.com/manual/reference/command/buildInfo/) https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0</description></item><item><title>2021/08/16〜2021/08/22の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/08/22.html</link><pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/08/22.html</guid><description>Deno v1.13.1 Deno v1.13.1がリリースされました。
+deno testやWeb Crypto APIのバグ修正などがメインです。
+変更点:
+deno test --docでMarkdownファイルを引数に指定できるようになりました deno test --docで以下のようにignoreが指定されていると、そのコードブロックが無視されるようになりました \`\`\`ts ignore ... \`\`\` deno testでloadイベントが発火しない問題が修正されました localStorageへの書き込みのスループットがおよそ150倍高速化されました deno lintやREPLにおけるハイライトが改善されました SubtleCryptoのimportKeyやgenerateKeyメソッドのextractable引数でfalseがサポートされました SubtleCrypto#importKeyでArrayBufferをキーとして渡せるようになりました WebAssembly.instantiateStreamingに渡されたResponseオブジェクトにContent-Typeが設定されていなかった場合のエラーメッセージが改善されました https://github.com/denoland/deno/releases/tag/v1.13.1
+deno_std v0.105.0 deno_std v0.105.0がリリースされました。
+変更点:
+bytes: containsがincludesにリネームされました bytes: indexOfとincludesでfromIndex引数がサポートされました collections: intersectで先頭の配列における重複が適切に取り扱われない問題が修正されました https://github.com/denoland/deno_std/releases/tag/0.105.0
+deno_doc v0.11.0 deno_doc v0.11.0がリリースされました。
+このリリースに合わせて、JavaScriptから利用できるAPIが公開されています。
+https://deno.land/x/deno_doc@v0.11.0 https://github.com/denoland/deno_doc/releases/tag/v0.11.0
+Oak v9.0.0 Oak v9.0.0がリリースされました。
+Cookie関連のAPIへの破壊的変更やDeno Deployサポートの改善などが実施されています。
+変更点:
+(破壊的変更) Cookieの署名にWeb Crypto APIが使用されるようになった関係でCookiesオブジェクトのgetやsetなどのメソッドが非同期になりました (Context.cookies) Deno Deploy上でも通常のDeno CLIと同様にApplication#listenによってリクエストをハンドリングできるようになりました。またその影響により、Application#fetchEventHandlerが非推奨化されています Application#listenでport: 0を指定した際に&amp;quot;listen&amp;quot;イベントで適切なポート番号が報告されるように修正されました。 &amp;quot;listen&amp;quot;イベントがTCPサーバが作成されたタイミングで発火されるように修正されました Rangeヘッダでコンテンツの最後のバイトを取得するように指定した場合、416レスポンスが返却される問題が修正されました request.</description></item><item><title>2021/07/19〜2021/07/25の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/07/25.html</link><pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/07/25.html</guid><description>Deno v1.12.1がリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。
+変更点:
+crypto.getRandomValuesでBigInt64ArrayとBigUint64Arrayがサポートされました ネイティブHTTPサーバで、Cookieヘッダの値と名前の組が、セミコロンではなくコンマ区切りで設定されてしまう問題が修正されました FileReader#abort()が現在の読み込み操作のみを中止するように修正されました Array#atやString#atなどの型定義が追加されました https://github.com/denoland/deno/releases/tag/v1.12.1
+deno_std v0.102.0がリリース deno_std v0.102.0がリリースされました。
+新規モジュールとして、std/collectionsが追加されています。
+変更点:
+新しくstd/collectionsモジュールが追加されました encoding/toml: コメントのみを含む行で#の前に空白が含まれていると、それがコメントではなくキーとして解析されてしまう問題が修正されました encoding/toml: クォートや空白などを含むキーが仕様通りに解析されない問題が修正されました hash: Hash#updateでUint8Array以外のTypedArrayが適切に取り扱われない問題が修正されました https://github.com/denoland/deno_std/releases/tag/0.102.0 Deno標準ライブラリ0.102.0で追加されたcollectionsの紹介 Oak v8.0.0がリリース Oak v8.0.0がリリースされました。
+このリリースには破壊的変更が含まれます。
+変更点:
+Deno v1.12.0で実装されたDeno.upgradeWebSocket()ベースのWebSocketサポートが追加されました それに伴い、Context.#upgradeが標準のWebSocketオブジェクトを返却するように変更されています (破壊的変更) Applicationオブジェクトを作成する際に、contextStateオプションによってContext.stateが作成される際の挙動を制御できるようになりました。 Context#sendでcontentTypesオプションがサポートされ、Content-Typeヘッダの内容をカスタマイズできるようになりました。 デフォルトで、補足されなかった例外が標準エラーに出力されるようになりました (この挙動はlogErrorsオプションにfalseを設定することで無効化できます) https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba
+deno_mongo v0.24.0がリリース DenoのMongoDBクライアントであるdeno_mongoのv0.24.0がリリースされました。
+変更点:
+Collection#dropIndexesが実装されました Collection#findAndModifyが実装されました https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0</description></item></channel></rss>

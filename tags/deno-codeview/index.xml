@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno-codeview on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno-codeview.html</link><description>Recent content in deno-codeview on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno-codeview/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/03/08〜2021/03/14の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/14.html</link><pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/14.html</guid><description>Deno本体の最新情報 Deno v1.8.1のリリース Deno v1.8.1がリリースされました。このリリースでは、バグの修正を中心に実施されています。
+主な変更点:
+importsNotUsedAsValuesオプションがswcに渡されるようになりました。 Windows上でdeno compileを実行すると、ターゲットに関わらず常に.exeが拡張子として付与される問題が修正されました。 Worker内でトップレベルawaitが使用されていると、ブロックが発生する問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.8.1
+deno_std v0.90.0のリリース deno_std v0.90.0がリリースされました。
+変更点:
+node: moduleモジュールをrequireで読み込めるようになりました。 node: Node.jsで書かれたスクリプトを実行するためのCLIツールが実装されました。(node/cli.ts) node: assertモジュールの互換性が向上しました。 http: v0.88.0で発生したパフォーマンスに関する問題が修正されました。 https://github.com/denoland/deno_std/commit/3f9714bf05a75303355fddd22cad9794be50e47d
+サードパーティモジュールなどの最新情報 nano nanoは軽量のJSXライブラリです。以下のような機能をサポートしています:
+SSRをサポート(DenoとNode.jsの両方で動作します) 組み込みのRouterやStoreなどを提供 コンポーネントのpre-fetch https://github.com/nanojsx/nano
+depsbot モジュールなどの依存関係の更新状態をチェックをしてくれるGitHub actionです。
+npmにも公開されており、コマンドラインから直接実行することもできます。
+https://github.com/denosaurs/depsbot
+wizard wizardというBDDスタイルのAPIを提供するテストライブラリが公開されました。
+まだ開発が開始したばかりではありますが、Deno.test()をベースにしているため、各種サニタイザやDenoのCLIをそのまま利用することができます。
+https://github.com/deno-libs/wizard
+deno-redis v0.20.0 deno-redis v0.20.0がリリースされました。
+変更点:
+CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下のコマンドがサポートされました: CLIENT UNBLOCK CLIENT UNPAUSE CLIENT INFO CLIENT TRACKINGINFO CLIENT LIST https://github.</description></item></channel></rss>

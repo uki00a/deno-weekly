@@ -1,0 +1,152 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>deno_mongo | 週刊Deno</title>
+<meta name=keywords content>
+<meta name=description content>
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno_mongo.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
+<link rel=icon href=https://uki00a.github.io/deno-weekly/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.0">
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/deno_mongo/index.xml>
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="deno_mongo">
+<meta property="og:description" content>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/deno_mongo.html">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="deno_mongo">
+<meta name=twitter:description content>
+</head>
+<body class=list id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<header class=page-header>
+<h1>deno_mongo</h1>
+</header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/09/06〜2021/09/12の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno 2.0のスコープについて GitHub DiscussionsにてDeno 2.0のスコープやリリース予定時期について公開されました。
+https://github.com/denoland/deno/discussions/11972 現時点では、今年の11月に2.0のリリースが検討されているようです。
+Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に…) Deno.ReaderなどのJSのみで実装されたIO関連のAPIを削除(https://github.com/denoland/deno/issues/9795) 一部のAPIはすでにstd/io/util.tsなどへ移動されています デフォルトでのWorker内でDeno名前空間の有効化 TypeScriptのuseUnknownInCatchVariablesを有効化 Deno.customInspectを削除 デフォルトで型チェックをスキップする(https://github.com/denoland/deno/issues/11340) --configオプションを削除 (https://github.com/denoland/deno/discussions/7732) デフォルトでのロックファイルの生成・検証 localStorageや将来のIndexedDBなどの追加に備えたInternal Originの導入 TypeScriptのcompilerOptions.jsxFactoryとcompilerOptions.jsxFragmentFactoryのデフォルト値をそれぞれhと Fragmentに変更 (https://github.com/denoland/deno/issues/11186) デフォルトで外部のTypeScriptコードへの型エラーなどを報告させない (https://github.com/denoland/deno/issues/11970) dynamic importとWorker向けに--allow-importの導入 (https://github.com/denoland/deno/issues/8266) https://github.com/denoland/deno/discussions/11972
+vercel-deno v1.0.0 Vercel serverless functionsのDenoランタイム
+apiディレクトリに各フレームワークなどを使用したサンプルコードが配置されています。
+https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0
+deno_mongo v0.26.0 deno_mongo v0.26.0がリリースされました。
+変更点:
+Collection#insertが非推奨化されました (代わりにinsertOneやinsertManyなどの使用が推奨されます) Bson.ObjectIdの型定義が削除されました (Bson.ObjectID の方は残っています) MongoClient.buildInfoがサポートされました (https://docs.mongodb.com/manual/reference/command/buildInfo/) https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0</p>
+</section>
+<footer class=entry-footer>September 12, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/09/06〜2021/09/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/12.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/08/16〜2021/08/22の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.13.1 Deno v1.13.1がリリースされました。
+deno testやWeb Crypto APIのバグ修正などがメインです。
+変更点:
+deno test --docでMarkdownファイルを引数に指定できるようになりました deno test --docで以下のようにignoreが指定されていると、そのコードブロックが無視されるようになりました \`\`\`ts ignore ... \`\`\` deno testでloadイベントが発火しない問題が修正されました localStorageへの書き込みのスループットがおよそ150倍高速化されました deno lintやREPLにおけるハイライトが改善されました SubtleCryptoのimportKeyやgenerateKeyメソッドのextractable引数でfalseがサポートされました SubtleCrypto#importKeyでArrayBufferをキーとして渡せるようになりました WebAssembly.instantiateStreamingに渡されたResponseオブジェクトにContent-Typeが設定されていなかった場合のエラーメッセージが改善されました https://github.com/denoland/deno/releases/tag/v1.13.1
+deno_std v0.105.0 deno_std v0.105.0がリリースされました。
+変更点:
+bytes: containsがincludesにリネームされました bytes: indexOfとincludesでfromIndex引数がサポートされました collections: intersectで先頭の配列における重複が適切に取り扱われない問題が修正されました https://github.com/denoland/deno_std/releases/tag/0.105.0
+deno_doc v0.11.0 deno_doc v0.11.0がリリースされました。
+このリリースに合わせて、JavaScriptから利用できるAPIが公開されています。
+https://deno.land/x/deno_doc@v0.11.0 https://github.com/denoland/deno_doc/releases/tag/v0.11.0
+Oak v9.0.0 Oak v9.0.0がリリースされました。
+Cookie関連のAPIへの破壊的変更やDeno Deployサポートの改善などが実施されています。
+変更点:
+(破壊的変更) Cookieの署名にWeb Crypto APIが使用されるようになった関係でCookiesオブジェクトのgetやsetなどのメソッドが非同期になりました (Context.cookies) Deno Deploy上でも通常のDeno CLIと同様にApplication#listenによってリクエストをハンドリングできるようになりました。またその影響により、Application#fetchEventHandlerが非推奨化されています Application#listenでport: 0を指定した際に"listen"イベントで適切なポート番号が報告されるように修正されました。 "listen"イベントがTCPサーバが作成されたタイミングで発火されるように修正されました Rangeヘッダでコンテンツの最後のバイトを取得するように指定した場合、416レスポンスが返却される問題が修正されました request....</p>
+</section>
+<footer class=entry-footer>August 22, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/08/16〜2021/08/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/22.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/07/19〜2021/07/25の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.12.1がリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。
+変更点:
+crypto.getRandomValuesでBigInt64ArrayとBigUint64Arrayがサポートされました ネイティブHTTPサーバで、Cookieヘッダの値と名前の組が、セミコロンではなくコンマ区切りで設定されてしまう問題が修正されました FileReader#abort()が現在の読み込み操作のみを中止するように修正されました Array#atやString#atなどの型定義が追加されました https://github.com/denoland/deno/releases/tag/v1.12.1
+deno_std v0.102.0がリリース deno_std v0.102.0がリリースされました。
+新規モジュールとして、std/collectionsが追加されています。
+変更点:
+新しくstd/collectionsモジュールが追加されました encoding/toml: コメントのみを含む行で#の前に空白が含まれていると、それがコメントではなくキーとして解析されてしまう問題が修正されました encoding/toml: クォートや空白などを含むキーが仕様通りに解析されない問題が修正されました hash: Hash#updateでUint8Array以外のTypedArrayが適切に取り扱われない問題が修正されました https://github.com/denoland/deno_std/releases/tag/0.102.0 Deno標準ライブラリ0.102.0で追加されたcollectionsの紹介 Oak v8.0.0がリリース Oak v8.0.0がリリースされました。
+このリリースには破壊的変更が含まれます。
+変更点:
+Deno v1.12.0で実装されたDeno.upgradeWebSocket()ベースのWebSocketサポートが追加されました それに伴い、Context.#upgradeが標準のWebSocketオブジェクトを返却するように変更されています (破壊的変更) Applicationオブジェクトを作成する際に、contextStateオプションによってContext.stateが作成される際の挙動を制御できるようになりました。 Context#sendでcontentTypesオプションがサポートされ、Content-Typeヘッダの内容をカスタマイズできるようになりました。 デフォルトで、補足されなかった例外が標準エラーに出力されるようになりました (この挙動はlogErrorsオプションにfalseを設定することで無効化できます) https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba
+deno_mongo v0.24.0がリリース DenoのMongoDBクライアントであるdeno_mongoのv0.24.0がリリースされました。
+変更点:
+Collection#dropIndexesが実装されました Collection#findAndModifyが実装されました https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0</p>
+</section>
+<footer class=entry-footer>July 25, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/07/19〜2021/07/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/25.html></a>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
