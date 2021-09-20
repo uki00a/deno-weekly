@@ -1,0 +1,47 @@
+languageCode = "ja"
+title = "週刊Deno"
+publishdir = "./dist/"
+
+# For consistency with pagic, sets this to true.
+uglyURLs = true
+
+[markup]
+[markup.tableOfContents]
+endLevel = 3
+ordered = false
+startLevel = 2
+
+[frontmatter]
+date = ['date', 'publishDate', 'lastmod']
+expiryDate = ['expiryDate']
+lastmod = [':git', 'lastmod', 'date', 'publishDate']
+publishDate = ['publishDate', 'date']
+
+[params]
+showToc = true
+
+[menu]
+[[menu.main]]
+identifier = 'tags'
+name = 'タグ'
+pre = "<i class='fa fa-heart'></i>"
+url = '/tags.html'
+weight = -110
+[[menu.main]]
+name = 'ギャラリー'
+post = "<span class='alert'></span>"
+pre = "<i class='fa fa-road'></i>"
+url = '/gallery.html'
+weight = -100
+[[menu.main]]
+name = 'About'
+post = "<span class='alert'></span>"
+pre = "<i class='fa fa-road'></i>"
+url = '/about.html'
+weight = -90
+[[menu.main]]
+name = 'ソース'
+post = ""
+pre = "<i class='fa fa-road'></i>"
+url = 'https://github.com/uki00a/deno-weekly'
+weight = -80
