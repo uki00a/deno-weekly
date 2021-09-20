@@ -15,6 +15,6 @@ dev:
 	HUGO_THEME=$(THEME_NAME) hugo server
 
 build:
-	HUGO_THEME=$(THEME_NAME) hugo --minify --config production.toml
+	HUGO_THEME=$(THEME_NAME) hugo --minify --config config.toml,production.toml
 
 .PHONY: theme dev build
