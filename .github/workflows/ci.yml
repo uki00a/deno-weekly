@@ -17,8 +17,6 @@ jobs:
       with:
         hugo-version: '0.88.0'
     - name: Build
-      env:
-        TRACKING_ID: G-MK2K2MRMBF
       run: |
         make theme
         make build
