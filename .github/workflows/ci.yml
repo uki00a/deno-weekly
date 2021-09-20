@@ -12,21 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: denolib/setup-deno@master
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
       with:
-        deno-version: 1.10.2
-    - name: Run fmt
-      run: |
-        deno fmt --check --ignore=articles,gallery.md
-    - name: Run lint
-      run: |
-        deno lint --unstable --ignore=articles
+        hugo-version: '0.88.0'
     - name: Build
       env:
-        URL: https://uki00a.github.io/deno-weekly
         TRACKING_ID: G-MK2K2MRMBF
       run: |
-        deno run --unstable --allow-read --allow-write --allow-net --allow-run --allow-env --import-map ./import_map.json ./build.ts
+        make theme
+        make build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.event_name == 'push' }}
