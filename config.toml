@@ -19,6 +19,7 @@ publishDate = ['publishDate', 'date']
 
 [params]
 showToc = true
+assets.favicon = 'https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico'
 
 [menu]
 [[menu.main]]
