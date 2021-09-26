@@ -1,0 +1,231 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>2021/09/20〜2021/09/26の最新情報 | 週刊Deno</title>
+<meta name=keywords content="Deno,deno_std,fresh,Aleph.js">
+<meta name=description content="Deno v1.14.1 Deno v1.14.1がリリースされました。
+このリリースはバグ修正がメインです。
+変更点:
+ 非async関数でfor-awaitを使用したときのエラーメッセージが改善されました v1.14.0で追加されたファイルロックAPIの型定義がlib.deno.ns.d.tsからlib.deno.unstable.d.tsに移動しました  deno docでドキュメントを表示する際に、—unstableが必要になるなどの影響があります. (例: deno doc --builtin --unstable Deno.flock)   スタックトレース中のData URLの表示が改善されました HMACキーをJSON Web Key形式でエクスポートできない問題が修正されました Deno.readFileの最適化   https://github.com/denoland/deno/releases/tag/v1.14.1
+deno_std v0.108.0 deno_stdのv0.108.0がリリースされました。
+変更点:
+  collections: maxWithとminWithに渡した配列にundefinedが含まれていた場合、要素の並び順によって結果が異なってしまう問題が修正されました
+  collections: maxBy, minBy, 及びsortByのselector引数でbigintやDateを返却できるように型定義が修正されました
+  testing/asserts: assertThrowsやassertRejectsでコールバックがサポートされました
+import { assertEquals, assertRejects } from &#34;https://deno.land/std@0.108.0/testing/asserts.ts&#34;; await assertRejects(() => { return Promise.reject(new Error('foo')); }, (error: Error) => { assertEquals(error.message, 'foo'); });     https://github.">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/09/26.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.5e2b4101351c21e906f398ae96901791830f58d430f96f2659dab7eaef7b3cb7.css integrity="sha256-XitBATUcIekG85iulpAXkYMPWNQw+W8mWdq36u97PLc=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://uki00a.github.io/deno-weekly/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.0">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="2021/09/20〜2021/09/26の最新情報">
+<meta property="og:description" content="Deno v1.14.1 Deno v1.14.1がリリースされました。
+このリリースはバグ修正がメインです。
+変更点:
+ 非async関数でfor-awaitを使用したときのエラーメッセージが改善されました v1.14.0で追加されたファイルロックAPIの型定義がlib.deno.ns.d.tsからlib.deno.unstable.d.tsに移動しました  deno docでドキュメントを表示する際に、—unstableが必要になるなどの影響があります. (例: deno doc --builtin --unstable Deno.flock)   スタックトレース中のData URLの表示が改善されました HMACキーをJSON Web Key形式でエクスポートできない問題が修正されました Deno.readFileの最適化   https://github.com/denoland/deno/releases/tag/v1.14.1
+deno_std v0.108.0 deno_stdのv0.108.0がリリースされました。
+変更点:
+  collections: maxWithとminWithに渡した配列にundefinedが含まれていた場合、要素の並び順によって結果が異なってしまう問題が修正されました
+  collections: maxBy, minBy, 及びsortByのselector引数でbigintやDateを返却できるように型定義が修正されました
+  testing/asserts: assertThrowsやassertRejectsでコールバックがサポートされました
+import { assertEquals, assertRejects } from &#34;https://deno.land/std@0.108.0/testing/asserts.ts&#34;; await assertRejects(() => { return Promise.reject(new Error('foo')); }, (error: Error) => { assertEquals(error.message, 'foo'); });     https://github.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/09/26.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2021-09-26T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-09-26T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="2021/09/20〜2021/09/26の最新情報">
+<meta name=twitter:description content="Deno v1.14.1 Deno v1.14.1がリリースされました。
+このリリースはバグ修正がメインです。
+変更点:
+ 非async関数でfor-awaitを使用したときのエラーメッセージが改善されました v1.14.0で追加されたファイルロックAPIの型定義がlib.deno.ns.d.tsからlib.deno.unstable.d.tsに移動しました  deno docでドキュメントを表示する際に、—unstableが必要になるなどの影響があります. (例: deno doc --builtin --unstable Deno.flock)   スタックトレース中のData URLの表示が改善されました HMACキーをJSON Web Key形式でエクスポートできない問題が修正されました Deno.readFileの最適化   https://github.com/denoland/deno/releases/tag/v1.14.1
+deno_std v0.108.0 deno_stdのv0.108.0がリリースされました。
+変更点:
+  collections: maxWithとminWithに渡した配列にundefinedが含まれていた場合、要素の並び順によって結果が異なってしまう問題が修正されました
+  collections: maxBy, minBy, 及びsortByのselector引数でbigintやDateを返却できるように型定義が修正されました
+  testing/asserts: assertThrowsやassertRejectsでコールバックがサポートされました
+import { assertEquals, assertRejects } from &#34;https://deno.land/std@0.108.0/testing/asserts.ts&#34;; await assertRejects(() => { return Promise.reject(new Error('foo')); }, (error: Error) => { assertEquals(error.message, 'foo'); });     https://github.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/09/20〜2021/09/26の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/09/26.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/09/20〜2021/09/26の最新情報","name":"2021\/09\/20〜2021\/09\/26の最新情報","description":"Deno v1.14.1 Deno v1.14.1がリリースされました。\nこのリリースはバグ修正がメインです。\n変更点:\n 非async関数でfor-awaitを使用したときのエラーメッセージが改善されました v1.14.0で追加されたファイルロックAPIの型定義がlib.deno.ns.d.tsからlib.deno.unstable.d.tsに移動しました  deno docでドキュメントを表示する際に、—unstableが必要になるなどの影響があります. (例: deno doc --builtin --unstable Deno.flock)   スタックトレース中のData URLの表示が改善されました HMACキーをJSON Web Key形式でエクスポートできない問題が修正されました Deno.readFileの最適化   https://github.com/denoland/deno/releases/tag/v1.14.1\ndeno_std v0.108.0 deno_stdのv0.108.0がリリースされました。\n変更点:\n  collections: maxWithとminWithに渡した配列にundefinedが含まれていた場合、要素の並び順によって結果が異なってしまう問題が修正されました\n  collections: maxBy, minBy, 及びsortByのselector引数でbigintやDateを返却できるように型定義が修正されました\n  testing/asserts: assertThrowsやassertRejectsでコールバックがサポートされました\nimport { assertEquals, assertRejects } from \u0026#34;https://deno.land/std@0.108.0/testing/asserts.ts\u0026#34;; await assertRejects(() =\u0026gt; { return Promise.reject(new Error(\u0026#39;foo\u0026#39;)); }, (error: Error) =\u0026gt; { assertEquals(error.message, \u0026#39;foo\u0026#39;); });     https://github.","keywords":["Deno","deno_std","fresh","Aleph.js"],"articleBody":"Deno v1.14.1 Deno v1.14.1がリリースされました。\nこのリリースはバグ修正がメインです。\n変更点:\n 非async関数でfor-awaitを使用したときのエラーメッセージが改善されました v1.14.0で追加されたファイルロックAPIの型定義がlib.deno.ns.d.tsからlib.deno.unstable.d.tsに移動しました  deno docでドキュメントを表示する際に、—unstableが必要になるなどの影響があります. (例: deno doc --builtin --unstable Deno.flock)   スタックトレース中のData URLの表示が改善されました HMACキーをJSON Web Key形式でエクスポートできない問題が修正されました Deno.readFileの最適化   https://github.com/denoland/deno/releases/tag/v1.14.1\ndeno_std v0.108.0 deno_stdのv0.108.0がリリースされました。\n変更点:\n  collections: maxWithとminWithに渡した配列にundefinedが含まれていた場合、要素の並び順によって結果が異なってしまう問題が修正されました\n  collections: maxBy, minBy, 及びsortByのselector引数でbigintやDateを返却できるように型定義が修正されました\n  testing/asserts: assertThrowsやassertRejectsでコールバックがサポートされました\nimport { assertEquals, assertRejects } from \"https://deno.land/std@0.108.0/testing/asserts.ts\"; await assertRejects(() = { return Promise.reject(new Error('foo')); }, (error: Error) = { assertEquals(error.message, 'foo'); });     https://github.com/denoland/deno_std/releases/tag/0.108.0 https://github.com/denoland/deno_std/pull/1300  Freshのアップデート PreactベースのWebフレームワークであるFreshでアップデートが実施されました。\nいくつかの破壊的変更に加え、静的ファイルの配信やSuspenseのサポートなどが追加されています。\n変更点:\n バンドルの高速化のため、Deno CLIではesbuild-wasmの代わりにdeno-esbuildが使用されるように変更されました ページとAPIルートが区別されなくなりました (破壊的変更)  今までは pages/api配下はAPIルート、それ以外のpages配下のファイルはページとして扱われていましたが、それらの区別がなくなります   デフォルトでクライアント側のJavaScriptが無効化されました (破壊的変更)  クライアントサイドレンダリングを有効化したいときは、ページでruntimeJSを trueに設定した状態でconfigをexportする必要があります   config.routeOverrideによってページのエンドポイントを上書きできるようになりました /staticディレクトリに置いたファイルの静的な配信がサポートされました Suspenseを使用したストリーミングレンダリングがサポートされました    chore: use esm.sh + optionally use native esbuild BREAKING: merge API routes and pages concept BREAKING: disable runtime JS by default feat: support overriding page routes feat: add static file support feat: streaming rendering with suspense  Aleph.js v0.3.0-beta.18 Aleph.jsのv0.3.0-beta.18がリリースされました。\nuseDeno()やssr.props()でRequestオブジェクトへのアクセスがサポートされています。\nまた、Markdownプラグインでシンタックスハイライトのサポートが追加されています。\n https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.18\n","wordCount":"118","inLanguage":"en","datePublished":"2021-09-26T00:00:00Z","dateModified":"2021-09-26T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/09/26.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://uki00a.github.io/deno-weekly/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+2021/09/20〜2021/09/26の最新情報
+</h1>
+<div class=post-meta>September 26, 2021
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#deno-v1141 aria-label="Deno v1.14.1">Deno v1.14.1</a></li>
+<li>
+<a href=#deno_std-v01080 aria-label="deno_std v0.108.0">deno_std v0.108.0</a></li>
+<li>
+<a href=#fresh%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88 aria-label=Freshのアップデート>Freshのアップデート</a></li>
+<li>
+<a href=#alephjs-v030-beta18 aria-label="Aleph.js v0.3.0-beta.18">Aleph.js v0.3.0-beta.18</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=deno-v1141>Deno v1.14.1<a hidden class=anchor aria-hidden=true href=#deno-v1141>#</a></h2>
+<p>Deno v1.14.1がリリースされました。</p>
+<p>このリリースはバグ修正がメインです。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>非async関数でfor-awaitを使用したときのエラーメッセージが改善されました</li>
+<li>v1.14.0で追加されたファイルロックAPIの型定義が<code>lib.deno.ns.d.ts</code>から<code>lib.deno.unstable.d.ts</code>に移動しました
+<ul>
+<li><code>deno doc</code>でドキュメントを表示する際に、<code>—unstable</code>が必要になるなどの影響があります. (例: <code>deno doc --builtin --unstable Deno.flock</code>)</li>
+</ul>
+</li>
+<li>スタックトレース中のData URLの表示が改善されました</li>
+<li>HMACキーをJSON Web Key形式でエクスポートできない問題が修正されました</li>
+<li><a href=https://github.com/denoland/deno/pull/12057>Deno.readFileの最適化</a></li>
+</ul>
+<hr>
+<p><a href=https://github.com/denoland/deno/releases/tag/v1.14.1>https://github.com/denoland/deno/releases/tag/v1.14.1</a></p>
+<h2 id=deno_std-v01080>deno_std v0.108.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01080>#</a></h2>
+<p>deno_stdのv0.108.0がリリースされました。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>
+<p><code>collections</code>: <code>maxWith</code>と<code>minWith</code>に渡した配列に<code>undefined</code>が含まれていた場合、要素の並び順によって結果が異なってしまう問題が修正されました</p>
+</li>
+<li>
+<p><code>collections</code>: <code>maxBy</code>, <code>minBy</code>, 及び<code>sortBy</code>の<code>selector</code>引数で<code>bigint</code>や<code>Date</code>を返却できるように型定義が修正されました</p>
+</li>
+<li>
+<p><code>testing/asserts</code>: <code>assertThrows</code>や<code>assertRejects</code>でコールバックがサポートされました</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>assertEquals</span>, <span style=color:#a6e22e>assertRejects</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.108.0/testing/asserts.ts&#34;</span>;
+
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>assertRejects</span>(() <span style=color:#f92672>=&gt;</span> {
+  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>Promise</span>.<span style=color:#a6e22e>reject</span>(<span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#39;foo&#39;</span>));
+}, (<span style=color:#a6e22e>error</span>: <span style=color:#66d9ef>Error</span>) <span style=color:#f92672>=&gt;</span> {
+  <span style=color:#a6e22e>assertEquals</span>(<span style=color:#a6e22e>error</span>.<span style=color:#a6e22e>message</span>, <span style=color:#e6db74>&#39;foo&#39;</span>);
+});
+</code></pre></div></li>
+</ul>
+<hr>
+<ul>
+<li><a href=https://github.com/denoland/deno_std/releases/tag/0.108.0>https://github.com/denoland/deno_std/releases/tag/0.108.0</a></li>
+<li><a href=https://github.com/denoland/deno_std/pull/1300>https://github.com/denoland/deno_std/pull/1300</a></li>
+</ul>
+<h2 id=freshのアップデート>Freshのアップデート<a hidden class=anchor aria-hidden=true href=#freshのアップデート>#</a></h2>
+<p>PreactベースのWebフレームワークである<a href=https://github.com/lucacasonato/fresh>Fresh</a>でアップデートが実施されました。</p>
+<p>いくつかの破壊的変更に加え、静的ファイルの配信や<code>Suspense</code>のサポートなどが追加されています。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>バンドルの高速化のため、Deno CLIでは<a href=https://gist.githubusercontent.com/lucacasonato/358c6b7e8198bfb2cf3d220e49fdcf5f>esbuild-wasm</a>の代わりに<a href=https://github.com/esbuild/deno-esbuild>deno-esbuild</a>が使用されるように変更されました</li>
+<li>ページとAPIルートが区別されなくなりました (<strong>破壊的変更</strong>)
+<ul>
+<li>今までは <code>pages/api</code>配下はAPIルート、それ以外の<code>pages</code>配下のファイルはページとして扱われていましたが、それらの区別がなくなります</li>
+</ul>
+</li>
+<li>デフォルトでクライアント側のJavaScriptが無効化されました (<strong>破壊的変更</strong>)
+<ul>
+<li>クライアントサイドレンダリングを有効化したいときは、ページで<code>runtimeJS</code>を <code>true</code>に設定した状態で<code>config</code>をexportする必要があります</li>
+</ul>
+</li>
+<li><code>config.routeOverride</code>によってページのエンドポイントを上書きできるようになりました</li>
+<li><code>/static</code>ディレクトリに置いたファイルの静的な配信がサポートされました</li>
+<li><code>Suspense</code>を使用したストリーミングレンダリングがサポートされました</li>
+</ul>
+<hr>
+<ul>
+<li><a href=https://github.com/lucacasonato/fresh/pull/52>chore: use esm.sh + optionally use native esbuild</a></li>
+<li><a href=https://github.com/lucacasonato/fresh/pull/53>BREAKING: merge API routes and pages concept</a></li>
+<li><a href=https://github.com/lucacasonato/fresh/pull/55>BREAKING: disable runtime JS by default</a></li>
+<li><a href=https://github.com/lucacasonato/fresh/pull/57>feat: support overriding page routes</a></li>
+<li><a href=https://github.com/lucacasonato/fresh/pull/58>feat: add static file support</a></li>
+<li><a href=https://github.com/lucacasonato/fresh/pull/59>feat: streaming rendering with suspense</a></li>
+</ul>
+<h2 id=alephjs-v030-beta18>Aleph.js v0.3.0-beta.18<a hidden class=anchor aria-hidden=true href=#alephjs-v030-beta18>#</a></h2>
+<p>Aleph.jsのv0.3.0-beta.18がリリースされました。</p>
+<p><code>useDeno()</code>や<code>ssr.props()</code>で<code>Request</code>オブジェクトへのアクセスがサポートされています。</p>
+<p>また、<a href=https://github.com/alephjs/aleph.js/blob/v0.3.0-beta.18/plugins/markdown.ts>Markdownプラグイン</a>でシンタックスハイライトのサポートが追加されています。</p>
+<hr>
+<p><a href=https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.18>https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.18</a></p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/fresh.html>fresh</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/aleph.js.html>Aleph.js</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/categories/news.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.5e2b4101351c21e906f398ae96901791830f58d430f96f2659dab7eaef7b3cb7.css integrity="sha256-XitBATUcIekG85iulpAXkYMPWNQw+W8mWdq36u97PLc=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://uki00a.github.io/deno-weekly/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -20,7 +20,7 @@
 <link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/categories/news/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
@@ -71,6 +71,22 @@
 <header class=page-header>
 <h1>news</h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/07/12〜2021/07/18の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.12.0のリリース Deno v1.12.0がリリースされました。
+変更点:
+MessageChannelとMessagePortがサポートされました Deno名前空間のObject.freezeによる凍結が解除され、configurableになりました WebAssembly.instantiateStreamingがサポートされました tsconfig.jsonやDeno.emitでtypesオプションがサポートされました /// &lt;reference types="..." />がサポートされました SharedArrayBufferのworker間での共有がサポートされました SubtleCrypto.generateKeyとSubtleCrypto.sign、SubtleCrypto.verifyがサポートされました Deno.createHttpClientでproxyオプションがサポートされました ネイティブHTTPサーバでWebSocketがサポートされました (Deno.upgradeWebSocket) Denoのデバッグ機能(--inspect/--inspect-brk)が改善され、コンソールへの出力がDevToolsとターミナルの両方に出力されるようになりました deno lspのtextDocument/hoverメソッドで依存モジュールの情報を表示できるようになりました REPLの補完の挙動が改善されました REPLでimport宣言がサポートされました REPLでTypeScriptがサポートされました REPLなどでEventやRequestなどのクラスのprototypeを評価しようとすると、プロセスがクラッシュする問題が修正されました deno testで--shuffleと--fail-fast=&lt;N>オプションがサポートされました DedicatedWorkerGlobalScopeのイベントハンドラが仕様通りに動作するように修正されました Deno.ppidとDeno.memoryUsageがstableになりました console.tableの出力が改善されました fetch APIでユーザが指定したHOSTヘッダが無視されるようになりました fetch APIでOPTIONSリクエストを送信したときに、レスポンスボディが設定されるように修正されました performance APIのWeb標準との互換性が向上しました SignalStream#disposeを呼んだ後にもSignalStream#thenで登録したコールバックが呼ばれてしまう問題が修正されました Deno.copyが非推奨化されました 循環依存の関係にある複数のモジュールを平行で動的importすると、プロセスがクラッシュする問題が修正されました https://github.com/denoland/deno/releases/tag/v1.12.0 https://deno.com/blog/v1.12 Deno 1.12.0 がリリースされたので新機能や変更点の紹介 deno_std v0.101.0のリリース deno_stdのv0.101.0がリリースされました。
+このリリースにはいくつかの破壊的変更が含まれています。
+変更点:
+encoding/hex: encodedLen, encodeToString, decodedLen, decodeStringが削除され、errInvalidByteとerrLengthが非公開になりました (破壊的変更) mime/multipart: MultipartReader#readFormの戻り値であるMultipartFormDataの各メソッドが配列を返却するように変更されました。それに合わせて、fileとvalueメソッドがそれぞれfilesとvaluesにリネームされています (破壊的変更) uuid/v4: generate関数が非推奨化されました (Web Crypto APIが実装されたため) uuid/v5: Web Crypto APIの実装に合わせ、generate関数のシグネチャが変更されました (破壊的変更) async: deadline関数とdebounce関数が追加されました encoding/toml: 不適切な形式の文字列が適切に取り扱われるよう修正されました encoding/toml: stringifyで複数の型が混在した配列が適切にシリアライズされない問題が修正されました encoding/toml: 不適切な空白文字が含まれていた際に、例外が投げられるように修正されました hash: BLAKE3ハッシュ関数がサポートされました http/cookie: Domain属性に不適切な形式の値が設定されていないかチェックされるようになりました http/cookie: deleteCookieでPath属性とDomain属性の指定がサポートされました http/cookie: setCookieでmaxAgeオプションに0を指定するとエラーが発生する問題が修正されました io/bufio: readLines関数で、EOFに達した際に余分な空文字列がyieldされる問題が修正されました io/util: Deno v1....</p>
+</section>
+<footer class=entry-footer>July 18, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/07/12〜2021/07/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/18.html></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>2021/07/05〜2021/07/11の最新情報
@@ -267,27 +283,6 @@ http: カスタムのレスポンステキストを指定できるようにな�
 </section>
 <footer class=entry-footer>May 16, 2021</footer>
 <a class=entry-link aria-label="post link to 2021/05/10〜2021/05/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/16.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/05/03〜2021/05/09の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>alosaur v0.31.0がリリース DenoのWebフレームワークであるalosaurのv0.31.0がリリースされました。
-変更点:
-ContextがHttpContextにリネームされました Microserviceクラスが実装されました (https://github.com/alosaur/alosaur/tree/master/examples/microservice) OAuthサポートが追加されました https://github.com/alosaur/alosaur/releases/tag/v0.31.0
-alosaur-lite alosaur-liteはDenoのWebフレームワークであるalosaurの軽量版です。(gzip圧縮込みで2.6KB)
-Deno Deployでの使用を想定されているようです。
-https://github.com/alosaur/alosaur-lite
-Oak v7.4.0がリリース Oakのv7.4.0がリリースされました。
-主な変更点:
-send()でRange及びIf-RangeHTTPヘッダのサポートが追加されました。 ルーターをネストできるようになりました。(#275) https://github.com/oakserver/oak/commit/eefd2fdb4a3fc6dfbb52fb1c6d74ff3de4b1b85b
-Effective Deno Denoを有効に活用するためのノウハウをまとめた本をZennで公開しました。
-https://zenn.dev/uki00a/books/effective-deno</p>
-</section>
-<footer class=entry-footer>May 9, 2021</footer>
-<a class=entry-link aria-label="post link to 2021/05/03〜2021/05/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/09.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
