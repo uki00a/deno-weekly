@@ -7,17 +7,22 @@ toc: null
 
 ## 必要なもの
 
-- Deno
-- [Velociraptor](https://github.com/jurassiscripts/velociraptor)
+- Hugo
+
+## テーマのセットアップ
+
+```shell
+$ make theme
+```
 
 ## devサーバの起動
 
 ```shell
-$ vr dev
+$ make dev
 ```
 
 ## ビルド
 
 ```shell
-$ vr build
+$ make build
 ```
