@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Categories | 週刊Deno</title>
+<title>deno_std | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/categories.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.5e2b4101351c21e906f398ae96901791830f58d430f96f2659dab7eaef7b3cb7.css integrity="sha256-XitBATUcIekG85iulpAXkYMPWNQw+W8mWdq36u97PLc=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -17,7 +17,7 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.88.0">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/categories/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -26,12 +26,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Categories">
+<meta property="og:title" content="deno_std">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/categories.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/deno_std.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Categories">
+<meta name=twitter:title content="deno_std">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -71,16 +71,46 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>Categories</h1>
+<h1>deno_std</h1>
 </header>
-<ul class=terms-tags>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/news.html>news <sup><strong><sup>40</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/notice.html>notice <sup><strong><sup>1</sup></strong></sup> </a>
-</li>
-</ul>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/02/01〜2021/02/07の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.7.2がリリース Deno v1.7.2がリリースされました。これに合わせて、deno_std v0.86.0もリリースされています。
+主な変更点:
+deno lspでtextDocument/codeLens及びtextDocument/codeActionが実装された WPTにパスするよう、File及びBlobの実装がリライトされた https://github.com/denoland/deno/releases/tag/v1.7.2 https://github.com/denoland/deno_std/releases/tag/0.86.0 deno_stdのリポジトリがdeno本体のリポジトリから分離された Denoには標準モジュールとしてdeno_stdが存在します。
+今まで、このdeno_stdの開発は、deno本体と同じリポジトリ内(denoland/deno)で行われていました。
+この度、deno_stdが個別のリポジトリへと分離されました。
+これにより、deno_stdの開発時にRustのセットアップが必要なくなるため、deno_stdへのコントリビューションが行いやすくなるのではないかと思われます。
+https://github.com/denoland/deno_std
+サードパーティモジュールの最新情報 emacs-ng emacs-ngはEmacsのフォークです。
+以下のような機能を備えているようです:
+Denoを組み込むことで、Emacs内でJavaScript/TypeScriptコードの実行を可能とする MozillaのWebRenderをサポート https://github.com/emacs-ng/emacs-ng
+deno-postgres v0.7.0がリリースされた deno-postgres v0.7.0がリリースされました。
+v0.6.0までは、deno-postgresがサポートしていないデータ型を利用しようとすると、例外が発生しました。
+このリリースにおいて、現時点でdeno-postgresでサポートされていない全てのデータ型が、JavaScriptのStringとして返却されるように挙動が変更されました。
+将来的には、ライブラリの利用者が各データ型のハンドリング方法を制御できるようにするために、カスタムのハンドラを登録できるようにすることも検討されているようです。
+https://github.com/denodrivers/postgres/issues/239
+https://github.com/denodrivers/postgres/releases/tag/v0.7.0
+Trex v1.5.0がリリースされた TrexはDenoのパッケージマネージャです。
+このリリースではtrex lsコマンドが実装され、インストールされた依存パッケージの一覧を表示できるようになりました。
+https://github.com/crewdevio/Trex/releases/tag/v1.5.0
+Deno Module Visualizer Deno Module Visualizerが公開されました。
+Deno Module Visualizerは、あるモジュールとその依存関係をGraphvizを使って可視化してくれます。
+使用例:
+deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
+</section>
+<footer class=entry-footer>February 7, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/02/01〜2021/02/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/07.html></a>
+</article>
+<footer class=page-footer>
+<nav class=pagination>
+<a class=prev href=https://uki00a.github.io/deno-weekly/tags/deno_std/page/2.html>« Prev Page</a>
+</nav>
+</footer>
 </main>
 <footer class=footer>
 <span>&copy; 2021 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>

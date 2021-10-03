@@ -75,6 +75,29 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/06/14〜2021/06/20の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。
+このリリースでは、バグ修正などを中心に行われています。
+主な変更点:
+Deno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。 https://github.com/denoland/deno/releases/tag/v1.11.1
+deno_std v0.99.0がリリースされました deno_stdのv0.99.0がリリースされました。
+変更点:
+mime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました) https://github.com/denoland/deno_std/releases/tag/0.99.0
+Oak v7.6.0がリリースされました Oakのv7.6.0がリリースされました。
+主な変更点:
+ユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。 https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e
+Deno internals - how modern JavaScript runtime is built Node.js Wroclaw #10でのBartek Iwańczuk氏の公演がYoutubeで公開されました。
+Denoランタイムの内部構造などついて解説されています。
+https://www.youtube.com/watch?v=LoknuwupOIE</p>
+</section>
+<footer class=entry-footer>June 20, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/06/14〜2021/06/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/20.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/06/07〜2021/06/13の最新情報
 </h2>
 </header>
@@ -269,42 +292,10 @@ https://github.com/dsherret/ts-morph/releases/tag/10.0.1 https://deno.land/x/ts_
 <footer class=entry-footer>March 7, 2021</footer>
 <a class=entry-link aria-label="post link to 2021/03/01〜2021/03/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/07.html></a>
 </article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/02/01〜2021/02/07の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno本体の最新情報 Deno v1.7.2がリリース Deno v1.7.2がリリースされました。これに合わせて、deno_std v0.86.0もリリースされています。
-主な変更点:
-deno lspでtextDocument/codeLens及びtextDocument/codeActionが実装された WPTにパスするよう、File及びBlobの実装がリライトされた https://github.com/denoland/deno/releases/tag/v1.7.2 https://github.com/denoland/deno_std/releases/tag/0.86.0 deno_stdのリポジトリがdeno本体のリポジトリから分離された Denoには標準モジュールとしてdeno_stdが存在します。
-今まで、このdeno_stdの開発は、deno本体と同じリポジトリ内(denoland/deno)で行われていました。
-この度、deno_stdが個別のリポジトリへと分離されました。
-これにより、deno_stdの開発時にRustのセットアップが必要なくなるため、deno_stdへのコントリビューションが行いやすくなるのではないかと思われます。
-https://github.com/denoland/deno_std
-サードパーティモジュールの最新情報 emacs-ng emacs-ngはEmacsのフォークです。
-以下のような機能を備えているようです:
-Denoを組み込むことで、Emacs内でJavaScript/TypeScriptコードの実行を可能とする MozillaのWebRenderをサポート https://github.com/emacs-ng/emacs-ng
-deno-postgres v0.7.0がリリースされた deno-postgres v0.7.0がリリースされました。
-v0.6.0までは、deno-postgresがサポートしていないデータ型を利用しようとすると、例外が発生しました。
-このリリースにおいて、現時点でdeno-postgresでサポートされていない全てのデータ型が、JavaScriptのStringとして返却されるように挙動が変更されました。
-将来的には、ライブラリの利用者が各データ型のハンドリング方法を制御できるようにするために、カスタムのハンドラを登録できるようにすることも検討されているようです。
-https://github.com/denodrivers/postgres/issues/239
-https://github.com/denodrivers/postgres/releases/tag/v0.7.0
-Trex v1.5.0がリリースされた TrexはDenoのパッケージマネージャです。
-このリリースではtrex lsコマンドが実装され、インストールされた依存パッケージの一覧を表示できるようになりました。
-https://github.com/crewdevio/Trex/releases/tag/v1.5.0
-Deno Module Visualizer Deno Module Visualizerが公開されました。
-Deno Module Visualizerは、あるモジュールとその依存関係をGraphvizを使って可視化してくれます。
-使用例:
-deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
-</section>
-<footer class=entry-footer>February 7, 2021</footer>
-<a class=entry-link aria-label="post link to 2021/02/01〜2021/02/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/07.html></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>« Prev Page</a>
+<a class=next href=https://uki00a.github.io/deno-weekly/tags/deno_std/page/3.html>Next Page »</a>
 </nav>
 </footer>
 </main>
