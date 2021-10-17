@@ -75,6 +75,20 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/10/11〜2021/10/17の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.15.0 Deno v1.15.0がリリースされました。
+Node.jsの互換モードやサブテストの実験的な実装や、URLPatternやDeno.killの安定化、deno uninstallコマンドの実装などが行われています。
+新機能:
+CLI Node.js互換モードの実装 (--compat を付与してDenoを実行すると、Node.jsの組み込みモジュールの読み込みが有効化されます) deno uninstallコマンドが実装されました (deno installでインストールされたスクリプトをアンインストールできます) deno lintコマンドで--watchオプションがサポートされました テスト Deno.testでテストケースの入れ子が実験的にサポートされました Deno.testで定義したテストケースがリソースリークによって失敗した際に、より詳細なエラーメッセージが表示されるようになりました (unstableをつけたときのみ) Deno API 下記のAPIが安定化されました Deno.kill Deno.Process.kill Deno.resolveDns URLPattern Deno.startTLS/Deno.connectTLS/Deno.createHttpClientでcaCertsオプションがサポートされ、複数のルート証明書を指定できるようになりました 合わせてDeno.startTLSとDeno.connectTLSのcertFileオプションが非推奨化されています また、Deno.createHttpClientのcertFileオプションが削除されています Deno.resolveDnsの内部でエラーが発生した際に返却されるエラーが改善されました Web Crypto API SubtleCrypto.deriveKeyが実装されました SubtleCrypto.wrapKeyが実装されました SubtleCrypto.exportKeyでRSAキーをspkiフォーマットでエクスポートできるようになりました SubtleCryptoのencryptとdecryptメソッドでAES-CBCによる暗号化と復号がサポートされました SubtleCrypto.deriveBitsでECDH (p256)がサポートされました SubtleCrypto.importKeyでraw形式のECDSAキーをインポートできるようになりました SubtleCryptoでAESキーのインポートとエクスポートがサポートされました FFI関連 (Deno.dlopen) バッファ引数(ArrayBuffer)のサポート 非同期呼び出しのサポート WASM スタックトレースにおけるWebAssembly....</p>
+</section>
+<footer class=entry-footer>October 17, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/10/11〜2021/10/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/17.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/10/04〜2021/10/10の最新情報
 </h2>
 </header>
@@ -265,26 +279,6 @@ Deno.serveHttpが安定化されました Deno.upgradeWebSocketで返却され�
 </section>
 <footer class=entry-footer>August 15, 2021</footer>
 <a class=entry-link aria-label="post link to 2021/08/09〜2021/08/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/15.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/08/02〜2021/08/08の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>deno-sqlite v3.0.0がリリース deno-sqliteのv3.0.0がリリースされました。
-このリリースではRowsタイプへの破壊的変更やパフォーマンスの向上などが実施されています。
-変更点:
-DB#queryメソッドで型パラメータがサポートされました DB#queryメソッドの戻り値がRowsタイプからRowタイプの配列へ変更されました DB#prepareQueryメソッドで型パラメータがサポートされました DB#prepareQueryの戻り値であるPreparedQueryタイプが大幅に変更され、より詳細にクエリの実行方法を制御できるようになりました v3.0.0 v2.5.0 DB#queryEntriesメソッドが追加され、問い合わせ結果をオブジェクトの配列として取得できるようになりました localtime修飾子がローカルのタイムゾーンを参照するように修正されました https://github.com/dyedgreen/deno-sqlite/releases/tag/v3.0.0
-Velociraptor v1.1.0がリリース DenoのタスクランナであるVelociraptorのv1.1.0がリリースされました。
-変更点:
-スクリプトを実行する際に--option=value形式の引数が—-option value形式に正規化されてしまう問題が修正されました vrコマンドを引数なしで実行した際に、Composite scriptsのdescプロパティで定義した説明文が表示されるように修正されました https://github.com/jurassiscripts/velociraptor/releases/tag/1.1.0
-deno_sdl2 SDL2へのバインディング
-まだ開発途中のようですが、Denoのプラグインシステム(Deno v1.13.0にて削除される予定です)に依存せず、Canvas互換のAPIを介してRustで実装されたTCPサーバとやり取りしているようです。
-https://github.com/littledivy/deno_sdl2</p>
-</section>
-<footer class=entry-footer>August 8, 2021</footer>
-<a class=entry-link aria-label="post link to 2021/08/02〜2021/08/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/08.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

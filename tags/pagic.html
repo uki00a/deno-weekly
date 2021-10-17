@@ -75,6 +75,20 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/10/11〜2021/10/17の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.15.0 Deno v1.15.0がリリースされました。
+Node.jsの互換モードやサブテストの実験的な実装や、URLPatternやDeno.killの安定化、deno uninstallコマンドの実装などが行われています。
+新機能:
+CLI Node.js互換モードの実装 (--compat を付与してDenoを実行すると、Node.jsの組み込みモジュールの読み込みが有効化されます) deno uninstallコマンドが実装されました (deno installでインストールされたスクリプトをアンインストールできます) deno lintコマンドで--watchオプションがサポートされました テスト Deno.testでテストケースの入れ子が実験的にサポートされました Deno.testで定義したテストケースがリソースリークによって失敗した際に、より詳細なエラーメッセージが表示されるようになりました (unstableをつけたときのみ) Deno API 下記のAPIが安定化されました Deno.kill Deno.Process.kill Deno.resolveDns URLPattern Deno.startTLS/Deno.connectTLS/Deno.createHttpClientでcaCertsオプションがサポートされ、複数のルート証明書を指定できるようになりました 合わせてDeno.startTLSとDeno.connectTLSのcertFileオプションが非推奨化されています また、Deno.createHttpClientのcertFileオプションが削除されています Deno.resolveDnsの内部でエラーが発生した際に返却されるエラーが改善されました Web Crypto API SubtleCrypto.deriveKeyが実装されました SubtleCrypto.wrapKeyが実装されました SubtleCrypto.exportKeyでRSAキーをspkiフォーマットでエクスポートできるようになりました SubtleCryptoのencryptとdecryptメソッドでAES-CBCによる暗号化と復号がサポートされました SubtleCrypto.deriveBitsでECDH (p256)がサポートされました SubtleCrypto.importKeyでraw形式のECDSAキーをインポートできるようになりました SubtleCryptoでAESキーのインポートとエクスポートがサポートされました FFI関連 (Deno.dlopen) バッファ引数(ArrayBuffer)のサポート 非同期呼び出しのサポート WASM スタックトレースにおけるWebAssembly....</p>
+</section>
+<footer class=entry-footer>October 17, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/10/11〜2021/10/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/17.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/05/10〜2021/05/16の最新情報
 </h2>
 </header>
