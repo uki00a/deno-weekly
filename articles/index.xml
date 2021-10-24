@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Articles on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/articles.html</link><description>Recent content in Articles on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 24 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/10/18〜2021/10/24の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/10/24.html</link><pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/10/24.html</guid><description>Deno v1.15.2 Deno v1.15.2がリリースされました。
 主な変更点:
 Node.js互換モード(--compat)でCommon JS形式のモジュールの実行などがサポートされました。
-deno runコマンドの引数として接Common JS形式のファイルを直接指定できます
+deno runコマンドの引数としてCommon JS形式のファイルを直接指定できます
 const EventEmitter = require(&amp;#34;events&amp;#34;); const emitter = new EventEmitter(); emitter.on(&amp;#34;foo&amp;#34;, console.log); emitter.emit(&amp;#34;foo&amp;#34;, 1); $ deno run --unstable --compat --allow-read main.js TypeScriptのallowSyntheticDefaultImportsオプションがデフォルトで有効化されるようになりました
 https://github.com/denoland/deno/releases/tag/v1.15.2
 deno_std v0.112.0 deno_std v0.112.0がリリースされました。
