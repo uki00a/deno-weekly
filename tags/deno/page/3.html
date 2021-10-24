@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.5e2b4101351c21e906f398ae96901791830f58d430f96f2659dab7eaef7b3cb7.css integrity="sha256-XitBATUcIekG85iulpAXkYMPWNQw+W8mWdq36u97PLc=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.6f60056d44d3f7eb69a4bc6c332b59960f3a995802bded244750232f33713c49.css integrity="sha256-b2AFbUTT9+tppLxsMytZlg86mVgCve0kR1AjLzNxPEk=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -73,6 +73,22 @@
 <header class=page-header>
 <h1>deno</h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/05/10〜2021/05/16の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。
+このリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。
+変更点:
+deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が"esm" | "iife"から"module" | "classic"に変更された 公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。
+変更点:
+http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった https://github....</p>
+</section>
+<footer class=entry-footer>May 16, 2021</footer>
+<a class=entry-link aria-label="post link to 2021/05/10〜2021/05/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/16.html></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>2021/04/19〜2021/04/25の最新情報
@@ -280,39 +296,6 @@ deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされまし�
 </section>
 <footer class=entry-footer>February 14, 2021</footer>
 <a class=entry-link aria-label="post link to 2021/02/08〜2021/02/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/14.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/02/01〜2021/02/07の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno本体の最新情報 Deno v1.7.2がリリース Deno v1.7.2がリリースされました。これに合わせて、deno_std v0.86.0もリリースされています。
-主な変更点:
-deno lspでtextDocument/codeLens及びtextDocument/codeActionが実装された WPTにパスするよう、File及びBlobの実装がリライトされた https://github.com/denoland/deno/releases/tag/v1.7.2 https://github.com/denoland/deno_std/releases/tag/0.86.0 deno_stdのリポジトリがdeno本体のリポジトリから分離された Denoには標準モジュールとしてdeno_stdが存在します。
-今まで、このdeno_stdの開発は、deno本体と同じリポジトリ内(denoland/deno)で行われていました。
-この度、deno_stdが個別のリポジトリへと分離されました。
-これにより、deno_stdの開発時にRustのセットアップが必要なくなるため、deno_stdへのコントリビューションが行いやすくなるのではないかと思われます。
-https://github.com/denoland/deno_std
-サードパーティモジュールの最新情報 emacs-ng emacs-ngはEmacsのフォークです。
-以下のような機能を備えているようです:
-Denoを組み込むことで、Emacs内でJavaScript/TypeScriptコードの実行を可能とする MozillaのWebRenderをサポート https://github.com/emacs-ng/emacs-ng
-deno-postgres v0.7.0がリリースされた deno-postgres v0.7.0がリリースされました。
-v0.6.0までは、deno-postgresがサポートしていないデータ型を利用しようとすると、例外が発生しました。
-このリリースにおいて、現時点でdeno-postgresでサポートされていない全てのデータ型が、JavaScriptのStringとして返却されるように挙動が変更されました。
-将来的には、ライブラリの利用者が各データ型のハンドリング方法を制御できるようにするために、カスタムのハンドラを登録できるようにすることも検討されているようです。
-https://github.com/denodrivers/postgres/issues/239
-https://github.com/denodrivers/postgres/releases/tag/v0.7.0
-Trex v1.5.0がリリースされた TrexはDenoのパッケージマネージャです。
-このリリースではtrex lsコマンドが実装され、インストールされた依存パッケージの一覧を表示できるようになりました。
-https://github.com/crewdevio/Trex/releases/tag/v1.5.0
-Deno Module Visualizer Deno Module Visualizerが公開されました。
-Deno Module Visualizerは、あるモジュールとその依存関係をGraphvizを使って可視化してくれます。
-使用例:
-deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
-</section>
-<footer class=entry-footer>February 7, 2021</footer>
-<a class=entry-link aria-label="post link to 2021/02/01〜2021/02/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/07.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
