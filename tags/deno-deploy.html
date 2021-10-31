@@ -75,6 +75,34 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/10/25〜2021/10/31の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.15.3 Deno v1.15.3がリリースされました。
+このリリースはバグ修正がメインです。
+変更点:
+TLS接続関連のAPIで発生することのあるプロセスのハングや大きなデータの書き込みがうまくいかない問題などが修正されました Deno.emitでalready borrowed: BorrowMutErrorが発生する問題が修正されました globalThis経由でFormDataなどのWeb APIを参照しようとすると型エラーが発生する問題が修正されました など
+https://github.com/denoland/deno/releases/tag/v1.15.3
+deno_std v0.113.0 deno_std v0.113.0がリリースされました。
+変更点:
+collections: runningReduceに渡すreducer関数にcurrentIndexが渡されるようになりました
+testing/asserts: assertIsErrorが追加されました
+node/module: require()でnode:プレフィックスがサポートされました
+const EventEmitter = require("node:events"); node/module: Common JSモジュールの中でimport/exportを使用した際の警告メッセージが親切になりました
+node/url: url.urlToHttpOptionsが実装されました
+node/os: os.archの返却値がNode.jsに一致するように修正されました
+node/events: onとemitメソッドを非EventEmitterオブジェクトに束縛して実行できるようになりました
+http/file_server: ファイル一覧ページでパンくずリストが表示されるようになりました
+http/file_server: ファイル名に%記号などが含まれている場合、そのファイルに適切にアクセスできない問題が修正されました
+http/file_server: 200や206以外のレスポンスを返却する際に生じるリソースリークが修正されました
+http/file_server: エラーログに色がつくようになりました...</p>
+</section>
+<footer class=entry-footer><span title="2021-10-31 00:00:00 +0000 UTC">October 31, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/10/25〜2021/10/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/31.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/08/30〜2021/09/05の最新情報
 </h2>
 </header>
@@ -93,7 +121,7 @@ Ultra UltraというDeno+ReactベースのWebフレームワークが公開さ�
 ReactDOM.renderToReadableStreamベースのSSR Viteなどと同様のオンデマンドでのコード変換 (SWCやesbuildがベース) SWR向けのキャッシュプロパイダを提供 /examplesディレクトリに使用例があるため、もし興味がありましたら見てみるとよいかもしれません。
 https://github.com/exhibitionist-digital/ultra</p>
 </section>
-<footer class=entry-footer>September 5, 2021</footer>
+<footer class=entry-footer><span title="2021-09-05 00:00:00 +0000 UTC">September 5, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/08/30〜2021/09/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/05.html></a>
 </article>
 <article class="post-entry tag-entry">
@@ -116,7 +144,7 @@ depcheck depcheckはソースコード中の未使用の依存関係を検出す
 https://github.com/ebebbington/depcheck
 deno-github-contributions-api deno-github-contributions-apiは、Deno Deployで動作するGitHub上でのコントリビューション数を取得するためのAPIです。...</p>
 </section>
-<footer class=entry-footer>August 1, 2021</footer>
+<footer class=entry-footer><span title="2021-08-01 00:00:00 +0000 UTC">August 1, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/26〜2021/08/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/01.html></a>
 </article>
 <article class="post-entry tag-entry">
@@ -139,7 +167,7 @@ xml - Denoで動作するXMLモジュール xmlはDenoで動作するXMLモジ�
 XMLドキュメントのパースやJavaScriptオブジェクトからXMLドキュメントへの変換などがサポートされています。
 https://github.com/lowlighter/xml</p>
 </section>
-<footer class=entry-footer>June 27, 2021</footer>
+<footer class=entry-footer><span title="2021-06-27 00:00:00 +0000 UTC">June 27, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/21〜2021/06/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/27.html></a>
 </article>
 <article class="post-entry tag-entry">
@@ -164,7 +192,7 @@ deploy_dir deploy_dirという静的なWebサイトをDeno Deployへデプロイ
 指定されたディレクトリの内容を読み込み、Deno Deployへ公開できる形式へパッケージングしてくれます。
 https://github.com/kt3k/deploy_dir</p>
 </section>
-<footer class=entry-footer>May 30, 2021</footer>
+<footer class=entry-footer><span title="2021-05-30 00:00:00 +0000 UTC">May 30, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/05/24〜2021/05/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/30.html></a>
 </article>
 <article class="post-entry tag-entry">
@@ -191,7 +219,7 @@ path-to-regexpでサポートされている形式で、ルーティングを定
 https://github.com/satyarohith/sift
 deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用することのできるDOM APIの実装を提供しています。...</p>
 </section>
-<footer class=entry-footer>April 4, 2021</footer>
+<footer class=entry-footer><span title="2021-04-04 00:00:00 +0000 UTC">April 4, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/29〜2021/04/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/04.html></a>
 </article>
 </main>
@@ -205,7 +233,7 @@ Powered by
 </footer>
 <a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
 <script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
 </body>
