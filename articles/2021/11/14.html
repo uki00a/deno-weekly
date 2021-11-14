@@ -1,0 +1,427 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>2021/11/08〜2021/11/14の最新情報 | 週刊Deno</title>
+<meta name=keywords content="Deno,deno_std,deno-postgres">
+<meta name=description content="Deno v1.16.0 Deno v1.16.0がリリースされました。
+React 17 JSX Transformのサポート React 17で導入された新しいJSX Transformのサポートが追加されました。
+ https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories  .jsxまたは.tsxファイル中で@jsxImportSourceを使うことで有効化されます。
+/** @jsxImportSource https://esm.sh/preact@10.5.15 */ export function Hello(props) { return ( <div>Hello, {props.name}</div> ) } また、--configオプションで指定する設定ファイルで有効化することも可能です。
+{ &#34;compilerOptions&#34;: { &#34;jsx&#34;: &#34;react-jsx&#34;, &#34;jsxImportSource&#34;: &#34;https://esm.sh/react@17.0.2&#34; } } ※Denoの特性上、&#34;jsx&#34;: &#34;react-jsx&#34;を指定した際は、jsxImportSourceの指定も必要です。
+Deno API 新しいシグナルAPI Deno.addSignalListenerとDeno.removeSignalListenerが実装されました (unstable)
+const signalListener = () => { // ... }; Deno.addSignalListener(&#34;SIGTERM&#34;, signalListener); Deno.removeSignalListener(&#34;SIGTERM&#34;, signalListener); この変更に合わせて、既存のDeno.signalは削除されています。
+ https://github.com/denoland/deno/issues/11158  Deno.TlsConn型の導入 Deno.TlsConnという新しいデータ型が導入されました。
+これに合わせて、Deno.connectTlsなどのAPIがDeno.Connの代わりにDeno.TlsConnを返却するように修正されています。
+このオブジェクトにはhandshakeメソッドが定義されており、明示的にハンドシェイクを行うことができます。
+Deno.testのテストケースごとのパーミッション指定が安定化 Deno v1.">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/11/14.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.6f60056d44d3f7eb69a4bc6c332b59960f3a995802bded244750232f33713c49.css integrity="sha256-b2AFbUTT9+tppLxsMytZlg86mVgCve0kR1AjLzNxPEk=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.0">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="2021/11/08〜2021/11/14の最新情報">
+<meta property="og:description" content="Deno v1.16.0 Deno v1.16.0がリリースされました。
+React 17 JSX Transformのサポート React 17で導入された新しいJSX Transformのサポートが追加されました。
+ https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories  .jsxまたは.tsxファイル中で@jsxImportSourceを使うことで有効化されます。
+/** @jsxImportSource https://esm.sh/preact@10.5.15 */ export function Hello(props) { return ( <div>Hello, {props.name}</div> ) } また、--configオプションで指定する設定ファイルで有効化することも可能です。
+{ &#34;compilerOptions&#34;: { &#34;jsx&#34;: &#34;react-jsx&#34;, &#34;jsxImportSource&#34;: &#34;https://esm.sh/react@17.0.2&#34; } } ※Denoの特性上、&#34;jsx&#34;: &#34;react-jsx&#34;を指定した際は、jsxImportSourceの指定も必要です。
+Deno API 新しいシグナルAPI Deno.addSignalListenerとDeno.removeSignalListenerが実装されました (unstable)
+const signalListener = () => { // ... }; Deno.addSignalListener(&#34;SIGTERM&#34;, signalListener); Deno.removeSignalListener(&#34;SIGTERM&#34;, signalListener); この変更に合わせて、既存のDeno.signalは削除されています。
+ https://github.com/denoland/deno/issues/11158  Deno.TlsConn型の導入 Deno.TlsConnという新しいデータ型が導入されました。
+これに合わせて、Deno.connectTlsなどのAPIがDeno.Connの代わりにDeno.TlsConnを返却するように修正されています。
+このオブジェクトにはhandshakeメソッドが定義されており、明示的にハンドシェイクを行うことができます。
+Deno.testのテストケースごとのパーミッション指定が安定化 Deno v1.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/11/14.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2021-11-14T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-11-14T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="2021/11/08〜2021/11/14の最新情報">
+<meta name=twitter:description content="Deno v1.16.0 Deno v1.16.0がリリースされました。
+React 17 JSX Transformのサポート React 17で導入された新しいJSX Transformのサポートが追加されました。
+ https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories  .jsxまたは.tsxファイル中で@jsxImportSourceを使うことで有効化されます。
+/** @jsxImportSource https://esm.sh/preact@10.5.15 */ export function Hello(props) { return ( <div>Hello, {props.name}</div> ) } また、--configオプションで指定する設定ファイルで有効化することも可能です。
+{ &#34;compilerOptions&#34;: { &#34;jsx&#34;: &#34;react-jsx&#34;, &#34;jsxImportSource&#34;: &#34;https://esm.sh/react@17.0.2&#34; } } ※Denoの特性上、&#34;jsx&#34;: &#34;react-jsx&#34;を指定した際は、jsxImportSourceの指定も必要です。
+Deno API 新しいシグナルAPI Deno.addSignalListenerとDeno.removeSignalListenerが実装されました (unstable)
+const signalListener = () => { // ... }; Deno.addSignalListener(&#34;SIGTERM&#34;, signalListener); Deno.removeSignalListener(&#34;SIGTERM&#34;, signalListener); この変更に合わせて、既存のDeno.signalは削除されています。
+ https://github.com/denoland/deno/issues/11158  Deno.TlsConn型の導入 Deno.TlsConnという新しいデータ型が導入されました。
+これに合わせて、Deno.connectTlsなどのAPIがDeno.Connの代わりにDeno.TlsConnを返却するように修正されています。
+このオブジェクトにはhandshakeメソッドが定義されており、明示的にハンドシェイクを行うことができます。
+Deno.testのテストケースごとのパーミッション指定が安定化 Deno v1.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/11/08〜2021/11/14の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/11/14.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/11/08〜2021/11/14の最新情報","name":"2021\/11\/08〜2021\/11\/14の最新情報","description":"Deno v1.16.0 Deno v1.16.0がリリースされました。\nReact 17 JSX Transformのサポート React 17で導入された新しいJSX Transformのサポートが追加されました。\n https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories  .jsxまたは.tsxファイル中で@jsxImportSourceを使うことで有効化されます。\n/** @jsxImportSource https://esm.sh/preact@10.5.15 */ export function Hello(props) { return ( \u0026lt;div\u0026gt;Hello, {props.name}\u0026lt;/div\u0026gt; ) } また、--configオプションで指定する設定ファイルで有効化することも可能です。\n{ \u0026#34;compilerOptions\u0026#34;: { \u0026#34;jsx\u0026#34;: \u0026#34;react-jsx\u0026#34;, \u0026#34;jsxImportSource\u0026#34;: \u0026#34;https://esm.sh/react@17.0.2\u0026#34; } } ※Denoの特性上、\u0026quot;jsx\u0026quot;: \u0026quot;react-jsx\u0026quot;を指定した際は、jsxImportSourceの指定も必要です。\nDeno API 新しいシグナルAPI Deno.addSignalListenerとDeno.removeSignalListenerが実装されました (unstable)\nconst signalListener = () =\u0026gt; { // ... }; Deno.addSignalListener(\u0026#34;SIGTERM\u0026#34;, signalListener); Deno.removeSignalListener(\u0026#34;SIGTERM\u0026#34;, signalListener); この変更に合わせて、既存のDeno.signalは削除されています。\n https://github.com/denoland/deno/issues/11158  Deno.TlsConn型の導入 Deno.TlsConnという新しいデータ型が導入されました。\nこれに合わせて、Deno.connectTlsなどのAPIがDeno.Connの代わりにDeno.TlsConnを返却するように修正されています。\nこのオブジェクトにはhandshakeメソッドが定義されており、明示的にハンドシェイクを行うことができます。\nDeno.testのテストケースごとのパーミッション指定が安定化 Deno v1.","keywords":["Deno","deno_std","deno-postgres"],"articleBody":"Deno v1.16.0 Deno v1.16.0がリリースされました。\nReact 17 JSX Transformのサポート React 17で導入された新しいJSX Transformのサポートが追加されました。\n https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories  .jsxまたは.tsxファイル中で@jsxImportSourceを使うことで有効化されます。\n/** @jsxImportSource https://esm.sh/preact@10.5.15 */ export function Hello(props) { return ( divHello, {props.name}div ) } また、--configオプションで指定する設定ファイルで有効化することも可能です。\n{ \"compilerOptions\": { \"jsx\": \"react-jsx\", \"jsxImportSource\": \"https://esm.sh/react@17.0.2\" } } ※Denoの特性上、\"jsx\": \"react-jsx\"を指定した際は、jsxImportSourceの指定も必要です。\nDeno API 新しいシグナルAPI Deno.addSignalListenerとDeno.removeSignalListenerが実装されました (unstable)\nconst signalListener = () = { // ... }; Deno.addSignalListener(\"SIGTERM\", signalListener); Deno.removeSignalListener(\"SIGTERM\", signalListener); この変更に合わせて、既存のDeno.signalは削除されています。\n https://github.com/denoland/deno/issues/11158  Deno.TlsConn型の導入 Deno.TlsConnという新しいデータ型が導入されました。\nこれに合わせて、Deno.connectTlsなどのAPIがDeno.Connの代わりにDeno.TlsConnを返却するように修正されています。\nこのオブジェクトにはhandshakeメソッドが定義されており、明示的にハンドシェイクを行うことができます。\nDeno.testのテストケースごとのパーミッション指定が安定化 Deno v1.10で実装されたテストケースごとにパーミッションを指定できる機能が安定化され、--unstableフラグなしでも利用できるようになりました。\nDeno.test({ name: \"This should fail\", permissions: { net: false, }, fn: async () = { const _ = await fetch(\"https://example.com\"); }, }); Deno.startTlsが安定化 Deno.startTlsが安定化され--unstableフラグなしでも利用できるようになりました。\nシンボリックリンク関連のAPI Deno.symlinkなどのAPIが–allow-writeに加えて–allow-read`パーミッションを要求するように変更されました。\nNode.js互換モードの機能向上 https:やblob:インポートがサポートされました。 (.mjsファイル中やpackage.jsonで\"type\": \"module\"が指定された際に有効化されます)\nまた、Import mapsとの統合もサポートされています。\nWeb API localStorageで--locationの指定が不要になりました localStorageが--locationオプションを指定せずに利用できるようになりました。\n https://github.com/denoland/deno/pull/12548  また、--locationが指定された際の挙動も若干変更されています。\n v1.15までと異なり、--location https://deno.land/x/a.tsと--location https://deno.land/x/b.tsは同一のオリジンとして扱われます。 --locationが未指定 かつ --configが指定された場合、--configで指定された設定ファイルの絶対パスがオリジンとして使用されます。 --locationも--configも指定されなかった場合、メインモジュールの絶対パスがオリジンとして使用されます。  fetchでローカルファイルのダウンロードがサポート 利用するには--allow-readパーミッションが必要です。\nconst res = await fetch(\"file:///home/uki00a/.vimrc\"); console.log(await res.text()); AbortSignal.reasonのサポート 詳細についてはこちらを参照ください。\nconst controller = new AbortController(); controller.abort(new Error(\"Hello\")); console.log(controller.signal.reason); Streams API 変更点:\n (破壊的変更) ReadableStream#getIteratorが削除されました。  ReadableStreamはAsyncIterableプロトコルを実装しているので、今後はそちらを使う必要があります。   ReadableStreamBYOBReaderがサポートされました。 WritableStreamDefaultControllerにsignalプロパティが追加されました  https://github.com/whatwg/streams/blob/main/writable-stream-abort-signal-explainer.md    エラー関連  Errorオブジェクトのcauseプロパティの値がconsole.logなどで出力されるようになりました。 OSエラーやdynamic importのエラーにcodeプロパティが定義されるようになりました。  V8のアップデート V8が9.7にアップデートされました 。\nWeb AssemblyのReference Typesのサポートや、ArrayやTypedArrayへのfindLast及びfindLastIndexの実装などが追加されています。\nバグ修正など  TypeScriptの型エラーが発生した際にトランスパイル結果がキャッシュされる問題が修正されました。 deno fmt --watchまたはdeno lint --watchに引数が与えられなかった際に、うまく動かない問題が修正されました --no-checkでinlineSourcesコンパイラオプションが機能するようになりました。 Deno.upgradeWebSocketでUpgradeヘッダに複数の値の指定が許可されるようになりました。 fetchでPOSTやPUTリクエストを送信する際に、ボディがなくてもContent-Length: 0ヘッダが設定されるようになりました。 deno lspでtextDocument/signatureHelpから返却されるドキュメントの形式がplain textからMarkdown形式に変更されました。 deno lspでx-typescript-typesヘッダがうまく機能しない問題が修正されました importScriptsがfetchと同じHTTPクライアントを使用するように修正されました    https://github.com/denoland/deno/releases/tag/v1.16.0 https://deno.com/blog/v1.16 Deno 1.16が来たぞ  Deno v1.16.1 Deno v1.16.1がリリースされました。\n変更点:\n v1.16.0で追加されたAbortSignal.reasonの型定義が追加されました。 ネイティブHTTPサーバで非アスキー文字を含むUint8Arrayのレスポンスの返却に失敗する問題が修正されました。 SubtleCrypto.deriveBitsでHKDFキーのビット列を得る際に、渡されたキー長が大きすぎるとプロセスがパニックする問題が修正されました。   https://github.com/denoland/deno/releases/tag/v1.16.1\ndeno_std v0.114.0 deno_std v0.114.0がリリースされました。\ncollections  Deno v1.16でのArray.prototype.findLastなどの導入に合わせて、findLastとfindLastIndexが非推奨化されました。 deepMergeにプロトタイプ汚染攻撃への対策が入れられました。 findSingleで述語関数の指定が必須になりました。  http/server serveListener関数が追加されました。使用法はv0.113.0までのserve関数と同様です。\nimport { serveListener } from \"https://deno.land/std@0.114.0/http/server.ts\"; const listener = Deno.listen({ port: 8000 }); await serveListener(listener, (request) = { return new Response(\"Hello\", { status: 200 }); }); これに合わせてserveの使用法が変更されています。こちらはDeno.Listenerを渡す必要がありません。\nimport { serve } from \"https://deno.land/std@0.114.0/http/server.ts\"; await serve((request) = { return new Response(\"Hello\", { status: 200 }); }, { addr: \":8000\" }); これらの変更に合わせて、下記関数が非推奨化されました。\n listenAndServe (今後はserveの使用が推奨されます) listenAndServeTls (今後はserveTlsの使用が推奨されます)  Denoでサーバーを建てる方法 2021年11月版の記事でserveなどについて解説されています。\nnode DenoのNode.js互換モードの強化に向けて、様々な機能の追加や変更が実施されています。\nまた、Deno Deployとの互換性の向上なども実施されています。\n変更点:\n readlineパッケージが追加されました (下記関数がサポート)  clearLine clearScreenDown cursorTo moveCursor   vmパッケージが追加されました (現在は最低限の実装のみ) process  process.onでシグナルをリスニングできるようになりました。 process.execArgvが追加されました (現在は、常に空の配列が設定されます) process.archがNode.jsに一致するよう修正されました   fsパッケージでwatchFileが実装されました http  Server  EventEmitterを継承し、'close'や'connection'イベントを発火するようになりました。 closeメソッドやaddressメソッドが実装されました   ServerResponse  statusCodeとstatusMessageプロパティが定義されました。 removeHeader, getHeaderNames, hasHeaderが実装されました setHeaderがthisを返却するようになりました。     child_processパッケージでstdioを介してバイナリデータの読み書きができるように修正されました。 querystring  unescapeBuffer()が実装されました。 parse()やstringify()のNode.jsとの互換性が向上しました。   moduleパッケージで適切なメンバがexportされるよう修正されました osパッケージでcpus()が実装されました  signal Deno v1.16で実装されたシグナルAPIの変更に合わせて、内部実装が変更されています。\nhttp/file_server ファイル配信時にReadableStreamを使用してストリーミングが行われるように修正されました。\n https://github.com/denoland/deno_std/releases/tag/0.114.0\ndeno-postgres v0.14.0 deno-postgres v0.14.0がリリースされました。\nDeno v1.16でのDeno.startTlsの安定化に合わせ、deno-postgresも--unstableなしで利用できるようになっています\nまた、Client#queryObjectにcamelcaseオプションが追加され、データベースから返却されたスネークケース形式のカラム名をキャメルケース形式に変換できるようになりました。\nconst { rows } = await client.queryObject({ text: `SELECT * FROM users`, camelcase: true, }); その他の変更として、日付型の値が適切に解析されるように修正が行われています。\n https://github.com/denodrivers/postgres/releases/tag/v0.14.0\n","wordCount":"312","inLanguage":"en","datePublished":"2021-11-14T00:00:00Z","dateModified":"2021-11-14T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/11/14.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+2021/11/08〜2021/11/14の最新情報
+</h1>
+<div class=post-meta><span title="2021-11-14 00:00:00 +0000 UTC">November 14, 2021</span>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#deno-v1160 aria-label="Deno v1.16.0">Deno v1.16.0</a><ul>
+<li>
+<a href=#react-17-jsx-transform%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label="React 17 JSX Transformのサポート">React 17 JSX Transformのサポート</a></li>
+<li>
+<a href=#deno-api aria-label="Deno API">Deno API</a><ul>
+<li>
+<a href=#%e6%96%b0%e3%81%97%e3%81%84%e3%82%b7%e3%82%b0%e3%83%8a%e3%83%abapi aria-label=新しいシグナルAPI>新しいシグナルAPI</a></li></ul>
+</li>
+<li>
+<a href=#denotlsconn%e5%9e%8b%e3%81%ae%e5%b0%8e%e5%85%a5 aria-label=Deno.TlsConn型の導入><code>Deno.TlsConn</code>型の導入</a><ul>
+<li>
+<a href=#denotest%e3%81%ae%e3%83%86%e3%82%b9%e3%83%88%e3%82%b1%e3%83%bc%e3%82%b9%e3%81%94%e3%81%a8%e3%81%ae%e3%83%91%e3%83%bc%e3%83%9f%e3%83%83%e3%82%b7%e3%83%a7%e3%83%b3%e6%8c%87%e5%ae%9a%e3%81%8c%e5%ae%89%e5%ae%9a%e5%8c%96 aria-label=Deno.testのテストケースごとのパーミッション指定が安定化><code>Deno.test</code>のテストケースごとのパーミッション指定が安定化</a></li>
+<li>
+<a href=#denostarttls%e3%81%8c%e5%ae%89%e5%ae%9a%e5%8c%96 aria-label=Deno.startTlsが安定化><code>Deno.startTls</code>が安定化</a></li>
+<li>
+<a href=#%e3%82%b7%e3%83%b3%e3%83%9c%e3%83%aa%e3%83%83%e3%82%af%e3%83%aa%e3%83%b3%e3%82%af%e9%96%a2%e9%80%a3%e3%81%aeapi aria-label=シンボリックリンク関連のAPI>シンボリックリンク関連のAPI</a></li></ul>
+</li>
+<li>
+<a href=#nodejs%e4%ba%92%e6%8f%9b%e3%83%a2%e3%83%bc%e3%83%89%e3%81%ae%e6%a9%9f%e8%83%bd%e5%90%91%e4%b8%8a aria-label=Node.js互換モードの機能向上>Node.js互換モードの機能向上</a></li>
+<li>
+<a href=#web-api aria-label="Web API">Web API</a><ul>
+<li>
+<a href=#localstorage%e3%81%a7--location%e3%81%ae%e6%8c%87%e5%ae%9a%e3%81%8c%e4%b8%8d%e8%a6%81%e3%81%ab%e3%81%aa%e3%82%8a%e3%81%be%e3%81%97%e3%81%9f aria-label=localStorageで--locationの指定が不要になりました><code>localStorage</code>で<code>--location</code>の指定が不要になりました</a></li>
+<li>
+<a href=#fetch%e3%81%a7%e3%83%ad%e3%83%bc%e3%82%ab%e3%83%ab%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e3%83%80%e3%82%a6%e3%83%b3%e3%83%ad%e3%83%bc%e3%83%89%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=fetchでローカルファイルのダウンロードがサポート><code>fetch</code>でローカルファイルのダウンロードがサポート</a></li>
+<li>
+<a href=#abortsignalreason%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=AbortSignal.reasonのサポート><code>AbortSignal.reason</code>のサポート</a></li>
+<li>
+<a href=#streams-api aria-label="Streams API">Streams API</a></li></ul>
+</li>
+<li>
+<a href=#%e3%82%a8%e3%83%a9%e3%83%bc%e9%96%a2%e9%80%a3 aria-label=エラー関連>エラー関連</a></li>
+<li>
+<a href=#v8%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88 aria-label=V8のアップデート>V8のアップデート</a></li>
+<li>
+<a href=#%e3%83%90%e3%82%b0%e4%bf%ae%e6%ad%a3%e3%81%aa%e3%81%a9 aria-label=バグ修正など>バグ修正など</a></li></ul>
+</li>
+<li>
+<a href=#deno-v1161 aria-label="Deno v1.16.1">Deno v1.16.1</a></li>
+<li>
+<a href=#deno_std-v01140 aria-label="deno_std v0.114.0">deno_std v0.114.0</a><ul>
+<li>
+<a href=#collections aria-label=collections><code>collections</code></a></li>
+<li>
+<a href=#httpserver aria-label=http/server><code>http/server</code></a></li>
+<li>
+<a href=#node aria-label=node><code>node</code></a></li>
+<li>
+<a href=#signal aria-label=signal><code>signal</code></a></li>
+<li>
+<a href=#httpfile_server aria-label=http/file_server><code>http/file_server</code></a></li></ul>
+</li>
+<li>
+<a href=#deno-postgres-v0140 aria-label="deno-postgres v0.14.0">deno-postgres v0.14.0</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=deno-v1160>Deno v1.16.0<a hidden class=anchor aria-hidden=true href=#deno-v1160>#</a></h2>
+<p>Deno v1.16.0がリリースされました。</p>
+<h3 id=react-17-jsx-transformのサポート>React 17 JSX Transformのサポート<a hidden class=anchor aria-hidden=true href=#react-17-jsx-transformのサポート>#</a></h3>
+<p>React 17で導入された新しいJSX Transformのサポートが追加されました。</p>
+<ul>
+<li><a href=https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html</a></li>
+<li><a href=https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories>https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories</a></li>
+</ul>
+<p><code>.jsx</code>または<code>.tsx</code>ファイル中で<code>@jsxImportSource</code>を使うことで有効化されます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#75715e>/** @jsxImportSource https://esm.sh/preact@10.5.15 */</span>
+
+<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>Hello</span>(<span style=color:#a6e22e>props</span>) {
+  <span style=color:#66d9ef>return</span> (
+    &lt;<span style=color:#f92672>div</span>&gt;<span style=color:#a6e22e>Hello</span>, {<span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>name</span>}&lt;/<span style=color:#f92672>div</span>&gt;
+  )
+}
+</code></pre></div><p>また、<code>--config</code>オプションで指定する設定ファイルで有効化することも可能です。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx>{
+  <span style=color:#e6db74>&#34;compilerOptions&#34;</span><span style=color:#f92672>:</span> {
+    <span style=color:#e6db74>&#34;jsx&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;react-jsx&#34;</span>,
+    <span style=color:#e6db74>&#34;jsxImportSource&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;https://esm.sh/react@17.0.2&#34;</span>
+  }
+}
+</code></pre></div><p>※Denoの特性上、<code>"jsx": "react-jsx"</code>を指定した際は、<code>jsxImportSource</code>の指定も必要です。</p>
+<h3 id=deno-api>Deno API<a hidden class=anchor aria-hidden=true href=#deno-api>#</a></h3>
+<h4 id=新しいシグナルapi>新しいシグナルAPI<a hidden class=anchor aria-hidden=true href=#新しいシグナルapi>#</a></h4>
+<p><code>Deno.addSignalListener</code>と<code>Deno.removeSignalListener</code>が実装されました (unstable)</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>signalListener</span> <span style=color:#f92672>=</span> () =&gt; {
+  <span style=color:#75715e>// ...
+</span><span style=color:#75715e></span>};
+<span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>addSignalListener</span>(<span style=color:#e6db74>&#34;SIGTERM&#34;</span>, <span style=color:#a6e22e>signalListener</span>);
+<span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>removeSignalListener</span>(<span style=color:#e6db74>&#34;SIGTERM&#34;</span>, <span style=color:#a6e22e>signalListener</span>);
+</code></pre></div><p>この変更に合わせて、既存の<code>Deno.signal</code>は削除されています。</p>
+<ul>
+<li><a href=https://github.com/denoland/deno/issues/11158>https://github.com/denoland/deno/issues/11158</a></li>
+</ul>
+<h3 id=denotlsconn型の導入><code>Deno.TlsConn</code>型の導入<a hidden class=anchor aria-hidden=true href=#denotlsconn型の導入>#</a></h3>
+<p><code>Deno.TlsConn</code>という新しいデータ型が導入されました。</p>
+<p>これに合わせて、<code>Deno.connectTls</code>などのAPIが<code>Deno.Conn</code>の代わりに<code>Deno.TlsConn</code>を返却するように修正されています。</p>
+<p>このオブジェクトには<code>handshake</code>メソッドが定義されており、明示的にハンドシェイクを行うことができます。</p>
+<h4 id=denotestのテストケースごとのパーミッション指定が安定化><code>Deno.test</code>のテストケースごとのパーミッション指定が安定化<a hidden class=anchor aria-hidden=true href=#denotestのテストケースごとのパーミッション指定が安定化>#</a></h4>
+<p>Deno v1.10で実装されたテストケースごとにパーミッションを指定できる機能が安定化され、<code>--unstable</code>フラグなしでも利用できるようになりました。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>test</span>({
+  <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;This should fail&#34;</span>,
+  <span style=color:#a6e22e>permissions</span><span style=color:#f92672>:</span> {
+    <span style=color:#a6e22e>net</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>false</span>,
+  },
+  <span style=color:#a6e22e>fn</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>async</span> () =&gt; {
+    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>_</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>fetch</span>(<span style=color:#e6db74>&#34;https://example.com&#34;</span>);
+  },
+});
+</code></pre></div><h4 id=denostarttlsが安定化><code>Deno.startTls</code>が安定化<a hidden class=anchor aria-hidden=true href=#denostarttlsが安定化>#</a></h4>
+<p><code>Deno.startTls</code>が安定化され<code>--unstable</code>フラグなしでも利用できるようになりました。</p>
+<h4 id=シンボリックリンク関連のapi>シンボリックリンク関連のAPI<a hidden class=anchor aria-hidden=true href=#シンボリックリンク関連のapi>#</a></h4>
+<p><code>Deno.symlink</code>などのAPIが&ndash;allow-write<code>に加えて</code>&ndash;allow-read`パーミッションを要求するように変更されました。</p>
+<h3 id=nodejs互換モードの機能向上>Node.js互換モードの機能向上<a hidden class=anchor aria-hidden=true href=#nodejs互換モードの機能向上>#</a></h3>
+<p><code>https:</code>や<code>blob:</code>インポートがサポートされました。 (<code>.mjs</code>ファイル中や<code>package.json</code>で<code>"type": "module"</code>が指定された際に有効化されます)</p>
+<p>また、Import mapsとの統合もサポートされています。</p>
+<h3 id=web-api>Web API<a hidden class=anchor aria-hidden=true href=#web-api>#</a></h3>
+<h4 id=localstorageで--locationの指定が不要になりました><code>localStorage</code>で<code>--location</code>の指定が不要になりました<a hidden class=anchor aria-hidden=true href=#localstorageで--locationの指定が不要になりました>#</a></h4>
+<p><code>localStorage</code>が<code>--location</code>オプションを指定せずに利用できるようになりました。</p>
+<ul>
+<li><a href=https://github.com/denoland/deno/pull/12548>https://github.com/denoland/deno/pull/12548</a></li>
+</ul>
+<p>また、<code>--location</code>が指定された際の挙動も若干変更されています。</p>
+<ul>
+<li>v1.15までと異なり、<code>--location https://deno.land/x/a.ts</code>と<code>--location https://deno.land/x/b.ts</code>は同一のオリジンとして扱われます。</li>
+<li><code>--location</code>が未指定 かつ <code>--config</code>が指定された場合、<code>--config</code>で指定された設定ファイルの絶対パスがオリジンとして使用されます。</li>
+<li><code>--location</code>も<code>--config</code>も指定されなかった場合、メインモジュールの絶対パスがオリジンとして使用されます。</li>
+</ul>
+<h4 id=fetchでローカルファイルのダウンロードがサポート><code>fetch</code>でローカルファイルのダウンロードがサポート<a hidden class=anchor aria-hidden=true href=#fetchでローカルファイルのダウンロードがサポート>#</a></h4>
+<p>利用するには<code>--allow-read</code>パーミッションが必要です。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>res</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>fetch</span>(<span style=color:#e6db74>&#34;file:///home/uki00a/.vimrc&#34;</span>);
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>text</span>());
+</code></pre></div><h4 id=abortsignalreasonのサポート><code>AbortSignal.reason</code>のサポート<a hidden class=anchor aria-hidden=true href=#abortsignalreasonのサポート>#</a></h4>
+<p>詳細については<a href=https://github.com/whatwg/dom/commit/4ca187f9ccd4b1548d87293307ee58430ef4908b>こちら</a>を参照ください。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>controller</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>AbortController</span>();
+<span style=color:#a6e22e>controller</span>.<span style=color:#a6e22e>abort</span>(<span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;Hello&#34;</span>));
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>controller</span>.<span style=color:#a6e22e>signal</span>.<span style=color:#a6e22e>reason</span>);
+</code></pre></div><h4 id=streams-api>Streams API<a hidden class=anchor aria-hidden=true href=#streams-api>#</a></h4>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>(<strong>破壊的変更</strong>) <code>ReadableStream#getIterator</code>が削除されました。
+<ul>
+<li><code>ReadableStream</code>は<code>AsyncIterable</code>プロトコルを実装しているので、今後はそちらを使う必要があります。</li>
+</ul>
+</li>
+<li><a href=https://developer.mozilla.org/ja/docs/Web/API/ReadableStreamBYOBReader>ReadableStreamBYOBReader</a>がサポートされました。</li>
+<li><code>WritableStreamDefaultController</code>に<code>signal</code>プロパティが追加されました
+<ul>
+<li><a href=https://github.com/whatwg/streams/blob/main/writable-stream-abort-signal-explainer.md>https://github.com/whatwg/streams/blob/main/writable-stream-abort-signal-explainer.md</a></li>
+</ul>
+</li>
+</ul>
+<h3 id=エラー関連>エラー関連<a hidden class=anchor aria-hidden=true href=#エラー関連>#</a></h3>
+<ul>
+<li><code>Error</code>オブジェクトの<code>cause</code>プロパティの値が<code>console.log</code>などで出力されるようになりました。</li>
+<li>OSエラーやdynamic importのエラーに<code>code</code>プロパティが定義されるようになりました。</li>
+</ul>
+<h3 id=v8のアップデート>V8のアップデート<a hidden class=anchor aria-hidden=true href=#v8のアップデート>#</a></h3>
+<p>V8が9.7にアップデートされました 。</p>
+<p>Web Assemblyの<a href=https://github.com/WebAssembly/reference-types/blob/master/proposals/reference-types/Overview.md>Reference Types</a>のサポートや、<code>Array</code>や<code>TypedArray</code>への<code>findLast</code>及び<code>findLastIndex</code>の実装などが追加されています。</p>
+<h3 id=バグ修正など>バグ修正など<a hidden class=anchor aria-hidden=true href=#バグ修正など>#</a></h3>
+<ul>
+<li>TypeScriptの型エラーが発生した際にトランスパイル結果がキャッシュされる問題が修正されました。</li>
+<li><code>deno fmt --watch</code>または<code>deno lint --watch</code>に引数が与えられなかった際に、うまく動かない問題が修正されました</li>
+<li><code>--no-check</code>で<code>inlineSources</code>コンパイラオプションが機能するようになりました。</li>
+<li><code>Deno.upgradeWebSocket</code>で<code>Upgrade</code>ヘッダに複数の値の指定が許可されるようになりました。</li>
+<li><code>fetch</code>でPOSTやPUTリクエストを送信する際に、ボディがなくても<code>Content-Length: 0</code>ヘッダが設定されるようになりました。</li>
+<li><code>deno lsp</code>で<code>textDocument/signatureHelp</code>から返却されるドキュメントの形式がplain textからMarkdown形式に変更されました。</li>
+<li><code>deno lsp</code>で<code>x-typescript-types</code>ヘッダがうまく機能しない問題が修正されました</li>
+<li><code>importScripts</code>が<code>fetch</code>と同じHTTPクライアントを使用するように修正されました</li>
+</ul>
+<hr>
+<ul>
+<li><a href=https://github.com/denoland/deno/releases/tag/v1.16.0>https://github.com/denoland/deno/releases/tag/v1.16.0</a></li>
+<li><a href=https://deno.com/blog/v1.16>https://deno.com/blog/v1.16</a></li>
+<li><a href=https://zenn.dev/kawarimidoll/articles/0d384d53953525>Deno 1.16が来たぞ</a></li>
+</ul>
+<h2 id=deno-v1161>Deno v1.16.1<a hidden class=anchor aria-hidden=true href=#deno-v1161>#</a></h2>
+<p>Deno v1.16.1がリリースされました。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>v1.16.0で追加された<code>AbortSignal.reason</code>の型定義が追加されました。</li>
+<li>ネイティブHTTPサーバで非アスキー文字を含む<code>Uint8Array</code>のレスポンスの返却に失敗する問題が修正されました。</li>
+<li><code>SubtleCrypto.deriveBits</code>でHKDFキーのビット列を得る際に、渡されたキー長が大きすぎるとプロセスがパニックする問題が修正されました。</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denoland/deno/releases/tag/v1.16.1>https://github.com/denoland/deno/releases/tag/v1.16.1</a></p>
+<h2 id=deno_std-v01140>deno_std v0.114.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01140>#</a></h2>
+<p>deno_std v0.114.0がリリースされました。</p>
+<h3 id=collections><code>collections</code><a hidden class=anchor aria-hidden=true href=#collections>#</a></h3>
+<ul>
+<li>Deno v1.16での<code>Array.prototype.findLast</code>などの導入に合わせて、<code>findLast</code>と<code>findLastIndex</code>が非推奨化されました。</li>
+<li><code>deepMerge</code>にプロトタイプ汚染攻撃への対策が入れられました。</li>
+<li><code>findSingle</code>で述語関数の指定が必須になりました。</li>
+</ul>
+<h3 id=httpserver><code>http/server</code><a hidden class=anchor aria-hidden=true href=#httpserver>#</a></h3>
+<p><code>serveListener</code>関数が追加されました。使用法はv0.113.0までの<code>serve</code>関数と同様です。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>serveListener</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.114.0/http/server.ts&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>listener</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>listen</span>({ <span style=color:#a6e22e>port</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>8000</span> });
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>serveListener</span>(<span style=color:#a6e22e>listener</span>, (<span style=color:#a6e22e>request</span>) =&gt; {
+  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Response</span>(<span style=color:#e6db74>&#34;Hello&#34;</span>, { <span style=color:#a6e22e>status</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>200</span> });
+});
+</code></pre></div><p>これに合わせて<code>serve</code>の使用法が変更されています。こちらは<code>Deno.Listener</code>を渡す必要がありません。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>serve</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.114.0/http/server.ts&#34;</span>;
+
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>serve</span>((<span style=color:#a6e22e>request</span>) =&gt; {
+  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Response</span>(<span style=color:#e6db74>&#34;Hello&#34;</span>, { <span style=color:#a6e22e>status</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>200</span> });
+}, { <span style=color:#a6e22e>addr</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;:8000&#34;</span> });
+</code></pre></div><p>これらの変更に合わせて、下記関数が非推奨化されました。</p>
+<ul>
+<li><code>listenAndServe</code> (今後は<code>serve</code>の使用が推奨されます)</li>
+<li><code>listenAndServeTls</code> (今後は<code>serveTls</code>の使用が推奨されます)</li>
+</ul>
+<p><a href=https://zenn.dev/kawarimidoll/articles/8031c2618fedca>Denoでサーバーを建てる方法 2021年11月版</a>の記事で<code>serve</code>などについて解説されています。</p>
+<h3 id=node><code>node</code><a hidden class=anchor aria-hidden=true href=#node>#</a></h3>
+<p>DenoのNode.js互換モードの強化に向けて、様々な機能の追加や変更が実施されています。</p>
+<p>また、Deno Deployとの互換性の向上なども実施されています。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li><code>readline</code>パッケージが追加されました (下記関数がサポート)
+<ul>
+<li><code>clearLine</code></li>
+<li><code>clearScreenDown</code></li>
+<li><code>cursorTo</code></li>
+<li><code>moveCursor</code></li>
+</ul>
+</li>
+<li><code>vm</code>パッケージが追加されました (現在は最低限の実装のみ)</li>
+<li><code>process</code>
+<ul>
+<li><code>process.on</code>でシグナルをリスニングできるようになりました。</li>
+<li><code>process.execArgv</code>が追加されました (現在は、常に空の配列が設定されます)</li>
+<li><code>process.arch</code>がNode.jsに一致するよう修正されました</li>
+</ul>
+</li>
+<li><code>fs</code>パッケージで<code>watchFile</code>が実装されました</li>
+<li><code>http</code>
+<ul>
+<li><strong><code>Server</code></strong>
+<ul>
+<li><code>EventEmitter</code>を継承し、<code>'close'</code>や<code>'connection'</code>イベントを発火するようになりました。</li>
+<li><code>close</code>メソッドや<code>address</code>メソッドが実装されました</li>
+</ul>
+</li>
+<li><strong><code>ServerResponse</code></strong>
+<ul>
+<li><code>statusCode</code>と<code>statusMessage</code>プロパティが定義されました。</li>
+<li><code>removeHeader</code>, <code>getHeaderNames</code>, <code>hasHeader</code>が実装されました</li>
+<li><code>setHeader</code>が<code>this</code>を返却するようになりました。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>child_process</code>パッケージでstdioを介してバイナリデータの読み書きができるように修正されました。</li>
+<li><code>querystring</code>
+<ul>
+<li><code>unescapeBuffer()</code>が実装されました。</li>
+<li><code>parse()</code>や<code>stringify()</code>のNode.jsとの互換性が向上しました。</li>
+</ul>
+</li>
+<li><code>module</code>パッケージで適切なメンバがexportされるよう修正されました</li>
+<li><code>os</code>パッケージで<code>cpus()</code>が実装されました</li>
+</ul>
+<h3 id=signal><code>signal</code><a hidden class=anchor aria-hidden=true href=#signal>#</a></h3>
+<p>Deno v1.16で実装されたシグナルAPIの変更に合わせて、内部実装が変更されています。</p>
+<h3 id=httpfile_server><code>http/file_server</code><a hidden class=anchor aria-hidden=true href=#httpfile_server>#</a></h3>
+<p>ファイル配信時に<code>ReadableStream</code>を使用してストリーミングが行われるように修正されました。</p>
+<hr>
+<p><a href=https://github.com/denoland/deno_std/releases/tag/0.114.0>https://github.com/denoland/deno_std/releases/tag/0.114.0</a></p>
+<h2 id=deno-postgres-v0140>deno-postgres v0.14.0<a hidden class=anchor aria-hidden=true href=#deno-postgres-v0140>#</a></h2>
+<p>deno-postgres v0.14.0がリリースされました。</p>
+<p>Deno v1.16での<code>Deno.startTls</code>の安定化に合わせ、deno-postgresも<code>--unstable</code>なしで利用できるようになっています</p>
+<p>また、<code>Client#queryObject</code>に<code>camelcase</code>オプションが追加され、データベースから返却されたスネークケース形式のカラム名をキャメルケース形式に変換できるようになりました。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>rows</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>client</span>.<span style=color:#a6e22e>queryObject</span>({
+  <span style=color:#a6e22e>text</span><span style=color:#f92672>:</span> <span style=color:#e6db74>`SELECT * FROM users`</span>,
+  <span style=color:#a6e22e>camelcase</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+});
+</code></pre></div><p>その他の変更として、日付型の値が適切に解析されるように修正が行われています。</p>
+<hr>
+<p><a href=https://github.com/denodrivers/postgres/releases/tag/v0.14.0>https://github.com/denodrivers/postgres/releases/tag/v0.14.0</a></p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno-postgres.html>deno-postgres</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
