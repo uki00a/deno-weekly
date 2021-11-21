@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Slack on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/slack.html</link><description>Recent content in Slack on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/slack/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/11/15〜2021/11/21の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/11/21.html</link><pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/11/21.html</guid><description>Slackの次世代開発プラットフォームについて Slackの次世代開発プラットフォームが発表されました。
+CLIやSDKなどでDenoが採用されるようです。
+https://deno.com/blog/slack https://api.slack.com/future Deno v1.16.2 Deno v1.16.2がリリースされました。
+このリリースはバグ修正などがメインです。
+deno testのsub-steps APIを使った際に、テストレポートに実行されたステップ数が表示されるようになりました。 deno test --docでコードブロックにCRLFが含まれていると、適切にタイプチェックが行われない問題が修正されました リモートモジュールのdynamic importに時間がかかる問題が改善されました。 https://github.com/denoland/deno/releases/tag/v1.16.2
+deno_std v0.115.0 deno_std v0.115.0がリリースされました。
+std/fsでの破壊的変更やstd/nodeのNode.jsとの互換性向上などが実施されています。
+std/fs fs/mod.tsからcopy()やcopySync()がexportされなくなりました (これらのAPIは--unstableに依存するためです)
+std/node wasiパッケージが実装されました。 process 下記APIが追加されました process.config process.exitCode process.stdin.setRawMode process.hrtime.bigint process.nextTickのNode.jsとの互換性が向上しました fs 下記APIが追加されました fs.readSync fs.read fs.rm fs.rmSync http Node.jsとの互換性が向上しました。(Server#listen()の引数なしの形式のサポート、ServerResponse#end()で空のレスポンスのサポートなど) util util.isBuffer/util._extend/util.stripVTControlCharactersが追加されました util.isRegExpのNode.jsとの互換性が向上しました events EventEmitterがES6のクラス形式からES5形式の実装に変更されました。(これによりNode.</description></item><item><title>2021/02/08〜2021/02/14の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/02/14.html</link><pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/02/14.html</guid><description>Deno本体の最新情報 Deno v1.7.3/v1.7.4がリリースされました Deno v1.7.3がリリースされました。
+その後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。
+v1.7.3/v1.7.4の主な変更点:
+deno lspでcodeAction/resolveが実装されました。 deno lspにdeno.cacheコードアクションが実装されました。 deno lspにImplementationscode lensが実装されました。 Import mapsがデータURL(data:)を適切にハンドリングするように修正されました。 https://github.com/denoland/deno/releases/tag/v1.7.4 deno_std v0.87.0がリリースされました Deno v1.7.3のリリースに合わせ、deno_std v0.87.0がリリースされました。
+このリリースにはhttp/cookieモジュールに対する破壊的変更が含まれています。
+変更点:
+http/cookie: Cookies及びSameSiteの型エイリアスが削除されました。 http/file_server: SVGファイルに対して適切なContent-Typeが設定されるように修正されました。 https://github.com/denoland/deno_std/releases/tag/0.87.0
+サードパーティモジュールの最新情報 denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム denops.vimという、Denoを使ってVim/Neovimプラグインを書くためのエコシステムが公開されました。
+coc.nvimに影響を受けているようです。
+サンプルプラグインも公開されているため、興味のある方は見てみるとよいかもしれません。
+https://github.com/vim-denops/denops-helloworld.vim https://github.com/vim-denops/denops.vim https://github.com/vim-denops/denops-deno https://github.com/vim-denops/denops-std-deno slack_web_api - DenoのSlack APIクライアント slack_web_apiはNode.jsの@slack/web-apiをDenoにポートしたモジュールです。
+このモジュールを使用することで、DenoからSlack APIを叩くことができます。
+https://deno.land/x/slack_web_api@1.0.1
+deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。
+このリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。
+変更点:</description></item></channel></rss>

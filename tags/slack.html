@@ -3,12 +3,12 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>slack_web_api | 週刊Deno</title>
+<title>Slack | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/slack_web_api.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.6f60056d44d3f7eb69a4bc6c332b59960f3a995802bded244750232f33713c49.css integrity="sha256-b2AFbUTT9+tppLxsMytZlg86mVgCve0kR1AjLzNxPEk=" rel="preload stylesheet" as=style>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/slack.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -17,7 +17,7 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.88.0">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/slack_web_api/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/slack/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -26,12 +26,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="slack_web_api">
+<meta property="og:title" content="Slack">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/slack_web_api.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/slack.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="slack_web_api">
+<meta name=twitter:title content="Slack">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -71,8 +71,27 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>slack_web_api</h1>
+<h1>Slack</h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/11/15〜2021/11/21の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Slackの次世代開発プラットフォームについて Slackの次世代開発プラットフォームが発表されました。
+CLIやSDKなどでDenoが採用されるようです。
+https://deno.com/blog/slack https://api.slack.com/future Deno v1.16.2 Deno v1.16.2がリリースされました。
+このリリースはバグ修正などがメインです。
+deno testのsub-steps APIを使った際に、テストレポートに実行されたステップ数が表示されるようになりました。 deno test --docでコードブロックにCRLFが含まれていると、適切にタイプチェックが行われない問題が修正されました リモートモジュールのdynamic importに時間がかかる問題が改善されました。 https://github.com/denoland/deno/releases/tag/v1.16.2
+deno_std v0.115.0 deno_std v0.115.0がリリースされました。
+std/fsでの破壊的変更やstd/nodeのNode.jsとの互換性向上などが実施されています。
+std/fs fs/mod.tsからcopy()やcopySync()がexportされなくなりました (これらのAPIは--unstableに依存するためです)
+std/node wasiパッケージが実装されました。 process 下記APIが追加されました process.config process.exitCode process.stdin.setRawMode process.hrtime.bigint process.nextTickのNode.jsとの互換性が向上しました fs 下記APIが追加されました fs.readSync fs.read fs.rm fs.rmSync http Node.jsとの互換性が向上しました。(Server#listen()の引数なしの形式のサポート、ServerResponse#end()で空のレスポンスのサポートなど) util util.isBuffer/util._extend/util.stripVTControlCharactersが追加されました util.isRegExpのNode.jsとの互換性が向上しました events EventEmitterがES6のクラス形式からES5形式の実装に変更されました。(これによりNode....</p>
+</section>
+<footer class=entry-footer><span title="2021-11-21 00:00:00 +0000 UTC">November 21, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/15〜2021/11/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/21.html></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>2021/02/08〜2021/02/14の最新情報
