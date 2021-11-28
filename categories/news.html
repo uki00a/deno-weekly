@@ -75,6 +75,33 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/11/22〜2021/11/28の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Denoのこれまでとこれから JSConf JPでのkt3kさんのDenoに関する発表資料が公開されました。
+Denoの概要や作られた背景、今後のロードマップなどについて解説されています。
+Denoのこれまでとこれから
+Deno v1.16.3 Deno v1.16.3がリリースされました。
+このリリースはバグ修正がメインです。
+ランタイム Deno.watchFsで発火されるイベントに"other"という新しいイベントタイプがサポートされました。 (#12097) 設定ファイル(--config)に記載されたパスが、その設定ファイルからの相対パスによって解決されるようになりました (今まではカレントディレクトリに基づいて解決されていました) --reloadオプションが指定された際は、.tsbuildinfoファイルを読み込まないように修正されました Deno.readFileで/procディレクトリのファイルが読めない問題が修正されました。 すでに停止されたワーカーなどでコードを評価しようとすると、プロセスがパニックする問題が修正されました。 deno lsp initializationOptions.configで指定された設定ファイルのinclude/excludeの設定が考慮されるようになりました。例えば、lint.files.excludeで指定されたファイルはエディタ上で診断結果が表示されなくなります。 @deprecatedコメントを付けた関数などで適切に警告が表示されるようになりました。 設定ファイルやImport mapsが配置されているパスによっては、LSPによる再読込がうまく行われない問題が修正されました。 deno fmt Markdownファイルをフォーマットした際に、&amp;nbsp;などの文字が削除される問題が修正されました。
+deno compile 引数としてimportを含まない.jsファイルを指定した場合、ソースコードのバンドルがスキップされるようになりました。
+Web Crypto API crypto.subtle.decryptでの復号に失敗した際に、プロセスがパニックする問題が修正されました
+https://github.com/denoland/deno/releases/tag/v1.16.3
+deno_std v0.116.0 deno_std v0.116.0がリリースされました。
+node os.hostname()が実装されました util.inspect()の互換性が向上しました httpパッケージで立てたサーバが不正な形式のリクエストを受信した際に、プロセスがパニックする問題が修正されました fmt printfで少数を表示する際に適切に丸めが行われない問題が修正されました
+https://github.com/denoland/deno_std/releases/tag/0.116.0
+Drash v2.2.0 Drashのv2.2.0がリリースされました。
+GraphQLやETag、レート制限などのサポートが追加されています。
+https://github.com/drashland/drash/releases/tag/v2.2.0
+NOVAS DenoでSvelteアプリケーションを開発するためのツール
+https://github.com/NOVASland/NOVAS</p>
+</section>
+<footer class=entry-footer><span title="2021-11-28 00:00:00 +0000 UTC">November 28, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/22〜2021/11/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/28.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/11/15〜2021/11/21の最新情報
 </h2>
 </header>
@@ -258,25 +285,6 @@ import { assertEquals, assertRejects } from "https://deno.land/std@0.108.0/testi
 </section>
 <footer class=entry-footer><span title="2021-09-26 00:00:00 +0000 UTC">September 26, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/09/20〜2021/09/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/26.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/09/13〜2021/09/19の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v2のリリースプランについて Deno v2のリリースプランが公開されました。
-https://github.com/denoland/deno/issues/12110 10/12にDeno v1.15, 11/22にDeno v2がリリース予定とのことです
-また、GitHub Discussionsにて、v2で実施予定の追加の変更点やDenoのエコシステムの拡大に関する議論内容などについて公開されています。
-追加の変更点(今後、内容が変わる可能性があります！):
-NotCapableエラーの導入 DenoのパーミッションエラーとOSによって発生したパーミッションエラーを区別できるようにすることが目的のようです Deno.read()のDeno.write()などの削除 Import AssertionsとJSON Modules opメトリクスのリファクタリング/整頓 Deno 2.0 Release Plan Design Meeting 2021-09-16 Deno v1.14.0 Deno v1.14.0がリリースされました。
-TypeScript v4.4への更新、deno fmtやdeno lintで設定ファイルがサポート、Web Crypto APIの強化、Deno.upgradeWebSocketの安定化、URLPatternの実装、シグナルAPI(unstable)への破壊的変更などが実施されています。
-また、magurotunaさんによる日本語の紹介記事が公開されています(https://zenn.dev/magurotuna/articles/deno-release-note-1-14-0)
-変更点:
-deno fmt/deno lint deno fmt でJSDocコメントへの基本的なサポートが追加されました deno fmtとdeno lintの挙動を設定ファイルやCLIオプションで変更できるようになりました ネイティブHTTPサーバ Deno.upgradeWebSocketが安定化されました Deno.upgradeWebSocket でUpgradeヘッダの大文字・小文字の違いを区別しないように修正されました ネイティブHTTPサーバでリクエストボディが消費されなかった場合に発生するリソースリークが修正されました FFI Deno....</p>
-</section>
-<footer class=entry-footer><span title="2021-09-19 00:00:00 +0000 UTC">September 19, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/09/13〜2021/09/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/19.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

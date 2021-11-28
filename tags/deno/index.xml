@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno.html</link><description>Recent content in deno on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/11/15〜2021/11/21の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/11/21.html</link><pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/11/21.html</guid><description>Slackの次世代開発プラットフォームについて Slackの次世代開発プラットフォームが発表されました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno.html</link><description>Recent content in deno on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/11/22〜2021/11/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/11/28.html</link><pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/11/28.html</guid><description>Denoのこれまでとこれから JSConf JPでのkt3kさんのDenoに関する発表資料が公開されました。
+Denoの概要や作られた背景、今後のロードマップなどについて解説されています。
+Denoのこれまでとこれから
+Deno v1.16.3 Deno v1.16.3がリリースされました。
+このリリースはバグ修正がメインです。
+ランタイム Deno.watchFsで発火されるイベントに&amp;quot;other&amp;quot;という新しいイベントタイプがサポートされました。 (#12097) 設定ファイル(--config)に記載されたパスが、その設定ファイルからの相対パスによって解決されるようになりました (今まではカレントディレクトリに基づいて解決されていました) --reloadオプションが指定された際は、.tsbuildinfoファイルを読み込まないように修正されました Deno.readFileで/procディレクトリのファイルが読めない問題が修正されました。 すでに停止されたワーカーなどでコードを評価しようとすると、プロセスがパニックする問題が修正されました。 deno lsp initializationOptions.configで指定された設定ファイルのinclude/excludeの設定が考慮されるようになりました。例えば、lint.files.excludeで指定されたファイルはエディタ上で診断結果が表示されなくなります。 @deprecatedコメントを付けた関数などで適切に警告が表示されるようになりました。 設定ファイルやImport mapsが配置されているパスによっては、LSPによる再読込がうまく行われない問題が修正されました。 deno fmt Markdownファイルをフォーマットした際に、&amp;amp;nbsp;などの文字が削除される問題が修正されました。
+deno compile 引数としてimportを含まない.jsファイルを指定した場合、ソースコードのバンドルがスキップされるようになりました。
+Web Crypto API crypto.subtle.decryptでの復号に失敗した際に、プロセスがパニックする問題が修正されました
+https://github.com/denoland/deno/releases/tag/v1.16.3
+deno_std v0.116.0 deno_std v0.116.0がリリースされました。
+node os.hostname()が実装されました util.inspect()の互換性が向上しました httpパッケージで立てたサーバが不正な形式のリクエストを受信した際に、プロセスがパニックする問題が修正されました fmt printfで少数を表示する際に適切に丸めが行われない問題が修正されました
+https://github.com/denoland/deno_std/releases/tag/0.116.0
+Drash v2.2.0 Drashのv2.2.0がリリースされました。
+GraphQLやETag、レート制限などのサポートが追加されています。
+https://github.com/drashland/drash/releases/tag/v2.2.0
+NOVAS DenoでSvelteアプリケーションを開発するためのツール
+https://github.com/NOVASland/NOVAS</description></item><item><title>2021/11/15〜2021/11/21の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/11/21.html</link><pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/11/21.html</guid><description>Slackの次世代開発プラットフォームについて Slackの次世代開発プラットフォームが発表されました。
 CLIやSDKなどでDenoが採用されるようです。
 https://deno.com/blog/slack https://api.slack.com/future Deno v1.16.2 Deno v1.16.2がリリースされました。
 このリリースはバグ修正などがメインです。

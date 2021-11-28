@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Svelte on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/svelte.html</link><description>Recent content in Svelte on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/svelte/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/11/22〜2021/11/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/11/28.html</link><pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/11/28.html</guid><description>Denoのこれまでとこれから JSConf JPでのkt3kさんのDenoに関する発表資料が公開されました。
+Denoの概要や作られた背景、今後のロードマップなどについて解説されています。
+Denoのこれまでとこれから
+Deno v1.16.3 Deno v1.16.3がリリースされました。
+このリリースはバグ修正がメインです。
+ランタイム Deno.watchFsで発火されるイベントに&amp;quot;other&amp;quot;という新しいイベントタイプがサポートされました。 (#12097) 設定ファイル(--config)に記載されたパスが、その設定ファイルからの相対パスによって解決されるようになりました (今まではカレントディレクトリに基づいて解決されていました) --reloadオプションが指定された際は、.tsbuildinfoファイルを読み込まないように修正されました Deno.readFileで/procディレクトリのファイルが読めない問題が修正されました。 すでに停止されたワーカーなどでコードを評価しようとすると、プロセスがパニックする問題が修正されました。 deno lsp initializationOptions.configで指定された設定ファイルのinclude/excludeの設定が考慮されるようになりました。例えば、lint.files.excludeで指定されたファイルはエディタ上で診断結果が表示されなくなります。 @deprecatedコメントを付けた関数などで適切に警告が表示されるようになりました。 設定ファイルやImport mapsが配置されているパスによっては、LSPによる再読込がうまく行われない問題が修正されました。 deno fmt Markdownファイルをフォーマットした際に、&amp;amp;nbsp;などの文字が削除される問題が修正されました。
+deno compile 引数としてimportを含まない.jsファイルを指定した場合、ソースコードのバンドルがスキップされるようになりました。
+Web Crypto API crypto.subtle.decryptでの復号に失敗した際に、プロセスがパニックする問題が修正されました
+https://github.com/denoland/deno/releases/tag/v1.16.3
+deno_std v0.116.0 deno_std v0.116.0がリリースされました。
+node os.hostname()が実装されました util.inspect()の互換性が向上しました httpパッケージで立てたサーバが不正な形式のリクエストを受信した際に、プロセスがパニックする問題が修正されました fmt printfで少数を表示する際に適切に丸めが行われない問題が修正されました
+https://github.com/denoland/deno_std/releases/tag/0.116.0
+Drash v2.2.0 Drashのv2.2.0がリリースされました。
+GraphQLやETag、レート制限などのサポートが追加されています。
+https://github.com/drashland/drash/releases/tag/v2.2.0
+NOVAS DenoでSvelteアプリケーションを開発するためのツール
+https://github.com/NOVASland/NOVAS</description></item><item><title>2021/03/29〜2021/04/04の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/04/04.html</link><pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/04/04.html</guid><description>Deno本体の最新情報 Deno v1.8.3がリリース Deno v1.8.3がリリースされました。このリリースでは、deno lspへの機能の追加やバグ修正などが行われています。
+変更点:
+deno lspでimportの補完がサポートされた deno lspでtextDocument/selectionRangeが実装された WebSocket#closeですでに閉じているコネクションを再び閉じようとしたときに、例外が投げられないように修正された AbortController.abort()が追加された TypeScriptのlibとしてdom.asynciterableが追加された(Denoのいずれかのバージョンで誤って削除されてしまったようです) https://github.com/denoland/deno/releases/tag/v1.8.3
+deno_std v0.92.0がリリース deno_stdのv0.92.0がリリースされました。
+変更点:
+io/bufio: Deno Deployに対応した node/fs: symlinkとsymlinkSyncが実装された node/util: format関数が実装された io: io/buffer及びio/utilが追加された (Deno v2.0に向けて、Deno.Buffer/readAll/readAllSync/writeAll/writeAllSyncをDeno名前空間からstdへ移行することが目的のようです) https://github.com/denoland/deno_std/releases/tag/0.92.0
+Deno Deployが公開された Deno Deployが公開されました。
+Deno DeployはCDN Edge上でTypeScriptやWebAssemblyなどを動作させることができるサービスです。Cloudflare WorkersのAPIと互換性があります。
+https://deno.com/deploy/docs サードパーティモジュールなどの最新情報 Snel - DenoでSvelteアプリを開発するためのツール SnelはDenoでSvelteアプリを開発するためのツール/フレームワークです。
+.svelteファイルをJavaScriptファイルへコンパイルしたり、HMRを搭載したdevサーバなどが提供されています。
+将来的にはSSRやSSGなどの機能も提供される予定のようです。
+https://github.com/crewdevio/Snel
+Sift - Deno Deployのルーティングライブラリ SiftはDeno Deployのルーティングライブラリです。
+path-to-regexpでサポートされている形式で、ルーティングを定義することができます。
+他にも、静的ファイルの配信やJSXのレンダリングなどがサポートされています。
+https://github.com/satyarohith/sift
+deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用することのできるDOM APIの実装を提供しています。</description></item></channel></rss>
