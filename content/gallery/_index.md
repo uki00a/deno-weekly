@@ -41,6 +41,7 @@ title: ギャラリー
 |[sono.io](https://github.com/oslabs-beta/sono.io)|WebSocketを使ったリアルタイムアプリケーション用のモジュール|
 |[Dashport](https://github.com/oslabs-beta/dashport)|Passport.jsライクな認証モジュール|
 |[deno-libs/gql](https://github.com/deno-libs/gql)|GraphQLサーバ|
+|[graffiti](https://github.com/cztomsik/graffiti)|Deno・Node.js向けのデスクトップアプリの開発プラットフォーム|
 |[deno-dom](https://github.com/b-fuze/deno-dom)|DOM実装|
 |[deno-puppeteer](https://github.com/lucacasonato/deno-puppeteer)|PuppeteerのDenoポート|
 |[Sinco](https://github.com/drashland/sinco)|ブラウザオートメーションツール|
