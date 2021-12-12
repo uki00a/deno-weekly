@@ -75,6 +75,28 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/12/06〜2021/12/12の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno.spawnDenoを追加する提案 以下のissueでDeno.spawnDenoというAPIの追加が提案されています
+https://github.com/denoland/deno/issues/13041 背景として、まずdenoland/deno#11016でDeno.runとは異なる新しいサブプロセスAPIが提案されました。
+このissueをベースに以下のようなAPIを追加するPRが作成されていますが、まだマージはされていないようです。
+// 高レベルAPI const cmd = Deno.Command(executable, { args }); const status = await cmd.status(); // 低レベルAPI const cmd = Deno.Command(executable, { args }); const child = cmd.spawn({ stdin: "piped" }); const writer = child.writer.getWriter(); await writer.write(buffer); この変更は今のところv1.17のマイルストーンに入っているため、次のリリースに含まれる可能性がありそうです。
+そして、今回提案されているDeno.spawnDenoは、Node.jsにおけるchild_process.forkに相当する機能のようで、上記のAPIをベースにサンドボックス化されたDenoのサブプロセスを起動する機能のようです。
+起動する際にWorkerのdeno.permissionsと同様にパーミッションなどの指定をサポートすることが想定されています。
+またこの提案に合わせて --no-permission-requestオプションの追加も提案されています。
+このオプションが指定された際はDeno.permissions.requestを無効化し、Deno.spawnDeno経由で起動されたプロセスがパーミッションのエスカレーションをできないようにすることを目的としているようです。
+https://github.com/denoland/deno/issues/13041
+サブステップAPIの安定化について Deno v1.15で導入されたサブステップAPIの安定化が提案されています。
+Deno v1.18での安定化が検討されているようです。
+Deno.test("nested test case", async (t) => { const success = await t.step("step 1", async (t) => { const success = await t....</p>
+</section>
+<footer class=entry-footer><span title="2021-12-12 00:00:00 +0000 UTC">December 12, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/12/06〜2021/12/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/12.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/11/01〜2021/11/07の最新情報
 </h2>
 </header>

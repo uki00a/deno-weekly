@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Remix on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/remix.html</link><description>Recent content in Remix on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/remix/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/12/06〜2021/12/12の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/12/12.html</link><pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/12/12.html</guid><description>Deno.spawnDenoを追加する提案 以下のissueでDeno.spawnDenoというAPIの追加が提案されています
+https://github.com/denoland/deno/issues/13041 背景として、まずdenoland/deno#11016でDeno.runとは異なる新しいサブプロセスAPIが提案されました。
+このissueをベースに以下のようなAPIを追加するPRが作成されていますが、まだマージはされていないようです。
+// 高レベルAPI const cmd = Deno.Command(executable, { args }); const status = await cmd.status(); // 低レベルAPI const cmd = Deno.Command(executable, { args }); const child = cmd.spawn({ stdin: &amp;#34;piped&amp;#34; }); const writer = child.writer.getWriter(); await writer.write(buffer); この変更は今のところv1.17のマイルストーンに入っているため、次のリリースに含まれる可能性がありそうです。
+そして、今回提案されているDeno.spawnDenoは、Node.jsにおけるchild_process.forkに相当する機能のようで、上記のAPIをベースにサンドボックス化されたDenoのサブプロセスを起動する機能のようです。
+起動する際にWorkerのdeno.permissionsと同様にパーミッションなどの指定をサポートすることが想定されています。
+またこの提案に合わせて --no-permission-requestオプションの追加も提案されています。
+このオプションが指定された際はDeno.permissions.requestを無効化し、Deno.spawnDeno経由で起動されたプロセスがパーミッションのエスカレーションをできないようにすることを目的としているようです。
+https://github.com/denoland/deno/issues/13041
+サブステップAPIの安定化について Deno v1.15で導入されたサブステップAPIの安定化が提案されています。
+Deno v1.18での安定化が検討されているようです。
+Deno.test(&amp;#34;nested test case&amp;#34;, async (t) =&amp;gt; { const success = await t.step(&amp;#34;step 1&amp;#34;, async (t) =&amp;gt; { const success = await t.</description></item></channel></rss>
