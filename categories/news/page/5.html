@@ -75,6 +75,33 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/03/08〜2021/03/14の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.8.1のリリース Deno v1.8.1がリリースされました。このリリースでは、バグの修正を中心に実施されています。
+主な変更点:
+importsNotUsedAsValuesオプションがswcに渡されるようになりました。 Windows上でdeno compileを実行すると、ターゲットに関わらず常に.exeが拡張子として付与される問題が修正されました。 Worker内でトップレベルawaitが使用されていると、ブロックが発生する問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.8.1
+deno_std v0.90.0のリリース deno_std v0.90.0がリリースされました。
+変更点:
+node: moduleモジュールをrequireで読み込めるようになりました。 node: Node.jsで書かれたスクリプトを実行するためのCLIツールが実装されました。(node/cli.ts) node: assertモジュールの互換性が向上しました。 http: v0.88.0で発生したパフォーマンスに関する問題が修正されました。 https://github.com/denoland/deno_std/commit/3f9714bf05a75303355fddd22cad9794be50e47d
+サードパーティモジュールなどの最新情報 nano nanoは軽量のJSXライブラリです。以下のような機能をサポートしています:
+SSRをサポート(DenoとNode.jsの両方で動作します) 組み込みのRouterやStoreなどを提供 コンポーネントのpre-fetch https://github.com/nanojsx/nano
+depsbot モジュールなどの依存関係の更新状態をチェックをしてくれるGitHub actionです。
+npmにも公開されており、コマンドラインから直接実行することもできます。
+https://github.com/denosaurs/depsbot
+wizard wizardというBDDスタイルのAPIを提供するテストライブラリが公開されました。
+まだ開発が開始したばかりではありますが、Deno.test()をベースにしているため、各種サニタイザやDenoのCLIをそのまま利用することができます。
+https://github.com/deno-libs/wizard
+deno-redis v0.20.0 deno-redis v0.20.0がリリースされました。
+変更点:
+CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下のコマンドがサポートされました: CLIENT UNBLOCK CLIENT UNPAUSE CLIENT INFO CLIENT TRACKINGINFO CLIENT LIST https://github....</p>
+</section>
+<footer class=entry-footer><span title="2021-03-14 00:00:00 +0000 UTC">March 14, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/08〜2021/03/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/14.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/03/01〜2021/03/07の最新情報
 </h2>
 </header>
@@ -281,21 +308,10 @@ abc alosaur deno (std/http) dinatra drash express fastify node (httpモジュー
 <footer class=entry-footer><span title="2021-01-10 00:00:00 +0000 UTC">January 10, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/04〜2021/01/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/10.html></a>
 </article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2020/12/28〜2021/01/03の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno@v1.6.3がリリースされた Denoのv1.6.3がリリースされました。
-ハイライト deno lspにtextDocument/renameやcacheコマンドが実装されました。 std@0.83.0も同時にリリースされました。std/node/fsにmkdtempとmkdtempSyncが実装されています。 deno-puppeteerが公開された puppeteerのDenoポートであるdeno-puppeteerが公開されました。</p>
-</section>
-<footer class=entry-footer><span title="2021-01-03 00:00:00 +0000 UTC">January 3, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2020/12/28〜2021/01/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/03.html></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://uki00a.github.io/deno-weekly/categories/news/page/4.html>« Prev Page</a>
+<a class=next href=https://uki00a.github.io/deno-weekly/categories/news/page/6.html>Next Page »</a>
 </nav>
 </footer>
 </main>

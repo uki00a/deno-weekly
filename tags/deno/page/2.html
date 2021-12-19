@@ -75,6 +75,31 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/09/27〜2021/10/03の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>DenoのNode.js互換モードについて denoland/deno#12295のissueで、DenoにNode.jsの互換モードを提供することが提案されています。
+Denoを実行する際に--compatオプションを指定すると、Node.jsの組み込みモジュールの読み込みが有効化されるように提案されています。
+$ deno run --compat main.mjs こちらの機能の実装はdenoland/deno#12293のPRにて進行中です。
+今のところ、Import mapsとdeno_std/nodeを併用することで、Node.jsの組み込みモジュールを読み込めるように実装されているようです。
+https://github.com/denoland/deno/issues/12295 https://github.com/denoland/deno/pull/12293 Deno v1.14.2 Deno v1.14.2がリリースされました。
+このリリースはバグ修正やパフォーマンスの最適化などがメインです。
+主な変更点:
+deno fmtやdeno testで.mkd, .mkdn, .mdwn, .mdown, 及び.markdownの拡張子のファイルがサポートされました 一度取り消しされたパーミッションが再び許可されないように修正されました Deno.HttpConnがすでに閉じられている場合にrespondWithを呼ぶと、プロセスがパニックする問題が修正されました 祖先のワーカーが閉じられたときまたは終了したときに、合わせて子孫のワーカーも閉じるまたは終了するように修正されました 祖先のワーカーが終了したもののその子孫に生きているワーカーが存在する場合、プロセスがパニックする問題が修正されました WindowsでDeno.killがサポートされました Request/Response/Eventオブジェクトの生成、Headersオブジェクトの内部実装、パーミッションチェックなどが最適化されました https://github.com/denoland/deno/releases/tag/v1.14.2
+deno_std v0.109.0 deno_std v0.109.0がリリースされました
+変更点:
+node: stream/webの部分的なサポートが追加されました node/events: EventEmitter.callを呼べない問題が修正されました node/module: .mjsファイルをrequireできないように修正されました https://github.com/denoland/deno_std/releases/tag/0.109.0
+lint.deno.landがDeno Deployへ移行 deno_lintの公式サイトであるlint.deno.landがDeno Deployへ移行されました。
+それに合わせて、内部実装がdext.ts+Tailwind CSSからFresh+Twindへ移行されています。
+DenoやDeno Deployなどでフロントエンド開発を行う際に参考になるかもしれないため、興味のある方はソースコードも見てみるとよいかもしれません。
+https://github.com/denoland/deno_lint/pull/905</p>
+</section>
+<footer class=entry-footer><span title="2021-10-03 00:00:00 +0000 UTC">October 3, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/09/27〜2021/10/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/03.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/09/20〜2021/09/26の最新情報
 </h2>
 </header>
@@ -258,29 +283,6 @@ encoding/hex: encodedLen, encodeToString, decodedLen, decodeStringが削除さ�
 </section>
 <footer class=entry-footer><span title="2021-07-18 00:00:00 +0000 UTC">July 18, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/12〜2021/07/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/18.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/07/05〜2021/07/11の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を変更することが検討されています。
-https://github.com/denoland/deno/issues/11340 このissueでは、以下のような方向性が示されています。
-DenoのTypeScriptによる型チェックをデフォルトで無効化したい (現状の--no-checkオプションを付けた際の挙動をデフォルトにしたい) TypeScriptによる型チェックは、--checkオプションを指定したときのみ実施する --no-checkオプションは非推奨化する より詳細な内容や議論などについては上記issueを参照いただければと思います。
-https://github.com/denoland/deno/issues/11340
-Bundler v0.8.0 DenoのフロントエンドビルドツールであるBundlerのv0.8.0がリリースされました。
-このリリースでは、Devサーバのサポートが追加されています。
-https://github.com/timreichen/Bundler/releases/tag/0.8.0
-deno-redis v0.23.0がリリース deno-redisのv0.23.0がリリースされました。
-このリリースでは、いくつかの破壊的変更が実施されています。
-Redis Clusterのクライアント実装が追加されました。 Redis.connectionプロパティが削除されました。(破壊的変更) RedisImplクラスが非公開になり、代わりにcreate関数が追加されました。 (破壊的変更) https://github.com/denodrivers/redis/releases/tag/v0.23.0
-xhr xhrはDenoとDeno Deploy向けのXMLHttpRequestのポリフィルです。
-以下のドキュメントにて、このモジュールを利用してDeno Deploy上でFirebase SDKを使用する方法が紹介されています。
-https://deno.com/deploy/docs/tutorial-firebase https://github.com/kitsonk/xhr https://deno.com/deploy/docs/tutorial-firebase </p>
-</section>
-<footer class=entry-footer><span title="2021-07-11 00:00:00 +0000 UTC">July 11, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/05〜2021/07/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/11.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
