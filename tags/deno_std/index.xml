@@ -4,7 +4,7 @@ deno lspでのテストのデバッグ用コードレンズ deno replでのImpor
 https://github.com/denoland/deno/releases/tag/v1.17.1
 deno_std v0.119.0 deno_std v0.119.0がリリースされました。
 std/hash Tigerハッシュのサポートが追加されました。
-std/cyptoへのTigerハッシュの追加は次のリリース以降になりそうです (#1749)
+std/cryptoへのTigerハッシュの追加は次のリリース以降になりそうです (#1749)
 std/uuid uuid/mod.tsでvalidate関数が実装されています。
 当たられた文字列が正しい形式のUUIDであるかをチェックできます。
 https://doc.deno.land/https://deno.land/std@0.119.0/uuid/mod.ts/~/validate
