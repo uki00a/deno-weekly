@@ -75,6 +75,27 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/12/27〜2022/01/02の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>ShadowRealmサポートについて DenoでのShadowRealmのサポートに向けて、deno_coreクレートでレルムの作成をサポートすること提案されています。
+その準備として、まずはdeno_coreクレートでリファクタリングなどを進めることが提案されています。
+https://github.com/denoland/deno/issues/13239 現在の進捗については上記issueから確認できます。
+https://github.com/denoland/deno/issues/13239 https://github.com/tc39/proposal-shadowrealm Je Xia氏とDivy Srivastava氏がDeno Land Inc.にジョイン Je Xia氏(esm.shやAleph.jsの作者)と Divy Srivastava氏(Elsaやautopilot-denoなどの作者)がDeno Land Inc.にジョインしたようです。
+現在、Je Xia氏は様々なサーバレス環境で動作させるためにAleph.jsのリライトなどを実施されているようです。
+https://twitter.com/jexia_/status/1473582071238987777 https://twitter.com/jexia_/status/1473131210776150017 https://twitter.com/undefined_void/status/1476975389603811328 https://twitter.com/jexia_/status/1473582071238987777 Diplo Rustで書かれたDenoのスクリプトランナー兼パッケージマネージャ
+diplo.tomlという設定ファイルでタスクの定義や依存関係の管理などを行うようです。
+https://github.com/Tricked-dev/diplo
+deno_python DenoからPythonコードを実行するためのモジュール
+FFI(Deno.dlopen)を利用してPythonのC APIを実行することで実現されているようです。
+https://github.com/denosaurs/deno_python</p>
+</section>
+<footer class=entry-footer><span title="2022-01-02 00:00:00 +0000 UTC">January 2, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/12/27〜2022/01/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/02.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/12/20〜2021/12/26の最新情報
 </h2>
 </header>
@@ -269,26 +290,6 @@ http/file_server: エラーログに色がつくようになりました...</p>
 <footer class=entry-footer><span title="2021-10-31 00:00:00 +0000 UTC">October 31, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/10/25〜2021/10/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/31.html></a>
 </article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/10/18〜2021/10/24の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.15.2 Deno v1.15.2がリリースされました。
-主な変更点:
-Node.js互換モード(--compat)でCommon JS形式のモジュールの実行などがサポートされました。
-deno runコマンドの引数としてCommon JS形式のファイルを直接指定できます
-const EventEmitter = require("events"); const emitter = new EventEmitter(); emitter.on("foo", console.log); emitter.emit("foo", 1); $ deno run --unstable --compat --allow-read main.js TypeScriptのallowSyntheticDefaultImportsオプションがデフォルトで有効化されるようになりました
-https://github.com/denoland/deno/releases/tag/v1.15.2
-deno_std v0.112.0 deno_std v0.112.0がリリースされました。
-大きな変更点として、deno_std/nodeでexpressのHello Worldコードを動かすための対応やpackage.jsonのimportsやexportsのサポートなどが実施されています。
-変更点:
-collections: joinToStringが追加されました node/module: package.jsonのimportsやexportsフィールドのサポートが追加されました node/buffer: Bufferをnewなしで呼べるようになりました node/events: setMaxListenersが実装されました node/process: process.mainModuleが実装されました node/process: process.versionの値がDenoのバージョンからNode.jsのstableバージョンに変更されました node/http: ServerResponseとIncomingMessageでストリーミングがサポートされました node/url: formatが実装されました node/os: devNull定数が追加されました node/global: node/global....</p>
-</section>
-<footer class=entry-footer><span title="2021-10-24 00:00:00 +0000 UTC">October 24, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/18〜2021/10/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/24.html></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=next href=https://uki00a.github.io/deno-weekly/categories/news/page/2.html>Next Page »</a>
@@ -296,7 +297,7 @@ collections: joinToStringが追加されました node/module: package.jsonのim
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Articles on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/articles.html</link><description>Recent content in Articles on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 26 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/12/20〜2021/12/26の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/12/26.html</link><pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/12/26.html</guid><description>Deno v1.17.1 Deno v1.17.1がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Articles on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/articles.html</link><description>Recent content in Articles on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 02 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/12/27〜2022/01/02の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/01/02.html</link><pubDate>Sun, 02 Jan 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/01/02.html</guid><description>ShadowRealmサポートについて DenoでのShadowRealmのサポートに向けて、deno_coreクレートでレルムの作成をサポートすること提案されています。
+その準備として、まずはdeno_coreクレートでリファクタリングなどを進めることが提案されています。
+https://github.com/denoland/deno/issues/13239 現在の進捗については上記issueから確認できます。
+https://github.com/denoland/deno/issues/13239 https://github.com/tc39/proposal-shadowrealm Je Xia氏とDivy Srivastava氏がDeno Land Inc.にジョイン Je Xia氏(esm.shやAleph.jsの作者)と Divy Srivastava氏(Elsaやautopilot-denoなどの作者)がDeno Land Inc.にジョインしたようです。
+現在、Je Xia氏は様々なサーバレス環境で動作させるためにAleph.jsのリライトなどを実施されているようです。
+https://twitter.com/jexia_/status/1473582071238987777 https://twitter.com/jexia_/status/1473131210776150017 https://twitter.com/undefined_void/status/1476975389603811328 https://twitter.com/jexia_/status/1473582071238987777 Diplo Rustで書かれたDenoのスクリプトランナー兼パッケージマネージャ
+diplo.tomlという設定ファイルでタスクの定義や依存関係の管理などを行うようです。
+https://github.com/Tricked-dev/diplo
+deno_python DenoからPythonコードを実行するためのモジュール
+FFI(Deno.dlopen)を利用してPythonのC APIを実行することで実現されているようです。
+https://github.com/denosaurs/deno_python</description></item><item><title>2021/12/20〜2021/12/26の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/12/26.html</link><pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/12/26.html</guid><description>Deno v1.17.1 Deno v1.17.1がリリースされました。
 以下の新機能が追加されています。
 deno lspでのテストのデバッグ用コードレンズ deno replでのImport Assertionsのサポート
 https://github.com/denoland/deno/releases/tag/v1.17.1
