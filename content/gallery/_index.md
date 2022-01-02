@@ -23,6 +23,7 @@ title: ギャラリー
 |[djwt](https://github.com/timonson/djwt)|JWTモジュール|
 |[Velociraptor](https://github.com/jurassiscripts/velociraptor)|タスクランナ|
 |[Trex](https://github.com/crewdevio/Trex)|パッケージマネージャ|
+|[Diplo](https://github.com/Tricked-dev/diplo)|スクリプトランナ・パッケージマネージャ|
 |[Cliffy](https://github.com/c4spar/deno-cliffy)|CLIフレームワーク|
 |[ts-morph](https://github.com/dsherret/ts-morph)|TypeScriptコンパイラAPIのラッパ|
 |[code-block-writer](https://github.com/dsherret/code-block-writer)|TypeScript/JavaScriptコードの生成をサポート|
@@ -49,6 +50,7 @@ title: ギャラリー
 |[Sift](https://github.com/satyarohith/sift)|Deno Deployのルーティングモジュール|
 |[little_crony](https://github.com/mandarineorg/little-crony)|CRONライブラリ|
 |[deno_sdl2](https://github.com/littledivy/deno_sdl2)|SDL2へのバインディング|
+|[deno_python](https://github.com/denosaurs/deno_python)|Pythonバイディング|
 |[pngs](https://github.com/denosaurs/pngs)|pngイメージのエンコード/デコード|
 |[xml](https://github.com/lowlighter/xml)|Denoで動作するXMLモジュール|
 |[xhr](https://github.com/kitsonk/xhr)|`XMLHttpRequest`のポリフィル|
