@@ -1,0 +1,310 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>2021/01/17〜2022/01/23の最新情報 | 週刊Deno</title>
+<meta name=keywords content="Deno,deno_std,Velociraptor">
+<meta name=description content="Deno v1.18.0 Deno v1.18.0がリリースされました。
+設定ファイルの自動読み込みがサポート 今までは、設定ファイルを読み込むためには--configの指定が必要でした。
+$ deno run --config ./deno.json ./main.ts 今後は、--configが指定されなかった場合、deno.jsonまたはdeno.jsoncという名前の設定ファイルを自動で読み込まれるようになります。
+Deno.testのsub-steps APIが安定化 Deno.testでテストケースのグループ化を行うためのsub-steps APIが安定化されました。
+今後は--unstableを指定しなくても利用できます。
+Deno.test(&#34;nested test case&#34;, async (t) => { const success = await t.step(&#34;step 1&#34;, async (t) => { const success = await t.step(&#34;step 1-1&#34;, () => { throw new Error(&#34;Failed!&#34;); }); if (!success) throw new Error(&#34;Failed!&#34;); await t.step(&#34;step 1-2&#34;, () => {}); }); if (success) throw new Error(&#34;Failed!&#34;); }); Web Cryptography APIの実装が完了 このリリースでは、下記の変更が実施されています。">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/01/23.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.0">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="2021/01/17〜2022/01/23の最新情報">
+<meta property="og:description" content="Deno v1.18.0 Deno v1.18.0がリリースされました。
+設定ファイルの自動読み込みがサポート 今までは、設定ファイルを読み込むためには--configの指定が必要でした。
+$ deno run --config ./deno.json ./main.ts 今後は、--configが指定されなかった場合、deno.jsonまたはdeno.jsoncという名前の設定ファイルを自動で読み込まれるようになります。
+Deno.testのsub-steps APIが安定化 Deno.testでテストケースのグループ化を行うためのsub-steps APIが安定化されました。
+今後は--unstableを指定しなくても利用できます。
+Deno.test(&#34;nested test case&#34;, async (t) => { const success = await t.step(&#34;step 1&#34;, async (t) => { const success = await t.step(&#34;step 1-1&#34;, () => { throw new Error(&#34;Failed!&#34;); }); if (!success) throw new Error(&#34;Failed!&#34;); await t.step(&#34;step 1-2&#34;, () => {}); }); if (success) throw new Error(&#34;Failed!&#34;); }); Web Cryptography APIの実装が完了 このリリースでは、下記の変更が実施されています。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/01/23.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2022-01-23T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-01-23T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="2021/01/17〜2022/01/23の最新情報">
+<meta name=twitter:description content="Deno v1.18.0 Deno v1.18.0がリリースされました。
+設定ファイルの自動読み込みがサポート 今までは、設定ファイルを読み込むためには--configの指定が必要でした。
+$ deno run --config ./deno.json ./main.ts 今後は、--configが指定されなかった場合、deno.jsonまたはdeno.jsoncという名前の設定ファイルを自動で読み込まれるようになります。
+Deno.testのsub-steps APIが安定化 Deno.testでテストケースのグループ化を行うためのsub-steps APIが安定化されました。
+今後は--unstableを指定しなくても利用できます。
+Deno.test(&#34;nested test case&#34;, async (t) => { const success = await t.step(&#34;step 1&#34;, async (t) => { const success = await t.step(&#34;step 1-1&#34;, () => { throw new Error(&#34;Failed!&#34;); }); if (!success) throw new Error(&#34;Failed!&#34;); await t.step(&#34;step 1-2&#34;, () => {}); }); if (success) throw new Error(&#34;Failed!&#34;); }); Web Cryptography APIの実装が完了 このリリースでは、下記の変更が実施されています。">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/01/17〜2022/01/23の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/01/23.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/01/17〜2022/01/23の最新情報","name":"2021\/01\/17〜2022\/01\/23の最新情報","description":"Deno v1.18.0 Deno v1.18.0がリリースされました。\n設定ファイルの自動読み込みがサポート 今までは、設定ファイルを読み込むためには--configの指定が必要でした。\n$ deno run --config ./deno.json ./main.ts 今後は、--configが指定されなかった場合、deno.jsonまたはdeno.jsoncという名前の設定ファイルを自動で読み込まれるようになります。\nDeno.testのsub-steps APIが安定化 Deno.testでテストケースのグループ化を行うためのsub-steps APIが安定化されました。\n今後は--unstableを指定しなくても利用できます。\nDeno.test(\u0026#34;nested test case\u0026#34;, async (t) =\u0026gt; { const success = await t.step(\u0026#34;step 1\u0026#34;, async (t) =\u0026gt; { const success = await t.step(\u0026#34;step 1-1\u0026#34;, () =\u0026gt; { throw new Error(\u0026#34;Failed!\u0026#34;); }); if (!success) throw new Error(\u0026#34;Failed!\u0026#34;); await t.step(\u0026#34;step 1-2\u0026#34;, () =\u0026gt; {}); }); if (success) throw new Error(\u0026#34;Failed!\u0026#34;); }); Web Cryptography APIの実装が完了 このリリースでは、下記の変更が実施されています。","keywords":["Deno","deno_std","Velociraptor"],"articleBody":"Deno v1.18.0 Deno v1.18.0がリリースされました。\n設定ファイルの自動読み込みがサポート 今までは、設定ファイルを読み込むためには--configの指定が必要でした。\n$ deno run --config ./deno.json ./main.ts 今後は、--configが指定されなかった場合、deno.jsonまたはdeno.jsoncという名前の設定ファイルを自動で読み込まれるようになります。\nDeno.testのsub-steps APIが安定化 Deno.testでテストケースのグループ化を行うためのsub-steps APIが安定化されました。\n今後は--unstableを指定しなくても利用できます。\nDeno.test(\"nested test case\", async (t) = { const success = await t.step(\"step 1\", async (t) = { const success = await t.step(\"step 1-1\", () = { throw new Error(\"Failed!\"); }); if (!success) throw new Error(\"Failed!\"); await t.step(\"step 1-2\", () = {}); }); if (success) throw new Error(\"Failed!\"); }); Web Cryptography APIの実装が完了 このリリースでは、下記の変更が実施されています。\n SubtleCrypto.encrypt()及びSubtleCrypto.decrypt()でAES-GCM及びAES-CTRがサポート SubtleCrypto.wrapKey()及びSubtleCrypto.unwrapKey()でAES-KWがサポート SubtleCrypto.importKey()でECDSA及びECDHキーとP-384曲線の組み合わせがサポート SubtleCrypto.exportKey()でECDSA及びECDHキーのjwkやpkcs8, 及びspki形式でのエクスポートがサポート SubtleCrypto.wrapKey()とSubtleCrypto.unwrapKey()でjwk形式がサポート  今回のリリースでWeb Cryptography APIの実装が完了したようです。\nDeno.dlopen(FFI)への機能追加 まず、外部関数の型がシンボル定義を元に自動で推論されるようになりました。\nconst dylib = Deno.dlopen(\"./add.so\", { add: { parameters: [\"i32\", \"i32\"], result: \"i32\", } as const, }); const result = dylib.symbols.add(\"1\", 2); // NG! (型エラー) シンボルへの別名の設定もサポートされています。\nconst dylib = Deno.dlopen(\"./add.so\", { plus: { name: \"add\", parameters: [\"i32\", \"i32\"], result: \"i32\", } as const, }); dylib.symbols.plus(1, 2) また、Deno.UnsafeFnPointerが実装され、関数ポインタを取り扱えるようになりました。\nNode.js互換モードの変更 deno repl --compatでNode.jsの組み込みモジュール( events, assertなど)がグローバルにあらかじめ読み込まれるようになりました。\nまた、deno testコマンドでもNode.js互換モード(--compat)がサポートされました。\nWebSocket関連の変更 WebSocketStreamでハンドシェイク時に送信されるHTTPヘッダを指定できるようになりました (Denoの独自拡張です)\nconst wss = new WebSocketStream(\"wss://localhost:4000/ws\", { headers: { \"X-FOO\": \"foo\" }, }); また、WebSocketサーバ(Deno.upgradeWebSocket)でping/pongメッセージのハンドリングがサポートされました。\nサーバがクライアントへpingメッセージを送信する間隔はidleTimeoutオプションで制御できます (デフォルトは120秒)\nUncaught Error発生時のログ出力の強化 Uncaught Errorが発生した際に、Error.causeの内容が表示されるようになりました。\ndeno lspの改善 import節のホバーでモジュールの情報などが表示されるようになりました\nその他の修正  Denoランタイムの起動が33%、Deno内部のtscの起動が10%高速化されました (v8スナップショットの圧縮にzlibではなくlz4とzstdが使用されるようになりました) deno bundleによるバンドル後のソースに// deno-fmt-ignore-fileと// deno-lint-ignore-fileコメントが出力されるようになりました deno installで--promptオプションがサポートされました。 実行途中のread()が存在する状態でReadableStreamDefaultReaderまたはReadableStreamBYOBReaderのreleaseLock()を呼ぶと、read()がrejectするように変更されました (今までは、同じ状況でreleaseLock()を呼ぶと、TypeErrorが発生しました) window変数をdeleteで削除すると、プロセスがパニックする問題が修正されました globalThisを削除すると、console.logなどがクラッシュする問題が修正されました Intl.ListFormatの型定義が追加されました Deno.errors.NotSupportedの型定義が追加されました    https://deno.com/blog/v1.18 https://github.com/denoland/deno/releases/tag/v1.18.0  deno_std v0.122.0 deno_std v0.122.0がリリースされました。\ncsv parse()の戻り値の型が改善されています。\nまた、破壊的変更として、ParseOptions.parseとParseOptions.columns[].parseオプションが削除されています。\nnode Timeoutクラスが実装されました。\nlog FileHandlerの内部バッファが満杯になった際に、バッファの内容が強制的にフラッシュされるように修正が行われました。\n https://github.com/denoland/deno_std/releases/tag/0.122.0\nテストステップメタデータの実装について (#13399) テストステップメタデータの実装が検討されています。\nまず、現状のsub-steps APIの問題点として、--filterオプションによるフィルタリングが困難であるという問題があります。\nこの問題を緩和するために、stepMetadataオプションをDeno.testに追加することが検討されています。\nDeno.test({ name: \"group\", async fn(t) { await t.step(\"step 1\", () = { await t.step(\"sub step 1\", () = {}); }); await t.step(\"step 2\", () = {}); }, stepMetadata: [ { name: \"step 1\", steps: [{ name: \"sub step 1\" }] }, { name: \"step 2\" }, ], }); このようにしてメタデータを定義しておくことで、ネストされたテストケースのフィルタリングが可能になります。\n$ deno test --filter \"sub step 1”  https://github.com/denoland/deno/issues/13399\nVelociraptor v1.4.0 Velociraptor v1.4.0がリリースされました。\nImport mapファイルを指定するためのimapオプションがimportmapにリネームされています。\nscripts: dev: cmd: deno run --unstable dev.ts importmap: import_map.json imapオプションは非推奨化されており、今後はimportmapオプションの使用が推奨されます。\nその他の変更点として、deno.json(c)での設定のサポートが追加されています。\n以下のように、deno.json(c)ファイルのvelociraptorキーでスクリプトの定義が行えます。\n{ \"velociraptor\": { \"scripts\": { \"check\": [ \"deno lint\", \"deno fmt --check\" ] } } }  https://github.com/jurassiscripts/velociraptor/releases/tag/1.4.0\nAstrodon TauriとFFI(Deno.dlopen)をベースにしたデスクトップアプリケーションフレームワーク\n https://github.com/astrodon/astrodon\n","wordCount":"290","inLanguage":"en","datePublished":"2022-01-23T00:00:00Z","dateModified":"2022-01-23T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/01/23.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+2021/01/17〜2022/01/23の最新情報
+</h1>
+<div class=post-meta><span title="2022-01-23 00:00:00 +0000 UTC">January 23, 2022</span>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#deno-v1180 aria-label="Deno v1.18.0">Deno v1.18.0</a><ul>
+<li>
+<a href=#%e8%a8%ad%e5%ae%9a%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e8%87%aa%e5%8b%95%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=設定ファイルの自動読み込みがサポート>設定ファイルの自動読み込みがサポート</a></li>
+<li>
+<a href=#denotest%e3%81%aesub-steps-api%e3%81%8c%e5%ae%89%e5%ae%9a%e5%8c%96 aria-label="Deno.testのsub-steps APIが安定化"><code>Deno.test</code>のsub-steps APIが安定化</a></li>
+<li>
+<a href=#web-cryptography-api%e3%81%ae%e5%ae%9f%e8%a3%85%e3%81%8c%e5%ae%8c%e4%ba%86 aria-label="Web Cryptography APIの実装が完了">Web Cryptography APIの実装が完了</a></li>
+<li>
+<a href=#denodlopenffi%e3%81%b8%e3%81%ae%e6%a9%9f%e8%83%bd%e8%bf%bd%e5%8a%a0 aria-label=Deno.dlopen(FFI)への機能追加><code>Deno.dlopen</code>(FFI)への機能追加</a></li>
+<li>
+<a href=#nodejs%e4%ba%92%e6%8f%9b%e3%83%a2%e3%83%bc%e3%83%89%e3%81%ae%e5%a4%89%e6%9b%b4 aria-label=Node.js互換モードの変更>Node.js互換モードの変更</a></li>
+<li>
+<a href=#websocket%e9%96%a2%e9%80%a3%e3%81%ae%e5%a4%89%e6%9b%b4 aria-label=WebSocket関連の変更>WebSocket関連の変更</a></li>
+<li>
+<a href=#uncaught-error%e7%99%ba%e7%94%9f%e6%99%82%e3%81%ae%e3%83%ad%e3%82%b0%e5%87%ba%e5%8a%9b%e3%81%ae%e5%bc%b7%e5%8c%96 aria-label="Uncaught Error発生時のログ出力の強化">Uncaught Error発生時のログ出力の強化</a></li></ul>
+</li>
+<li>
+<a href=#deno-lsp%e3%81%ae%e6%94%b9%e5%96%84 aria-label="deno lspの改善"><code>deno lsp</code>の改善</a></li>
+<li>
+<a href=#%e3%81%9d%e3%81%ae%e4%bb%96%e3%81%ae%e4%bf%ae%e6%ad%a3 aria-label=その他の修正>その他の修正</a></li>
+<li>
+<a href=#deno_std-v01220 aria-label="deno_std v0.122.0">deno_std v0.122.0</a><ul>
+<li>
+<a href=#csv aria-label=csv><code>csv</code></a></li>
+<li>
+<a href=#node aria-label=node><code>node</code></a></li>
+<li>
+<a href=#log aria-label=log><code>log</code></a></li></ul>
+</li>
+<li>
+<a href=#%e3%83%86%e3%82%b9%e3%83%88%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%e3%83%a1%e3%82%bf%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e5%ae%9f%e8%a3%85%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6-13399httpsgithubcomdenolanddenoissues13399 aria-label="テストステップメタデータの実装について (#13399)">テストステップメタデータの実装について (<a href=https://github.com/denoland/deno/issues/13399>#13399</a>)</a></li>
+<li>
+<a href=#velociraptor-v140 aria-label="Velociraptor v1.4.0">Velociraptor v1.4.0</a></li>
+<li>
+<a href=#astrodon aria-label=Astrodon>Astrodon</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=deno-v1180>Deno v1.18.0<a hidden class=anchor aria-hidden=true href=#deno-v1180>#</a></h2>
+<p>Deno v1.18.0がリリースされました。</p>
+<h3 id=設定ファイルの自動読み込みがサポート>設定ファイルの自動読み込みがサポート<a hidden class=anchor aria-hidden=true href=#設定ファイルの自動読み込みがサポート>#</a></h3>
+<p>今までは、設定ファイルを読み込むためには<code>--config</code>の指定が必要でした。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ deno run --config ./deno.json ./main.ts
+</code></pre></div><p>今後は、<code>--config</code>が指定されなかった場合、<code>deno.json</code>または<code>deno.jsonc</code>という名前の設定ファイルを自動で読み込まれるようになります。</p>
+<h3 id=denotestのsub-steps-apiが安定化><code>Deno.test</code>のsub-steps APIが安定化<a hidden class=anchor aria-hidden=true href=#denotestのsub-steps-apiが安定化>#</a></h3>
+<p><code>Deno.test</code>でテストケースのグループ化を行うためのsub-steps APIが安定化されました。</p>
+<p>今後は<code>--unstable</code>を指定しなくても利用できます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>test</span>(<span style=color:#e6db74>&#34;nested test case&#34;</span>, <span style=color:#66d9ef>async</span> (<span style=color:#a6e22e>t</span>) <span style=color:#f92672>=&gt;</span> {
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>success</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>t</span>.<span style=color:#a6e22e>step</span>(<span style=color:#e6db74>&#34;step 1&#34;</span>, <span style=color:#66d9ef>async</span> (<span style=color:#a6e22e>t</span>) <span style=color:#f92672>=&gt;</span> {
+    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>success</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>t</span>.<span style=color:#a6e22e>step</span>(<span style=color:#e6db74>&#34;step 1-1&#34;</span>, () <span style=color:#f92672>=&gt;</span> {
+      <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;Failed!&#34;</span>);
+    });
+    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>success</span>) <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;Failed!&#34;</span>);
+
+    <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>t</span>.<span style=color:#a6e22e>step</span>(<span style=color:#e6db74>&#34;step 1-2&#34;</span>, () <span style=color:#f92672>=&gt;</span> {});
+  });
+
+  <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>success</span>) <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;Failed!&#34;</span>);
+});
+</code></pre></div><h3 id=web-cryptography-apiの実装が完了>Web Cryptography APIの実装が完了<a hidden class=anchor aria-hidden=true href=#web-cryptography-apiの実装が完了>#</a></h3>
+<p>このリリースでは、下記の変更が実施されています。</p>
+<ul>
+<li><code>SubtleCrypto.encrypt()</code>及び<code>SubtleCrypto.decrypt()</code>でAES-GCM及びAES-CTRがサポート</li>
+<li><code>SubtleCrypto.wrapKey()</code>及び<code>SubtleCrypto.unwrapKey()</code>でAES-KWがサポート</li>
+<li><code>SubtleCrypto.importKey()</code>でECDSA及びECDHキーとP-384曲線の組み合わせがサポート</li>
+<li><code>SubtleCrypto.exportKey()</code>でECDSA及びECDHキーのjwkやpkcs8, 及びspki形式でのエクスポートがサポート</li>
+<li><code>SubtleCrypto.wrapKey()</code>と<code>SubtleCrypto.unwrapKey()</code>でjwk形式がサポート</li>
+</ul>
+<p>今回のリリースでWeb Cryptography APIの実装が完了したようです。</p>
+<h3 id=denodlopenffiへの機能追加><code>Deno.dlopen</code>(FFI)への機能追加<a hidden class=anchor aria-hidden=true href=#denodlopenffiへの機能追加>#</a></h3>
+<p>まず、外部関数の型がシンボル定義を元に自動で推論されるようになりました。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dylib</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>dlopen</span>(<span style=color:#e6db74>&#34;./add.so&#34;</span>, {
+  <span style=color:#a6e22e>add</span><span style=color:#f92672>:</span> {
+    <span style=color:#a6e22e>parameters</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;i32&#34;</span>, <span style=color:#e6db74>&#34;i32&#34;</span>],
+    <span style=color:#a6e22e>result</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;i32&#34;</span>,
+  } <span style=color:#66d9ef>as</span> <span style=color:#66d9ef>const</span>,
+});
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>result</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>dylib</span>.<span style=color:#a6e22e>symbols</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;1&#34;</span>, <span style=color:#ae81ff>2</span>); <span style=color:#75715e>// NG! (型エラー)
+</span></code></pre></div><p>シンボルへの別名の設定もサポートされています。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dylib</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>dlopen</span>(<span style=color:#e6db74>&#34;./add.so&#34;</span>, {
+  <span style=color:#a6e22e>plus</span><span style=color:#f92672>:</span> {
+    <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;add&#34;</span>,
+    <span style=color:#a6e22e>parameters</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;i32&#34;</span>, <span style=color:#e6db74>&#34;i32&#34;</span>],
+    <span style=color:#a6e22e>result</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;i32&#34;</span>,
+  } <span style=color:#66d9ef>as</span> <span style=color:#66d9ef>const</span>,
+});
+<span style=color:#a6e22e>dylib</span>.<span style=color:#a6e22e>symbols</span>.<span style=color:#a6e22e>plus</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>)
+</code></pre></div><p>また、<code>Deno.UnsafeFnPointer</code>が実装され、関数ポインタを取り扱えるようになりました。</p>
+<h3 id=nodejs互換モードの変更>Node.js互換モードの変更<a hidden class=anchor aria-hidden=true href=#nodejs互換モードの変更>#</a></h3>
+<p><code>deno repl --compat</code>でNode.jsの組み込みモジュール( <code>events</code>, <code>assert</code>など)がグローバルにあらかじめ読み込まれるようになりました。</p>
+<p>また、<code>deno test</code>コマンドでもNode.js互換モード(<code>--compat</code>)がサポートされました。</p>
+<h3 id=websocket関連の変更>WebSocket関連の変更<a hidden class=anchor aria-hidden=true href=#websocket関連の変更>#</a></h3>
+<p><code>WebSocketStream</code>でハンドシェイク時に送信されるHTTPヘッダを指定できるようになりました (<strong>Denoの独自拡張です</strong>)</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>wss</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>WebSocketStream</span>(<span style=color:#e6db74>&#34;wss://localhost:4000/ws&#34;</span>, {
+  <span style=color:#a6e22e>headers</span><span style=color:#f92672>:</span> { <span style=color:#e6db74>&#34;X-FOO&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;foo&#34;</span> },
+});
+</code></pre></div><p>また、WebSocketサーバ(<code>Deno.upgradeWebSocket</code>)でping/pongメッセージのハンドリングがサポートされました。</p>
+<p>サーバがクライアントへpingメッセージを送信する間隔は<code>idleTimeout</code>オプションで制御できます (デフォルトは120秒)</p>
+<h3 id=uncaught-error発生時のログ出力の強化>Uncaught Error発生時のログ出力の強化<a hidden class=anchor aria-hidden=true href=#uncaught-error発生時のログ出力の強化>#</a></h3>
+<p>Uncaught Errorが発生した際に、<code>Error.cause</code>の内容が表示されるようになりました。</p>
+<h2 id=deno-lspの改善><code>deno lsp</code>の改善<a hidden class=anchor aria-hidden=true href=#deno-lspの改善>#</a></h2>
+<p><code>import</code>節のホバーでモジュールの情報などが表示されるようになりました</p>
+<p><img loading=lazy src=https://user-images.githubusercontent.com/35212662/150601468-0ab2b62f-9ba5-4ab5-9cca-2a7d8498f1c9.png alt=deno-lsp-hover-info-v1.18>
+</p>
+<h2 id=その他の修正>その他の修正<a hidden class=anchor aria-hidden=true href=#その他の修正>#</a></h2>
+<ul>
+<li>Denoランタイムの起動が33%、Deno内部のtscの起動が10%高速化されました (v8スナップショットの圧縮に<code>zlib</code>ではなく<code>lz4</code>と<code>zstd</code>が使用されるようになりました)</li>
+<li><code>deno bundle</code>によるバンドル後のソースに<code>// deno-fmt-ignore-file</code>と<code>// deno-lint-ignore-file</code>コメントが出力されるようになりました</li>
+<li><code>deno install</code>で<code>--prompt</code>オプションがサポートされました。</li>
+<li>実行途中の<code>read()</code>が存在する状態で<code>ReadableStreamDefaultReader</code>または<code>ReadableStreamBYOBReader</code>の<code>releaseLock()</code>を呼ぶと、<code>read()</code>がrejectするように変更されました (今までは、同じ状況で<code>releaseLock()</code>を呼ぶと、<code>TypeError</code>が発生しました)</li>
+<li><code>window</code>変数を<code>delete</code>で削除すると、プロセスがパニックする問題が修正されました</li>
+<li><code>globalThis</code>を削除すると、<code>console.log</code>などがクラッシュする問題が修正されました</li>
+<li><code>Intl.ListFormat</code>の型定義が追加されました</li>
+<li><code>Deno.errors.NotSupported</code>の型定義が追加されました</li>
+</ul>
+<hr>
+<ul>
+<li><a href=https://deno.com/blog/v1.18>https://deno.com/blog/v1.18</a></li>
+<li><a href=https://github.com/denoland/deno/releases/tag/v1.18.0>https://github.com/denoland/deno/releases/tag/v1.18.0</a></li>
+</ul>
+<h2 id=deno_std-v01220>deno_std v0.122.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01220>#</a></h2>
+<p>deno_std v0.122.0がリリースされました。</p>
+<h3 id=csv><code>csv</code><a hidden class=anchor aria-hidden=true href=#csv>#</a></h3>
+<p><code>parse()</code>の戻り値の型が改善されています。</p>
+<p>また、破壊的変更として、<code>ParseOptions.parse</code>と<code>ParseOptions.columns[].parse</code>オプションが削除されています。</p>
+<h3 id=node><code>node</code><a hidden class=anchor aria-hidden=true href=#node>#</a></h3>
+<p><a href=https://nodejs.org/api/timers.html#class-timeout>Timeout</a>クラスが実装されました。</p>
+<h3 id=log><code>log</code><a hidden class=anchor aria-hidden=true href=#log>#</a></h3>
+<p><a href=https://doc.deno.land/https://deno.land/std@0.122.0/log/handlers.ts/~/FileHandler>FileHandler</a>の内部バッファが満杯になった際に、バッファの内容が強制的にフラッシュされるように修正が行われました。</p>
+<hr>
+<p><a href=https://github.com/denoland/deno_std/releases/tag/0.122.0>https://github.com/denoland/deno_std/releases/tag/0.122.0</a></p>
+<h2 id=テストステップメタデータの実装について-13399httpsgithubcomdenolanddenoissues13399>テストステップメタデータの実装について (<a href=https://github.com/denoland/deno/issues/13399>#13399</a>)<a hidden class=anchor aria-hidden=true href=#テストステップメタデータの実装について-13399httpsgithubcomdenolanddenoissues13399>#</a></h2>
+<p>テストステップメタデータの実装が検討されています。</p>
+<p>まず、現状のsub-steps APIの問題点として、<code>--filter</code>オプションによるフィルタリングが困難であるという問題があります。</p>
+<p>この問題を緩和するために、<code>stepMetadata</code>オプションを<code>Deno.test</code>に追加することが検討されています。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>test</span>({
+  <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;group&#34;</span>,
+  <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>fn</span>(<span style=color:#a6e22e>t</span>) {
+    <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>t</span>.<span style=color:#a6e22e>step</span>(<span style=color:#e6db74>&#34;step 1&#34;</span>, () <span style=color:#f92672>=&gt;</span> {
+      <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>t</span>.<span style=color:#a6e22e>step</span>(<span style=color:#e6db74>&#34;sub step 1&#34;</span>, () <span style=color:#f92672>=&gt;</span> {});
+    });
+    <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>t</span>.<span style=color:#a6e22e>step</span>(<span style=color:#e6db74>&#34;step 2&#34;</span>, () <span style=color:#f92672>=&gt;</span> {});
+  },
+  <span style=color:#a6e22e>stepMetadata</span><span style=color:#f92672>:</span> [
+    { <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;step 1&#34;</span>, <span style=color:#a6e22e>steps</span><span style=color:#f92672>:</span> [{ <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;sub step 1&#34;</span> }] },
+    { <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;step 2&#34;</span> },
+  ],
+});
+</code></pre></div><p>このようにしてメタデータを定義しておくことで、ネストされたテストケースのフィルタリングが可能になります。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ deno test --filter <span style=color:#e6db74>&#34;sub step 1”
+</span></code></pre></div><hr>
+<p><a href=https://github.com/denoland/deno/issues/13399>https://github.com/denoland/deno/issues/13399</a></p>
+<h2 id=velociraptor-v140>Velociraptor v1.4.0<a hidden class=anchor aria-hidden=true href=#velociraptor-v140>#</a></h2>
+<p>Velociraptor v1.4.0がリリースされました。</p>
+<p>Import mapファイルを指定するための<code>imap</code>オプションが<code>importmap</code>にリネームされています。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>scripts</span>:
+  <span style=color:#f92672>dev</span>:
+    <span style=color:#f92672>cmd</span>: <span style=color:#ae81ff>deno run --unstable dev.ts</span>
+    <span style=color:#f92672>importmap</span>: <span style=color:#ae81ff>import_map.json</span>
+</code></pre></div><p><code>imap</code>オプションは非推奨化されており、今後は<code>importmap</code>オプションの使用が推奨されます。</p>
+<p>その他の変更点として、<code>deno.json(c)</code>での設定のサポートが追加されています。</p>
+<p>以下のように、<code>deno.json(c)</code>ファイルの<code>velociraptor</code>キーでスクリプトの定義が行えます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;velociraptor&#34;</span>: {
+    <span style=color:#f92672>&#34;scripts&#34;</span>: {
+      <span style=color:#f92672>&#34;check&#34;</span>: [
+        <span style=color:#e6db74>&#34;deno lint&#34;</span>,
+        <span style=color:#e6db74>&#34;deno fmt --check&#34;</span>
+      ]
+    }
+  }
+}
+</code></pre></div><hr>
+<p><a href=https://github.com/jurassiscripts/velociraptor/releases/tag/1.4.0>https://github.com/jurassiscripts/velociraptor/releases/tag/1.4.0</a></p>
+<h2 id=astrodon>Astrodon<a hidden class=anchor aria-hidden=true href=#astrodon>#</a></h2>
+<p><a href=https://github.com/tauri-apps/tauri>Tauri</a>とFFI(<code>Deno.dlopen</code>)をベースにしたデスクトップアプリケーションフレームワーク</p>
+<hr>
+<p><a href=https://github.com/astrodon/astrodon>https://github.com/astrodon/astrodon</a></p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/velociraptor.html>Velociraptor</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

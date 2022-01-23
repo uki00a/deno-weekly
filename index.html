@@ -72,6 +72,22 @@
 <main class=main>
 <article class=first-entry>
 <header class=entry-header>
+<h2>2021/01/17〜2022/01/23の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.18.0 Deno v1.18.0がリリースされました。
+設定ファイルの自動読み込みがサポート 今までは、設定ファイルを読み込むためには--configの指定が必要でした。
+$ deno run --config ./deno.json ./main.ts 今後は、--configが指定されなかった場合、deno.jsonまたはdeno.jsoncという名前の設定ファイルを自動で読み込まれるようになります。
+Deno.testのsub-steps APIが安定化 Deno.testでテストケースのグループ化を行うためのsub-steps APIが安定化されました。
+今後は--unstableを指定しなくても利用できます。
+Deno.test("nested test case", async (t) => { const success = await t.step("step 1", async (t) => { const success = await t.step("step 1-1", () => { throw new Error("Failed!"); }); if (!success) throw new Error("Failed!"); await t.step("step 1-2", () => {}); }); if (success) throw new Error("Failed!"); }); Web Cryptography APIの実装が完了 このリリースでは、下記の変更が実施されています。...</p>
+</section>
+<footer class=entry-footer><span title="2022-01-23 00:00:00 +0000 UTC">January 23, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/01/17〜2022/01/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/23.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/01/10〜2022/01/16の最新情報
 </h2>
 </header>
@@ -268,27 +284,6 @@ std/node wasiパッケージが実装されました。 process 下記APIが追�
 </section>
 <footer class=entry-footer><span title="2021-11-21 00:00:00 +0000 UTC">November 21, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/11/15〜2021/11/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/21.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/11/08〜2021/11/14の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.16.0 Deno v1.16.0がリリースされました。
-React 17 JSX Transformのサポート React 17で導入された新しいJSX Transformのサポートが追加されました。
-https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories .jsxまたは.tsxファイル中で@jsxImportSourceを使うことで有効化されます。
-/** @jsxImportSource https://esm.sh/preact@10.5.15 */ export function Hello(props) { return ( &lt;div>Hello, {props.name}&lt;/div> ) } また、--configオプションで指定する設定ファイルで有効化することも可能です。
-{ "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "https://esm.sh/react@17.0.2" } } ※Denoの特性上、"jsx": "react-jsx"を指定した際は、jsxImportSourceの指定も必要です。
-Deno API 新しいシグナルAPI Deno.addSignalListenerとDeno.removeSignalListenerが実装されました (unstable)
-const signalListener = () => { // ... }; Deno.addSignalListener("SIGTERM", signalListener); Deno.removeSignalListener("SIGTERM", signalListener); この変更に合わせて、既存のDeno.signalは削除されています。
-https://github.com/denoland/deno/issues/11158 Deno.TlsConn型の導入 Deno.TlsConnという新しいデータ型が導入されました。
-これに合わせて、Deno.connectTlsなどのAPIがDeno.Connの代わりにDeno.TlsConnを返却するように修正されています。
-このオブジェクトにはhandshakeメソッドが定義されており、明示的にハンドシェイクを行うことができます。
-Deno.testのテストケースごとのパーミッション指定が安定化 Deno v1....</p>
-</section>
-<footer class=entry-footer><span title="2021-11-14 00:00:00 +0000 UTC">November 14, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/11/08〜2021/11/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/14.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
