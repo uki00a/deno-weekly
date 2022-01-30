@@ -75,6 +75,38 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/01/24〜2022/01/30の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.18.1 Deno v1.18.1がリリースされました。
+Deno.networkInterfaces() Deno.networkInterfaces()が実装されました。
+利用可能なネットワークインターフェースの一覧を取得できます。
+const interfaces = Deno.networkInterfaces(); 利用するには--allow-envと--unstableが必要です。
+deno lsp deno lspでDENO_CERTとDENO_TLS_CA_STOREの環境変数がサポートされました。
+これらの環境変数については、下記を参照ください。
+https://deno.land/manual@v1.18.1/getting_started/setup_your_environment#environment-variables https://github.com/denoland/deno/releases/tag/v1.18.1
+deno_std v0.123.0 deno_std v0.123.0がリリースされました。
+std/node 新しく下記APIが実装されています:
+os.networkInterfaces() process.uptime() child_process.execFile() std/testing assertObjectMatchでArrayBufferを含むオブジェクトが適切に比較されない問題が修正されました。
+https://github.com/denoland/deno_std/releases/tag/0.123.0
+deno_std/archive/tarの現代化について deno_stdにはtarファイルを取り扱うためにarchive/tarが提供されています。
+このarchive/tarはDeno.Readerをベースに実装されています。
+現在、archive/tarをStreams APIで書き直すことが検討されています。
+この一環として、archive/streams.tsを追加するPRが作成されています。
+https://github.com/denoland/deno_std/pull/1855 archive/streams.tsではTarEncoderStreamとTarDecoderStreamを提供し、StreamsベースのAPIを介してtarファイルの操作を行うことができます。
+まだマージされていないものの、次のリリースなどで追加される可能性がありそうです。
+https://github.com/denoland/deno_std/issues/1658 https://github.com/denoland/deno_std/pull/1855 Deno in 2021 Denoの公式ブログポストとしてDeno in 2021という記事が公開されました。
+この記事では、2021年中にDenoに起きたできごとや変更内容などについて解説されています。
+また、Deno v2へのロードマップの公開などもまもなく実施予定とのことです。
+https://deno.com/blog/deno-in-2021
+I’m porting tsc to Go SWCの作者であるkdy1氏により、I’m porting tsc to Goという記事が公開されました。...</p>
+</section>
+<footer class=entry-footer><span title="2022-01-30 00:00:00 +0000 UTC">January 30, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/01/24〜2022/01/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/30.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/01/17〜2022/01/23の最新情報
 </h2>
 </header>
@@ -265,34 +297,6 @@ Deno.testのテストケースごとのパーミッション指定が安定化 D
 </section>
 <footer class=entry-footer><span title="2021-11-14 00:00:00 +0000 UTC">November 14, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/11/08〜2021/11/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/14.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/10/25〜2021/10/31の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.15.3 Deno v1.15.3がリリースされました。
-このリリースはバグ修正がメインです。
-変更点:
-TLS接続関連のAPIで発生することのあるプロセスのハングや大きなデータの書き込みがうまくいかない問題などが修正されました Deno.emitでalready borrowed: BorrowMutErrorが発生する問題が修正されました globalThis経由でFormDataなどのWeb APIを参照しようとすると型エラーが発生する問題が修正されました など
-https://github.com/denoland/deno/releases/tag/v1.15.3
-deno_std v0.113.0 deno_std v0.113.0がリリースされました。
-変更点:
-collections: runningReduceに渡すreducer関数にcurrentIndexが渡されるようになりました
-testing/asserts: assertIsErrorが追加されました
-node/module: require()でnode:プレフィックスがサポートされました
-const EventEmitter = require("node:events"); node/module: Common JSモジュールの中でimport/exportを使用した際の警告メッセージが親切になりました
-node/url: url.urlToHttpOptionsが実装されました
-node/os: os.archの返却値がNode.jsに一致するように修正されました
-node/events: onとemitメソッドを非EventEmitterオブジェクトに束縛して実行できるようになりました
-http/file_server: ファイル一覧ページでパンくずリストが表示されるようになりました
-http/file_server: ファイル名に%記号などが含まれている場合、そのファイルに適切にアクセスできない問題が修正されました
-http/file_server: 200や206以外のレスポンスを返却する際に生じるリソースリークが修正されました
-http/file_server: エラーログに色がつくようになりました...</p>
-</section>
-<footer class=entry-footer><span title="2021-10-31 00:00:00 +0000 UTC">October 31, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/25〜2021/10/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/31.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

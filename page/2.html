@@ -72,6 +72,25 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/11/15〜2021/11/21の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Slackの次世代開発プラットフォームについて Slackの次世代開発プラットフォームが発表されました。
+CLIやSDKなどでDenoが採用されるようです。
+https://deno.com/blog/slack https://api.slack.com/future Deno v1.16.2 Deno v1.16.2がリリースされました。
+このリリースはバグ修正などがメインです。
+deno testのsub-steps APIを使った際に、テストレポートに実行されたステップ数が表示されるようになりました。 deno test --docでコードブロックにCRLFが含まれていると、適切にタイプチェックが行われない問題が修正されました リモートモジュールのdynamic importに時間がかかる問題が改善されました。 https://github.com/denoland/deno/releases/tag/v1.16.2
+deno_std v0.115.0 deno_std v0.115.0がリリースされました。
+std/fsでの破壊的変更やstd/nodeのNode.jsとの互換性向上などが実施されています。
+std/fs fs/mod.tsからcopy()やcopySync()がexportされなくなりました (これらのAPIは--unstableに依存するためです)
+std/node wasiパッケージが実装されました。 process 下記APIが追加されました process.config process.exitCode process.stdin.setRawMode process.hrtime.bigint process.nextTickのNode.jsとの互換性が向上しました fs 下記APIが追加されました fs.readSync fs.read fs.rm fs.rmSync http Node.jsとの互換性が向上しました。(Server#listen()の引数なしの形式のサポート、ServerResponse#end()で空のレスポンスのサポートなど) util util.isBuffer/util._extend/util.stripVTControlCharactersが追加されました util.isRegExpのNode.jsとの互換性が向上しました events EventEmitterがES6のクラス形式からES5形式の実装に変更されました。(これによりNode....</p>
+</section>
+<footer class=entry-footer><span title="2021-11-21 00:00:00 +0000 UTC">November 21, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/15〜2021/11/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/21.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/11/08〜2021/11/14の最新情報
 </h2>
 </header>
@@ -255,25 +274,6 @@ deno fmt/deno lint deno fmt でJSDocコメントへの基本的なサポート�
 </section>
 <footer class=entry-footer><span title="2021-09-19 00:00:00 +0000 UTC">September 19, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/09/13〜2021/09/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/19.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/09/06〜2021/09/12の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno 2.0のスコープについて GitHub DiscussionsにてDeno 2.0のスコープやリリース予定時期について公開されました。
-https://github.com/denoland/deno/discussions/11972 現時点では、今年の11月に2.0のリリースが検討されているようです。
-Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に…) Deno.ReaderなどのJSのみで実装されたIO関連のAPIを削除(https://github.com/denoland/deno/issues/9795) 一部のAPIはすでにstd/io/util.tsなどへ移動されています デフォルトでのWorker内でDeno名前空間の有効化 TypeScriptのuseUnknownInCatchVariablesを有効化 Deno.customInspectを削除 デフォルトで型チェックをスキップする(https://github.com/denoland/deno/issues/11340) --configオプションを削除 (https://github.com/denoland/deno/discussions/7732) デフォルトでのロックファイルの生成・検証 localStorageや将来のIndexedDBなどの追加に備えたInternal Originの導入 TypeScriptのcompilerOptions.jsxFactoryとcompilerOptions.jsxFragmentFactoryのデフォルト値をそれぞれhと Fragmentに変更 (https://github.com/denoland/deno/issues/11186) デフォルトで外部のTypeScriptコードへの型エラーなどを報告させない (https://github.com/denoland/deno/issues/11970) dynamic importとWorker向けに--allow-importの導入 (https://github.com/denoland/deno/issues/8266) https://github.com/denoland/deno/discussions/11972
-vercel-deno v1.0.0 Vercel serverless functionsのDenoランタイム
-apiディレクトリに各フレームワークなどを使用したサンプルコードが配置されています。
-https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0
-deno_mongo v0.26.0 deno_mongo v0.26.0がリリースされました。
-変更点:
-Collection#insertが非推奨化されました (代わりにinsertOneやinsertManyなどの使用が推奨されます) Bson.ObjectIdの型定義が削除されました (Bson.ObjectID の方は残っています) MongoClient.buildInfoがサポートされました (https://docs.mongodb.com/manual/reference/command/buildInfo/) https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0</p>
-</section>
-<footer class=entry-footer><span title="2021-09-12 00:00:00 +0000 UTC">September 12, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/09/06〜2021/09/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/12.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
