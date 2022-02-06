@@ -75,6 +75,25 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/09/06〜2021/09/12の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno 2.0のスコープについて GitHub DiscussionsにてDeno 2.0のスコープやリリース予定時期について公開されました。
+https://github.com/denoland/deno/discussions/11972 現時点では、今年の11月に2.0のリリースが検討されているようです。
+Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に…) Deno.ReaderなどのJSのみで実装されたIO関連のAPIを削除(https://github.com/denoland/deno/issues/9795) 一部のAPIはすでにstd/io/util.tsなどへ移動されています デフォルトでのWorker内でDeno名前空間の有効化 TypeScriptのuseUnknownInCatchVariablesを有効化 Deno.customInspectを削除 デフォルトで型チェックをスキップする(https://github.com/denoland/deno/issues/11340) --configオプションを削除 (https://github.com/denoland/deno/discussions/7732) デフォルトでのロックファイルの生成・検証 localStorageや将来のIndexedDBなどの追加に備えたInternal Originの導入 TypeScriptのcompilerOptions.jsxFactoryとcompilerOptions.jsxFragmentFactoryのデフォルト値をそれぞれhと Fragmentに変更 (https://github.com/denoland/deno/issues/11186) デフォルトで外部のTypeScriptコードへの型エラーなどを報告させない (https://github.com/denoland/deno/issues/11970) dynamic importとWorker向けに--allow-importの導入 (https://github.com/denoland/deno/issues/8266) https://github.com/denoland/deno/discussions/11972
+vercel-deno v1.0.0 Vercel serverless functionsのDenoランタイム
+apiディレクトリに各フレームワークなどを使用したサンプルコードが配置されています。
+https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0
+deno_mongo v0.26.0 deno_mongo v0.26.0がリリースされました。
+変更点:
+Collection#insertが非推奨化されました (代わりにinsertOneやinsertManyなどの使用が推奨されます) Bson.ObjectIdの型定義が削除されました (Bson.ObjectID の方は残っています) MongoClient.buildInfoがサポートされました (https://docs.mongodb.com/manual/reference/command/buildInfo/) https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0</p>
+</section>
+<footer class=entry-footer><span title="2021-09-12 00:00:00 +0000 UTC">September 12, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/09/06〜2021/09/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/12.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/08/23〜2021/08/29の最新情報
 </h2>
 </header>
@@ -271,29 +290,6 @@ https://github.com/lowlighter/xml</p>
 </section>
 <footer class=entry-footer><span title="2021-06-27 00:00:00 +0000 UTC">June 27, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/21〜2021/06/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/27.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/06/14〜2021/06/20の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。
-このリリースでは、バグ修正などを中心に行われています。
-主な変更点:
-Deno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。 https://github.com/denoland/deno/releases/tag/v1.11.1
-deno_std v0.99.0がリリースされました deno_stdのv0.99.0がリリースされました。
-変更点:
-mime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました) https://github.com/denoland/deno_std/releases/tag/0.99.0
-Oak v7.6.0がリリースされました Oakのv7.6.0がリリースされました。
-主な変更点:
-ユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。 https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e
-Deno internals - how modern JavaScript runtime is built Node.js Wroclaw #10でのBartek Iwańczuk氏の公演がYoutubeで公開されました。
-Denoランタイムの内部構造などついて解説されています。
-https://www.youtube.com/watch?v=LoknuwupOIE</p>
-</section>
-<footer class=entry-footer><span title="2021-06-20 00:00:00 +0000 UTC">June 20, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/14〜2021/06/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/20.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

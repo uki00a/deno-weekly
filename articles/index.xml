@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Articles on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/articles.html</link><description>Recent content in Articles on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 30 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/01/24〜2022/01/30の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/01/30.html</link><pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/01/30.html</guid><description>Deno v1.18.1 Deno v1.18.1がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Articles on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/articles.html</link><description>Recent content in Articles on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 06 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/01/31〜2022/02/06の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/02/06.html</link><pubDate>Sun, 06 Feb 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/02/06.html</guid><description>Deno v1.18.2 Deno v1.18.2がリリースされました。
+Deno.getUid() Deno.getUid()が実装されました。
+これを使うと、現在のユーザのIDを取得できます。(Windowsだとnullが返されます)
+const uid = Deno.getUid(); console.log(uid); 利用するには--allow-envと--unstableが必要です。
+その他バグ修正 HOME環境変数に相対パスが設定されていると、プロセスがクラッシュする問題が修正されました。 拡張子なしでimportしようとした際に、メディアタイプを元に拡張子を推論されるようになりました。 クエリパラメータつきでローカルファイルをimportするとプロセスがクラッシュする問題が修正されました。 SubtleCrypto.decryptでAES-GCMによる復号を行う際に、タグ長が128ビットでないとプロセスがパニックする問題が修正されました deno lsp: リダイレクトが発生すると、X-Deno-Warningヘッダの内容が表示されなくなる問題が修正されました https://github.com/denoland/deno/releases/tag/v1.18.2
+deno_std v0.125.0 deno_std v0.125.0がリリースされました。
+std/nodeへの機能追加などを中心に行われています。
+全般 std/fs/copyやstd/node、std/osなどの--unstableが必要なモジュールを--unstableなしで使用した際に、型エラーではなく実行時エラーが発生するように修正されました。
+node punycodeパッケージが実装されました url.resolve()が実装されました child_process.spawn()などでAbortSignalがサポートされました fs.createWriteStream()が実装されました fs.copyFile()で4引数の形式がサポートされました https://github.com/denoland/deno_std/commit/3b43d075ea6977e10bb1d9bd58fbeacc721a114e
+deno_stdへのdotenvモジュールの追加について dotenvモジュールをdeno_stdへ追加するPRが作成されています。
+https://github.com/denoland/deno_std/pull/1877 経緯については下記のissueで議論されていますが、好意的な反応が多く、次のリリースなどで追加される可能性がありそうです。
+https://github.com/denoland/deno/issues/13396 https://github.com/denoland/deno_std/pull/1877
+Deno.Conn#setNoDelayとDeno.Conn#setKeepAliveの実装について Deno.ConnにsetNoDelayとsetKeepAliveを実装するPRがマージされました。(denoland/deno#13103)
+今のところ、下記のように使用することが想定されています。
+Deno.Conn#setNoDelay(true)を呼ぶとNagleアルゴリズムが無効化されます (TCP_NODELAYが設定される) Deno.Conn#setKeepAlive(true)を呼ぶとTCPキープアライブが有効化されます (SO_KEEPALIVEが設定される) この機能は次のDeno v1.19でリリースされる可能性がありそうです。
+https://github.com/denoland/deno/pull/13103
+Deno.run()でのIPCサポートについて Deno.run()でIPCをサポートするPRが作成されています。(denoland/deno#13566)
+今のところ、下記のような方法での使用が想定されているようです。
+Deno.</description></item><item><title>2021/01/24〜2022/01/30の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/01/30.html</link><pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/01/30.html</guid><description>Deno v1.18.1 Deno v1.18.1がリリースされました。
 Deno.networkInterfaces() Deno.networkInterfaces()が実装されました。
 利用可能なネットワークインターフェースの一覧を取得できます。
 const interfaces = Deno.networkInterfaces(); 利用するには--allow-envと--unstableが必要です。
