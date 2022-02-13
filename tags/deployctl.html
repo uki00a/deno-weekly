@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Categories | 週刊Deno</title>
+<title>deployctl | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/categories.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deployctl.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -17,7 +17,7 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.88.0">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/categories/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/deployctl/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -26,12 +26,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Categories">
+<meta property="og:title" content="deployctl">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/categories.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/deployctl.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Categories">
+<meta name=twitter:title content="deployctl">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -71,16 +71,38 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>Categories</h1>
+<h1>deployctl</h1>
 </header>
-<ul class=terms-tags>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/news.html>news <sup><strong><sup>59</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/notice.html>notice <sup><strong><sup>1</sup></strong></sup> </a>
-</li>
-</ul>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/02/07〜2022/02/13の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>--promptオプションの挙動をデフォルト化するPRがマージされました Denoで--promptオプションをデフォルトで有効化するPRがマージされました。
+feat: prompt by default (#13650)
+次のDeno v1.19でリリースされる可能性がありそうです。
+また、この変更に合わせて、--no-promptオプションが追加されています。 このオプションを指定することで、今まで通り、 許可されていないAPIを実行しようとすると、即時にエラーが発生します。
+ファイルシステムやネットワーク関連APIでのStreams APIのサポートについて Denoのファイルシステム(Deno.File)やネットワーク(Deno.Conn)関連のAPIでStreams APIをサポートすることが検討されています。
+Make FS and net APIs work well with WHATWG streams (#13614)
+まだドラフトの段階ですが、すでにPRも作成されています。
+feat(runtime): web streams in fs & net APIs (#13615)
+背景:
+現在、Denoのファイルシステムやネットワーク関連のAPIはGoのスタイルに従っています(Deno.Reader/Deno.Writer)
+しかし、これらのAPIはfetch()やStreams APIと互換性がありません (一応、この差異を吸収するためにdeno_std/streamsが提供されていたりします)
+この問題を解消するため、Deno.FileやDeno.Connなどにreadableプロパティ(ReadableStream&lt;Uint8Array>型)やwritableプロパティ(WritableStream&lt;Uint8Array>型)を追加することが検討されています。
+N-APIの実装について DenoでN-APIの実装が開始されています。
+Implement NAPI (#13633)
+まだドラフトの段階でありリリース時期も未定ですが、進捗は上記のPRから確認できるので、気になる方はSubscribeするとよいかもしれません。
+Deno.umask()の削除について Deno.umask()を削除するPRが作成されています。
+chore: remove Deno.umask (#13639)
+背景としては、競合状態によるバグが存在するためのようです。
+詳しくは以下のissueを参照ください。
+Proposal: Remove (unstable) Deno....</p>
+</section>
+<footer class=entry-footer><span title="2022-02-13 00:00:00 +0000 UTC">February 13, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/02/07〜2022/02/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/13.html></a>
+</article>
 </main>
 <footer class=footer>
 <span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>

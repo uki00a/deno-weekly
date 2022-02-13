@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Deno Deploy on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno-deploy.html</link><description>Recent content in Deno Deploy on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno-deploy/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/01/10〜2022/01/16の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/01/16.html</link><pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/01/16.html</guid><description>Deno v1.17.3 Deno v1.17.3がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Deno Deploy on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno-deploy.html</link><description>Recent content in Deno Deploy on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 13 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno-deploy/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/02/07〜2022/02/13の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/02/13.html</link><pubDate>Sun, 13 Feb 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/02/13.html</guid><description>--promptオプションの挙動をデフォルト化するPRがマージされました Denoで--promptオプションをデフォルトで有効化するPRがマージされました。
+feat: prompt by default (#13650)
+次のDeno v1.19でリリースされる可能性がありそうです。
+また、この変更に合わせて、--no-promptオプションが追加されています。 このオプションを指定することで、今まで通り、 許可されていないAPIを実行しようとすると、即時にエラーが発生します。
+ファイルシステムやネットワーク関連APIでのStreams APIのサポートについて Denoのファイルシステム(Deno.File)やネットワーク(Deno.Conn)関連のAPIでStreams APIをサポートすることが検討されています。
+Make FS and net APIs work well with WHATWG streams (#13614)
+まだドラフトの段階ですが、すでにPRも作成されています。
+feat(runtime): web streams in fs &amp;amp; net APIs (#13615)
+背景:
+現在、Denoのファイルシステムやネットワーク関連のAPIはGoのスタイルに従っています(Deno.Reader/Deno.Writer)
+しかし、これらのAPIはfetch()やStreams APIと互換性がありません (一応、この差異を吸収するためにdeno_std/streamsが提供されていたりします)
+この問題を解消するため、Deno.FileやDeno.Connなどにreadableプロパティ(ReadableStream&amp;lt;Uint8Array&amp;gt;型)やwritableプロパティ(WritableStream&amp;lt;Uint8Array&amp;gt;型)を追加することが検討されています。
+N-APIの実装について DenoでN-APIの実装が開始されています。
+Implement NAPI (#13633)
+まだドラフトの段階でありリリース時期も未定ですが、進捗は上記のPRから確認できるので、気になる方はSubscribeするとよいかもしれません。
+Deno.umask()の削除について Deno.umask()を削除するPRが作成されています。
+chore: remove Deno.umask (#13639)
+背景としては、競合状態によるバグが存在するためのようです。
+詳しくは以下のissueを参照ください。
+Proposal: Remove (unstable) Deno.</description></item><item><title>2021/01/10〜2022/01/16の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/01/16.html</link><pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/01/16.html</guid><description>Deno v1.17.3 Deno v1.17.3がリリースされました。
 このリリースでは、バグ修正を中心に実施されています。
 変更点:
 deno installで--allow-allを付与した際に、パーミッションが分解されてスクリプトが作成されないように修正されました。 具体的には、今まではdeno installで--allow-allを指定すると、下記のようなスクリプトが作成されていました。
