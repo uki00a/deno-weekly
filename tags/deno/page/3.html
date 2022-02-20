@@ -74,6 +74,26 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/09/20〜2021/09/26の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.14.1 Deno v1.14.1がリリースされました。
+このリリースはバグ修正がメインです。
+変更点:
+非async関数でfor-awaitを使用したときのエラーメッセージが改善されました v1.14.0で追加されたファイルロックAPIの型定義がlib.deno.ns.d.tsからlib.deno.unstable.d.tsに移動しました deno docでドキュメントを表示する際に、—unstableが必要になるなどの影響があります. (例: deno doc --builtin --unstable Deno.flock) スタックトレース中のData URLの表示が改善されました HMACキーをJSON Web Key形式でエクスポートできない問題が修正されました Deno.readFileの最適化 https://github.com/denoland/deno/releases/tag/v1.14.1
+deno_std v0.108.0 deno_stdのv0.108.0がリリースされました。
+変更点:
+collections: maxWithとminWithに渡した配列にundefinedが含まれていた場合、要素の並び順によって結果が異なってしまう問題が修正されました
+collections: maxBy, minBy, 及びsortByのselector引数でbigintやDateを返却できるように型定義が修正されました
+testing/asserts: assertThrowsやassertRejectsでコールバックがサポートされました
+import { assertEquals, assertRejects } from "https://deno.land/std@0.108.0/testing/asserts.ts"; await assertRejects(() => { return Promise.reject(new Error('foo')); }, (error: Error) => { assertEquals(error.message, 'foo'); }); https://github....</p>
+</section>
+<footer class=entry-footer><span title="2021-09-26 00:00:00 +0000 UTC">September 26, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/09/20〜2021/09/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/26.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/09/13〜2021/09/19の最新情報
 </h2>
 </header>
@@ -260,31 +280,6 @@ https://deno.com/deploy/docs/tutorial-firebase https://github.com/kitsonk/xhr ht
 </section>
 <footer class=entry-footer><span title="2021-07-11 00:00:00 +0000 UTC">July 11, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/05〜2021/07/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/11.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/06/28〜2021/07/04の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.11.3のリリース Denoのv1.11.3がリリースされました。
-このリリースではバグ修正などを中心に実施されています。
-変更点:
-Deno.emit()でグラフエラーの内容がdiagnostics配列に含まれるようになりました。 存在しないファイルをimportしようとした際などに、その内容がdiagnostics配列で報告されるようになりました。 https://github.com/denoland/deno/security/advisories/GHSA-xpwj-7v8q-mcgj の修正により、–allow-netパーミッションなしでDeno.emitを実行すると、リモート依存がバンドルに含まれないように修正されたことによる影響のようです console.logなどの呼び出し時にエラーが発生すると、denoプロセスがパニックする問題が修正されました fetch APIでユーザが指定したHostヘッダが無視されるように修正されました。 SignalStream#disposeを呼んだあとにもSignalStream#thenに渡したコールバックが呼ばれてしまう問題が修正されました。 SignalStreamはDeno.signal()で返却されるオブジェクトです。 Deno.signal(s)がdenoプロセスを終了しないようブロックしてしまう問題が修正されました。 localstorageの最大容量が5MBから10MBに拡大されました。 REPLなどでEvent.prototypeを評価しようとすると例外が発生する問題が修正されました。 Eventの読み込み専用プロパティへ書き込みができなくなりました。(https://developer.mozilla.org/en-US/docs/Web/API/Event) deno lspコマンドから--parent-pidフラグが削除されました。 https://github.com/denoland/deno/releases/tag/v1.11.3
-Denoの2021年Q3ロードマップが公開 Denoの2021年Q3のロードマップが公開されました。
-今後、Denoの本体やdeno lspなどで実施される予定の変更内容が公開されています。
-https://github.com/denoland/deno/issues/11168
-deno_std v0.100.0のリリース deno_stdのv0.100.0がリリースされました。
-変更点:
-testing: assertEqualsなどの関数で文字列どうしを比較した際に、差分が大幅に見やすくなりました。 testing: assertExists関数のシグネチャがType Guardを使用して宣言されるように修正されました。 node/events: EventEmitter#addListenerがNode.jsと同様の挙動をするように修正されました。 path/glob: tsconfig.jsonで"noImplicitAny": falseを指定した際にタイプエラーが発生する問題が修正されました。 https://github.com/denoland/deno_std/pull/987
-Oak v7.7.0 DenoのWebフレームワークであるOakのv7.7.0がリリースされました。
-主な変更点:
-Context#sendEventsでkeepAliveオプションが追加され、Server-Sent Eventsサーバでコネクションのポーリングが行えるようになりました。 proxyミドルウェアでクエリパラメータが送信されない問題が修正されました。 https://github.com/oakserver/oak/commit/5403ac08ddf295cda388ac4f1f12f630d2e77a2f
-Trex v1.8.0 Denoのパッケージ管理ツールであるTrexのv1.8.0がリリースされました。
-このリリースではtrex execコマンドがサポートされ、deno.land/xで公開されているCLIツールをインストールせずに直接実行できるようになりました。...</p>
-</section>
-<footer class=entry-footer><span title="2021-07-04 00:00:00 +0000 UTC">July 4, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/28〜2021/07/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/04.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

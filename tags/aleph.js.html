@@ -74,6 +74,25 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/02/14〜2022/02/20の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.19 Deno v1.19がリリースされました。
+--promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。
+const content = await Deno.readTextFile("README.md"); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。
+$ deno run main.ts ⚠️ ️Deno requests read access to "README.md". Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。
+deno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。
+具体的な使い方としては、下記のようにエントリポイントを指定します。
+$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。
+また、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。
+{ "imports": { "https://deno.land/": "./deno.land/", "https://unpkg.com/": "./unpkg.com/" }, "scopes": { "./unpkg.com/": { "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js", "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js" } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。...</p>
+</section>
+<footer class=entry-footer><span title="2022-02-20 00:00:00 +0000 UTC">February 20, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/02/14〜2022/02/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/20.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/09/20〜2021/09/26の最新情報
 </h2>
 </header>
