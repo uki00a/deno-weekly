@@ -1,13 +1,13 @@
 <!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
+<head>
+<meta name=generator content="Hugo 0.88.0"><meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>depsbot | 週刊Deno</title>
-<meta name=keywords content>
+<title>週刊Deno</title>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/depsbot.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/depsbot/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -25,13 +25,14 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="depsbot">
+<meta property="og:title" content="週刊Deno">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/depsbot.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="depsbot">
+<meta name=twitter:title content="週刊Deno">
 <meta name=twitter:description content>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"週刊Deno","url":"https://uki00a.github.io/deno-weekly/","description":"","thumbnailUrl":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico","sameAs":[]}</script>
 </head>
 <body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -69,36 +70,30 @@
 </nav>
 </header>
 <main class=main>
-<header class=page-header>
-<h1>depsbot</h1>
-</header>
-<article class="post-entry tag-entry">
+<article class=post-entry>
 <header class=entry-header>
-<h2>2021/03/08〜2021/03/14の最新情報
+<h2>
 </h2>
 </header>
 <section class=entry-content>
-<p>Deno本体の最新情報 Deno v1.8.1のリリース Deno v1.8.1がリリースされました。このリリースでは、バグの修正を中心に実施されています。
-主な変更点:
-importsNotUsedAsValuesオプションがswcに渡されるようになりました。 Windows上でdeno compileを実行すると、ターゲットに関わらず常に.exeが拡張子として付与される問題が修正されました。 Worker内でトップレベルawaitが使用されていると、ブロックが発生する問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.8.1
-deno_std v0.90.0のリリース deno_std v0.90.0がリリースされました。
-変更点:
-node: moduleモジュールをrequireで読み込めるようになりました。 node: Node.jsで書かれたスクリプトを実行するためのCLIツールが実装されました。(node/cli.ts) node: assertモジュールの互換性が向上しました。 http: v0.88.0で発生したパフォーマンスに関する問題が修正されました。 https://github.com/denoland/deno_std/commit/3f9714bf05a75303355fddd22cad9794be50e47d
-サードパーティモジュールなどの最新情報 nano nanoは軽量のJSXライブラリです。以下のような機能をサポートしています:
-SSRをサポート(DenoとNode.jsの両方で動作します) 組み込みのRouterやStoreなどを提供 コンポーネントのpre-fetch https://github.com/nanojsx/nano
-depsbot モジュールなどの依存関係の更新状態をチェックをしてくれるGitHub actionです。
-npmにも公開されており、コマンドラインから直接実行することもできます。
-https://github.com/denosaurs/depsbot
-wizard wizardというBDDスタイルのAPIを提供するテストライブラリが公開されました。
-まだ開発が開始したばかりではありますが、Deno.test()をベースにしているため、各種サニタイザやDenoのCLIをそのまま利用することができます。
-https://github.com/deno-libs/wizard
-deno-redis v0.20.0 deno-redis v0.20.0がリリースされました。
-変更点:
-CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下のコマンドがサポートされました: CLIENT UNBLOCK CLIENT UNPAUSE CLIENT INFO CLIENT TRACKINGINFO CLIENT LIST https://github....</p>
+<p>Deno v1.19 Deno v1.19がリリースされました。
+--promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。
+const content = await Deno.readTextFile("README.md"); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。
+$ deno run main.ts ⚠️ ️Deno requests read access to "README.md". Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。
+deno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。
+具体的な使い方としては、下記のようにエントリポイントを指定します。
+$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。
+また、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。
+{ "imports": { "https://deno.land/": "./deno.land/", "https://unpkg.com/": "./unpkg.com/" }, "scopes": { "./unpkg.com/": { "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js", "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js" } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。...</p>
 </section>
-<footer class=entry-footer><span title="2021-03-14 00:00:00 +0000 UTC">March 14, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/03/08〜2021/03/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/14.html></a>
+<footer class=entry-footer></footer>
+<a class=entry-link aria-label="post link to " href=https://uki00a.github.io/deno-weekly/articles/2022/02/20.html></a>
 </article>
+<footer class=page-footer>
+<nav class=pagination>
+<a class=prev href=https://uki00a.github.io/deno-weekly/page/6.html>« Prev Page</a>
+</nav>
+</footer>
 </main>
 <footer class=footer>
 <span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>

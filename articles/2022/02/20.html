@@ -1,0 +1,353 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>週刊Deno</title>
+<meta name=keywords content>
+<meta name=description content="Deno v1.19 Deno v1.19がリリースされました。
+--promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。
+const content = await Deno.readTextFile(&#34;README.md&#34;); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。
+$ deno run main.ts ⚠️ ️Deno requests read access to &#34;README.md&#34;. Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。
+deno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。
+具体的な使い方としては、下記のようにエントリポイントを指定します。
+$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。
+また、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。
+{ &#34;imports&#34;: { &#34;https://deno.land/&#34;: &#34;./deno.land/&#34;, &#34;https://unpkg.com/&#34;: &#34;./unpkg.com/&#34; }, &#34;scopes&#34;: { &#34;./unpkg.com/&#34;: { &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js&#34;: &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js&#34;, &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js&#34;: &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js&#34; } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/02/20.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content>
+<meta property="og:description" content="Deno v1.19 Deno v1.19がリリースされました。
+--promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。
+const content = await Deno.readTextFile(&#34;README.md&#34;); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。
+$ deno run main.ts ⚠️ ️Deno requests read access to &#34;README.md&#34;. Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。
+deno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。
+具体的な使い方としては、下記のようにエントリポイントを指定します。
+$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。
+また、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。
+{ &#34;imports&#34;: { &#34;https://deno.land/&#34;: &#34;./deno.land/&#34;, &#34;https://unpkg.com/&#34;: &#34;./unpkg.com/&#34; }, &#34;scopes&#34;: { &#34;./unpkg.com/&#34;: { &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js&#34;: &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js&#34;, &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js&#34;: &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js&#34; } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/02/20.html"><meta property="article:section" content="articles">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content>
+<meta name=twitter:description content="Deno v1.19 Deno v1.19がリリースされました。
+--promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。
+const content = await Deno.readTextFile(&#34;README.md&#34;); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。
+$ deno run main.ts ⚠️ ️Deno requests read access to &#34;README.md&#34;. Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。
+deno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。
+具体的な使い方としては、下記のようにエントリポイントを指定します。
+$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。
+また、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。
+{ &#34;imports&#34;: { &#34;https://deno.land/&#34;: &#34;./deno.land/&#34;, &#34;https://unpkg.com/&#34;: &#34;./unpkg.com/&#34; }, &#34;scopes&#34;: { &#34;./unpkg.com/&#34;: { &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js&#34;: &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js&#34;, &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js&#34;: &#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js&#34; } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"","item":"https://uki00a.github.io/deno-weekly/articles/2022/02/20.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"","name":"","description":"Deno v1.19 Deno v1.19がリリースされました。\n--promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。\nconst content = await Deno.readTextFile(\u0026#34;README.md\u0026#34;); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。\n$ deno run main.ts ⚠️ ️Deno requests read access to \u0026#34;README.md\u0026#34;. Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。\ndeno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。\n具体的な使い方としては、下記のようにエントリポイントを指定します。\n$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。\nまた、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。\n{ \u0026#34;imports\u0026#34;: { \u0026#34;https://deno.land/\u0026#34;: \u0026#34;./deno.land/\u0026#34;, \u0026#34;https://unpkg.com/\u0026#34;: \u0026#34;./unpkg.com/\u0026#34; }, \u0026#34;scopes\u0026#34;: { \u0026#34;./unpkg.com/\u0026#34;: { \u0026#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js\u0026#34;: \u0026#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js\u0026#34;, \u0026#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js\u0026#34;: \u0026#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js\u0026#34; } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。","keywords":[],"articleBody":"Deno v1.19 Deno v1.19がリリースされました。\n--promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。\nconst content = await Deno.readTextFile(\"README.md\"); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。\n$ deno run main.ts ⚠️ ️Deno requests read access to \"README.md\". Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。\ndeno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。\n具体的な使い方としては、下記のようにエントリポイントを指定します。\n$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。\nまた、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。\n{ \"imports\": { \"https://deno.land/\": \"./deno.land/\", \"https://unpkg.com/\": \"./unpkg.com/\" }, \"scopes\": { \"./unpkg.com/\": { \"./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js\": \"./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js\", \"./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js\": \"./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js\" } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。\n$ deno run --import-map=vendor/import_map.json mod.ts このvendorディレクトリをバージョン管理に含めれば、サードパーティモジュールのバージョンの固定ができます。\nDeno.FileがDeno.FsFileにリネーム 既存のDeno.FileはDeno v2.0で削除される予定のため、今後はDeno.FsFileの使用が推奨されます。\ndeno compileの安定性が向上 deno compileコマンドは実行可能ファイルを作成する際に、事前にJavaScriptコードをバンドルします。\nこのバンドル処理でeszipが使われるようになりました。(元々はswcが使われていました)\nこの影響により、安定性の向上などが期待されます。\nDeno.File(Deno.FsFile)及びDeno.ConnでWeb Streams APIがサポート 例えば、Deno.FsFileのreadableプロパティからReadableStreamにアクセスできます。\nconst file = await Deno.open(\"README.md\"); const decoder = new TextDecoder(); for await (const x of file.readable) { console.log(decoder.decode(x)); } WritableStreamにアクセスしたいときはwritableプロパティを参照します。\nconst res = await fetch(\"https://avatars.githubusercontent.com/u/35212662?v=4\"); const file = await Deno.create(\"avator.png\"); await res.body!.pipeTo(file.writable); 他にも、DenoネームスペースやDeno.Processのstdinプロパティにreadableが、stdoutとstderrにもwritableプロパティが追加されています。\nDeno.ConnにsetNoDelay()とsetKeepAlive()が追加 Deno.Connに下記メソッドが追加され、TCP接続に関する挙動をより詳細に制御できるようになりました。\nconn.setNoDelay(); // Nagleアルゴリズムを無効化 conn.setKeepAlive(); // TCPキープアライブを有効化 これらのAPIの利用には--unstableが必要です\nDeno.serveHTTPでUnixドメインソケットがサポート import { serveListener } from \"https://deno.land/std@0.126.0/http/mod.ts\"; const listener = Deno.listen({ transport: \"unix\", path: \"./http.sock\" }); serveListener(listener, () = new Response(\"hello\")); 利用するには--unstableが必要です。\nCompressionStreamとDecompressionStreamがサポート CompressionStreamとDecompressionStream がサポートされました。\nこれにより、Denoの本体でgzipなどを使用した圧縮や伸長などがサポートされます。\nconst res = await fetch(\"https://github.com/x-motemen/ghq/archive/refs/tags/v1.2.1.tar.gz\"); const file = await Deno.create(\"ghq.tar\"); await res.body! .pipeThrough(new DecompressionStream(\"gzip\")) .pipeTo(file.writable); また、現在brotliのサポートも検討中とのことです。\nシグナルリスナAPIが安定化 Deno v1.17で実装されたシグナルリスナAPIが安定化されました。\n今後は--unstableなしで利用できます。\nconst signalListener = () = { // SIGTERMのハンドリング... }; // SIGTERMのリスナを登録 Deno.addSignalListener(\"SIGTERM\", signalListener); // SIGTERMのリスナを削除 Deno.removeSignalListener(\"SIGTERM\", signalListener); テスト関連の改善 deno coverageコマンドで--outputオプションがサポートされました。\nこのオプションではカバレッジレポートの出力先ファイルを指定できます。\nまた、Test Sanitizersのエラー表示が改善され、どこで問題が発生しているか特定しやすくなりました。\nウォッチャ(--watch)の改善 --no-clear-screenでスクリーンのクリアを無効化できるようになりました\n  https://github.com/denoland/deno/releases/tag/v1.19.0 https://deno.com/blog/v1.19  deno_std v0.126.0 deno_std v0.126.0がリリースされました。\nstd/collections/group_byの改善やstd/nodeの互換性の向上などが実施されています。\ncollections/group_by groupBy関数の型安全性が向上されました。\n具体的には、関数のシグネチャが\nexport function groupByT( array: readonly T[], selector: (el: T) = string, ): Recordstring, T[]; から\nexport function groupByT, K extends string( array: readonly T[], selector: (el: T) = K, ): PartialRecordK, T[]; に変更されています。\nnode  tls.connect()が実装されました。 fs.createWriteStream()の互換性が向上 (fs.closeオプションやhighWaterMarkオプションのサポートなど) fs.write()の互換性が向上 (Uint8Arrayの取り扱いの向上など) Buffer.fromでのbase64デコードの互換性が向上 setIntervalなどの変数を宣言しようとすると、エラーが発生する問題が解消   https://github.com/denoland/deno_std/commit/7363da42a4c11361e73ebb06ed03476012ecf9b8\ndeno scriptコマンド Deno本体でdeno scriptコマンドを追加するPRが作成されています。\n feat: “deno script” subcommand (#13725)\n 利用するには、まずdeno.json(c)ファイルの\"scripts\"でスクリプトを定義しておきます。\n{ \"scripts\": { \"start\": \"deno run --allow-net mod.ts\" } } そして、deno scriptコマンドを利用することで\"scripts\"で定義したスクリプトを実行できます。\n$ deno script start 定義されているスクリプトを一覧表示したいときは、引数なしでdeno scriptを実行します。\n$ deno script また、--configオプションを指定することで、例えばpackage.jsonで定義されているスクリプトも実行できるようです。\n$ deno script --config package.json build  https://github.com/denoland/deno/pull/13725\nDenoでのnpm:スキームのサポート Deno本体でnpm:スキームをサポートすることが提案されています。\n Support npm URLs (#13703)\n 具体的には、下記のようにnpm:を付与することでnpmパッケージを直接importできるようにすることが狙いのようです。\nimport React from \"npm:react@17\"; より詳細については、上記issueを参照ください。\n https://github.com/denoland/deno/issues/13703\naleph-canary aleph-canaryというリポジトリが公開されています。\n\n気になる人はウォッチしておくとよいかもしれないです。\nまた、Aleph.jsは最近new-architectureというブランチでも活発に開発が行われていて、JSXマジックの削除などの大きな変更も行われているようです。\n https://github.com/ije/aleph-canary\nFreshでカスタムAppコンポーネントとエラーページがサポート FreshでカスタムのAppコンポーネントを定義できるようになりました。\n feat: _app (#87)\n pages/_app.tsxやpages/_app.tsなどのファイルでカスタムのAppコンポーネントを定義できます。\nまた、Appコンポーネントに渡されるpropsの内容は下記ページから参照できます。\n AppProps  また、カスタムエラーページのサポートも追加されています。\n feat: support custom error pages (#86)\n  404エラーはpages/_404.tsx 500エラーはpages/_500.tsx  などのファイルを用意すると、そこでエラーがハンドリングされます。\nコンポーネントに渡されるpropsの内容については下記ページから参照できます。\n UnknownPageProps (404ページ向け) ErrorPageProps (500ページ向け)  ","wordCount":"339","inLanguage":"en","datePublished":"0001-01-01T00:00:00Z","dateModified":"0001-01-01T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/02/20.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+</h1>
+<div class=post-meta>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#deno-v119 aria-label="Deno v1.19">Deno v1.19</a><ul>
+<li>
+<a href=#--prompt%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%ae%e6%8c%99%e5%8b%95%e3%81%8c%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e5%8c%96 aria-label=--promptオプションの挙動がデフォルト化><code>--prompt</code>オプションの挙動がデフォルト化</a></li>
+<li>
+<a href=#deno-vendor%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ae%e8%bf%bd%e5%8a%a0 aria-label="deno vendorコマンドの追加"><code>deno vendor</code>コマンドの追加</a></li>
+<li>
+<a href=#denofile%e3%81%8cdenofsfile%e3%81%ab%e3%83%aa%e3%83%8d%e3%83%bc%e3%83%a0 aria-label=Deno.FileがDeno.FsFileにリネーム><code>Deno.File</code>が<code>Deno.FsFile</code>にリネーム</a></li>
+<li>
+<a href=#deno-compile%e3%81%ae%e5%ae%89%e5%ae%9a%e6%80%a7%e3%81%8c%e5%90%91%e4%b8%8a aria-label="deno compileの安定性が向上"><code>deno compile</code>の安定性が向上</a></li>
+<li>
+<a href=#denofiledenofsfile%e5%8f%8a%e3%81%b3denoconn%e3%81%a7web-streams-api%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label="Deno.File(Deno.FsFile)及びDeno.ConnでWeb Streams APIがサポート"><code>Deno.File</code>(<code>Deno.FsFile</code>)及び<code>Deno.Conn</code>でWeb Streams APIがサポート</a></li>
+<li>
+<a href=#denoconn%e3%81%absetnodelay%e3%81%a8setkeepalive%e3%81%8c%e8%bf%bd%e5%8a%a0 aria-label=Deno.ConnにsetNoDelay()とsetKeepAlive()が追加><code>Deno.Conn</code>に<code>setNoDelay()</code>と<code>setKeepAlive()</code>が追加</a></li>
+<li>
+<a href=#denoservehttp%e3%81%a7unix%e3%83%89%e3%83%a1%e3%82%a4%e3%83%b3%e3%82%bd%e3%82%b1%e3%83%83%e3%83%88%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=Deno.serveHTTPでUnixドメインソケットがサポート><code>Deno.serveHTTP</code>でUnixドメインソケットがサポート</a></li>
+<li>
+<a href=#compressionstream%e3%81%a8decompressionstream%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=CompressionStreamとDecompressionStreamがサポート><code>CompressionStream</code>と<code>DecompressionStream</code>がサポート</a></li>
+<li>
+<a href=#%e3%82%b7%e3%82%b0%e3%83%8a%e3%83%ab%e3%83%aa%e3%82%b9%e3%83%8aapi%e3%81%8c%e5%ae%89%e5%ae%9a%e5%8c%96 aria-label=シグナルリスナAPIが安定化>シグナルリスナAPIが安定化</a></li>
+<li>
+<a href=#%e3%83%86%e3%82%b9%e3%83%88%e9%96%a2%e9%80%a3%e3%81%ae%e6%94%b9%e5%96%84 aria-label=テスト関連の改善>テスト関連の改善</a></li>
+<li>
+<a href=#%e3%82%a6%e3%82%a9%e3%83%83%e3%83%81%e3%83%a3--watch%e3%81%ae%e6%94%b9%e5%96%84 aria-label=ウォッチャ(--watch)の改善>ウォッチャ(<code>--watch</code>)の改善</a></li></ul>
+</li>
+<li>
+<a href=#deno_std-v01260 aria-label="deno_std v0.126.0">deno_std v0.126.0</a><ul>
+<li>
+<a href=#collectionsgroup_by aria-label=collections/group_by><code>collections/group_by</code></a></li>
+<li>
+<a href=#node aria-label=node><code>node</code></a></li></ul>
+</li>
+<li>
+<a href=#deno-script%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89 aria-label="deno scriptコマンド"><code>deno script</code>コマンド</a></li>
+<li>
+<a href=#deno%e3%81%a7%e3%81%aenpm%e3%82%b9%e3%82%ad%e3%83%bc%e3%83%a0%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=Denoでのnpm:スキームのサポート>Denoでの<code>npm:</code>スキームのサポート</a></li>
+<li>
+<a href=#aleph-canary aria-label=aleph-canary><code>aleph-canary</code></a></li>
+<li>
+<a href=#fresh%e3%81%a7%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0app%e3%82%b3%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%8d%e3%83%b3%e3%83%88%e3%81%a8%e3%82%a8%e3%83%a9%e3%83%bc%e3%83%9a%e3%83%bc%e3%82%b8%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=FreshでカスタムAppコンポーネントとエラーページがサポート>FreshでカスタムAppコンポーネントとエラーページがサポート</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=deno-v119>Deno v1.19<a hidden class=anchor aria-hidden=true href=#deno-v119>#</a></h2>
+<p>Deno v1.19がリリースされました。</p>
+<h3 id=--promptオプションの挙動がデフォルト化><code>--prompt</code>オプションの挙動がデフォルト化<a hidden class=anchor aria-hidden=true href=#--promptオプションの挙動がデフォルト化>#</a></h3>
+<p>例えば、以下のようなファイルがあったとします。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts:main.ts data-lang=ts:main.ts><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>content</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>readTextFile</span>(<span style=color:#e6db74>&#34;README.md&#34;</span>);
+</code></pre></div><p>このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ deno run main.ts
+⚠️  ️Deno requests read access to <span style=color:#e6db74>&#34;README.md&#34;</span>. Run again with --allow-read to bypass this prompt.
+   Allow? <span style=color:#f92672>[</span>y/n <span style=color:#f92672>(</span>y <span style=color:#f92672>=</span> yes allow, n <span style=color:#f92672>=</span> no deny<span style=color:#f92672>)]</span>
+</code></pre></div><p>Deno v1.18以前の挙動に戻したいときは<code>--no-prompt</code>を指定する必要があります。</p>
+<h3 id=deno-vendorコマンドの追加><code>deno vendor</code>コマンドの追加<a hidden class=anchor aria-hidden=true href=#deno-vendorコマンドの追加>#</a></h3>
+<p>サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。</p>
+<p>具体的な使い方としては、下記のようにエントリポイントを指定します。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ deno vendor mod.ts
+</code></pre></div><p>これにより、<code>vendor</code>ディレクトリに<code>mod.ts</code>から依存されているサードパーティモジュールが保存されます。</p>
+<p>また、<code>vendor</code>ディレクトリに次のような内容で<code>import_map.json</code>が作成されます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;imports&#34;</span>: {
+    <span style=color:#f92672>&#34;https://deno.land/&#34;</span>: <span style=color:#e6db74>&#34;./deno.land/&#34;</span>,
+    <span style=color:#f92672>&#34;https://unpkg.com/&#34;</span>: <span style=color:#e6db74>&#34;./unpkg.com/&#34;</span>
+  },
+  <span style=color:#f92672>&#34;scopes&#34;</span>: {
+    <span style=color:#f92672>&#34;./unpkg.com/&#34;</span>: {
+      <span style=color:#f92672>&#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js&#34;</span>: <span style=color:#e6db74>&#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js&#34;</span>,
+      <span style=color:#f92672>&#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js&#34;</span>: <span style=color:#e6db74>&#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js&#34;</span>
+    }
+  }
+}
+</code></pre></div><p><code>deno run</code>を実行する際にこのImport Mapファイルを指定することで、<code>vendor</code>ディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ deno run --import-map<span style=color:#f92672>=</span>vendor/import_map.json mod.ts
+</code></pre></div><p>この<code>vendor</code>ディレクトリをバージョン管理に含めれば、サードパーティモジュールのバージョンの固定ができます。</p>
+<h3 id=denofileがdenofsfileにリネーム><code>Deno.File</code>が<code>Deno.FsFile</code>にリネーム<a hidden class=anchor aria-hidden=true href=#denofileがdenofsfileにリネーム>#</a></h3>
+<p>既存の<code>Deno.File</code>はDeno v2.0で削除される予定のため、今後は<code>Deno.FsFile</code>の使用が推奨されます。</p>
+<h3 id=deno-compileの安定性が向上><code>deno compile</code>の安定性が向上<a hidden class=anchor aria-hidden=true href=#deno-compileの安定性が向上>#</a></h3>
+<p><code>deno compile</code>コマンドは実行可能ファイルを作成する際に、事前にJavaScriptコードをバンドルします。</p>
+<p>このバンドル処理で<a href=https://github.com/denoland/eszip>eszip</a>が使われるようになりました。(元々はswcが使われていました)</p>
+<p>この影響により、安定性の向上などが期待されます。</p>
+<h3 id=denofiledenofsfile及びdenoconnでweb-streams-apiがサポート><code>Deno.File</code>(<code>Deno.FsFile</code>)及び<code>Deno.Conn</code>でWeb Streams APIがサポート<a hidden class=anchor aria-hidden=true href=#denofiledenofsfile及びdenoconnでweb-streams-apiがサポート>#</a></h3>
+<p>例えば、<code>Deno.FsFile</code>の<code>readable</code>プロパティから<code>ReadableStream</code>にアクセスできます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>file</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>open</span>(<span style=color:#e6db74>&#34;README.md&#34;</span>);
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>decoder</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>TextDecoder</span>();
+<span style=color:#66d9ef>for</span> <span style=color:#66d9ef>await</span> (<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>readable</span>) {
+  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>decoder</span>.<span style=color:#a6e22e>decode</span>(<span style=color:#a6e22e>x</span>));
+}
+</code></pre></div><p><code>WritableStream</code>にアクセスしたいときは<code>writable</code>プロパティを参照します。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>res</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>fetch</span>(<span style=color:#e6db74>&#34;https://avatars.githubusercontent.com/u/35212662?v=4&#34;</span>);
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>file</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>create</span>(<span style=color:#e6db74>&#34;avator.png&#34;</span>);
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>body</span><span style=color:#f92672>!</span>.<span style=color:#a6e22e>pipeTo</span>(<span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>writable</span>);
+</code></pre></div><p>他にも、Denoネームスペースや<code>Deno.Process</code>の<code>stdin</code>プロパティに<code>readable</code>が、<code>stdout</code>と<code>stderr</code>にも<code>writable</code>プロパティが追加されています。</p>
+<h3 id=denoconnにsetnodelayとsetkeepaliveが追加><code>Deno.Conn</code>に<code>setNoDelay()</code>と<code>setKeepAlive()</code>が追加<a hidden class=anchor aria-hidden=true href=#denoconnにsetnodelayとsetkeepaliveが追加>#</a></h3>
+<p><code>Deno.Conn</code>に下記メソッドが追加され、TCP接続に関する挙動をより詳細に制御できるようになりました。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#a6e22e>conn</span>.<span style=color:#a6e22e>setNoDelay</span>(); <span style=color:#75715e>// Nagleアルゴリズムを無効化
+</span><span style=color:#75715e></span><span style=color:#a6e22e>conn</span>.<span style=color:#a6e22e>setKeepAlive</span>(); <span style=color:#75715e>// TCPキープアライブを有効化
+</span></code></pre></div><p>これらのAPIの利用には<code>--unstable</code>が必要です</p>
+<h3 id=denoservehttpでunixドメインソケットがサポート><code>Deno.serveHTTP</code>でUnixドメインソケットがサポート<a hidden class=anchor aria-hidden=true href=#denoservehttpでunixドメインソケットがサポート>#</a></h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>serveListener</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.126.0/http/mod.ts&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>listener</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>listen</span>({ <span style=color:#a6e22e>transport</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;unix&#34;</span>, <span style=color:#a6e22e>path</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;./http.sock&#34;</span> });
+<span style=color:#a6e22e>serveListener</span>(<span style=color:#a6e22e>listener</span>, () <span style=color:#f92672>=&gt;</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Response</span>(<span style=color:#e6db74>&#34;hello&#34;</span>));
+</code></pre></div><p>利用するには<code>--unstable</code>が必要です。</p>
+<h3 id=compressionstreamとdecompressionstreamがサポート><code>CompressionStream</code>と<code>DecompressionStream</code>がサポート<a hidden class=anchor aria-hidden=true href=#compressionstreamとdecompressionstreamがサポート>#</a></h3>
+<p><a href=https://developer.mozilla.org/en-US/docs/Web/API/CompressionStream>CompressionStream</a>と<a href=https://developer.mozilla.org/en-US/docs/Web/API/DecompressionStream>DecompressionStream</a> がサポートされました。</p>
+<p>これにより、Denoの本体でgzipなどを使用した圧縮や伸長などがサポートされます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>res</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>fetch</span>(<span style=color:#e6db74>&#34;https://github.com/x-motemen/ghq/archive/refs/tags/v1.2.1.tar.gz&#34;</span>);
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>file</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>create</span>(<span style=color:#e6db74>&#34;ghq.tar&#34;</span>);
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>body</span><span style=color:#f92672>!</span>
+  .<span style=color:#a6e22e>pipeThrough</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>DecompressionStream</span>(<span style=color:#e6db74>&#34;gzip&#34;</span>))
+  .<span style=color:#a6e22e>pipeTo</span>(<span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>writable</span>);
+</code></pre></div><p>また、現在<a href=https://github.com/WICG/compression/issues/34>brotliのサポートも検討中</a>とのことです。</p>
+<h3 id=シグナルリスナapiが安定化>シグナルリスナAPIが安定化<a hidden class=anchor aria-hidden=true href=#シグナルリスナapiが安定化>#</a></h3>
+<p>Deno v1.17で実装されたシグナルリスナAPIが安定化されました。</p>
+<p>今後は<code>--unstable</code>なしで利用できます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>signalListener</span> <span style=color:#f92672>=</span> () <span style=color:#f92672>=&gt;</span> {
+  <span style=color:#75715e>// SIGTERMのハンドリング...
+</span><span style=color:#75715e></span>};
+
+<span style=color:#75715e>// SIGTERMのリスナを登録
+</span><span style=color:#75715e></span><span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>addSignalListener</span>(<span style=color:#e6db74>&#34;SIGTERM&#34;</span>, <span style=color:#a6e22e>signalListener</span>);
+
+<span style=color:#75715e>// SIGTERMのリスナを削除
+</span><span style=color:#75715e></span><span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>removeSignalListener</span>(<span style=color:#e6db74>&#34;SIGTERM&#34;</span>, <span style=color:#a6e22e>signalListener</span>);
+</code></pre></div><h3 id=テスト関連の改善>テスト関連の改善<a hidden class=anchor aria-hidden=true href=#テスト関連の改善>#</a></h3>
+<p><code>deno coverage</code>コマンドで<code>--output</code>オプションがサポートされました。</p>
+<p>このオプションではカバレッジレポートの出力先ファイルを指定できます。</p>
+<p>また、<a href=https://deno.land/manual@v1.19.0/testing/sanitizers>Test Sanitizers</a>のエラー表示が改善され、どこで問題が発生しているか特定しやすくなりました。</p>
+<h3 id=ウォッチャ--watchの改善>ウォッチャ(<code>--watch</code>)の改善<a hidden class=anchor aria-hidden=true href=#ウォッチャ--watchの改善>#</a></h3>
+<p><code>--no-clear-screen</code>でスクリーンのクリアを無効化できるようになりました</p>
+<hr>
+<ul>
+<li><a href=https://github.com/denoland/deno/releases/tag/v1.19.0>https://github.com/denoland/deno/releases/tag/v1.19.0</a></li>
+<li><a href=https://deno.com/blog/v1.19>https://deno.com/blog/v1.19</a></li>
+</ul>
+<h2 id=deno_std-v01260>deno_std v0.126.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01260>#</a></h2>
+<p>deno_std v0.126.0がリリースされました。</p>
+<p><code>std/collections/group_by</code>の改善や<code>std/node</code>の互換性の向上などが実施されています。</p>
+<h3 id=collectionsgroup_by><code>collections/group_by</code><a hidden class=anchor aria-hidden=true href=#collectionsgroup_by>#</a></h3>
+<p><code>groupBy</code>関数の型安全性が向上されました。</p>
+<p>具体的には、関数のシグネチャが</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>groupBy</span>&lt;<span style=color:#f92672>T</span>&gt;(
+  <span style=color:#a6e22e>array</span>: <span style=color:#66d9ef>readonly</span> <span style=color:#a6e22e>T</span>[],
+  <span style=color:#a6e22e>selector</span><span style=color:#f92672>:</span> (<span style=color:#a6e22e>el</span>: <span style=color:#66d9ef>T</span>) <span style=color:#f92672>=&gt;</span> <span style=color:#66d9ef>string</span>,
+)<span style=color:#f92672>:</span> <span style=color:#a6e22e>Record</span>&lt;<span style=color:#f92672>string</span><span style=color:#960050;background-color:#1e0010>,</span> <span style=color:#a6e22e>T</span><span style=color:#960050;background-color:#1e0010>[]</span>&gt;;
+</code></pre></div><p>から</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>groupBy</span>&lt;<span style=color:#f92672>T</span><span style=color:#960050;background-color:#1e0010>,</span> <span style=color:#a6e22e>K</span> <span style=color:#a6e22e>extends</span> <span style=color:#a6e22e>string</span>&gt;(
+  <span style=color:#a6e22e>array</span>: <span style=color:#66d9ef>readonly</span> <span style=color:#a6e22e>T</span>[],
+  <span style=color:#a6e22e>selector</span><span style=color:#f92672>:</span> (<span style=color:#a6e22e>el</span>: <span style=color:#66d9ef>T</span>) <span style=color:#f92672>=&gt;</span> <span style=color:#a6e22e>K</span>,
+)<span style=color:#f92672>:</span> <span style=color:#a6e22e>Partial</span>&lt;<span style=color:#f92672>Record</span><span style=color:#960050;background-color:#1e0010>&lt;</span><span style=color:#a6e22e>K</span><span style=color:#960050;background-color:#1e0010>,</span> <span style=color:#a6e22e>T</span><span style=color:#960050;background-color:#1e0010>[]</span>&gt;<span style=color:#f92672>&gt;</span>;
+</code></pre></div><p>に変更されています。</p>
+<h3 id=node><code>node</code><a hidden class=anchor aria-hidden=true href=#node>#</a></h3>
+<ul>
+<li><code>tls.connect()</code>が実装されました。</li>
+<li><code>fs.createWriteStream()</code>の互換性が向上 (<code>fs.close</code>オプションや<code>highWaterMark</code>オプションのサポートなど)</li>
+<li><code>fs.write()</code>の互換性が向上 (<code>Uint8Array</code>の取り扱いの向上など)</li>
+<li><code>Buffer.from</code>でのbase64デコードの互換性が向上</li>
+<li><code>setInterval</code>などの変数を宣言しようとすると、エラーが発生する問題が解消</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denoland/deno_std/commit/7363da42a4c11361e73ebb06ed03476012ecf9b8>https://github.com/denoland/deno_std/commit/7363da42a4c11361e73ebb06ed03476012ecf9b8</a></p>
+<h2 id=deno-scriptコマンド><code>deno script</code>コマンド<a hidden class=anchor aria-hidden=true href=#deno-scriptコマンド>#</a></h2>
+<p>Deno本体で<code>deno script</code>コマンドを追加するPRが作成されています。</p>
+<blockquote>
+<p><a href=https://github.com/denoland/deno/pull/13725>feat: &ldquo;deno script&rdquo; subcommand (#13725)</a></p>
+</blockquote>
+<p>利用するには、まず<code>deno.json(c)</code>ファイルの<code>"scripts"</code>でスクリプトを定義しておきます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;scripts&#34;</span>: {
+    <span style=color:#f92672>&#34;start&#34;</span>: <span style=color:#e6db74>&#34;deno run --allow-net mod.ts&#34;</span>
+  }
+}
+</code></pre></div><p>そして、<code>deno script</code>コマンドを利用することで<code>"scripts"</code>で定義したスクリプトを実行できます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell> $ deno script start
+</code></pre></div><p>定義されているスクリプトを一覧表示したいときは、引数なしで<code>deno script</code>を実行します。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ deno script
+</code></pre></div><p>また、<code>--config</code>オプションを指定することで、例えば<code>package.json</code>で定義されているスクリプトも実行できるようです。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ deno script --config package.json build
+</code></pre></div><hr>
+<p><a href=https://github.com/denoland/deno/pull/13725>https://github.com/denoland/deno/pull/13725</a></p>
+<h2 id=denoでのnpmスキームのサポート>Denoでの<code>npm:</code>スキームのサポート<a hidden class=anchor aria-hidden=true href=#denoでのnpmスキームのサポート>#</a></h2>
+<p>Deno本体で<code>npm:</code>スキームをサポートすることが提案されています。</p>
+<blockquote>
+<p><a href=https://github.com/denoland/deno/issues/13703>Support npm URLs (#13703)</a></p>
+</blockquote>
+<p>具体的には、下記のように<code>npm:</code>を付与することでnpmパッケージを直接importできるようにすることが狙いのようです。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>React</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;npm:react@17&#34;</span>;
+</code></pre></div><p>より詳細については、上記issueを参照ください。</p>
+<hr>
+<p><a href=https://github.com/denoland/deno/issues/13703>https://github.com/denoland/deno/issues/13703</a></p>
+<h2 id=aleph-canary><code>aleph-canary</code><a hidden class=anchor aria-hidden=true href=#aleph-canary>#</a></h2>
+<p><a href=https://github.com/ije/aleph-canary>aleph-canary</a>というリポジトリが公開されています。</p>
+<p><a href=https://github.com/ije/aleph-canary><img loading=lazy src=https://gh-card.dev/repos/ije/aleph-canary.svg alt="ije/aleph-canary - GitHub">
+</a></p>
+<p>気になる人はウォッチしておくとよいかもしれないです。</p>
+<p>また、Aleph.jsは最近<a href=https://github.com/alephjs/aleph.js/tree/new-architecture>new-architecture</a>というブランチでも活発に開発が行われていて、<a href=https://github.com/alephjs/aleph.js/commit/49d4f546f286ba3bb977f827619ff62c12c41fa8>JSXマジックの削除</a>などの大きな変更も行われているようです。</p>
+<hr>
+<p><a href=https://github.com/ije/aleph-canary>https://github.com/ije/aleph-canary</a></p>
+<h2 id=freshでカスタムappコンポーネントとエラーページがサポート>FreshでカスタムAppコンポーネントとエラーページがサポート<a hidden class=anchor aria-hidden=true href=#freshでカスタムappコンポーネントとエラーページがサポート>#</a></h2>
+<p><a href=https://github.com/lucacasonato/fresh>Fresh</a>でカスタムの<code>App</code>コンポーネントを定義できるようになりました。</p>
+<blockquote>
+<p><a href=https://github.com/lucacasonato/fresh/pull/87>feat: _app (#87)</a></p>
+</blockquote>
+<p><code>pages/_app.tsx</code>や<code>pages/_app.ts</code>などのファイルでカスタムの<code>App</code>コンポーネントを定義できます。</p>
+<p>また、<code>App</code>コンポーネントに渡される<code>props</code>の内容は下記ページから参照できます。</p>
+<ul>
+<li><a href=https://doc.deno.land/https://raw.githubusercontent.com/lucacasonato/fresh/04a32f34987fbd59ce646967f216b2cca072a58f/src/runtime/types.ts/~/AppProps>AppProps</a></li>
+</ul>
+<p>また、カスタムエラーページのサポートも追加されています。</p>
+<blockquote>
+<p><a href=https://github.com/lucacasonato/fresh/pull/86>feat: support custom error pages (#86)</a></p>
+</blockquote>
+<ul>
+<li>404エラーは<code>pages/_404.tsx</code></li>
+<li>500エラーは<code>pages/_500.tsx</code></li>
+</ul>
+<p>などのファイルを用意すると、そこでエラーがハンドリングされます。</p>
+<p>コンポーネントに渡される<code>props</code>の内容については下記ページから参照できます。</p>
+<ul>
+<li><a href=https://doc.deno.land/https://raw.githubusercontent.com/lucacasonato/fresh/04a32f34987fbd59ce646967f216b2cca072a58f/src/runtime/types.ts/~/UnknownPageProps>UnknownPageProps</a> (404ページ向け)</li>
+<li><a href=https://doc.deno.land/https://raw.githubusercontent.com/lucacasonato/fresh/04a32f34987fbd59ce646967f216b2cca072a58f/src/runtime/types.ts/~/ErrorPageProps>ErrorPageProps</a> (500ページ向け)</li>
+</ul>
+</div>
+<footer class=post-footer>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

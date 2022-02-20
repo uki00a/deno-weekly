@@ -654,4 +654,12 @@ GitHub Actionsを使用して、毎日、それぞれのフレームワークに
 abc alosaur deno (std/http) dinatra drash express fastify node (httpモジュール) oak servest mandarinets aqua reno</description></item><item><title>2020/12/28〜2021/01/03の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/01/03.html</link><pubDate>Sun, 03 Jan 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/01/03.html</guid><description>Deno@v1.6.3がリリースされた Denoのv1.6.3がリリースされました。
 ハイライト deno lspにtextDocument/renameやcacheコマンドが実装されました。 std@0.83.0も同時にリリースされました。std/node/fsにmkdtempとmkdtempSyncが実装されています。 deno-puppeteerが公開された puppeteerのDenoポートであるdeno-puppeteerが公開されました。</description></item><item><title>はじめに</title><link>https://uki00a.github.io/deno-weekly/articles/2021/01/02.html</link><pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/01/02.html</guid><description>はじめに このサイトでは、Denoに関する最新情報を定期的に発信しようと思います。
 日頃からDenoに関するリポジトリや情報などをウォッチしており、どうせならそれに関する情報をアウトプットしてみようと思い、始めた試みです。
-これから隔週程度の間隔で情報を発信していこうと思います。</description></item></channel></rss>
+これから隔週程度の間隔で情報を発信していこうと思います。</description></item><item><title/><link>https://uki00a.github.io/deno-weekly/articles/2022/02/20.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/02/20.html</guid><description>Deno v1.19 Deno v1.19がリリースされました。
+--promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。
+const content = await Deno.readTextFile(&amp;#34;README.md&amp;#34;); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。
+$ deno run main.ts ⚠️ ️Deno requests read access to &amp;#34;README.md&amp;#34;. Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。
+deno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。
+具体的な使い方としては、下記のようにエントリポイントを指定します。
+$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。
+また、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。
+{ &amp;#34;imports&amp;#34;: { &amp;#34;https://deno.land/&amp;#34;: &amp;#34;./deno.land/&amp;#34;, &amp;#34;https://unpkg.com/&amp;#34;: &amp;#34;./unpkg.com/&amp;#34; }, &amp;#34;scopes&amp;#34;: { &amp;#34;./unpkg.com/&amp;#34;: { &amp;#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js&amp;#34;: &amp;#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js&amp;#34;, &amp;#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js&amp;#34;: &amp;#34;./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js&amp;#34; } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。</description></item></channel></rss>
