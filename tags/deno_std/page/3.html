@@ -74,6 +74,29 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/08/23〜2021/08/29の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.13.2 Deno v1.13.2がリリースされました。
+このリリースではバグ修正を中心に行われています。
+変更点:
+SubtleCrypto#exportKeyでHMACがサポートされました deno testの--jobsオプションで0を指定するとエラーが発生するように修正されました Deno.dlopenに不正な型の引数を渡した際に、プロセスがパニックする問題が修正されました リソースリークを防止するために、Deno.HttpConn#closeを実行した際に、該当のDeno.HttpConnオブジェクトを経由して割り当てられた全てのリソースが開放されるように修正されました deno lspでlanguageIdとしてjsxとtsxがサポートされました (Nova などのエディタが標準のlanguageIdであるjavascriptreactやtypescriptreactではなく、jsxやtsxを使用するために対応されたようです) deno lspがサポートしないlanguageIdが指定された場合、エディタ上で診断が表示されないように修正されました (deno lspが解釈できないlanguageIdをエディタが指定した場合、Denoはそのファイルをtypescriptとして解釈していたため、誤って診断が表示されてしまう問題があったようです) クラシックWorkerでsetTimeoutなどのAPIを使用するとプロセスがクラッシュする問題が修正されました URLやURLSearchParamsのパフォーマンスが向上しました deno_std v0.106.0 deno_std v0.106.0がリリースされました。
+変更点:
+async: delay関数でAbortSignalを使用した中断がサポートされました collection: findLastIndexでマッチする要素が見つからなかったときに-1ではなくundefinedが返却されるように修正されました testing: assertEqualsで、一方のオブジェクトにはconstructorが設定されているがもう一方には設定されていない場合に、保持しているプロパティが一致すればそれらのオブジェクトは同一と判断されるように変更されました node/buffer: 定数などのいくつかのAPIがexportされました node/perf_hooks: PerformanceEntryがdefault exportされるオブジェクトに追加されました https://github.com/denoland/deno_std/pull/1155 https://github.com/denoland/deno_std/releases/tag/0.106.0 MDNでDenoがサポートされました MDN Web Docsの「ブラウザーの互換性」欄にDenoの情報が表示されるようになりました。
+あるWeb APIがDenoのどのバージョンからサポートされているかを確認することができます。
+例)
+https://developer.mozilla.org/ja/docs/Web/API/URL https://developer.mozilla.org/ja/docs/Web/API/TextDecoder https://deno.com/blog/deno-on-mdn
+Aleph.js v0.3.0 betaバージョン Next.jsライクなフレームワークであるAleph.jsのv0.3.0 betaバージョンが公開されました。
+様々な機能の追加やパフォーマンスの向上などが図られています。
+主な変更点:
+新しいプラグインシステムの提供 (Aleph.jsのランタイムを拡張し、コードの変換プロセスに介入したりカスタムファイルタイプのサポートなどを追加できる仕組み) deno_std/http/serverからネイティブHTTP(Deno.serveHttp)への移行 APIミドルウェアがサポートされました。api/_middlewares....</p>
+</section>
+<footer class=entry-footer><span title="2021-08-29 00:00:00 +0000 UTC">August 29, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/23〜2021/08/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/29.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/08/16〜2021/08/22の最新情報
 </h2>
 </header>
@@ -265,22 +288,6 @@ luath v0.6.0/v0.7.0/v0.8.0がリリース Denoで実装されたフロントエ�
 </section>
 <footer class=entry-footer><span title="2021-05-23 00:00:00 +0000 UTC">May 23, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/05/17〜2021/05/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/23.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/05/10〜2021/05/16の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。
-このリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。
-変更点:
-deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が"esm" | "iife"から"module" | "classic"に変更された 公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。
-変更点:
-http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった https://github....</p>
-</section>
-<footer class=entry-footer><span title="2021-05-16 00:00:00 +0000 UTC">May 16, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/10〜2021/05/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/16.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
