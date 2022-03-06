@@ -72,6 +72,27 @@
 <main class=main>
 <article class=first-entry>
 <header class=entry-header>
+<h2>2021/02/28〜2022/03/06の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.19.2 Deno v1.19.2がリリースされました。
+リモートスクリプトでのdeno.json(c)の自動読み込みが無効化 Deno v1.18でdeno.json(c)の自動読み込みがサポートされました。
+このリリースでは、リモートスクリプトを実行時にdeno.json(c)の自動探索が無効化されています。
+リモートスクリプトを実行する際に、ローカルのdeno.json(c)が読まれてしまうことによる不整合を防止することが目的のようです。
+Proposal: disable auto-discovery of config file for deno run
+deno testの実行時はデフォルトで--no-promptが有効化 Deno v1.19で--promptがデフォルトで有効化されました。
+しかし、deno testの実行時は--promptオプションの必要性が薄いため、このリリースで無効化されています。
+その他の変更点 deno replでnullが適切に表示されない問題が修正されました。 非TTY環境でconsoleを使用した際の色付けが無効化されない問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.19.2
+deno_std v0.128.0 deno_std v0.128.0がリリースされました。
+新機能 streamsモジュールにTextLineStreamが追加されています。
+import { TextLineStream } from "https://deno.land/std@0.128.0/streams/delimiter.ts"; const file = await Deno.open("./path/to/file.txt"); const readable = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new TextLineStream()); for await (const line of readable) { console.log(line); } また、node/cryptoへのcrypto....</p>
+</section>
+<footer class=entry-footer><span title="2022-03-06 00:00:00 +0000 UTC">March 6, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/02/28〜2022/03/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/06.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/02/21〜2022/02/27の最新情報
 </h2>
 </header>
@@ -285,32 +306,6 @@ https://github.com/denosaurs/deno_python</p>
 </section>
 <footer class=entry-footer><span title="2022-01-02 00:00:00 +0000 UTC">January 2, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/12/27〜2022/01/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/02.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/12/20〜2021/12/26の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.17.1 Deno v1.17.1がリリースされました。
-以下の新機能が追加されています。
-deno lspでのテストのデバッグ用コードレンズ deno replでのImport Assertionsのサポート
-https://github.com/denoland/deno/releases/tag/v1.17.1
-deno_std v0.119.0 deno_std v0.119.0がリリースされました。
-std/hash Tigerハッシュのサポートが追加されました。
-std/cryptoへのTigerハッシュの追加は次のリリース以降になりそうです (#1749)
-std/uuid uuid/mod.tsでvalidate関数が実装されています。
-与えられた文字列が正しい形式のUUIDであるかをチェックできます。
-https://doc.deno.land/https://deno.land/std@0.119.0/uuid/mod.ts/~/validate
-std/node util.debuglog()が利用できるようになりました。
-https://github.com/denoland/deno_std/releases/tag/0.119.0
-Denoでネットワークインターフェースを取得するためのopが実装 下記issueにて提案されていたネットワークインターフェース(IPアドレス、MACアドレス)を取得するための機能が部分的に実装されました。
-Get all the network interfaces in Deno 以下のPRではopのみが実装されており、JavaScript APIはまだ実装されていません。(今のところ、利用するためには--allow-envの指定が必要で、JavaScript APIの名前はDeno.networkInterfacesになりそうです。)
-feat(ext/net): add op_network_interfaces リリースされるバージョンはまだ未定ですが、早ければ次のv1.18で入る可能性がありそうです。
-Get all the network interfaces in Deno feat(ext/net): add op_network_interfaces </p>
-</section>
-<footer class=entry-footer><span title="2021-12-26 00:00:00 +0000 UTC">December 26, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/12/20〜2021/12/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/26.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
