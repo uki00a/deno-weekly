@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -70,6 +70,25 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/08/09〜2021/08/15の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.13.0 Deno v1.13.0がリリースされました。
+大きな変更点として、ネイティブHTTPサーバ(Deno.serveHttp)の安定化やTLS関連の機能の強化、プラグインシステムの廃止やFFIの導入などが行われています。
+また、このリリースに合わせて、magurotunaさんによる日本語の紹介記事も公開されています:
+Deno 1.13.0 がリリースされたので新機能や変更点の紹介 変更点:
+Deno.serveHttpが安定化されました Deno.upgradeWebSocketで返却されるオブジェクトのwebsocketプロパティがsocketにリネームされました Deno.upgradeWebSocketで返却されたWebSocketオブジェクトのcloseメソッドを呼ぶ際に、任意のコードを指定できるようになりました WebSocketStreamが実装されました (unstable) プラグインシステムが削除され、代わりにFFIが導入されました (unstable) --unsafely-treat-insecure-origin-as-secureオプションがサポートされ、TLS証明書の検証を無効化できるようになりました Deno.connectTlsでクライアント認証用の証明書と秘密鍵を渡せるようになりました DENO_TLS_CA_STORE環境変数が導入され、TLS接続時にシステムの証明書ストアを使用できるようになりました Deno.runでclearEnvオプションがサポートされ、子プロセスの環境変数をクリアできるようになりました (unstable) Deno.writeFileでAbortSignalがサポートされ、書き込みを中断できるようになりました Deno.permissions配下のAPIが引数としてURLオブジェクトをサポートしました Deno.systemCpuInfoが削除され、代わりにnavigator.hardwareConcurrencyがサポートされました Deno.errors配下の各エラーがErrorクラスを継承するように修正されました SubtleCrypto#importKey/exportKeyが実装されました(HMACキーのみサポート) SubtleCrypto#verifyでHMACキーがサポートされました --locationが指定された場合は、fetchでHTTPリクエストを送信する際にOriginヘッダが設定されるようになりました deno test --docでMarkdownファイル内のtsコードブロックの型チェックがサポートされました structuredCloneが実装されました initializeリクエスト発生時にinitializationOptions.cacheを指定することで、deno lspがDENO_DIRとして認識するディレクトリを指定できるようになりました deno lspでリファクタリングコードアクションがサポートされました —evalオプションがサポートされ、REPL起動時に指定したコードを実行できるようになりました REPLがコードに含まれるexport宣言を無視されるようになりました Import mapsでWindows形式のファイルパスがサポートされました deno docコマンドで不正なURLを指定するとプロセスがパニックする問題が修正されました Deno 1.13.0 がリリースされたので新機能や変更点の紹介 https://deno.com/blog/v1.13 deno_std v0.104.0 deno_stdのv0.104.0がリリースされました。
+新機能としてcryptoモジュールの追加やcollectionsモジュールのさらなる拡張などが行われています。
+また、assertThrows/assertThrowsAsyncのシグネチャの変更やassertThrowsAsyncの非推奨化も実施されています。
+変更点:
+標準のCrypto/SubtleCryptoを拡張することを目的としてcryptoモジュールが追加されました collections: deepMerge, mapNotNullish, findLastIndex, sumOf, associateBy, 及びsortBy関数が実装されました testing: assertThrowsの戻り値がErrorからvoidに変更されました testing: assertThrowsAsyncの戻り値がPromise&lt;Error>からPromise&lt;void>に変更されました testing: assertRejectsが追加され、代わりにassertThrowsAsyncが非推奨化されました http/file_server: If-Modified-Sinceヘッダに応じて304を返却するようになりました node: assert/strict, path/posix, path/win32, fs/promises, stream/promises, timers/promises, util/types, 及びperf_hooksモジュールが追加されました async: deadlineに渡したPromiseがすでにrejectされていた場合、プロセスがクラッシュする問題が修正されました Deno標準ライブラリ0....</p>
+</section>
+<footer class=entry-footer><span title="2021-08-15 00:00:00 +0000 UTC">August 15, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/09〜2021/08/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/15.html></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>2021/08/02〜2021/08/08の最新情報
@@ -261,27 +280,6 @@ denoland/deno_docker 今まで、DenoのDockerイメージはAndy Hayden氏に�
 </section>
 <footer class=entry-footer><span title="2021-06-13 00:00:00 +0000 UTC">June 13, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/07〜2021/06/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/13.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/06/01〜2021/06/06の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.10.3がリリース Deno v1.10.3がリリースされました。
-deno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。
-変更点:
-deno lspで// @deno-types="" と /// &lt;references types="" />に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=&lt;dir>で&lt;dir>が存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました wpt.deno.land wpt.deno.landというWebページが公開されました。
-このページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。
-https://wpt.deno.land/ https://github.com/denoland/wpt.deno.land twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。
-引数として与えられたHTMLファイルの内容を元に、twindを使用してスタイルシートが生成されます。
-https://github.com/kt3k/twd https://github.com/tw-in-js/twind Eta Etaは軽量性や速度を重視したテンプレートエンジンです。
-レイアウトによるテンプレートの再利用や、プラグインによるレンダリングの挙動のカスタマイズなどがサポートされています。
-また、Denoだけでなく、ブラウザやNode.jsもサポートされています。
-https://github.com/eta-dev/eta https://eta.js.org/ </p>
-</section>
-<footer class=entry-footer><span title="2021-06-06 00:00:00 +0000 UTC">June 6, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/01〜2021/06/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/06.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
