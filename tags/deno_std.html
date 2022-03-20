@@ -74,6 +74,29 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/03/14〜2022/03/20の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.20 Deno v1.20がリリースされました。
+詳しくは下記の記事を参照ください:
+Deno v1.20 deno_std v0.130.0 deno_std v0.130.0がリリースされました。
+std/testing/assertsモジュールでassertInstanceOfが実装されました。
+import { assertInstanceOf } from "https://deno.land/std@0.130.0/testing/asserts.ts"; assertInstanceOf(new Date(), Date); // OK assertInstanceOf(/abc/, RegExp); // OK assertInstanceOf("baz", Number); // NG その他にもstd/nodeでのfs.writevSyncの実装などが行われています。
+https://github.com/denoland/deno_std/commit/dbccc64488bbcc2bc540b833488b9bb97c11e1cb IndexedDBサポートについて Deno本体にIndexedDBを追加するPRが作成されています。
+feat(ext/webstorage): IndexedDB (#14035)
+内部的にはlocalStorageなどと同様にSQLiteを使用して実装されているようです。
+近い将来にリリースされる可能性があるかもしれません。
+https://github.com/denoland/deno/pull/14035
+deno-sqlite v3.3.0 deno-sqlite v3.3.0がリリースされました。
+DBクラスにexecuteメソッドが追加されています。 これを使うと、複数のSQLステートメントをまとめて実行することができます。
+import { DB } from "https://deno.land/x/sqlite@v3.3.0/mod.ts"; const db = new DB(":memory:"); db.execute(` CREATE TABLE users ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT ); INSERT INTO users (name) VALUES ('foo'), ('bar'); `); for (const [id, name] of db....</p>
+</section>
+<footer class=entry-footer><span title="2022-03-20 00:00:00 +0000 UTC">March 20, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/14〜2022/03/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/20.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/03/07〜2022/03/13の最新情報
 </h2>
 </header>
@@ -281,32 +304,6 @@ https://github.com/denoland/deno_std/releases/tag/0.120.0
 </section>
 <footer class=entry-footer><span title="2022-01-09 00:00:00 +0000 UTC">January 9, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/03〜2022/01/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/09.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/12/20〜2021/12/26の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.17.1 Deno v1.17.1がリリースされました。
-以下の新機能が追加されています。
-deno lspでのテストのデバッグ用コードレンズ deno replでのImport Assertionsのサポート
-https://github.com/denoland/deno/releases/tag/v1.17.1
-deno_std v0.119.0 deno_std v0.119.0がリリースされました。
-std/hash Tigerハッシュのサポートが追加されました。
-std/cryptoへのTigerハッシュの追加は次のリリース以降になりそうです (#1749)
-std/uuid uuid/mod.tsでvalidate関数が実装されています。
-与えられた文字列が正しい形式のUUIDであるかをチェックできます。
-https://doc.deno.land/https://deno.land/std@0.119.0/uuid/mod.ts/~/validate
-std/node util.debuglog()が利用できるようになりました。
-https://github.com/denoland/deno_std/releases/tag/0.119.0
-Denoでネットワークインターフェースを取得するためのopが実装 下記issueにて提案されていたネットワークインターフェース(IPアドレス、MACアドレス)を取得するための機能が部分的に実装されました。
-Get all the network interfaces in Deno 以下のPRではopのみが実装されており、JavaScript APIはまだ実装されていません。(今のところ、利用するためには--allow-envの指定が必要で、JavaScript APIの名前はDeno.networkInterfacesになりそうです。)
-feat(ext/net): add op_network_interfaces リリースされるバージョンはまだ未定ですが、早ければ次のv1.18で入る可能性がありそうです。
-Get all the network interfaces in Deno feat(ext/net): add op_network_interfaces </p>
-</section>
-<footer class=entry-footer><span title="2021-12-26 00:00:00 +0000 UTC">December 26, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/12/20〜2021/12/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/26.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Categories | 週刊Deno</title>
+<title>release | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/categories.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/categories/release.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/categories/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/categories/release/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -25,12 +25,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Categories">
+<meta property="og:title" content="release">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/categories.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/categories/release.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Categories">
+<meta name=twitter:title content="release">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -70,19 +70,29 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>Categories</h1>
+<h1>release</h1>
 </header>
-<ul class=terms-tags>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/news.html>news <sup><strong><sup>64</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/notice.html>notice <sup><strong><sup>1</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/release.html>release <sup><strong><sup>1</sup></strong></sup> </a>
-</li>
-</ul>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Deno v1.20
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.20がリリースされました。
+この記事では新しく追加された機能などについて紹介します。
+(破壊的変更) Deno.testのpermissionsオプションの挙動が変更 ⚠️ この変更はv1.20.1時点ではまだ反映されていません！
+現在、正式な修正用のPRが作成されており、おそらくv1.20.2で反映されるはずです
+https://github.com/denoland/deno/pull/14024 Deno.testやWorkerなどのAPIはpermissionsオプションにより実行時のパーミッションをカスタマイズできます:
+Deno.test({ name: "permissions_test", permissions: { read: true }, fn: async () => { const content = await Deno.readTextFile("./data.txt"); await Deno.writeTextFile("./data.txt", processContent(content)); }, }); 上記のテストコードはDeno.readTextFileとDeno.writeTextFileを実行しており、正しく実行するためには--allow-readと--allow-writeの両方の権限が必要です。
+このテストケースでは、下記宣言により--allow-readを明示的に指定しています。
+permissions: { read: true }, ここではwrite: trueが指定されていないため、このテストケースは権限エラーにより失敗するというのが直感的な挙動なのではないかと思います。
+しかし、Deno v1.19時点では上記のテストコードは成功してしまいます。
+permissions: { read: true }, 実は、Deno v1.19において、この指定は下記宣言と同義になります:
+// `read`以外はすべてCLIオプションで指定された権限(--allow-writeなど)が継承される permissions: { read: true, env: "inherit", ffi: "inherit", hrtime: "inherit", net: "inherit", run: "inherit", write: "inherit", }, この挙動は直感的ではないということで、Deno v1....</p>
+</section>
+<footer class=entry-footer><span title="2022-03-20 00:00:00 +0000 UTC">March 20, 2022</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.20" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.20.html></a>
+</article>
 </main>
 <footer class=footer>
 <span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>

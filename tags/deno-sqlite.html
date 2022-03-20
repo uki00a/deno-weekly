@@ -74,6 +74,29 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/03/14〜2022/03/20の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.20 Deno v1.20がリリースされました。
+詳しくは下記の記事を参照ください:
+Deno v1.20 deno_std v0.130.0 deno_std v0.130.0がリリースされました。
+std/testing/assertsモジュールでassertInstanceOfが実装されました。
+import { assertInstanceOf } from "https://deno.land/std@0.130.0/testing/asserts.ts"; assertInstanceOf(new Date(), Date); // OK assertInstanceOf(/abc/, RegExp); // OK assertInstanceOf("baz", Number); // NG その他にもstd/nodeでのfs.writevSyncの実装などが行われています。
+https://github.com/denoland/deno_std/commit/dbccc64488bbcc2bc540b833488b9bb97c11e1cb IndexedDBサポートについて Deno本体にIndexedDBを追加するPRが作成されています。
+feat(ext/webstorage): IndexedDB (#14035)
+内部的にはlocalStorageなどと同様にSQLiteを使用して実装されているようです。
+近い将来にリリースされる可能性があるかもしれません。
+https://github.com/denoland/deno/pull/14035
+deno-sqlite v3.3.0 deno-sqlite v3.3.0がリリースされました。
+DBクラスにexecuteメソッドが追加されています。 これを使うと、複数のSQLステートメントをまとめて実行することができます。
+import { DB } from "https://deno.land/x/sqlite@v3.3.0/mod.ts"; const db = new DB(":memory:"); db.execute(` CREATE TABLE users ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT ); INSERT INTO users (name) VALUES ('foo'), ('bar'); `); for (const [id, name] of db....</p>
+</section>
+<footer class=entry-footer><span title="2022-03-20 00:00:00 +0000 UTC">March 20, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/14〜2022/03/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/20.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/12/13〜2021/12/19の最新情報
 </h2>
 </header>

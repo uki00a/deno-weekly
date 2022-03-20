@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 13 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/03/07〜2022/03/13の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/03/13.html</link><pubDate>Sun, 13 Mar 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/03/13.html</guid><description>Deno v1.19.3 Deno v1.19.3がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 20 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/03/14〜2022/03/20の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/03/20.html</link><pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/03/20.html</guid><description>Deno v1.20 Deno v1.20がリリースされました。
+詳しくは下記の記事を参照ください:
+Deno v1.20 deno_std v0.130.0 deno_std v0.130.0がリリースされました。
+std/testing/assertsモジュールでassertInstanceOfが実装されました。
+import { assertInstanceOf } from &amp;#34;https://deno.land/std@0.130.0/testing/asserts.ts&amp;#34;; assertInstanceOf(new Date(), Date); // OK assertInstanceOf(/abc/, RegExp); // OK assertInstanceOf(&amp;#34;baz&amp;#34;, Number); // NG その他にもstd/nodeでのfs.writevSyncの実装などが行われています。
+https://github.com/denoland/deno_std/commit/dbccc64488bbcc2bc540b833488b9bb97c11e1cb IndexedDBサポートについて Deno本体にIndexedDBを追加するPRが作成されています。
+feat(ext/webstorage): IndexedDB (#14035)
+内部的にはlocalStorageなどと同様にSQLiteを使用して実装されているようです。
+近い将来にリリースされる可能性があるかもしれません。
+https://github.com/denoland/deno/pull/14035
+deno-sqlite v3.3.0 deno-sqlite v3.3.0がリリースされました。
+DBクラスにexecuteメソッドが追加されています。 これを使うと、複数のSQLステートメントをまとめて実行することができます。
+import { DB } from &amp;#34;https://deno.land/x/sqlite@v3.3.0/mod.ts&amp;#34;; const db = new DB(&amp;#34;:memory:&amp;#34;); db.execute(` CREATE TABLE users ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT ); INSERT INTO users (name) VALUES (&amp;#39;foo&amp;#39;), (&amp;#39;bar&amp;#39;); `); for (const [id, name] of db.</description></item><item><title>2021/03/07〜2022/03/13の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/03/13.html</link><pubDate>Sun, 13 Mar 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/03/13.html</guid><description>Deno v1.19.3 Deno v1.19.3がリリースされました。
 deno test --docでtypescriptやjavascriptタイプのコードブロックをチェックできるようになりました。
 ```ts let str: string = 0; ``` だけでなく
 ```typescript let str: string = 0; ``` のようにコードブロックを記述した際もテストが行われるようになります。

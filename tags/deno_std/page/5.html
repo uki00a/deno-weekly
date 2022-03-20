@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>deno | 週刊Deno</title>
+<title>deno_std | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/deno/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -25,12 +25,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="deno">
+<meta property="og:title" content="deno_std">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/deno.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/deno_std.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="deno">
+<meta name=twitter:title content="deno_std">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -70,34 +70,8 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>deno</h1>
+<h1>deno_std</h1>
 </header>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/02/08〜2021/02/14の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno本体の最新情報 Deno v1.7.3/v1.7.4がリリースされました Deno v1.7.3がリリースされました。
-その後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。
-v1.7.3/v1.7.4の主な変更点:
-deno lspでcodeAction/resolveが実装されました。 deno lspにdeno.cacheコードアクションが実装されました。 deno lspにImplementationscode lensが実装されました。 Import mapsがデータURL(data:)を適切にハンドリングするように修正されました。 https://github.com/denoland/deno/releases/tag/v1.7.4 deno_std v0.87.0がリリースされました Deno v1.7.3のリリースに合わせ、deno_std v0.87.0がリリースされました。
-このリリースにはhttp/cookieモジュールに対する破壊的変更が含まれています。
-変更点:
-http/cookie: Cookies及びSameSiteの型エイリアスが削除されました。 http/file_server: SVGファイルに対して適切なContent-Typeが設定されるように修正されました。 https://github.com/denoland/deno_std/releases/tag/0.87.0
-サードパーティモジュールの最新情報 denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム denops.vimという、Denoを使ってVim/Neovimプラグインを書くためのエコシステムが公開されました。
-coc.nvimに影響を受けているようです。
-サンプルプラグインも公開されているため、興味のある方は見てみるとよいかもしれません。
-https://github.com/vim-denops/denops-helloworld.vim https://github.com/vim-denops/denops.vim https://github.com/vim-denops/denops-deno https://github.com/vim-denops/denops-std-deno slack_web_api - DenoのSlack APIクライアント slack_web_apiはNode.jsの@slack/web-apiをDenoにポートしたモジュールです。
-このモジュールを使用することで、DenoからSlack APIを叩くことができます。
-https://deno.land/x/slack_web_api@1.0.1
-deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。
-このリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。
-変更点:...</p>
-</section>
-<footer class=entry-footer><span title="2021-02-14 00:00:00 +0000 UTC">February 14, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/02/08〜2021/02/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/14.html></a>
-</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>2021/02/01〜2021/02/07の最新情報
@@ -131,61 +105,9 @@ deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
 <footer class=entry-footer><span title="2021-02-07 00:00:00 +0000 UTC">February 7, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/01〜2021/02/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/07.html></a>
 </article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/01/25〜2021/01/31の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.7.1がリリース Denoのv1.7.1がリリースされました。
-このリリースに合わせて、stdのv0.85.0もリリースされています。
-v1.7.0でリリースされたDeno.emitやDeno.resolveDnsの安定性の向上 deno lspのバグ修正・安定性の向上 std/nodeでprocess.on("exit")がサポートされた https://github.com/denoland/deno/releases/tag/v1.7.1
-deno-postgresのv0.5.0/v0.6.0がリリース deno-postgresのv0.5.0及びv0.6.0がリリースされました。
-v0.5.0 v0.6.0 これらのリリースにはいくつかの破壊的変更が含まれています:
-Client#queryメソッドが削除され、Client#queryArrayとClient#queryObjectメソッドが追加された Client#queryArrayはクエリの結果をネストされた配列として返却します Client#queryObjectはクエリの結果をオブジェクトの配列として返却します Client#multiQueryメソッドが削除された PostgreSQLのbigint型がJavaScriptのBigIntとして返却されるように変更された v0.4.0まではJavaScriptのString型として返却されていました https://github.com/denodrivers/postgres
-Harmony - Discord APIライブラリ HarmonyというDiscord APIライブラリが公開されました。
-このライブラリを使うことで、Discordボットの開発などを行うことができます。
-https://github.com/harmonyland/harmony</p>
-</section>
-<footer class=entry-footer><span title="2021-01-31 00:00:00 +0000 UTC">January 31, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/25〜2021/01/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/31.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/01/18〜2021/01/24の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
-以下は変更点の要約です:
-deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
-Deno 1.7.0 がリリースされたので新機能や変更点の紹介 deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
-内部的にはRollupのブラウザビルドが利用されています。
-CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。
-https://github.com/cmorten/deno-rollup
-code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。
-設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。
-また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。
-https://github.com/dsherret/code-block-writer</p>
-</section>
-<footer class=entry-footer><span title="2021-01-24 00:00:00 +0000 UTC">January 24, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/18〜2021/01/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/24.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2020/12/28〜2021/01/03の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno@v1.6.3がリリースされた Denoのv1.6.3がリリースされました。
-ハイライト deno lspにtextDocument/renameやcacheコマンドが実装されました。 std@0.83.0も同時にリリースされました。std/node/fsにmkdtempとmkdtempSyncが実装されています。 deno-puppeteerが公開された puppeteerのDenoポートであるdeno-puppeteerが公開されました。</p>
-</section>
-<footer class=entry-footer><span title="2021-01-03 00:00:00 +0000 UTC">January 3, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2020/12/28〜2021/01/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/03.html></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
-<a class=prev href=https://uki00a.github.io/deno-weekly/tags/deno/page/5.html>« Prev Page</a>
+<a class=prev href=https://uki00a.github.io/deno-weekly/tags/deno_std/page/4.html>« Prev Page</a>
 </nav>
 </footer>
 </main>

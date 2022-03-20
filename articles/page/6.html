@@ -75,6 +75,52 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/04/05〜2021/04/11の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.9.0のリリースについて 今週は特にリリースはありませんが、2021/4/13にv1.9.0のリリースが予定されています。
+また、v1.9.0のリリースに向けて、以下の機能がmainブランチにマージされています:
+ネイティブHTTPバインディング BLOB URLのサポート fetch APIでのdata URLのサポート https://github.com/denoland/deno/blob/v1.8.3/docs/contributing/release_schedule.md
+サードパーティモジュールなどの最新情報 denoland/setup-deno denoland/setup-denoというGitHub ActionsでDenoを利用するためのアクションがdenoland Organizationにて公開されました。
+https://github.com/denoland/setup-deno denolib/setup-deno - denoland/setup-denoと同様、GitHub ActionsからDenoを利用するためのアクション deno-postgres v0.9.0及びv0.10.0がリリース deno-postgresのv0.9.0及びv0.10.0がリリースされました。
+これらのリリースでは、以下の機能が追加されています:
+scram-sha-256認証のサポート Client#createTransactionが実装され、トランザクションがより扱いやすくなった https://github.com/denodrivers/postgres/releases/tag/v0.9.0 https://github.com/denodrivers/postgres/releases/tag/v0.10.0 rollup-plugin-deno rollup-plugin-denoは、RollupでDeno向けのバンドルを生成するためのRollupプラグインです。
+Node.jsのビルトインモジュールの読み込みをdeno_std/nodeに置換することで、それらに依存したモジュールをDenoで実行できるようにしてくれます。
+https://github.com/egoist/rollup-plugin-deno</p>
+</section>
+<footer class=entry-footer><span title="2021-04-11 00:00:00 +0000 UTC">April 11, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/05〜2021/04/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/11.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/03/29〜2021/04/04の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno本体の最新情報 Deno v1.8.3がリリース Deno v1.8.3がリリースされました。このリリースでは、deno lspへの機能の追加やバグ修正などが行われています。
+変更点:
+deno lspでimportの補完がサポートされた deno lspでtextDocument/selectionRangeが実装された WebSocket#closeですでに閉じているコネクションを再び閉じようとしたときに、例外が投げられないように修正された AbortController.abort()が追加された TypeScriptのlibとしてdom.asynciterableが追加された(Denoのいずれかのバージョンで誤って削除されてしまったようです) https://github.com/denoland/deno/releases/tag/v1.8.3
+deno_std v0.92.0がリリース deno_stdのv0.92.0がリリースされました。
+変更点:
+io/bufio: Deno Deployに対応した node/fs: symlinkとsymlinkSyncが実装された node/util: format関数が実装された io: io/buffer及びio/utilが追加された (Deno v2.0に向けて、Deno.Buffer/readAll/readAllSync/writeAll/writeAllSyncをDeno名前空間からstdへ移行することが目的のようです) https://github.com/denoland/deno_std/releases/tag/0.92.0
+Deno Deployが公開された Deno Deployが公開されました。
+Deno DeployはCDN Edge上でTypeScriptやWebAssemblyなどを動作させることができるサービスです。Cloudflare WorkersのAPIと互換性があります。
+https://deno.com/deploy/docs サードパーティモジュールなどの最新情報 Snel - DenoでSvelteアプリを開発するためのツール SnelはDenoでSvelteアプリを開発するためのツール/フレームワークです。
+.svelteファイルをJavaScriptファイルへコンパイルしたり、HMRを搭載したdevサーバなどが提供されています。
+将来的にはSSRやSSGなどの機能も提供される予定のようです。
+https://github.com/crewdevio/Snel
+Sift - Deno Deployのルーティングライブラリ SiftはDeno Deployのルーティングライブラリです。
+path-to-regexpでサポートされている形式で、ルーティングを定義することができます。
+他にも、静的ファイルの配信やJSXのレンダリングなどがサポートされています。
+https://github.com/satyarohith/sift
+deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用することのできるDOM APIの実装を提供しています。...</p>
+</section>
+<footer class=entry-footer><span title="2021-04-04 00:00:00 +0000 UTC">April 4, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/29〜2021/04/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/04.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/03/22〜2021/03/28の最新情報
 </h2>
 </header>
@@ -280,46 +326,6 @@ deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
 </section>
 <footer class=entry-footer><span title="2021-02-07 00:00:00 +0000 UTC">February 7, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/01〜2021/02/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/07.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/01/25〜2021/01/31の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.7.1がリリース Denoのv1.7.1がリリースされました。
-このリリースに合わせて、stdのv0.85.0もリリースされています。
-v1.7.0でリリースされたDeno.emitやDeno.resolveDnsの安定性の向上 deno lspのバグ修正・安定性の向上 std/nodeでprocess.on("exit")がサポートされた https://github.com/denoland/deno/releases/tag/v1.7.1
-deno-postgresのv0.5.0/v0.6.0がリリース deno-postgresのv0.5.0及びv0.6.0がリリースされました。
-v0.5.0 v0.6.0 これらのリリースにはいくつかの破壊的変更が含まれています:
-Client#queryメソッドが削除され、Client#queryArrayとClient#queryObjectメソッドが追加された Client#queryArrayはクエリの結果をネストされた配列として返却します Client#queryObjectはクエリの結果をオブジェクトの配列として返却します Client#multiQueryメソッドが削除された PostgreSQLのbigint型がJavaScriptのBigIntとして返却されるように変更された v0.4.0まではJavaScriptのString型として返却されていました https://github.com/denodrivers/postgres
-Harmony - Discord APIライブラリ HarmonyというDiscord APIライブラリが公開されました。
-このライブラリを使うことで、Discordボットの開発などを行うことができます。
-https://github.com/harmonyland/harmony</p>
-</section>
-<footer class=entry-footer><span title="2021-01-31 00:00:00 +0000 UTC">January 31, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/25〜2021/01/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/31.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/01/18〜2021/01/24の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
-以下は変更点の要約です:
-deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
-Deno 1.7.0 がリリースされたので新機能や変更点の紹介 deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
-内部的にはRollupのブラウザビルドが利用されています。
-CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。
-https://github.com/cmorten/deno-rollup
-code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。
-設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。
-また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。
-https://github.com/dsherret/code-block-writer</p>
-</section>
-<footer class=entry-footer><span title="2021-01-24 00:00:00 +0000 UTC">January 24, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/18〜2021/01/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/24.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
