@@ -1,0 +1,305 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>2021/03/21〜2022/03/27の最新情報 | 週刊Deno</title>
+<meta name=keywords content="Deno,deno_std,deployctl,esm.sh">
+<meta name=description content="Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。
+詳細についてはは下記を参照ください。
+ Deno v1.20  deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。
+これにより、cp -Rや|&のサポートなどが行われています。
+ deno_task_shell v0.2.0  deno lspでenablePathsオプションがサポート deno lspでenablePathsオプションがサポートされました。
+ワークスペース内の特定のフォルダでのみdeno lspを有効化したいが、それ以外のフォルダでは組み込みのJavaScript/TypeScriptランゲージサーバを使いたいようなときに設定することが想定されているようです。
+  https://github.com/denoland/vscode_deno/releases/tag/3.11.0  その他の変更  --unstableなしでdeno benchを実行した際のエラーメッセージが改善 deno upgradeコマンドでDENO_CERT環境変数による証明書の指定がサポート HTTPサーバのパフォーマンスチューニング  など
+ https://github.com/denoland/deno/releases/tag/v1.20.2
+Deno v1.20.3 Deno v1.20.2に続けて、v1.20.3もリリースされています。
+セキュリティに関する修正が含まれるので早めのアップデートが推奨されています。
+変更点:
+ Denoはfetchの第一引数としてURLの指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです) FFI関連の各API(Deno.UnsafeFnPointer#callなど)でちゃんと--unstableオプションが与えられているかチェックされるよう変更されました。 Deno.RunOptionsのcmdプロパティがreadonlyに変更されました。   https://github.com/denoland/deno/releases/tag/v1.20.3
+deno_std v0.131.0 deno_std v0.131.0がリリースされました。
+collections BinaryHeapが追加されました。
+import { BinaryHeap } from &#34;https://deno.land/std@0.132.0/collections/binary_heap.ts&#34;; const heap = new BinaryHeap<number>(); heap.">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/03/27.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="2021/03/21〜2022/03/27の最新情報">
+<meta property="og:description" content="Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。
+詳細についてはは下記を参照ください。
+ Deno v1.20  deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。
+これにより、cp -Rや|&のサポートなどが行われています。
+ deno_task_shell v0.2.0  deno lspでenablePathsオプションがサポート deno lspでenablePathsオプションがサポートされました。
+ワークスペース内の特定のフォルダでのみdeno lspを有効化したいが、それ以外のフォルダでは組み込みのJavaScript/TypeScriptランゲージサーバを使いたいようなときに設定することが想定されているようです。
+  https://github.com/denoland/vscode_deno/releases/tag/3.11.0  その他の変更  --unstableなしでdeno benchを実行した際のエラーメッセージが改善 deno upgradeコマンドでDENO_CERT環境変数による証明書の指定がサポート HTTPサーバのパフォーマンスチューニング  など
+ https://github.com/denoland/deno/releases/tag/v1.20.2
+Deno v1.20.3 Deno v1.20.2に続けて、v1.20.3もリリースされています。
+セキュリティに関する修正が含まれるので早めのアップデートが推奨されています。
+変更点:
+ Denoはfetchの第一引数としてURLの指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです) FFI関連の各API(Deno.UnsafeFnPointer#callなど)でちゃんと--unstableオプションが与えられているかチェックされるよう変更されました。 Deno.RunOptionsのcmdプロパティがreadonlyに変更されました。   https://github.com/denoland/deno/releases/tag/v1.20.3
+deno_std v0.131.0 deno_std v0.131.0がリリースされました。
+collections BinaryHeapが追加されました。
+import { BinaryHeap } from &#34;https://deno.land/std@0.132.0/collections/binary_heap.ts&#34;; const heap = new BinaryHeap<number>(); heap.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/03/27.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2022-03-27T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-03-27T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="2021/03/21〜2022/03/27の最新情報">
+<meta name=twitter:description content="Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。
+詳細についてはは下記を参照ください。
+ Deno v1.20  deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。
+これにより、cp -Rや|&のサポートなどが行われています。
+ deno_task_shell v0.2.0  deno lspでenablePathsオプションがサポート deno lspでenablePathsオプションがサポートされました。
+ワークスペース内の特定のフォルダでのみdeno lspを有効化したいが、それ以外のフォルダでは組み込みのJavaScript/TypeScriptランゲージサーバを使いたいようなときに設定することが想定されているようです。
+  https://github.com/denoland/vscode_deno/releases/tag/3.11.0  その他の変更  --unstableなしでdeno benchを実行した際のエラーメッセージが改善 deno upgradeコマンドでDENO_CERT環境変数による証明書の指定がサポート HTTPサーバのパフォーマンスチューニング  など
+ https://github.com/denoland/deno/releases/tag/v1.20.2
+Deno v1.20.3 Deno v1.20.2に続けて、v1.20.3もリリースされています。
+セキュリティに関する修正が含まれるので早めのアップデートが推奨されています。
+変更点:
+ Denoはfetchの第一引数としてURLの指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです) FFI関連の各API(Deno.UnsafeFnPointer#callなど)でちゃんと--unstableオプションが与えられているかチェックされるよう変更されました。 Deno.RunOptionsのcmdプロパティがreadonlyに変更されました。   https://github.com/denoland/deno/releases/tag/v1.20.3
+deno_std v0.131.0 deno_std v0.131.0がリリースされました。
+collections BinaryHeapが追加されました。
+import { BinaryHeap } from &#34;https://deno.land/std@0.132.0/collections/binary_heap.ts&#34;; const heap = new BinaryHeap<number>(); heap.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/03/21〜2022/03/27の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/03/27.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/03/21〜2022/03/27の最新情報","name":"2021\/03\/21〜2022\/03\/27の最新情報","description":"Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。\n詳細についてはは下記を参照ください。\n Deno v1.20  deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。\nこれにより、cp -Rや|\u0026amp;のサポートなどが行われています。\n deno_task_shell v0.2.0  deno lspでenablePathsオプションがサポート deno lspでenablePathsオプションがサポートされました。\nワークスペース内の特定のフォルダでのみdeno lspを有効化したいが、それ以外のフォルダでは組み込みのJavaScript/TypeScriptランゲージサーバを使いたいようなときに設定することが想定されているようです。\n  https://github.com/denoland/vscode_deno/releases/tag/3.11.0  その他の変更  --unstableなしでdeno benchを実行した際のエラーメッセージが改善 deno upgradeコマンドでDENO_CERT環境変数による証明書の指定がサポート HTTPサーバのパフォーマンスチューニング  など\n https://github.com/denoland/deno/releases/tag/v1.20.2\nDeno v1.20.3 Deno v1.20.2に続けて、v1.20.3もリリースされています。\nセキュリティに関する修正が含まれるので早めのアップデートが推奨されています。\n変更点:\n Denoはfetchの第一引数としてURLの指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです) FFI関連の各API(Deno.UnsafeFnPointer#callなど)でちゃんと--unstableオプションが与えられているかチェックされるよう変更されました。 Deno.RunOptionsのcmdプロパティがreadonlyに変更されました。   https://github.com/denoland/deno/releases/tag/v1.20.3\ndeno_std v0.131.0 deno_std v0.131.0がリリースされました。\ncollections BinaryHeapが追加されました。\nimport { BinaryHeap } from \u0026#34;https://deno.land/std@0.132.0/collections/binary_heap.ts\u0026#34;; const heap = new BinaryHeap\u0026lt;number\u0026gt;(); heap.","keywords":["Deno","deno_std","deployctl","esm.sh"],"articleBody":"Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。\n詳細についてはは下記を参照ください。\n Deno v1.20  deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。\nこれにより、cp -Rや|\u0026のサポートなどが行われています。\n deno_task_shell v0.2.0  deno lspでenablePathsオプションがサポート deno lspでenablePathsオプションがサポートされました。\nワークスペース内の特定のフォルダでのみdeno lspを有効化したいが、それ以外のフォルダでは組み込みのJavaScript/TypeScriptランゲージサーバを使いたいようなときに設定することが想定されているようです。\n  https://github.com/denoland/vscode_deno/releases/tag/3.11.0  その他の変更  --unstableなしでdeno benchを実行した際のエラーメッセージが改善 deno upgradeコマンドでDENO_CERT環境変数による証明書の指定がサポート HTTPサーバのパフォーマンスチューニング  など\n https://github.com/denoland/deno/releases/tag/v1.20.2\nDeno v1.20.3 Deno v1.20.2に続けて、v1.20.3もリリースされています。\nセキュリティに関する修正が含まれるので早めのアップデートが推奨されています。\n変更点:\n Denoはfetchの第一引数としてURLの指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです) FFI関連の各API(Deno.UnsafeFnPointer#callなど)でちゃんと--unstableオプションが与えられているかチェックされるよう変更されました。 Deno.RunOptionsのcmdプロパティがreadonlyに変更されました。   https://github.com/denoland/deno/releases/tag/v1.20.3\ndeno_std v0.131.0 deno_std v0.131.0がリリースされました。\ncollections BinaryHeapが追加されました。\nimport { BinaryHeap } from \"https://deno.land/std@0.132.0/collections/binary_heap.ts\"; const heap = new BinaryHeapnumber(); heap.push(4); heap.push(1); heap.push(10); heap.push(6); heap.push(3); console.log(Array.from(heap)); // [ 10, 6, 4, 3, 1 ] async async/abortableモジュールの内部関数であったabortablePromiseとabortableAsyncIterableが公開APIに変更されました。\nnode  node/eventsでEventTargetが実装されました。 node/consoleでConsoleコンストラクタが実装されました。 worker_threadsパッケージが実装されました。 process.allowedNodeEnvironmentFlagsが実装されました。   https://github.com/denoland/deno_std/releases/tag/0.131.0\ndeno_std v0.132.0 deno_std v0.132.0がリリースされました。\ncollectionsモジュールにBSTree(二分探索木)とRBTree(赤黒木)が追加されています。\nimport { BSTree } from \"https://deno.land/std@0.132.0/collections/bs_tree.ts\"; const tree = new BSTreenumber(); tree.insert(4); tree.insert(2); tree.insert(10); tree.insert(9); tree.insert(1); console.log(Array.from(tree)); // [ 1, 2, 4, 9, 10 ] また、node/fsでfs.createReadStream()が実装されています。\n https://github.com/denoland/deno_std/releases/tag/0.132.0\ndeno checkコマンド Deno本体にdeno checkコマンドを追加するPRが作成されています。\n feat: Add “deno check” subcommand for type checking (#14072)\n このコマンドは、現在のdeno cacheコマンドと同様に機能します。\nまた、deno runコマンドなどに--checkオプションが追加されており、将来的にはこれを指定しないと型チェックが行われなくなる想定のようです。\nまた、DENO_FUTURE_CHECK環境変数も追加されており、これに1を設定した場合もdeno runの型チェックが無効化されます。(将来的なデフォルトの挙動)\n現在の予定としては、下記のスケジュールが想定されているようです。(https://github.com/denoland/deno/issues/11786#issuecomment-1076188236)\n v1.21: deno checkコマンドを追加 v1.23: deno runでの型チェックをデフォルトで無効化  deno serveコマンド Deno本体にdeno serveコマンドを追加するPRが作成されています。\n [EXPERIMENT] feat: add deno serve subcommand (#14108)\n 使い方としては、Requestを引数として受け取りResponseまたはPromiseを返す関数をdefault exportしたファイルを用意します。\nexport default function handler(req: Request): Response { return new Response(\"Hello world!\"); } このファイルを引数にdeno serveを実行すると、定義されたハンドラを元にHTTPサーバが起動されます。\n$ deno serve --port 8888 handler.ts deployctl v1.1.0 deployctl v1.1.0がリリースされました。\nCLIとGitHubアクションでImport mapsファイルの指定がサポートされました (import-mapオプション)\n https://github.com/denoland/deployctl/releases/tag/1.1.0\nesm.sh v74 ?no-requireパラメータがサポートされ、ESMパッケージ中のrequire()の呼び出しを無視できるようになりました。\n https://github.com/esm-dev/esm.sh/releases/tag/v74\n","wordCount":"184","inLanguage":"en","datePublished":"2022-03-27T00:00:00Z","dateModified":"2022-03-27T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/03/27.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+2021/03/21〜2022/03/27の最新情報
+</h1>
+<div class=post-meta><span title="2022-03-27 00:00:00 +0000 UTC">March 27, 2022</span>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#deno-v1202 aria-label="Deno v1.20.2">Deno v1.20.2</a><ul>
+<li>
+<a href=#permissions%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%b8%e3%81%ae%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=permissionsオプションへの破壊的変更について><code>permissions</code>オプションへの破壊的変更について</a></li>
+<li>
+<a href=#deno-task%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ae%e6%94%b9%e5%96%84 aria-label="deno taskコマンドの改善"><code>deno task</code>コマンドの改善</a></li>
+<li>
+<a href=#deno-lsp%e3%81%a7enablepaths%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label="deno lspでenablePathsオプションがサポート"><code>deno lsp</code>で<code>enablePaths</code>オプションがサポート</a></li>
+<li>
+<a href=#%e3%81%9d%e3%81%ae%e4%bb%96%e3%81%ae%e5%a4%89%e6%9b%b4 aria-label=その他の変更>その他の変更</a></li></ul>
+</li>
+<li>
+<a href=#deno-v1203 aria-label="Deno v1.20.3">Deno v1.20.3</a></li>
+<li>
+<a href=#deno_std-v01310 aria-label="deno_std v0.131.0">deno_std v0.131.0</a><ul>
+<li>
+<a href=#collections aria-label=collections><code>collections</code></a></li>
+<li>
+<a href=#async aria-label=async><code>async</code></a></li>
+<li>
+<a href=#node aria-label=node><code>node</code></a></li></ul>
+</li>
+<li>
+<a href=#deno_std-v01320 aria-label="deno_std v0.132.0">deno_std v0.132.0</a></li>
+<li>
+<a href=#deno-check%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89 aria-label="deno checkコマンド"><code>deno check</code>コマンド</a></li>
+<li>
+<a href=#deno-serve%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89 aria-label="deno serveコマンド"><code>deno serve</code>コマンド</a></li>
+<li>
+<a href=#deployctl-v110 aria-label="deployctl v1.1.0">deployctl v1.1.0</a></li>
+<li>
+<a href=#esmsh-v74 aria-label="esm.sh v74">esm.sh v74</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=deno-v1202>Deno v1.20.2<a hidden class=anchor aria-hidden=true href=#deno-v1202>#</a></h2>
+<h3 id=permissionsオプションへの破壊的変更について><code>permissions</code>オプションへの破壊的変更について<a hidden class=anchor aria-hidden=true href=#permissionsオプションへの破壊的変更について>#</a></h3>
+<p>Deno v1.20で行われる予定であった<code>permissions</code>オプションへの破壊的変更が正式に反映されました。</p>
+<p>詳細についてはは下記を参照ください。</p>
+<ul>
+<li><a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.20.html>Deno v1.20</a></li>
+</ul>
+<h3 id=deno-taskコマンドの改善><code>deno task</code>コマンドの改善<a hidden class=anchor aria-hidden=true href=#deno-taskコマンドの改善>#</a></h3>
+<p><code>deno task</code>コマンドの内部で使われている<a href=https://github.com/denoland/deno_task_shell>deno_task_shell</a>がアップデートされています。</p>
+<p>これにより、<code>cp -R</code>や<code>|&</code>のサポートなどが行われています。</p>
+<ul>
+<li><a href=https://github.com/denoland/deno_task_shell/releases/tag/0.2.0>deno_task_shell v0.2.0</a></li>
+</ul>
+<h3 id=deno-lspでenablepathsオプションがサポート><code>deno lsp</code>で<code>enablePaths</code>オプションがサポート<a hidden class=anchor aria-hidden=true href=#deno-lspでenablepathsオプションがサポート>#</a></h3>
+<p><code>deno lsp</code>で<a href=https://github.com/denoland/vscode_deno/blob/6bb9b70be0d0da9c5e4d4beda93f25d124518585/package.json#L136-L149>enablePaths</a>オプションがサポートされました。</p>
+<p>ワークスペース内の特定のフォルダでのみ<code>deno lsp</code>を有効化したいが、それ以外のフォルダでは組み込みのJavaScript/TypeScriptランゲージサーバを使いたいようなときに設定することが想定されているようです。</p>
+<hr>
+<ul>
+<li><a href=https://github.com/denoland/vscode_deno/releases/tag/3.11.0>https://github.com/denoland/vscode_deno/releases/tag/3.11.0</a></li>
+</ul>
+<h3 id=その他の変更>その他の変更<a hidden class=anchor aria-hidden=true href=#その他の変更>#</a></h3>
+<ul>
+<li><code>--unstable</code>なしで<code>deno bench</code>を実行した際のエラーメッセージが改善</li>
+<li><code>deno upgrade</code>コマンドで<code>DENO_CERT</code>環境変数による証明書の指定がサポート</li>
+<li>HTTPサーバのパフォーマンスチューニング</li>
+</ul>
+<p>など</p>
+<hr>
+<p><a href=https://github.com/denoland/deno/releases/tag/v1.20.2>https://github.com/denoland/deno/releases/tag/v1.20.2</a></p>
+<h2 id=deno-v1203>Deno v1.20.3<a hidden class=anchor aria-hidden=true href=#deno-v1203>#</a></h2>
+<p>Deno v1.20.2に続けて、v1.20.3もリリースされています。</p>
+<p>セキュリティに関する修正が含まれるので早めのアップデートが推奨されています。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>Denoは<code>fetch</code>の第一引数として<code>URL</code>の指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです)</li>
+<li>FFI関連の各API(<code>Deno.UnsafeFnPointer#call</code>など)でちゃんと<code>--unstable</code>オプションが与えられているかチェックされるよう変更されました。</li>
+<li><code>Deno.RunOptions</code>の<code>cmd</code>プロパティが<code>readonly</code>に変更されました。</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denoland/deno/releases/tag/v1.20.3>https://github.com/denoland/deno/releases/tag/v1.20.3</a></p>
+<h2 id=deno_std-v01310>deno_std v0.131.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01310>#</a></h2>
+<p>deno_std v0.131.0がリリースされました。</p>
+<h3 id=collections><code>collections</code><a hidden class=anchor aria-hidden=true href=#collections>#</a></h3>
+<p><code>BinaryHeap</code>が追加されました。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>BinaryHeap</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.132.0/collections/binary_heap.ts&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>heap</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>BinaryHeap</span>&lt;<span style=color:#f92672>number</span>&gt;();
+<span style=color:#a6e22e>heap</span>.<span style=color:#a6e22e>push</span>(<span style=color:#ae81ff>4</span>);
+<span style=color:#a6e22e>heap</span>.<span style=color:#a6e22e>push</span>(<span style=color:#ae81ff>1</span>);
+<span style=color:#a6e22e>heap</span>.<span style=color:#a6e22e>push</span>(<span style=color:#ae81ff>10</span>);
+<span style=color:#a6e22e>heap</span>.<span style=color:#a6e22e>push</span>(<span style=color:#ae81ff>6</span>);
+<span style=color:#a6e22e>heap</span>.<span style=color:#a6e22e>push</span>(<span style=color:#ae81ff>3</span>);
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(Array.<span style=color:#66d9ef>from</span>(<span style=color:#a6e22e>heap</span>)); <span style=color:#75715e>// [ 10, 6, 4, 3, 1 ]
+</span></code></pre></div><h3 id=async><code>async</code><a hidden class=anchor aria-hidden=true href=#async>#</a></h3>
+<p><code>async/abortable</code>モジュールの内部関数であった<code>abortablePromise</code>と<code>abortableAsyncIterable</code>が公開APIに変更されました。</p>
+<h3 id=node><code>node</code><a hidden class=anchor aria-hidden=true href=#node>#</a></h3>
+<ul>
+<li><code>node/events</code>で<a href=https://nodejs.org/docs/latest-v16.x/api/events.html#eventtarget-and-event-api>EventTarget</a>が実装されました。</li>
+<li><code>node/console</code>で<code>Console</code>コンストラクタが実装されました。</li>
+<li><code>worker_threads</code>パッケージが実装されました。</li>
+<li><code>process.allowedNodeEnvironmentFlags</code>が実装されました。</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denoland/deno_std/releases/tag/0.131.0>https://github.com/denoland/deno_std/releases/tag/0.131.0</a></p>
+<h2 id=deno_std-v01320>deno_std v0.132.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01320>#</a></h2>
+<p>deno_std v0.132.0がリリースされました。</p>
+<p><code>collections</code>モジュールに<code>BSTree</code>(二分探索木)と<code>RBTree</code>(赤黒木)が追加されています。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>BSTree</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.132.0/collections/bs_tree.ts&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>tree</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>BSTree</span>&lt;<span style=color:#f92672>number</span>&gt;();
+<span style=color:#a6e22e>tree</span>.<span style=color:#a6e22e>insert</span>(<span style=color:#ae81ff>4</span>);
+<span style=color:#a6e22e>tree</span>.<span style=color:#a6e22e>insert</span>(<span style=color:#ae81ff>2</span>);
+<span style=color:#a6e22e>tree</span>.<span style=color:#a6e22e>insert</span>(<span style=color:#ae81ff>10</span>);
+<span style=color:#a6e22e>tree</span>.<span style=color:#a6e22e>insert</span>(<span style=color:#ae81ff>9</span>);
+<span style=color:#a6e22e>tree</span>.<span style=color:#a6e22e>insert</span>(<span style=color:#ae81ff>1</span>);
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(Array.<span style=color:#66d9ef>from</span>(<span style=color:#a6e22e>tree</span>)); <span style=color:#75715e>// [ 1, 2, 4, 9, 10 ]
+</span></code></pre></div><p>また、<code>node/fs</code>で<code>fs.createReadStream()</code>が実装されています。</p>
+<hr>
+<p><a href=https://github.com/denoland/deno_std/releases/tag/0.132.0>https://github.com/denoland/deno_std/releases/tag/0.132.0</a></p>
+<h2 id=deno-checkコマンド><code>deno check</code>コマンド<a hidden class=anchor aria-hidden=true href=#deno-checkコマンド>#</a></h2>
+<p>Deno本体に<code>deno check</code>コマンドを追加するPRが作成されています。</p>
+<blockquote>
+<p><a href=https://github.com/denoland/deno/pull/14072>feat: Add &ldquo;deno check&rdquo; subcommand for type checking (#14072)</a></p>
+</blockquote>
+<p>このコマンドは、現在の<code>deno cache</code>コマンドと同様に機能します。</p>
+<p>また、<code>deno run</code>コマンドなどに<code>--check</code>オプションが追加されており、将来的にはこれを指定しないと型チェックが行われなくなる想定のようです。</p>
+<p>また、<code>DENO_FUTURE_CHECK</code>環境変数も追加されており、これに<code>1</code>を設定した場合も<code>deno run</code>の型チェックが無効化されます。(将来的なデフォルトの挙動)</p>
+<p>現在の予定としては、下記のスケジュールが想定されているようです。(<a href=https://github.com/denoland/deno/issues/11786#issuecomment-1076188236>https://github.com/denoland/deno/issues/11786#issuecomment-1076188236</a>)</p>
+<ul>
+<li>v1.21: <code>deno check</code>コマンドを追加</li>
+<li>v1.23: <code>deno run</code>での型チェックをデフォルトで無効化</li>
+</ul>
+<h2 id=deno-serveコマンド><code>deno serve</code>コマンド<a hidden class=anchor aria-hidden=true href=#deno-serveコマンド>#</a></h2>
+<p>Deno本体に<code>deno serve</code>コマンドを追加するPRが作成されています。</p>
+<blockquote>
+<p><a href=https://github.com/denoland/deno/pull/14108>[EXPERIMENT] feat: add deno serve subcommand (#14108)</a></p>
+</blockquote>
+<p>使い方としては、<code>Request</code>を引数として受け取り<code>Response</code>または<code>Promise&lt;Response></code>を返す関数を<code>default export</code>したファイルを用意します。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>handler</span>(<span style=color:#a6e22e>req</span>: <span style=color:#66d9ef>Request</span>)<span style=color:#f92672>:</span> <span style=color:#a6e22e>Response</span> {
+  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Response</span>(<span style=color:#e6db74>&#34;Hello world!&#34;</span>);
+}
+</code></pre></div><p>このファイルを引数に<code>deno serve</code>を実行すると、定義されたハンドラを元にHTTPサーバが起動されます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ deno serve --port <span style=color:#ae81ff>8888</span> handler.ts
+</code></pre></div><h2 id=deployctl-v110>deployctl v1.1.0<a hidden class=anchor aria-hidden=true href=#deployctl-v110>#</a></h2>
+<p>deployctl v1.1.0がリリースされました。</p>
+<p>CLIとGitHubアクションでImport mapsファイルの指定がサポートされました (<code>import-map</code>オプション)</p>
+<hr>
+<p><a href=https://github.com/denoland/deployctl/releases/tag/1.1.0>https://github.com/denoland/deployctl/releases/tag/1.1.0</a></p>
+<h2 id=esmsh-v74>esm.sh v74<a hidden class=anchor aria-hidden=true href=#esmsh-v74>#</a></h2>
+<p><code>?no-require</code>パラメータがサポートされ、ESMパッケージ中の<code>require()</code>の呼び出しを無視できるようになりました。</p>
+<hr>
+<p><a href=https://github.com/esm-dev/esm.sh/releases/tag/v74>https://github.com/esm-dev/esm.sh/releases/tag/v74</a></p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deployctl.html>deployctl</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/esm.sh.html>esm.sh</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

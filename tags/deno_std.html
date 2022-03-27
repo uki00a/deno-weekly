@@ -74,6 +74,31 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/03/21〜2022/03/27の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。
+詳細についてはは下記を参照ください。
+Deno v1.20 deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。
+これにより、cp -Rや|&のサポートなどが行われています。
+deno_task_shell v0.2.0 deno lspでenablePathsオプションがサポート deno lspでenablePathsオプションがサポートされました。
+ワークスペース内の特定のフォルダでのみdeno lspを有効化したいが、それ以外のフォルダでは組み込みのJavaScript/TypeScriptランゲージサーバを使いたいようなときに設定することが想定されているようです。
+https://github.com/denoland/vscode_deno/releases/tag/3.11.0 その他の変更 --unstableなしでdeno benchを実行した際のエラーメッセージが改善 deno upgradeコマンドでDENO_CERT環境変数による証明書の指定がサポート HTTPサーバのパフォーマンスチューニング など
+https://github.com/denoland/deno/releases/tag/v1.20.2
+Deno v1.20.3 Deno v1.20.2に続けて、v1.20.3もリリースされています。
+セキュリティに関する修正が含まれるので早めのアップデートが推奨されています。
+変更点:
+Denoはfetchの第一引数としてURLの指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです) FFI関連の各API(Deno.UnsafeFnPointer#callなど)でちゃんと--unstableオプションが与えられているかチェックされるよう変更されました。 Deno.RunOptionsのcmdプロパティがreadonlyに変更されました。 https://github.com/denoland/deno/releases/tag/v1.20.3
+deno_std v0.131.0 deno_std v0.131.0がリリースされました。
+collections BinaryHeapが追加されました。
+import { BinaryHeap } from "https://deno.land/std@0.132.0/collections/binary_heap.ts"; const heap = new BinaryHeap&lt;number>(); heap....</p>
+</section>
+<footer class=entry-footer><span title="2022-03-27 00:00:00 +0000 UTC">March 27, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/21〜2022/03/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/27.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/03/14〜2022/03/20の最新情報
 </h2>
 </header>
@@ -274,36 +299,6 @@ crypto: MD4がサポートされました。 http/file_server: --quietオプシ�
 </section>
 <footer class=entry-footer><span title="2022-01-16 00:00:00 +0000 UTC">January 16, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/10〜2022/01/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/16.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/01/03〜2022/01/09の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.17.2 Deno v1.17.2がリリースされました。
-バグ修正などが中心に行われています。
-主な変更点:
-deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。
-JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。
-ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。
-SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。
-SubtleCrypto.deriveKeyでAES-CTRがサポートされました。
-FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。
-以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。
-Deno.test(function name() {}); Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。
-https://github.com/denoland/deno/releases/tag/v1.17.2
-deno_std v0.120.0 deno_std v0.120.0がリリースされました。
-crypto Tigerハッシュがサポートされました。
-uuid version()が実装されました。
-node https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。 path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。
-fs/expand_glob expandGlob()のextendedオプションのデフォルト値がtrueに変更されました。
-testing/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。
-https://github.com/denoland/deno_std/releases/tag/0.120.0
-設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)...</p>
-</section>
-<footer class=entry-footer><span title="2022-01-09 00:00:00 +0000 UTC">January 9, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/03〜2022/01/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/09.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

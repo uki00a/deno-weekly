@@ -74,6 +74,27 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/11/08〜2021/11/14の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.16.0 Deno v1.16.0がリリースされました。
+React 17 JSX Transformのサポート React 17で導入された新しいJSX Transformのサポートが追加されました。
+https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories .jsxまたは.tsxファイル中で@jsxImportSourceを使うことで有効化されます。
+/** @jsxImportSource https://esm.sh/preact@10.5.15 */ export function Hello(props) { return ( &lt;div>Hello, {props.name}&lt;/div> ) } また、--configオプションで指定する設定ファイルで有効化することも可能です。
+{ "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "https://esm.sh/react@17.0.2" } } ※Denoの特性上、"jsx": "react-jsx"を指定した際は、jsxImportSourceの指定も必要です。
+Deno API 新しいシグナルAPI Deno.addSignalListenerとDeno.removeSignalListenerが実装されました (unstable)
+const signalListener = () => { // ... }; Deno.addSignalListener("SIGTERM", signalListener); Deno.removeSignalListener("SIGTERM", signalListener); この変更に合わせて、既存のDeno.signalは削除されています。
+https://github.com/denoland/deno/issues/11158 Deno.TlsConn型の導入 Deno.TlsConnという新しいデータ型が導入されました。
+これに合わせて、Deno.connectTlsなどのAPIがDeno.Connの代わりにDeno.TlsConnを返却するように修正されています。
+このオブジェクトにはhandshakeメソッドが定義されており、明示的にハンドシェイクを行うことができます。
+Deno.testのテストケースごとのパーミッション指定が安定化 Deno v1....</p>
+</section>
+<footer class=entry-footer><span title="2021-11-14 00:00:00 +0000 UTC">November 14, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/08〜2021/11/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/14.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/10/25〜2021/10/31の最新情報
 </h2>
 </header>
@@ -260,30 +281,6 @@ Aleph.js v0.3.0 betaバージョン Next.jsライクなフレームワークで�
 </section>
 <footer class=entry-footer><span title="2021-08-29 00:00:00 +0000 UTC">August 29, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/08/23〜2021/08/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/29.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/08/16〜2021/08/22の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.13.1 Deno v1.13.1がリリースされました。
-deno testやWeb Crypto APIのバグ修正などがメインです。
-変更点:
-deno test --docでMarkdownファイルを引数に指定できるようになりました deno test --docで以下のようにignoreが指定されていると、そのコードブロックが無視されるようになりました \`\`\`ts ignore ... \`\`\` deno testでloadイベントが発火しない問題が修正されました localStorageへの書き込みのスループットがおよそ150倍高速化されました deno lintやREPLにおけるハイライトが改善されました SubtleCryptoのimportKeyやgenerateKeyメソッドのextractable引数でfalseがサポートされました SubtleCrypto#importKeyでArrayBufferをキーとして渡せるようになりました WebAssembly.instantiateStreamingに渡されたResponseオブジェクトにContent-Typeが設定されていなかった場合のエラーメッセージが改善されました https://github.com/denoland/deno/releases/tag/v1.13.1
-deno_std v0.105.0 deno_std v0.105.0がリリースされました。
-変更点:
-bytes: containsがincludesにリネームされました bytes: indexOfとincludesでfromIndex引数がサポートされました collections: intersectで先頭の配列における重複が適切に取り扱われない問題が修正されました https://github.com/denoland/deno_std/releases/tag/0.105.0
-deno_doc v0.11.0 deno_doc v0.11.0がリリースされました。
-このリリースに合わせて、JavaScriptから利用できるAPIが公開されています。
-https://deno.land/x/deno_doc@v0.11.0 https://github.com/denoland/deno_doc/releases/tag/v0.11.0
-Oak v9.0.0 Oak v9.0.0がリリースされました。
-Cookie関連のAPIへの破壊的変更やDeno Deployサポートの改善などが実施されています。
-変更点:
-(破壊的変更) Cookieの署名にWeb Crypto APIが使用されるようになった関係でCookiesオブジェクトのgetやsetなどのメソッドが非同期になりました (Context.cookies) Deno Deploy上でも通常のDeno CLIと同様にApplication#listenによってリクエストをハンドリングできるようになりました。またその影響により、Application#fetchEventHandlerが非推奨化されています Application#listenでport: 0を指定した際に"listen"イベントで適切なポート番号が報告されるように修正されました。 "listen"イベントがTCPサーバが作成されたタイミングで発火されるように修正されました Rangeヘッダでコンテンツの最後のバイトを取得するように指定した場合、416レスポンスが返却される問題が修正されました request....</p>
-</section>
-<footer class=entry-footer><span title="2021-08-22 00:00:00 +0000 UTC">August 22, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/16〜2021/08/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/22.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

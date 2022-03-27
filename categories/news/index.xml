@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>news on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/news.html</link><description>Recent content in news on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 20 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/news/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/03/14〜2022/03/20の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/03/20.html</link><pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/03/20.html</guid><description>Deno v1.20 Deno v1.20がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>news on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/news.html</link><description>Recent content in news on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 27 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/news/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/03/21〜2022/03/27の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/03/27.html</link><pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/03/27.html</guid><description>Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。
+詳細についてはは下記を参照ください。
+Deno v1.20 deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。
+これにより、cp -Rや|&amp;amp;のサポートなどが行われています。
+deno_task_shell v0.2.0 deno lspでenablePathsオプションがサポート deno lspでenablePathsオプションがサポートされました。
+ワークスペース内の特定のフォルダでのみdeno lspを有効化したいが、それ以外のフォルダでは組み込みのJavaScript/TypeScriptランゲージサーバを使いたいようなときに設定することが想定されているようです。
+https://github.com/denoland/vscode_deno/releases/tag/3.11.0 その他の変更 --unstableなしでdeno benchを実行した際のエラーメッセージが改善 deno upgradeコマンドでDENO_CERT環境変数による証明書の指定がサポート HTTPサーバのパフォーマンスチューニング など
+https://github.com/denoland/deno/releases/tag/v1.20.2
+Deno v1.20.3 Deno v1.20.2に続けて、v1.20.3もリリースされています。
+セキュリティに関する修正が含まれるので早めのアップデートが推奨されています。
+変更点:
+Denoはfetchの第一引数としてURLの指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです) FFI関連の各API(Deno.UnsafeFnPointer#callなど)でちゃんと--unstableオプションが与えられているかチェックされるよう変更されました。 Deno.RunOptionsのcmdプロパティがreadonlyに変更されました。 https://github.com/denoland/deno/releases/tag/v1.20.3
+deno_std v0.131.0 deno_std v0.131.0がリリースされました。
+collections BinaryHeapが追加されました。
+import { BinaryHeap } from &amp;#34;https://deno.land/std@0.132.0/collections/binary_heap.ts&amp;#34;; const heap = new BinaryHeap&amp;lt;number&amp;gt;(); heap.</description></item><item><title>2021/03/14〜2022/03/20の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/03/20.html</link><pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/03/20.html</guid><description>Deno v1.20 Deno v1.20がリリースされました。
 詳しくは下記の記事を参照ください:
 Deno v1.20 deno_std v0.130.0 deno_std v0.130.0がリリースされました。
 std/testing/assertsモジュールでassertInstanceOfが実装されました。

@@ -72,6 +72,29 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/08/30〜2021/09/05の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Aleph.js v0.3.0-beta.9 Aleph.jsのv0.3.0-beta.9がリリースされました。
+主な変更点として、サーバから返却されるCache-Controlの値がpublic, max-age=0, must-revalidateに変更されています。
+また、このリリースに合わせてWindi CSS向けのプラグインが公開されています (https://github.com/ije/aleph-plugin-windicss)
+https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.9 https://github.com/ije/aleph-plugin-windicss Deno Deploy Beta2 Deno DeployのBeta2がリリースされました。
+変更点:
+Deno.readFileによって、デプロイに紐づくGitHubリポジトリ内のファイルの読み込みがサポートされました Deno.listenとDeno.serveHttpがサポートされました インスタンスがクラッシュした際のデバッグを容易にするため、クラッシュレポートが追加されました https://deno.com/blog/deploy-beta2 Deno Deploy Beta 2が来たぞ deployctl v0.4.0 Deno Deployのコマンドラインツールであるdeployctlのv0.4.0がリリースされました。
+このリリースでは、コマンドの実行時に新バージョンを通知する機能が実装されています。
+また、現時点では、このバージョンをインストールする際に--unstableが必要になります。
+https://github.com/denoland/deployctl/releases/tag/0.4.0
+Ultra UltraというDeno+ReactベースのWebフレームワークが公開されました。
+まだメジャーリリースはされていませんが、以下のような特徴があるようです。
+ReactDOM.renderToReadableStreamベースのSSR Viteなどと同様のオンデマンドでのコード変換 (SWCやesbuildがベース) SWR向けのキャッシュプロパイダを提供 /examplesディレクトリに使用例があるため、もし興味がありましたら見てみるとよいかもしれません。
+https://github.com/exhibitionist-digital/ultra</p>
+</section>
+<footer class=entry-footer><span title="2021-09-05 00:00:00 +0000 UTC">September 5, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/30〜2021/09/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/05.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/08/23〜2021/08/29の最新情報
 </h2>
 </header>
@@ -265,29 +288,6 @@ Trex v1.8.0 Denoのパッケージ管理ツールであるTrexのv1.8.0がリリ
 </section>
 <footer class=entry-footer><span title="2021-07-04 00:00:00 +0000 UTC">July 4, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/28〜2021/07/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/04.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/06/21〜2021/06/27の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.11.2がリリースされました Deno v1.11.2がリリースされました。
-このリリースでは、deno lspへの機能追加やWeb標準との互換性の向上などが実施されています。
-変更点:
-deno lspでリントエラーを無視するためのクイックフィックスアクションが実装されました。 deno lspで文字列やコメント中に現れた識別子がリネームされないように修正されました。 Deno.emit()のmoduleオプションで"es2020"がサポートされました。 Console, URL, URLSearchParams, 及びWebsocketオブジェクトがWPTにパスするように修正されました。 fetchでHEADまたはOPTIONSリクエストを送信する際はレスポンスボディが空になるように修正されました。 WorkerがURLオブジェクトを受け付けるようになりました。 https://github.com/denoland/deno/releases/tag/v1.11.2
-Deno DeployのBeta 1がリリースされました Deno DeployのBeta 1がリリースされました。
-主な変更点:
-BroadcastChannelを使用したエッジワーカー間での通信がサポートされました。(https://deno.com/deploy/docs/runtime-broadcast-channel) カスタムのTLS証明書のサポート https://deno.com/blog/deploy-beta1
-fresh - Deno Deployで動作するWebフレームワーク freshというDeno Deploy上で動作するPreactをベースにしたWebフレームワークが公開されました。
-特徴:
-設定が不要 Next.jsライクなファイルシステムベースのルーティングやAPI Routesなどをサポートしています。 ページのレンダリングはエッジワーカー上で実行されるため、事前のビルドステップが必要ありません。 https://github.com/lucacasonato/fresh
-xml - Denoで動作するXMLモジュール xmlはDenoで動作するXMLモジュールです。
-XMLドキュメントのパースやJavaScriptオブジェクトからXMLドキュメントへの変換などがサポートされています。
-https://github.com/lowlighter/xml</p>
-</section>
-<footer class=entry-footer><span title="2021-06-27 00:00:00 +0000 UTC">June 27, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/21〜2021/06/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/27.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
