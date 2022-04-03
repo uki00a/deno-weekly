@@ -1,0 +1,269 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>2021/03/28〜2022/04/03の最新情報 | 週刊Deno</title>
+<meta name=keywords content="Supabase,Deno,deno_std,Deno Deploy,Astro">
+<meta name=description content="Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。
+Supabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。
+  Supabase Functions on Deno Deploy Edge Functions are now available in Supabase  Deno v1.20.4 Deno v1.20.4がリリースされました。
+変更点:
+  外部モジュールのimport時にリダイレクトが発生すると、deno compileで生成したバイナリがうまく動作しなくなる問題が修正されました。
+  Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されました。
+変更前:
+function fetch( input: URL, init?: RequestInit, ): Promise<Response>; 変更後:
+function fetch( input: URL | Request | string, init?: RequestInit, ): Promise<Response>;   deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。
+  deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。
+   https://github.com/denoland/deno/releases/tag/v1.20.4
+deno_std v0.">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/04/03.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="2021/03/28〜2022/04/03の最新情報">
+<meta property="og:description" content="Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。
+Supabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。
+  Supabase Functions on Deno Deploy Edge Functions are now available in Supabase  Deno v1.20.4 Deno v1.20.4がリリースされました。
+変更点:
+  外部モジュールのimport時にリダイレクトが発生すると、deno compileで生成したバイナリがうまく動作しなくなる問題が修正されました。
+  Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されました。
+変更前:
+function fetch( input: URL, init?: RequestInit, ): Promise<Response>; 変更後:
+function fetch( input: URL | Request | string, init?: RequestInit, ): Promise<Response>;   deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。
+  deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。
+   https://github.com/denoland/deno/releases/tag/v1.20.4
+deno_std v0.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/04/03.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2022-04-03T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-04-03T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="2021/03/28〜2022/04/03の最新情報">
+<meta name=twitter:description content="Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。
+Supabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。
+  Supabase Functions on Deno Deploy Edge Functions are now available in Supabase  Deno v1.20.4 Deno v1.20.4がリリースされました。
+変更点:
+  外部モジュールのimport時にリダイレクトが発生すると、deno compileで生成したバイナリがうまく動作しなくなる問題が修正されました。
+  Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されました。
+変更前:
+function fetch( input: URL, init?: RequestInit, ): Promise<Response>; 変更後:
+function fetch( input: URL | Request | string, init?: RequestInit, ): Promise<Response>;   deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。
+  deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。
+   https://github.com/denoland/deno/releases/tag/v1.20.4
+deno_std v0.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/03/28〜2022/04/03の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/04/03.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/03/28〜2022/04/03の最新情報","name":"2021\/03\/28〜2022\/04\/03の最新情報","description":"Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。\nSupabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。\n  Supabase Functions on Deno Deploy Edge Functions are now available in Supabase  Deno v1.20.4 Deno v1.20.4がリリースされました。\n変更点:\n  外部モジュールのimport時にリダイレクトが発生すると、deno compileで生成したバイナリがうまく動作しなくなる問題が修正されました。\n  Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されました。\n変更前:\nfunction fetch( input: URL, init?: RequestInit, ): Promise\u0026lt;Response\u0026gt;; 変更後:\nfunction fetch( input: URL | Request | string, init?: RequestInit, ): Promise\u0026lt;Response\u0026gt;;   deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。\n  deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。\n   https://github.com/denoland/deno/releases/tag/v1.20.4\ndeno_std v0.","keywords":["Supabase","Deno","deno_std","Deno Deploy","Astro"],"articleBody":"Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。\nSupabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。\n  Supabase Functions on Deno Deploy Edge Functions are now available in Supabase  Deno v1.20.4 Deno v1.20.4がリリースされました。\n変更点:\n  外部モジュールのimport時にリダイレクトが発生すると、deno compileで生成したバイナリがうまく動作しなくなる問題が修正されました。\n  Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されました。\n変更前:\nfunction fetch( input: URL, init?: RequestInit, ): PromiseResponse; 変更後:\nfunction fetch( input: URL | Request | string, init?: RequestInit, ): PromiseResponse;   deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。\n  deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。\n   https://github.com/denoland/deno/releases/tag/v1.20.4\ndeno_std v0.133.0 deno_std v0.133.0がリリースされました。\ntesting/mockモジュールが追加 testingモジュールにテストスパイやテストスタブなどを提供するモジュールが追加されました。\nspy\nspy()で関数をラップすることで、assertSpyCall()やassertSpyCalls()などで検証ができます。\nimport { assertSpyCall, assertSpyCalls, spy } from \"https://deno.land/std@0.133.0//testing/mock.ts\"; import { assertEquals } from \"https://deno.land/std@0.133.0/testing/asserts.ts\"; function add(a: number, b: number): number { return a + b; } const addSpy = spy(add); assertEquals(addSpy(1, 2), 3); // = OK assertEquals(addSpy(2, 3), 5); // = OK assertSpyCall(addSpy, 0, { args: [1, 2], returned: 3, }); // = OK assertSpyCall(addSpy, 1, { args: [2, 3], returned: 5, }); // = OK  assertSpyCalls(addSpy, 2); // = OK stub\nstub()を利用することで、オブジェクトのメソッドをスタブできます。\nimport { assertSpyCalls, returnsNext, stub } from \"https://deno.land/std@0.133.0/testing/mock.ts\"; import { assertEquals } from \"https://deno.land/std@0.133.0/testing/asserts.ts\"; const randomUUID = stub(crypto, \"randomUUID\", returnsNext([ \"00000000-0000-0000-0000-000000000000\", \"11111111-1111-1111-1111-111111111111\", ])); try { assertEquals(crypto.randomUUID(), \"00000000-0000-0000-0000-000000000000\"); // = OK  assertEquals(crypto.randomUUID(), \"11111111-1111-1111-1111-111111111111\"); // = OK  assertSpyCalls(randomUUID, 2); // = OK } finally { randomUUID.restore(); } returnsNext()はスタブを作成するためのヘルパであり、他にもreturnsArgs()やreturnsArg他)などの関数も提供されています。\nbytesモジュールへの破壊的変更  indexOf, lastIndexOf, 及びincludesがそれぞれindexOfNeedle, lastIndexOfNeedle, 及びincludesNeedleへリネームされています。 bytes/equalsのequalsNaiveとequalsSimdがprivateへ変更されました。   https://github.com/denoland/deno_std/releases/tag/0.133.0\ndenoland/wanted_modules Deno公式でDenoに不足しているモジュールをレポートするためのリポジトリが作成されました。\n詳しくはIssuesを参照ください。\n https://github.com/denoland/wanted_modules\nAstroにDenoアダプタが追加 Astro v0.26.0がリリースされました。\nDenoアダプタ(@astrojs/deno)が追加されており、AstroとNode.jsで開発したコードをDeno上で動かせるようになりました。\n  Astro v0.26.0 https://github.com/withastro/astro/pull/2934  ","wordCount":"201","inLanguage":"en","datePublished":"2022-04-03T00:00:00Z","dateModified":"2022-04-03T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/04/03.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+2021/03/28〜2022/04/03の最新情報
+</h1>
+<div class=post-meta><span title="2022-04-03 00:00:00 +0000 UTC">April 3, 2022</span>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#supabase-functions aria-label="Supabase Functions">Supabase Functions</a></li>
+<li>
+<a href=#deno-v1204 aria-label="Deno v1.20.4">Deno v1.20.4</a></li>
+<li>
+<a href=#deno_std-v01330 aria-label="deno_std v0.133.0">deno_std v0.133.0</a><ul>
+<li>
+<a href=#testingmock%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%8c%e8%bf%bd%e5%8a%a0 aria-label=testing/mockモジュールが追加><code>testing/mock</code>モジュールが追加</a></li>
+<li>
+<a href=#bytes%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%b8%e3%81%ae%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4 aria-label=bytesモジュールへの破壊的変更><code>bytes</code>モジュールへの破壊的変更</a></li></ul>
+</li>
+<li>
+<a href=#denolandwanted_modules aria-label=denoland/wanted_modules>denoland/wanted_modules</a></li>
+<li>
+<a href=#astro%e3%81%abdeno%e3%82%a2%e3%83%80%e3%83%97%e3%82%bf%e3%81%8c%e8%bf%bd%e5%8a%a0 aria-label=AstroにDenoアダプタが追加>AstroにDenoアダプタが追加</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=supabase-functions>Supabase Functions<a hidden class=anchor aria-hidden=true href=#supabase-functions>#</a></h2>
+<p><a href=https://supabase.com/>Supabase</a>でSupabase FunctionsというFaaSが利用できるようになりました。</p>
+<p>Supabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。</p>
+<hr>
+<ul>
+<li><a href=https://deno.com/blog/supabase-functions-on-deno-deploy>Supabase Functions on Deno Deploy</a></li>
+<li><a href=https://supabase.com/blog/2022/03/31/supabase-edge-functions>Edge Functions are now available in Supabase</a></li>
+</ul>
+<h2 id=deno-v1204>Deno v1.20.4<a hidden class=anchor aria-hidden=true href=#deno-v1204>#</a></h2>
+<p>Deno v1.20.4がリリースされました。</p>
+<p><strong>変更点:</strong></p>
+<ul>
+<li>
+<p>外部モジュールの<code>import</code>時にリダイレクトが発生すると、<code>deno compile</code>で生成したバイナリがうまく動作しなくなる問題が修正されました。</p>
+</li>
+<li>
+<p><a href=https://uki00a.github.io/deno-weekly/articles/2022/03/27.html>Deno v1.20.3</a>で非推奨化された<code>fetch()</code>のシグネチャが修正されました。</p>
+<p><strong>変更前:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>fetch</span>(
+  <span style=color:#a6e22e>input</span>: <span style=color:#66d9ef>URL</span>,
+  <span style=color:#a6e22e>init?</span>: <span style=color:#66d9ef>RequestInit</span>,
+)<span style=color:#f92672>:</span> <span style=color:#a6e22e>Promise</span>&lt;<span style=color:#f92672>Response</span>&gt;;
+</code></pre></div><p><strong>変更後:</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>fetch</span>(
+  <span style=color:#a6e22e>input</span>: <span style=color:#66d9ef>URL</span> <span style=color:#f92672>|</span> <span style=color:#a6e22e>Request</span> <span style=color:#f92672>|</span> <span style=color:#66d9ef>string</span>,
+  <span style=color:#a6e22e>init?</span>: <span style=color:#66d9ef>RequestInit</span>,
+)<span style=color:#f92672>:</span> <span style=color:#a6e22e>Promise</span>&lt;<span style=color:#f92672>Response</span>&gt;;
+</code></pre></div></li>
+<li>
+<p><code>deno lsp</code>で<code>deno.jsonc</code>などの拡張子が<code>.jsonc</code>のファイルがウォッチされない問題が修正されました。</p>
+</li>
+<li>
+<p><code>deno task</code>コマンドでの<code>PATHEXT</code>環境変数の取り扱いが改善されました。</p>
+</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denoland/deno/releases/tag/v1.20.4>https://github.com/denoland/deno/releases/tag/v1.20.4</a></p>
+<h2 id=deno_std-v01330>deno_std v0.133.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01330>#</a></h2>
+<p>deno_std v0.133.0がリリースされました。</p>
+<h3 id=testingmockモジュールが追加><code>testing/mock</code>モジュールが追加<a hidden class=anchor aria-hidden=true href=#testingmockモジュールが追加>#</a></h3>
+<p><code>testing</code>モジュールにテストスパイやテストスタブなどを提供するモジュールが追加されました。</p>
+<p><strong>spy</strong></p>
+<p><code>spy()</code>で関数をラップすることで、<code>assertSpyCall()</code>や<code>assertSpyCalls()</code>などで検証ができます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx>
+<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>assertSpyCall</span>, <span style=color:#a6e22e>assertSpyCalls</span>, <span style=color:#a6e22e>spy</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.133.0//testing/mock.ts&#34;</span>;
+<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>assertEquals</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.133.0/testing/asserts.ts&#34;</span>;
+
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>add</span>(<span style=color:#a6e22e>a</span>: <span style=color:#66d9ef>number</span>, <span style=color:#a6e22e>b</span>: <span style=color:#66d9ef>number</span>)<span style=color:#f92672>:</span> <span style=color:#66d9ef>number</span> {
+  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>b</span>;
+}
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>addSpy</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>spy</span>(<span style=color:#a6e22e>add</span>);
+<span style=color:#a6e22e>assertEquals</span>(<span style=color:#a6e22e>addSpy</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>), <span style=color:#ae81ff>3</span>); <span style=color:#75715e>// =&gt; OK
+</span><span style=color:#75715e></span><span style=color:#a6e22e>assertEquals</span>(<span style=color:#a6e22e>addSpy</span>(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>5</span>); <span style=color:#75715e>// =&gt; OK
+</span><span style=color:#75715e></span><span style=color:#a6e22e>assertSpyCall</span>(<span style=color:#a6e22e>addSpy</span>, <span style=color:#ae81ff>0</span>, {
+  <span style=color:#a6e22e>args</span><span style=color:#f92672>:</span> [<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>],
+  <span style=color:#a6e22e>returned</span>: <span style=color:#66d9ef>3</span>,
+}); <span style=color:#75715e>// =&gt; OK
+</span><span style=color:#75715e></span><span style=color:#a6e22e>assertSpyCall</span>(<span style=color:#a6e22e>addSpy</span>, <span style=color:#ae81ff>1</span>, {
+  <span style=color:#a6e22e>args</span><span style=color:#f92672>:</span> [<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>],
+  <span style=color:#a6e22e>returned</span>: <span style=color:#66d9ef>5</span>,
+}); <span style=color:#75715e>// =&gt; OK
+</span><span style=color:#75715e></span>
+<span style=color:#a6e22e>assertSpyCalls</span>(<span style=color:#a6e22e>addSpy</span>, <span style=color:#ae81ff>2</span>); <span style=color:#75715e>// =&gt; OK
+</span></code></pre></div><p><strong>stub</strong></p>
+<p><code>stub()</code>を利用することで、オブジェクトのメソッドをスタブできます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>assertSpyCalls</span>, <span style=color:#a6e22e>returnsNext</span>, <span style=color:#a6e22e>stub</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.133.0/testing/mock.ts&#34;</span>;
+<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>assertEquals</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.133.0/testing/asserts.ts&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>randomUUID</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>stub</span>(<span style=color:#a6e22e>crypto</span>, <span style=color:#e6db74>&#34;randomUUID&#34;</span>, <span style=color:#a6e22e>returnsNext</span>([
+  <span style=color:#e6db74>&#34;00000000-0000-0000-0000-000000000000&#34;</span>,
+  <span style=color:#e6db74>&#34;11111111-1111-1111-1111-111111111111&#34;</span>,
+]));
+<span style=color:#66d9ef>try</span> {
+  <span style=color:#a6e22e>assertEquals</span>(<span style=color:#a6e22e>crypto</span>.<span style=color:#a6e22e>randomUUID</span>(), <span style=color:#e6db74>&#34;00000000-0000-0000-0000-000000000000&#34;</span>); <span style=color:#75715e>// =&gt; OK
+</span><span style=color:#75715e></span>  <span style=color:#a6e22e>assertEquals</span>(<span style=color:#a6e22e>crypto</span>.<span style=color:#a6e22e>randomUUID</span>(), <span style=color:#e6db74>&#34;11111111-1111-1111-1111-111111111111&#34;</span>); <span style=color:#75715e>// =&gt; OK
+</span><span style=color:#75715e></span>  <span style=color:#a6e22e>assertSpyCalls</span>(<span style=color:#a6e22e>randomUUID</span>, <span style=color:#ae81ff>2</span>); <span style=color:#75715e>// =&gt; OK
+</span><span style=color:#75715e></span>} <span style=color:#66d9ef>finally</span> {
+  <span style=color:#a6e22e>randomUUID</span>.<span style=color:#a6e22e>restore</span>();
+}
+</code></pre></div><p><code>returnsNext()</code>はスタブを作成するためのヘルパであり、他にも<code>returnsArgs()</code>や<code>returnsArg他)</code>などの関数も提供されています。</p>
+<h3 id=bytesモジュールへの破壊的変更><code>bytes</code>モジュールへの破壊的変更<a hidden class=anchor aria-hidden=true href=#bytesモジュールへの破壊的変更>#</a></h3>
+<ul>
+<li><code>indexOf</code>, <code>lastIndexOf</code>, 及び<code>includes</code>がそれぞれ<code>indexOfNeedle</code>, <code>lastIndexOfNeedle</code>, 及び<code>includesNeedle</code>へリネームされています。</li>
+<li><code>bytes/equals</code>の<code>equalsNaive</code>と<code>equalsSimd</code>がprivateへ変更されました。</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denoland/deno_std/releases/tag/0.133.0>https://github.com/denoland/deno_std/releases/tag/0.133.0</a></p>
+<h2 id=denolandwanted_modules>denoland/wanted_modules<a hidden class=anchor aria-hidden=true href=#denolandwanted_modules>#</a></h2>
+<p>Deno公式でDenoに不足しているモジュールをレポートするためのリポジトリが作成されました。</p>
+<p>詳しくは<a href=https://github.com/denoland/wanted_modules/issues>Issues</a>を参照ください。</p>
+<hr>
+<p><a href=https://github.com/denoland/wanted_modules>https://github.com/denoland/wanted_modules</a></p>
+<h2 id=astroにdenoアダプタが追加>AstroにDenoアダプタが追加<a hidden class=anchor aria-hidden=true href=#astroにdenoアダプタが追加>#</a></h2>
+<p>Astro v0.26.0がリリースされました。</p>
+<p>Denoアダプタ(<a href=https://www.npmjs.com/package/@astrojs/deno>@astrojs/deno</a>)が追加されており、AstroとNode.jsで開発したコードをDeno上で動かせるようになりました。</p>
+<hr>
+<ul>
+<li><a href=https://github.com/withastro/astro/releases/tag/astro%400.26.0>Astro v0.26.0</a></li>
+<li><a href=https://github.com/withastro/astro/pull/2934>https://github.com/withastro/astro/pull/2934</a></li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/supabase.html>Supabase</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno-deploy.html>Deno Deploy</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/astro.html>Astro</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
