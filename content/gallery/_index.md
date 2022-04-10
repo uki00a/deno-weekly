@@ -9,6 +9,7 @@ title: ギャラリー
 |名前|概要|
 |:---:|:---:|
 |[deno-postgres](https://github.com/denodrivers/postgres)|PostgreSQLクライアント|
+|[Postgres.js](https://github.com/porsager/postgres)|DenoとNode.jsで動作するPostgreSQLクライアント|
 |[deno_mysql](https://github.com/denodrivers/mysql)|MySQLクライアント|
 |[deno-sqlite](https://github.com/dyedgreen/deno-sqlite)|SQLiteライブラリ|
 |[deno-redis](https://github.com/denodrivers/redis)|Redisクライアント|
