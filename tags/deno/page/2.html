@@ -74,6 +74,35 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/01/31〜2022/02/06の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.18.2 Deno v1.18.2がリリースされました。
+Deno.getUid() Deno.getUid()が実装されました。
+これを使うと、現在のユーザのIDを取得できます。(Windowsだとnullが返されます)
+const uid = Deno.getUid(); console.log(uid); 利用するには--allow-envと--unstableが必要です。
+その他バグ修正 HOME環境変数に相対パスが設定されていると、プロセスがクラッシュする問題が修正されました。 拡張子なしでimportしようとした際に、メディアタイプを元に拡張子を推論されるようになりました。 クエリパラメータつきでローカルファイルをimportするとプロセスがクラッシュする問題が修正されました。 SubtleCrypto.decryptでAES-GCMによる復号を行う際に、タグ長が128ビットでないとプロセスがパニックする問題が修正されました deno lsp: リダイレクトが発生すると、X-Deno-Warningヘッダの内容が表示されなくなる問題が修正されました https://github.com/denoland/deno/releases/tag/v1.18.2
+deno_std v0.125.0 deno_std v0.125.0がリリースされました。
+std/nodeへの機能追加などを中心に行われています。
+全般 std/fs/copyやstd/node、std/osなどの--unstableが必要なモジュールを--unstableなしで使用した際に、型エラーではなく実行時エラーが発生するように修正されました。
+node punycodeパッケージが実装されました url.resolve()が実装されました child_process.spawn()などでAbortSignalがサポートされました fs.createWriteStream()が実装されました fs.copyFile()で4引数の形式がサポートされました https://github.com/denoland/deno_std/commit/3b43d075ea6977e10bb1d9bd58fbeacc721a114e
+deno_stdへのdotenvモジュールの追加について dotenvモジュールをdeno_stdへ追加するPRが作成されています。
+https://github.com/denoland/deno_std/pull/1877 経緯については下記のissueで議論されていますが、好意的な反応が多く、次のリリースなどで追加される可能性がありそうです。
+https://github.com/denoland/deno/issues/13396 https://github.com/denoland/deno_std/pull/1877
+Deno.Conn#setNoDelayとDeno.Conn#setKeepAliveの実装について Deno.ConnにsetNoDelayとsetKeepAliveを実装するPRがマージされました。(denoland/deno#13103)
+今のところ、下記のように使用することが想定されています。
+Deno.Conn#setNoDelay(true)を呼ぶとNagleアルゴリズムが無効化されます (TCP_NODELAYが設定される) Deno.Conn#setKeepAlive(true)を呼ぶとTCPキープアライブが有効化されます (SO_KEEPALIVEが設定される) この機能は次のDeno v1.19でリリースされる可能性がありそうです。
+https://github.com/denoland/deno/pull/13103
+Deno.run()でのIPCサポートについて Deno.run()でIPCをサポートするPRが作成されています。(denoland/deno#13566)
+今のところ、下記のような方法での使用が想定されているようです。
+Deno....</p>
+</section>
+<footer class=entry-footer><span title="2022-02-06 00:00:00 +0000 UTC">February 6, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/01/31〜2022/02/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/06.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/01/24〜2022/01/30の最新情報
 </h2>
 </header>
@@ -272,33 +301,6 @@ const handler = (request: Request) => { throw new Error("Hello"); }; const serve
 </section>
 <footer class=entry-footer><span title="2021-12-05 00:00:00 +0000 UTC">December 5, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/11/29〜2021/12/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/05.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/11/22〜2021/11/28の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Denoのこれまでとこれから JSConf JPでのkt3kさんのDenoに関する発表資料が公開されました。
-Denoの概要や作られた背景、今後のロードマップなどについて解説されています。
-Denoのこれまでとこれから
-Deno v1.16.3 Deno v1.16.3がリリースされました。
-このリリースはバグ修正がメインです。
-ランタイム Deno.watchFsで発火されるイベントに"other"という新しいイベントタイプがサポートされました。 (#12097) 設定ファイル(--config)に記載されたパスが、その設定ファイルからの相対パスによって解決されるようになりました (今まではカレントディレクトリに基づいて解決されていました) --reloadオプションが指定された際は、.tsbuildinfoファイルを読み込まないように修正されました Deno.readFileで/procディレクトリのファイルが読めない問題が修正されました。 すでに停止されたワーカーなどでコードを評価しようとすると、プロセスがパニックする問題が修正されました。 deno lsp initializationOptions.configで指定された設定ファイルのinclude/excludeの設定が考慮されるようになりました。例えば、lint.files.excludeで指定されたファイルはエディタ上で診断結果が表示されなくなります。 @deprecatedコメントを付けた関数などで適切に警告が表示されるようになりました。 設定ファイルやImport mapsが配置されているパスによっては、LSPによる再読込がうまく行われない問題が修正されました。 deno fmt Markdownファイルをフォーマットした際に、&amp;nbsp;などの文字が削除される問題が修正されました。
-deno compile 引数としてimportを含まない.jsファイルを指定した場合、ソースコードのバンドルがスキップされるようになりました。
-Web Crypto API crypto.subtle.decryptでの復号に失敗した際に、プロセスがパニックする問題が修正されました
-https://github.com/denoland/deno/releases/tag/v1.16.3
-deno_std v0.116.0 deno_std v0.116.0がリリースされました。
-node os.hostname()が実装されました util.inspect()の互換性が向上しました httpパッケージで立てたサーバが不正な形式のリクエストを受信した際に、プロセスがパニックする問題が修正されました fmt printfで少数を表示する際に適切に丸めが行われない問題が修正されました
-https://github.com/denoland/deno_std/releases/tag/0.116.0
-Drash v2.2.0 Drashのv2.2.0がリリースされました。
-GraphQLやETag、レート制限などのサポートが追加されています。
-https://github.com/drashland/drash/releases/tag/v2.2.0
-NOVAS DenoでSvelteアプリケーションを開発するためのツール
-https://github.com/NOVASland/NOVAS</p>
-</section>
-<footer class=entry-footer><span title="2021-11-28 00:00:00 +0000 UTC">November 28, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/11/22〜2021/11/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/28.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

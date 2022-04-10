@@ -1,0 +1,239 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>2021/04/04〜2022/04/10の最新情報 | 週刊Deno</title>
+<meta name=keywords content="Deno,deno_std,Ultra,Postgres.js">
+<meta name=description content="Deno v1.20.5 Deno v1.20.5がリリースされました。
+deno lspの新機能 deno lspでTesting APIがサポートされています (https://code.visualstudio.com/api/extension-guides/testing)
+vscodeでTesting: Focus on Test Explorer Viewコマンドを実行すると、テストファイルに含まれるテストケースの一覧を表示できます。
+Deno.Listenerにrefとunrefメソッドが追加 (unstable) unref()が呼ばれたListenerはプロセスの終了をブロックしなくなります (タイマにDeno.unrefTimerを呼んだときと同様の挙動をします)
+後述するdeno_std/node/netでのServer.ref()の実装で利用されています。
+バグ修正  SubtleCrypto.exportKey()でextractable: falseに設定されたキーをエクスポートできてしまう問題が修正されました (https://github.com/denoland/deno/issues/14215) --compatを指定してdeno installを実行した際に、--compatフラグが維持されない問題が修正されました。   https://github.com/denoland/deno/releases/tag/v1.20.5
+deno_std v0.134.0 deno_std v0.134.0がリリースされました。
+encoding/csvやnodeモジュールへの機能の追加が行われています。
+encoding/csv CSVStreamが追加されました。
+import { CSVStream } from &#34;https://deno.land/std@0.134.0/encoding/csv/stream.ts&#34;; const file = await Deno.open(&#34;path/to/data.csv&#34;); const stream = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new CSVStream()); for await (const record of stream) { console.log(record); } node  child_process: ChildProcess.kill()でsignalパラメータがサポートされました。 net: Server.">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/04/10.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="2021/04/04〜2022/04/10の最新情報">
+<meta property="og:description" content="Deno v1.20.5 Deno v1.20.5がリリースされました。
+deno lspの新機能 deno lspでTesting APIがサポートされています (https://code.visualstudio.com/api/extension-guides/testing)
+vscodeでTesting: Focus on Test Explorer Viewコマンドを実行すると、テストファイルに含まれるテストケースの一覧を表示できます。
+Deno.Listenerにrefとunrefメソッドが追加 (unstable) unref()が呼ばれたListenerはプロセスの終了をブロックしなくなります (タイマにDeno.unrefTimerを呼んだときと同様の挙動をします)
+後述するdeno_std/node/netでのServer.ref()の実装で利用されています。
+バグ修正  SubtleCrypto.exportKey()でextractable: falseに設定されたキーをエクスポートできてしまう問題が修正されました (https://github.com/denoland/deno/issues/14215) --compatを指定してdeno installを実行した際に、--compatフラグが維持されない問題が修正されました。   https://github.com/denoland/deno/releases/tag/v1.20.5
+deno_std v0.134.0 deno_std v0.134.0がリリースされました。
+encoding/csvやnodeモジュールへの機能の追加が行われています。
+encoding/csv CSVStreamが追加されました。
+import { CSVStream } from &#34;https://deno.land/std@0.134.0/encoding/csv/stream.ts&#34;; const file = await Deno.open(&#34;path/to/data.csv&#34;); const stream = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new CSVStream()); for await (const record of stream) { console.log(record); } node  child_process: ChildProcess.kill()でsignalパラメータがサポートされました。 net: Server.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/04/10.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2022-04-10T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-04-10T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="2021/04/04〜2022/04/10の最新情報">
+<meta name=twitter:description content="Deno v1.20.5 Deno v1.20.5がリリースされました。
+deno lspの新機能 deno lspでTesting APIがサポートされています (https://code.visualstudio.com/api/extension-guides/testing)
+vscodeでTesting: Focus on Test Explorer Viewコマンドを実行すると、テストファイルに含まれるテストケースの一覧を表示できます。
+Deno.Listenerにrefとunrefメソッドが追加 (unstable) unref()が呼ばれたListenerはプロセスの終了をブロックしなくなります (タイマにDeno.unrefTimerを呼んだときと同様の挙動をします)
+後述するdeno_std/node/netでのServer.ref()の実装で利用されています。
+バグ修正  SubtleCrypto.exportKey()でextractable: falseに設定されたキーをエクスポートできてしまう問題が修正されました (https://github.com/denoland/deno/issues/14215) --compatを指定してdeno installを実行した際に、--compatフラグが維持されない問題が修正されました。   https://github.com/denoland/deno/releases/tag/v1.20.5
+deno_std v0.134.0 deno_std v0.134.0がリリースされました。
+encoding/csvやnodeモジュールへの機能の追加が行われています。
+encoding/csv CSVStreamが追加されました。
+import { CSVStream } from &#34;https://deno.land/std@0.134.0/encoding/csv/stream.ts&#34;; const file = await Deno.open(&#34;path/to/data.csv&#34;); const stream = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new CSVStream()); for await (const record of stream) { console.log(record); } node  child_process: ChildProcess.kill()でsignalパラメータがサポートされました。 net: Server.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/04/04〜2022/04/10の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/04/10.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/04/04〜2022/04/10の最新情報","name":"2021\/04\/04〜2022\/04\/10の最新情報","description":"Deno v1.20.5 Deno v1.20.5がリリースされました。\ndeno lspの新機能 deno lspでTesting APIがサポートされています (https://code.visualstudio.com/api/extension-guides/testing)\nvscodeでTesting: Focus on Test Explorer Viewコマンドを実行すると、テストファイルに含まれるテストケースの一覧を表示できます。\nDeno.Listenerにrefとunrefメソッドが追加 (unstable) unref()が呼ばれたListenerはプロセスの終了をブロックしなくなります (タイマにDeno.unrefTimerを呼んだときと同様の挙動をします)\n後述するdeno_std/node/netでのServer.ref()の実装で利用されています。\nバグ修正  SubtleCrypto.exportKey()でextractable: falseに設定されたキーをエクスポートできてしまう問題が修正されました (https://github.com/denoland/deno/issues/14215) --compatを指定してdeno installを実行した際に、--compatフラグが維持されない問題が修正されました。   https://github.com/denoland/deno/releases/tag/v1.20.5\ndeno_std v0.134.0 deno_std v0.134.0がリリースされました。\nencoding/csvやnodeモジュールへの機能の追加が行われています。\nencoding/csv CSVStreamが追加されました。\nimport { CSVStream } from \u0026#34;https://deno.land/std@0.134.0/encoding/csv/stream.ts\u0026#34;; const file = await Deno.open(\u0026#34;path/to/data.csv\u0026#34;); const stream = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new CSVStream()); for await (const record of stream) { console.log(record); } node  child_process: ChildProcess.kill()でsignalパラメータがサポートされました。 net: Server.","keywords":["Deno","deno_std","Ultra","Postgres.js"],"articleBody":"Deno v1.20.5 Deno v1.20.5がリリースされました。\ndeno lspの新機能 deno lspでTesting APIがサポートされています (https://code.visualstudio.com/api/extension-guides/testing)\nvscodeでTesting: Focus on Test Explorer Viewコマンドを実行すると、テストファイルに含まれるテストケースの一覧を表示できます。\nDeno.Listenerにrefとunrefメソッドが追加 (unstable) unref()が呼ばれたListenerはプロセスの終了をブロックしなくなります (タイマにDeno.unrefTimerを呼んだときと同様の挙動をします)\n後述するdeno_std/node/netでのServer.ref()の実装で利用されています。\nバグ修正  SubtleCrypto.exportKey()でextractable: falseに設定されたキーをエクスポートできてしまう問題が修正されました (https://github.com/denoland/deno/issues/14215) --compatを指定してdeno installを実行した際に、--compatフラグが維持されない問題が修正されました。   https://github.com/denoland/deno/releases/tag/v1.20.5\ndeno_std v0.134.0 deno_std v0.134.0がリリースされました。\nencoding/csvやnodeモジュールへの機能の追加が行われています。\nencoding/csv CSVStreamが追加されました。\nimport { CSVStream } from \"https://deno.land/std@0.134.0/encoding/csv/stream.ts\"; const file = await Deno.open(\"path/to/data.csv\"); const stream = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new CSVStream()); for await (const record of stream) { console.log(record); } node  child_process: ChildProcess.kill()でsignalパラメータがサポートされました。 net: Server.ref()やServer.unref()がサポートされました。 fs: fs.write()などで同じデータが重複して書き込まれてしまうことのある問題が修正されました。   https://github.com/denoland/deno_std/releases/tag/0.134.0\nUltra v0.8.0 ReactベースのフレームワークであるUltraのv0.8.0がリリースされました。\nReact v18のサポート React v18がサポートされています。\nまた、disableStreaming環境変数に1を設定することで、SSR実行時のストリーミングを無効化できるようになっています。\nAPIルートのサポート src/apiディレクトリ配下でRequestを受け取りResponseまたはPromiseを返却する関数をdefault exportすることで、APIを定義することができます。\ndeno.jsonとの統合 deno.jsonがサポートされました。\ndeno.jsonでのimportMapの指定が必須になっているため、注意が必要そうです。\nサードパーティモジュールのベンダリング ultra/vendor.tsによって依存しているサードパーティモジュールをローカルに保存できるようになりました。\nこのスクリプトを実行すると、.ultra/vendorディレクトリへサードパーティモジュールが書き込まれます。\n書き込まれたサードパーティモジュールはvendorMap.json経由で読み込むことができます。\nOakとの互換性について Oakとの互換性を維持するために、ultra/mod.tsでultraHandlerが公開されました。\n https://github.com/exhibitionist-digital/ultra/releases/tag/v0.8.0\nPostgres.js DenoとNode.jsの両方をサポートするPostgreSQLクライアント\n  https://github.com/porsager/postgres https://deno.land/x/postgresjs  ","wordCount":"96","inLanguage":"en","datePublished":"2022-04-10T00:00:00Z","dateModified":"2022-04-10T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/04/10.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+2021/04/04〜2022/04/10の最新情報
+</h1>
+<div class=post-meta><span title="2022-04-10 00:00:00 +0000 UTC">April 10, 2022</span>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#deno-v1205 aria-label="Deno v1.20.5">Deno v1.20.5</a><ul>
+<li>
+<a href=#deno-lsp%e3%81%ae%e6%96%b0%e6%a9%9f%e8%83%bd aria-label="deno lspの新機能"><code>deno lsp</code>の新機能</a></li>
+<li>
+<a href=#denolistener%e3%81%abref%e3%81%a8unref%e3%83%a1%e3%82%bd%e3%83%83%e3%83%89%e3%81%8c%e8%bf%bd%e5%8a%a0-unstable aria-label="Deno.Listenerにrefとunrefメソッドが追加 (unstable)"><code>Deno.Listener</code>に<code>ref</code>と<code>unref</code>メソッドが追加 (unstable)</a></li>
+<li>
+<a href=#%e3%83%90%e3%82%b0%e4%bf%ae%e6%ad%a3 aria-label=バグ修正>バグ修正</a></li>
+<li>
+<a href=#deno_std-v01340 aria-label="deno_std v0.134.0">deno_std v0.134.0</a></li>
+<li>
+<a href=#encodingcsv aria-label=encoding/csv><code>encoding/csv</code></a></li>
+<li>
+<a href=#node aria-label=node><code>node</code></a></li></ul>
+</li>
+<li>
+<a href=#ultra-v080 aria-label="Ultra v0.8.0">Ultra v0.8.0</a><ul>
+<li>
+<a href=#react-v18%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label="React v18のサポート">React v18のサポート</a></li>
+<li>
+<a href=#api%e3%83%ab%e3%83%bc%e3%83%88%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=APIルートのサポート>APIルートのサポート</a></li>
+<li>
+<a href=#denojson%e3%81%a8%e3%81%ae%e7%b5%b1%e5%90%88 aria-label=deno.jsonとの統合><code>deno.json</code>との統合</a></li>
+<li>
+<a href=#%e3%82%b5%e3%83%bc%e3%83%89%e3%83%91%e3%83%bc%e3%83%86%e3%82%a3%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%ae%e3%83%99%e3%83%b3%e3%83%80%e3%83%aa%e3%83%b3%e3%82%b0 aria-label=サードパーティモジュールのベンダリング>サードパーティモジュールのベンダリング</a></li>
+<li>
+<a href=#oak%e3%81%a8%e3%81%ae%e4%ba%92%e6%8f%9b%e6%80%a7%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=Oakとの互換性について>Oakとの互換性について</a></li></ul>
+</li>
+<li>
+<a href=#postgresjs aria-label=Postgres.js>Postgres.js</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=deno-v1205>Deno v1.20.5<a hidden class=anchor aria-hidden=true href=#deno-v1205>#</a></h2>
+<p>Deno v1.20.5がリリースされました。</p>
+<h3 id=deno-lspの新機能><code>deno lsp</code>の新機能<a hidden class=anchor aria-hidden=true href=#deno-lspの新機能>#</a></h3>
+<p><code>deno lsp</code>でTesting APIがサポートされています (<a href=https://code.visualstudio.com/api/extension-guides/testing>https://code.visualstudio.com/api/extension-guides/testing</a>)</p>
+<p>vscodeで<code>Testing: Focus on Test Explorer View</code>コマンドを実行すると、テストファイルに含まれるテストケースの一覧を表示できます。</p>
+<h3 id=denolistenerにrefとunrefメソッドが追加-unstable><code>Deno.Listener</code>に<code>ref</code>と<code>unref</code>メソッドが追加 (unstable)<a hidden class=anchor aria-hidden=true href=#denolistenerにrefとunrefメソッドが追加-unstable>#</a></h3>
+<p><code>unref()</code>が呼ばれた<code>Listener</code>はプロセスの終了をブロックしなくなります (タイマに<code>Deno.unrefTimer</code>を呼んだときと同様の挙動をします)</p>
+<p>後述する<code>deno_std/node/net</code>での<code>Server.ref()</code>の実装で利用されています。</p>
+<h3 id=バグ修正>バグ修正<a hidden class=anchor aria-hidden=true href=#バグ修正>#</a></h3>
+<ul>
+<li><code>SubtleCrypto.exportKey()</code>で<code>extractable: false</code>に設定されたキーをエクスポートできてしまう問題が修正されました (<a href=https://github.com/denoland/deno/issues/14215>https://github.com/denoland/deno/issues/14215</a>)</li>
+<li><code>--compat</code>を指定して<code>deno install</code>を実行した際に、<code>--compat</code>フラグが維持されない問題が修正されました。</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denoland/deno/releases/tag/v1.20.5>https://github.com/denoland/deno/releases/tag/v1.20.5</a></p>
+<h3 id=deno_std-v01340>deno_std v0.134.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01340>#</a></h3>
+<p>deno_std v0.134.0がリリースされました。</p>
+<p><code>encoding/csv</code>や<code>node</code>モジュールへの機能の追加が行われています。</p>
+<h3 id=encodingcsv><code>encoding/csv</code><a hidden class=anchor aria-hidden=true href=#encodingcsv>#</a></h3>
+<p><code>CSVStream</code>が追加されました。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>CSVStream</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.134.0/encoding/csv/stream.ts&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>file</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>open</span>(<span style=color:#e6db74>&#34;path/to/data.csv&#34;</span>);
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>stream</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>readable</span>
+  .<span style=color:#a6e22e>pipeThrough</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>TextDecoderStream</span>())
+  .<span style=color:#a6e22e>pipeThrough</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CSVStream</span>());
+
+<span style=color:#66d9ef>for</span> <span style=color:#66d9ef>await</span> (<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>record</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>stream</span>) {
+  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>record</span>);
+}
+</code></pre></div><h3 id=node><code>node</code><a hidden class=anchor aria-hidden=true href=#node>#</a></h3>
+<ul>
+<li><code>child_process</code>: <code>ChildProcess.kill()</code>で<code>signal</code>パラメータがサポートされました。</li>
+<li><code>net</code>: <code>Server.ref()</code>や<code>Server.unref()</code>がサポートされました。</li>
+<li><code>fs</code>: <code>fs.write()</code>などで同じデータが重複して書き込まれてしまうことのある問題が修正されました。</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denoland/deno_std/releases/tag/0.134.0>https://github.com/denoland/deno_std/releases/tag/0.134.0</a></p>
+<h2 id=ultra-v080>Ultra v0.8.0<a hidden class=anchor aria-hidden=true href=#ultra-v080>#</a></h2>
+<p>ReactベースのフレームワークであるUltraのv0.8.0がリリースされました。</p>
+<h3 id=react-v18のサポート>React v18のサポート<a hidden class=anchor aria-hidden=true href=#react-v18のサポート>#</a></h3>
+<p>React v18がサポートされています。</p>
+<p>また、<code>disableStreaming</code>環境変数に<code>1</code>を設定することで、SSR実行時のストリーミングを無効化できるようになっています。</p>
+<h3 id=apiルートのサポート>APIルートのサポート<a hidden class=anchor aria-hidden=true href=#apiルートのサポート>#</a></h3>
+<p><code>src/api</code>ディレクトリ配下で<code>Request</code>を受け取り<code>Response</code>または<code>Promise&lt;Response></code>を返却する関数を<code>default export</code>することで、APIを定義することができます。</p>
+<h3 id=denojsonとの統合><code>deno.json</code>との統合<a hidden class=anchor aria-hidden=true href=#denojsonとの統合>#</a></h3>
+<p><code>deno.json</code>がサポートされました。</p>
+<p><code>deno.json</code>での<code>importMap</code>の指定が必須になっているため、注意が必要そうです。</p>
+<h3 id=サードパーティモジュールのベンダリング>サードパーティモジュールのベンダリング<a hidden class=anchor aria-hidden=true href=#サードパーティモジュールのベンダリング>#</a></h3>
+<p><a href=https://deno.land/x/ultra@v0.8.0/vendor.ts>ultra/vendor.ts</a>によって依存しているサードパーティモジュールをローカルに保存できるようになりました。</p>
+<p>このスクリプトを実行すると、<code>.ultra/vendor</code>ディレクトリへサードパーティモジュールが書き込まれます。</p>
+<p>書き込まれたサードパーティモジュールは<code>vendorMap.json</code>経由で読み込むことができます。</p>
+<h3 id=oakとの互換性について>Oakとの互換性について<a hidden class=anchor aria-hidden=true href=#oakとの互換性について>#</a></h3>
+<p>Oakとの互換性を維持するために、<a href=https://deno.land/x/ultra@v0.8.0/mod.ts>ultra/mod.ts</a>で<code>ultraHandler</code>が公開されました。</p>
+<hr>
+<p><a href=https://github.com/exhibitionist-digital/ultra/releases/tag/v0.8.0>https://github.com/exhibitionist-digital/ultra/releases/tag/v0.8.0</a></p>
+<h2 id=postgresjs>Postgres.js<a hidden class=anchor aria-hidden=true href=#postgresjs>#</a></h2>
+<p>DenoとNode.jsの両方をサポートするPostgreSQLクライアント</p>
+<hr>
+<ul>
+<li><a href=https://github.com/porsager/postgres>https://github.com/porsager/postgres</a></li>
+<li><a href=https://deno.land/x/postgresjs>https://deno.land/x/postgresjs</a></li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/ultra.html>Ultra</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/postgres.js.html>Postgres.js</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
