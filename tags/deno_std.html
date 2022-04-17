@@ -74,6 +74,33 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/04/11〜2022/04/17の最新情報
+</h2>
+</header>
+<section class=entry-content>
+<p>Deno v1.20.6 Deno v1.20.6がリリースされました。
+deno fmtコマンドの内部実装で使用されているdprint関連のプラグインがアップデートされています。
+その影響により、deno fmtコマンドのパフォーマンス向上やバグの修正が行われています。 (オブジェクトリテラルと3項演算子を併用した際に、フォーマット結果に一貫性がなくなる問題が修正されているようです)
+https://github.com/denoland/deno/releases/tag/v1.20.6
+deno_std v0.135.0 deno_std v0.135.0がリリースされました。
+このリリースでは破壊的変更が実施されています。
+io/readers: MultiReaderのシグネチャの変更 (破壊的変更) MultiReaderのコンストラクタの引数が可変長引数ではなくDeno.Readerの配列を受け取るように変更されています。
+変更前:
+const readers: Array&lt;Deno.Reader> = [...]; new MultiReader(...readers); 変更後:
+const readers: Array&lt;Deno.Reader> = [...]; new MultiReader(readers); MultiReaderはstd/archive/tar.tsモジュールの内部で使われており、大量のファイルを持つtarファイルを作ろうとすると、maximum call stack exceededエラーが発生してしまう問題があったようです。
+mime/multipartの非推奨化 (破壊的変更) mime/multipartモジュールが非推奨化されました。
+今後はFormDataの使用が推奨されます。
+testing/benchの非推奨化 (破壊的変更) testing/benchモジュールが非推奨化されました。
+今後はDeno.benchの使用が推奨されます。
+testing/bddの追加 testing/bddモジュールが追加されました。
+JestやMochaライクなAPIを使用してテストコードを記述することができます。
+import { assertEquals } from "https://deno.land/std@0.135.0/testing/asserts.ts"; import { describe, it } from "https://deno.land/std@0.135.0/testing/bdd.ts"; describe("sum", () => { it("should return sum of numbers", () => { assertEquals(sum(1, 2, 5), 8) }); it("should return 0 when no arguments are given", () => { assertEquals(sum(), 0); }); }); 定義したテストコードはdeno testコマンドで実行することが出来ます。...</p>
+</section>
+<footer class=entry-footer><span title="2022-04-17 00:00:00 +0000 UTC">April 17, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/11〜2022/04/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/17.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/04/04〜2022/04/10の最新情報
 </h2>
 </header>
@@ -274,38 +301,6 @@ Deno....</p>
 </section>
 <footer class=entry-footer><span title="2022-02-06 00:00:00 +0000 UTC">February 6, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/31〜2022/02/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/06.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/01/24〜2022/01/30の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.18.1 Deno v1.18.1がリリースされました。
-Deno.networkInterfaces() Deno.networkInterfaces()が実装されました。
-利用可能なネットワークインターフェースの一覧を取得できます。
-const interfaces = Deno.networkInterfaces(); 利用するには--allow-envと--unstableが必要です。
-deno lsp deno lspでDENO_CERTとDENO_TLS_CA_STOREの環境変数がサポートされました。
-これらの環境変数については、下記を参照ください。
-https://deno.land/manual@v1.18.1/getting_started/setup_your_environment#environment-variables https://github.com/denoland/deno/releases/tag/v1.18.1
-deno_std v0.123.0 deno_std v0.123.0がリリースされました。
-std/node 新しく下記APIが実装されています:
-os.networkInterfaces() process.uptime() child_process.execFile() std/testing assertObjectMatchでArrayBufferを含むオブジェクトが適切に比較されない問題が修正されました。
-https://github.com/denoland/deno_std/releases/tag/0.123.0
-deno_std/archive/tarの現代化について deno_stdにはtarファイルを取り扱うためにarchive/tarが提供されています。
-このarchive/tarはDeno.Readerをベースに実装されています。
-現在、archive/tarをStreams APIで書き直すことが検討されています。
-この一環として、archive/streams.tsを追加するPRが作成されています。
-https://github.com/denoland/deno_std/pull/1855 archive/streams.tsではTarEncoderStreamとTarDecoderStreamを提供し、StreamsベースのAPIを介してtarファイルの操作を行うことができます。
-まだマージされていないものの、次のリリースなどで追加される可能性がありそうです。
-https://github.com/denoland/deno_std/issues/1658 https://github.com/denoland/deno_std/pull/1855 Deno in 2021 Denoの公式ブログポストとしてDeno in 2021という記事が公開されました。
-この記事では、2021年中にDenoに起きたできごとや変更内容などについて解説されています。
-また、Deno v2へのロードマップの公開などもまもなく実施予定とのことです。
-https://deno.com/blog/deno-in-2021
-I’m porting tsc to Go SWCの作者であるkdy1氏により、I’m porting tsc to Goという記事が公開されました。...</p>
-</section>
-<footer class=entry-footer><span title="2022-01-30 00:00:00 +0000 UTC">January 30, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/24〜2022/01/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/30.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Node.js | 週刊Deno</title>
+<title>GraphQL | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/node.js.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/graphql.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/node.js/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/graphql/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -25,12 +25,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Node.js">
+<meta property="og:title" content="GraphQL">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/node.js.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/graphql.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Node.js">
+<meta name=twitter:title content="GraphQL">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -70,7 +70,7 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>Node.js</h1>
+<h1>GraphQL</h1>
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
@@ -98,41 +98,6 @@ import { assertEquals } from "https://deno.land/std@0.135.0/testing/asserts.ts";
 </section>
 <footer class=entry-footer><span title="2022-04-17 00:00:00 +0000 UTC">April 17, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/04/11〜2022/04/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/17.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/10/11〜2021/10/17の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.15.0 Deno v1.15.0がリリースされました。
-Node.jsの互換モードやサブテストの実験的な実装や、URLPatternやDeno.killの安定化、deno uninstallコマンドの実装などが行われています。
-新機能:
-CLI Node.js互換モードの実装 (--compat を付与してDenoを実行すると、Node.jsの組み込みモジュールの読み込みが有効化されます) deno uninstallコマンドが実装されました (deno installでインストールされたスクリプトをアンインストールできます) deno lintコマンドで--watchオプションがサポートされました テスト Deno.testでテストケースの入れ子が実験的にサポートされました Deno.testで定義したテストケースがリソースリークによって失敗した際に、より詳細なエラーメッセージが表示されるようになりました (unstableをつけたときのみ) Deno API 下記のAPIが安定化されました Deno.kill Deno.Process.kill Deno.resolveDns URLPattern Deno.startTLS/Deno.connectTLS/Deno.createHttpClientでcaCertsオプションがサポートされ、複数のルート証明書を指定できるようになりました 合わせてDeno.startTLSとDeno.connectTLSのcertFileオプションが非推奨化されています また、Deno.createHttpClientのcertFileオプションが削除されています Deno.resolveDnsの内部でエラーが発生した際に返却されるエラーが改善されました Web Crypto API SubtleCrypto.deriveKeyが実装されました SubtleCrypto.wrapKeyが実装されました SubtleCrypto.exportKeyでRSAキーをspkiフォーマットでエクスポートできるようになりました SubtleCryptoのencryptとdecryptメソッドでAES-CBCによる暗号化と復号がサポートされました SubtleCrypto.deriveBitsでECDH (p256)がサポートされました SubtleCrypto.importKeyでraw形式のECDSAキーをインポートできるようになりました SubtleCryptoでAESキーのインポートとエクスポートがサポートされました FFI関連 (Deno.dlopen) バッファ引数(ArrayBuffer)のサポート 非同期呼び出しのサポート WASM スタックトレースにおけるWebAssembly....</p>
-</section>
-<footer class=entry-footer><span title="2021-10-17 00:00:00 +0000 UTC">October 17, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/11〜2021/10/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/17.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/10/04〜2021/10/10の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.14.3 Deno v1.14.3がリリースされました。
-このリリースでは、バグ修正やパフォーマンスチューニングを中心に実施されています。
-変更点:
-fetchで不正な形式のヘッダを指定するとプロセスがパニックする問題が修正されました Deno.listenで抽象ソケットアドレスを指定するとプロセスがパニックする問題が修正されました REPLでglobalThisに代入するとプロセスがパニックする問題が修正されました Workerのmessageハンドラで投げられたエラーが報告されない問題が修正されました Workerのdeno.permissions.envオプションに配列を渡せるようになりました Deno.testでAggregateErrorが投げられた際の出力が改善されました Opの実行、RequestやResponseの作成、Headers.prototype.appendなどが最適化されました https://github.com/denoland/deno/releases/tag/v1.14.3
-deno_std v0.110.0 deno_std v0.110.0がリリースされました。
-std/nodeへの機能追加が実施されています。
-変更点:
-node/buffer: BufferでreadUIntLE及びreadUIntBEが実装されました node/crypto: scrypt, scryptSync, timingSafeEqual, 及びrandomUUIDが実装されました。 node/stream/web: 下記クラスが追加されました。 ReadableByteStreamController TransformStreamDefaultController ByteLengthQueuingStrategy CountQueuingStrategy TextEncoderStream TextDecoderStream node/os: tmpdirが実装されました https://github.com/denoland/deno_std/releases/tag/0.110.0
-Freshのアップデート DenoのWebフレームワークであるFreshがアップデートされました。
-&lt;Head>コンポーネントがサポートされ、&lt;head>配下に要素を追加できるようになっています。
-/** @jsx h */ import { h, Head } from "../deps.ts"; export default function Home() { return ( &lt;div> &lt;Head> &lt;title>Hello&lt;/title> &lt;/Head> &lt;h2>Home&lt;/h2> &lt;/div> ); } https://github....</p>
-</section>
-<footer class=entry-footer><span title="2021-10-10 00:00:00 +0000 UTC">October 10, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/04〜2021/10/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/10.html></a>
 </article>
 </main>
 <footer class=footer>
