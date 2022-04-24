@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/sinco.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -77,7 +77,7 @@
 <h2>2021/12/13〜2021/12/19の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.17.0 Deno v1.17.0がリリースされました。
 --no-check=remoteのサポート リモートモジュール(http:またはhttps:で始まるモジュール)の型チェックのみが無効化されます。
 $ deno run --no-check=remote mod.ts Import assertionsのサポート Import assertionsが実装されました。
@@ -85,7 +85,7 @@ $ deno run --no-check=remote mod.ts Import assertionsのサポート Import asse
 import modules from "./modules.json" assert { type: "json" }; Object.keys(modules); Deno.testのシグネチャの向上 Deno v1.16.4までは下記の形式のみがサポートされていました。
 Deno.test(name: string, fn: (t: Deno.TestContext) => void | Promise&lt;void>): void Deno.test(t: Deno.TestDefinition): void v1.17で以下のオーバーロードが追加され、使い勝手が向上しました。
 // オプションを第2引数、テスト関数を第3引数で指定 Deno.test("foo", { permissions: { read: false } }, () => { Deno.cwd(); }); // オプションを第1引数、テスト関数を第2引数で指定 Deno.test({ name: "bar", ignore: Deno.build.os === "windows", }, async () => { // }); Deno....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-12-19 00:00:00 +0000 UTC">December 19, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/12/13〜2021/12/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/19.html></a>
 </article>
@@ -94,7 +94,7 @@ Deno.test(name: string, fn: (t: Deno.TestContext) => void | Promise&lt;void>): v
 <h2>2021/05/24〜2021/05/30の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Sinco v2.0.0のリリース ブラウザのオートメーション・テスト用モジュールであるSincoのv2.0.0がリリースされました。
 変更点:
 Firefoxがサポートされました。 使用するブラウザの実行可能ファイルへのパスを指定できるようになりました(binaryPathオプション) https://github.com/drashland/sinco/releases/tag/v2.0.0
@@ -110,7 +110,7 @@ keycodeモジュールでKeyEvent型がKeyCodeにリネームされました。 
 deploy_dir deploy_dirという静的なWebサイトをDeno DeployへデプロイするためのCLIツールが公開されました。
 指定されたディレクトリの内容を読み込み、Deno Deployへ公開できる形式へパッケージングしてくれます。
 https://github.com/kt3k/deploy_dir</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-05-30 00:00:00 +0000 UTC">May 30, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/05/24〜2021/05/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/30.html></a>
 </article>
@@ -119,7 +119,7 @@ https://github.com/kt3k/deploy_dir</p>
 <h2>2021/02/15〜2021/02/21の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno本体の最新情報 Deno v1.7.5がリリース Deno v1.7.5がリリースされました。 このリリースではバグ修正などを中心に実施されています。
 変更点:
 btoa()関数とEventクラスがWPTにパスするように修正され、Web標準との互換性が増しました。 deno lspでデータURLが適切に扱われない問題などが修正されました。 Dynamic importsで発生した例外をcatchできるようになりました。 https://github.com/denoland/deno/releases/tag/v1.7.5
@@ -134,7 +134,7 @@ Sinco v1.1.0がリリース Since v1.1.0がリリースされました。
 SincoはDenoで実装されたブラウザのオートメーション・テスティングライブラリです。
 変更点:
 HeadlessBrowser#evaluatePage()が実装され、現在のページ内での関数や式の実行がサポートされました。 Dockerコンテナ内での実行がサポートされました。 https://github....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-02-21 00:00:00 +0000 UTC">February 21, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/15〜2021/02/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/21.html></a>
 </article>

@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/remix.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -77,7 +77,7 @@
 <h2>2021/02/21〜2022/02/27の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.19.1 Deno v1.19.1がリリースされました。
 新機能としてDeno.dlopenでstatic変数の参照がサポートされています。
 Deno.ForeignStatic その他にも、deno compileで--import-mapオプションがうまく動かなくなっていた問題が修正されています。
@@ -88,7 +88,7 @@ dotenvの追加 deno-dotenvモジュールがdeno_stdにマージされました
 async/abortableの追加 Promiseをキャンセルできるようにするためのユーティリティが追加されています。
 import { abortable } from "https://deno.land/std@0.127.0/async/abortable.ts"; import { delay } from "https://deno.land/std@0.127.0/async/delay.ts"; const controller = new AbortController(); const promise = delay(5000); setTimeout(() => controller.abort(), 2000); await abortable(promise, controller.signal); // => AbortError node fs: fs.realpath.nativeが追加されました。 tls: tls.createServerの基本的なサポートが追加されました。 その他 http/file_server: serveDir関数が追加されました。 testing/aserts: assertAlmostEqualsが追加されました。 https://github.com/denoland/deno_std/releases/tag/0.127.0
 deno.json(c)でのImport Mapサポートについて deno....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2022-02-27 00:00:00 +0000 UTC">February 27, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/21〜2022/02/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/27.html></a>
 </article>
@@ -97,7 +97,7 @@ deno.json(c)でのImport Mapサポートについて deno....</p>
 <h2>2021/12/06〜2021/12/12の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno.spawnDenoを追加する提案 以下のissueでDeno.spawnDenoというAPIの追加が提案されています
 https://github.com/denoland/deno/issues/13041 背景として、まずdenoland/deno#11016でDeno.runとは異なる新しいサブプロセスAPIが提案されました。
 このissueをベースに以下のようなAPIを追加するPRが作成されていますが、まだマージはされていないようです。
@@ -110,7 +110,7 @@ https://github.com/denoland/deno/issues/13041
 サブステップAPIの安定化について Deno v1.15で導入されたサブステップAPIの安定化が提案されています。
 Deno v1.18での安定化が検討されているようです。
 Deno.test("nested test case", async (t) => { const success = await t.step("step 1", async (t) => { const success = await t....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-12-12 00:00:00 +0000 UTC">December 12, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/12/06〜2021/12/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/12.html></a>
 </article>

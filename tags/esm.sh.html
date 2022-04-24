@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/esm.sh.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -77,7 +77,7 @@
 <h2>2021/03/21〜2022/03/27の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。
 詳細については下記を参照ください。
 Deno v1.20 deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。
@@ -93,7 +93,7 @@ Denoはfetchの第一引数としてURLの指定をサポートしています�
 deno_std v0.131.0 deno_std v0.131.0がリリースされました。
 collections BinaryHeapが追加されました。
 import { BinaryHeap } from "https://deno.land/std@0.132.0/collections/binary_heap.ts"; const heap = new BinaryHeap&lt;number>(); heap....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2022-03-27 00:00:00 +0000 UTC">March 27, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/21〜2022/03/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/27.html></a>
 </article>
@@ -102,7 +102,7 @@ import { BinaryHeap } from "https://deno.land/std@0.132.0/collections/binary_hea
 <h2>2021/11/01〜2021/11/07の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>2021年のDeno Advent Calendarが公開 Qiitaで2021年のDeno Advent Calendarが公開されました。
 https://qiita.com/advent-calendar/2021/deno
 deployctlがアーカイブ Deno Deployのコマンドラインツールであるdeployctlがアーカイブされました。
@@ -111,7 +111,7 @@ Deno Deploy Beta 3が来たぞ Freshのアップデート PreactベースのWeb�
 Middlewareサポート Middlewareを利用する際は、pagesディレクトリ配下に下記のいずれかの名前のファイルを用意し、handler関数をexportする必要があります。
 /_middleware.tsx /_middleware.ts /_middleware.jsx /_middleware.js export async function handler(req: Request, handle: () => Promise&lt;Response>) { const start = Date.now(); const resp = await handle(); const end = Date.now(); console.log(`${req.method}${req.url}- ${end - start}ms`); return resp; } CSPサポート CSPサポートを有効化したいときは、対象ページでcspオプションにtrueを設定したconfigオブジェクトをexportします。
 import type { PageConfig } from "../deps.ts"; export const config: PageConfig = { csp: true }; 上記を実施しておくことで、特に設定をしなくとも自動でContent-Security-Policyヘッダを出力してくれます。...</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-11-07 00:00:00 +0000 UTC">November 7, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/11/01〜2021/11/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/07.html></a>
 </article>
@@ -120,7 +120,7 @@ import type { PageConfig } from "../deps.ts"; export const config: PageConfig = 
 <h2>2021/10/25〜2021/10/31の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.15.3 Deno v1.15.3がリリースされました。
 このリリースはバグ修正がメインです。
 変更点:
@@ -139,7 +139,7 @@ http/file_server: ファイル一覧ページでパンくずリストが表示�
 http/file_server: ファイル名に%記号などが含まれている場合、そのファイルに適切にアクセスできない問題が修正されました
 http/file_server: 200や206以外のレスポンスを返却する際に生じるリソースリークが修正されました
 http/file_server: エラーログに色がつくようになりました...</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-10-31 00:00:00 +0000 UTC">October 31, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/10/25〜2021/10/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/31.html></a>
 </article>
@@ -148,7 +148,7 @@ http/file_server: エラーログに色がつくようになりました...</p>
 <h2>2021/08/09〜2021/08/15の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.13.0 Deno v1.13.0がリリースされました。
 大きな変更点として、ネイティブHTTPサーバ(Deno.serveHttp)の安定化やTLS関連の機能の強化、プラグインシステムの廃止やFFIの導入などが行われています。
 また、このリリースに合わせて、magurotunaさんによる日本語の紹介記事も公開されています:
@@ -158,7 +158,7 @@ Deno.serveHttpが安定化されました Deno.upgradeWebSocketで返却され�
 また、assertThrows/assertThrowsAsyncのシグネチャの変更やassertThrowsAsyncの非推奨化も実施されています。
 変更点:
 標準のCrypto/SubtleCryptoを拡張することを目的としてcryptoモジュールが追加されました collections: deepMerge, mapNotNullish, findLastIndex, sumOf, associateBy, 及びsortBy関数が実装されました testing: assertThrowsの戻り値がErrorからvoidに変更されました testing: assertThrowsAsyncの戻り値がPromise&lt;Error>からPromise&lt;void>に変更されました testing: assertRejectsが追加され、代わりにassertThrowsAsyncが非推奨化されました http/file_server: If-Modified-Sinceヘッダに応じて304を返却するようになりました node: assert/strict, path/posix, path/win32, fs/promises, stream/promises, timers/promises, util/types, 及びperf_hooksモジュールが追加されました async: deadlineに渡したPromiseがすでにrejectされていた場合、プロセスがクラッシュする問題が修正されました Deno標準ライブラリ0....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-08-15 00:00:00 +0000 UTC">August 15, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/08/09〜2021/08/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/15.html></a>
 </article>

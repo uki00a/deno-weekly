@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/categories/news.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -74,10 +74,36 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/02/22〜2021/02/28の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno本体の最新情報 今週は特にリリースなどは行われていません。
+来週の3月2日にDeno v1.8.0のリリースが予定されています。
+https://github.com/denoland/deno/blob/v1.7.5/docs/contributing/release_schedule.md
+サードパーティモジュールの最新情報 Dashport - Passport.jsライクな認証モジュール DashportはNode.jsのPassport.jsに影響を受けた認証モジュールです。
+Passport.js同様、ストラテジによって柔軟に拡張することができます。
+現時点で公式でサポートされているWebフレームワークはOakのみです。
+https://github.com/oslabs-beta/dashport
+pngs pngsはpngイメージのエンコード/デコード用のDenoモジュールです。
+WebAssemblyを使用して実装されています。
+https://github.com/denosaurs/pngs
+deno_license_checker - ライセンスヘッダーのチェックを行うツール deno_license_checkerは、各ソースファイルにライセンスヘッダーが正しい形式で記述されていることをチェックするツールです。
+設定ファイル(.licenserc.json)によって、挙動を細かくカスタマイズすることが出来ます。
+https://github.com/kt3k/deno_license_checker
+deno-redis v0.19.0がリリース deno-redis v0.19.0がリリースされました。
+変更点:
+クライアントサイドキャッシングがサポートされました subscribe及びpsubscribeメソッドがジェネリクスメソッドに変更されました https://github.com/denodrivers/redis/releases/tag/v0.19.0</p>
+</div>
+<footer class=entry-footer><span title="2021-02-28 00:00:00 +0000 UTC">February 28, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/02/22〜2021/02/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/28.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/02/15〜2021/02/21の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno本体の最新情報 Deno v1.7.5がリリース Deno v1.7.5がリリースされました。 このリリースではバグ修正などを中心に実施されています。
 変更点:
 btoa()関数とEventクラスがWPTにパスするように修正され、Web標準との互換性が増しました。 deno lspでデータURLが適切に扱われない問題などが修正されました。 Dynamic importsで発生した例外をcatchできるようになりました。 https://github.com/denoland/deno/releases/tag/v1.7.5
@@ -92,7 +118,7 @@ Sinco v1.1.0がリリース Since v1.1.0がリリースされました。
 SincoはDenoで実装されたブラウザのオートメーション・テスティングライブラリです。
 変更点:
 HeadlessBrowser#evaluatePage()が実装され、現在のページ内での関数や式の実行がサポートされました。 Dockerコンテナ内での実行がサポートされました。 https://github....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-02-21 00:00:00 +0000 UTC">February 21, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/15〜2021/02/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/21.html></a>
 </article>
@@ -101,7 +127,7 @@ HeadlessBrowser#evaluatePage()が実装され、現在のページ内での関�
 <h2>2021/02/08〜2021/02/14の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno本体の最新情報 Deno v1.7.3/v1.7.4がリリースされました Deno v1.7.3がリリースされました。
 その後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。
 v1.7.3/v1.7.4の主な変更点:
@@ -118,7 +144,7 @@ https://deno.land/x/slack_web_api@1.0.1
 deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。
 このリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。
 変更点:...</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-02-14 00:00:00 +0000 UTC">February 14, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/08〜2021/02/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/14.html></a>
 </article>
@@ -127,7 +153,7 @@ deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされまし�
 <h2>2021/02/01〜2021/02/07の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno本体の最新情報 Deno v1.7.2がリリース Deno v1.7.2がリリースされました。これに合わせて、deno_std v0.86.0もリリースされています。
 主な変更点:
 deno lspでtextDocument/codeLens及びtextDocument/codeActionが実装された WPTにパスするよう、File及びBlobの実装がリライトされた https://github.com/denoland/deno/releases/tag/v1.7.2 https://github.com/denoland/deno_std/releases/tag/0.86.0 deno_stdのリポジトリがdeno本体のリポジトリから分離された Denoには標準モジュールとしてdeno_stdが存在します。
@@ -151,7 +177,7 @@ Deno Module Visualizer Deno Module Visualizerが公開されました。
 Deno Module Visualizerは、あるモジュールとその依存関係をGraphvizを使って可視化してくれます。
 使用例:
 deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-02-07 00:00:00 +0000 UTC">February 7, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/01〜2021/02/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/07.html></a>
 </article>
@@ -160,7 +186,7 @@ deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
 <h2>2021/01/25〜2021/01/31の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.7.1がリリース Denoのv1.7.1がリリースされました。
 このリリースに合わせて、stdのv0.85.0もリリースされています。
 v1.7.0でリリースされたDeno.emitやDeno.resolveDnsの安定性の向上 deno lspのバグ修正・安定性の向上 std/nodeでprocess.on("exit")がサポートされた https://github.com/denoland/deno/releases/tag/v1.7.1
@@ -170,7 +196,7 @@ Client#queryメソッドが削除され、Client#queryArrayとClient#queryObject
 Harmony - Discord APIライブラリ HarmonyというDiscord APIライブラリが公開されました。
 このライブラリを使うことで、Discordボットの開発などを行うことができます。
 https://github.com/harmonyland/harmony</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-01-31 00:00:00 +0000 UTC">January 31, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/25〜2021/01/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/31.html></a>
 </article>
@@ -179,7 +205,7 @@ https://github.com/harmonyland/harmony</p>
 <h2>2021/01/18〜2021/01/24の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
 以下は変更点の要約です:
 deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
@@ -191,7 +217,7 @@ code-block-writer - JavaScript/TypeScriptコードの生成をサポートする
 設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。
 また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。
 https://github.com/dsherret/code-block-writer</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-01-24 00:00:00 +0000 UTC">January 24, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/18〜2021/01/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/24.html></a>
 </article>
@@ -200,7 +226,7 @@ https://github.com/dsherret/code-block-writer</p>
 <h2>2021/01/11〜2021/01/17の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno in 2020 Denoの公式ブログポストにて、Deno in 2020という記事が公開されました。
 この記事では、2020年中にDenoに行われた変更点がまとめられています。
 また、この記事の公開に合わせて、Deno Surveyというアンケートも実施されています。
@@ -212,7 +238,7 @@ Reactとの統合(useObsidianフック、ObsidianWrapperコンポーネント) O
 Sinco - ブラウザのオートメーション・テストツール SincoはDenoで動作するブラウザのオートメーション・テストツールです。
 現時点ではヘッドレスモードのChromeのみに対応しています。
 https://github.com/drashland/sinco</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-01-17 00:00:00 +0000 UTC">January 17, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/11〜2021/01/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/17.html></a>
 </article>
@@ -221,7 +247,7 @@ https://github.com/drashland/sinco</p>
 <h2>2021/01/04〜2021/01/10の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>vno vnoはDenoでVue.jsを用いた開発を行うためのビルドツールです。
 現時点では以下のような機能が提供されているようです。
 シングルファイルコンポーネントのビルド・バンドル Devサーバ まだ実装されてはいないものの、将来的にはSSRを実装することも検討されているようです。
@@ -230,7 +256,7 @@ markdown, nunjucks, jsxなど様々な形式でページを記述できる。 �
 GitHub Actionsを使用して、毎日、それぞれのフレームワークに対してベンチマークが実行されています。
 現時点では、以下のフレームワークに対するベンチマークが公開されています:
 abc alosaur deno (std/http) dinatra drash express fastify node (httpモジュール) oak servest mandarinets aqua reno </p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-01-10 00:00:00 +0000 UTC">January 10, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/04〜2021/01/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/10.html></a>
 </article>
@@ -239,10 +265,10 @@ abc alosaur deno (std/http) dinatra drash express fastify node (httpモジュー
 <h2>2020/12/28〜2021/01/03の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno@v1.6.3がリリースされた Denoのv1.6.3がリリースされました。
 ハイライト deno lspにtextDocument/renameやcacheコマンドが実装されました。 std@0.83.0も同時にリリースされました。std/node/fsにmkdtempとmkdtempSyncが実装されています。 deno-puppeteerが公開された puppeteerのDenoポートであるdeno-puppeteerが公開されました。</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-01-03 00:00:00 +0000 UTC">January 3, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2020/12/28〜2021/01/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/03.html></a>
 </article>

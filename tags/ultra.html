@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/ultra.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -74,10 +74,30 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/04/18〜2022/04/24の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.21 Deno v1.21がリリースされました。
+個別に記事を書いたので、詳しくはそちらを参照いただければと思います。
+Deno v1.21 deno_std v0.136.0 deno_std v0.136.0がリリースされました。
+testing/snapshot スナップショットテストを行うためのモジュールが追加されました。
+このモジュールではassertSnapshotという関数が公開されており、__snapshots__ディレクトリに保存されたスナップショットと第2引数で指定された値を比較し、マッチしなかった場合、エラーが発生します。
+スナップショットを読み込む必要があるため、利用には--allow-readパーミッションが必要になります。
+import { assertSnapshot } from "https://deno.land/std@0.136.0/testing/snapshot.ts" Deno.test("doSomething", async (t) => { const result = doSomething(); await assertSnapshot(t, result); }); スナップショットを更新したいときは、テストを実行する際に--updateを指定する必要があります。
+この場合、スナップショットを書き込むために、追加で--allow-writeが必要になります。
+# スナップショットは__snapshots__に書き込まれます $ deno test --allow-read --allow-write tests/some_test.js -- --update testing/bdd itに渡すテスト関数がTestContextを受け取るように修正されています。
+import { describe, it } from "https://deno.land/std@0.136.0/testing/bdd.ts" describe("sum", () => { it("should return sum of numbers", (t) => { assertEquals(sum(1, 2, 3), 6, t....</p>
+</div>
+<footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/18〜2022/04/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/24.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/04/04〜2022/04/10の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.20.5 Deno v1.20.5がリリースされました。
 deno lspの新機能 deno lspでTesting APIがサポートされています (https://code.visualstudio.com/api/extension-guides/testing)
 vscodeでTesting: Focus on Test Explorer Viewコマンドを実行すると、テストファイルに含まれるテストケースの一覧を表示できます。
@@ -88,7 +108,7 @@ deno_std v0.134.0 deno_std v0.134.0がリリースされました。
 encoding/csvやnodeモジュールへの機能の追加が行われています。
 encoding/csv CSVStreamが追加されました。
 import { CSVStream } from "https://deno.land/std@0.134.0/encoding/csv/stream.ts"; const file = await Deno.open("path/to/data.csv"); const stream = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new CSVStream()); for await (const record of stream) { console.log(record); } node child_process: ChildProcess.kill()でsignalパラメータがサポートされました。 net: Server....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2022-04-10 00:00:00 +0000 UTC">April 10, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/04/04〜2022/04/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/10.html></a>
 </article>
@@ -97,7 +117,7 @@ import { CSVStream } from "https://deno.land/std@0.134.0/encoding/csv/stream.ts"
 <h2>2021/08/30〜2021/09/05の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Aleph.js v0.3.0-beta.9 Aleph.jsのv0.3.0-beta.9がリリースされました。
 主な変更点として、サーバから返却されるCache-Controlの値がpublic, max-age=0, must-revalidateに変更されています。
 また、このリリースに合わせてWindi CSS向けのプラグインが公開されています (https://github.com/ije/aleph-plugin-windicss)
@@ -111,7 +131,7 @@ Ultra UltraというDeno+ReactベースのWebフレームワークが公開さ�
 まだメジャーリリースはされていませんが、以下のような特徴があるようです。
 ReactDOM.renderToReadableStreamベースのSSR Viteなどと同様のオンデマンドでのコード変換 (SWCやesbuildがベース) SWR向けのキャッシュプロパイダを提供 /examplesディレクトリに使用例があるため、もし興味がありましたら見てみるとよいかもしれません。
 https://github.com/exhibitionist-digital/ultra</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-09-05 00:00:00 +0000 UTC">September 5, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/08/30〜2021/09/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/05.html></a>
 </article>

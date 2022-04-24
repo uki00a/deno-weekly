@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -74,10 +74,29 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/04/12〜2021/04/18の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno本体の最新情報 Deno v1.9.0がリリース Deno v1.9.0がリリースされました。このリリースでは、様々な機能の追加やパフォーマンスチューニングなどが実施されています。
+また、magurotunaさんによるDeno v1.9.0の解説記事が公開されています。
+変更点:
+Deno本体にネイティブのHTTP/2サーバの実装が組み込まれた Deno内部のJavaScriptとRust間のメッセージングの仕組みが改善され、最大で98%程のパフォーマンス向上が実現された BLOB URLやData URLがサポートされた deno lspのimport補完が向上した deno lspでtextDocument/foldingRange及びtextDocument/selectionRangeが実装された --allow-readや--allow-netなどと同様、--allow-envや--allow-runで許可リストを指定できるようになった deno runコマンドで--promptオプションがサポートされ、対話的に権限を与えられるようになった Deno.fstat(Sync)/ftruncate(Sync)が安定化された Deno.Fileにstat(Sync)/truncate(Sync)メソッドが追加された Deno.Buffer/readAll(Sync)/writeAll(Sync)/iter(Sync)が非推奨化された これらのAPIはv2.0で削除される予定です これらのAPIはdeno_std/ioに移動されています Deno.memoryUsage()が実装された(unstable) TypeScriptのuseDefineForClassFieldsオプションが有効化された https://deno.com/blog/v1.9 https://github.com/denoland/deno/releases/tag/v1.9.0 https://zenn.dev/magurotuna/articles/deno-release-note- deno_std v0.93.0がリリース Deno v1.9.0のリリースに合わせて、deno_std v0.93.0がリリースされました。
+変更点:
+io/util: Deno v1.9.0でのDeno.iterの非推奨化に合わせて、io/utilにiterが追加された node/fs: fdatasync/fsync/ftuncate/futimesが実装された https://github.com/denoland/deno_std/pull/850
+サードパーティモジュールなどの最新情報 Oak v7.0.0及びv7.1.0のリリース DenoのWebフレームワークであるOakのv7.0.0及びv7.1.0がリリースされました。
+主な変更点:
+Deno v1.9で実装されたネイティブHTTPサーバがサポートされた Deno Deployのサポート context.stateがapp.stateから深いコピーが行われるようになった ETagサポートが追加された https://github.com/oakserver/oak/commit/2a68eda28cb93bfb099a5f27dfad728f2183e0df https://github.com/oakserver/oak/commit/4ae51e28e04490cc639e887659b8626c05c9b0bb Servest v1....</p>
+</div>
+<footer class=entry-footer><span title="2021-04-18 00:00:00 +0000 UTC">April 18, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/12〜2021/04/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/18.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/03/29〜2021/04/04の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno本体の最新情報 Deno v1.8.3がリリース Deno v1.8.3がリリースされました。このリリースでは、deno lspへの機能の追加やバグ修正などが行われています。
 変更点:
 deno lspでimportの補完がサポートされた deno lspでtextDocument/selectionRangeが実装された WebSocket#closeですでに閉じているコネクションを再び閉じようとしたときに、例外が投げられないように修正された AbortController.abort()が追加された TypeScriptのlibとしてdom.asynciterableが追加された(Denoのいずれかのバージョンで誤って削除されてしまったようです) https://github.com/denoland/deno/releases/tag/v1.8.3
@@ -95,7 +114,7 @@ path-to-regexpでサポートされている形式で、ルーティングを定
 他にも、静的ファイルの配信やJSXのレンダリングなどがサポートされています。
 https://github.com/satyarohith/sift
 deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用することのできるDOM APIの実装を提供しています。...</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-04-04 00:00:00 +0000 UTC">April 4, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/29〜2021/04/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/04.html></a>
 </article>
@@ -104,7 +123,7 @@ deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用
 <h2>2021/03/22〜2021/03/28の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno本体の最新情報 Deno v1.8.2がリリース Deno v1.8.2がリリースされました。
 このリリースでは、バグ修正などを中心に実施されています。
 変更点:
@@ -122,7 +141,7 @@ Service Workerを利用したTypeScriptやSvelteファイルの変換 Deno.watch
 deno-sqlite v2.4.0がリリース deno-sqlite v2.4.0がリリースされました。
 このリリースでは、以下のような変更が加わっています:
 SQLiteのv3.35.0への更新 DB....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-03-28 00:00:00 +0000 UTC">March 28, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/22〜2021/03/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/28.html></a>
 </article>
@@ -131,7 +150,7 @@ SQLiteのv3.35.0への更新 DB....</p>
 <h2>2021/03/08〜2021/03/14の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno本体の最新情報 Deno v1.8.1のリリース Deno v1.8.1がリリースされました。このリリースでは、バグの修正を中心に実施されています。
 主な変更点:
 importsNotUsedAsValuesオプションがswcに渡されるようになりました。 Windows上でdeno compileを実行すると、ターゲットに関わらず常に.exeが拡張子として付与される問題が修正されました。 Worker内でトップレベルawaitが使用されていると、ブロックが発生する問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.8.1
@@ -149,7 +168,7 @@ https://github.com/deno-libs/wizard
 deno-redis v0.20.0 deno-redis v0.20.0がリリースされました。
 変更点:
 CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下のコマンドがサポートされました: CLIENT UNBLOCK CLIENT UNPAUSE CLIENT INFO CLIENT TRACKINGINFO CLIENT LIST https://github....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-03-14 00:00:00 +0000 UTC">March 14, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/08〜2021/03/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/14.html></a>
 </article>
@@ -158,7 +177,7 @@ CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下
 <h2>2021/03/01〜2021/03/07の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno本体の最新情報 Deno v1.8.0がリリースされました Deno v1.8.0がリリースされました。
 magurotunaさんによるDeno v1.8.0のまとめが公開されていますので、よろしければそちらも参照ください。
 主な変更点:
@@ -169,7 +188,7 @@ io/streams: readableStreamFromAsyncIterator()が削除され、代わりにreada
 サードパーティモジュールなどの最新情報 ts_morphがDenoをサポート ts_morphにDenoのサポートが追加されました。
 ts_morphはTypeScriptのコンパイラAPIのラッパライブラリです。
 https://github.com/dsherret/ts-morph/releases/tag/10.0.1 https://deno.land/x/ts_morph@10.0.1 vnoがVue 3をサポート vnoにVue 3のサポートが追加されました。...</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-03-07 00:00:00 +0000 UTC">March 7, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/01〜2021/03/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/07.html></a>
 </article>
@@ -178,7 +197,7 @@ https://github.com/dsherret/ts-morph/releases/tag/10.0.1 https://deno.land/x/ts_
 <h2>2021/02/01〜2021/02/07の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno本体の最新情報 Deno v1.7.2がリリース Deno v1.7.2がリリースされました。これに合わせて、deno_std v0.86.0もリリースされています。
 主な変更点:
 deno lspでtextDocument/codeLens及びtextDocument/codeActionが実装された WPTにパスするよう、File及びBlobの実装がリライトされた https://github.com/denoland/deno/releases/tag/v1.7.2 https://github.com/denoland/deno_std/releases/tag/0.86.0 deno_stdのリポジトリがdeno本体のリポジトリから分離された Denoには標準モジュールとしてdeno_stdが存在します。
@@ -202,7 +221,7 @@ Deno Module Visualizer Deno Module Visualizerが公開されました。
 Deno Module Visualizerは、あるモジュールとその依存関係をGraphvizを使って可視化してくれます。
 使用例:
 deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-02-07 00:00:00 +0000 UTC">February 7, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/01〜2021/02/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/07.html></a>
 </article>

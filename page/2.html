@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.48a18943c2fc15c38a372b8dde1f5e5dc0bc64fa6cb90f5a817d2f8c76b7f3ae.css integrity="sha256-SKGJQ8L8FcOKNyuN3h9eXcC8ZPpsuQ9agX0vjHa3864=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -72,10 +72,49 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/02/21〜2022/02/27の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.19.1 Deno v1.19.1がリリースされました。
+新機能としてDeno.dlopenでstatic変数の参照がサポートされています。
+Deno.ForeignStatic その他にも、deno compileで--import-mapオプションがうまく動かなくなっていた問題が修正されています。
+https://github.com/denoland/deno/releases/tag/v1.19.1
+deno_std v0.127.0 deno_std v0.127.0がリリースされました。
+dotenvの追加 deno-dotenvモジュールがdeno_stdにマージされました。
+マイグレーション手順も公開されているので、もしdeno-dotenvを利用されていた場合は参考にするとよさそうです。
+async/abortableの追加 Promiseをキャンセルできるようにするためのユーティリティが追加されています。
+import { abortable } from "https://deno.land/std@0.127.0/async/abortable.ts"; import { delay } from "https://deno.land/std@0.127.0/async/delay.ts"; const controller = new AbortController(); const promise = delay(5000); setTimeout(() => controller.abort(), 2000); await abortable(promise, controller.signal); // => AbortError node fs: fs.realpath.nativeが追加されました。 tls: tls.createServerの基本的なサポートが追加されました。 その他 http/file_server: serveDir関数が追加されました。 testing/aserts: assertAlmostEqualsが追加されました。 https://github.com/denoland/deno_std/releases/tag/0.127.0
+deno.json(c)でのImport Mapサポートについて deno....</p>
+</div>
+<footer class=entry-footer><span title="2022-02-27 00:00:00 +0000 UTC">February 27, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/02/21〜2022/02/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/27.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/02/14〜2022/02/20の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.19 Deno v1.19がリリースされました。
+--promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。
+const content = await Deno.readTextFile("README.md"); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。
+$ deno run main.ts ⚠️ ️Deno requests read access to "README.md". Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。
+deno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。
+具体的な使い方としては、下記のようにエントリポイントを指定します。
+$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。
+また、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。
+{ "imports": { "https://deno.land/": "./deno.land/", "https://unpkg.com/": "./unpkg.com/" }, "scopes": { "./unpkg.com/": { "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js", "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js" } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。...</p>
+</div>
+<footer class=entry-footer><span title="2022-02-20 00:00:00 +0000 UTC">February 20, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/02/14〜2022/02/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/20.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/02/07〜2022/02/13の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>--promptオプションの挙動をデフォルト化するPRがマージされました Denoで--promptオプションをデフォルトで有効化するPRがマージされました。
 feat: prompt by default (#13650)
 次のDeno v1.19でリリースされる可能性がありそうです。
@@ -96,7 +135,7 @@ chore: remove Deno.umask (#13639)
 背景としては、競合状態によるバグが存在するためのようです。
 詳しくは以下のissueを参照ください。
 Proposal: Remove (unstable) Deno....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2022-02-13 00:00:00 +0000 UTC">February 13, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/07〜2022/02/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/13.html></a>
 </article>
@@ -105,7 +144,7 @@ Proposal: Remove (unstable) Deno....</p>
 <h2>2021/01/31〜2022/02/06の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.18.2 Deno v1.18.2がリリースされました。
 Deno.getUid() Deno.getUid()が実装されました。
 これを使うと、現在のユーザのIDを取得できます。(Windowsだとnullが返されます)
@@ -125,7 +164,7 @@ https://github.com/denoland/deno/pull/13103
 Deno.run()でのIPCサポートについて Deno.run()でIPCをサポートするPRが作成されています。(denoland/deno#13566)
 今のところ、下記のような方法での使用が想定されているようです。
 Deno....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2022-02-06 00:00:00 +0000 UTC">February 6, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/31〜2022/02/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/06.html></a>
 </article>
@@ -134,7 +173,7 @@ Deno....</p>
 <h2>2021/01/24〜2022/01/30の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.18.1 Deno v1.18.1がリリースされました。
 Deno.networkInterfaces() Deno.networkInterfaces()が実装されました。
 利用可能なネットワークインターフェースの一覧を取得できます。
@@ -157,7 +196,7 @@ https://github.com/denoland/deno_std/issues/1658 https://github.com/denoland/den
 また、Deno v2へのロードマップの公開などもまもなく実施予定とのことです。
 https://deno.com/blog/deno-in-2021
 I’m porting tsc to Go SWCの作者であるkdy1氏により、I’m porting tsc to Goという記事が公開されました。...</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2022-01-30 00:00:00 +0000 UTC">January 30, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/24〜2022/01/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/30.html></a>
 </article>
@@ -166,14 +205,14 @@ I’m porting tsc to Go SWCの作者であるkdy1氏により、I’m porting ts
 <h2>2021/01/17〜2022/01/23の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.18.0 Deno v1.18.0がリリースされました。
 設定ファイルの自動読み込みがサポート 今までは、設定ファイルを読み込むためには--configの指定が必要でした。
 $ deno run --config ./deno.json ./main.ts 今後は、--configが指定されなかった場合、deno.jsonまたはdeno.jsoncという名前の設定ファイルを自動で読み込まれるようになります。
 Deno.testのsub-steps APIが安定化 Deno.testでテストケースのグループ化を行うためのsub-steps APIが安定化されました。
 今後は--unstableを指定しなくても利用できます。
 Deno.test("nested test case", async (t) => { const success = await t.step("step 1", async (t) => { const success = await t.step("step 1-1", () => { throw new Error("Failed!"); }); if (!success) throw new Error("Failed!"); await t.step("step 1-2", () => {}); }); if (success) throw new Error("Failed!"); }); Web Cryptography APIの実装が完了 このリリースでは、下記の変更が実施されています。...</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2022-01-23 00:00:00 +0000 UTC">January 23, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/17〜2022/01/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/23.html></a>
 </article>
@@ -182,7 +221,7 @@ Deno.test("nested test case", async (t) => { const success = await t.step("step 
 <h2>2021/01/10〜2022/01/16の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.17.3 Deno v1.17.3がリリースされました。
 このリリースでは、バグ修正を中心に実施されています。
 変更点:
@@ -192,7 +231,7 @@ deno bundleやdeno compileの--outputオプションにディレクトリを指�
 deno_std v0.121.0 deno_std v0.121.0がリリースされました。
 変更点:
 crypto: MD4がサポートされました。 http/file_server: --quietオプションによりログ出力を無効化できるようになりました。 node: zlibパッケージが実装されました。 node/fs: fs.write()とfs.writeSync()が実装されました。 node/http: ClientRequest#abortが実装されました。また、'response'イベントが発火されるように修正されました。 node/url: url....</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2022-01-16 00:00:00 +0000 UTC">January 16, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/10〜2022/01/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/16.html></a>
 </article>
@@ -201,7 +240,7 @@ crypto: MD4がサポートされました。 http/file_server: --quietオプシ�
 <h2>2021/01/03〜2022/01/09の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.17.2 Deno v1.17.2がリリースされました。
 バグ修正などが中心に行われています。
 主な変更点:
@@ -222,7 +261,7 @@ fs/expand_glob expandGlob()のextendedオプションのデフォルト値がtru
 testing/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。
 https://github.com/denoland/deno_std/releases/tag/0.120.0
 設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)...</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2022-01-09 00:00:00 +0000 UTC">January 9, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/03〜2022/01/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/09.html></a>
 </article>
@@ -231,7 +270,7 @@ https://github.com/denoland/deno_std/releases/tag/0.120.0
 <h2>2021/12/27〜2022/01/02の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>ShadowRealmサポートについて DenoでのShadowRealmのサポートに向けて、deno_coreクレートでレルムの作成をサポートすること提案されています。
 その準備として、まずはdeno_coreクレートでリファクタリングなどを進めることが提案されています。
 https://github.com/denoland/deno/issues/13239 現在の進捗については上記issueから確認できます。
@@ -243,7 +282,7 @@ https://github.com/Tricked-dev/diplo
 deno_python DenoからPythonコードを実行するためのモジュール
 FFI(Deno.dlopen)を利用してPythonのC APIを実行することで実現されているようです。
 https://github.com/denosaurs/deno_python</p>
-</section>
+</div>
 <footer class=entry-footer><span title="2022-01-02 00:00:00 +0000 UTC">January 2, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/12/27〜2022/01/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/02.html></a>
 </article>
@@ -252,7 +291,7 @@ https://github.com/denosaurs/deno_python</p>
 <h2>2021/12/20〜2021/12/26の最新情報
 </h2>
 </header>
-<section class=entry-content>
+<div class=entry-content>
 <p>Deno v1.17.1 Deno v1.17.1がリリースされました。
 以下の新機能が追加されています。
 deno lspでのテストのデバッグ用コードレンズ deno replでのImport Assertionsのサポート
@@ -269,48 +308,9 @@ Denoでネットワークインターフェースを取得するためのopが�
 Get all the network interfaces in Deno 以下のPRではopのみが実装されており、JavaScript APIはまだ実装されていません。(今のところ、利用するためには--allow-envの指定が必要で、JavaScript APIの名前はDeno.networkInterfacesになりそうです。)
 feat(ext/net): add op_network_interfaces リリースされるバージョンはまだ未定ですが、早ければ次のv1.18で入る可能性がありそうです。
 Get all the network interfaces in Deno feat(ext/net): add op_network_interfaces </p>
-</section>
+</div>
 <footer class=entry-footer><span title="2021-12-26 00:00:00 +0000 UTC">December 26, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/12/20〜2021/12/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/26.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/12/13〜2021/12/19の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno v1.17.0 Deno v1.17.0がリリースされました。
---no-check=remoteのサポート リモートモジュール(http:またはhttps:で始まるモジュール)の型チェックのみが無効化されます。
-$ deno run --no-check=remote mod.ts Import assertionsのサポート Import assertionsが実装されました。
-現在はJSON modulesのみがサポートされています。
-import modules from "./modules.json" assert { type: "json" }; Object.keys(modules); Deno.testのシグネチャの向上 Deno v1.16.4までは下記の形式のみがサポートされていました。
-Deno.test(name: string, fn: (t: Deno.TestContext) => void | Promise&lt;void>): void Deno.test(t: Deno.TestDefinition): void v1.17で以下のオーバーロードが追加され、使い勝手が向上しました。
-// オプションを第2引数、テスト関数を第3引数で指定 Deno.test("foo", { permissions: { read: false } }, () => { Deno.cwd(); }); // オプションを第1引数、テスト関数を第2引数で指定 Deno.test({ name: "bar", ignore: Deno.build.os === "windows", }, async () => { // }); Deno....</p>
-</section>
-<footer class=entry-footer><span title="2021-12-19 00:00:00 +0000 UTC">December 19, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/12/13〜2021/12/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/19.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/12/06〜2021/12/12の最新情報
-</h2>
-</header>
-<section class=entry-content>
-<p>Deno.spawnDenoを追加する提案 以下のissueでDeno.spawnDenoというAPIの追加が提案されています
-https://github.com/denoland/deno/issues/13041 背景として、まずdenoland/deno#11016でDeno.runとは異なる新しいサブプロセスAPIが提案されました。
-このissueをベースに以下のようなAPIを追加するPRが作成されていますが、まだマージはされていないようです。
-// 高レベルAPI const cmd = Deno.Command(executable, { args }); const status = await cmd.status(); // 低レベルAPI const cmd = Deno.Command(executable, { args }); const child = cmd.spawn({ stdin: "piped" }); const writer = child.writer.getWriter(); await writer.write(buffer); この変更は今のところv1.17のマイルストーンに入っているため、次のリリースに含まれる可能性がありそうです。
-そして、今回提案されているDeno.spawnDenoは、Node.jsにおけるchild_process.forkに相当する機能のようで、上記のAPIをベースにサンドボックス化されたDenoのサブプロセスを起動する機能のようです。
-起動する際にWorkerのdeno.permissionsと同様にパーミッションなどの指定をサポートすることが想定されています。
-またこの提案に合わせて --no-permission-requestオプションの追加も提案されています。
-このオプションが指定された際はDeno.permissions.requestを無効化し、Deno.spawnDeno経由で起動されたプロセスがパーミッションのエスカレーションをできないようにすることを目的としているようです。
-https://github.com/denoland/deno/issues/13041
-サブステップAPIの安定化について Deno v1.15で導入されたサブステップAPIの安定化が提案されています。
-Deno v1.18での安定化が検討されているようです。
-Deno.test("nested test case", async (t) => { const success = await t.step("step 1", async (t) => { const success = await t....</p>
-</section>
-<footer class=entry-footer><span title="2021-12-12 00:00:00 +0000 UTC">December 12, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/12/06〜2021/12/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/12.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
