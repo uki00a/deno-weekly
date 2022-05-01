@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Netlify | 週刊Deno</title>
+<title>React | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/netlify.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/react.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.ec8da366ca2fb647537ccb7a8f6fa5b4e9cd3c7a0d3171dd2d3baad1e49c8bfc.css integrity="sha256-7I2jZsovtkdTfMt6j2+ltOnNPHoNMXHdLTuq0eSci/w=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/netlify/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/react/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -25,12 +25,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Netlify">
+<meta property="og:title" content="React">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/netlify.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/react.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Netlify">
+<meta name=twitter:title content="React">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -71,28 +71,33 @@
 <main class=main>
 <header class=page-header>
 <h1>
-Netlify
+React
 </h1>
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>2021/04/18〜2022/04/24の最新情報
+<h2>2021/04/25〜2022/05/01の最新情報
 </h2>
 </header>
 <div class=entry-content>
-<p>Deno v1.21 Deno v1.21がリリースされました。
-個別に記事を書いたので、詳しくはそちらを参照いただければと思います。
-Deno v1.21 deno_std v0.136.0 deno_std v0.136.0がリリースされました。
-testing/snapshot スナップショットテストを行うためのモジュールが追加されました。
-このモジュールではassertSnapshotという関数が公開されており、__snapshots__ディレクトリに保存されたスナップショットと第2引数で指定された値を比較し、マッチしなかった場合、エラーが発生します。
-スナップショットを読み込む必要があるため、利用には--allow-readパーミッションが必要になります。
-import { assertSnapshot } from "https://deno.land/std@0.136.0/testing/snapshot.ts" Deno.test("doSomething", async (t) => { const result = doSomething(); await assertSnapshot(t, result); }); スナップショットを更新したいときは、テストを実行する際に--updateを指定する必要があります。
-この場合、スナップショットを書き込むために、追加で--allow-writeが必要になります。
-# スナップショットは__snapshots__に書き込まれます $ deno test --allow-read --allow-write tests/some_test.js -- --update testing/bdd itに渡すテスト関数がTestContextを受け取るように修正されています。
-import { describe, it } from "https://deno.land/std@0.136.0/testing/bdd.ts" describe("sum", () => { it("should return sum of numbers", (t) => { assertEquals(sum(1, 2, 3), 6, t....</p>
+<p>Deno v1.21.1 Deno v1.21.1がリリースされました。
+ネイティブHTTPサーバ(Deno.serveHttp)の変更点 Deno v1.20でレスポンスボディの自動的な圧縮がサポートされました。
+このリリースでは、レスポンスボディにReadableStreamが指定された際の圧縮がサポートされています。
+その他にもいくつかのパフォーマンス改善が実施されています。
+deno taskで引数に--を指定した際の挙動が変更 例えば、deno.jsonで次のようなタスクが定義されていたとします。
+{ "tasks": { "test": "deno test --allow-read" } } 例えば、下記のように--を指定してタスクを実行したとします。
+$ deno task test -- some-test.js この場合、v1.21.0時点では次のようにコマンドが実行されていました。
+$ deno test --allow-read "some-test.js" 今回リリースされたv1.21.1では、次のように変更されています。
+$ deno test --allow-read "--" "some-test.js" Deno.inspectの変更点 strAbbreviateSizeオプションが追加されました。 文字列がこのオプションで指定された長さを超えると省略して表示されます。 デフォルト値は100です。 compact: falseが指定された際であっても、空のIterableオブジェクトはコンパクト化して表示するように修正されています。 deno benchの変更点 deno benchで2つ以上のファイルを実行した際に、前のファイルのベンチマーク結果が次のファイルに影響を与えてしまう問題が修正されました。
+この問題は、例えば、1つ目のベンチマークファイルでグルーピング(groupオプション)を利用しているが、2つ目のベンチマークファイルではグルーピングを利用していないようなケースで発生していたようです。
+その他にも、Exit sanitizerによるオーバーヘッドの削減が実施されています。
+deno testの変更点 Deno v1.21でテストケースの実行時にログに出力された内容がキャプチャされるように改善されました。
+このリリースでは、Deno.spawn()などでstdoutやstderrオプションに"inherit"を指定した際に、サブプロセスの出力内容もキャプチャされるように改善されています。
+他にも、Workerの出力内容もキャプチャするように改善されています。
+その他の変更点 Deno.spawn(Sync)でstdinなどのオプションに"piped"を指定した際にエラーを発生させるよう修正されました。 Worker.terminateが呼び出し元のスレッドをブロックしないように修正されました (https://github.com/denoland/deno/issues/13705) https://github....</p>
 </div>
-<footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/18〜2022/04/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/24.html></a>
+<footer class=entry-footer><span title="2022-05-01 00:00:00 +0000 UTC">May 1, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/25〜2022/05/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/01.html></a>
 </article>
 </main>
 <footer class=footer>
