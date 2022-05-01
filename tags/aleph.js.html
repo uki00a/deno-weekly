@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/aleph.js.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.ec8da366ca2fb647537ccb7a8f6fa5b4e9cd3c7a0d3171dd2d3baad1e49c8bfc.css integrity="sha256-7I2jZsovtkdTfMt6j2+ltOnNPHoNMXHdLTuq0eSci/w=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -70,8 +70,35 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>Aleph.js</h1>
+<h1>
+Aleph.js
+</h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/04/25〜2022/05/01の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.21.1 Deno v1.21.1がリリースされました。
+ネイティブHTTPサーバ(Deno.serveHttp)の変更点 Deno v1.20でレスポンスボディの自動的な圧縮がサポートされました。
+このリリースでは、レスポンスボディにReadableStreamが指定された際の圧縮がサポートされています。
+その他にもいくつかのパフォーマンス改善が実施されています。
+deno taskで引数に--を指定した際の挙動が変更 例えば、deno.jsonで次のようなタスクが定義されていたとします。
+{ "tasks": { "test": "deno test --allow-read" } } 例えば、下記のように--を指定してタスクを実行したとします。
+$ deno task test -- some-test.js この場合、v1.21.0時点では次のようにコマンドが実行されていました。
+$ deno test --allow-read "some-test.js" 今回リリースされたv1.21.1では、次のように変更されています。
+$ deno test --allow-read "--" "some-test.js" Deno.inspectの変更点 strAbbreviateSizeオプションが追加されました。 文字列がこのオプションで指定された長さを超えると省略して表示されます。 デフォルト値は100です。 compact: falseが指定された際であっても、空のIterableオブジェクトはコンパクト化して表示するように修正されています。 deno benchの変更点 deno benchで2つ以上のファイルを実行した際に、前のファイルのベンチマーク結果が次のファイルに影響を与えてしまう問題が修正されました。
+この問題は、例えば、1つ目のベンチマークファイルでグルーピング(groupオプション)を利用しているが、2つ目のベンチマークファイルではグルーピングを利用していないようなケースで発生していたようです。
+その他にも、Exit sanitizerによるオーバーヘッドの削減が実施されています。
+deno testの変更点 Deno v1.21でテストケースの実行時にログに出力された内容がキャプチャされるように改善されました。
+このリリースでは、Deno.spawn()などでstdoutやstderrオプションに"inherit"を指定した際に、サブプロセスの出力内容もキャプチャされるように改善されています。
+他にも、Workerの出力内容もキャプチャするように改善されています。
+その他の変更点 Deno.spawn(Sync)でstdinなどのオプションに"piped"を指定した際にエラーを発生させるよう修正されました。 Worker.terminateが呼び出し元のスレッドをブロックしないように修正されました (https://github.com/denoland/deno/issues/13705) https://github....</p>
+</div>
+<footer class=entry-footer><span title="2022-05-01 00:00:00 +0000 UTC">May 1, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/25〜2022/05/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/01.html></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>2021/04/18〜2022/04/24の最新情報

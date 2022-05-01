@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.ec8da366ca2fb647537ccb7a8f6fa5b4e9cd3c7a0d3171dd2d3baad1e49c8bfc.css integrity="sha256-7I2jZsovtkdTfMt6j2+ltOnNPHoNMXHdLTuq0eSci/w=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -70,8 +70,31 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>deno</h1>
+<h1>
+deno
+</h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/01/18〜2021/01/24の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
+以下は変更点の要約です:
+deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
+Deno 1.7.0 がリリースされたので新機能や変更点の紹介 deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
+内部的にはRollupのブラウザビルドが利用されています。
+CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。
+https://github.com/cmorten/deno-rollup
+code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。
+設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。
+また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。
+https://github.com/dsherret/code-block-writer</p>
+</div>
+<footer class=entry-footer><span title="2021-01-24 00:00:00 +0000 UTC">January 24, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/01/18〜2021/01/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/24.html></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>2020/12/28〜2021/01/03の最新情報

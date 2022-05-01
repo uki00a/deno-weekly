@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.b4e19c453811e60acfec1f00c15ac2be1c53f6ab90187e684358ce7faaf48bab.css integrity="sha256-tOGcRTgR5grP7B8AwVrCvhxT9quQGH5oQ1jOf6r0i6s=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.ec8da366ca2fb647537ccb7a8f6fa5b4e9cd3c7a0d3171dd2d3baad1e49c8bfc.css integrity="sha256-7I2jZsovtkdTfMt6j2+ltOnNPHoNMXHdLTuq0eSci/w=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -70,6 +70,31 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/05/24〜2021/05/30の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Sinco v2.0.0のリリース ブラウザのオートメーション・テスト用モジュールであるSincoのv2.0.0がリリースされました。
+変更点:
+Firefoxがサポートされました。 使用するブラウザの実行可能ファイルへのパスを指定できるようになりました(binaryPathオプション) https://github.com/drashland/sinco/releases/tag/v2.0.0
+Velociraptor v1.0.0のリリース Velociraptor v1.0.0がリリースされました。
+変更点:
+Git フックのサポートが追加されました。 vr upgradeコマンドでアップグレードできるようになりました。 Windows環境ではデフォルトでPowerShellが使用されるようになりました。 https://github.com/jurassiscripts/velociraptor/releases/tag/1.0.0
+zeno.zsh fzfを使用した入力補完やスニペット展開などの機能を提供するzshプラグインが公開されました。
+DenoとTypeScriptで実装されているようです。
+詳しくは、Deno + TypeScriptでzshプラグインを実装して最高になったの記事で解説されています。
+https://github.com/yuki-yano/zeno.zsh https://zenn.dev/yano/articles/zsh_plugin_from_deno Cliffy v0.19.0のリリース DenoのCLIフレームワークであるCliffy v0.19.0がリリースされました。
+変更点:
+keycodeモジュールでKeyEvent型がKeyCodeにリネームされました。 commandモジュールにEnumTypeが追加されました。 commandモジュールで、upgradeコマンドの実装を容易にするためのUpgradeCommandクラスが追加されました。 commandモジュールでinteger型がサポートされました。 keypressモジュールが追加されました。 https://github.com/c4spar/deno-cliffy/releases/tag/v0.19.0
+deploy_dir deploy_dirという静的なWebサイトをDeno DeployへデプロイするためのCLIツールが公開されました。
+指定されたディレクトリの内容を読み込み、Deno Deployへ公開できる形式へパッケージングしてくれます。
+https://github.com/kt3k/deploy_dir</p>
+</div>
+<footer class=entry-footer><span title="2021-05-30 00:00:00 +0000 UTC">May 30, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/05/24〜2021/05/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/30.html></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>2021/05/17〜2021/05/23の最新情報
@@ -262,31 +287,6 @@ SQLiteのv3.35.0への更新 DB....</p>
 </div>
 <footer class=entry-footer><span title="2021-03-28 00:00:00 +0000 UTC">March 28, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/22〜2021/03/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/28.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/03/15〜2021/03/21の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>サードパーティモジュールなどの最新情報 luath - Vite/WMRライクなフロントエンドビルドツール luathというフロントエンド開発用のビルドツールが公開されました。
-ViteやWMRに影響を受けており、以下のような機能が提供されています:
-HMR及びオンデマンドビルドなどの機能を提供するdevサーバ Rollup互換のプラグインシステム PostCSSやCSS Modulesのサポート https://github.com/cmorten/luath
-estest - DenoやNode.jsなどで動作するテストフレームワーク estestはDenoやNode.jsなどのES Modulesをサポートする環境で動作するテストフレームワークです。
-将来的にはブラウザもサポートされる予定のようです。
-https://github.com/mikeal/estest
-Servest v1.2.0 DenoのHTTPモジュールであるServestのv1.2.0がリリースされました。
-このリリースでは、Router.options()が実装されています。
-https://github.com/keroxp/servest/releases/tag/v1.2.0
-deno-bin deno-binという、npm/npx経由でDenoを実行するためのツールが公開されました。
-Node.jsプロジェクトにおいてdeno lintやdeno fmtなどを利用する用途などが想定されているようです。
-https://github.com/kt3k/deno-bin
-その他の情報 第10回 Deno勉強会@オンライン 2021/04/03(土)に、第10回 Deno勉強会が開催されます。
-詳しくは以下のページを参照ください:
-https://deno-ja.connpass.com/event/208138/</p>
-</div>
-<footer class=entry-footer><span title="2021-03-21 00:00:00 +0000 UTC">March 21, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/03/15〜2021/03/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/21.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

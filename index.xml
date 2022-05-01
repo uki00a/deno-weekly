@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 24 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/04/18〜2022/04/24の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/04/24.html</link><pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/04/24.html</guid><description>Deno v1.21 Deno v1.21がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 01 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/04/25〜2022/05/01の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/01.html</link><pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/01.html</guid><description>Deno v1.21.1 Deno v1.21.1がリリースされました。
+ネイティブHTTPサーバ(Deno.serveHttp)の変更点 Deno v1.20でレスポンスボディの自動的な圧縮がサポートされました。
+このリリースでは、レスポンスボディにReadableStreamが指定された際の圧縮がサポートされています。
+その他にもいくつかのパフォーマンス改善が実施されています。
+deno taskで引数に--を指定した際の挙動が変更 例えば、deno.jsonで次のようなタスクが定義されていたとします。
+{ &amp;#34;tasks&amp;#34;: { &amp;#34;test&amp;#34;: &amp;#34;deno test --allow-read&amp;#34; } } 例えば、下記のように--を指定してタスクを実行したとします。
+$ deno task test -- some-test.js この場合、v1.21.0時点では次のようにコマンドが実行されていました。
+$ deno test --allow-read &amp;#34;some-test.js&amp;#34; 今回リリースされたv1.21.1では、次のように変更されています。
+$ deno test --allow-read &amp;#34;--&amp;#34; &amp;#34;some-test.js&amp;#34; Deno.inspectの変更点 strAbbreviateSizeオプションが追加されました。 文字列がこのオプションで指定された長さを超えると省略して表示されます。 デフォルト値は100です。 compact: falseが指定された際であっても、空のIterableオブジェクトはコンパクト化して表示するように修正されています。 deno benchの変更点 deno benchで2つ以上のファイルを実行した際に、前のファイルのベンチマーク結果が次のファイルに影響を与えてしまう問題が修正されました。
+この問題は、例えば、1つ目のベンチマークファイルでグルーピング(groupオプション)を利用しているが、2つ目のベンチマークファイルではグルーピングを利用していないようなケースで発生していたようです。
+その他にも、Exit sanitizerによるオーバーヘッドの削減が実施されています。
+deno testの変更点 Deno v1.21でテストケースの実行時にログに出力された内容がキャプチャされるように改善されました。
+このリリースでは、Deno.spawn()などでstdoutやstderrオプションに&amp;quot;inherit&amp;quot;を指定した際に、サブプロセスの出力内容もキャプチャされるように改善されています。
+他にも、Workerの出力内容もキャプチャするように改善されています。
+その他の変更点 Deno.spawn(Sync)でstdinなどのオプションに&amp;quot;piped&amp;quot;を指定した際にエラーを発生させるよう修正されました。 Worker.terminateが呼び出し元のスレッドをブロックしないように修正されました (https://github.com/denoland/deno/issues/13705) https://github.</description></item><item><title>2021/04/18〜2022/04/24の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/04/24.html</link><pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/04/24.html</guid><description>Deno v1.21 Deno v1.21がリリースされました。
 個別に記事を書いたので、詳しくはそちらを参照いただければと思います。
 Deno v1.21 deno_std v0.136.0 deno_std v0.136.0がリリースされました。
 testing/snapshot スナップショットテストを行うためのモジュールが追加されました。
