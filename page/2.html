@@ -72,6 +72,30 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/03/07〜2022/03/13の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.19.3 Deno v1.19.3がリリースされました。
+deno test --docでtypescriptやjavascriptタイプのコードブロックをチェックできるようになりました。
+```ts let str: string = 0; ``` だけでなく
+```typescript let str: string = 0; ``` のようにコードブロックを記述した際もテストが行われるようになります。
+また、パフォーマンスチューニングも実施されており、atobとbtoaのパフォーマンスが最大で20倍まで高速化されています。
+その他には古いバージョンのglibcを搭載するプラットフォームのサポートが行われています。
+https://github.com/denoland/deno/releases/tag/v1.19.3
+deno_std v0.129.0 deno_std v0.129.0がリリースされました。
+streams deno_stdのWeb streams APIへの移行の一環として、streams/bufferモジュールが追加されました。
+現時点では、以下のクラスが提供されています:
+Buffer (std/io/bufferのBufferクラスのstreams APIバージョン) LimitedTransformStream (std/io/readersのLimitedReaderのstreams APIバージョン) LimitedBytesTransformStream (std/io/readersのLimitedReaderのstreams APIバージョン) また、streams/delimiterモジュールにTextDelimiterStreamが追加されています。
+testing/asserts assertStrictEquals()のシグネチャがAssertion Functionsを使用した形式に変更されています。
+具体的には下記コードが動くようになります:
+const a = { name: "foo" }; const b = a as unknown; assertStrictEquals(b, a); b.name; // => OK node 大きな変更点として、cryptoパッケージにcrypto....</p>
+</div>
+<footer class=entry-footer><span title="2022-03-13 00:00:00 +0000 UTC">March 13, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/07〜2022/03/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/13.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/02/28〜2022/03/06の最新情報
 </h2>
 </header>
@@ -285,27 +309,6 @@ https://github.com/denoland/deno_std/releases/tag/0.120.0
 </div>
 <footer class=entry-footer><span title="2022-01-09 00:00:00 +0000 UTC">January 9, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/03〜2022/01/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/09.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/12/27〜2022/01/02の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>ShadowRealmサポートについて DenoでのShadowRealmのサポートに向けて、deno_coreクレートでレルムの作成をサポートすること提案されています。
-その準備として、まずはdeno_coreクレートでリファクタリングなどを進めることが提案されています。
-https://github.com/denoland/deno/issues/13239 現在の進捗については上記issueから確認できます。
-https://github.com/denoland/deno/issues/13239 https://github.com/tc39/proposal-shadowrealm Je Xia氏とDivy Srivastava氏がDeno Land Inc.にジョイン Je Xia氏(esm.shやAleph.jsの作者)と Divy Srivastava氏(Elsaやautopilot-denoなどの作者)がDeno Land Inc.にジョインしたようです。
-現在、Je Xia氏は様々なサーバレス環境で動作させるためにAleph.jsのリライトなどを実施されているようです。
-https://twitter.com/jexia_/status/1473582071238987777 https://twitter.com/jexia_/status/1473131210776150017 https://twitter.com/undefined_void/status/1476975389603811328 https://twitter.com/jexia_/status/1473582071238987777 Diplo Rustで書かれたDenoのスクリプトランナー兼パッケージマネージャ
-diplo.tomlという設定ファイルでタスクの定義や依存関係の管理などを行うようです。
-https://github.com/Tricked-dev/diplo
-deno_python DenoからPythonコードを実行するためのモジュール
-FFI(Deno.dlopen)を利用してPythonのC APIを実行することで実現されているようです。
-https://github.com/denosaurs/deno_python</p>
-</div>
-<footer class=entry-footer><span title="2022-01-02 00:00:00 +0000 UTC">January 2, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/12/27〜2022/01/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/02.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
