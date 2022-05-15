@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno.html</link><description>Recent content in deno on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 08 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/05/02〜2022/05/08の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/08.html</link><pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/08.html</guid><description>Deno v1.21.2 Deno v1.21.2がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno.html</link><description>Recent content in deno on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 15 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/05/09〜2022/05/15の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/15.html</link><pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/15.html</guid><description>Deno v1.21.3 Deno v1.21.3がリリースされました。
+deno task deno task &amp;lt;タスク名&amp;gt;の&amp;lt;タスク名&amp;gt;の直後に--から始まるオプションを指定できない問題が修正されました。
+その他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。
+その他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。
+https://github.com/denoland/deno/releases/tag/v1.21.3
+deno_std v0.139.0 deno_std v0.139.0がリリースされました。
+encoding/jsonc deno_stdにJSONCパーサが実装されました。
+import { parse } from &amp;#34;https://deno.land/std@0.139.0/encoding/jsonc.ts&amp;#34;; console.log(parse(`{ // hello &amp;#34;foo&amp;#34;: 1 }`)); // =&amp;gt; { foo: 1 } node dnsパッケージで以下のAPIが実装されました。
+dns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI また、netパッケージでUnixドメインソケットがサポートされています。
+testing/snapshot assertSnapshotにオプションを渡せるようになりました。
+例えば、dirオプションによってスナップショットの保存先ディレクトリなどをカスタマイズできます。
+await assertSnapshot(t, actual, { dir: &amp;#34;testdata&amp;#34; }); https://github.com/denoland/deno_std/releases/tag/0.139.0
+--no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。
+feat: add &amp;ndash;no-config flag (#14555)
+$ deno run --no-config main.</description></item><item><title>2021/05/02〜2022/05/08の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/08.html</link><pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/08.html</guid><description>Deno v1.21.2 Deno v1.21.2がリリースされました。
 変更点:
 lib.dom.extras.d.tsが追加されました。 lib.dom.d.tsを読み込んでもURLPatternが利用できない(型エラーが発生する)問題を解消するための修正です。 このファイルには、URLPatternに関する型定義が含まれています。 lib.dom.d.tsを読み込むと自動でこのファイルも読み込まれます。 deno test --coverageによる計測対象から.snapファイルが除外されるように修正されました。 (deno_stdでスナップショットテスティングがサポートされたため) HTTPサーバ(Deno.serveHttp)でレスポンスボディにReadableStreamを指定した際に、対象のリソースが自動で閉じられない問題が修正されました。 deno taskでタスクの引数に-を含むオプションを指定した際に、そのオプションが適切に渡されない問題が修正されました。 deno testやdeno benchの引数にfile:形式のURLを指定すると、プロセスがパニックする問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.21.2
 deno_std v0.138.0 deno_std v0.138.0がリリースされました。

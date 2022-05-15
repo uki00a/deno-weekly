@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>news | 週刊Deno</title>
+<title>Deno Deploy | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/categories/news.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno-deploy.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.ec8da366ca2fb647537ccb7a8f6fa5b4e9cd3c7a0d3171dd2d3baad1e49c8bfc.css integrity="sha256-7I2jZsovtkdTfMt6j2+ltOnNPHoNMXHdLTuq0eSci/w=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/categories/news/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/deno-deploy/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -25,12 +25,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="news">
+<meta property="og:title" content="Deno Deploy">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/categories/news.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/deno-deploy.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="news">
+<meta name=twitter:title content="Deno Deploy">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -71,42 +71,39 @@
 <main class=main>
 <header class=page-header>
 <h1>
-news
+Deno Deploy
 </h1>
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>2021/01/04〜2021/01/10の最新情報
+<h2>2021/03/29〜2021/04/04の最新情報
 </h2>
 </header>
 <div class=entry-content>
-<p>vno vnoはDenoでVue.jsを用いた開発を行うためのビルドツールです。
-現時点では以下のような機能が提供されているようです。
-シングルファイルコンポーネントのビルド・バンドル Devサーバ まだ実装されてはいないものの、将来的にはSSRを実装することも検討されているようです。
-Lume LumeはDenoで実装されたシンプルなスタティックサイトジェネレータです。
-markdown, nunjucks, jsxなど様々な形式でページを記述できる。 プラグインシステムにより拡張が可能。 bench - DenoとNode.jsフレームワークのベンチマーク benchは、Deno及びNode.jsフレームワークのベンチマークを公開しています。
-GitHub Actionsを使用して、毎日、それぞれのフレームワークに対してベンチマークが実行されています。
-現時点では、以下のフレームワークに対するベンチマークが公開されています:
-abc alosaur deno (std/http) dinatra drash express fastify node (httpモジュール) oak servest mandarinets aqua reno </p>
+<p>Deno本体の最新情報 Deno v1.8.3がリリース Deno v1.8.3がリリースされました。このリリースでは、deno lspへの機能の追加やバグ修正などが行われています。
+変更点:
+deno lspでimportの補完がサポートされた deno lspでtextDocument/selectionRangeが実装された WebSocket#closeですでに閉じているコネクションを再び閉じようとしたときに、例外が投げられないように修正された AbortController.abort()が追加された TypeScriptのlibとしてdom.asynciterableが追加された(Denoのいずれかのバージョンで誤って削除されてしまったようです) https://github.com/denoland/deno/releases/tag/v1.8.3
+deno_std v0.92.0がリリース deno_stdのv0.92.0がリリースされました。
+変更点:
+io/bufio: Deno Deployに対応した node/fs: symlinkとsymlinkSyncが実装された node/util: format関数が実装された io: io/buffer及びio/utilが追加された (Deno v2.0に向けて、Deno.Buffer/readAll/readAllSync/writeAll/writeAllSyncをDeno名前空間からstdへ移行することが目的のようです) https://github.com/denoland/deno_std/releases/tag/0.92.0
+Deno Deployが公開された Deno Deployが公開されました。
+Deno DeployはCDN Edge上でTypeScriptやWebAssemblyなどを動作させることができるサービスです。Cloudflare WorkersのAPIと互換性があります。
+https://deno.com/deploy/docs サードパーティモジュールなどの最新情報 Snel - DenoでSvelteアプリを開発するためのツール SnelはDenoでSvelteアプリを開発するためのツール/フレームワークです。
+.svelteファイルをJavaScriptファイルへコンパイルしたり、HMRを搭載したdevサーバなどが提供されています。
+将来的にはSSRやSSGなどの機能も提供される予定のようです。
+https://github.com/crewdevio/Snel
+Sift - Deno Deployのルーティングライブラリ SiftはDeno Deployのルーティングライブラリです。
+path-to-regexpでサポートされている形式で、ルーティングを定義することができます。
+他にも、静的ファイルの配信やJSXのレンダリングなどがサポートされています。
+https://github.com/satyarohith/sift
+deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用することのできるDOM APIの実装を提供しています。...</p>
 </div>
-<footer class=entry-footer><span title="2021-01-10 00:00:00 +0000 UTC">January 10, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/04〜2021/01/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/10.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2020/12/28〜2021/01/03の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno@v1.6.3がリリースされた Denoのv1.6.3がリリースされました。
-ハイライト deno lspにtextDocument/renameやcacheコマンドが実装されました。 std@0.83.0も同時にリリースされました。std/node/fsにmkdtempとmkdtempSyncが実装されています。 deno-puppeteerが公開された puppeteerのDenoポートであるdeno-puppeteerが公開されました。</p>
-</div>
-<footer class=entry-footer><span title="2021-01-03 00:00:00 +0000 UTC">January 3, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2020/12/28〜2021/01/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/03.html></a>
+<footer class=entry-footer><span title="2021-04-04 00:00:00 +0000 UTC">April 4, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/29〜2021/04/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/04.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
-<a class=prev href=https://uki00a.github.io/deno-weekly/categories/news/page/7.html>« Prev</a>
+<a class=prev href=https://uki00a.github.io/deno-weekly/tags/deno-deploy.html>« Prev</a>
 </nav>
 </footer>
 </main>
