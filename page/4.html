@@ -72,6 +72,45 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/11/08〜2021/11/14の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.16.0 Deno v1.16.0がリリースされました。
+React 17 JSX Transformのサポート React 17で導入された新しいJSX Transformのサポートが追加されました。
+https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories .jsxまたは.tsxファイル中で@jsxImportSourceを使うことで有効化されます。
+/** @jsxImportSource https://esm.sh/preact@10.5.15 */ export function Hello(props) { return ( &lt;div>Hello, {props.name}&lt;/div> ) } また、--configオプションで指定する設定ファイルで有効化することも可能です。
+{ "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "https://esm.sh/react@17.0.2" } } ※Denoの特性上、"jsx": "react-jsx"を指定した際は、jsxImportSourceの指定も必要です。
+Deno API 新しいシグナルAPI Deno.addSignalListenerとDeno.removeSignalListenerが実装されました (unstable)
+const signalListener = () => { // ... }; Deno.addSignalListener("SIGTERM", signalListener); Deno.removeSignalListener("SIGTERM", signalListener); この変更に合わせて、既存のDeno.signalは削除されています。
+https://github.com/denoland/deno/issues/11158 Deno.TlsConn型の導入 Deno.TlsConnという新しいデータ型が導入されました。
+これに合わせて、Deno.connectTlsなどのAPIがDeno.Connの代わりにDeno.TlsConnを返却するように修正されています。
+このオブジェクトにはhandshakeメソッドが定義されており、明示的にハンドシェイクを行うことができます。
+Deno.testのテストケースごとのパーミッション指定が安定化 Deno v1....</p>
+</div>
+<footer class=entry-footer><span title="2021-11-14 00:00:00 +0000 UTC">November 14, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/08〜2021/11/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/14.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/11/01〜2021/11/07の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>2021年のDeno Advent Calendarが公開 Qiitaで2021年のDeno Advent Calendarが公開されました。
+https://qiita.com/advent-calendar/2021/deno
+deployctlがアーカイブ Deno Deployのコマンドラインツールであるdeployctlがアーカイブされました。
+今後は代わりにDeno CLIを使って開発していくようアナウンスされています。
+Deno Deploy Beta 3が来たぞ Freshのアップデート PreactベースのWebフレームワークであるFreshがアップデートされ、MiddlewareとCSPのサポートが追加されました。
+Middlewareサポート Middlewareを利用する際は、pagesディレクトリ配下に下記のいずれかの名前のファイルを用意し、handler関数をexportする必要があります。
+/_middleware.tsx /_middleware.ts /_middleware.jsx /_middleware.js export async function handler(req: Request, handle: () => Promise&lt;Response>) { const start = Date.now(); const resp = await handle(); const end = Date.now(); console.log(`${req.method}${req.url}- ${end - start}ms`); return resp; } CSPサポート CSPサポートを有効化したいときは、対象ページでcspオプションにtrueを設定したconfigオブジェクトをexportします。
+import type { PageConfig } from "../deps.ts"; export const config: PageConfig = { csp: true }; 上記を実施しておくことで、特に設定をしなくとも自動でContent-Security-Policyヘッダを出力してくれます。...</p>
+</div>
+<footer class=entry-footer><span title="2021-11-07 00:00:00 +0000 UTC">November 7, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/01〜2021/11/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/07.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/10/25〜2021/10/31の最新情報
 </h2>
 </header>
@@ -235,52 +274,6 @@ Collection#insertが非推奨化されました (代わりにinsertOneやinsertM
 </div>
 <footer class=entry-footer><span title="2021-09-12 00:00:00 +0000 UTC">September 12, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/09/06〜2021/09/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/12.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/08/30〜2021/09/05の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Aleph.js v0.3.0-beta.9 Aleph.jsのv0.3.0-beta.9がリリースされました。
-主な変更点として、サーバから返却されるCache-Controlの値がpublic, max-age=0, must-revalidateに変更されています。
-また、このリリースに合わせてWindi CSS向けのプラグインが公開されています (https://github.com/ije/aleph-plugin-windicss)
-https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.9 https://github.com/ije/aleph-plugin-windicss Deno Deploy Beta2 Deno DeployのBeta2がリリースされました。
-変更点:
-Deno.readFileによって、デプロイに紐づくGitHubリポジトリ内のファイルの読み込みがサポートされました Deno.listenとDeno.serveHttpがサポートされました インスタンスがクラッシュした際のデバッグを容易にするため、クラッシュレポートが追加されました https://deno.com/blog/deploy-beta2 Deno Deploy Beta 2が来たぞ deployctl v0.4.0 Deno Deployのコマンドラインツールであるdeployctlのv0.4.0がリリースされました。
-このリリースでは、コマンドの実行時に新バージョンを通知する機能が実装されています。
-また、現時点では、このバージョンをインストールする際に--unstableが必要になります。
-https://github.com/denoland/deployctl/releases/tag/0.4.0
-Ultra UltraというDeno+ReactベースのWebフレームワークが公開されました。
-まだメジャーリリースはされていませんが、以下のような特徴があるようです。
-ReactDOM.renderToReadableStreamベースのSSR Viteなどと同様のオンデマンドでのコード変換 (SWCやesbuildがベース) SWR向けのキャッシュプロパイダを提供 /examplesディレクトリに使用例があるため、もし興味がありましたら見てみるとよいかもしれません。
-https://github.com/exhibitionist-digital/ultra</p>
-</div>
-<footer class=entry-footer><span title="2021-09-05 00:00:00 +0000 UTC">September 5, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/30〜2021/09/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/05.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/08/23〜2021/08/29の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.13.2 Deno v1.13.2がリリースされました。
-このリリースではバグ修正を中心に行われています。
-変更点:
-SubtleCrypto#exportKeyでHMACがサポートされました deno testの--jobsオプションで0を指定するとエラーが発生するように修正されました Deno.dlopenに不正な型の引数を渡した際に、プロセスがパニックする問題が修正されました リソースリークを防止するために、Deno.HttpConn#closeを実行した際に、該当のDeno.HttpConnオブジェクトを経由して割り当てられた全てのリソースが開放されるように修正されました deno lspでlanguageIdとしてjsxとtsxがサポートされました (Nova などのエディタが標準のlanguageIdであるjavascriptreactやtypescriptreactではなく、jsxやtsxを使用するために対応されたようです) deno lspがサポートしないlanguageIdが指定された場合、エディタ上で診断が表示されないように修正されました (deno lspが解釈できないlanguageIdをエディタが指定した場合、Denoはそのファイルをtypescriptとして解釈していたため、誤って診断が表示されてしまう問題があったようです) クラシックWorkerでsetTimeoutなどのAPIを使用するとプロセスがクラッシュする問題が修正されました URLやURLSearchParamsのパフォーマンスが向上しました deno_std v0.106.0 deno_std v0.106.0がリリースされました。
-変更点:
-async: delay関数でAbortSignalを使用した中断がサポートされました collection: findLastIndexでマッチする要素が見つからなかったときに-1ではなくundefinedが返却されるように修正されました testing: assertEqualsで、一方のオブジェクトにはconstructorが設定されているがもう一方には設定されていない場合に、保持しているプロパティが一致すればそれらのオブジェクトは同一と判断されるように変更されました node/buffer: 定数などのいくつかのAPIがexportされました node/perf_hooks: PerformanceEntryがdefault exportされるオブジェクトに追加されました https://github.com/denoland/deno_std/pull/1155 https://github.com/denoland/deno_std/releases/tag/0.106.0 MDNでDenoがサポートされました MDN Web Docsの「ブラウザーの互換性」欄にDenoの情報が表示されるようになりました。
-あるWeb APIがDenoのどのバージョンからサポートされているかを確認することができます。
-例)
-https://developer.mozilla.org/ja/docs/Web/API/URL https://developer.mozilla.org/ja/docs/Web/API/TextDecoder https://deno.com/blog/deno-on-mdn
-Aleph.js v0.3.0 betaバージョン Next.jsライクなフレームワークであるAleph.jsのv0.3.0 betaバージョンが公開されました。
-様々な機能の追加やパフォーマンスの向上などが図られています。
-主な変更点:
-新しいプラグインシステムの提供 (Aleph.jsのランタイムを拡張し、コードの変換プロセスに介入したりカスタムファイルタイプのサポートなどを追加できる仕組み) deno_std/http/serverからネイティブHTTP(Deno.serveHttp)への移行 APIミドルウェアがサポートされました。api/_middlewares....</p>
-</div>
-<footer class=entry-footer><span title="2021-08-29 00:00:00 +0000 UTC">August 29, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/23〜2021/08/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/29.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -76,6 +76,28 @@ Aleph.js
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/05/16〜2022/05/22の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.22 Deno v1.22がリリースされました。
+変更点については以下の記事にまとめたため、詳しくはこちらを参照いただければと思います。
+Deno v1.22 deno_std v0.140.0 deno_std v0.140.0がリリースされました。
+http serve関数などにonListenオプションが追加されています。
+このオプションに関数を設定しておくと、サーバ起動時にそれが呼ばれます。
+import { serve } from "https://deno.land/std@0.140.0/http/server.ts"; serve(() => Response.json({ message: "hello" }), { onListen({ port }) { console.log(`Listening on port ${port}`); }, }); collections/deep_merge deepMerge関数で、循環参照のあるオブジェクトなどで無限ループが発生する問題が修正されています。
+testing/asserts assertRejects()に渡した関数が同期的に例外を投げた場合に成功と扱われてしまう問題が修正されました。
+await assertRejects(() => { throw new Error("foo"); }); // => rejectされたPromiseが返されていないため、エラー https://github.com/denoland/deno_std/releases/tag/0.140.0
+SQLバイディング Deno本体でSQLバインディングを公開するPRが作成されています。
+experiment(runtime): expose SQLite bindings (#14627)
+まだ実際にリリースされるかどうかは不明ですが、今のところ、下記のようにしてクエリを発行できる想定のようです。
+const { Connection } = Deno....</p>
+</div>
+<footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/05/16〜2022/05/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/22.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/05/09〜2022/05/15の最新情報
 </h2>
 </header>

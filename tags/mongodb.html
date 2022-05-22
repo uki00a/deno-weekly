@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Remix | 週刊Deno</title>
+<title>MongoDB | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/remix.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/mongodb.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.ec8da366ca2fb647537ccb7a8f6fa5b4e9cd3c7a0d3171dd2d3baad1e49c8bfc.css integrity="sha256-7I2jZsovtkdTfMt6j2+ltOnNPHoNMXHdLTuq0eSci/w=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/remix/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/mongodb/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -25,12 +25,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Remix">
+<meta property="og:title" content="MongoDB">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/remix.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/mongodb.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Remix">
+<meta name=twitter:title content="MongoDB">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -71,7 +71,7 @@
 <main class=main>
 <header class=page-header>
 <h1>
-Remix
+MongoDB
 </h1>
 </header>
 <article class="post-entry tag-entry">
@@ -95,48 +95,6 @@ const { Connection } = Deno....</p>
 </div>
 <footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/05/16〜2022/05/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/22.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/02/21〜2022/02/27の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.19.1 Deno v1.19.1がリリースされました。
-新機能としてDeno.dlopenでstatic変数の参照がサポートされています。
-Deno.ForeignStatic その他にも、deno compileで--import-mapオプションがうまく動かなくなっていた問題が修正されています。
-https://github.com/denoland/deno/releases/tag/v1.19.1
-deno_std v0.127.0 deno_std v0.127.0がリリースされました。
-dotenvの追加 deno-dotenvモジュールがdeno_stdにマージされました。
-マイグレーション手順も公開されているので、もしdeno-dotenvを利用されていた場合は参考にするとよさそうです。
-async/abortableの追加 Promiseをキャンセルできるようにするためのユーティリティが追加されています。
-import { abortable } from "https://deno.land/std@0.127.0/async/abortable.ts"; import { delay } from "https://deno.land/std@0.127.0/async/delay.ts"; const controller = new AbortController(); const promise = delay(5000); setTimeout(() => controller.abort(), 2000); await abortable(promise, controller.signal); // => AbortError node fs: fs.realpath.nativeが追加されました。 tls: tls.createServerの基本的なサポートが追加されました。 その他 http/file_server: serveDir関数が追加されました。 testing/aserts: assertAlmostEqualsが追加されました。 https://github.com/denoland/deno_std/releases/tag/0.127.0
-deno.json(c)でのImport Mapサポートについて deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-02-27 00:00:00 +0000 UTC">February 27, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/02/21〜2022/02/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/27.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/12/06〜2021/12/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno.spawnDenoを追加する提案 以下のissueでDeno.spawnDenoというAPIの追加が提案されています
-https://github.com/denoland/deno/issues/13041 背景として、まずdenoland/deno#11016でDeno.runとは異なる新しいサブプロセスAPIが提案されました。
-このissueをベースに以下のようなAPIを追加するPRが作成されていますが、まだマージはされていないようです。
-// 高レベルAPI const cmd = Deno.Command(executable, { args }); const status = await cmd.status(); // 低レベルAPI const cmd = Deno.Command(executable, { args }); const child = cmd.spawn({ stdin: "piped" }); const writer = child.writer.getWriter(); await writer.write(buffer); この変更は今のところv1.17のマイルストーンに入っているため、次のリリースに含まれる可能性がありそうです。
-そして、今回提案されているDeno.spawnDenoは、Node.jsにおけるchild_process.forkに相当する機能のようで、上記のAPIをベースにサンドボックス化されたDenoのサブプロセスを起動する機能のようです。
-起動する際にWorkerのdeno.permissionsと同様にパーミッションなどの指定をサポートすることが想定されています。
-またこの提案に合わせて --no-permission-requestオプションの追加も提案されています。
-このオプションが指定された際はDeno.permissions.requestを無効化し、Deno.spawnDeno経由で起動されたプロセスがパーミッションのエスカレーションをできないようにすることを目的としているようです。
-https://github.com/denoland/deno/issues/13041
-サブステップAPIの安定化について Deno v1.15で導入されたサブステップAPIの安定化が提案されています。
-Deno v1.18での安定化が検討されているようです。
-Deno.test("nested test case", async (t) => { const success = await t.step("step 1", async (t) => { const success = await t....</p>
-</div>
-<footer class=entry-footer><span title="2021-12-12 00:00:00 +0000 UTC">December 12, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/12/06〜2021/12/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/12.html></a>
 </article>
 </main>
 <footer class=footer>
