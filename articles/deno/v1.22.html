@@ -124,10 +124,9 @@ Deno v1.22
 <li>
 <a href=#%e8%a8%ad%e5%ae%9a%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ae%e7%84%a1%e5%8a%b9%e5%8c%96 aria-label=設定ファイルの読み込みの無効化>設定ファイルの読み込みの無効化</a></li>
 <li>
-<a href=#%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4-worker%e5%86%85%e3%81%a7%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e3%81%a7deno-api%e3%81%8c%e6%9c%89%e5%8a%b9%e5%8c%96 aria-label="(破壊的変更) Worker内でデフォルトでDeno APIが有効化">(<strong>破壊的変更</strong>) <code>Worker</code>内でデフォルトでDeno APIが有効化</a><ul>
+<a href=#%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4-worker%e5%86%85%e3%81%a7%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e3%81%a7deno-api%e3%81%8c%e6%9c%89%e5%8a%b9%e5%8c%96 aria-label="(破壊的変更) Worker内でデフォルトでDeno APIが有効化">(<strong>破壊的変更</strong>) <code>Worker</code>内でデフォルトでDeno APIが有効化</a></li>
 <li>
-<a href=#%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4-denoemit%e3%81%ae%e5%89%8a%e9%99%a4 aria-label="(破壊的変更) Deno.emit()の削除">(<strong>破壊的変更</strong>) <code>Deno.emit()</code>の削除</a></li></ul>
-</li>
+<a href=#%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4-denoemit%e3%81%ae%e5%89%8a%e9%99%a4 aria-label="(破壊的変更) Deno.emit()の削除">(<strong>破壊的変更</strong>) <code>Deno.emit()</code>の削除</a></li>
 <li>
 <a href=#%e3%82%b5%e3%83%96%e3%83%97%e3%83%ad%e3%82%bb%e3%82%b9api%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88 aria-label=サブプロセスAPIのアップデート>サブプロセスAPIのアップデート</a></li>
 <li>
@@ -178,7 +177,7 @@ $ deno run --check main.ts
 </code></pre></div><p>今後は上記のようにオプションを指定しなくても、<code>Worker</code>内で常にDenoのAPIを参照できます。</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Worker</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>URL</span>(<span style=color:#e6db74>&#39;./worker.js&#39;</span>, <span style=color:#66d9ef>import</span>.<span style=color:#a6e22e>meta</span>.<span style=color:#a6e22e>url</span>).<span style=color:#a6e22e>href</span>, { <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;module&#34;</span> });
 </code></pre></div><p>また、この変更の影響により、<code>WorkerOptions.deno</code>や<code>WorkerOptions.deno.namespace</code>が型定義から削除されています。</p>
-<h3 id=破壊的変更-denoemitの削除>(<strong>破壊的変更</strong>) <code>Deno.emit()</code>の削除<a hidden class=anchor aria-hidden=true href=#破壊的変更-denoemitの削除>#</a></h3>
+<h2 id=破壊的変更-denoemitの削除>(<strong>破壊的変更</strong>) <code>Deno.emit()</code>の削除<a hidden class=anchor aria-hidden=true href=#破壊的変更-denoemitの削除>#</a></h2>
 <p><code>Deno.emit()</code>という、プログラムからTypeScriptコードをバンドルまたはトランスパイルすることができるAPIがありました。</p>
 <p>このリリースでは、この<code>Deno.emit()</code>が削除されています。</p>
 <p>代わりに<a href=https://github.com/denoland/deno_emit/>denoland/deno_emit</a>という同様の役割をこなすモジュールが公開されています。</p>
