@@ -8,7 +8,7 @@
 <meta name=description content="Articles - 週刊Deno">
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/articles.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.ec8da366ca2fb647537ccb7a8f6fa5b4e9cd3c7a0d3171dd2d3baad1e49c8bfc.css integrity="sha256-7I2jZsovtkdTfMt6j2+ltOnNPHoNMXHdLTuq0eSci/w=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.1740750342264a4e69b84ddf6899fb02cc95465080d85c57c08bb1d110900bf6.css integrity="sha256-F0B1A0ImSk5puE3faJn7AsyVRlCA2FxXwIux0RCQC/Y=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -40,10 +40,10 @@
 <nav class=nav>
 <div class=logo>
 <a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<span class=logo-switches>
+<div class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
-</span>
+</div>
 </div>
 <ul id=menu>
 <li>
@@ -75,6 +75,25 @@
 Articles
 </h1>
 </header>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/11/15〜2021/11/21の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Slackの次世代開発プラットフォームについて Slackの次世代開発プラットフォームが発表されました。
+CLIやSDKなどでDenoが採用されるようです。
+https://deno.com/blog/slack https://api.slack.com/future Deno v1.16.2 Deno v1.16.2がリリースされました。
+このリリースはバグ修正などがメインです。
+deno testのsub-steps APIを使った際に、テストレポートに実行されたステップ数が表示されるようになりました。 deno test --docでコードブロックにCRLFが含まれていると、適切にタイプチェックが行われない問題が修正されました リモートモジュールのdynamic importに時間がかかる問題が改善されました。 https://github.com/denoland/deno/releases/tag/v1.16.2
+deno_std v0.115.0 deno_std v0.115.0がリリースされました。
+std/fsでの破壊的変更やstd/nodeのNode.jsとの互換性向上などが実施されています。
+std/fs fs/mod.tsからcopy()やcopySync()がexportされなくなりました (これらのAPIは--unstableに依存するためです)
+std/node wasiパッケージが実装されました。 process 下記APIが追加されました process.config process.exitCode process.stdin.setRawMode process.hrtime.bigint process.nextTickのNode.jsとの互換性が向上しました fs 下記APIが追加されました fs.readSync fs.read fs.rm fs.rmSync http Node.jsとの互換性が向上しました。(Server#listen()の引数なしの形式のサポート、ServerResponse#end()で空のレスポンスのサポートなど) util util.isBuffer/util._extend/util.stripVTControlCharactersが追加されました util.isRegExpのNode.jsとの互換性が向上しました events EventEmitterがES6のクラス形式からES5形式の実装に変更されました。(これによりNode....</p>
+</div>
+<footer class=entry-footer><span title="2021-11-21 00:00:00 +0000 UTC">November 21, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/15〜2021/11/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/21.html></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>2021/11/08〜2021/11/14の最新情報
@@ -261,25 +280,6 @@ deno fmt/deno lint deno fmt でJSDocコメントへの基本的なサポート�
 <footer class=entry-footer><span title="2021-09-19 00:00:00 +0000 UTC">September 19, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/09/13〜2021/09/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/19.html></a>
 </article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/09/06〜2021/09/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno 2.0のスコープについて GitHub DiscussionsにてDeno 2.0のスコープやリリース予定時期について公開されました。
-https://github.com/denoland/deno/discussions/11972 現時点では、今年の11月に2.0のリリースが検討されているようです。
-Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に…) Deno.ReaderなどのJSのみで実装されたIO関連のAPIを削除(https://github.com/denoland/deno/issues/9795) 一部のAPIはすでにstd/io/util.tsなどへ移動されています デフォルトでのWorker内でDeno名前空間の有効化 TypeScriptのuseUnknownInCatchVariablesを有効化 Deno.customInspectを削除 デフォルトで型チェックをスキップする(https://github.com/denoland/deno/issues/11340) --configオプションを削除 (https://github.com/denoland/deno/discussions/7732) デフォルトでのロックファイルの生成・検証 localStorageや将来のIndexedDBなどの追加に備えたInternal Originの導入 TypeScriptのcompilerOptions.jsxFactoryとcompilerOptions.jsxFragmentFactoryのデフォルト値をそれぞれhと Fragmentに変更 (https://github.com/denoland/deno/issues/11186) デフォルトで外部のTypeScriptコードへの型エラーなどを報告させない (https://github.com/denoland/deno/issues/11970) dynamic importとWorker向けに--allow-importの導入 (https://github.com/denoland/deno/issues/8266) https://github.com/denoland/deno/discussions/11972
-vercel-deno v1.0.0 Vercel serverless functionsのDenoランタイム
-apiディレクトリに各フレームワークなどを使用したサンプルコードが配置されています。
-https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0
-deno_mongo v0.26.0 deno_mongo v0.26.0がリリースされました。
-変更点:
-Collection#insertが非推奨化されました (代わりにinsertOneやinsertManyなどの使用が推奨されます) Bson.ObjectIdの型定義が削除されました (Bson.ObjectID の方は残っています) MongoClient.buildInfoがサポートされました (https://docs.mongodb.com/manual/reference/command/buildInfo/) https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0</p>
-</div>
-<footer class=entry-footer><span title="2021-09-12 00:00:00 +0000 UTC">September 12, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/09/06〜2021/09/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/12.html></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://uki00a.github.io/deno-weekly/articles/page/3.html>« Prev</a>
@@ -292,7 +292,7 @@ Collection#insertが非推奨化されました (代わりにinsertOneやinsertM
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
 </span>
 </footer>
 <a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>

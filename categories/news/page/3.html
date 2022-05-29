@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/categories/news.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.min.ec8da366ca2fb647537ccb7a8f6fa5b4e9cd3c7a0d3171dd2d3baad1e49c8bfc.css integrity="sha256-7I2jZsovtkdTfMt6j2+ltOnNPHoNMXHdLTuq0eSci/w=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.1740750342264a4e69b84ddf6899fb02cc95465080d85c57c08bb1d110900bf6.css integrity="sha256-F0B1A0ImSk5puE3faJn7AsyVRlCA2FxXwIux0RCQC/Y=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -39,10 +39,10 @@
 <nav class=nav>
 <div class=logo>
 <a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<span class=logo-switches>
+<div class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
-</span>
+</div>
 </div>
 <ul id=menu>
 <li>
@@ -74,6 +74,36 @@
 news
 </h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/01/03〜2022/01/09の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.17.2 Deno v1.17.2がリリースされました。
+バグ修正などが中心に行われています。
+主な変更点:
+deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。
+JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。
+ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。
+SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。
+SubtleCrypto.deriveKeyでAES-CTRがサポートされました。
+FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。
+以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。
+Deno.test(function name() {}); Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。
+https://github.com/denoland/deno/releases/tag/v1.17.2
+deno_std v0.120.0 deno_std v0.120.0がリリースされました。
+crypto Tigerハッシュがサポートされました。
+uuid version()が実装されました。
+node https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。 path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。
+fs/expand_glob expandGlob()のextendedオプションのデフォルト値がtrueに変更されました。
+testing/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。
+https://github.com/denoland/deno_std/releases/tag/0.120.0
+設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)...</p>
+</div>
+<footer class=entry-footer><span title="2022-01-09 00:00:00 +0000 UTC">January 9, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/01/03〜2022/01/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/09.html></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>2021/12/27〜2022/01/02の最新情報
@@ -263,34 +293,6 @@ import type { PageConfig } from "../deps.ts"; export const config: PageConfig = 
 <footer class=entry-footer><span title="2021-11-07 00:00:00 +0000 UTC">November 7, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/11/01〜2021/11/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/07.html></a>
 </article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/10/25〜2021/10/31の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.15.3 Deno v1.15.3がリリースされました。
-このリリースはバグ修正がメインです。
-変更点:
-TLS接続関連のAPIで発生することのあるプロセスのハングや大きなデータの書き込みがうまくいかない問題などが修正されました Deno.emitでalready borrowed: BorrowMutErrorが発生する問題が修正されました globalThis経由でFormDataなどのWeb APIを参照しようとすると型エラーが発生する問題が修正されました など
-https://github.com/denoland/deno/releases/tag/v1.15.3
-deno_std v0.113.0 deno_std v0.113.0がリリースされました。
-変更点:
-collections: runningReduceに渡すreducer関数にcurrentIndexが渡されるようになりました
-testing/asserts: assertIsErrorが追加されました
-node/module: require()でnode:プレフィックスがサポートされました
-const EventEmitter = require("node:events"); node/module: Common JSモジュールの中でimport/exportを使用した際の警告メッセージが親切になりました
-node/url: url.urlToHttpOptionsが実装されました
-node/os: os.archの返却値がNode.jsに一致するように修正されました
-node/events: onとemitメソッドを非EventEmitterオブジェクトに束縛して実行できるようになりました
-http/file_server: ファイル一覧ページでパンくずリストが表示されるようになりました
-http/file_server: ファイル名に%記号などが含まれている場合、そのファイルに適切にアクセスできない問題が修正されました
-http/file_server: 200や206以外のレスポンスを返却する際に生じるリソースリークが修正されました
-http/file_server: エラーログに色がつくようになりました...</p>
-</div>
-<footer class=entry-footer><span title="2021-10-31 00:00:00 +0000 UTC">October 31, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/25〜2021/10/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/31.html></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://uki00a.github.io/deno-weekly/categories/news/page/2.html>« Prev</a>
@@ -303,7 +305,7 @@ http/file_server: エラーログに色がつくようになりました...</p>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
 </span>
 </footer>
 <a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>

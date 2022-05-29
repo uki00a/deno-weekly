@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Articles on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/articles.html</link><description>Recent content in Articles on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/05/16〜2022/05/22の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/22.html</link><pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/22.html</guid><description>Deno v1.22 Deno v1.22がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Articles on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/articles.html</link><description>Recent content in Articles on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/05/23〜2022/05/29の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/29.html</link><pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/29.html</guid><description>Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
+このリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。
+deno deploy beta 4発表！価格設定をcloudflare workersと比較する その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。
+https://deno.com/blog/deploy-beta4
+Deno v1.22.1 Deno v1.22.1がリリースされました。
+このリリースはバグ修正を中心に行われています。
+主な変更点:
+Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと&amp;quot;close&amp;quot;イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.1
+deno_std v0.141.0 deno_std v0.141.0がリリースされました。
+いくつかの破壊的変更が実施されています。
+testing/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)
+assertEqualsなどの型定義の改善 (破壊的変更) また、assertEqualsやassertNotEqualsなどの型定義が修正されています。
+例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。
+assertEquals(123, &amp;#34;foo&amp;#34;); 次のようにすると、型エラーを回避できます。
+assertEquals&amp;lt;unknown&amp;gt;(123, &amp;#34;foo&amp;#34;); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。
+const error = assertThrows(() =&amp;gt; { throw new Error(&amp;#34;foo&amp;#34;); }); assert(error instanceof Error); assertEquals(error.</description></item><item><title>2021/05/16〜2022/05/22の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/22.html</link><pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/22.html</guid><description>Deno v1.22 Deno v1.22がリリースされました。
 変更点については以下の記事にまとめたため、詳しくはこちらを参照いただければと思います。
 Deno v1.22 deno_std v0.140.0 deno_std v0.140.0がリリースされました。
 http serve関数などにonListenオプションが追加されています。
