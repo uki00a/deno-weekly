@@ -92,7 +92,7 @@ Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました�
 deno_std v0.141.0 deno_std v0.141.0がリリースされました。
 いくつかの破壊的変更が実施されています。
 testing/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)
-assertEqualsなどの型定義の改善 (破壊的変更) また、assertEqualsやassertNotEqualsなどの型定義が修正されています。
+assertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertNotEqualsなどの型定義が修正されています。
 例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。
 assertEquals(123, "foo"); 次のようにすると、型エラーを回避できます。
 assertEquals&lt;unknown>(123, "foo"); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。
