@@ -8,7 +8,7 @@
 <meta name=description content="Articles - 週刊Deno">
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/articles.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.1740750342264a4e69b84ddf6899fb02cc95465080d85c57c08bb1d110900bf6.css integrity="sha256-F0B1A0ImSk5puE3faJn7AsyVRlCA2FxXwIux0RCQC/Y=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.d7fb4cbf980fe688a21621b06a795933c4e6bb2d4070ec940667af1715d84af2.css integrity="sha256-1/tMv5gP5oiiFiGwanlZM8Tmuy1AcOyUBmevFxXYSvI=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -75,6 +75,29 @@
 Articles
 </h1>
 </header>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/07/05〜2021/07/11の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を変更することが検討されています。
+https://github.com/denoland/deno/issues/11340 このissueでは、以下のような方向性が示されています。
+DenoのTypeScriptによる型チェックをデフォルトで無効化したい (現状の--no-checkオプションを付けた際の挙動をデフォルトにしたい) TypeScriptによる型チェックは、--checkオプションを指定したときのみ実施する --no-checkオプションは非推奨化する より詳細な内容や議論などについては上記issueを参照いただければと思います。
+https://github.com/denoland/deno/issues/11340
+Bundler v0.8.0 DenoのフロントエンドビルドツールであるBundlerのv0.8.0がリリースされました。
+このリリースでは、Devサーバのサポートが追加されています。
+https://github.com/timreichen/Bundler/releases/tag/0.8.0
+deno-redis v0.23.0がリリース deno-redisのv0.23.0がリリースされました。
+このリリースでは、いくつかの破壊的変更が実施されています。
+Redis Clusterのクライアント実装が追加されました。 Redis.connectionプロパティが削除されました。(破壊的変更) RedisImplクラスが非公開になり、代わりにcreate関数が追加されました。 (破壊的変更) https://github.com/denodrivers/redis/releases/tag/v0.23.0
+xhr xhrはDenoとDeno Deploy向けのXMLHttpRequestのポリフィルです。
+以下のドキュメントにて、このモジュールを利用してDeno Deploy上でFirebase SDKを使用する方法が紹介されています。
+https://deno.com/deploy/docs/tutorial-firebase https://github.com/kitsonk/xhr https://deno.com/deploy/docs/tutorial-firebase </p>
+</div>
+<footer class=entry-footer><span title="2021-07-11 00:00:00 +0000 UTC">July 11, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/07/05〜2021/07/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/11.html></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>2021/06/28〜2021/07/04の最新情報
@@ -269,26 +292,6 @@ https://zenn.dev/uki00a/books/effective-deno</p>
 </div>
 <footer class=entry-footer><span title="2021-05-09 00:00:00 +0000 UTC">May 9, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/05/03〜2021/05/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/09.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/04/26〜2021/05/02の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>gql - DenoのGraphQLサーバモジュール gqlはDenoでGraphQLサーバを実装するためのモジュールです。以下のライブラリ・フレームワークがサポートされています。
-std/http Oak Abc Opine deno-libs/tinyhttp https://github.com/deno-libs/gql
-deno-libs/tinyhttp - tinyhttpのDenoポート deno-libs/tinyhttpはNode.jsのtinyhttpパッケージのDenoポートです。
-先述したgqlモジュールでもサポートされています。
-https://github.com/deno-libs/tinyhttp
-crux.land Deno Deployで動作するDenoのスクリプトレジストリ。
-20KB未満の軽量なスクリプトをホストすることを目的としているようです。
-https://crux.land/
-terraform-deploy-provider - Deno Deploy向けのTerraformプロパイダ terraform-deploy-providerはDeno Deploy向けのTerraformプロパイダです。
-https://github.com/wperron/terraform-deploy-provider</p>
-</div>
-<footer class=entry-footer><span title="2021-05-02 00:00:00 +0000 UTC">May 2, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/26〜2021/05/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/02.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

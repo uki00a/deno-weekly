@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>news on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/news.html</link><description>Recent content in news on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/news/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/05/23〜2022/05/29の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/29.html</link><pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/29.html</guid><description>Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>news on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/news.html</link><description>Recent content in news on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/news/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/05/30〜2022/06/05の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/06/05.html</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/06/05.html</guid><description>Deno v1.22.2 Deno v1.22.2がリリースされました。
+主な変更点:
+Deno.getGid()が実装されました。(unstable) POSIX系プラットフォームではプロセスのグループIDが、Windowsではnullが返されます。 利用するには--allow-envの指定が必要です。 Error.captureStackTrace()の型定義が追加されました。 Crypto.getRandomValues()の型定義が改善されました。(BigInt64ArrayやBigUint64Arrayが受け取れず、Float32ArrayやFloat64Arrayが引数として受け取れてしまう問題が解消されています) https://github.com/denoland/deno/releases/tag/v1.22.2
+deno_std v0.142.0 deno_std v0.142.0がリリースされました。
+FNVのサポート (crypto) cryptoモジュールでFNVが実装されました。
+import { crypto } from &amp;#34;https://deno.land/std@0.142.0/crypto/mod.ts&amp;#34;; // ... const digest = await crypto.subtle.digest(&amp;#34;FNV32&amp;#34;, input); media_typesモジュールの追加 deno_stdにmedia_typesモジュールが追加されました。
+import { contentType } from &amp;#34;https://deno.land/std@0.142.0/media_types/mod.ts&amp;#34;; contentType(&amp;#34;.js&amp;#34;); // =&amp;gt; &amp;#34;application/javascript; charset=UTF-8&amp;#34; contentType(&amp;#34;application/json&amp;#34;); // =&amp;gt; &amp;#34;application/json; charset=UTF-8&amp;#34; このモジュールは、以前にもdeno_stdに存在するモジュールの一部でしたが、一度削除されています。
+その後、メンテナンスはoakserver/media_typesのリポジトリに引き継がれていました。
+このリリースで改めてmedia_typesモジュールが復帰したため、oakserver/media_typesのリポジトリはアーカイブされています。
+TextLineStreamにallowCRオプションが追加 (streams/delimiter) このオプションにtrueを指定したときのみCRが取り扱われるように変更されています。
+前回のリリースで、デフォルトでCRが取り扱われるように修正されましたが、デフォルトの挙動を変えてしまうのはまずいということで、このオプションが追加されました。
+https://github.com/denoland/deno_std/releases/tag/0.142.0
+oak_commonsパッケージの機能のdeno_stdへの移行 現在、oak_commonsパッケージで提供されていた機能の一部をdeno_stdへ移植するPRが作成されています。
+例)
+http/http_statusのSTATUS_TEXTがMapからRecord型に変更 http/http_errorsの追加 http/negotiationの追加 crypto/keystackの追加 (Oakの内部でも使われているCookieの署名・検証用モジュール) deno_std v0.</description></item><item><title>2021/05/23〜2022/05/29の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/29.html</link><pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/29.html</guid><description>Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
 このリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。
 deno deploy beta 4発表！価格設定をcloudflare workersと比較する その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。
 https://deno.com/blog/deploy-beta4
