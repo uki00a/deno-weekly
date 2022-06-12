@@ -1,0 +1,261 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>2021/05/30〜2022/06/05の最新情報 | 週刊Deno</title>
+<meta name=keywords content="Deno,deno_std,fresh">
+<meta name=description content="Deno v1.22.3 Deno v1.22.3がリリースされました。
+主な変更点:
+ fetch APIの引数にURLオブジェクト渡す形式が非推奨ではなくなりました。(TypeScript公式の型定義でもサポートされたため) // Deno v1.22.3までは、下記の形式は非推奨でした const res = await fetch(new URL(&#34;https://example.com&#34;));  Import Mapファイルなどの.jsonや.jsonc形式のファイルが変更されたときに、deno lspが自動で変更を検知してくれるようになりました。 --watchオプションで、dynamic importされるファイルが監視されない問題が修正されました。 エラー以外の値がthrowされた際にコンソールへ出力される内容が改善されました。   https://github.com/denoland/deno/releases/tag/v1.22.3
+deno_std v0.143.0 deno_std v0.143.0がリリースされました。
+http/http_statusでの破壊的変更について STATUS_TEXTがMap<Status, string>からReadonly<Record<Status, String>>へ変更されています。(破壊的変更)
+その他にも、いくつかのヘルパー関数やタイプが追加されています。
+import { isErrorStatus, STATUS_TEXT } from &#34;https://deno.land/std@0.143.0/http/http_status.ts&#34;; STATUS_TEXT[404]; // => &#34;Not Found&#34; isErrorStatus(404); // => true isErrorStatus(200); // => false flagsモジュールでnegatableオプションがサポート ここで指定されたフラグのみが、--no-プレフィックスの付与による否定がサポートされます。
+import { parse } from &#34;https://deno.land/std@0.143.0/flags/mod.ts&#34;; parse([&#34;deno&#34;, &#34;fmt&#34;, &#34;--no-config&#34;], { string: [&#34;config&#34;], negatable: [&#34;config&#34;], }); // => { _: [ &#34;deno&#34;, &#34;fmt&#34; ], config: false }  parse([&#34;deno&#34;, &#34;fmt&#34;, &#34;--no-config&#34;], { string: [&#34;config&#34;], }); // => { _: [ &#34;deno&#34;, &#34;fmt&#34; ], &#34;no-config&#34;: true } dotenvモジュールでインラインコメントがサポート #に続けてコメントを記述できます。">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/06/12.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.d7fb4cbf980fe688a21621b06a795933c4e6bb2d4070ec940667af1715d84af2.css integrity="sha256-1/tMv5gP5oiiFiGwanlZM8Tmuy1AcOyUBmevFxXYSvI=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="2021/05/30〜2022/06/05の最新情報">
+<meta property="og:description" content="Deno v1.22.3 Deno v1.22.3がリリースされました。
+主な変更点:
+ fetch APIの引数にURLオブジェクト渡す形式が非推奨ではなくなりました。(TypeScript公式の型定義でもサポートされたため) // Deno v1.22.3までは、下記の形式は非推奨でした const res = await fetch(new URL(&#34;https://example.com&#34;));  Import Mapファイルなどの.jsonや.jsonc形式のファイルが変更されたときに、deno lspが自動で変更を検知してくれるようになりました。 --watchオプションで、dynamic importされるファイルが監視されない問題が修正されました。 エラー以外の値がthrowされた際にコンソールへ出力される内容が改善されました。   https://github.com/denoland/deno/releases/tag/v1.22.3
+deno_std v0.143.0 deno_std v0.143.0がリリースされました。
+http/http_statusでの破壊的変更について STATUS_TEXTがMap<Status, string>からReadonly<Record<Status, String>>へ変更されています。(破壊的変更)
+その他にも、いくつかのヘルパー関数やタイプが追加されています。
+import { isErrorStatus, STATUS_TEXT } from &#34;https://deno.land/std@0.143.0/http/http_status.ts&#34;; STATUS_TEXT[404]; // => &#34;Not Found&#34; isErrorStatus(404); // => true isErrorStatus(200); // => false flagsモジュールでnegatableオプションがサポート ここで指定されたフラグのみが、--no-プレフィックスの付与による否定がサポートされます。
+import { parse } from &#34;https://deno.land/std@0.143.0/flags/mod.ts&#34;; parse([&#34;deno&#34;, &#34;fmt&#34;, &#34;--no-config&#34;], { string: [&#34;config&#34;], negatable: [&#34;config&#34;], }); // => { _: [ &#34;deno&#34;, &#34;fmt&#34; ], config: false }  parse([&#34;deno&#34;, &#34;fmt&#34;, &#34;--no-config&#34;], { string: [&#34;config&#34;], }); // => { _: [ &#34;deno&#34;, &#34;fmt&#34; ], &#34;no-config&#34;: true } dotenvモジュールでインラインコメントがサポート #に続けてコメントを記述できます。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/06/12.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2022-06-12T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-06-12T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="2021/05/30〜2022/06/05の最新情報">
+<meta name=twitter:description content="Deno v1.22.3 Deno v1.22.3がリリースされました。
+主な変更点:
+ fetch APIの引数にURLオブジェクト渡す形式が非推奨ではなくなりました。(TypeScript公式の型定義でもサポートされたため) // Deno v1.22.3までは、下記の形式は非推奨でした const res = await fetch(new URL(&#34;https://example.com&#34;));  Import Mapファイルなどの.jsonや.jsonc形式のファイルが変更されたときに、deno lspが自動で変更を検知してくれるようになりました。 --watchオプションで、dynamic importされるファイルが監視されない問題が修正されました。 エラー以外の値がthrowされた際にコンソールへ出力される内容が改善されました。   https://github.com/denoland/deno/releases/tag/v1.22.3
+deno_std v0.143.0 deno_std v0.143.0がリリースされました。
+http/http_statusでの破壊的変更について STATUS_TEXTがMap<Status, string>からReadonly<Record<Status, String>>へ変更されています。(破壊的変更)
+その他にも、いくつかのヘルパー関数やタイプが追加されています。
+import { isErrorStatus, STATUS_TEXT } from &#34;https://deno.land/std@0.143.0/http/http_status.ts&#34;; STATUS_TEXT[404]; // => &#34;Not Found&#34; isErrorStatus(404); // => true isErrorStatus(200); // => false flagsモジュールでnegatableオプションがサポート ここで指定されたフラグのみが、--no-プレフィックスの付与による否定がサポートされます。
+import { parse } from &#34;https://deno.land/std@0.143.0/flags/mod.ts&#34;; parse([&#34;deno&#34;, &#34;fmt&#34;, &#34;--no-config&#34;], { string: [&#34;config&#34;], negatable: [&#34;config&#34;], }); // => { _: [ &#34;deno&#34;, &#34;fmt&#34; ], config: false }  parse([&#34;deno&#34;, &#34;fmt&#34;, &#34;--no-config&#34;], { string: [&#34;config&#34;], }); // => { _: [ &#34;deno&#34;, &#34;fmt&#34; ], &#34;no-config&#34;: true } dotenvモジュールでインラインコメントがサポート #に続けてコメントを記述できます。">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/05/30〜2022/06/05の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/06/12.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/05/30〜2022/06/05の最新情報","name":"2021\/05\/30〜2022\/06\/05の最新情報","description":"Deno v1.22.3 Deno v1.22.3がリリースされました。\n主な変更点:\n fetch APIの引数にURLオブジェクト渡す形式が非推奨ではなくなりました。(TypeScript公式の型定義でもサポートされたため) // Deno v1.22.3までは、下記の形式は非推奨でした const res = await fetch(new URL(\u0026#34;https://example.com\u0026#34;));  Import Mapファイルなどの.jsonや.jsonc形式のファイルが変更されたときに、deno lspが自動で変更を検知してくれるようになりました。 --watchオプションで、dynamic importされるファイルが監視されない問題が修正されました。 エラー以外の値がthrowされた際にコンソールへ出力される内容が改善されました。   https://github.com/denoland/deno/releases/tag/v1.22.3\ndeno_std v0.143.0 deno_std v0.143.0がリリースされました。\nhttp/http_statusでの破壊的変更について STATUS_TEXTがMap\u0026lt;Status, string\u0026gt;からReadonly\u0026lt;Record\u0026lt;Status, String\u0026gt;\u0026gt;へ変更されています。(破壊的変更)\nその他にも、いくつかのヘルパー関数やタイプが追加されています。\nimport { isErrorStatus, STATUS_TEXT } from \u0026#34;https://deno.land/std@0.143.0/http/http_status.ts\u0026#34;; STATUS_TEXT[404]; // =\u0026gt; \u0026#34;Not Found\u0026#34; isErrorStatus(404); // =\u0026gt; true isErrorStatus(200); // =\u0026gt; false flagsモジュールでnegatableオプションがサポート ここで指定されたフラグのみが、--no-プレフィックスの付与による否定がサポートされます。\nimport { parse } from \u0026#34;https://deno.land/std@0.143.0/flags/mod.ts\u0026#34;; parse([\u0026#34;deno\u0026#34;, \u0026#34;fmt\u0026#34;, \u0026#34;--no-config\u0026#34;], { string: [\u0026#34;config\u0026#34;], negatable: [\u0026#34;config\u0026#34;], }); // =\u0026gt; { _: [ \u0026#34;deno\u0026#34;, \u0026#34;fmt\u0026#34; ], config: false }  parse([\u0026#34;deno\u0026#34;, \u0026#34;fmt\u0026#34;, \u0026#34;--no-config\u0026#34;], { string: [\u0026#34;config\u0026#34;], }); // =\u0026gt; { _: [ \u0026#34;deno\u0026#34;, \u0026#34;fmt\u0026#34; ], \u0026#34;no-config\u0026#34;: true } dotenvモジュールでインラインコメントがサポート #に続けてコメントを記述できます。","keywords":["Deno","deno_std","fresh"],"articleBody":"Deno v1.22.3 Deno v1.22.3がリリースされました。\n主な変更点:\n fetch APIの引数にURLオブジェクト渡す形式が非推奨ではなくなりました。(TypeScript公式の型定義でもサポートされたため) // Deno v1.22.3までは、下記の形式は非推奨でした const res = await fetch(new URL(\"https://example.com\"));  Import Mapファイルなどの.jsonや.jsonc形式のファイルが変更されたときに、deno lspが自動で変更を検知してくれるようになりました。 --watchオプションで、dynamic importされるファイルが監視されない問題が修正されました。 エラー以外の値がthrowされた際にコンソールへ出力される内容が改善されました。   https://github.com/denoland/deno/releases/tag/v1.22.3\ndeno_std v0.143.0 deno_std v0.143.0がリリースされました。\nhttp/http_statusでの破壊的変更について STATUS_TEXTがMapからReadonlyへ変更されています。(破壊的変更)\nその他にも、いくつかのヘルパー関数やタイプが追加されています。\nimport { isErrorStatus, STATUS_TEXT } from \"https://deno.land/std@0.143.0/http/http_status.ts\"; STATUS_TEXT[404]; // = \"Not Found\" isErrorStatus(404); // = true isErrorStatus(200); // = false flagsモジュールでnegatableオプションがサポート ここで指定されたフラグのみが、--no-プレフィックスの付与による否定がサポートされます。\nimport { parse } from \"https://deno.land/std@0.143.0/flags/mod.ts\"; parse([\"deno\", \"fmt\", \"--no-config\"], { string: [\"config\"], negatable: [\"config\"], }); // = { _: [ \"deno\", \"fmt\" ], config: false }  parse([\"deno\", \"fmt\", \"--no-config\"], { string: [\"config\"], }); // = { _: [ \"deno\", \"fmt\" ], \"no-config\": true } dotenvモジュールでインラインコメントがサポート #に続けてコメントを記述できます。\n# This is a comment. FOO=BAR # foobar PORT=3000 import { config } from \"https://deno.land/std@0.143.0/dotenv/mod.ts\"; await config(); // = { FOO: \"BAR\", PORT: \"3000\" } encoding/varintモジュールの追加 LEB128によるエンコーディング・デコーディングがサポートされています。\nimport { encodeU32 } from \"https://deno.land/std@0.143.0/encoding/varint.ts\"; encodeU32(128); // = Uint8Array(2) [ 128, 1 ] node/assertの改善 deepEqualとnotDeepEqualがサポートされました。\n https://github.com/denoland/deno_std/releases/tag/0.143.0\ndeno_stdへのencoding/front_matterモジュールの追加について deno_stdへFrontmatter用のモジュールを追加するPRが作成されています。\n encoding: add front matter module (#2335)\n 今のところ、下記のように使用できる想定のようです。\nimport { extract } from \"https://deno.land/std/encoding/front_matter.ts\"; const { attrs, body } = extract{ title: string, date: Date }(`--- title: foobar date: 2022-06-12 --- Hello`); console.assert(attrs.title === \"foobar\"); console.assert(attrs.date instanceof Date); console.assert(body === \"Hello\");  https://github.com/denoland/deno_std/pull/2335\nFresh v1.0のロードマップ Fresh v1.0のロードマップが公開されています。\nv1.0のリリースまでに、以下の変更などが行われる予定のようです。\n Preactのバージョンのカスタマイズ Freshをhttps://github.com/denoland配下へ移動  詳しい内容については、下記を参照いただければと思います:\n https://github.com/lucacasonato/fresh/issues/219   https://github.com/lucacasonato/fresh/issues/219\nDenoのYoutubeチャンネルでイベントの動画が公開 DenoのYoutubeチャンネルでMelbJSやRemixConfなどでの発表内容が公開されています。\n Kitson Kelly’s “Deno on the Edge” at MelbJS Meetup Luca Casonato on “Writing Typescript Libraries for Deno, Node, and the Browser” at TSCongress 2022 Ryan Dahl’s “My Dream Stack” at RemixConf 2022   https://deno.news/archive/44-ryans-dream-stack-kitson-deploys-to-the-edge\noakserver/nat DenoとDeno Deploy向けのSSRフレームワーク\nacornやnano-jsx, twindなどを使用して実装されているようです。\n https://github.com/oakserver/nat\n","wordCount":"238","inLanguage":"en","datePublished":"2022-06-12T00:00:00Z","dateModified":"2022-06-12T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/06/12.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<div class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</div>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://github.com/uki00a/deno-weekly title=ソース>
+<span><i class="fa fa-road"></i>ソース</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+2021/05/30〜2022/06/05の最新情報
+</h1>
+<div class=post-meta><span title="2022-06-12 00:00:00 +0000 UTC">June 12, 2022</span>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#deno-v1223 aria-label="Deno v1.22.3">Deno v1.22.3</a></li>
+<li>
+<a href=#deno_std-v01430 aria-label="deno_std v0.143.0">deno_std v0.143.0</a><ul>
+<li>
+<a href=#httphttp_status%e3%81%a7%e3%81%ae%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=http/http_statusでの破壊的変更について><code>http/http_status</code>での破壊的変更について</a></li>
+<li>
+<a href=#flags%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%a7negatable%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=flagsモジュールでnegatableオプションがサポート><code>flags</code>モジュールで<code>negatable</code>オプションがサポート</a></li>
+<li>
+<a href=#dotenv%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%a7%e3%82%a4%e3%83%b3%e3%83%a9%e3%82%a4%e3%83%b3%e3%82%b3%e3%83%a1%e3%83%b3%e3%83%88%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=dotenvモジュールでインラインコメントがサポート><code>dotenv</code>モジュールでインラインコメントがサポート</a></li>
+<li>
+<a href=#encodingvarint%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%ae%e8%bf%bd%e5%8a%a0 aria-label=encoding/varintモジュールの追加><code>encoding/varint</code>モジュールの追加</a></li>
+<li>
+<a href=#nodeassert%e3%81%ae%e6%94%b9%e5%96%84 aria-label=node/assertの改善><code>node/assert</code>の改善</a></li></ul>
+</li>
+<li>
+<a href=#deno_std%e3%81%b8%e3%81%aeencodingfront_matter%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%ae%e8%bf%bd%e5%8a%a0%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=deno_stdへのencoding/front_matterモジュールの追加について><code>deno_std</code>への<code>encoding/front_matter</code>モジュールの追加について</a></li>
+<li>
+<a href=#fresh-v10%e3%81%ae%e3%83%ad%e3%83%bc%e3%83%89%e3%83%9e%e3%83%83%e3%83%97 aria-label="Fresh v1.0のロードマップ">Fresh v1.0のロードマップ</a></li>
+<li>
+<a href=#deno%e3%81%aeyoutube%e3%83%81%e3%83%a3%e3%83%b3%e3%83%8d%e3%83%ab%e3%81%a7%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%81%ae%e5%8b%95%e7%94%bb%e3%81%8c%e5%85%ac%e9%96%8b aria-label=DenoのYoutubeチャンネルでイベントの動画が公開>DenoのYoutubeチャンネルでイベントの動画が公開</a></li>
+<li>
+<a href=#oakservernat aria-label=oakserver/nat><code>oakserver/nat</code></a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=deno-v1223>Deno v1.22.3<a hidden class=anchor aria-hidden=true href=#deno-v1223>#</a></h2>
+<p>Deno v1.22.3がリリースされました。</p>
+<p><strong>主な変更点:</strong></p>
+<ul>
+<li>fetch APIの引数に<code>URL</code>オブジェクト渡す形式が非推奨ではなくなりました。(TypeScript公式の型定義でもサポートされたため)
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#75715e>// Deno v1.22.3までは、下記の形式は非推奨でした
+</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>res</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>fetch</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>URL</span>(<span style=color:#e6db74>&#34;https://example.com&#34;</span>));
+</code></pre></div></li>
+<li>Import Mapファイルなどの<code>.json</code>や<code>.jsonc</code>形式のファイルが変更されたときに、<code>deno lsp</code>が自動で変更を検知してくれるようになりました。</li>
+<li><code>--watch</code>オプションで、dynamic importされるファイルが監視されない問題が修正されました。</li>
+<li>エラー以外の値が<code>throw</code>された際にコンソールへ出力される内容が改善されました。</li>
+</ul>
+<hr>
+<p><a href=https://github.com/denoland/deno/releases/tag/v1.22.3>https://github.com/denoland/deno/releases/tag/v1.22.3</a></p>
+<h2 id=deno_std-v01430>deno_std v0.143.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01430>#</a></h2>
+<p>deno_std v0.143.0がリリースされました。</p>
+<h3 id=httphttp_statusでの破壊的変更について><code>http/http_status</code>での破壊的変更について<a hidden class=anchor aria-hidden=true href=#httphttp_statusでの破壊的変更について>#</a></h3>
+<p><code>STATUS_TEXT</code>が<code>Map&lt;Status, string></code>から<code>Readonly&lt;Record&lt;Status, String>></code>へ変更されています。(<strong>破壊的変更</strong>)</p>
+<p>その他にも、いくつかのヘルパー関数やタイプが追加されています。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>isErrorStatus</span>, <span style=color:#a6e22e>STATUS_TEXT</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.143.0/http/http_status.ts&#34;</span>;
+
+<span style=color:#a6e22e>STATUS_TEXT</span>[<span style=color:#ae81ff>404</span>]; <span style=color:#75715e>// =&gt; &#34;Not Found&#34;
+</span><span style=color:#75715e></span><span style=color:#a6e22e>isErrorStatus</span>(<span style=color:#ae81ff>404</span>); <span style=color:#75715e>// =&gt; true
+</span><span style=color:#75715e></span><span style=color:#a6e22e>isErrorStatus</span>(<span style=color:#ae81ff>200</span>); <span style=color:#75715e>// =&gt; false
+</span></code></pre></div><h3 id=flagsモジュールでnegatableオプションがサポート><code>flags</code>モジュールで<code>negatable</code>オプションがサポート<a hidden class=anchor aria-hidden=true href=#flagsモジュールでnegatableオプションがサポート>#</a></h3>
+<p>ここで指定されたフラグのみが、<code>--no-</code>プレフィックスの付与による否定がサポートされます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>parse</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.143.0/flags/mod.ts&#34;</span>;
+
+<span style=color:#a6e22e>parse</span>([<span style=color:#e6db74>&#34;deno&#34;</span>, <span style=color:#e6db74>&#34;fmt&#34;</span>, <span style=color:#e6db74>&#34;--no-config&#34;</span>], {
+  <span style=color:#66d9ef>string</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;config&#34;</span>],
+  <span style=color:#a6e22e>negatable</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;config&#34;</span>],
+}); <span style=color:#75715e>// =&gt; { _: [ &#34;deno&#34;, &#34;fmt&#34; ], config: false }
+</span><span style=color:#75715e></span>
+<span style=color:#a6e22e>parse</span>([<span style=color:#e6db74>&#34;deno&#34;</span>, <span style=color:#e6db74>&#34;fmt&#34;</span>, <span style=color:#e6db74>&#34;--no-config&#34;</span>], {
+  <span style=color:#66d9ef>string</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;config&#34;</span>],
+}); <span style=color:#75715e>// =&gt; { _: [ &#34;deno&#34;, &#34;fmt&#34; ], &#34;no-config&#34;: true }
+</span></code></pre></div><h3 id=dotenvモジュールでインラインコメントがサポート><code>dotenv</code>モジュールでインラインコメントがサポート<a hidden class=anchor aria-hidden=true href=#dotenvモジュールでインラインコメントがサポート>#</a></h3>
+<p><code>#</code>に続けてコメントを記述できます。</p>
+<pre tabindex=0><code># This is a comment.
+FOO=BAR # foobar
+PORT=3000
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>config</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.143.0/dotenv/mod.ts&#34;</span>;
+
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>config</span>(); <span style=color:#75715e>// =&gt; { FOO: &#34;BAR&#34;, PORT: &#34;3000&#34; }
+</span></code></pre></div><h3 id=encodingvarintモジュールの追加><code>encoding/varint</code>モジュールの追加<a hidden class=anchor aria-hidden=true href=#encodingvarintモジュールの追加>#</a></h3>
+<p>LEB128によるエンコーディング・デコーディングがサポートされています。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>encodeU32</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.143.0/encoding/varint.ts&#34;</span>;
+
+<span style=color:#a6e22e>encodeU32</span>(<span style=color:#ae81ff>128</span>); <span style=color:#75715e>// =&gt; Uint8Array(2) [ 128, 1 ]
+</span></code></pre></div><h3 id=nodeassertの改善><code>node/assert</code>の改善<a hidden class=anchor aria-hidden=true href=#nodeassertの改善>#</a></h3>
+<p><code>deepEqual</code>と<code>notDeepEqual</code>がサポートされました。</p>
+<hr>
+<p><a href=https://github.com/denoland/deno_std/releases/tag/0.143.0>https://github.com/denoland/deno_std/releases/tag/0.143.0</a></p>
+<h2 id=deno_stdへのencodingfront_matterモジュールの追加について><code>deno_std</code>への<code>encoding/front_matter</code>モジュールの追加について<a hidden class=anchor aria-hidden=true href=#deno_stdへのencodingfront_matterモジュールの追加について>#</a></h2>
+<p><code>deno_std</code>へFrontmatter用のモジュールを追加するPRが作成されています。</p>
+<blockquote>
+<p><a href=https://github.com/denoland/deno_std/pull/2335>encoding: add front matter module (#2335)</a></p>
+</blockquote>
+<p>今のところ、下記のように使用できる想定のようです。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>extract</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std/encoding/front_matter.ts&#34;</span>;
+
+<span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>attrs</span>, <span style=color:#a6e22e>body</span> } <span style=color:#f92672>=</span> <span style=color:#a6e22e>extract</span><span style=color:#f92672>&lt;</span>{ <span style=color:#a6e22e>title</span>: <span style=color:#66d9ef>string</span>, <span style=color:#a6e22e>date</span>: <span style=color:#66d9ef>Date</span> }<span style=color:#f92672>&gt;</span>(<span style=color:#e6db74>`---
+</span><span style=color:#e6db74>title: foobar
+</span><span style=color:#e6db74>date: 2022-06-12
+</span><span style=color:#e6db74>---
+</span><span style=color:#e6db74>
+</span><span style=color:#e6db74>Hello`</span>);
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>assert</span>(<span style=color:#a6e22e>attrs</span>.<span style=color:#a6e22e>title</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;foobar&#34;</span>);
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>assert</span>(<span style=color:#a6e22e>attrs</span>.<span style=color:#a6e22e>date</span> <span style=color:#66d9ef>instanceof</span> Date);
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>assert</span>(<span style=color:#a6e22e>body</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;Hello&#34;</span>);
+</code></pre></div><hr>
+<p><a href=https://github.com/denoland/deno_std/pull/2335>https://github.com/denoland/deno_std/pull/2335</a></p>
+<h2 id=fresh-v10のロードマップ>Fresh v1.0のロードマップ<a hidden class=anchor aria-hidden=true href=#fresh-v10のロードマップ>#</a></h2>
+<p>Fresh v1.0のロードマップが公開されています。</p>
+<p>v1.0のリリースまでに、以下の変更などが行われる予定のようです。</p>
+<ul>
+<li>Preactのバージョンのカスタマイズ</li>
+<li>Freshを<a href=https://github.com/denoland>https://github.com/denoland</a>配下へ移動</li>
+</ul>
+<p>詳しい内容については、下記を参照いただければと思います:</p>
+<ul>
+<li><a href=https://github.com/lucacasonato/fresh/issues/219>https://github.com/lucacasonato/fresh/issues/219</a></li>
+</ul>
+<hr>
+<p><a href=https://github.com/lucacasonato/fresh/issues/219>https://github.com/lucacasonato/fresh/issues/219</a></p>
+<h2 id=denoのyoutubeチャンネルでイベントの動画が公開>DenoのYoutubeチャンネルでイベントの動画が公開<a hidden class=anchor aria-hidden=true href=#denoのyoutubeチャンネルでイベントの動画が公開>#</a></h2>
+<p>DenoのYoutubeチャンネルでMelbJSやRemixConfなどでの発表内容が公開されています。</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=G_2AgdgEbkI">Kitson Kelly&rsquo;s &ldquo;Deno on the Edge&rdquo; at MelbJS Meetup</a></li>
+<li><a href="https://www.youtube.com/watch?v=91sGi9Gkxjg">Luca Casonato on &ldquo;Writing Typescript Libraries for Deno, Node, and the Browser&rdquo; at TSCongress 2022</a></li>
+<li><a href="https://www.youtube.com/watch?v=3NR9Spj0DmQ">Ryan Dahl&rsquo;s &ldquo;My Dream Stack&rdquo; at RemixConf 2022</a></li>
+</ul>
+<hr>
+<p><a href=https://deno.news/archive/44-ryans-dream-stack-kitson-deploys-to-the-edge>https://deno.news/archive/44-ryans-dream-stack-kitson-deploys-to-the-edge</a></p>
+<h2 id=oakservernat><code>oakserver/nat</code><a hidden class=anchor aria-hidden=true href=#oakservernat>#</a></h2>
+<p>DenoとDeno Deploy向けのSSRフレームワーク</p>
+<p><a href=https://github.com/oakserver/acorn>acorn</a>や<a href=https://nanojsx.io/>nano-jsx</a>, <a href=https://twind.dev/>twind</a>などを使用して実装されているようです。</p>
+<hr>
+<p><a href=https://github.com/oakserver/nat>https://github.com/oakserver/nat</a></p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/fresh.html>fresh</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
