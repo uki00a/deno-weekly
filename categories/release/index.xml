@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>release on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/release.html</link><description>Recent content in release on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Deno v1.22</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.22.html</link><pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.22.html</guid><description>Deno v1.22がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>release on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/release.html</link><description>Recent content in release on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 19 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Deno v1.23</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.23.html</link><pubDate>Sun, 19 Jun 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.23.html</guid><description>Deno v1.23がリリースされました。
+この記事では主な変更点などについて解説します。
+deno runやdeno cacheなどのコマンドでデフォルトの型チェックが無効化されました 下記コマンドで、デフォルトで型チェックが行われなくなります。
+deno run deno cache deno eval deno repl 今後、型チェックを行いたい場合は、deno checkコマンドを使うか--checkオプションを指定する必要があります。
+$ deno check mod.ts その他のdeno testなどのコマンドでは、引き続きローカルモジュールの型チェックがデフォルトで実行されます。
+deno runが失敗する場合の対処方法 Denoは、型チェックを行わない場合、swcを使用してトランスパイルを行います。
+その関係で、コードの実行時に、まれに問題が発生することがあるようです。
+https://github.com/denoland/deno/issues/14900 問題に遭遇した場合は、--checkオプションを指定するとtscが使用されるため、問題を回避できる可能性があります。
+$ deno run --check mod.ts Deno.sleepSync()の削除 Atomics.waitで代替可能であったり、イベントループを完全にブロックしてしまうなどの問題を抱えていたため、Deno.sleepSync()が削除されました。
+Intl.v8BreakIteratorの削除 非標準APIであるため、Intl.v8BreakIteratorが削除されました。
+代わりにIntl.Segmenterの使用が推奨されます。
+deno taskコマンドの改善 --cwdオプションのサポート --cwdオプションにより、タスク実行時のカレントディレクトリを変更できるようになりました (デフォルトでは、deno.json(c)の配置場所がカレントディレクトリに設定されます)
+$ deno task --cwd ./src build リダイレクションのサポート タスクの定義でリダイレクションがサポートされました。
+{ &amp;#34;tasks&amp;#34;: { &amp;#34;test&amp;#34;: &amp;#34;echo foo &amp;gt; test.txt&amp;#34; } } また、/dev/nullにリダイレクトすると、出力が捨てられます (Windowsでも動きます)
+コマンドの追加 下記コマンドがサポートされました。</description></item><item><title>Deno v1.22</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.22.html</link><pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.22.html</guid><description>Deno v1.22がリリースされました。
 この記事では、主な変更点についてまとめていきます。
 リモートモジュールの型チェックがデフォルトで無効化 deno runやdeno testなどの各コマンドでリモートモジュールの型チェックがデフォルトで無効化されました。
 今後はローカルのTypeScriptファイルのみが型チェックされます。

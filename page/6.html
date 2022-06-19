@@ -72,6 +72,52 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/07/26〜2021/08/01の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.12.2がリリース Deno v1.12.2がリリースされました。
+今回のリリースでは、主にバグ修正をメインに実施されています。
+変更点:
+deno lspのdeno/virtualTextDocumentメソッドでdeno:/status.mdを表示する際に、Workspace Settingsセクションが表示されるようになりました --inspectオプションで表示されたデバッグ用URLに対してHTTPなどの非WebSocketリクエストを送信すると、Denoがクラッシュする問題が修正されました Deno.connectTls及びDeno.startTlsで--certオプションで指定した証明書が使用されるように修正されました deno infoコマンドでX-TypeScript-Typesヘッダなどで読み込まれたTypeScriptファイルの情報も表示されるようになりました deno testコマンドの引数に指定したモジュールが、メインモジュールとして読まれる問題が修正されました(import.meta.mainがtrueに設定されてしまう) GCのタイミングで不要になったResponseオブジェクトのボディに紐づくリソースが開放されるようになりました Deno.upgradeWebSocketで、リクエストのConnectionヘッダにカンマ区切りで複数の値が含まれていた場合も、適切に動作するように修正されました Deno.upgradeWebSocketがリクエストのConnectionヘッダの大文字・小文字を区別しなくなりました deno lspでX-TypeScript-Typesによって型定義が提供されるモジュールとimport typeやexport typeなどを併用していると、ホバーなどがうまく機能しなくなる問題が修正されました deno lspでImport mapsファイルが更新された際に、依存関係や診断内容が再計算されない問題などが修正されました https://github.com/denoland/deno/releases/tag/v1.12.2
+deno_std v0.103.0がリリース deno_std v0.103.0がリリースされました
+変更点:
+async/deferred: Deferredオブジェクトにstateプロパティが追加され、Promiseの現在の状態を問い合わせられるようになりました http/file_server: ETagとIf-None-Matchヘッダへのサポートが追加されました http/file_server: Rangeヘッダがサポートされました encoding/base64url: 不正な形式のbase64url文字列が渡された際に、TypeErrorを投げるように修正されました encoding/toml: TOMLパーサが書き直され、ネストされたテーブルなどが適切に取り扱われるように修正されました encoding/yaml: parseAll関数の型定義が改善されました testing/asserts: assertThrowsAsyncのエラーメッセージで実際に投げられたエラーではなく、常にErrorクラスが表示される問題が修正されました testing/asserts: assertEqualsがクラスの違いを考慮するように修正されました https://github.com/denoland/deno_std/releases/tag/0.103.0
+deno-sqlite v2.5.0がリリース deno-sqliteのv2.5.0がリリースされました。
+変更点:
+DBクラスのコンストラクタにoptionsパラメータが追加され、データベースを開く際の挙動を詳細に制御できるようになりました PreparedQueryタイプにcolumnsメソッドが定義されました Deno.fdatasyncSyncを使って、SQLiteがファイルのデータを適切にディスクに同期できるようになりました https://github.com/dyedgreen/deno-sqlite/releases/tag/v2.5.0
+depcheck depcheckはソースコード中の未使用の依存関係を検出するためのDenoモジュールです
+https://github.com/ebebbington/depcheck
+deno-github-contributions-api deno-github-contributions-apiは、Deno Deployで動作するGitHub上でのコントリビューション数を取得するためのAPIです。...</p>
+</div>
+<footer class=entry-footer><span title="2021-08-01 00:00:00 +0000 UTC">August 1, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/07/26〜2021/08/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/01.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/07/19〜2021/07/25の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.12.1がリリース Deno v1.12.1がリリースされました。このリリースではバグの修正が中心に行われています。
+変更点:
+crypto.getRandomValuesでBigInt64ArrayとBigUint64Arrayがサポートされました ネイティブHTTPサーバで、Cookieヘッダの値と名前の組が、セミコロンではなくコンマ区切りで設定されてしまう問題が修正されました FileReader#abort()が現在の読み込み操作のみを中止するように修正されました Array#atやString#atなどの型定義が追加されました https://github.com/denoland/deno/releases/tag/v1.12.1
+deno_std v0.102.0がリリース deno_std v0.102.0がリリースされました。
+新規モジュールとして、std/collectionsが追加されています。
+変更点:
+新しくstd/collectionsモジュールが追加されました encoding/toml: コメントのみを含む行で#の前に空白が含まれていると、それがコメントではなくキーとして解析されてしまう問題が修正されました encoding/toml: クォートや空白などを含むキーが仕様通りに解析されない問題が修正されました hash: Hash#updateでUint8Array以外のTypedArrayが適切に取り扱われない問題が修正されました https://github.com/denoland/deno_std/releases/tag/0.102.0 Deno標準ライブラリ0.102.0で追加されたcollectionsの紹介 Oak v8.0.0がリリース Oak v8.0.0がリリースされました。
+このリリースには破壊的変更が含まれます。
+変更点:
+Deno v1.12.0で実装されたDeno.upgradeWebSocket()ベースのWebSocketサポートが追加されました それに伴い、Context.#upgradeが標準のWebSocketオブジェクトを返却するように変更されています (破壊的変更) Applicationオブジェクトを作成する際に、contextStateオプションによってContext.stateが作成される際の挙動を制御できるようになりました。 Context#sendでcontentTypesオプションがサポートされ、Content-Typeヘッダの内容をカスタマイズできるようになりました。 デフォルトで、補足されなかった例外が標準エラーに出力されるようになりました (この挙動はlogErrorsオプションにfalseを設定することで無効化できます) https://github.com/oakserver/oak/commit/9f7dad2144f41c6bdf098577351f7b36554ee4ba
+deno_mongo v0.24.0がリリース DenoのMongoDBクライアントであるdeno_mongoのv0.24.0がリリースされました。
+変更点:
+Collection#dropIndexesが実装されました Collection#findAndModifyが実装されました https://github.com/denodrivers/deno_mongo/releases/tag/v0.24.0</p>
+</div>
+<footer class=entry-footer><span title="2021-07-25 00:00:00 +0000 UTC">July 25, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/07/19〜2021/07/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/25.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/07/12〜2021/07/18の最新情報
 </h2>
 </header>
@@ -241,47 +287,6 @@ https://github.com/kt3k/deploy_dir</p>
 </div>
 <footer class=entry-footer><span title="2021-05-30 00:00:00 +0000 UTC">May 30, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/05/24〜2021/05/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/30.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/05/17〜2021/05/23の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.10.2がリリース Denoのv1.10.2がリリースされました。
-このリリースではCVE-2021-32619へのセキュリティ上の修正が含まれるため、できるだけ早くこのバージョンへアップグレードすることを推奨されています。
-その他の変更点:
-.vscode/settings.jsonなどでdeno.configに相対パスが設定されていた場合、deno lspで適切に設定が読まれない問題が修正されました。 TypeScriptファイルをimportする際は、X-TypeScript-Typesヘッダが無視されるようになりました。 https://github.com/denoland/deno/releases/tag/v1.10.2 https://twitter.com/deno_land/status/1394353166863454213 deno_std v0.97.0がリリース io/buffer: Deno Deployでも型エラーなしで使えるようになりました。 io: types.d.tsが追加されました。 io/bufio: readDelimやreadStringDelimでデリミタが内部で複数のチャンクにまたがった際に、誤った結果を返す問題が修正されました。 node/events: EventEmitter#onなどにリスナとして関数以外の値を渡すと、エラーが発生するようになりました。 testing: assertObjectMatchで配列が適切に取り扱われるようになりました。 https://github.com/denoland/deno_std/releases/tag/0.97.0
-denoland/setup-deno v1.0.0がリリース denoland/setup-denoはGitHub ActionsからDenoを利用するためのアクションです。
-v1.0.0がリリースされたため、すでにdenolib/setup-denoをお使いの場合は、そちらから移行するとよさそうです。
-https://github.com/denoland/setup-deno/releases/tag/v1.0.0
-Flat Data Flat Dataは、HTTPエンドポイントまたはSQLクエリからデータを取得し、GitHubリポジトリに格納するためのGitHubアクションです。
-Denoを使用したJavaScript/TypeScriptファイルの実行がサポートされており、ダウンロードされたデータを変換することができます。
-また、GitHubリポジトリに格納されたデータを可視化するために、Flat Viewerというツールも提供されています。
-https://github.com/githubocto/flat Flat Dataについて Flat Viewer packup - Parcelライクなビルドツール packupというParcelビルドツールが公開されました。
-Parcelに影響を受けているようで、以下のような特徴があります。
-設定なしでアプリケーションコードをバンドルできる TypeScriptをサポート esbuildを使用した高速なビルド https://github.com/kt3k/packup
-luath v0.6.0/v0.7.0/v0.8.0がリリース Denoで実装されたフロントエンドビルドツールであるluathのv0.6.0/v0.7.0/v0.8.0がリリースされました。
-変更点:...</p>
-</div>
-<footer class=entry-footer><span title="2021-05-23 00:00:00 +0000 UTC">May 23, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/17〜2021/05/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/23.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/05/10〜2021/05/16の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。
-このリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。
-変更点:
-deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が"esm" | "iife"から"module" | "classic"に変更された 公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。
-変更点:
-http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった https://github....</p>
-</div>
-<footer class=entry-footer><span title="2021-05-16 00:00:00 +0000 UTC">May 16, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/10〜2021/05/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/16.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
