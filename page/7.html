@@ -72,6 +72,27 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/06/01〜2021/06/06の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.10.3がリリース Deno v1.10.3がリリースされました。
+deno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。
+変更点:
+deno lspで// @deno-types="" と /// &lt;references types="" />に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=&lt;dir>で&lt;dir>が存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました wpt.deno.land wpt.deno.landというWebページが公開されました。
+このページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。
+https://wpt.deno.land/ https://github.com/denoland/wpt.deno.land twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。
+引数として与えられたHTMLファイルの内容を元に、twindを使用してスタイルシートが生成されます。
+https://github.com/kt3k/twd https://github.com/tw-in-js/twind Eta Etaは軽量性や速度を重視したテンプレートエンジンです。
+レイアウトによるテンプレートの再利用や、プラグインによるレンダリングの挙動のカスタマイズなどがサポートされています。
+また、Denoだけでなく、ブラウザやNode.jsもサポートされています。
+https://github.com/eta-dev/eta https://eta.js.org/ </p>
+</div>
+<footer class=entry-footer><span title="2021-06-06 00:00:00 +0000 UTC">June 6, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/06/01〜2021/06/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/06.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/05/24〜2021/05/30の最新情報
 </h2>
 </header>
@@ -260,33 +281,6 @@ deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用
 </div>
 <footer class=entry-footer><span title="2021-04-04 00:00:00 +0000 UTC">April 4, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/29〜2021/04/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/04.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/03/22〜2021/03/28の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno本体の最新情報 Deno v1.8.2がリリース Deno v1.8.2がリリースされました。
-このリリースでは、バグ修正などを中心に実施されています。
-変更点:
-Deno.createHttpClientを使用した際に、User-Agentヘッダが設定されない問題が修正された deno fmtでmarkdownファイルのスペースなどが適切にフォーマットされない問題が修正された deno lspでエディタ以外でファイルが編集されていると、“The current snapshot version is missing.“エラーが発生する問題が修正された deno lspでファイルの診断(diagnostics)が固有のスレッドで実行されるようになった https://github.com/denoland/deno/releases/tag/v1.8.2
-deno_std v0.91.0がリリース deno_std v0.91.0がリリースされました。
-主な変更点:
-encoding/yaml: EXTENDED_SCHEMAが追加され、Yamlファイル内でJSの関数や正規表現などを使用できるようになった io/streams: readerFromIterable()が追加された node/fs: utimes/utimesSyncが実装された など
-https://github.com/denoland/deno_std/releases/tag/0.91.0
-status.deno.landが公開された status.deno.landが公開されました。
-このサイトでは、Denoのモジュールレジストリなどの運用状況を確認することができます。
-https://status.deno.land
-サードパーティモジュールなどの最新情報 swdev - Service WorkerベースのNo bundleビルドツール swdevという、Service WorkerベースのNo bundleビルドツールが公開されました。
-以下のようが機能が提供されているようです:
-Service Workerを利用したTypeScriptやSvelteファイルの変換 Deno.watchFs()ベースのCache Busting Rollupベースのプロダクションビルド https://github.com/mizchi/swdev
-deno-sqlite v2.4.0がリリース deno-sqlite v2.4.0がリリースされました。
-このリリースでは、以下のような変更が加わっています:
-SQLiteのv3.35.0への更新 DB....</p>
-</div>
-<footer class=entry-footer><span title="2021-03-28 00:00:00 +0000 UTC">March 28, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/03/22〜2021/03/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/28.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

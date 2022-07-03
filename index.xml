@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 26 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/06/20〜2022/06/26の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/06/26.html</link><pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/06/26.html</guid><description>Deno v1.23.1 Deno v1.23.1がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 03 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/06/27〜2022/07/03の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/07/03.html</link><pubDate>Sun, 03 Jul 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/07/03.html</guid><description>Deno v1.23.2 Deno v1.23.2がリリースされました。
+スレッドセーフコールバックのサポート(FFI) 例えば、メインスレッドで登録したコールバック(Deno.UnsafeCallback)をWorkerスレッドから呼び出したり、その逆にWorkerスレッドで登録したコールバックをメインスレッドから呼び出すことができるようになりました。
+また、Deno.UnsafeCallbackにrefとunrefメソッドが実装されており、refを呼ぶことでDenoプロセスの停止を防止することができます。(Deno.refTimerなどと同様の挙動)
+https://github.com/denoland/deno/pull/14942
+その他の変更点 FFIで空のArrayBufferを渡すとプロセスパニックする問題が修正されています。 deno lspのdeno/cacheメソッド(vscode-denoだとDeno: Cache Dependenciesコマンド)で依存関係をキャッシュした際に、TypeScriptのランゲージサービスが自動で再起動されるようになりました。 Deno.bench()やDeno.test()を含むファイルをdeno runで実行すると、エラーが発生する問題が修正されています。 https://github.com/denoland/deno/releases/tag/v1.23.2
+deno_std v0.146.0 deno_std v0.146.0がリリースされました。
+collections: BSTreeとRBTreeのリネーム collectionsモジュールで提供されているBSTreeがBinarySearchTreeに、RBTreeがRedBlackTreeにリネームされています。
+その他の変更点 testing/asserts: assertEqualsで同じ要素を持つSet同士を比較しているにも関わらず、例外が発生するケースがあったため、修正されています。 streams/delimiter: TextLineStreamで大きなチャンクを処理する際にMaximum call stack size exceededエラーが発生することがある問題が修正されました。 node/util: util.inspect()やutil.format()で6つを超える要素数の配列が正しくフォーマットされるように修正されています。 https://github.com/denoland/deno_std/releases/tag/0.146.0
+JITコンパイラによるFFIの最適化 Deno本体へのJITコンパイラの導入により、FFIバインディングを最適化するPRが作成されています。
+perf(ext/ffi): JIT compiler for FFI (#15006)
+内部的には、tinyccが使用されているようです。
+https://github.com/denoland/deno/pull/15006
+Fresh v1 Fresh v1.0.0がリリースされました。
+これに合わせて、Freshのリポジトリがdenoland organization配下に移動されています。
+また、Deno公式でFreshの紹介記事が公開されています。
+Fresh 1.0 https://github.com/denoland/fresh
+denoland/meet-me Deno公式で、Calendlyのクローンアプリが公開されています。</description></item><item><title>2021/06/20〜2022/06/26の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/06/26.html</link><pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/06/26.html</guid><description>Deno v1.23.1 Deno v1.23.1がリリースされました。
 FFI関連の変更点 破壊的変更としてDeno.UnsafePointerが削除されました。 (正確にはDeno.UnsafePointer.ofのみ残されています) 今後、ポインタはbigintで表現されます。
 その他には、unstable APIとしてDeno.UnsafeCallbackが追加されています。 JavaScriptの関数を関数ポインタとして受け渡すために利用できます。
 deno fmtの改善 deno fmtコマンドがnode_modulesと.gitディレクトリを無視するようになりました。

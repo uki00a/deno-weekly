@@ -76,6 +76,26 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/04/18〜2022/04/24の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.21 Deno v1.21がリリースされました。
+個別に記事を書いたので、詳しくはそちらを参照いただければと思います。
+Deno v1.21 deno_std v0.136.0 deno_std v0.136.0がリリースされました。
+testing/snapshot スナップショットテストを行うためのモジュールが追加されました。
+このモジュールではassertSnapshotという関数が公開されており、__snapshots__ディレクトリに保存されたスナップショットと第2引数で指定された値を比較し、マッチしなかった場合、エラーが発生します。
+スナップショットを読み込む必要があるため、利用には--allow-readパーミッションが必要になります。
+import { assertSnapshot } from "https://deno.land/std@0.136.0/testing/snapshot.ts" Deno.test("doSomething", async (t) => { const result = doSomething(); await assertSnapshot(t, result); }); スナップショットを更新したいときは、テストを実行する際に--updateを指定する必要があります。
+この場合、スナップショットを書き込むために、追加で--allow-writeが必要になります。
+# スナップショットは__snapshots__に書き込まれます $ deno test --allow-read --allow-write tests/some_test.js -- --update testing/bdd itに渡すテスト関数がTestContextを受け取るように修正されています。
+import { describe, it } from "https://deno.land/std@0.136.0/testing/bdd.ts" describe("sum", () => { it("should return sum of numbers", (t) => { assertEquals(sum(1, 2, 3), 6, t....</p>
+</div>
+<footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/18〜2022/04/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/24.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/04/11〜2022/04/17の最新情報
 </h2>
 </header>
@@ -274,35 +294,6 @@ $ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから�
 </div>
 <footer class=entry-footer><span title="2022-02-20 00:00:00 +0000 UTC">February 20, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/14〜2022/02/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/20.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/01/31〜2022/02/06の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.18.2 Deno v1.18.2がリリースされました。
-Deno.getUid() Deno.getUid()が実装されました。
-これを使うと、現在のユーザのIDを取得できます。(Windowsだとnullが返されます)
-const uid = Deno.getUid(); console.log(uid); 利用するには--allow-envと--unstableが必要です。
-その他バグ修正 HOME環境変数に相対パスが設定されていると、プロセスがクラッシュする問題が修正されました。 拡張子なしでimportしようとした際に、メディアタイプを元に拡張子を推論されるようになりました。 クエリパラメータつきでローカルファイルをimportするとプロセスがクラッシュする問題が修正されました。 SubtleCrypto.decryptでAES-GCMによる復号を行う際に、タグ長が128ビットでないとプロセスがパニックする問題が修正されました deno lsp: リダイレクトが発生すると、X-Deno-Warningヘッダの内容が表示されなくなる問題が修正されました https://github.com/denoland/deno/releases/tag/v1.18.2
-deno_std v0.125.0 deno_std v0.125.0がリリースされました。
-std/nodeへの機能追加などを中心に行われています。
-全般 std/fs/copyやstd/node、std/osなどの--unstableが必要なモジュールを--unstableなしで使用した際に、型エラーではなく実行時エラーが発生するように修正されました。
-node punycodeパッケージが実装されました url.resolve()が実装されました child_process.spawn()などでAbortSignalがサポートされました fs.createWriteStream()が実装されました fs.copyFile()で4引数の形式がサポートされました https://github.com/denoland/deno_std/commit/3b43d075ea6977e10bb1d9bd58fbeacc721a114e
-deno_stdへのdotenvモジュールの追加について dotenvモジュールをdeno_stdへ追加するPRが作成されています。
-https://github.com/denoland/deno_std/pull/1877 経緯については下記のissueで議論されていますが、好意的な反応が多く、次のリリースなどで追加される可能性がありそうです。
-https://github.com/denoland/deno/issues/13396 https://github.com/denoland/deno_std/pull/1877
-Deno.Conn#setNoDelayとDeno.Conn#setKeepAliveの実装について Deno.ConnにsetNoDelayとsetKeepAliveを実装するPRがマージされました。(denoland/deno#13103)
-今のところ、下記のように使用することが想定されています。
-Deno.Conn#setNoDelay(true)を呼ぶとNagleアルゴリズムが無効化されます (TCP_NODELAYが設定される) Deno.Conn#setKeepAlive(true)を呼ぶとTCPキープアライブが有効化されます (SO_KEEPALIVEが設定される) この機能は次のDeno v1.19でリリースされる可能性がありそうです。
-https://github.com/denoland/deno/pull/13103
-Deno.run()でのIPCサポートについて Deno.run()でIPCをサポートするPRが作成されています。(denoland/deno#13566)
-今のところ、下記のような方法での使用が想定されているようです。
-Deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-02-06 00:00:00 +0000 UTC">February 6, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/31〜2022/02/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/06.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

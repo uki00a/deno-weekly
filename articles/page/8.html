@@ -77,6 +77,33 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/03/22〜2021/03/28の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno本体の最新情報 Deno v1.8.2がリリース Deno v1.8.2がリリースされました。
+このリリースでは、バグ修正などを中心に実施されています。
+変更点:
+Deno.createHttpClientを使用した際に、User-Agentヘッダが設定されない問題が修正された deno fmtでmarkdownファイルのスペースなどが適切にフォーマットされない問題が修正された deno lspでエディタ以外でファイルが編集されていると、“The current snapshot version is missing.“エラーが発生する問題が修正された deno lspでファイルの診断(diagnostics)が固有のスレッドで実行されるようになった https://github.com/denoland/deno/releases/tag/v1.8.2
+deno_std v0.91.0がリリース deno_std v0.91.0がリリースされました。
+主な変更点:
+encoding/yaml: EXTENDED_SCHEMAが追加され、Yamlファイル内でJSの関数や正規表現などを使用できるようになった io/streams: readerFromIterable()が追加された node/fs: utimes/utimesSyncが実装された など
+https://github.com/denoland/deno_std/releases/tag/0.91.0
+status.deno.landが公開された status.deno.landが公開されました。
+このサイトでは、Denoのモジュールレジストリなどの運用状況を確認することができます。
+https://status.deno.land
+サードパーティモジュールなどの最新情報 swdev - Service WorkerベースのNo bundleビルドツール swdevという、Service WorkerベースのNo bundleビルドツールが公開されました。
+以下のようが機能が提供されているようです:
+Service Workerを利用したTypeScriptやSvelteファイルの変換 Deno.watchFs()ベースのCache Busting Rollupベースのプロダクションビルド https://github.com/mizchi/swdev
+deno-sqlite v2.4.0がリリース deno-sqlite v2.4.0がリリースされました。
+このリリースでは、以下のような変更が加わっています:
+SQLiteのv3.35.0への更新 DB....</p>
+</div>
+<footer class=entry-footer><span title="2021-03-28 00:00:00 +0000 UTC">March 28, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/22〜2021/03/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/28.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/03/15〜2021/03/21の最新情報
 </h2>
 </header>
@@ -295,27 +322,6 @@ https://github.com/dsherret/code-block-writer</p>
 </div>
 <footer class=entry-footer><span title="2021-01-24 00:00:00 +0000 UTC">January 24, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/18〜2021/01/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/24.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/01/11〜2021/01/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno in 2020 Denoの公式ブログポストにて、Deno in 2020という記事が公開されました。
-この記事では、2020年中にDenoに行われた変更点がまとめられています。
-また、この記事の公開に合わせて、Deno Surveyというアンケートも実施されています。
-https://deno.land/posts/deno-in-2020
-Obsidian - GraphQLクライアント/サーバモジュール ObsidianはDenoで実装されたGraphQLクライアント/サーバモジュールです。
-SSRされたReactアプリケーション向けに最適化されています。
-現時点では、以下のような機能が提供されています:
-Reactとの統合(useObsidianフック、ObsidianWrapperコンポーネント) Oakフレームワークとの統合 クライアントサイド及びサーバサイドでのキャッシュ(サーバサイドキャッシュではRedisが使用されています) GraphQL Playground https://github.com/open-source-labs/obsidian
-Sinco - ブラウザのオートメーション・テストツール SincoはDenoで動作するブラウザのオートメーション・テストツールです。
-現時点ではヘッドレスモードのChromeのみに対応しています。
-https://github.com/drashland/sinco</p>
-</div>
-<footer class=entry-footer><span title="2021-01-17 00:00:00 +0000 UTC">January 17, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/11〜2021/01/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/17.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
