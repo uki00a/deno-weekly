@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 03 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/06/27〜2022/07/03の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/07/03.html</link><pubDate>Sun, 03 Jul 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/07/03.html</guid><description>Deno v1.23.2 Deno v1.23.2がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 10 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/07/04〜2022/07/10の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/07/10.html</link><pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/07/10.html</guid><description>Deno v1.23.3 Deno v1.23.3がリリースされました。
+このリリースでは、deno testなどの引数にfile:形式でディレクトリを指定すると、エラーが発生する問題が修正されています。
+# v1.23.2まではエラー $ deno test file:///home/foo/sample/tests また、Denoの内部で使用されているTypeScriptがv4.7.4へアップデートされています。
+その他には、いくつかのパフォーマンスチューニングなどが実施されています。
+https://github.com/denoland/deno/releases/tag/v1.23.3
+deno_std v0.147.0 deno_std v0.147.0がリリースされました。
+dotenv dotenvモジュールで、変数の展開がサポートされました。
+例えば、以下のような内容で.envファイルが定義されていたとします。
+HOST=localhost URL=http://${HOST}:${PORT:-3000} このファイルをdotenvモジュールで読み込むと、以下のように評価されます。
+{ HOST: &amp;#34;localhost&amp;#34;, URL: &amp;#34;http://localhost:3000&amp;#34; } その他には、stringify()関数が追加されています。
+import { stringify } from &amp;#34;https://deno.land/std@0.147.0/dotenv/mod.ts&amp;#34;; stringify({ PORT: &amp;#34;3000&amp;#34;, HOST: &amp;#34;localhost&amp;#34;, LOG_LEVEL: &amp;#34;debug&amp;#34; }); // PORT=3000 // HOST=localhost // LOG_LEVEL=debug http oak_commonsのHTTPエラーとコンテントネゴシエーション用のモジュールがdeno_std/httpに取り込まれました。
+http/negotiation
+import { accepts } from &amp;#34;https://deno.land/std@0.147.0/http/negotiation.ts&amp;#34;; const req = new Request(&amp;#34;https://github.com&amp;#34;, { headers: { accept: &amp;#34;text/html,application/xhtml+xml,application/xml;q=0.</description></item><item><title>2021/06/27〜2022/07/03の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/07/03.html</link><pubDate>Sun, 03 Jul 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/07/03.html</guid><description>Deno v1.23.2 Deno v1.23.2がリリースされました。
 スレッドセーフコールバックのサポート(FFI) 例えば、メインスレッドで登録したコールバック(Deno.UnsafeCallback)をWorkerスレッドから呼び出したり、その逆にWorkerスレッドで登録したコールバックをメインスレッドから呼び出すことができるようになりました。
 また、Deno.UnsafeCallbackにrefとunrefメソッドが実装されており、refを呼ぶことでDenoプロセスの停止を防止することができます。(Deno.refTimerなどと同様の挙動)
 https://github.com/denoland/deno/pull/14942

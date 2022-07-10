@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.d7fb4cbf980fe688a21621b06a795933c4e6bb2d4070ec940667af1715d84af2.css integrity="sha256-1/tMv5gP5oiiFiGwanlZM8Tmuy1AcOyUBmevFxXYSvI=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.8b523f1730c922e314350296d83fd666efa16519ca136320a93df674d00b6325.css integrity="sha256-i1I/FzDJIuMUNQKW2D/WZu+hZRnKE2MgqT32dNALYyU=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -40,7 +40,7 @@
 <div class=logo>
 <a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
 <div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 </div>
 </div>
@@ -62,7 +62,7 @@
 </li>
 <li>
 <a href=https://github.com/uki00a/deno-weekly title=ソース>
-<span><i class="fa fa-road"></i>ソース</span>
+<span><i class="fa fa-road"></i>ソース</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
 </a>
 </li>
 </ul>
@@ -74,6 +74,36 @@
 deno
 </h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/01/03〜2022/01/09の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.17.2 Deno v1.17.2がリリースされました。
+バグ修正などが中心に行われています。
+主な変更点:
+deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。
+JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。
+ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。
+SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。
+SubtleCrypto.deriveKeyでAES-CTRがサポートされました。
+FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。
+以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。
+Deno.test(function name() {}); Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。
+https://github.com/denoland/deno/releases/tag/v1.17.2
+deno_std v0.120.0 deno_std v0.120.0がリリースされました。
+crypto Tigerハッシュがサポートされました。
+uuid version()が実装されました。
+node https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。 path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。
+fs/expand_glob expandGlob()のextendedオプションのデフォルト値がtrueに変更されました。
+testing/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。
+https://github.com/denoland/deno_std/releases/tag/0.120.0
+設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)...</p>
+</div>
+<footer class=entry-footer><span title="2022-01-09 00:00:00 +0000 UTC">January 9, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/01/03〜2022/01/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/09.html></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>2021/12/27〜2022/01/02の最新情報
@@ -272,26 +302,6 @@ http/file_server: エラーログに色がつくようになりました...</p>
 </div>
 <footer class=entry-footer><span title="2021-10-31 00:00:00 +0000 UTC">October 31, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/10/25〜2021/10/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/31.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/10/18〜2021/10/24の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.15.2 Deno v1.15.2がリリースされました。
-主な変更点:
-Node.js互換モード(--compat)でCommon JS形式のモジュールの実行などがサポートされました。
-deno runコマンドの引数としてCommon JS形式のファイルを直接指定できます
-const EventEmitter = require("events"); const emitter = new EventEmitter(); emitter.on("foo", console.log); emitter.emit("foo", 1); $ deno run --unstable --compat --allow-read main.js TypeScriptのallowSyntheticDefaultImportsオプションがデフォルトで有効化されるようになりました
-https://github.com/denoland/deno/releases/tag/v1.15.2
-deno_std v0.112.0 deno_std v0.112.0がリリースされました。
-大きな変更点として、deno_std/nodeでexpressのHello Worldコードを動かすための対応やpackage.jsonのimportsやexportsのサポートなどが実施されています。
-変更点:
-collections: joinToStringが追加されました node/module: package.jsonのimportsやexportsフィールドのサポートが追加されました node/buffer: Bufferをnewなしで呼べるようになりました node/events: setMaxListenersが実装されました node/process: process.mainModuleが実装されました node/process: process.versionの値がDenoのバージョンからNode.jsのstableバージョンに変更されました node/http: ServerResponseとIncomingMessageでストリーミングがサポートされました node/url: formatが実装されました node/os: devNull定数が追加されました node/global: node/global....</p>
-</div>
-<footer class=entry-footer><span title="2021-10-24 00:00:00 +0000 UTC">October 24, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/18〜2021/10/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/24.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
