@@ -27,7 +27,7 @@ title: ギャラリー
 |[Trex](https://github.com/crewdevio/Trex)|パッケージマネージャ|
 |[Diplo](https://github.com/Tricked-dev/diplo)|スクリプトランナ・パッケージマネージャ|
 |[Cliffy](https://github.com/c4spar/deno-cliffy)|CLIフレームワーク|
-|[ax](https://github.com/dsherret/ax)|zxライクに影響を受けたモジュール|
+|[ax](https://github.com/dsherret/ax)|zxに影響を受けたモジュール|
 |[ts-morph](https://github.com/dsherret/ts-morph)|TypeScriptコンパイラAPIのラッパ|
 |[code-block-writer](https://github.com/dsherret/code-block-writer)|TypeScript/JavaScriptコードの生成をサポート|
 |[packup](https://github.com/kt3k/packup)|Parcelライクなビルドツール|
