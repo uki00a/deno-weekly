@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.8b523f1730c922e314350296d83fd666efa16519ca136320a93df674d00b6325.css integrity="sha256-i1I/FzDJIuMUNQKW2D/WZu+hZRnKE2MgqT32dNALYyU=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -74,6 +74,24 @@
 deno_std
 </h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/11/29〜2021/12/05の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.16.4 Deno v1.16.4がリリースされました。
+このリリースはバグ修正がメインです。
+変更点:
+SubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様 https://github.com/denoland/deno/releases/tag/v1.16.4
+deno_std v0.117.0 deno_std v0.117.0がリリースされました。
+httpモジュールでの新機能の追加やnodeモジュールのNode.jsとの互換性の向上が実施されています。
+httpモジュール serveなどの関数でonErrorオプションがサポートされ、handlerで発生したエラーを補足できるようになりました
+const handler = (request: Request) => { throw new Error("Hello"); }; const servePromise = serve(handler, { addr: "localhost:3000", onError(_error) { return new Response("Internal Server Error", { status: 500 }); }, }); nodeモジュール readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util....</p>
+</div>
+<footer class=entry-footer><span title="2021-12-05 00:00:00 +0000 UTC">December 5, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/29〜2021/12/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/05.html></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>2021/11/22〜2021/11/28の最新情報
@@ -268,25 +286,6 @@ import { assertEquals, assertRejects } from "https://deno.land/std@0.108.0/testi
 </div>
 <footer class=entry-footer><span title="2021-09-26 00:00:00 +0000 UTC">September 26, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/09/20〜2021/09/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/26.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/09/13〜2021/09/19の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v2のリリースプランについて Deno v2のリリースプランが公開されました。
-https://github.com/denoland/deno/issues/12110 10/12にDeno v1.15, 11/22にDeno v2がリリース予定とのことです
-また、GitHub Discussionsにて、v2で実施予定の追加の変更点やDenoのエコシステムの拡大に関する議論内容などについて公開されています。
-追加の変更点(今後、内容が変わる可能性があります！):
-NotCapableエラーの導入 DenoのパーミッションエラーとOSによって発生したパーミッションエラーを区別できるようにすることが目的のようです Deno.read()のDeno.write()などの削除 Import AssertionsとJSON Modules opメトリクスのリファクタリング/整頓 Deno 2.0 Release Plan Design Meeting 2021-09-16 Deno v1.14.0 Deno v1.14.0がリリースされました。
-TypeScript v4.4への更新、deno fmtやdeno lintで設定ファイルがサポート、Web Crypto APIの強化、Deno.upgradeWebSocketの安定化、URLPatternの実装、シグナルAPI(unstable)への破壊的変更などが実施されています。
-また、magurotunaさんによる日本語の紹介記事が公開されています(https://zenn.dev/magurotuna/articles/deno-release-note-1-14-0)
-変更点:
-deno fmt/deno lint deno fmt でJSDocコメントへの基本的なサポートが追加されました deno fmtとdeno lintの挙動を設定ファイルやCLIオプションで変更できるようになりました ネイティブHTTPサーバ Deno.upgradeWebSocketが安定化されました Deno.upgradeWebSocket でUpgradeヘッダの大文字・小文字の違いを区別しないように修正されました ネイティブHTTPサーバでリクエストボディが消費されなかった場合に発生するリソースリークが修正されました FFI Deno....</p>
-</div>
-<footer class=entry-footer><span title="2021-09-19 00:00:00 +0000 UTC">September 19, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/09/13〜2021/09/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/19.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

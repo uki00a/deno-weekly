@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/categories/release.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.8b523f1730c922e314350296d83fd666efa16519ca136320a93df674d00b6325.css integrity="sha256-i1I/FzDJIuMUNQKW2D/WZu+hZRnKE2MgqT32dNALYyU=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -74,6 +74,27 @@
 release
 </h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Deno v1.24
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.24がリリースされました。
+この記事では主な変更点などについて解説します。
+--checkオプション指定時のトランスパイルの挙動が変更 tscがトランスパイル用途では使用されなくなりました。
+型チェック トランスパイル --check (v1.23) tsc tsc --no-check (v1.23) - swc --check (v1.24) tsc swc --no-check (v1.24) - swc これにより、トランスパイルの効率化が見込まれます。
+また、tscの実行結果をキャッシュすることで型チェックを効率化する仕組みも導入されており、型チェックも効率化が図られています。(キャッシュはSQLiteに保存され、$DENO_DIR/check_cache_v1にデータベースファイルが作成されます)
+FFI(Deno.dlopen)の改善 v1.23.3でV8 Fast API Calls+JITコンパイルの導入による最適化が実施されました。
+今回のリリースでは、64ビット値を取り扱う関数に対してもV8 Fast API Callsを利用した最適化が適用されるように改善されています。
+サブプロセスAPIへの変更 Deno v1.21 で入ったサブプロセスAPIに変更が加わっています。
+Deno.Child.unref()とDeno.Child.ref()のサポート 挙動としてはDeno.refTimerやDeno.unrefTimerと同様で、Deno.Child.unref()を呼ぶと、対象の子プロセスがDenoの終了をブロックしなくなります。
+const child = await Deno.spawnChild("some_long_running_process", { args }); child.unref(); (破壊的変更) Deno.Childの型定義が変更 Deno.spawnChildで返却されるDeno.Childのstdio関連のプロパティに関する型定義が変更されています。
+v1.23.4...</p>
+</div>
+<footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.24" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.24.html></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>Deno v1.23

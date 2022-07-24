@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.8b523f1730c922e314350296d83fd666efa16519ca136320a93df674d00b6325.css integrity="sha256-i1I/FzDJIuMUNQKW2D/WZu+hZRnKE2MgqT32dNALYyU=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -74,6 +74,53 @@
 deno
 </h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/03/28〜2022/04/03の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。
+Supabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。
+Supabase Functions on Deno Deploy Edge Functions are now available in Supabase Deno v1.20.4 Deno v1.20.4がリリースされました。
+変更点:
+外部モジュールのimport時にリダイレクトが発生すると、deno compileで生成したバイナリがうまく動作しなくなる問題が修正されました。
+Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されました。
+変更前:
+function fetch( input: URL, init?: RequestInit, ): Promise&lt;Response>; 変更後:
+function fetch( input: URL | Request | string, init?: RequestInit, ): Promise&lt;Response>; deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。
+deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。
+https://github.com/denoland/deno/releases/tag/v1.20.4
+deno_std v0....</p>
+</div>
+<footer class=entry-footer><span title="2022-04-03 00:00:00 +0000 UTC">April 3, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/28〜2022/04/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/03.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/03/21〜2022/03/27の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。
+詳細については下記を参照ください。
+Deno v1.20 deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。
+これにより、cp -Rや|&のサポートなどが行われています。
+deno_task_shell v0.2.0 deno lspでenablePathsオプションがサポート deno lspでenablePathsオプションがサポートされました。
+ワークスペース内の特定のフォルダでのみdeno lspを有効化したいが、それ以外のフォルダでは組み込みのJavaScript/TypeScriptランゲージサーバを使いたいようなときに設定することが想定されているようです。
+https://github.com/denoland/vscode_deno/releases/tag/3.11.0 その他の変更 --unstableなしでdeno benchを実行した際のエラーメッセージが改善 deno upgradeコマンドでDENO_CERT環境変数による証明書の指定がサポート HTTPサーバのパフォーマンスチューニング など
+https://github.com/denoland/deno/releases/tag/v1.20.2
+Deno v1.20.3 Deno v1.20.2に続けて、v1.20.3もリリースされています。
+セキュリティに関する修正が含まれるので早めのアップデートが推奨されています。
+変更点:
+Denoはfetchの第一引数としてURLの指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです) FFI関連の各API(Deno.UnsafeFnPointer#callなど)でちゃんと--unstableオプションが与えられているかチェックされるよう変更されました。 Deno.RunOptionsのcmdプロパティがreadonlyに変更されました。 https://github.com/denoland/deno/releases/tag/v1.20.3
+deno_std v0.131.0 deno_std v0.131.0がリリースされました。
+collections BinaryHeapが追加されました。
+import { BinaryHeap } from "https://deno.land/std@0.132.0/collections/binary_heap.ts"; const heap = new BinaryHeap&lt;number>(); heap....</p>
+</div>
+<footer class=entry-footer><span title="2022-03-27 00:00:00 +0000 UTC">March 27, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/21〜2022/03/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/27.html></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>2021/03/14〜2022/03/20の最新情報
@@ -260,54 +307,6 @@ Deno....</p>
 </div>
 <footer class=entry-footer><span title="2022-02-06 00:00:00 +0000 UTC">February 6, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/31〜2022/02/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/06.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/01/24〜2022/01/30の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.18.1 Deno v1.18.1がリリースされました。
-Deno.networkInterfaces() Deno.networkInterfaces()が実装されました。
-利用可能なネットワークインターフェースの一覧を取得できます。
-const interfaces = Deno.networkInterfaces(); 利用するには--allow-envと--unstableが必要です。
-deno lsp deno lspでDENO_CERTとDENO_TLS_CA_STOREの環境変数がサポートされました。
-これらの環境変数については、下記を参照ください。
-https://deno.land/manual@v1.18.1/getting_started/setup_your_environment#environment-variables https://github.com/denoland/deno/releases/tag/v1.18.1
-deno_std v0.123.0 deno_std v0.123.0がリリースされました。
-std/node 新しく下記APIが実装されています:
-os.networkInterfaces() process.uptime() child_process.execFile() std/testing assertObjectMatchでArrayBufferを含むオブジェクトが適切に比較されない問題が修正されました。
-https://github.com/denoland/deno_std/releases/tag/0.123.0
-deno_std/archive/tarの現代化について deno_stdにはtarファイルを取り扱うためにarchive/tarが提供されています。
-このarchive/tarはDeno.Readerをベースに実装されています。
-現在、archive/tarをStreams APIで書き直すことが検討されています。
-この一環として、archive/streams.tsを追加するPRが作成されています。
-https://github.com/denoland/deno_std/pull/1855 archive/streams.tsではTarEncoderStreamとTarDecoderStreamを提供し、StreamsベースのAPIを介してtarファイルの操作を行うことができます。
-まだマージされていないものの、次のリリースなどで追加される可能性がありそうです。
-https://github.com/denoland/deno_std/issues/1658 https://github.com/denoland/deno_std/pull/1855 Deno in 2021 Denoの公式ブログポストとしてDeno in 2021という記事が公開されました。
-この記事では、2021年中にDenoに起きたできごとや変更内容などについて解説されています。
-また、Deno v2へのロードマップの公開などもまもなく実施予定とのことです。
-https://deno.com/blog/deno-in-2021
-I’m porting tsc to Go SWCの作者であるkdy1氏により、I’m porting tsc to Goという記事が公開されました。...</p>
-</div>
-<footer class=entry-footer><span title="2022-01-30 00:00:00 +0000 UTC">January 30, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/24〜2022/01/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/30.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/01/17〜2022/01/23の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.18.0 Deno v1.18.0がリリースされました。
-設定ファイルの自動読み込みがサポート 今までは、設定ファイルを読み込むためには--configの指定が必要でした。
-$ deno run --config ./deno.json ./main.ts 今後は、--configが指定されなかった場合、deno.jsonまたはdeno.jsoncという名前の設定ファイルを自動で読み込まれるようになります。
-Deno.testのsub-steps APIが安定化 Deno.testでテストケースのグループ化を行うためのsub-steps APIが安定化されました。
-今後は--unstableを指定しなくても利用できます。
-Deno.test("nested test case", async (t) => { const success = await t.step("step 1", async (t) => { const success = await t.step("step 1-1", () => { throw new Error("Failed!"); }); if (!success) throw new Error("Failed!"); await t.step("step 1-2", () => {}); }); if (success) throw new Error("Failed!"); }); Web Cryptography APIの実装が完了 このリリースでは、下記の変更が実施されています。...</p>
-</div>
-<footer class=entry-footer><span title="2022-01-23 00:00:00 +0000 UTC">January 23, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/17〜2022/01/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/23.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
