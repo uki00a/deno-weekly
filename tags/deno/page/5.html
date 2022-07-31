@@ -76,6 +76,33 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/11/22〜2021/11/28の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoのこれまでとこれから JSConf JPでのkt3kさんのDenoに関する発表資料が公開されました。
+Denoの概要や作られた背景、今後のロードマップなどについて解説されています。
+Denoのこれまでとこれから
+Deno v1.16.3 Deno v1.16.3がリリースされました。
+このリリースはバグ修正がメインです。
+ランタイム Deno.watchFsで発火されるイベントに"other"という新しいイベントタイプがサポートされました。 (#12097) 設定ファイル(--config)に記載されたパスが、その設定ファイルからの相対パスによって解決されるようになりました (今まではカレントディレクトリに基づいて解決されていました) --reloadオプションが指定された際は、.tsbuildinfoファイルを読み込まないように修正されました Deno.readFileで/procディレクトリのファイルが読めない問題が修正されました。 すでに停止されたワーカーなどでコードを評価しようとすると、プロセスがパニックする問題が修正されました。 deno lsp initializationOptions.configで指定された設定ファイルのinclude/excludeの設定が考慮されるようになりました。例えば、lint.files.excludeで指定されたファイルはエディタ上で診断結果が表示されなくなります。 @deprecatedコメントを付けた関数などで適切に警告が表示されるようになりました。 設定ファイルやImport mapsが配置されているパスによっては、LSPによる再読込がうまく行われない問題が修正されました。 deno fmt Markdownファイルをフォーマットした際に、&amp;nbsp;などの文字が削除される問題が修正されました。
+deno compile 引数としてimportを含まない.jsファイルを指定した場合、ソースコードのバンドルがスキップされるようになりました。
+Web Crypto API crypto.subtle.decryptでの復号に失敗した際に、プロセスがパニックする問題が修正されました
+https://github.com/denoland/deno/releases/tag/v1.16.3
+deno_std v0.116.0 deno_std v0.116.0がリリースされました。
+node os.hostname()が実装されました util.inspect()の互換性が向上しました httpパッケージで立てたサーバが不正な形式のリクエストを受信した際に、プロセスがパニックする問題が修正されました fmt printfで少数を表示する際に適切に丸めが行われない問題が修正されました
+https://github.com/denoland/deno_std/releases/tag/0.116.0
+Drash v2.2.0 Drashのv2.2.0がリリースされました。
+GraphQLやETag、レート制限などのサポートが追加されています。
+https://github.com/drashland/drash/releases/tag/v2.2.0
+NOVAS DenoでSvelteアプリケーションを開発するためのツール
+https://github.com/NOVASland/NOVAS</p>
+</div>
+<footer class=entry-footer><span title="2021-11-28 00:00:00 +0000 UTC">November 28, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/22〜2021/11/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/28.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/11/15〜2021/11/21の最新情報
 </h2>
 </header>
@@ -260,25 +287,6 @@ deno fmt/deno lint deno fmt でJSDocコメントへの基本的なサポート�
 </div>
 <footer class=entry-footer><span title="2021-09-19 00:00:00 +0000 UTC">September 19, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/09/13〜2021/09/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/19.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/09/06〜2021/09/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno 2.0のスコープについて GitHub DiscussionsにてDeno 2.0のスコープやリリース予定時期について公開されました。
-https://github.com/denoland/deno/discussions/11972 現時点では、今年の11月に2.0のリリースが検討されているようです。
-Deno 2.0に向けて検討中の機能の例 (今後、変更される可能性がありますので参考程度に…) Deno.ReaderなどのJSのみで実装されたIO関連のAPIを削除(https://github.com/denoland/deno/issues/9795) 一部のAPIはすでにstd/io/util.tsなどへ移動されています デフォルトでのWorker内でDeno名前空間の有効化 TypeScriptのuseUnknownInCatchVariablesを有効化 Deno.customInspectを削除 デフォルトで型チェックをスキップする(https://github.com/denoland/deno/issues/11340) --configオプションを削除 (https://github.com/denoland/deno/discussions/7732) デフォルトでのロックファイルの生成・検証 localStorageや将来のIndexedDBなどの追加に備えたInternal Originの導入 TypeScriptのcompilerOptions.jsxFactoryとcompilerOptions.jsxFragmentFactoryのデフォルト値をそれぞれhと Fragmentに変更 (https://github.com/denoland/deno/issues/11186) デフォルトで外部のTypeScriptコードへの型エラーなどを報告させない (https://github.com/denoland/deno/issues/11970) dynamic importとWorker向けに--allow-importの導入 (https://github.com/denoland/deno/issues/8266) https://github.com/denoland/deno/discussions/11972
-vercel-deno v1.0.0 Vercel serverless functionsのDenoランタイム
-apiディレクトリに各フレームワークなどを使用したサンプルコードが配置されています。
-https://github.com/vercel-community/vercel-deno/releases/tag/1.0.0
-deno_mongo v0.26.0 deno_mongo v0.26.0がリリースされました。
-変更点:
-Collection#insertが非推奨化されました (代わりにinsertOneやinsertManyなどの使用が推奨されます) Bson.ObjectIdの型定義が削除されました (Bson.ObjectID の方は残っています) MongoClient.buildInfoがサポートされました (https://docs.mongodb.com/manual/reference/command/buildInfo/) https://github.com/denodrivers/deno_mongo/releases/tag/v0.26.0</p>
-</div>
-<footer class=entry-footer><span title="2021-09-12 00:00:00 +0000 UTC">September 12, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/09/06〜2021/09/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/12.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
