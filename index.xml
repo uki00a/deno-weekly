@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 31 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/07/25〜2022/07/31の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/07/31.html</link><pubDate>Sun, 31 Jul 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/07/31.html</guid><description>Deno v1.24.1 Deno v1.24.1がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/08/01〜2022/08/07の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/08/07.html</link><pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/08/07.html</guid><description>Deno v1.24.2 Deno v1.24.2がリリースされました。
+FFIに関する改善 Deno.UnsafePointerView#getArrayBufferがpointerが指すデータのコピーではなく、pointerが指すデータを直接返すように修正されています。
+また、Deno.PointerValueが追加されています。 これに合わせて、ポインタを取り扱う各APIの戻り値などでもこの型が使用されるように修正されています。
+その他には、戻り値が64ビット値の関数に対してもV8 Fast API Callsによる最適化が適用されるようになりました。
+その他の変更点 プロパティにErrorオブジェクトが設定されたオブジェクトをthrowすると、プロセスがパニックする問題が修正されました。 deno vendor: dynamic importに失敗した際に、プロセスがパニックする問題が修正されました。 deno lsp: import節の入力補完において、レジストリ補完の最中のみ/がコミット文字として使用されるように修正されました。 https://github.com/denoland/deno/releases/tag/v1.24.2
+deno_std v0.151.0 deno_std v0.151.0がリリースされました。
+Node.jsの互換レイヤーに関するバグ修正や機能の追加が実施されています。
+変更点:
+node/fs: fs.existsSync()が例外をthrowする可能性がある問題が修正されました。 node/fs: fs.watchFile()とfs.unwatchFile()が実装されました。 node/http(s): http.request()などでprotocolを省略した際に、デフォルトで適切なプロトコルが設定されるように修正されました。 https://github.com/denoland/deno_std/releases/tag/0.151.0
+Deno Merch Deno公式のショップサイトが公開されました。
+https://merch.deno.com/ ソースコードも公開されており、Fresh/Twind/SWR/GraphQL Storefront API (Shopify)をベースに実装されているようです。
+https://github.com/denoland/merch
+Freshのロードマップ Freshのロードマップが公開されました。
+Roadmap (#563) 直近では、以下の変更が予定されているようです。
+プラグインシステムの実装 (現状、Twindプラグインの実装が進行しているようです) &amp;lt;Head&amp;gt;コンポーネントの非推奨化 (&amp;lt;head&amp;gt;タグによって直接メタ情報を埋め込めるようにする予定のようです) https://github.com/denoland/fresh/issues/563
+PrismaのDenoサポートについて Prismaの以下のissueで、Denoのサポートについて議論されています。</description></item><item><title>2021/07/25〜2022/07/31の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/07/31.html</link><pubDate>Sun, 31 Jul 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/07/31.html</guid><description>Deno v1.24.1 Deno v1.24.1がリリースされました。
 このリリースはバグ修正がメインです。
 &amp;quot;unhandledrejection&amp;quot;イベントに関する修正 &amp;quot;unhandledrejection&amp;quot;イベントのリスナに関する型定義が修正されています。
 また、モジュールのトップレベルで同期的にエラーが発生した際にも&amp;quot;unhandledrejection&amp;quot;イベントが発火されるように修正されています。

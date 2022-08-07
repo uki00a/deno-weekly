@@ -77,6 +77,32 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/08/01〜2022/08/07の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.24.2 Deno v1.24.2がリリースされました。
+FFIに関する改善 Deno.UnsafePointerView#getArrayBufferがpointerが指すデータのコピーではなく、pointerが指すデータを直接返すように修正されています。
+また、Deno.PointerValueが追加されています。 これに合わせて、ポインタを取り扱う各APIの戻り値などでもこの型が使用されるように修正されています。
+その他には、戻り値が64ビット値の関数に対してもV8 Fast API Callsによる最適化が適用されるようになりました。
+その他の変更点 プロパティにErrorオブジェクトが設定されたオブジェクトをthrowすると、プロセスがパニックする問題が修正されました。 deno vendor: dynamic importに失敗した際に、プロセスがパニックする問題が修正されました。 deno lsp: import節の入力補完において、レジストリ補完の最中のみ/がコミット文字として使用されるように修正されました。 https://github.com/denoland/deno/releases/tag/v1.24.2
+deno_std v0.151.0 deno_std v0.151.0がリリースされました。
+Node.jsの互換レイヤーに関するバグ修正や機能の追加が実施されています。
+変更点:
+node/fs: fs.existsSync()が例外をthrowする可能性がある問題が修正されました。 node/fs: fs.watchFile()とfs.unwatchFile()が実装されました。 node/http(s): http.request()などでprotocolを省略した際に、デフォルトで適切なプロトコルが設定されるように修正されました。 https://github.com/denoland/deno_std/releases/tag/0.151.0
+Deno Merch Deno公式のショップサイトが公開されました。
+https://merch.deno.com/ ソースコードも公開されており、Fresh/Twind/SWR/GraphQL Storefront API (Shopify)をベースに実装されているようです。
+https://github.com/denoland/merch
+Freshのロードマップ Freshのロードマップが公開されました。
+Roadmap (#563) 直近では、以下の変更が予定されているようです。
+プラグインシステムの実装 (現状、Twindプラグインの実装が進行しているようです) &lt;Head>コンポーネントの非推奨化 (&lt;head>タグによって直接メタ情報を埋め込めるようにする予定のようです) https://github.com/denoland/fresh/issues/563
+PrismaのDenoサポートについて Prismaの以下のissueで、Denoのサポートについて議論されています。...</p>
+</div>
+<footer class=entry-footer><span title="2022-08-07 00:00:00 +0000 UTC">August 7, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/01〜2022/08/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/07.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/07/25〜2022/07/31の最新情報
 </h2>
 </header>
@@ -268,24 +294,6 @@ $ deno task --cwd ./src build リダイレクションのサポート タスク�
 </div>
 <footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.23" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.23.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/06/06〜2022/06/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.22.3 Deno v1.22.3がリリースされました。
-主な変更点:
-fetch APIの引数にURLオブジェクト渡す形式が非推奨ではなくなりました。(TypeScript公式の型定義でもサポートされたため) // Deno v1.22.3までは、下記の形式は非推奨でした const res = await fetch(new URL("https://example.com")); Import Mapファイルなどの.jsonや.jsonc形式のファイルが変更されたときに、deno lspが自動で変更を検知してくれるようになりました。 --watchオプションで、dynamic importされるファイルが監視されない問題が修正されました。 エラー以外の値がthrowされた際にコンソールへ出力される内容が改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.3
-deno_std v0.143.0 deno_std v0.143.0がリリースされました。
-http/http_statusでの破壊的変更について STATUS_TEXTがMap&lt;Status, string>からReadonly&lt;Record&lt;Status, String>>へ変更されています。(破壊的変更)
-その他にも、いくつかのヘルパー関数やタイプが追加されています。
-import { isErrorStatus, STATUS_TEXT } from "https://deno.land/std@0.143.0/http/http_status.ts"; STATUS_TEXT[404]; // => "Not Found" isErrorStatus(404); // => true isErrorStatus(200); // => false flagsモジュールでnegatableオプションがサポート ここで指定されたフラグのみが、--no-プレフィックスの付与による否定がサポートされます。
-import { parse } from "https://deno.land/std@0.143.0/flags/mod.ts"; parse(["deno", "fmt", "--no-config"], { string: ["config"], negatable: ["config"], }); // => { _: [ "deno", "fmt" ], config: false } parse(["deno", "fmt", "--no-config"], { string: ["config"], }); // => { _: [ "deno", "fmt" ], "no-config": true } dotenvモジュールでインラインコメントがサポート #に続けてコメントを記述できます。...</p>
-</div>
-<footer class=entry-footer><span title="2022-06-12 00:00:00 +0000 UTC">June 12, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/06〜2022/06/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/12.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
