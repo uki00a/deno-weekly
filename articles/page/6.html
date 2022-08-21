@@ -77,6 +77,27 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/10/04〜2021/10/10の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.14.3 Deno v1.14.3がリリースされました。
+このリリースでは、バグ修正やパフォーマンスチューニングを中心に実施されています。
+変更点:
+fetchで不正な形式のヘッダを指定するとプロセスがパニックする問題が修正されました Deno.listenで抽象ソケットアドレスを指定するとプロセスがパニックする問題が修正されました REPLでglobalThisに代入するとプロセスがパニックする問題が修正されました Workerのmessageハンドラで投げられたエラーが報告されない問題が修正されました Workerのdeno.permissions.envオプションに配列を渡せるようになりました Deno.testでAggregateErrorが投げられた際の出力が改善されました Opの実行、RequestやResponseの作成、Headers.prototype.appendなどが最適化されました https://github.com/denoland/deno/releases/tag/v1.14.3
+deno_std v0.110.0 deno_std v0.110.0がリリースされました。
+std/nodeへの機能追加が実施されています。
+変更点:
+node/buffer: BufferでreadUIntLE及びreadUIntBEが実装されました node/crypto: scrypt, scryptSync, timingSafeEqual, 及びrandomUUIDが実装されました。 node/stream/web: 下記クラスが追加されました。 ReadableByteStreamController TransformStreamDefaultController ByteLengthQueuingStrategy CountQueuingStrategy TextEncoderStream TextDecoderStream node/os: tmpdirが実装されました https://github.com/denoland/deno_std/releases/tag/0.110.0
+Freshのアップデート DenoのWebフレームワークであるFreshがアップデートされました。
+&lt;Head>コンポーネントがサポートされ、&lt;head>配下に要素を追加できるようになっています。
+/** @jsx h */ import { h, Head } from "../deps.ts"; export default function Home() { return ( &lt;div> &lt;Head> &lt;title>Hello&lt;/title> &lt;/Head> &lt;h2>Home&lt;/h2> &lt;/div> ); } https://github....</p>
+</div>
+<footer class=entry-footer><span title="2021-10-10 00:00:00 +0000 UTC">October 10, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/10/04〜2021/10/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/10.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/09/27〜2021/10/03の最新情報
 </h2>
 </header>
@@ -267,33 +288,13 @@ https://github.com/littledivy/deno_sdl2</p>
 <footer class=entry-footer><span title="2021-08-08 00:00:00 +0000 UTC">August 8, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/08/02〜2021/08/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/08.html></a>
 </article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/07/26〜2021/08/01の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.12.2がリリース Deno v1.12.2がリリースされました。
-今回のリリースでは、主にバグ修正をメインに実施されています。
-変更点:
-deno lspのdeno/virtualTextDocumentメソッドでdeno:/status.mdを表示する際に、Workspace Settingsセクションが表示されるようになりました --inspectオプションで表示されたデバッグ用URLに対してHTTPなどの非WebSocketリクエストを送信すると、Denoがクラッシュする問題が修正されました Deno.connectTls及びDeno.startTlsで--certオプションで指定した証明書が使用されるように修正されました deno infoコマンドでX-TypeScript-Typesヘッダなどで読み込まれたTypeScriptファイルの情報も表示されるようになりました deno testコマンドの引数に指定したモジュールが、メインモジュールとして読まれる問題が修正されました(import.meta.mainがtrueに設定されてしまう) GCのタイミングで不要になったResponseオブジェクトのボディに紐づくリソースが開放されるようになりました Deno.upgradeWebSocketで、リクエストのConnectionヘッダにカンマ区切りで複数の値が含まれていた場合も、適切に動作するように修正されました Deno.upgradeWebSocketがリクエストのConnectionヘッダの大文字・小文字を区別しなくなりました deno lspでX-TypeScript-Typesによって型定義が提供されるモジュールとimport typeやexport typeなどを併用していると、ホバーなどがうまく機能しなくなる問題が修正されました deno lspでImport mapsファイルが更新された際に、依存関係や診断内容が再計算されない問題などが修正されました https://github.com/denoland/deno/releases/tag/v1.12.2
-deno_std v0.103.0がリリース deno_std v0.103.0がリリースされました
-変更点:
-async/deferred: Deferredオブジェクトにstateプロパティが追加され、Promiseの現在の状態を問い合わせられるようになりました http/file_server: ETagとIf-None-Matchヘッダへのサポートが追加されました http/file_server: Rangeヘッダがサポートされました encoding/base64url: 不正な形式のbase64url文字列が渡された際に、TypeErrorを投げるように修正されました encoding/toml: TOMLパーサが書き直され、ネストされたテーブルなどが適切に取り扱われるように修正されました encoding/yaml: parseAll関数の型定義が改善されました testing/asserts: assertThrowsAsyncのエラーメッセージで実際に投げられたエラーではなく、常にErrorクラスが表示される問題が修正されました testing/asserts: assertEqualsがクラスの違いを考慮するように修正されました https://github.com/denoland/deno_std/releases/tag/0.103.0
-deno-sqlite v2.5.0がリリース deno-sqliteのv2.5.0がリリースされました。
-変更点:
-DBクラスのコンストラクタにoptionsパラメータが追加され、データベースを開く際の挙動を詳細に制御できるようになりました PreparedQueryタイプにcolumnsメソッドが定義されました Deno.fdatasyncSyncを使って、SQLiteがファイルのデータを適切にディスクに同期できるようになりました https://github.com/dyedgreen/deno-sqlite/releases/tag/v2.5.0
-depcheck depcheckはソースコード中の未使用の依存関係を検出するためのDenoモジュールです
-https://github.com/ebebbington/depcheck
-deno-github-contributions-api deno-github-contributions-apiは、Deno Deployで動作するGitHub上でのコントリビューション数を取得するためのAPIです。...</p>
-</div>
-<footer class=entry-footer><span title="2021-08-01 00:00:00 +0000 UTC">August 1, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/26〜2021/08/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/01.html></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
-<a class=prev href=https://uki00a.github.io/deno-weekly/articles/page/5.html>« Prev</a>
-<a class=next href=https://uki00a.github.io/deno-weekly/articles/page/7.html>Next »</a>
+<a class=prev href=https://uki00a.github.io/deno-weekly/articles/page/5.html>
+«&nbsp;Prev&nbsp;
+</a>
+<a class=next href=https://uki00a.github.io/deno-weekly/articles/page/7.html>Next&nbsp;&nbsp;»
+</a>
 </nav>
 </footer>
 </main>

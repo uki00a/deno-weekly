@@ -76,6 +76,27 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/08/15〜2022/08/21の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoの今後の計画について Deno公式からBig Changes Ahead for Denoという、Denoの今後の計画などに関する記事が公開されました。
+今のところ、以下の点などに注力されていく予定のようです。
+Node.jsとの互換性の向上 パフォーマンスの向上 エンタープライズユーザへのサポートの強化 開発体験の向上 これらに関連すると思われる直近での変更について簡単にまとめてみます。
+npm:URLのサポート 現在、npm:URLによるnpmパッケージのimportに関する開発が行われています。
+feat(unstable): initial support for npm specifiers (#15484)
+例えば、以下のようにして、npmパッケージをimportすることができるようです。
+import express from "npm:express@5"; import { expect } from "npm:chai@4.2"; この機能には、大まかに以下のような特徴があります。
+デフォルトでnpmパッケージはnpmの公式レジストリからダウンロードされ、DENO_DIRにキャッシュされます。 Node.js互換モード(--compat)とは異なり、npm:URLで読み込まれたモジュール内のみにNode.jsのグローバルAPI(process/global/Bufferなど)が注入されます。 Node.js互換モード(--compat)とは異なり、現時点では--unstableなしで使用できる想定のようです。 型チェック, LSPのサポート, エントリポイントでのnpm:URLの指定(例: deno run npm:mkdirp path/to/dir)などの機能はまだ入っておらず、今後追加されていく予定のようです。 この機能はおそらく、次のv1.25でリリースされるのではないかと思われます。
+新しいHTTPサーバ (Flash) HTTPサーバの高速化を目的に、Deno本体でFlashという新しいHTTPサーバが開発されています。
+feat(ext/flash): An optimized http/1.1 server (#15405)
+feat(unstable): change Deno.serve() API (#15498)...</p>
+</div>
+<footer class=entry-footer><span title="2022-08-21 00:00:00 +0000 UTC">August 21, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/15〜2022/08/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/21.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/08/08〜2022/08/14の最新情報
 </h2>
 </header>
@@ -268,27 +289,10 @@ feat: remove fresh cli, do manifest generation in process (#223)...</p>
 <footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/13〜2022/06/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/19.html></a>
 </article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/06/06〜2022/06/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.22.3 Deno v1.22.3がリリースされました。
-主な変更点:
-fetch APIの引数にURLオブジェクト渡す形式が非推奨ではなくなりました。(TypeScript公式の型定義でもサポートされたため) // Deno v1.22.3までは、下記の形式は非推奨でした const res = await fetch(new URL("https://example.com")); Import Mapファイルなどの.jsonや.jsonc形式のファイルが変更されたときに、deno lspが自動で変更を検知してくれるようになりました。 --watchオプションで、dynamic importされるファイルが監視されない問題が修正されました。 エラー以外の値がthrowされた際にコンソールへ出力される内容が改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.3
-deno_std v0.143.0 deno_std v0.143.0がリリースされました。
-http/http_statusでの破壊的変更について STATUS_TEXTがMap&lt;Status, string>からReadonly&lt;Record&lt;Status, String>>へ変更されています。(破壊的変更)
-その他にも、いくつかのヘルパー関数やタイプが追加されています。
-import { isErrorStatus, STATUS_TEXT } from "https://deno.land/std@0.143.0/http/http_status.ts"; STATUS_TEXT[404]; // => "Not Found" isErrorStatus(404); // => true isErrorStatus(200); // => false flagsモジュールでnegatableオプションがサポート ここで指定されたフラグのみが、--no-プレフィックスの付与による否定がサポートされます。
-import { parse } from "https://deno.land/std@0.143.0/flags/mod.ts"; parse(["deno", "fmt", "--no-config"], { string: ["config"], negatable: ["config"], }); // => { _: [ "deno", "fmt" ], config: false } parse(["deno", "fmt", "--no-config"], { string: ["config"], }); // => { _: [ "deno", "fmt" ], "no-config": true } dotenvモジュールでインラインコメントがサポート #に続けてコメントを記述できます。...</p>
-</div>
-<footer class=entry-footer><span title="2022-06-12 00:00:00 +0000 UTC">June 12, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/06〜2022/06/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/12.html></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
-<a class=next href=https://uki00a.github.io/deno-weekly/categories/news/page/2.html>Next »</a>
+<a class=next href=https://uki00a.github.io/deno-weekly/categories/news/page/2.html>Next&nbsp;&nbsp;»
+</a>
 </nav>
 </footer>
 </main>
