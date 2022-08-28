@@ -10,7 +10,7 @@ import { CookieMap, mergeHeaders } from &amp;#34;https://deno.land/std@0.153.0/h
 npmパッケージのサポート Denoでnpmパッケージのimportや実行が実験的にサポートされました。
 npm installやnode_modulesなどを必要とせずにnpmパッケージを利用することができます。
 import express from &amp;#34;npm:express@4.18.1&amp;#34;; const app = express(); app.get(&amp;#34;/&amp;#34;, (req, res) =&amp;gt; { res.send(&amp;#34;Hello&amp;#34;); }); app.listen(3000); このファイルを実行すると、npmパッケージがダウンロードされた後、ExpressによってHTTPサーバが起動します。
-$ deno run --unstable --allow-env --allow-read --allow-net main.mjs $ curl http://localhost:3000 Hello 他のサードパティモジュールなどと同様に、初回実行時のみnpmパッケージがダウンロードされ、DENO_DIRにキャッシュされます。(DENO_DIR/npm/registry.npmjs.orgに保存されるようです)
+$ deno run --unstable --allow-env --allow-read --allow-net main.mjs $ curl http://localhost:3000 Hello 他のサードパーティモジュールなどと同様に、初回実行時のみnpmパッケージがダウンロードされ、DENO_DIRにキャッシュされます。(DENO_DIR/npm/registry.npmjs.orgに保存されるようです)
 また、npxライクにコマンドを実行することもできます。
 $ deno run --unstable --allow-env --allow-read --allow-write npm:make-dir-cli@3.0.0 src/components 制限 現時点では利用するには--unstableが必要になります。 また、--allow-envや--allow-readも必要になります。 ロックファイル/型チェック/deno vendor/deno lsp/deno installなどでは、この機能はまだサポートされていません。 新しいHTTPサーバ (Flash) DenoにはHyperをベースにしたHTTPサーバ(Deno.serveHttp)が組み込まれています。
 このHTTPサーバのさらなる高速化などを目的に、Flashという新しいHTTPサーバが実装されました。
