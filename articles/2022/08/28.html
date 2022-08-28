@@ -1,0 +1,286 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>2021/08/22〜2022/08/28の最新情報 | 週刊Deno</title>
+<meta name=keywords content="Deno,Ultra,Hono">
+<meta name=description content="Deno v1.25.0 Deno v1.25.0がリリースされました。
+以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
+ Deno v1.25  deno_std v0.153.0 deno_std v0.153.0がリリースされました。
+std/encoding/csv: parse()が同期的に動作するように (破壊的変更) parse()の引数からBufReaderが削除されています
+これに伴い、parse()の戻り値がstring[][] | Record<string, unknown>[]に変更されています。
+import { parse } from &#34;https://deno.land/std@0.153.0/encoding/csv.ts&#34;; const records = parse(`id,name 1,foo 2,bar`); console.log(records); // Output: [ [ &#34;id&#34;, &#34;name&#34; ], [ &#34;1&#34;, &#34;foo&#34; ], [ &#34;2&#34;, &#34;bar&#34; ] ] std/http/cookie_mapモジュールが追加 MapライクなAPIをベースにCookieを管理するためのユーティリティモジュールが追加されました。
+CookieMapはリクエスト及びレスポンスに関するCookieの管理に利用することができます。
+import { CookieMap, mergeHeaders } from &#34;https://deno.land/std@0.153.0/http/cookie_map.ts&#34;; const req = new Request(&#34;http://localhost:3000&#34;, { headers: { cookie: &#34;foo=bar; hoge=piyo;&#34; }, }); const cookies = new CookieMap(req); cookies.">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/08/28.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="2021/08/22〜2022/08/28の最新情報">
+<meta property="og:description" content="Deno v1.25.0 Deno v1.25.0がリリースされました。
+以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
+ Deno v1.25  deno_std v0.153.0 deno_std v0.153.0がリリースされました。
+std/encoding/csv: parse()が同期的に動作するように (破壊的変更) parse()の引数からBufReaderが削除されています
+これに伴い、parse()の戻り値がstring[][] | Record<string, unknown>[]に変更されています。
+import { parse } from &#34;https://deno.land/std@0.153.0/encoding/csv.ts&#34;; const records = parse(`id,name 1,foo 2,bar`); console.log(records); // Output: [ [ &#34;id&#34;, &#34;name&#34; ], [ &#34;1&#34;, &#34;foo&#34; ], [ &#34;2&#34;, &#34;bar&#34; ] ] std/http/cookie_mapモジュールが追加 MapライクなAPIをベースにCookieを管理するためのユーティリティモジュールが追加されました。
+CookieMapはリクエスト及びレスポンスに関するCookieの管理に利用することができます。
+import { CookieMap, mergeHeaders } from &#34;https://deno.land/std@0.153.0/http/cookie_map.ts&#34;; const req = new Request(&#34;http://localhost:3000&#34;, { headers: { cookie: &#34;foo=bar; hoge=piyo;&#34; }, }); const cookies = new CookieMap(req); cookies.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/08/28.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2022-08-28T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-08-28T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="2021/08/22〜2022/08/28の最新情報">
+<meta name=twitter:description content="Deno v1.25.0 Deno v1.25.0がリリースされました。
+以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
+ Deno v1.25  deno_std v0.153.0 deno_std v0.153.0がリリースされました。
+std/encoding/csv: parse()が同期的に動作するように (破壊的変更) parse()の引数からBufReaderが削除されています
+これに伴い、parse()の戻り値がstring[][] | Record<string, unknown>[]に変更されています。
+import { parse } from &#34;https://deno.land/std@0.153.0/encoding/csv.ts&#34;; const records = parse(`id,name 1,foo 2,bar`); console.log(records); // Output: [ [ &#34;id&#34;, &#34;name&#34; ], [ &#34;1&#34;, &#34;foo&#34; ], [ &#34;2&#34;, &#34;bar&#34; ] ] std/http/cookie_mapモジュールが追加 MapライクなAPIをベースにCookieを管理するためのユーティリティモジュールが追加されました。
+CookieMapはリクエスト及びレスポンスに関するCookieの管理に利用することができます。
+import { CookieMap, mergeHeaders } from &#34;https://deno.land/std@0.153.0/http/cookie_map.ts&#34;; const req = new Request(&#34;http://localhost:3000&#34;, { headers: { cookie: &#34;foo=bar; hoge=piyo;&#34; }, }); const cookies = new CookieMap(req); cookies.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/08/22〜2022/08/28の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/08/28.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/08/22〜2022/08/28の最新情報","name":"2021\/08\/22〜2022\/08\/28の最新情報","description":"Deno v1.25.0 Deno v1.25.0がリリースされました。\n以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。\n Deno v1.25  deno_std v0.153.0 deno_std v0.153.0がリリースされました。\nstd/encoding/csv: parse()が同期的に動作するように (破壊的変更) parse()の引数からBufReaderが削除されています\nこれに伴い、parse()の戻り値がstring[][] | Record\u0026lt;string, unknown\u0026gt;[]に変更されています。\nimport { parse } from \u0026#34;https://deno.land/std@0.153.0/encoding/csv.ts\u0026#34;; const records = parse(`id,name 1,foo 2,bar`); console.log(records); // Output: [ [ \u0026#34;id\u0026#34;, \u0026#34;name\u0026#34; ], [ \u0026#34;1\u0026#34;, \u0026#34;foo\u0026#34; ], [ \u0026#34;2\u0026#34;, \u0026#34;bar\u0026#34; ] ] std/http/cookie_mapモジュールが追加 MapライクなAPIをベースにCookieを管理するためのユーティリティモジュールが追加されました。\nCookieMapはリクエスト及びレスポンスに関するCookieの管理に利用することができます。\nimport { CookieMap, mergeHeaders } from \u0026#34;https://deno.land/std@0.153.0/http/cookie_map.ts\u0026#34;; const req = new Request(\u0026#34;http://localhost:3000\u0026#34;, { headers: { cookie: \u0026#34;foo=bar; hoge=piyo;\u0026#34; }, }); const cookies = new CookieMap(req); cookies.","keywords":["Deno","Ultra","Hono"],"articleBody":"Deno v1.25.0 Deno v1.25.0がリリースされました。\n以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。\n Deno v1.25  deno_std v0.153.0 deno_std v0.153.0がリリースされました。\nstd/encoding/csv: parse()が同期的に動作するように (破壊的変更) parse()の引数からBufReaderが削除されています\nこれに伴い、parse()の戻り値がstring[][] | Record[]に変更されています。\nimport { parse } from \"https://deno.land/std@0.153.0/encoding/csv.ts\"; const records = parse(`id,name 1,foo 2,bar`); console.log(records); // Output: [ [ \"id\", \"name\" ], [ \"1\", \"foo\" ], [ \"2\", \"bar\" ] ] std/http/cookie_mapモジュールが追加 MapライクなAPIをベースにCookieを管理するためのユーティリティモジュールが追加されました。\nCookieMapはリクエスト及びレスポンスに関するCookieの管理に利用することができます。\nimport { CookieMap, mergeHeaders } from \"https://deno.land/std@0.153.0/http/cookie_map.ts\"; const req = new Request(\"http://localhost:3000\", { headers: { cookie: \"foo=bar; hoge=piyo;\" }, }); const cookies = new CookieMap(req); cookies.get(\"hoge\"); // = \"piyo\" cookies.set(\"bar\", \"baz\"); cookies.delete(\"foo\"); const headers = mergeHeaders(cookies, new Headers({ \"content-type\": \"application/json\" })); console.log(headers); // Output: // Headers { // \"content-type\": \"application/json\", // \"set-cookie\": \"foo=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GM // T; httponly\" // } SecureCookieMapは、基本的にはCookieMapと同様の用途で使用できますが、以下の点が異なります。\n 各APIが非同期に動作する Cookieの署名と検証を行ってくれる (Cookieの改ざんを防止するため)  以下はSecureCookieMapの使用例です。\nimport { KeyStack } from \"https://deno.land/std@0.153.0/crypto/keystack.ts\"; import { SecureCookieMap, mergeHeaders } from \"https://deno.land/std@0.153.0/http/cookie_map.ts\"; const keys = new KeyStack([\"secret\"]); const digest = await keys.sign(\"hoge=piyo\"); const req = new Request(\"http://localhost:3000\", { headers: { cookie: `bar=baz; hoge=piyo; hoge.sig=${digest}` }, }); const cookies = new SecureCookieMap(req, { keys }); await cookies.get(\"hoge\"); // = \"piyo\" await cookies.get(\"bar\"); // = undefined await cookies.set(\"foo\", \"bar\"); const headers = mergeHeaders(cookies, new Headers({ \"content-type\": \"application/json\" })); console.log(headers); // Output: // Headers { // \"content-type\": \"application/json\", // \"set-cookie\": \"foo.sig=6N0gFVndcVFLbSrP0HdUs2TqhGHThgq3tyJpHSuP0J // s; path=/; httponly\" // } std/http/cookie: getSetCookies()が追加 新しいAPIとしてgetSetCookies()が追加されています。\nSet-Cookieヘッダの内容を解析するために利用できます。\nimport { getSetCookies } from \"https://deno.land/std@0.153.0/http/cookie.ts\"; const headers = new Headers({ \"set-cookie\": \"foo=bar; path=/; Secure; HttpOnly\", }); const cookies = getSetCookies(headers); console.log(cookies); // Output: // [ { name: \"foo\", value: \"bar\", path: \"/\", secure: true, httpOnly: true } ] std/http/server: serveTls()でkeyとcertオプションがサポート serveTls()では秘密鍵と証明書を指定するために、keyFileとcertFileオプションがサポートされていますが、これらはDeno 2.0で削除予定の非推奨化されたAPIに依存しています。\nそのため、新しいオプションとしてkeyとcertオプションが追加されました。\nこれらの使い方は、Deno.listenTlsにおける同名オプションと同様です。\nstd/crypto/keystackモジュールの追加 前述したstd/http/cookie_mapにおけるSecureCookieMapを実装する目的で、std/cryptoにkeystackモジュールが追加されました。\nstd/testing/asserts 新しいAPIとして、assertNotInstanceOfが追加されています。\nassertNotInstanceOf(\"foo\", Request); // = OK assertNotInstanceOf(new Date(), Date); // = NG その他には、assertEqualsでgetterを持つオブジェクトを比較した際の差分の表示が改善されています。\nstd/async/delay: persistentオプションのサポート falseを指定すると、Deno.unrefTimerによってプロセスの終了がブロックされなくなります。\nawait delay(5000, { persistent: false }); std/node httpパッケージがFlashを使って再実装されています。\nまた、eventパッケージからlistenerCount()とsetMaxListeners()がexportされました。\nその他には、util/typesにおけるTypedArrayのチェックがより厳密に行われるように改善されています。\n https://github.com/denoland/deno_std/releases/tag/0.153.0\nUltra v2のalphaバージョンが公開 ReactベースのWebフレームワークであるUltraのv2.0.0-alpha.0が公開されました。\nv1ではwouterやreact-helmetなどの使用が前提になっていましたが、v2では様々なエコシステムをより柔軟に利用できるようにすることが想定されているようです。\n例えば、公式では以下のパッケージなどの使用例が公開されています。\n react-helmet-async react-query react-router emotion  その他には、サーバがHonoをベースに再実装されているようで、それを元にしたAPI routesの仕組みが導入される予定のようです。\n https://github.com/exhibitionist-digital/ultra/tree/v2.0.0-alpha.0/examples/with-api-routes    https://github.com/exhibitionist-digital/ultra/releases/tag/v2.0.0-alpha.0  esm.sh v92 esm.sh v92がリリースされました。\nreact/preact/vue向けにstableチャネルが追加されています。\n https://github.com/ije/esm.sh/releases/tag/v92\n","wordCount":"304","inLanguage":"en","datePublished":"2022-08-28T00:00:00Z","dateModified":"2022-08-28T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/08/28.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<div class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</div>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
+<span><i class="fa fa-heart"></i>カテゴリー</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+2021/08/22〜2022/08/28の最新情報
+</h1>
+<div class=post-meta><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#deno-v1250 aria-label="Deno v1.25.0">Deno v1.25.0</a></li>
+<li>
+<a href=#deno_std-v01530 aria-label="deno_std v0.153.0">deno_std v0.153.0</a><ul>
+<li>
+<a href=#stdencodingcsv-parse%e3%81%8c%e5%90%8c%e6%9c%9f%e7%9a%84%e3%81%ab%e5%8b%95%e4%bd%9c%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab-%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4 aria-label="std/encoding/csv: parse()が同期的に動作するように (破壊的変更)"><code>std/encoding/csv</code>: <code>parse()</code>が同期的に動作するように (<strong>破壊的変更</strong>)</a></li>
+<li>
+<a href=#stdhttpcookie_map%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%8c%e8%bf%bd%e5%8a%a0 aria-label=std/http/cookie_mapモジュールが追加><code>std/http/cookie_map</code>モジュールが追加</a></li>
+<li>
+<a href=#stdhttpcookie-getsetcookies%e3%81%8c%e8%bf%bd%e5%8a%a0 aria-label="std/http/cookie: getSetCookies()が追加"><code>std/http/cookie</code>: <code>getSetCookies()</code>が追加</a></li>
+<li>
+<a href=#stdhttpserver-servetls%e3%81%a7key%e3%81%a8cert%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label="std/http/server: serveTls()でkeyとcertオプションがサポート"><code>std/http/server</code>: <code>serveTls()</code>で<code>key</code>と<code>cert</code>オプションがサポート</a></li>
+<li>
+<a href=#stdcryptokeystack%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%ae%e8%bf%bd%e5%8a%a0 aria-label=std/crypto/keystackモジュールの追加><code>std/crypto/keystack</code>モジュールの追加</a></li>
+<li>
+<a href=#stdtestingasserts aria-label=std/testing/asserts><code>std/testing/asserts</code></a></li>
+<li>
+<a href=#stdasyncdelay-persistent%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label="std/async/delay: persistentオプションのサポート"><code>std/async/delay</code>: <code>persistent</code>オプションのサポート</a></li>
+<li>
+<a href=#stdnode aria-label=std/node><code>std/node</code></a></li></ul>
+</li>
+<li>
+<a href=#ultra-v2%e3%81%aealpha%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%81%8c%e5%85%ac%e9%96%8b aria-label="Ultra v2のalphaバージョンが公開">Ultra v2のalphaバージョンが公開</a></li>
+<li>
+<a href=#esmsh-v92 aria-label="esm.sh v92">esm.sh v92</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=deno-v1250>Deno v1.25.0<a hidden class=anchor aria-hidden=true href=#deno-v1250>#</a></h2>
+<p>Deno v1.25.0がリリースされました。</p>
+<p>以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。</p>
+<ul>
+<li><a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html>Deno v1.25</a></li>
+</ul>
+<h2 id=deno_std-v01530>deno_std v0.153.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01530>#</a></h2>
+<p>deno_std v0.153.0がリリースされました。</p>
+<h3 id=stdencodingcsv-parseが同期的に動作するように-破壊的変更><code>std/encoding/csv</code>: <code>parse()</code>が同期的に動作するように (<strong>破壊的変更</strong>)<a hidden class=anchor aria-hidden=true href=#stdencodingcsv-parseが同期的に動作するように-破壊的変更>#</a></h3>
+<p><code>parse()</code>の引数から<a href="https://deno.land/std@0.153.0/io/buffer.ts?s=BufReader">BufReader</a>が削除されています</p>
+<p>これに伴い、<code>parse()</code>の戻り値が<code>string[][] | Record&lt;string, unknown>[]</code>に変更されています。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>parse</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.153.0/encoding/csv.ts&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>records</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>parse</span>(<span style=color:#e6db74>`id,name
+</span><span style=color:#e6db74>1,foo
+</span><span style=color:#e6db74>2,bar`</span>);
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>records</span>);
+<span style=color:#75715e>// Output: [ [ &#34;id&#34;, &#34;name&#34; ], [ &#34;1&#34;, &#34;foo&#34; ], [ &#34;2&#34;, &#34;bar&#34; ] ]
+</span></code></pre></div><h3 id=stdhttpcookie_mapモジュールが追加><code>std/http/cookie_map</code>モジュールが追加<a hidden class=anchor aria-hidden=true href=#stdhttpcookie_mapモジュールが追加>#</a></h3>
+<p><code>Map</code>ライクなAPIをベースにCookieを管理するためのユーティリティモジュールが追加されました。</p>
+<p><code>CookieMap</code>はリクエスト及びレスポンスに関するCookieの管理に利用することができます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>CookieMap</span>, <span style=color:#a6e22e>mergeHeaders</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.153.0/http/cookie_map.ts&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>req</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Request</span>(<span style=color:#e6db74>&#34;http://localhost:3000&#34;</span>, {
+  <span style=color:#a6e22e>headers</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>cookie</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;foo=bar; hoge=piyo;&#34;</span> },
+});
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cookies</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CookieMap</span>(<span style=color:#a6e22e>req</span>);
+<span style=color:#a6e22e>cookies</span>.<span style=color:#66d9ef>get</span>(<span style=color:#e6db74>&#34;hoge&#34;</span>); <span style=color:#75715e>// =&gt; &#34;piyo&#34;
+</span><span style=color:#75715e></span><span style=color:#a6e22e>cookies</span>.<span style=color:#66d9ef>set</span>(<span style=color:#e6db74>&#34;bar&#34;</span>, <span style=color:#e6db74>&#34;baz&#34;</span>);
+<span style=color:#a6e22e>cookies</span>.<span style=color:#66d9ef>delete</span>(<span style=color:#e6db74>&#34;foo&#34;</span>);
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>headers</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>mergeHeaders</span>(<span style=color:#a6e22e>cookies</span>, <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Headers</span>({ <span style=color:#e6db74>&#34;content-type&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;application/json&#34;</span> }));
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>headers</span>);
+<span style=color:#75715e>// Output:
+</span><span style=color:#75715e>//   Headers {
+</span><span style=color:#75715e>//     &#34;content-type&#34;: &#34;application/json&#34;,
+</span><span style=color:#75715e>//     &#34;set-cookie&#34;: &#34;foo=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GM
+</span><span style=color:#75715e>//   T; httponly&#34;
+</span><span style=color:#75715e>//   }
+</span></code></pre></div><p><code>SecureCookieMap</code>は、基本的には<code>CookieMap</code>と同様の用途で使用できますが、以下の点が異なります。</p>
+<ul>
+<li>各APIが非同期に動作する</li>
+<li>Cookieの署名と検証を行ってくれる (Cookieの改ざんを防止するため)</li>
+</ul>
+<p>以下は<code>SecureCookieMap</code>の使用例です。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>KeyStack</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.153.0/crypto/keystack.ts&#34;</span>;
+<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>SecureCookieMap</span>, <span style=color:#a6e22e>mergeHeaders</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.153.0/http/cookie_map.ts&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>keys</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>KeyStack</span>([<span style=color:#e6db74>&#34;secret&#34;</span>]);
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>digest</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>keys</span>.<span style=color:#a6e22e>sign</span>(<span style=color:#e6db74>&#34;hoge=piyo&#34;</span>);
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>req</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Request</span>(<span style=color:#e6db74>&#34;http://localhost:3000&#34;</span>, {
+  <span style=color:#a6e22e>headers</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>cookie</span><span style=color:#f92672>:</span> <span style=color:#e6db74>`bar=baz; hoge=piyo; hoge.sig=</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>digest</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span> },
+});
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cookies</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>SecureCookieMap</span>(<span style=color:#a6e22e>req</span>, { <span style=color:#a6e22e>keys</span> });
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>cookies</span>.<span style=color:#66d9ef>get</span>(<span style=color:#e6db74>&#34;hoge&#34;</span>); <span style=color:#75715e>// =&gt; &#34;piyo&#34;
+</span><span style=color:#75715e></span><span style=color:#66d9ef>await</span> <span style=color:#a6e22e>cookies</span>.<span style=color:#66d9ef>get</span>(<span style=color:#e6db74>&#34;bar&#34;</span>); <span style=color:#75715e>// =&gt; undefined
+</span><span style=color:#75715e></span><span style=color:#66d9ef>await</span> <span style=color:#a6e22e>cookies</span>.<span style=color:#66d9ef>set</span>(<span style=color:#e6db74>&#34;foo&#34;</span>, <span style=color:#e6db74>&#34;bar&#34;</span>);
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>headers</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>mergeHeaders</span>(<span style=color:#a6e22e>cookies</span>, <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Headers</span>({ <span style=color:#e6db74>&#34;content-type&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;application/json&#34;</span> }));
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>headers</span>);
+<span style=color:#75715e>// Output:
+</span><span style=color:#75715e>// Headers {
+</span><span style=color:#75715e>//   &#34;content-type&#34;: &#34;application/json&#34;,
+</span><span style=color:#75715e>//   &#34;set-cookie&#34;: &#34;foo.sig=6N0gFVndcVFLbSrP0HdUs2TqhGHThgq3tyJpHSuP0J
+</span><span style=color:#75715e>// s; path=/; httponly&#34;
+</span><span style=color:#75715e>// }
+</span></code></pre></div><h3 id=stdhttpcookie-getsetcookiesが追加><code>std/http/cookie</code>: <code>getSetCookies()</code>が追加<a hidden class=anchor aria-hidden=true href=#stdhttpcookie-getsetcookiesが追加>#</a></h3>
+<p>新しいAPIとして<code>getSetCookies()</code>が追加されています。</p>
+<p><code>Set-Cookie</code>ヘッダの内容を解析するために利用できます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>getSetCookies</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.153.0/http/cookie.ts&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>headers</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Headers</span>({
+  <span style=color:#e6db74>&#34;set-cookie&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;foo=bar; path=/; Secure; HttpOnly&#34;</span>,
+});
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cookies</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>getSetCookies</span>(<span style=color:#a6e22e>headers</span>);
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>cookies</span>);
+<span style=color:#75715e>// Output:
+</span><span style=color:#75715e>// [ { name: &#34;foo&#34;, value: &#34;bar&#34;, path: &#34;/&#34;, secure: true, httpOnly: true } ]
+</span></code></pre></div><h3 id=stdhttpserver-servetlsでkeyとcertオプションがサポート><code>std/http/server</code>: <code>serveTls()</code>で<code>key</code>と<code>cert</code>オプションがサポート<a hidden class=anchor aria-hidden=true href=#stdhttpserver-servetlsでkeyとcertオプションがサポート>#</a></h3>
+<p><code>serveTls()</code>では秘密鍵と証明書を指定するために、<code>keyFile</code>と<code>certFile</code>オプションがサポートされていますが、これらはDeno 2.0で削除予定の非推奨化されたAPIに依存しています。</p>
+<p>そのため、新しいオプションとして<code>key</code>と<code>cert</code>オプションが追加されました。</p>
+<p>これらの使い方は、<code>Deno.listenTls</code>における同名オプションと同様です。</p>
+<h3 id=stdcryptokeystackモジュールの追加><code>std/crypto/keystack</code>モジュールの追加<a hidden class=anchor aria-hidden=true href=#stdcryptokeystackモジュールの追加>#</a></h3>
+<p>前述した<code>std/http/cookie_map</code>における<code>SecureCookieMap</code>を実装する目的で、<code>std/crypto</code>に<code>keystack</code>モジュールが追加されました。</p>
+<h3 id=stdtestingasserts><code>std/testing/asserts</code><a hidden class=anchor aria-hidden=true href=#stdtestingasserts>#</a></h3>
+<p>新しいAPIとして、<code>assertNotInstanceOf</code>が追加されています。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#a6e22e>assertNotInstanceOf</span>(<span style=color:#e6db74>&#34;foo&#34;</span>, <span style=color:#a6e22e>Request</span>); <span style=color:#75715e>// =&gt; OK
+</span><span style=color:#75715e></span><span style=color:#a6e22e>assertNotInstanceOf</span>(<span style=color:#66d9ef>new</span> Date(), Date); <span style=color:#75715e>// =&gt; NG
+</span></code></pre></div><p>その他には、<code>assertEquals</code>で<code>getter</code>を持つオブジェクトを比較した際の差分の表示が改善されています。</p>
+<h3 id=stdasyncdelay-persistentオプションのサポート><code>std/async/delay</code>: <code>persistent</code>オプションのサポート<a hidden class=anchor aria-hidden=true href=#stdasyncdelay-persistentオプションのサポート>#</a></h3>
+<p><code>false</code>を指定すると、<code>Deno.unrefTimer</code>によってプロセスの終了がブロックされなくなります。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>await</span> <span style=color:#a6e22e>delay</span>(<span style=color:#ae81ff>5000</span>, { <span style=color:#a6e22e>persistent</span>: <span style=color:#66d9ef>false</span> });
+</code></pre></div><h3 id=stdnode><code>std/node</code><a hidden class=anchor aria-hidden=true href=#stdnode>#</a></h3>
+<p><code>http</code>パッケージが<a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html>Flash</a>を使って再実装されています。</p>
+<p>また、<code>event</code>パッケージから<code>listenerCount()</code>と<code>setMaxListeners()</code>が<code>export</code>されました。</p>
+<p>その他には、<code>util/types</code>における<code>TypedArray</code>のチェックがより厳密に行われるように改善されています。</p>
+<hr>
+<p><a href=https://github.com/denoland/deno_std/releases/tag/0.153.0>https://github.com/denoland/deno_std/releases/tag/0.153.0</a></p>
+<h2 id=ultra-v2のalphaバージョンが公開>Ultra v2のalphaバージョンが公開<a hidden class=anchor aria-hidden=true href=#ultra-v2のalphaバージョンが公開>#</a></h2>
+<p>ReactベースのWebフレームワークであるUltraのv2.0.0-alpha.0が公開されました。</p>
+<p>v1では<a href=https://github.com/exhibitionist-digital/ultra/blob/704e3d4aed5874a12280c2a0e4bb6b893a876632/src/render.ts#L5>wouter</a>や<a href=https://github.com/exhibitionist-digital/ultra/blob/704e3d4aed5874a12280c2a0e4bb6b893a876632/src/render.ts#L6>react-helmet</a>などの使用が前提になっていましたが、v2では様々なエコシステムをより柔軟に利用できるようにすることが想定されているようです。</p>
+<p>例えば、公式では以下のパッケージなどの使用例が公開されています。</p>
+<ul>
+<li><a href=https://github.com/exhibitionist-digital/ultra/tree/v2.0.0-alpha.0/examples/with-react-helmet-async>react-helmet-async</a></li>
+<li><a href=https://github.com/exhibitionist-digital/ultra/tree/v2.0.0-alpha.0/examples/with-react-query>react-query</a></li>
+<li><a href=https://github.com/exhibitionist-digital/ultra/tree/v2.0.0-alpha.0/examples/with-react-router>react-router</a></li>
+<li><a href=https://github.com/exhibitionist-digital/ultra/tree/v2.0.0-alpha.0/examples/with-emotion>emotion</a></li>
+</ul>
+<p>その他には、サーバが<a href=https://github.com/honojs/hono>Hono</a>をベースに<a href=https://github.com/exhibitionist-digital/ultra/blob/261204f337d9755143b31dc2ed34a03c63ba1edc/lib/ultra.ts#L12>再実装</a>されているようで、それを元にしたAPI routesの仕組みが導入される予定のようです。</p>
+<ul>
+<li><a href=https://github.com/exhibitionist-digital/ultra/tree/v2.0.0-alpha.0/examples/with-api-routes>https://github.com/exhibitionist-digital/ultra/tree/v2.0.0-alpha.0/examples/with-api-routes</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href=https://github.com/exhibitionist-digital/ultra/releases/tag/v2.0.0-alpha.0>https://github.com/exhibitionist-digital/ultra/releases/tag/v2.0.0-alpha.0</a></li>
+</ul>
+<h2 id=esmsh-v92>esm.sh v92<a hidden class=anchor aria-hidden=true href=#esmsh-v92>#</a></h2>
+<p><a href=https://github.com/ije/esm.sh>esm.sh</a> v92がリリースされました。</p>
+<p><a href=https://github.com/ije/esm.sh/blob/1a0ab3d65a317c813c630ea23702fd14c546b1bd/server/build.go#L24-L28>react/preact/vue向け</a>にstableチャネルが追加されています。</p>
+<hr>
+<p><a href=https://github.com/ije/esm.sh/releases/tag/v92>https://github.com/ije/esm.sh/releases/tag/v92</a></p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/ultra.html>Ultra</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/hono.html>Hono</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>
