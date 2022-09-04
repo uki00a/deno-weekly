@@ -76,6 +76,27 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/06/20〜2022/06/26の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.23.1 Deno v1.23.1がリリースされました。
+FFI関連の変更点 破壊的変更としてDeno.UnsafePointerが削除されました。 (正確にはDeno.UnsafePointer.ofのみ残されています) 今後、ポインタはbigintで表現されます。
+その他には、unstable APIとしてDeno.UnsafeCallbackが追加されています。 JavaScriptの関数を関数ポインタとして受け渡すために利用できます。
+deno fmtの改善 deno fmtコマンドがnode_modulesと.gitディレクトリを無視するようになりました。
+また、JavaScriptファイルのパースに失敗した際に、deno fmt --checkがちゃんと失敗するように修正されています。
+その他の変更点 fetchの呼び出し時に、デフォルトでAccept-Language: *ヘッダが設定されるように修正されました。 deno replコマンドで、直前の文字が空白のときにTabキーを押すと、タブ(\t)が挿入されるように修正されました。 deno runコマンドで.d.ctsや.d.mtsファイルを実行すると、プロセスがパニックする問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.23.1
+deno_std v0.145.0 deno_std v0.145.0がリリースされました。
+std/encoding/json/stream std/encoding/json/streamが追加されました。
+このモジュールでは、下記4フォーマットでのストリーミングがサポートされています。
+JSON Lines ndjson JSON Text Sequences Concatenated JSON JSONParseStreamは上記の上から3つのフォーマットをサポートしています。
+import { JSONParseStream } from "https://deno.land/std@0.145.0/encoding/json/stream.ts"; import { readableStreamFromIterable } from "https://deno.land/std@0.145.0/streams/conversion.ts"; const readable = readableStreamFromIterable([ `{"name": "foo"}`, `{"a": 1, "b": true}`, ]) ....</p>
+</div>
+<footer class=entry-footer><span title="2022-06-26 00:00:00 +0000 UTC">June 26, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/06/20〜2022/06/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/26.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/06/13〜2022/06/19の最新情報
 </h2>
 </header>
@@ -280,33 +301,6 @@ import { describe, it } from "https://deno.land/std@0.136.0/testing/bdd.ts" desc
 </div>
 <footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/04/18〜2022/04/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/24.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/04/11〜2022/04/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20.6 Deno v1.20.6がリリースされました。
-deno fmtコマンドの内部実装で使用されているdprint関連のプラグインがアップデートされています。
-その影響により、deno fmtコマンドのパフォーマンス向上やバグの修正が行われています。 (オブジェクトリテラルと3項演算子を併用した際に、フォーマット結果に一貫性がなくなる問題が修正されているようです)
-https://github.com/denoland/deno/releases/tag/v1.20.6
-deno_std v0.135.0 deno_std v0.135.0がリリースされました。
-このリリースでは破壊的変更が実施されています。
-io/readers: MultiReaderのシグネチャの変更 (破壊的変更) MultiReaderのコンストラクタの引数が可変長引数ではなくDeno.Readerの配列を受け取るように変更されています。
-変更前:
-const readers: Array&lt;Deno.Reader> = [...]; new MultiReader(...readers); 変更後:
-const readers: Array&lt;Deno.Reader> = [...]; new MultiReader(readers); MultiReaderはstd/archive/tar.tsモジュールの内部で使われており、大量のファイルを持つtarファイルを作ろうとすると、maximum call stack exceededエラーが発生してしまう問題があったようです。
-mime/multipartの非推奨化 (破壊的変更) mime/multipartモジュールが非推奨化されました。
-今後はFormDataの使用が推奨されます。
-testing/benchの非推奨化 (破壊的変更) testing/benchモジュールが非推奨化されました。
-今後はDeno.benchの使用が推奨されます。
-testing/bddの追加 testing/bddモジュールが追加されました。
-JestやMochaライクなAPIを使用してテストコードを記述することができます。
-import { assertEquals } from "https://deno.land/std@0.135.0/testing/asserts.ts"; import { describe, it } from "https://deno.land/std@0.135.0/testing/bdd.ts"; describe("sum", () => { it("should return sum of numbers", () => { assertEquals(sum(1, 2, 5), 8) }); it("should return 0 when no arguments are given", () => { assertEquals(sum(), 0); }); }); 定義したテストコードはdeno testコマンドで実行することが出来ます。...</p>
-</div>
-<footer class=entry-footer><span title="2022-04-17 00:00:00 +0000 UTC">April 17, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/11〜2022/04/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/17.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

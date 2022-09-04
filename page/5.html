@@ -72,6 +72,36 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/01/03〜2022/01/09の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.17.2 Deno v1.17.2がリリースされました。
+バグ修正などが中心に行われています。
+主な変更点:
+deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。
+JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。
+ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。
+SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。
+SubtleCrypto.deriveKeyでAES-CTRがサポートされました。
+FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。
+以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。
+Deno.test(function name() {}); Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。
+https://github.com/denoland/deno/releases/tag/v1.17.2
+deno_std v0.120.0 deno_std v0.120.0がリリースされました。
+crypto Tigerハッシュがサポートされました。
+uuid version()が実装されました。
+node https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。 path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。
+fs/expand_glob expandGlob()のextendedオプションのデフォルト値がtrueに変更されました。
+testing/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。
+https://github.com/denoland/deno_std/releases/tag/0.120.0
+設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)...</p>
+</div>
+<footer class=entry-footer><span title="2022-01-09 00:00:00 +0000 UTC">January 9, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/01/03〜2022/01/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/09.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/12/27〜2022/01/02の最新情報
 </h2>
 </header>
@@ -258,34 +288,6 @@ import type { PageConfig } from "../deps.ts"; export const config: PageConfig = 
 </div>
 <footer class=entry-footer><span title="2021-11-07 00:00:00 +0000 UTC">November 7, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/11/01〜2021/11/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/07.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/10/25〜2021/10/31の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.15.3 Deno v1.15.3がリリースされました。
-このリリースはバグ修正がメインです。
-変更点:
-TLS接続関連のAPIで発生することのあるプロセスのハングや大きなデータの書き込みがうまくいかない問題などが修正されました Deno.emitでalready borrowed: BorrowMutErrorが発生する問題が修正されました globalThis経由でFormDataなどのWeb APIを参照しようとすると型エラーが発生する問題が修正されました など
-https://github.com/denoland/deno/releases/tag/v1.15.3
-deno_std v0.113.0 deno_std v0.113.0がリリースされました。
-変更点:
-collections: runningReduceに渡すreducer関数にcurrentIndexが渡されるようになりました
-testing/asserts: assertIsErrorが追加されました
-node/module: require()でnode:プレフィックスがサポートされました
-const EventEmitter = require("node:events"); node/module: Common JSモジュールの中でimport/exportを使用した際の警告メッセージが親切になりました
-node/url: url.urlToHttpOptionsが実装されました
-node/os: os.archの返却値がNode.jsに一致するように修正されました
-node/events: onとemitメソッドを非EventEmitterオブジェクトに束縛して実行できるようになりました
-http/file_server: ファイル一覧ページでパンくずリストが表示されるようになりました
-http/file_server: ファイル名に%記号などが含まれている場合、そのファイルに適切にアクセスできない問題が修正されました
-http/file_server: 200や206以外のレスポンスを返却する際に生じるリソースリークが修正されました
-http/file_server: エラーログに色がつくようになりました...</p>
-</div>
-<footer class=entry-footer><span title="2021-10-31 00:00:00 +0000 UTC">October 31, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/25〜2021/10/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/31.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
