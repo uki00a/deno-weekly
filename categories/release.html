@@ -76,6 +76,30 @@ release
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Fresh v1.1
+</h2>
+</header>
+<div class=entry-content>
+<p>Fresh v1.1がリリースされました。
+この記事では主な変更点などについて解説します。
+アップデート用スクリプトの追加 Freshのアップデート用スクリプトが追加されています。
+$ deno run -A https://fresh.deno.dev/update . このスクリプトを実行すると、各種依存関係や後述するcompilerOptionsやTwindプラグインなどに関する変更が適用されます。
+compilerOptions.jsxとcompilerOptions.jsxImportSourceのサポート Freshのプロジェクトの初期化時に、compilerOptions.jsxとcompilerOptions.jsxImportSourceが自動で設定されるようになりました。
+これにより、.jsx/.tsxファイルで以下2行の指定が不要になります。
+/** @jsx h */ import { h } from "preact"; 前述のアップデートスクリプトを実行すると、既存のプロジェクトにもこの設定が適用されます。
+プラグインシステム ユーザがFreshの挙動を拡張できるようにするために、プラグインシステムが実装されました。
+現時点では、生成されたHTMLに対するスクリプトやスタイルの注入などがサポートされています。将来的には、プラグイン経由でRouteやMiddlewareなどを追加できるようにすることが予定されているようです。
+例として、公式でTwindプラグインが提供されており、start()のpluginsオプションで有効化できます。
+// main.ts import { start } from "$fresh/server.ts"; import twindPlugin from "$fresh/plugins/twind.ts"; import manifest from "./fresh.gen.ts"; import twindConfig from "./twind.config.ts"; await start(manifest, { plugins: [twindPlugin(twindConfig)] }); このTwindプラグインを有効化すると、twを使わずにclassを指定できるようになります (PreactのOption Hooksを使用して twが自動で適用されます)
+&lt;div class="font-bold">foobar&lt;/div> 前述のアップデートスクリプトを実行することで、twを使わずにclassを記述する形式へ自動で変換されます。
+Preact Devtoolsのサポート Preact Devtoolsのサポートが追加されています。
+devモード(deno task start)時は自動で有効化されるため、特に設定などは不要です。...</p>
+</div>
+<footer class=entry-footer><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span></footer>
+<a class=entry-link aria-label="post link to Fresh v1.1" href=https://uki00a.github.io/deno-weekly/articles/fresh/v1.1.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Deno v1.25
 </h2>
 </header>

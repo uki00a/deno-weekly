@@ -1,0 +1,265 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Fresh v1.1 | 週刊Deno</title>
+<meta name=keywords content="Fresh,Preact,Twind">
+<meta name=description content="Fresh v1.1がリリースされました。
+この記事では主な変更点などについて解説します。
+アップデート用スクリプトの追加 Freshのアップデート用スクリプトが追加されています。
+$ deno run -A https://fresh.deno.dev/update . このスクリプトを実行すると、各種依存関係や後述するcompilerOptionsやTwindプラグインなどに関する変更が適用されます。
+compilerOptions.jsxとcompilerOptions.jsxImportSourceのサポート Freshのプロジェクトの初期化時に、compilerOptions.jsxとcompilerOptions.jsxImportSourceが自動で設定されるようになりました。
+これにより、.jsx/.tsxファイルで以下2行の指定が不要になります。
+/** @jsx h */ import { h } from &#34;preact&#34;; 前述のアップデートスクリプトを実行すると、既存のプロジェクトにもこの設定が適用されます。
+プラグインシステム ユーザがFreshの挙動を拡張できるようにするために、プラグインシステムが実装されました。
+現時点では、生成されたHTMLに対するスクリプトやスタイルの注入などがサポートされています。将来的には、プラグイン経由でRouteやMiddlewareなどを追加できるようにすることが予定されているようです。
+例として、公式でTwindプラグインが提供されており、start()のpluginsオプションで有効化できます。
+// main.ts import { start } from &#34;$fresh/server.ts&#34;; import twindPlugin from &#34;$fresh/plugins/twind.ts&#34;; import manifest from &#34;./fresh.gen.ts&#34;; import twindConfig from &#34;./twind.config.ts&#34;; await start(manifest, { plugins: [twindPlugin(twindConfig)] }); このTwindプラグインを有効化すると、twを使わずにclassを指定できるようになります (PreactのOption Hooksを使用して twが自動で適用されます)
+<div class=&#34;font-bold&#34;>foobar</div> 前述のアップデートスクリプトを実行することで、twを使わずにclassを記述する形式へ自動で変換されます。
+Preact Devtoolsのサポート Preact Devtoolsのサポートが追加されています。
+devモード(deno task start)時は自動で有効化されるため、特に設定などは不要です。">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/fresh/v1.1.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="Fresh v1.1">
+<meta property="og:description" content="Fresh v1.1がリリースされました。
+この記事では主な変更点などについて解説します。
+アップデート用スクリプトの追加 Freshのアップデート用スクリプトが追加されています。
+$ deno run -A https://fresh.deno.dev/update . このスクリプトを実行すると、各種依存関係や後述するcompilerOptionsやTwindプラグインなどに関する変更が適用されます。
+compilerOptions.jsxとcompilerOptions.jsxImportSourceのサポート Freshのプロジェクトの初期化時に、compilerOptions.jsxとcompilerOptions.jsxImportSourceが自動で設定されるようになりました。
+これにより、.jsx/.tsxファイルで以下2行の指定が不要になります。
+/** @jsx h */ import { h } from &#34;preact&#34;; 前述のアップデートスクリプトを実行すると、既存のプロジェクトにもこの設定が適用されます。
+プラグインシステム ユーザがFreshの挙動を拡張できるようにするために、プラグインシステムが実装されました。
+現時点では、生成されたHTMLに対するスクリプトやスタイルの注入などがサポートされています。将来的には、プラグイン経由でRouteやMiddlewareなどを追加できるようにすることが予定されているようです。
+例として、公式でTwindプラグインが提供されており、start()のpluginsオプションで有効化できます。
+// main.ts import { start } from &#34;$fresh/server.ts&#34;; import twindPlugin from &#34;$fresh/plugins/twind.ts&#34;; import manifest from &#34;./fresh.gen.ts&#34;; import twindConfig from &#34;./twind.config.ts&#34;; await start(manifest, { plugins: [twindPlugin(twindConfig)] }); このTwindプラグインを有効化すると、twを使わずにclassを指定できるようになります (PreactのOption Hooksを使用して twが自動で適用されます)
+<div class=&#34;font-bold&#34;>foobar</div> 前述のアップデートスクリプトを実行することで、twを使わずにclassを記述する形式へ自動で変換されます。
+Preact Devtoolsのサポート Preact Devtoolsのサポートが追加されています。
+devモード(deno task start)時は自動で有効化されるため、特に設定などは不要です。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/fresh/v1.1.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2022-09-11T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-09-11T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Fresh v1.1">
+<meta name=twitter:description content="Fresh v1.1がリリースされました。
+この記事では主な変更点などについて解説します。
+アップデート用スクリプトの追加 Freshのアップデート用スクリプトが追加されています。
+$ deno run -A https://fresh.deno.dev/update . このスクリプトを実行すると、各種依存関係や後述するcompilerOptionsやTwindプラグインなどに関する変更が適用されます。
+compilerOptions.jsxとcompilerOptions.jsxImportSourceのサポート Freshのプロジェクトの初期化時に、compilerOptions.jsxとcompilerOptions.jsxImportSourceが自動で設定されるようになりました。
+これにより、.jsx/.tsxファイルで以下2行の指定が不要になります。
+/** @jsx h */ import { h } from &#34;preact&#34;; 前述のアップデートスクリプトを実行すると、既存のプロジェクトにもこの設定が適用されます。
+プラグインシステム ユーザがFreshの挙動を拡張できるようにするために、プラグインシステムが実装されました。
+現時点では、生成されたHTMLに対するスクリプトやスタイルの注入などがサポートされています。将来的には、プラグイン経由でRouteやMiddlewareなどを追加できるようにすることが予定されているようです。
+例として、公式でTwindプラグインが提供されており、start()のpluginsオプションで有効化できます。
+// main.ts import { start } from &#34;$fresh/server.ts&#34;; import twindPlugin from &#34;$fresh/plugins/twind.ts&#34;; import manifest from &#34;./fresh.gen.ts&#34;; import twindConfig from &#34;./twind.config.ts&#34;; await start(manifest, { plugins: [twindPlugin(twindConfig)] }); このTwindプラグインを有効化すると、twを使わずにclassを指定できるようになります (PreactのOption Hooksを使用して twが自動で適用されます)
+<div class=&#34;font-bold&#34;>foobar</div> 前述のアップデートスクリプトを実行することで、twを使わずにclassを記述する形式へ自動で変換されます。
+Preact Devtoolsのサポート Preact Devtoolsのサポートが追加されています。
+devモード(deno task start)時は自動で有効化されるため、特に設定などは不要です。">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Fresh v1.1","item":"https://uki00a.github.io/deno-weekly/articles/fresh/v1.1.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Fresh v1.1","name":"Fresh v1.1","description":"Fresh v1.1がリリースされました。\nこの記事では主な変更点などについて解説します。\nアップデート用スクリプトの追加 Freshのアップデート用スクリプトが追加されています。\n$ deno run -A https://fresh.deno.dev/update . このスクリプトを実行すると、各種依存関係や後述するcompilerOptionsやTwindプラグインなどに関する変更が適用されます。\ncompilerOptions.jsxとcompilerOptions.jsxImportSourceのサポート Freshのプロジェクトの初期化時に、compilerOptions.jsxとcompilerOptions.jsxImportSourceが自動で設定されるようになりました。\nこれにより、.jsx/.tsxファイルで以下2行の指定が不要になります。\n/** @jsx h */ import { h } from \u0026#34;preact\u0026#34;; 前述のアップデートスクリプトを実行すると、既存のプロジェクトにもこの設定が適用されます。\nプラグインシステム ユーザがFreshの挙動を拡張できるようにするために、プラグインシステムが実装されました。\n現時点では、生成されたHTMLに対するスクリプトやスタイルの注入などがサポートされています。将来的には、プラグイン経由でRouteやMiddlewareなどを追加できるようにすることが予定されているようです。\n例として、公式でTwindプラグインが提供されており、start()のpluginsオプションで有効化できます。\n// main.ts import { start } from \u0026#34;$fresh/server.ts\u0026#34;; import twindPlugin from \u0026#34;$fresh/plugins/twind.ts\u0026#34;; import manifest from \u0026#34;./fresh.gen.ts\u0026#34;; import twindConfig from \u0026#34;./twind.config.ts\u0026#34;; await start(manifest, { plugins: [twindPlugin(twindConfig)] }); このTwindプラグインを有効化すると、twを使わずにclassを指定できるようになります (PreactのOption Hooksを使用して twが自動で適用されます)\n\u0026lt;div class=\u0026#34;font-bold\u0026#34;\u0026gt;foobar\u0026lt;/div\u0026gt; 前述のアップデートスクリプトを実行することで、twを使わずにclassを記述する形式へ自動で変換されます。\nPreact Devtoolsのサポート Preact Devtoolsのサポートが追加されています。\ndevモード(deno task start)時は自動で有効化されるため、特に設定などは不要です。","keywords":["Fresh","Preact","Twind"],"articleBody":"Fresh v1.1がリリースされました。\nこの記事では主な変更点などについて解説します。\nアップデート用スクリプトの追加 Freshのアップデート用スクリプトが追加されています。\n$ deno run -A https://fresh.deno.dev/update . このスクリプトを実行すると、各種依存関係や後述するcompilerOptionsやTwindプラグインなどに関する変更が適用されます。\ncompilerOptions.jsxとcompilerOptions.jsxImportSourceのサポート Freshのプロジェクトの初期化時に、compilerOptions.jsxとcompilerOptions.jsxImportSourceが自動で設定されるようになりました。\nこれにより、.jsx/.tsxファイルで以下2行の指定が不要になります。\n/** @jsx h */ import { h } from \"preact\"; 前述のアップデートスクリプトを実行すると、既存のプロジェクトにもこの設定が適用されます。\nプラグインシステム ユーザがFreshの挙動を拡張できるようにするために、プラグインシステムが実装されました。\n現時点では、生成されたHTMLに対するスクリプトやスタイルの注入などがサポートされています。将来的には、プラグイン経由でRouteやMiddlewareなどを追加できるようにすることが予定されているようです。\n例として、公式でTwindプラグインが提供されており、start()のpluginsオプションで有効化できます。\n// main.ts import { start } from \"$fresh/server.ts\"; import twindPlugin from \"$fresh/plugins/twind.ts\"; import manifest from \"./fresh.gen.ts\"; import twindConfig from \"./twind.config.ts\"; await start(manifest, { plugins: [twindPlugin(twindConfig)] }); このTwindプラグインを有効化すると、twを使わずにclassを指定できるようになります (PreactのOption Hooksを使用して twが自動で適用されます)\ndiv class=\"font-bold\"foobardiv 前述のアップデートスクリプトを実行することで、twを使わずにclassを記述する形式へ自動で変換されます。\nPreact Devtoolsのサポート Preact Devtoolsのサポートが追加されています。\ndevモード(deno task start)時は自動で有効化されるため、特に設定などは不要です。\nFlash(Deno.serve)の実験的サポート Deno v1.25で実装されたFlashの実験的サポートが追加されています。\n// main.ts import { start } from \"$fresh/server.ts\"; import manifest from \"./fresh.gen.ts\"; await start(manifest, { experimentalDenoServe: true }); Deno.serveの利用には--unstableの指定が必要で、Deno Deployではまだ動作しないため、注意が必要です。\nPreact Signalsのサポート 先日発表されたPreact Signalsのサポートが追加されています。\nFreshのプロジェクトを初期化する際に、自動でセットアップされます。\n以下のリポジトリで、Preact Signalsを使ったコード例が公開されています。\n https://github.com/lucacasonato/fresh-with-signals  _middleware.tsで複数のミドルウェアがサポート handlerにミドルウェアの配列を指定することで、複数のミドルウェアを有効化できるようになりました。\n// routes/_middleware.ts export const handler = [logger, requestID]; async function logger( req: Request, ctx: MiddlewareHandlerContext, ): PromiseResponse { const start = new Date(); const res = await ctx.next(); const end = new Date(); console.log(`${req.method}${req.url.href}: status: ${res.status}, latency: ${+end - +start}ms`); return res; } async function requestID( req: Request, ctx: MiddlewareHandlerContext, ): PromiseResponse { const id = crypto.randomUUID(); ctx.state.requestID = id; const res = await ctx.next(); res.headers.set(\"X-Request-Id\", id); return res; } HandlerContext#renderNotFound このAPIを利用すると、404ページ(routes/_404.tsx)を明示的にレンダリングできます。\nexport const handler: Handlers = { GET(req, ctx) { return ctx.renderNotFound(); }, }; カスタムのstaticディレクトリのサポート start()でカスタムのstaticディレクトリを指定できるようになりました。\n以下の例だと、静的ファイルは./custom_static_dirから配信されるように挙動が変更されます。\n// main.ts await start(manifest, { staticDir: \"./custom_static_dir\" }); 参考  https://github.com/denoland/fresh/releases/tag/1.1.0 Fresh 1.1 - automatic JSX, plugins, DevTools, and more  ","wordCount":"210","inLanguage":"en","datePublished":"2022-09-11T00:00:00Z","dateModified":"2022-09-11T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/fresh/v1.1.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<div class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</div>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
+<span><i class="fa fa-heart"></i>カテゴリー</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+Fresh v1.1
+</h1>
+<div class=post-meta><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88%e7%94%a8%e3%82%b9%e3%82%af%e3%83%aa%e3%83%97%e3%83%88%e3%81%ae%e8%bf%bd%e5%8a%a0 aria-label=アップデート用スクリプトの追加>アップデート用スクリプトの追加</a></li>
+<li>
+<a href=#compileroptionsjsx%e3%81%a8compileroptionsjsximportsource%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=compilerOptions.jsxとcompilerOptions.jsxImportSourceのサポート><code>compilerOptions.jsx</code>と<code>compilerOptions.jsxImportSource</code>のサポート</a></li>
+<li>
+<a href=#%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0 aria-label=プラグインシステム>プラグインシステム</a></li>
+<li>
+<a href=#preact-devtools%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label="Preact Devtoolsのサポート">Preact Devtoolsのサポート</a></li>
+<li>
+<a href=#flashdenoserve%e3%81%ae%e5%ae%9f%e9%a8%93%e7%9a%84%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=Flash(Deno.serve)の実験的サポート>Flash(<code>Deno.serve</code>)の実験的サポート</a></li>
+<li>
+<a href=#preact-signals%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label="Preact Signalsのサポート">Preact Signalsのサポート</a></li>
+<li>
+<a href=#_middlewarets%e3%81%a7%e8%a4%87%e6%95%b0%e3%81%ae%e3%83%9f%e3%83%89%e3%83%ab%e3%82%a6%e3%82%a7%e3%82%a2%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=_middleware.tsで複数のミドルウェアがサポート><code>_middleware.ts</code>で複数のミドルウェアがサポート</a></li>
+<li>
+<a href=#handlercontextrendernotfound aria-label=HandlerContext#renderNotFound><code>HandlerContext#renderNotFound</code></a></li>
+<li>
+<a href=#%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%81%aestatic%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=カスタムのstaticディレクトリのサポート>カスタムのstaticディレクトリのサポート</a></li>
+<li>
+<a href=#%e5%8f%82%e8%80%83 aria-label=参考>参考</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><p>Fresh v1.1がリリースされました。</p>
+<p>この記事では主な変更点などについて解説します。</p>
+<h2 id=アップデート用スクリプトの追加>アップデート用スクリプトの追加<a hidden class=anchor aria-hidden=true href=#アップデート用スクリプトの追加>#</a></h2>
+<p>Freshのアップデート用スクリプトが追加されています。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ deno run -A https://fresh.deno.dev/update .
+</code></pre></div><p>このスクリプトを実行すると、各種依存関係や後述する<code>compilerOptions</code>やTwindプラグインなどに関する変更が適用されます。</p>
+<h2 id=compileroptionsjsxとcompileroptionsjsximportsourceのサポート><code>compilerOptions.jsx</code>と<code>compilerOptions.jsxImportSource</code>のサポート<a hidden class=anchor aria-hidden=true href=#compileroptionsjsxとcompileroptionsjsximportsourceのサポート>#</a></h2>
+<p>Freshのプロジェクトの初期化時に、<code>compilerOptions.jsx</code>と<code>compilerOptions.jsxImportSource</code>が自動で設定されるようになりました。</p>
+<p>これにより、<code>.jsx</code>/<code>.tsx</code>ファイルで以下2行の指定が不要になります。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx><span style=color:#75715e>/** @jsx h */</span>
+<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>h</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;preact&#34;</span>;
+</code></pre></div><p>前述のアップデートスクリプトを実行すると、既存のプロジェクトにもこの設定が適用されます。</p>
+<h2 id=プラグインシステム>プラグインシステム<a hidden class=anchor aria-hidden=true href=#プラグインシステム>#</a></h2>
+<p>ユーザがFreshの挙動を拡張できるようにするために、プラグインシステムが実装されました。</p>
+<p>現時点では、生成されたHTMLに対するスクリプトやスタイルの注入などがサポートされています。将来的には、プラグイン経由でRouteやMiddlewareなどを追加できるようにすることが予定されているようです。</p>
+<p>例として、公式でTwindプラグインが提供されており、<code>start()</code>の<code>plugins</code>オプションで有効化できます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#75715e>// main.ts
+</span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>start</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;$fresh/server.ts&#34;</span>;
+<span style=color:#66d9ef>import</span> <span style=color:#a6e22e>twindPlugin</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;$fresh/plugins/twind.ts&#34;</span>;
+
+<span style=color:#66d9ef>import</span> <span style=color:#a6e22e>manifest</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;./fresh.gen.ts&#34;</span>;
+<span style=color:#66d9ef>import</span> <span style=color:#a6e22e>twindConfig</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;./twind.config.ts&#34;</span>;
+
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>start</span>(<span style=color:#a6e22e>manifest</span>, { <span style=color:#a6e22e>plugins</span><span style=color:#f92672>:</span> [<span style=color:#a6e22e>twindPlugin</span>(<span style=color:#a6e22e>twindConfig</span>)] });
+</code></pre></div><p>このTwindプラグインを有効化すると、<code>tw</code>を使わずにclassを指定できるようになります (Preactの<a href=https://preactjs.com/guide/v10/options/>Option Hooks</a>を使用して <code>tw</code>が自動で適用されます)</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-jsx data-lang=jsx>&lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;font-bold&#34;</span>&gt;<span style=color:#a6e22e>foobar</span>&lt;/<span style=color:#f92672>div</span>&gt;
+</code></pre></div><p>前述のアップデートスクリプトを実行することで、<code>tw</code>を使わずにclassを記述する形式へ自動で変換されます。</p>
+<h2 id=preact-devtoolsのサポート>Preact Devtoolsのサポート<a hidden class=anchor aria-hidden=true href=#preact-devtoolsのサポート>#</a></h2>
+<p><a href=https://github.com/preactjs/preact-devtools>Preact Devtools</a>のサポートが追加されています。</p>
+<p>devモード(<code>deno task start</code>)時は自動で有効化されるため、特に設定などは不要です。</p>
+<h2 id=flashdenoserveの実験的サポート>Flash(<code>Deno.serve</code>)の実験的サポート<a hidden class=anchor aria-hidden=true href=#flashdenoserveの実験的サポート>#</a></h2>
+<p><a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html>Deno v1.25</a>で実装されたFlashの実験的サポートが追加されています。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#75715e>// main.ts
+</span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>start</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;$fresh/server.ts&#34;</span>;
+<span style=color:#66d9ef>import</span> <span style=color:#a6e22e>manifest</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;./fresh.gen.ts&#34;</span>;
+
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>start</span>(<span style=color:#a6e22e>manifest</span>, { <span style=color:#a6e22e>experimentalDenoServe</span>: <span style=color:#66d9ef>true</span> });
+</code></pre></div><p><code>Deno.serve</code>の利用には<code>--unstable</code>の指定が必要で、Deno Deployではまだ動作しないため、注意が必要です。</p>
+<h2 id=preact-signalsのサポート>Preact Signalsのサポート<a hidden class=anchor aria-hidden=true href=#preact-signalsのサポート>#</a></h2>
+<p>先日発表された<a href=https://preactjs.com/blog/introducing-signals/>Preact Signals</a>のサポートが追加されています。</p>
+<p>Freshのプロジェクトを初期化する際に、自動でセットアップされます。</p>
+<p>以下のリポジトリで、Preact Signalsを使ったコード例が公開されています。</p>
+<ul>
+<li><a href=https://github.com/lucacasonato/fresh-with-signals>https://github.com/lucacasonato/fresh-with-signals</a></li>
+</ul>
+<h2 id=_middlewaretsで複数のミドルウェアがサポート><code>_middleware.ts</code>で複数のミドルウェアがサポート<a hidden class=anchor aria-hidden=true href=#_middlewaretsで複数のミドルウェアがサポート>#</a></h2>
+<p><code>handler</code>にミドルウェアの配列を指定することで、複数のミドルウェアを有効化できるようになりました。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#75715e>// routes/_middleware.ts
+</span><span style=color:#75715e></span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>handler</span> <span style=color:#f92672>=</span> [<span style=color:#a6e22e>logger</span>, <span style=color:#a6e22e>requestID</span>];
+
+<span style=color:#66d9ef>async</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>logger</span>(
+  <span style=color:#a6e22e>req</span>: <span style=color:#66d9ef>Request</span>,
+  <span style=color:#a6e22e>ctx</span>: <span style=color:#66d9ef>MiddlewareHandlerContext</span>,
+)<span style=color:#f92672>:</span> <span style=color:#a6e22e>Promise</span>&lt;<span style=color:#f92672>Response</span>&gt; {
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>start</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Date();
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>res</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>next</span>();
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>end</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Date();
+  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>req</span>.<span style=color:#a6e22e>method</span><span style=color:#e6db74>}</span><span style=color:#e6db74> </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>req</span>.<span style=color:#a6e22e>url</span>.<span style=color:#a6e22e>href</span><span style=color:#e6db74>}</span><span style=color:#e6db74>: status: </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>status</span><span style=color:#e6db74>}</span><span style=color:#e6db74>, latency: </span><span style=color:#e6db74>${</span><span style=color:#f92672>+</span><span style=color:#a6e22e>end</span> <span style=color:#f92672>-</span> <span style=color:#f92672>+</span><span style=color:#a6e22e>start</span><span style=color:#e6db74>}</span><span style=color:#e6db74>ms`</span>);
+  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>res</span>;
+}
+
+<span style=color:#66d9ef>async</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>requestID</span>(
+  <span style=color:#a6e22e>req</span>: <span style=color:#66d9ef>Request</span>,
+  <span style=color:#a6e22e>ctx</span>: <span style=color:#66d9ef>MiddlewareHandlerContext</span>,
+)<span style=color:#f92672>:</span> <span style=color:#a6e22e>Promise</span>&lt;<span style=color:#f92672>Response</span>&gt; {
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>id</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>crypto</span>.<span style=color:#a6e22e>randomUUID</span>();
+  <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>state</span>.<span style=color:#a6e22e>requestID</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>id</span>;
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>res</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>next</span>();
+  <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>headers</span>.<span style=color:#66d9ef>set</span>(<span style=color:#e6db74>&#34;X-Request-Id&#34;</span>, <span style=color:#a6e22e>id</span>);
+  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>res</span>;
+}
+</code></pre></div><h2 id=handlercontextrendernotfound><code>HandlerContext#renderNotFound</code><a hidden class=anchor aria-hidden=true href=#handlercontextrendernotfound>#</a></h2>
+<p>このAPIを利用すると、404ページ(<code>routes/_404.tsx</code>)を明示的にレンダリングできます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>handler</span>: <span style=color:#66d9ef>Handlers</span> <span style=color:#f92672>=</span> {
+  <span style=color:#a6e22e>GET</span>(<span style=color:#a6e22e>req</span>, <span style=color:#a6e22e>ctx</span>) {
+    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>ctx</span>.<span style=color:#a6e22e>renderNotFound</span>();
+  },
+};
+</code></pre></div><h2 id=カスタムのstaticディレクトリのサポート>カスタムのstaticディレクトリのサポート<a hidden class=anchor aria-hidden=true href=#カスタムのstaticディレクトリのサポート>#</a></h2>
+<p><code>start()</code>でカスタムのstaticディレクトリを指定できるようになりました。</p>
+<p>以下の例だと、静的ファイルは<code>./custom_static_dir</code>から配信されるように挙動が変更されます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#75715e>// main.ts
+</span><span style=color:#75715e></span><span style=color:#66d9ef>await</span> <span style=color:#a6e22e>start</span>(<span style=color:#a6e22e>manifest</span>, { <span style=color:#a6e22e>staticDir</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;./custom_static_dir&#34;</span> });
+</code></pre></div><h2 id=参考>参考<a hidden class=anchor aria-hidden=true href=#参考>#</a></h2>
+<ul>
+<li><a href=https://github.com/denoland/fresh/releases/tag/1.1.0>https://github.com/denoland/fresh/releases/tag/1.1.0</a></li>
+<li><a href=https://deno.com/blog/fresh-1.1>Fresh 1.1 - automatic JSX, plugins, DevTools, and more</a></li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/fresh.html>fresh</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/preact.html>Preact</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/twind.html>Twind</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

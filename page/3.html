@@ -72,6 +72,50 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/05/16〜2022/05/22の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.22 Deno v1.22がリリースされました。
+変更点については以下の記事にまとめたため、詳しくはこちらを参照いただければと思います。
+Deno v1.22 deno_std v0.140.0 deno_std v0.140.0がリリースされました。
+http serve関数などにonListenオプションが追加されています。
+このオプションに関数を設定しておくと、サーバ起動時にそれが呼ばれます。
+import { serve } from "https://deno.land/std@0.140.0/http/server.ts"; serve(() => Response.json({ message: "hello" }), { onListen({ port }) { console.log(`Listening on port ${port}`); }, }); collections/deep_merge deepMerge関数で、循環参照のあるオブジェクトなどで無限ループが発生する問題が修正されています。
+testing/asserts assertRejects()に渡した関数が同期的に例外を投げた場合に成功と扱われてしまう問題が修正されました。
+await assertRejects(() => { throw new Error("foo"); }); // => rejectされたPromiseが返されていないため、エラー https://github.com/denoland/deno_std/releases/tag/0.140.0
+SQLバイディング Deno本体でSQLバインディングを公開するPRが作成されています。
+experiment(runtime): expose SQLite bindings (#14627)
+まだ実際にリリースされるかどうかは不明ですが、今のところ、下記のようにしてクエリを発行できる想定のようです。
+const { Connection } = Deno....</p>
+</div>
+<footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/05/16〜2022/05/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/22.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Deno v1.22
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.22がリリースされました。
+この記事では、主な変更点についてまとめていきます。
+リモートモジュールの型チェックがデフォルトで無効化 deno runやdeno testなどの各コマンドでリモートモジュールの型チェックがデフォルトで無効化されました。
+今後はローカルのTypeScriptファイルのみが型チェックされます。
+もしリモートモジュールの型チェックも必要な際は--check=allオプションまたはdeno check --remoteを使用します。
+また、次のv1.23のリリースでは、deno runやdeno cacheではデフォルトで一切型チェックが行われなくなる予定です。 (deno checkコマンドや--checkオプションなどで明示的に型チェックする必要があります)
+例えば、CIでdeno cacheコマンドを実行して型チェックを行っている場合などは、今のうちにdeno checkコマンドに移行しておくとよいと思います。
+# mod.tsの型チェックを行う $ deno check mod.ts # deno run実行時に型チェックも行う $ deno run --check main.ts 設定ファイルの読み込みの無効化 Denoはエントリポイントが存在するディレクトリまたはその上位のいずれかのディレクトリにdeno.json(c)というファイルが存在する場合、それを自動で読み込みます。
+このリリースでは、新しく--no-configオプションがサポートされました。 このオプションを指定すると、deno.json(c)の自動探索を無効化できます。
+$ deno run --no-config main.ts (破壊的変更) Worker内でデフォルトでDeno APIが有効化 今までは、Worker内でDeno.readFileなどのAPIを使用したい場合は、denoオプションによって明示的に有効化する必要がありました。
+new Worker(new URL('./worker.js', import.meta.url).href, { deno: { namespace: true }, // Deno APIの使用を有効化 type: "module" }); 今後は上記のようにオプションを指定しなくても、Worker内で常にDenoのAPIを参照できます。
+new Worker(new URL('./worker.js', import.meta.url).href, { type: "module" }); また、この変更の影響により、WorkerOptions....</p>
+</div>
+<footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.22" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.22.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/05/09〜2022/05/15の最新情報
 </h2>
 </header>
@@ -261,54 +305,6 @@ deno_std v0....</p>
 </div>
 <footer class=entry-footer><span title="2022-04-03 00:00:00 +0000 UTC">April 3, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/28〜2022/04/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/03.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/03/21〜2022/03/27の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。
-詳細については下記を参照ください。
-Deno v1.20 deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。
-これにより、cp -Rや|&のサポートなどが行われています。
-deno_task_shell v0.2.0 deno lspでenablePathsオプションがサポート deno lspでenablePathsオプションがサポートされました。
-ワークスペース内の特定のフォルダでのみdeno lspを有効化したいが、それ以外のフォルダでは組み込みのJavaScript/TypeScriptランゲージサーバを使いたいようなときに設定することが想定されているようです。
-https://github.com/denoland/vscode_deno/releases/tag/3.11.0 その他の変更 --unstableなしでdeno benchを実行した際のエラーメッセージが改善 deno upgradeコマンドでDENO_CERT環境変数による証明書の指定がサポート HTTPサーバのパフォーマンスチューニング など
-https://github.com/denoland/deno/releases/tag/v1.20.2
-Deno v1.20.3 Deno v1.20.2に続けて、v1.20.3もリリースされています。
-セキュリティに関する修正が含まれるので早めのアップデートが推奨されています。
-変更点:
-Denoはfetchの第一引数としてURLの指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです) FFI関連の各API(Deno.UnsafeFnPointer#callなど)でちゃんと--unstableオプションが与えられているかチェックされるよう変更されました。 Deno.RunOptionsのcmdプロパティがreadonlyに変更されました。 https://github.com/denoland/deno/releases/tag/v1.20.3
-deno_std v0.131.0 deno_std v0.131.0がリリースされました。
-collections BinaryHeapが追加されました。
-import { BinaryHeap } from "https://deno.land/std@0.132.0/collections/binary_heap.ts"; const heap = new BinaryHeap&lt;number>(); heap....</p>
-</div>
-<footer class=entry-footer><span title="2022-03-27 00:00:00 +0000 UTC">March 27, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/03/21〜2022/03/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/27.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/03/14〜2022/03/20の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20 Deno v1.20がリリースされました。
-詳しくは下記の記事を参照ください:
-Deno v1.20 deno_std v0.130.0 deno_std v0.130.0がリリースされました。
-std/testing/assertsモジュールでassertInstanceOfが実装されました。
-import { assertInstanceOf } from "https://deno.land/std@0.130.0/testing/asserts.ts"; assertInstanceOf(new Date(), Date); // OK assertInstanceOf(/abc/, RegExp); // OK assertInstanceOf("baz", Number); // NG その他にもstd/nodeでのfs.writevSyncの実装などが行われています。
-https://github.com/denoland/deno_std/commit/dbccc64488bbcc2bc540b833488b9bb97c11e1cb IndexedDBサポートについて Deno本体にIndexedDBを追加するPRが作成されています。
-feat(ext/webstorage): IndexedDB (#14035)
-内部的にはlocalStorageなどと同様にSQLiteを使用して実装されているようです。
-近い将来にリリースされる可能性があるかもしれません。
-https://github.com/denoland/deno/pull/14035
-deno-sqlite v3.3.0 deno-sqlite v3.3.0がリリースされました。
-DBクラスにexecuteメソッドが追加されています。 これを使うと、複数のSQLステートメントをまとめて実行することができます。
-import { DB } from "https://deno.land/x/sqlite@v3.3.0/mod.ts"; const db = new DB(":memory:"); db.execute(` CREATE TABLE users ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT ); INSERT INTO users (name) VALUES ('foo'), ('bar'); `); for (const [id, name] of db....</p>
-</div>
-<footer class=entry-footer><span title="2022-03-20 00:00:00 +0000 UTC">March 20, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/03/14〜2022/03/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/20.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

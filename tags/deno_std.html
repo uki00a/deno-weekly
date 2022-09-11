@@ -76,6 +76,31 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/09/05〜2022/09/11の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25.2 Deno v1.25.2がリリースされました。
+(破壊的変更) Node.js互換モード(--compat)の削除 Deno v1.25.0でnpmパッケージのサポートが追加されたため、Node.js互換モード(--compat)が削除されました。
+FFI Rustのdynasmrt crateを使用して、JITの仕組みが再実装されています。
+こちらのコメントによると、これにより以下の点などが改善されているようです。
+Windows x64 PCでもv8 Fast APIを使用した最適化が適用されるようになりました。 Denoからtinyccへの依存がなくなりました。 SElinuxが有効化されている環境でもFFIが動作するようになりました。 その他には、bool型のサポートが追加されています。
+const dylib = Deno.dlopen(libPath, { "do_something_with_bool": { parameters: ["bool"], result: "bool", }, }); npmパッケージサポートの改善 pre-releaseタグがサポートされています。(例: npm:some-package@1.2.3-alpha.4)
+また、パッケージのバージョンが指定されなかった際に、そのパッケージの最新バージョンがインストールされるように改善されています。(dist-tagsのlatest で指定されたバージョンがダウンロードされます)
+その他には、npm:経由で読み込んだパッケージ内ではwindow変数が削除され、cjsモジュールが再帰的に解析されるように改善されています。
+これによりVue.jsがimportできるようになっているようです。
+import { createApp } from "npm:vue@3.2.39" console.log(createApp); deno_std v0.155.0 deno_std v0.155.0がリリースされました。
+std/encoding/csv: stringify()のシグネチャが変更 (破壊的変更) stringify()が同期的に動作するように変更されています。
+また、columnsオプションがオプショナルに変更されています。
+具体的には、以下のように型定義が変更されています。
+v0.154.0:
+stringify( data: DataItem[], columns: Column[], options?: StringifyOptions, ): Promise&lt;string> v0.155.0:...</p>
+</div>
+<footer class=entry-footer><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/09/05〜2022/09/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/11.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/08/29〜2022/09/04の最新情報
 </h2>
 </header>
@@ -267,26 +292,6 @@ import { JSONParseStream } from "https://deno.land/std@0.145.0/encoding/json/str
 </div>
 <footer class=entry-footer><span title="2022-06-26 00:00:00 +0000 UTC">June 26, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/20〜2022/06/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/26.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/06/13〜2022/06/19の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23 Deno v1.23がリリースされました。
-以下の記事に変更点をまとめたため、詳しくはこちらを参照いただければと思います。
-Deno v1.23 deno_std v0.144.0 deno_std v0.144.0がリリースされました。
-encoding/front_matter 新規モジュールとしてencoding/front_matterが追加されました。
-import { extract } from "https://deno.land/std@0.144.0/encoding/front_matter.ts"; const { attrs, body } = extract&lt;{ title: string, date: Date }>(`--- title: foobar date: 2022-06-12 --- Hello`); console.assert(attrs.title === "foobar"); console.assert(attrs.date instanceof Date); console.assert(body === "Hello"); collections collections/mod.tsをimportすると警告が表示されるようになりました。
-必要に応じて、collections/deep_mergeやcollections/group_byなどの各ファイルを個別にimportすることが推奨されます。
-node process.stdoutとprocess.stderrに下記メソッドが実装されています。
-cursorTo moveCursor clearLine clearScreenDown https://github.com/denoland/deno_std/releases/tag/0.144.0
-Freshのアップデート (CLIの削除) FreshからCLIが削除されています。
-feat: remove fresh cli, do manifest generation in process (#223)...</p>
-</div>
-<footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/13〜2022/06/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/19.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

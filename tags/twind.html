@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Preact | 週刊Deno</title>
+<title>Twind | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/preact.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/twind.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/preact/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/twind/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -25,12 +25,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Preact">
+<meta property="og:title" content="Twind">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/preact.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/twind.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Preact">
+<meta name=twitter:title content="Twind">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -71,7 +71,7 @@
 <main class=main>
 <header class=page-header>
 <h1>
-Preact
+Twind
 </h1>
 </header>
 <article class="post-entry tag-entry">
@@ -97,31 +97,6 @@ devモード(deno task start)時は自動で有効化されるため、特に設
 </div>
 <footer class=entry-footer><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span></footer>
 <a class=entry-link aria-label="post link to Fresh v1.1" href=https://uki00a.github.io/deno-weekly/articles/fresh/v1.1.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/05/30〜2022/06/05の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.22.2 Deno v1.22.2がリリースされました。
-主な変更点:
-Deno.getGid()が実装されました。(unstable) POSIX系プラットフォームではプロセスのグループIDが、Windowsではnullが返されます。 利用するには--allow-envの指定が必要です。 Error.captureStackTrace()の型定義が追加されました。 Crypto.getRandomValues()の型定義が改善されました。(BigInt64ArrayやBigUint64Arrayが受け取れず、Float32ArrayやFloat64Arrayが引数として受け取れてしまう問題が解消されています) https://github.com/denoland/deno/releases/tag/v1.22.2
-deno_std v0.142.0 deno_std v0.142.0がリリースされました。
-FNVのサポート (crypto) cryptoモジュールでFNVが実装されました。
-import { crypto } from "https://deno.land/std@0.142.0/crypto/mod.ts"; // ... const digest = await crypto.subtle.digest("FNV32", input); media_typesモジュールの追加 deno_stdにmedia_typesモジュールが追加されました。
-import { contentType } from "https://deno.land/std@0.142.0/media_types/mod.ts"; contentType(".js"); // => "application/javascript; charset=UTF-8" contentType("application/json"); // => "application/json; charset=UTF-8" このモジュールは、以前にもdeno_stdに存在するモジュールの一部でしたが、一度削除されています。
-その後、メンテナンスはoakserver/media_typesのリポジトリに引き継がれていました。
-このリリースで改めてmedia_typesモジュールが復帰したため、oakserver/media_typesのリポジトリはアーカイブされています。
-TextLineStreamにallowCRオプションが追加 (streams/delimiter) このオプションにtrueを指定したときのみCRが取り扱われるように変更されています。
-前回のリリースで、デフォルトでCRが取り扱われるように修正されましたが、デフォルトの挙動を変えてしまうのはまずいということで、このオプションが追加されました。
-https://github.com/denoland/deno_std/releases/tag/0.142.0
-oak_commonsパッケージの機能のdeno_stdへの移行 現在、oak_commonsパッケージで提供されていた機能の一部をdeno_stdへ移植するPRが作成されています。
-例)
-http/http_statusのSTATUS_TEXTがMapからRecord型に変更 http/http_errorsの追加 http/negotiationの追加 crypto/keystackの追加 (Oakの内部でも使われているCookieの署名・検証用モジュール) deno_std v0....</p>
-</div>
-<footer class=entry-footer><span title="2022-06-05 00:00:00 +0000 UTC">June 5, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/30〜2022/06/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/05.html></a>
 </article>
 </main>
 <footer class=footer>

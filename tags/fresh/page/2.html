@@ -76,6 +76,43 @@ fresh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/02/14〜2022/02/20の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.19 Deno v1.19がリリースされました。
+--promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。
+const content = await Deno.readTextFile("README.md"); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。
+$ deno run main.ts ⚠️ ️Deno requests read access to "README.md". Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。
+deno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。
+具体的な使い方としては、下記のようにエントリポイントを指定します。
+$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。
+また、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。
+{ "imports": { "https://deno.land/": "./deno.land/", "https://unpkg.com/": "./unpkg.com/" }, "scopes": { "./unpkg.com/": { "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js", "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js" } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。...</p>
+</div>
+<footer class=entry-footer><span title="2022-02-20 00:00:00 +0000 UTC">February 20, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/02/14〜2022/02/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/20.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/11/01〜2021/11/07の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>2021年のDeno Advent Calendarが公開 Qiitaで2021年のDeno Advent Calendarが公開されました。
+https://qiita.com/advent-calendar/2021/deno
+deployctlがアーカイブ Deno Deployのコマンドラインツールであるdeployctlがアーカイブされました。
+今後は代わりにDeno CLIを使って開発していくようアナウンスされています。
+Deno Deploy Beta 3が来たぞ Freshのアップデート PreactベースのWebフレームワークであるFreshがアップデートされ、MiddlewareとCSPのサポートが追加されました。
+Middlewareサポート Middlewareを利用する際は、pagesディレクトリ配下に下記のいずれかの名前のファイルを用意し、handler関数をexportする必要があります。
+/_middleware.tsx /_middleware.ts /_middleware.jsx /_middleware.js export async function handler(req: Request, handle: () => Promise&lt;Response>) { const start = Date.now(); const resp = await handle(); const end = Date.now(); console.log(`${req.method}${req.url}- ${end - start}ms`); return resp; } CSPサポート CSPサポートを有効化したいときは、対象ページでcspオプションにtrueを設定したconfigオブジェクトをexportします。
+import type { PageConfig } from "../deps.ts"; export const config: PageConfig = { csp: true }; 上記を実施しておくことで、特に設定をしなくとも自動でContent-Security-Policyヘッダを出力してくれます。...</p>
+</div>
+<footer class=entry-footer><span title="2021-11-07 00:00:00 +0000 UTC">November 7, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/01〜2021/11/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/07.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/10/04〜2021/10/10の最新情報
 </h2>
 </header>
