@@ -76,6 +76,35 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/01/31〜2022/02/06の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.18.2 Deno v1.18.2がリリースされました。
+Deno.getUid() Deno.getUid()が実装されました。
+これを使うと、現在のユーザのIDを取得できます。(Windowsだとnullが返されます)
+const uid = Deno.getUid(); console.log(uid); 利用するには--allow-envと--unstableが必要です。
+その他バグ修正 HOME環境変数に相対パスが設定されていると、プロセスがクラッシュする問題が修正されました。 拡張子なしでimportしようとした際に、メディアタイプを元に拡張子を推論されるようになりました。 クエリパラメータつきでローカルファイルをimportするとプロセスがクラッシュする問題が修正されました。 SubtleCrypto.decryptでAES-GCMによる復号を行う際に、タグ長が128ビットでないとプロセスがパニックする問題が修正されました deno lsp: リダイレクトが発生すると、X-Deno-Warningヘッダの内容が表示されなくなる問題が修正されました https://github.com/denoland/deno/releases/tag/v1.18.2
+deno_std v0.125.0 deno_std v0.125.0がリリースされました。
+std/nodeへの機能追加などを中心に行われています。
+全般 std/fs/copyやstd/node、std/osなどの--unstableが必要なモジュールを--unstableなしで使用した際に、型エラーではなく実行時エラーが発生するように修正されました。
+node punycodeパッケージが実装されました url.resolve()が実装されました child_process.spawn()などでAbortSignalがサポートされました fs.createWriteStream()が実装されました fs.copyFile()で4引数の形式がサポートされました https://github.com/denoland/deno_std/commit/3b43d075ea6977e10bb1d9bd58fbeacc721a114e
+deno_stdへのdotenvモジュールの追加について dotenvモジュールをdeno_stdへ追加するPRが作成されています。
+https://github.com/denoland/deno_std/pull/1877 経緯については下記のissueで議論されていますが、好意的な反応が多く、次のリリースなどで追加される可能性がありそうです。
+https://github.com/denoland/deno/issues/13396 https://github.com/denoland/deno_std/pull/1877
+Deno.Conn#setNoDelayとDeno.Conn#setKeepAliveの実装について Deno.ConnにsetNoDelayとsetKeepAliveを実装するPRがマージされました。(denoland/deno#13103)
+今のところ、下記のように使用することが想定されています。
+Deno.Conn#setNoDelay(true)を呼ぶとNagleアルゴリズムが無効化されます (TCP_NODELAYが設定される) Deno.Conn#setKeepAlive(true)を呼ぶとTCPキープアライブが有効化されます (SO_KEEPALIVEが設定される) この機能は次のDeno v1.19でリリースされる可能性がありそうです。
+https://github.com/denoland/deno/pull/13103
+Deno.run()でのIPCサポートについて Deno.run()でIPCをサポートするPRが作成されています。(denoland/deno#13566)
+今のところ、下記のような方法での使用が想定されているようです。
+Deno....</p>
+</div>
+<footer class=entry-footer><span title="2022-02-06 00:00:00 +0000 UTC">February 6, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/01/31〜2022/02/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/06.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/01/24〜2022/01/30の最新情報
 </h2>
 </header>
@@ -277,27 +306,6 @@ std/node wasiパッケージが実装されました。 process 下記APIが追�
 </div>
 <footer class=entry-footer><span title="2021-11-21 00:00:00 +0000 UTC">November 21, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/11/15〜2021/11/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/21.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/11/08〜2021/11/14の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.16.0 Deno v1.16.0がリリースされました。
-React 17 JSX Transformのサポート React 17で導入された新しいJSX Transformのサポートが追加されました。
-https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/#jsx-factories .jsxまたは.tsxファイル中で@jsxImportSourceを使うことで有効化されます。
-/** @jsxImportSource https://esm.sh/preact@10.5.15 */ export function Hello(props) { return ( &lt;div>Hello, {props.name}&lt;/div> ) } また、--configオプションで指定する設定ファイルで有効化することも可能です。
-{ "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "https://esm.sh/react@17.0.2" } } ※Denoの特性上、"jsx": "react-jsx"を指定した際は、jsxImportSourceの指定も必要です。
-Deno API 新しいシグナルAPI Deno.addSignalListenerとDeno.removeSignalListenerが実装されました (unstable)
-const signalListener = () => { // ... }; Deno.addSignalListener("SIGTERM", signalListener); Deno.removeSignalListener("SIGTERM", signalListener); この変更に合わせて、既存のDeno.signalは削除されています。
-https://github.com/denoland/deno/issues/11158 Deno.TlsConn型の導入 Deno.TlsConnという新しいデータ型が導入されました。
-これに合わせて、Deno.connectTlsなどのAPIがDeno.Connの代わりにDeno.TlsConnを返却するように修正されています。
-このオブジェクトにはhandshakeメソッドが定義されており、明示的にハンドシェイクを行うことができます。
-Deno.testのテストケースごとのパーミッション指定が安定化 Deno v1....</p>
-</div>
-<footer class=entry-footer><span title="2021-11-14 00:00:00 +0000 UTC">November 14, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/11/08〜2021/11/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/14.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -76,6 +76,32 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/05/23〜2022/05/29の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
+このリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。
+deno deploy beta 4発表！価格設定をcloudflare workersと比較する その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。
+https://deno.com/blog/deploy-beta4
+Deno v1.22.1 Deno v1.22.1がリリースされました。
+このリリースはバグ修正を中心に行われています。
+主な変更点:
+Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと"close"イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.1
+deno_std v0.141.0 deno_std v0.141.0がリリースされました。
+いくつかの破壊的変更が実施されています。
+testing/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)
+assertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertNotEqualsなどの型定義が修正されています。
+例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。
+assertEquals(123, "foo"); 次のようにすると、型エラーを回避できます。
+assertEquals&lt;unknown>(123, "foo"); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。
+const error = assertThrows(() => { throw new Error("foo"); }); assert(error instanceof Error); assertEquals(error....</p>
+</div>
+<footer class=entry-footer><span title="2022-05-29 00:00:00 +0000 UTC">May 29, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/05/23〜2022/05/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/29.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/05/16〜2022/05/22の最新情報
 </h2>
 </header>
@@ -287,28 +313,6 @@ import { CSVStream } from "https://deno.land/std@0.134.0/encoding/csv/stream.ts"
 </div>
 <footer class=entry-footer><span title="2022-04-10 00:00:00 +0000 UTC">April 10, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/04/04〜2022/04/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/10.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/03/28〜2022/04/03の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。
-Supabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。
-Supabase Functions on Deno Deploy Edge Functions are now available in Supabase Deno v1.20.4 Deno v1.20.4がリリースされました。
-変更点:
-外部モジュールのimport時にリダイレクトが発生すると、deno compileで生成したバイナリがうまく動作しなくなる問題が修正されました。
-Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されました。
-変更前:
-function fetch( input: URL, init?: RequestInit, ): Promise&lt;Response>; 変更後:
-function fetch( input: URL | Request | string, init?: RequestInit, ): Promise&lt;Response>; deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。
-deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。
-https://github.com/denoland/deno/releases/tag/v1.20.4
-deno_std v0....</p>
-</div>
-<footer class=entry-footer><span title="2022-04-03 00:00:00 +0000 UTC">April 3, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/03/28〜2022/04/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/03.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

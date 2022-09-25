@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/09/12〜2022/09/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/09/18.html</link><pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/09/18.html</guid><description>Deno v1.25.3 Deno v1.25.3がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/09/19〜2022/09/25の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/09/25.html</link><pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/09/25.html</guid><description>Deno v1.25.4 Deno v1.25.4がリリースされました。
+--node-modules-dirのサポート node_modulesディレクトリの存在に依存したnpmパッケージを動かせるようにするために、--node-modules-dirオプションが実装されました。
+$ deno run -A --unstable --node-modules-dir npm:vite このオプションを指定すると、pnpmライクなレイアウトでnode_modulesが作られます。
+これによって、npm installなしでViteが動かせるようになったようです。
+詳しくは以下を参照いただければと思います。
+vite-deno-example --reload=オプションでnpmパッケージがサポート --reload=npm:で全npmパッケージの再読込み、--reload=npm:&amp;lt;package&amp;gt;で指定されたパッケージだけを再読込みができます。
+パフォーマンスチューニング いくつかのパフォーマンスチューニングが実施されています。
+例)
+CLIの起動の高速化 console.log()などで文字列を出力する際のパフォーマンスが3倍近くまで高速化 TextEncoder.encodeInto()が5.4倍近くまで高速化 ファイルシステム関連のAPIの最適化 CLIの起動の高速化については、現在、様々なアイデアが検討されており、詳細については以下を参照いただければと思います。
+perf: ideas to improve startup time (#15945) その他の変更点 同一ファイルに対して複数回deno docを実行すると、処理が失敗してしまう問題が修正されています。 Windows上でdeno compileを実行したときに、拡張子が非.exe形式の場合に、それが取り除かれてしまう問題が修正されています。 Deno.env.get/Deno.env.setに不正な変数名を指定した際のエラーメッセージが改善されています。 https://github.com/denoland/deno/releases/tag/v1.25.4
+deno_std v0.157.0 deno_std v0.157.0がリリースされました。
+std/collections/deep_merge.tsのバグ修正 ネストされたプロパティにおいてdeepMerge()のreplaceオプションが機能しない問題が修正されています。
+std/nodeの改善 child_process.spawnSyncが実装されています。
+また、FreeBSDでもstd/nodeが動作するように修正が行われています。
+その他には、以下の改善などが実施されています。
+fs.read()やfs.ReadStreamの互換性の向上 net.connect()が失敗したときに、'error' ⇒ 'close'の順にイベントが発火されるように修正されています。 process.envに不正な文字を含む環境変数が指定されたときに、TypeErrorを投げるのではなくundefinedを返すように修正されています。 Windows上でprocess.on('SIGTERM')が無視されるように修正されています。 https://github.</description></item><item><title>2022/09/12〜2022/09/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/09/18.html</link><pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/09/18.html</guid><description>Deno v1.25.3 Deno v1.25.3がリリースされました。
 npmパッケージサポートの改善 esm形式のモジュールからcjs形式のモジュールをimportする際の挙動のNode.jsとの互換性が向上しています。 deno run --unstable npm:&amp;lt;package&amp;gt;@version/subpathで.js形式または拡張子なしのファイルを実行できるようになりました。 typescript/tscを実行できない問題があったようです。 パッケージのサブパスにpackage.jsonがあれば、その定義内容を元にエントリポイントが解決されるようになりました。 --unstableが指定されたときは、NODE_DEBUGとNODE_OPTIONS環境変数に対して--allow-envのチェックがスキップされるように変更されました。 Flash(Deno.serve)の改善 同時に一つのリクエストしか処理できなかった問題が解消されています。
 https://github.com/denoland/deno/releases/tag/v1.25.3
 deno_std v0.156.0 deno_std v0.156.0がリリースされました。

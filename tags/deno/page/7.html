@@ -76,6 +76,29 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/08/23〜2021/08/29の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.13.2 Deno v1.13.2がリリースされました。
+このリリースではバグ修正を中心に行われています。
+変更点:
+SubtleCrypto#exportKeyでHMACがサポートされました deno testの--jobsオプションで0を指定するとエラーが発生するように修正されました Deno.dlopenに不正な型の引数を渡した際に、プロセスがパニックする問題が修正されました リソースリークを防止するために、Deno.HttpConn#closeを実行した際に、該当のDeno.HttpConnオブジェクトを経由して割り当てられた全てのリソースが開放されるように修正されました deno lspでlanguageIdとしてjsxとtsxがサポートされました (Nova などのエディタが標準のlanguageIdであるjavascriptreactやtypescriptreactではなく、jsxやtsxを使用するために対応されたようです) deno lspがサポートしないlanguageIdが指定された場合、エディタ上で診断が表示されないように修正されました (deno lspが解釈できないlanguageIdをエディタが指定した場合、Denoはそのファイルをtypescriptとして解釈していたため、誤って診断が表示されてしまう問題があったようです) クラシックWorkerでsetTimeoutなどのAPIを使用するとプロセスがクラッシュする問題が修正されました URLやURLSearchParamsのパフォーマンスが向上しました deno_std v0.106.0 deno_std v0.106.0がリリースされました。
+変更点:
+async: delay関数でAbortSignalを使用した中断がサポートされました collection: findLastIndexでマッチする要素が見つからなかったときに-1ではなくundefinedが返却されるように修正されました testing: assertEqualsで、一方のオブジェクトにはconstructorが設定されているがもう一方には設定されていない場合に、保持しているプロパティが一致すればそれらのオブジェクトは同一と判断されるように変更されました node/buffer: 定数などのいくつかのAPIがexportされました node/perf_hooks: PerformanceEntryがdefault exportされるオブジェクトに追加されました https://github.com/denoland/deno_std/pull/1155 https://github.com/denoland/deno_std/releases/tag/0.106.0 MDNでDenoがサポートされました MDN Web Docsの「ブラウザーの互換性」欄にDenoの情報が表示されるようになりました。
+あるWeb APIがDenoのどのバージョンからサポートされているかを確認することができます。
+例)
+https://developer.mozilla.org/ja/docs/Web/API/URL https://developer.mozilla.org/ja/docs/Web/API/TextDecoder https://deno.com/blog/deno-on-mdn
+Aleph.js v0.3.0 betaバージョン Next.jsライクなフレームワークであるAleph.jsのv0.3.0 betaバージョンが公開されました。
+様々な機能の追加やパフォーマンスの向上などが図られています。
+主な変更点:
+新しいプラグインシステムの提供 (Aleph.jsのランタイムを拡張し、コードの変換プロセスに介入したりカスタムファイルタイプのサポートなどを追加できる仕組み) deno_std/http/serverからネイティブHTTP(Deno.serveHttp)への移行 APIミドルウェアがサポートされました。api/_middlewares....</p>
+</div>
+<footer class=entry-footer><span title="2021-08-29 00:00:00 +0000 UTC">August 29, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/23〜2021/08/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/29.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/08/16〜2021/08/22の最新情報
 </h2>
 </header>
@@ -272,22 +295,6 @@ https://www.youtube.com/watch?v=LoknuwupOIE</p>
 </div>
 <footer class=entry-footer><span title="2021-06-20 00:00:00 +0000 UTC">June 20, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/14〜2021/06/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/20.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/06/07〜2021/06/13の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.11.0がリリースされました Deno v1.11.0がリリースされました。
-このリリースでは、deno compileやdeno lspへの新機能の追加などが実施されています。
-TypeScriptがv4.3にアップグレードされました Crypto.randomUUID()が実装されました SubtleCrypto.digest()が実装されました fetch()でabortがサポートされました TextDecoderStreamとTextEncoderStreamがサポートされました。 Deno.watchFsがFsWatcherインターフェースを返却されるように修正されました FsWatcher.returnメソッドはv2.0にて削除される予定のようです deno infoコマンドでlocalStorageの保存先が表示されるようになりました deno lintがstableという扱いになりました deno compileでdata:URLのダイナミックimportがサポートされました deno compileでDeno.emit()がサポートされました deno lspのCodeLensでテストコードの実行がサポートされました deno lspでモジュールレジストリの自動検出が実装されました BroadcastChannelが実装されました(unstable) Deno 1.11 Release Notes Deno 1.11.0 がリリースされたので新機能や変更点の紹介 deno_std v0.98.0がリリースされました deno_stdのv0.98.0がリリースされました。
-変更点:
-async: async/teeモジュールが追加されました async/mux: MuxAsyncIterator.addでAsyncIterableがサポートされました io/bufio: readLinesとreadStringDelimにオプションが追加され、TextDecoderの挙動を詳細に制御できるようになりました encoding/binary: readExact関数が追加されました encoding/binary: getNBytes関数において、初回のDeno.Reader.readの呼び出しで指定したバイト数未満のデータしか読めなかった際に、即座に例外が投げられる問題が修正されました encoding/binary: varnumなどの関数でUint8Array.byteOffsetが無視される問題が修正されました node: perf_hooksモジュールが追加されました node/events: EventEmitter#once/getMaxListeners/setMaxListenersがNode.jsと同じ挙動をするように修正されました testing/asserts: WeakMapやWeakSetなどのオブジェクト同士を比較しようとすると、例外が投げられるように変更されました https://github.com/denoland/deno_std/releases/tag/0.98.0
-denoland/deno_docker 今まで、DenoのDockerイメージはAndy Hayden氏によって個人でメンテナンスされていました。...</p>
-</div>
-<footer class=entry-footer><span title="2021-06-13 00:00:00 +0000 UTC">June 13, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/07〜2021/06/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/13.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

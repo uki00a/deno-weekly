@@ -76,6 +76,22 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/06/07〜2021/06/13の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.11.0がリリースされました Deno v1.11.0がリリースされました。
+このリリースでは、deno compileやdeno lspへの新機能の追加などが実施されています。
+TypeScriptがv4.3にアップグレードされました Crypto.randomUUID()が実装されました SubtleCrypto.digest()が実装されました fetch()でabortがサポートされました TextDecoderStreamとTextEncoderStreamがサポートされました。 Deno.watchFsがFsWatcherインターフェースを返却されるように修正されました FsWatcher.returnメソッドはv2.0にて削除される予定のようです deno infoコマンドでlocalStorageの保存先が表示されるようになりました deno lintがstableという扱いになりました deno compileでdata:URLのダイナミックimportがサポートされました deno compileでDeno.emit()がサポートされました deno lspのCodeLensでテストコードの実行がサポートされました deno lspでモジュールレジストリの自動検出が実装されました BroadcastChannelが実装されました(unstable) Deno 1.11 Release Notes Deno 1.11.0 がリリースされたので新機能や変更点の紹介 deno_std v0.98.0がリリースされました deno_stdのv0.98.0がリリースされました。
+変更点:
+async: async/teeモジュールが追加されました async/mux: MuxAsyncIterator.addでAsyncIterableがサポートされました io/bufio: readLinesとreadStringDelimにオプションが追加され、TextDecoderの挙動を詳細に制御できるようになりました encoding/binary: readExact関数が追加されました encoding/binary: getNBytes関数において、初回のDeno.Reader.readの呼び出しで指定したバイト数未満のデータしか読めなかった際に、即座に例外が投げられる問題が修正されました encoding/binary: varnumなどの関数でUint8Array.byteOffsetが無視される問題が修正されました node: perf_hooksモジュールが追加されました node/events: EventEmitter#once/getMaxListeners/setMaxListenersがNode.jsと同じ挙動をするように修正されました testing/asserts: WeakMapやWeakSetなどのオブジェクト同士を比較しようとすると、例外が投げられるように変更されました https://github.com/denoland/deno_std/releases/tag/0.98.0
+denoland/deno_docker 今まで、DenoのDockerイメージはAndy Hayden氏によって個人でメンテナンスされていました。...</p>
+</div>
+<footer class=entry-footer><span title="2021-06-13 00:00:00 +0000 UTC">June 13, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/06/07〜2021/06/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/13.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/06/01〜2021/06/06の最新情報
 </h2>
 </header>
@@ -273,26 +289,6 @@ CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下
 </div>
 <footer class=entry-footer><span title="2021-03-14 00:00:00 +0000 UTC">March 14, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/08〜2021/03/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/14.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/03/01〜2021/03/07の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno本体の最新情報 Deno v1.8.0がリリースされました Deno v1.8.0がリリースされました。
-magurotunaさんによるDeno v1.8.0のまとめが公開されていますので、よろしければそちらも参照ください。
-主な変更点:
-WebGPUがサポートされました(experimental) ICUサポートが追加されました。 テストカバレッジの収集と集計が個別のコマンドに分離されました(収集はdeno test --coverage、集計はdeno coverageコマンドで行います) lcov形式でのカバレッジの集計がサポートされました。 Import maps/Deno.permissions/Deno.link/Deno.symlink/deno lspが安定化されました(--unstableオプションが不要になった) リモートモジュールをダウンロードする際に、Authorizationヘッダにトークンを設定できるようになりました(DENO_AUTH_TOKENS) テストコード中でDeno.exit()の呼び出しがチェックされるようになりました(exitサニタイザ) Deno.metrics()で収集できる情報がより詳細化されました(--unstableを付与したときのみ) deno fmtでJSONファイルのフォーマットがサポートされました。 Deno.emitでIIFE形式の出力サポートされました。 TypeScriptが4.2にアップグレードされました。 https://github.com/denoland/deno/releases/tag/v1.8.0 https://zenn.dev/magurotuna/articles/deno-release-note-1-8-0 deno_std v0.89.0がリリース Deno v1.8.0のリリースに合わせ、deno_stdのv0.89.0がリリースされました。
-std/nodeへの機能追加などに加え、std/io/streamsモジュールに破壊的変更が加わっています。
-主な変更点:
-io/streams: readableStreamFromAsyncIterator()が削除され、代わりにreadableStreamFromIterable()が追加されました。 node: constantsモジュールが追加されました。 node/crypto: createHash()関数が実装されました。 node: process.hrtime()が実装されました。 node/fs: truncate/truncateSyncが実装されました。 node/util: callbackify/promisify/typesが公開されました。 node/events: require('events').EventEmitterがundefinedになる問題が修正されました。 node: requireでshebangの書かれたJSファイルを読めるようになりました。 node: process.argvがProxyから配列へ変更されました。 https://github.com/denoland/deno_std/pull/780
-サードパーティモジュールなどの最新情報 ts_morphがDenoをサポート ts_morphにDenoのサポートが追加されました。
-ts_morphはTypeScriptのコンパイラAPIのラッパライブラリです。
-https://github.com/dsherret/ts-morph/releases/tag/10.0.1 https://deno.land/x/ts_morph@10.0.1 vnoがVue 3をサポート vnoにVue 3のサポートが追加されました。...</p>
-</div>
-<footer class=entry-footer><span title="2021-03-07 00:00:00 +0000 UTC">March 7, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/03/01〜2021/03/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/07.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
