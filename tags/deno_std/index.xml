@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/09/19〜2022/09/25の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/09/25.html</link><pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/09/25.html</guid><description>Deno v1.25.4 Deno v1.25.4がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/09/26〜2022/10/02の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/02.html</link><pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/02.html</guid><description>Deno v1.26 Deno v1.26がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.26 deno_std v0.158.0 deno_std v0.158.0がリリースされました。
+std/node child_processパッケージでexec/execFileSync/execSyncが実装されています。
+その他には、process.getuid()とprocess.getgid()が実装されています。
+また、fsパッケージのread()やWriteStreamなどの互換性が向上しています。
+std/http/server handlerが返却したResponseのボディがすでに消費されている場合に、500エラーが発生するように修正されています。
+https://github.com/denoland/deno_std/releases/tag/0.158.0
+plug v1.0.0-rc.0 Deno FFI(Deno.dlopen)のヘルパーモジュールであるplugのv1.0.0 RC版が公開されています。
+このリリースでの主要な変更点として、ダイナミックライブラリを読み込むためのprepare()がdlopen()にリネームされています。
+https://github.com/denosaurs/plug/releases/tag/1.0.0-rc.0</description></item><item><title>2022/09/19〜2022/09/25の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/09/25.html</link><pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/09/25.html</guid><description>Deno v1.25.4 Deno v1.25.4がリリースされました。
 --node-modules-dirのサポート node_modulesディレクトリの存在に依存したnpmパッケージを動かせるようにするために、--node-modules-dirオプションが実装されました。
 $ deno run -A --unstable --node-modules-dir npm:vite このオプションを指定すると、pnpmライクなレイアウトでnode_modulesが作られます。
 これによって、npm installなしでViteが動かせるようになったようです。

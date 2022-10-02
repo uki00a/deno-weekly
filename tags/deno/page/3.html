@@ -76,6 +76,49 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/06/06〜2022/06/12の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.22.3 Deno v1.22.3がリリースされました。
+主な変更点:
+fetch APIの引数にURLオブジェクト渡す形式が非推奨ではなくなりました。(TypeScript公式の型定義でもサポートされたため) // Deno v1.22.3までは、下記の形式は非推奨でした const res = await fetch(new URL("https://example.com")); Import Mapファイルなどの.jsonや.jsonc形式のファイルが変更されたときに、deno lspが自動で変更を検知してくれるようになりました。 --watchオプションで、dynamic importされるファイルが監視されない問題が修正されました。 エラー以外の値がthrowされた際にコンソールへ出力される内容が改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.3
+deno_std v0.143.0 deno_std v0.143.0がリリースされました。
+http/http_statusでの破壊的変更について STATUS_TEXTがMap&lt;Status, string>からReadonly&lt;Record&lt;Status, String>>へ変更されています。(破壊的変更)
+その他にも、いくつかのヘルパー関数やタイプが追加されています。
+import { isErrorStatus, STATUS_TEXT } from "https://deno.land/std@0.143.0/http/http_status.ts"; STATUS_TEXT[404]; // => "Not Found" isErrorStatus(404); // => true isErrorStatus(200); // => false flagsモジュールでnegatableオプションがサポート ここで指定されたフラグのみが、--no-プレフィックスの付与による否定がサポートされます。
+import { parse } from "https://deno.land/std@0.143.0/flags/mod.ts"; parse(["deno", "fmt", "--no-config"], { string: ["config"], negatable: ["config"], }); // => { _: [ "deno", "fmt" ], config: false } parse(["deno", "fmt", "--no-config"], { string: ["config"], }); // => { _: [ "deno", "fmt" ], "no-config": true } dotenvモジュールでインラインコメントがサポート #に続けてコメントを記述できます。...</p>
+</div>
+<footer class=entry-footer><span title="2022-06-12 00:00:00 +0000 UTC">June 12, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/06/06〜2022/06/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/12.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/05/30〜2022/06/05の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.22.2 Deno v1.22.2がリリースされました。
+主な変更点:
+Deno.getGid()が実装されました。(unstable) POSIX系プラットフォームではプロセスのグループIDが、Windowsではnullが返されます。 利用するには--allow-envの指定が必要です。 Error.captureStackTrace()の型定義が追加されました。 Crypto.getRandomValues()の型定義が改善されました。(BigInt64ArrayやBigUint64Arrayが受け取れず、Float32ArrayやFloat64Arrayが引数として受け取れてしまう問題が解消されています) https://github.com/denoland/deno/releases/tag/v1.22.2
+deno_std v0.142.0 deno_std v0.142.0がリリースされました。
+FNVのサポート (crypto) cryptoモジュールでFNVが実装されました。
+import { crypto } from "https://deno.land/std@0.142.0/crypto/mod.ts"; // ... const digest = await crypto.subtle.digest("FNV32", input); media_typesモジュールの追加 deno_stdにmedia_typesモジュールが追加されました。
+import { contentType } from "https://deno.land/std@0.142.0/media_types/mod.ts"; contentType(".js"); // => "application/javascript; charset=UTF-8" contentType("application/json"); // => "application/json; charset=UTF-8" このモジュールは、以前にもdeno_stdに存在するモジュールの一部でしたが、一度削除されています。
+その後、メンテナンスはoakserver/media_typesのリポジトリに引き継がれていました。
+このリリースで改めてmedia_typesモジュールが復帰したため、oakserver/media_typesのリポジトリはアーカイブされています。
+TextLineStreamにallowCRオプションが追加 (streams/delimiter) このオプションにtrueを指定したときのみCRが取り扱われるように変更されています。
+前回のリリースで、デフォルトでCRが取り扱われるように修正されましたが、デフォルトの挙動を変えてしまうのはまずいということで、このオプションが追加されました。
+https://github.com/denoland/deno_std/releases/tag/0.142.0
+oak_commonsパッケージの機能のdeno_stdへの移行 現在、oak_commonsパッケージで提供されていた機能の一部をdeno_stdへ移植するPRが作成されています。
+例)
+http/http_statusのSTATUS_TEXTがMapからRecord型に変更 http/http_errorsの追加 http/negotiationの追加 crypto/keystackの追加 (Oakの内部でも使われているCookieの署名・検証用モジュール) deno_std v0....</p>
+</div>
+<footer class=entry-footer><span title="2022-06-05 00:00:00 +0000 UTC">June 5, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/05/30〜2022/06/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/05.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/05/23〜2022/05/29の最新情報
 </h2>
 </header>
@@ -266,53 +309,6 @@ const child = Deno....</p>
 </div>
 <footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.21" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.21.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/04/11〜2022/04/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20.6 Deno v1.20.6がリリースされました。
-deno fmtコマンドの内部実装で使用されているdprint関連のプラグインがアップデートされています。
-その影響により、deno fmtコマンドのパフォーマンス向上やバグの修正が行われています。 (オブジェクトリテラルと3項演算子を併用した際に、フォーマット結果に一貫性がなくなる問題が修正されているようです)
-https://github.com/denoland/deno/releases/tag/v1.20.6
-deno_std v0.135.0 deno_std v0.135.0がリリースされました。
-このリリースでは破壊的変更が実施されています。
-io/readers: MultiReaderのシグネチャの変更 (破壊的変更) MultiReaderのコンストラクタの引数が可変長引数ではなくDeno.Readerの配列を受け取るように変更されています。
-変更前:
-const readers: Array&lt;Deno.Reader> = [...]; new MultiReader(...readers); 変更後:
-const readers: Array&lt;Deno.Reader> = [...]; new MultiReader(readers); MultiReaderはstd/archive/tar.tsモジュールの内部で使われており、大量のファイルを持つtarファイルを作ろうとすると、maximum call stack exceededエラーが発生してしまう問題があったようです。
-mime/multipartの非推奨化 (破壊的変更) mime/multipartモジュールが非推奨化されました。
-今後はFormDataの使用が推奨されます。
-testing/benchの非推奨化 (破壊的変更) testing/benchモジュールが非推奨化されました。
-今後はDeno.benchの使用が推奨されます。
-testing/bddの追加 testing/bddモジュールが追加されました。
-JestやMochaライクなAPIを使用してテストコードを記述することができます。
-import { assertEquals } from "https://deno.land/std@0.135.0/testing/asserts.ts"; import { describe, it } from "https://deno.land/std@0.135.0/testing/bdd.ts"; describe("sum", () => { it("should return sum of numbers", () => { assertEquals(sum(1, 2, 5), 8) }); it("should return 0 when no arguments are given", () => { assertEquals(sum(), 0); }); }); 定義したテストコードはdeno testコマンドで実行することが出来ます。...</p>
-</div>
-<footer class=entry-footer><span title="2022-04-17 00:00:00 +0000 UTC">April 17, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/11〜2022/04/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/17.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/04/04〜2022/04/10の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20.5 Deno v1.20.5がリリースされました。
-deno lspの新機能 deno lspでTesting APIがサポートされています (https://code.visualstudio.com/api/extension-guides/testing)
-vscodeでTesting: Focus on Test Explorer Viewコマンドを実行すると、テストファイルに含まれるテストケースの一覧を表示できます。
-Deno.Listenerにrefとunrefメソッドが追加 (unstable) unref()が呼ばれたListenerはプロセスの終了をブロックしなくなります (タイマにDeno.unrefTimerを呼んだときと同様の挙動をします)
-後述するdeno_std/node/netでのServer.ref()の実装で利用されています。
-バグ修正 SubtleCrypto.exportKey()でextractable: falseに設定されたキーをエクスポートできてしまう問題が修正されました (https://github.com/denoland/deno/issues/14215) --compatを指定してdeno installを実行した際に、--compatフラグが維持されない問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.20.5
-deno_std v0.134.0 deno_std v0.134.0がリリースされました。
-encoding/csvやnodeモジュールへの機能の追加が行われています。
-encoding/csv CSVStreamが追加されました。
-import { CSVStream } from "https://deno.land/std@0.134.0/encoding/csv/stream.ts"; const file = await Deno.open("path/to/data.csv"); const stream = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new CSVStream()); for await (const record of stream) { console.log(record); } node child_process: ChildProcess.kill()でsignalパラメータがサポートされました。 net: Server....</p>
-</div>
-<footer class=entry-footer><span title="2022-04-10 00:00:00 +0000 UTC">April 10, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/04〜2022/04/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/10.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

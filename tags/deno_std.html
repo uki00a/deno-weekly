@@ -76,6 +76,27 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/09/26〜2022/10/02の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.26 Deno v1.26がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.26 deno_std v0.158.0 deno_std v0.158.0がリリースされました。
+std/node child_processパッケージでexec/execFileSync/execSyncが実装されています。
+その他には、process.getuid()とprocess.getgid()が実装されています。
+また、fsパッケージのread()やWriteStreamなどの互換性が向上しています。
+std/http/server handlerが返却したResponseのボディがすでに消費されている場合に、500エラーが発生するように修正されています。
+https://github.com/denoland/deno_std/releases/tag/0.158.0
+plug v1.0.0-rc.0 Deno FFI(Deno.dlopen)のヘルパーモジュールであるplugのv1.0.0 RC版が公開されています。
+このリリースでの主要な変更点として、ダイナミックライブラリを読み込むためのprepare()がdlopen()にリネームされています。
+https://github.com/denosaurs/plug/releases/tag/1.0.0-rc.0</p>
+</div>
+<footer class=entry-footer><span title="2022-10-02 00:00:00 +0000 UTC">October 2, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/09/26〜2022/10/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/02.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/09/19〜2022/09/25の最新情報
 </h2>
 </header>
@@ -274,29 +295,6 @@ perf(ext/ffi): leverage V8 Fast Calls #15125 fix(ext/ffi): trampoline for fast c
 </div>
 <footer class=entry-footer><span title="2022-07-17 00:00:00 +0000 UTC">July 17, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/11〜2022/07/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/17.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/07/04〜2022/07/10の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23.3 Deno v1.23.3がリリースされました。
-このリリースでは、deno testなどの引数にfile:形式でディレクトリを指定すると、エラーが発生する問題が修正されています。
-# v1.23.2まではエラー $ deno test file:///home/foo/sample/tests また、Denoの内部で使用されているTypeScriptがv4.7.4へアップデートされています。
-その他には、いくつかのパフォーマンスチューニングなどが実施されています。
-https://github.com/denoland/deno/releases/tag/v1.23.3
-deno_std v0.147.0 deno_std v0.147.0がリリースされました。
-dotenv dotenvモジュールで、変数の展開がサポートされました。
-例えば、以下のような内容で.envファイルが定義されていたとします。
-HOST=localhost URL=http://${HOST}:${PORT:-3000} このファイルをdotenvモジュールで読み込むと、以下のように評価されます。
-{ HOST: "localhost", URL: "http://localhost:3000" } その他には、stringify()関数が追加されています。
-import { stringify } from "https://deno.land/std@0.147.0/dotenv/mod.ts"; stringify({ PORT: "3000", HOST: "localhost", LOG_LEVEL: "debug" }); // PORT=3000 // HOST=localhost // LOG_LEVEL=debug http oak_commonsのHTTPエラーとコンテントネゴシエーション用のモジュールがdeno_std/httpに取り込まれました。
-http/negotiation
-import { accepts } from "https://deno.land/std@0.147.0/http/negotiation.ts"; const req = new Request("https://github.com", { headers: { accept: "text/html,application/xhtml+xml,application/xml;q=0....</p>
-</div>
-<footer class=entry-footer><span title="2022-07-10 00:00:00 +0000 UTC">July 10, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/04〜2022/07/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/10.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

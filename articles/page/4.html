@@ -77,6 +77,60 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Deno v1.21
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.21がリリースされました。
+この記事では新機能や修正点などについて解説します。
+deno checkコマンドの導入 新しいコマンドとしてdeno checkコマンドが追加されました。
+挙動としては基本的にdeno cacheコマンドと同等で、与えられたモジュールの型チェック及びリモートモジュールのダウンロードを行います。
+$ deno check mod.ts deno cacheコマンドとの違い deno cacheコマンドとの大きな違いとして、deno checkコマンドはデフォルトではリモートモジュールの型チェックを行いません。
+deno checkコマンドでリモートモジュールの型チェックも行いたい場合は--remoteオプションを指定する必要があります。
+deno runコマンドでの型チェックについて deno checkコマンドの追加による影響として、将来的にdeno runコマンドではデフォルトで型チェックが行われなくなる予定です。(Deno v1.21時点でもDENO_FUTURE_CHECK=1環境変数を設定することで、この挙動を有効化できます)
+型チェックを行いたいときは、今回追加されたdeno checkコマンドまたはdeno run --checkで明示的に行う必要が出てきます。
+新しいサブプロセスAPI (unstable) DenoにはDeno.run()というサブプロセスを生成するためのAPIがありますが、今回、新しく3種類のAPIが追加されました:
+Deno.spawn() (高レベル) Deno.spawnChild() (低レベル) Deno.spawnSync() (Deno.spawnの同期版) これらのAPIの利用にはDeno.run()と同様に--allow-runパーミッションが必要です。
+また、これらのAPIの追加により、Deno.run()は非推奨化される予定のようです。
+Deno.spawn() これは高レベルAPIという位置づけです。
+指定したコマンドを実行し、そのコマンドの実行結果(status)や標準出力(stdout)及び標準エラー出力(stderr)への出力内容を返却してくれます。
+const { stdout, status } = await Deno.spawn("echo", { args: ["foo"], }); console.assert("foo\n" === new TextDecoder().decode(stdout)); console.assert(status.success); コマンドの出力結果のみが必要で、細かな制御はいらない場合に便利かと思います。
+Deno.spawnChild() こちらは低レベルAPIという位置づけです。
+Deno.Reader/Deno.WriterではなくReadableStream/WritableStreamをベースに実装されています。
+const child = Deno....</p>
+</div>
+<footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.21" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.21.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/04/11〜2022/04/17の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.20.6 Deno v1.20.6がリリースされました。
+deno fmtコマンドの内部実装で使用されているdprint関連のプラグインがアップデートされています。
+その影響により、deno fmtコマンドのパフォーマンス向上やバグの修正が行われています。 (オブジェクトリテラルと3項演算子を併用した際に、フォーマット結果に一貫性がなくなる問題が修正されているようです)
+https://github.com/denoland/deno/releases/tag/v1.20.6
+deno_std v0.135.0 deno_std v0.135.0がリリースされました。
+このリリースでは破壊的変更が実施されています。
+io/readers: MultiReaderのシグネチャの変更 (破壊的変更) MultiReaderのコンストラクタの引数が可変長引数ではなくDeno.Readerの配列を受け取るように変更されています。
+変更前:
+const readers: Array&lt;Deno.Reader> = [...]; new MultiReader(...readers); 変更後:
+const readers: Array&lt;Deno.Reader> = [...]; new MultiReader(readers); MultiReaderはstd/archive/tar.tsモジュールの内部で使われており、大量のファイルを持つtarファイルを作ろうとすると、maximum call stack exceededエラーが発生してしまう問題があったようです。
+mime/multipartの非推奨化 (破壊的変更) mime/multipartモジュールが非推奨化されました。
+今後はFormDataの使用が推奨されます。
+testing/benchの非推奨化 (破壊的変更) testing/benchモジュールが非推奨化されました。
+今後はDeno.benchの使用が推奨されます。
+testing/bddの追加 testing/bddモジュールが追加されました。
+JestやMochaライクなAPIを使用してテストコードを記述することができます。
+import { assertEquals } from "https://deno.land/std@0.135.0/testing/asserts.ts"; import { describe, it } from "https://deno.land/std@0.135.0/testing/bdd.ts"; describe("sum", () => { it("should return sum of numbers", () => { assertEquals(sum(1, 2, 5), 8) }); it("should return 0 when no arguments are given", () => { assertEquals(sum(), 0); }); }); 定義したテストコードはdeno testコマンドで実行することが出来ます。...</p>
+</div>
+<footer class=entry-footer><span title="2022-04-17 00:00:00 +0000 UTC">April 17, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/11〜2022/04/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/17.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/04/04〜2022/04/10の最新情報
 </h2>
 </header>
@@ -250,55 +304,6 @@ deno.json(c)でのImport Mapサポートについて deno....</p>
 </div>
 <footer class=entry-footer><span title="2022-02-27 00:00:00 +0000 UTC">February 27, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/21〜2022/02/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/27.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/02/14〜2022/02/20の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.19 Deno v1.19がリリースされました。
---promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。
-const content = await Deno.readTextFile("README.md"); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。
-$ deno run main.ts ⚠️ ️Deno requests read access to "README.md". Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。
-deno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。
-具体的な使い方としては、下記のようにエントリポイントを指定します。
-$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。
-また、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。
-{ "imports": { "https://deno.land/": "./deno.land/", "https://unpkg.com/": "./unpkg.com/" }, "scopes": { "./unpkg.com/": { "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js", "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js" } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。...</p>
-</div>
-<footer class=entry-footer><span title="2022-02-20 00:00:00 +0000 UTC">February 20, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/02/14〜2022/02/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/20.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/02/07〜2022/02/13の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>--promptオプションの挙動をデフォルト化するPRがマージされました Denoで--promptオプションをデフォルトで有効化するPRがマージされました。
-feat: prompt by default (#13650)
-次のDeno v1.19でリリースされる可能性がありそうです。
-また、この変更に合わせて、--no-promptオプションが追加されています。 このオプションを指定することで、今まで通り、 許可されていないAPIを実行しようとすると、即時にエラーが発生します。
-ファイルシステムやネットワーク関連APIでのStreams APIのサポートについて Denoのファイルシステム(Deno.File)やネットワーク(Deno.Conn)関連のAPIでStreams APIをサポートすることが検討されています。
-Make FS and net APIs work well with WHATWG streams (#13614)
-まだドラフトの段階ですが、すでにPRも作成されています。
-feat(runtime): web streams in fs & net APIs (#13615)
-背景:
-現在、Denoのファイルシステムやネットワーク関連のAPIはGoのスタイルに従っています(Deno.Reader/Deno.Writer)
-しかし、これらのAPIはfetch()やStreams APIと互換性がありません (一応、この差異を吸収するためにdeno_std/streamsが提供されていたりします)
-この問題を解消するため、Deno.FileやDeno.Connなどにreadableプロパティ(ReadableStream&lt;Uint8Array>型)やwritableプロパティ(WritableStream&lt;Uint8Array>型)を追加することが検討されています。
-N-APIの実装について DenoでN-APIの実装が開始されています。
-Implement NAPI (#13633)
-まだドラフトの段階でありリリース時期も未定ですが、進捗は上記のPRから確認できるので、気になる方はSubscribeするとよいかもしれません。
-Deno.umask()の削除について Deno.umask()を削除するPRが作成されています。
-chore: remove Deno.umask (#13639)
-背景としては、競合状態によるバグが存在するためのようです。
-詳しくは以下のissueを参照ください。
-Proposal: Remove (unstable) Deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-02-13 00:00:00 +0000 UTC">February 13, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/02/07〜2022/02/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/13.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
