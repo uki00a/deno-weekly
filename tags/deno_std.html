@@ -76,6 +76,33 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/10/03〜2022/10/09の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.26.1 Deno v1.26.1がリリースされました。
+Node-APIの実装 DenoでNode-APIが実装されました。
+Node-APIで実装されたアドオンのrequire()での読み込みがサポートされます。
+Node-APIを有効化するためには、今のところ、--allow-ffiの指定が必要なようです。 (ただし、将来的にオプションが変わる可能性はあるようです)
+いまのところ、lightningcssやlz4-napiなどが動作することが確認されているようです。(napi-rs/napi-rs#900)
+Node.js互換に関する改善 Node-APIの実装以外に関する改善として、npm:経由で読まれたパッケージの依存関係の解析結果がキャッシュされるようになりました。
+これにより、キャッシュが存在する場合は、Viteの起動が3倍近く高速化されているようです。
+キャッシュの仕組みはSQLiteをベースに実装されており、$DENO_DIR/node_analysis_cache_v1にデータベースが作成されます。
+その他の改善として、deno cacheでのnpm:のサポートやrequire()でのJSONファイルの読み込みなどがサポートされています。
+Web Cache APIのバグ修正 Deno v1.26で追加されたCache APIに関するバグ修正が実施されています。
+Cache.put()に渡したResponseオブジェクトがconsumed状態にならない問題が修正 Cache.put()に渡したResponseに紐づくReadableStreamの読み込みでエラーが起きると、リソースリークが発生する問題が修正 Cache.put()で書き込みに失敗したときに、中途半端にキャッシュが保存されないように改善 その他の修正 --unstableを付けないと、Deno.hostname()がundefinedになる問題が修正 (Deno.hostname()はDeno v1.26で安定化されています) リクエストボディの読み込みが最適化 (perf(ext/fetch): consume body using ops (#16038)) 一度、Request#text()などでリクエストボディを消費したにも関わらず、再度Request.bodyを参照するとRequest.bodyUsedがfalseに戻ってしまう問題が修正 Deno.serve()で、ステータスコードが204の際はContent-Lengthが設定されないように修正 SubtleCrypto.deriveBits()でlength引数に与えられた長さが考慮されない問題が修正 https://github.com/denoland/deno/releases/tag/v1.26.1
+deno_std v0.159.0 deno_std v0.159.0がリリースされました。
+std/textprotoの非推奨化 以下の理由などから、std/textprotoが非推奨化されました。
+現在はdeno_stdの内部で使われていないこと deno_stdの方針として、GoスタイルのAPI(Deno.Reader/Deno.Writer)からWeb Streams APIベースへ移行されていること 今後は、このモジュールの使用は避けることが推奨されます。
+std/streams/conversion: iterateReaderのバグ修正 iterateReaderに長年存在していたバグが修正されています。
+具体的な修正内容については、以下の記事で詳細に内容が解説されています。
+Deno のめっちゃ難しいバグを修正した - Qiita また、この修正に関連してiterateReader()の実装が効率化されています。(perf(streams): memory optimizations by avoiding large buffer allocation in a loop (#2748))...</p>
+</div>
+<footer class=entry-footer><span title="2022-10-09 00:00:00 +0000 UTC">October 9, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/10/03〜2022/10/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/09.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/09/26〜2022/10/02の最新情報
 </h2>
 </header>
@@ -279,22 +306,6 @@ https://unf275cfh14.typeform.com/to/k3eQB4Q3 https://twitter.com/deno_land/statu
 </div>
 <footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/18〜2022/07/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/24.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/07/11〜2022/07/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23.4 Deno v1.23.4がリリースされました。
-V8 Fast API Calls+JITコンパイルによるFFIの最適化 V8 Fast API Callsとtinyccを使用したJITコンパイルにより、FFI(Deno.dlopen)の最適化が行われています。
-Deno.dlopenを呼んだ際に、下記の条件が満たされる外部関数へのバインディングに対して、自動でFast API Calls+JITコンパイルによる最適化が適用されます。
-非Windows環境であること (Windowsではまだこれらの最適化がサポートされていません) パラメータ及び戻り値の型にスカラ型のみが含まれる場合 もしこれらの最適化を無効化したい場合は、callbackオプションにtrueを指定する必要があります。
-const lib = Deno.dlopen( "some_lib.so", { some_func: { parameters: ["usize", "usize"], result: "usize", callback: true }, } ); 細かな詳細については、deno_ffiも参照ください。
-perf(ext/ffi): leverage V8 Fast Calls #15125 fix(ext/ffi): trampoline for fast calls #15139 fix(ext/ffi): allow opting out of fast ffi calls #15131 その他の変更点 Request#json()などに続けてRequest.headersを参照するとプロセスがパニックする問題が解消されています。 deno lspで自動importが効くようになりました。それに伴い、入力補完に関わる挙動も改善されています。 https://github....</p>
-</div>
-<footer class=entry-footer><span title="2022-07-17 00:00:00 +0000 UTC">July 17, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/11〜2022/07/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/17.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

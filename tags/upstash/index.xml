@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Supabase on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/supabase.html</link><description>Recent content in Supabase on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 09 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/supabase/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/10/03〜2022/10/09の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/09.html</link><pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/09.html</guid><description>Deno v1.26.1 Deno v1.26.1がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Upstash on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/upstash.html</link><description>Recent content in Upstash on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 09 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/upstash/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/10/03〜2022/10/09の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/09.html</link><pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/09.html</guid><description>Deno v1.26.1 Deno v1.26.1がリリースされました。
 Node-APIの実装 DenoでNode-APIが実装されました。
 Node-APIで実装されたアドオンのrequire()での読み込みがサポートされます。
 Node-APIを有効化するためには、今のところ、--allow-ffiの指定が必要なようです。 (ただし、将来的にオプションが変わる可能性はあるようです)
@@ -14,15 +14,4 @@ std/textprotoの非推奨化 以下の理由などから、std/textprotoが非�
 現在はdeno_stdの内部で使われていないこと deno_stdの方針として、GoスタイルのAPI(Deno.Reader/Deno.Writer)からWeb Streams APIベースへ移行されていること 今後は、このモジュールの使用は避けることが推奨されます。
 std/streams/conversion: iterateReaderのバグ修正 iterateReaderに長年存在していたバグが修正されています。
 具体的な修正内容については、以下の記事で詳細に内容が解説されています。
-Deno のめっちゃ難しいバグを修正した - Qiita また、この修正に関連してiterateReader()の実装が効率化されています。(perf(streams): memory optimizations by avoiding large buffer allocation in a loop (#2748))</description></item><item><title>2021/03/28〜2022/04/03の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/04/03.html</link><pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/04/03.html</guid><description>Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。
-Supabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。
-Supabase Functions on Deno Deploy Edge Functions are now available in Supabase Deno v1.20.4 Deno v1.20.4がリリースされました。
-変更点:
-外部モジュールのimport時にリダイレクトが発生すると、deno compileで生成したバイナリがうまく動作しなくなる問題が修正されました。
-Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されました。
-変更前:
-function fetch( input: URL, init?: RequestInit, ): Promise&amp;lt;Response&amp;gt;; 変更後:
-function fetch( input: URL | Request | string, init?: RequestInit, ): Promise&amp;lt;Response&amp;gt;; deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。
-deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。
-https://github.com/denoland/deno/releases/tag/v1.20.4
-deno_std v0.</description></item></channel></rss>
+Deno のめっちゃ難しいバグを修正した - Qiita また、この修正に関連してiterateReader()の実装が効率化されています。(perf(streams): memory optimizations by avoiding large buffer allocation in a loop (#2748))</description></item></channel></rss>

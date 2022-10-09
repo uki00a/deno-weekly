@@ -77,6 +77,26 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/04/18〜2022/04/24の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.21 Deno v1.21がリリースされました。
+個別に記事を書いたので、詳しくはそちらを参照いただければと思います。
+Deno v1.21 deno_std v0.136.0 deno_std v0.136.0がリリースされました。
+testing/snapshot スナップショットテストを行うためのモジュールが追加されました。
+このモジュールではassertSnapshotという関数が公開されており、__snapshots__ディレクトリに保存されたスナップショットと第2引数で指定された値を比較し、マッチしなかった場合、エラーが発生します。
+スナップショットを読み込む必要があるため、利用には--allow-readパーミッションが必要になります。
+import { assertSnapshot } from "https://deno.land/std@0.136.0/testing/snapshot.ts" Deno.test("doSomething", async (t) => { const result = doSomething(); await assertSnapshot(t, result); }); スナップショットを更新したいときは、テストを実行する際に--updateを指定する必要があります。
+この場合、スナップショットを書き込むために、追加で--allow-writeが必要になります。
+# スナップショットは__snapshots__に書き込まれます $ deno test --allow-read --allow-write tests/some_test.js -- --update testing/bdd itに渡すテスト関数がTestContextを受け取るように修正されています。
+import { describe, it } from "https://deno.land/std@0.136.0/testing/bdd.ts" describe("sum", () => { it("should return sum of numbers", (t) => { assertEquals(sum(1, 2, 3), 6, t....</p>
+</div>
+<footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/18〜2022/04/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/24.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Deno v1.21
 </h2>
 </header>
@@ -284,26 +304,6 @@ import { TextLineStream } from "https://deno.land/std@0.128.0/streams/delimiter.
 </div>
 <footer class=entry-footer><span title="2022-03-06 00:00:00 +0000 UTC">March 6, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/28〜2022/03/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/06.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/02/21〜2022/02/27の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.19.1 Deno v1.19.1がリリースされました。
-新機能としてDeno.dlopenでstatic変数の参照がサポートされています。
-Deno.ForeignStatic その他にも、deno compileで--import-mapオプションがうまく動かなくなっていた問題が修正されています。
-https://github.com/denoland/deno/releases/tag/v1.19.1
-deno_std v0.127.0 deno_std v0.127.0がリリースされました。
-dotenvの追加 deno-dotenvモジュールがdeno_stdにマージされました。
-マイグレーション手順も公開されているので、もしdeno-dotenvを利用されていた場合は参考にするとよさそうです。
-async/abortableの追加 Promiseをキャンセルできるようにするためのユーティリティが追加されています。
-import { abortable } from "https://deno.land/std@0.127.0/async/abortable.ts"; import { delay } from "https://deno.land/std@0.127.0/async/delay.ts"; const controller = new AbortController(); const promise = delay(5000); setTimeout(() => controller.abort(), 2000); await abortable(promise, controller.signal); // => AbortError node fs: fs.realpath.nativeが追加されました。 tls: tls.createServerの基本的なサポートが追加されました。 その他 http/file_server: serveDir関数が追加されました。 testing/aserts: assertAlmostEqualsが追加されました。 https://github.com/denoland/deno_std/releases/tag/0.127.0
-deno.json(c)でのImport Mapサポートについて deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-02-27 00:00:00 +0000 UTC">February 27, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/02/21〜2022/02/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/27.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

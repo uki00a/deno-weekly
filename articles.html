@@ -77,6 +77,33 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2022/10/03〜2022/10/09の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.26.1 Deno v1.26.1がリリースされました。
+Node-APIの実装 DenoでNode-APIが実装されました。
+Node-APIで実装されたアドオンのrequire()での読み込みがサポートされます。
+Node-APIを有効化するためには、今のところ、--allow-ffiの指定が必要なようです。 (ただし、将来的にオプションが変わる可能性はあるようです)
+いまのところ、lightningcssやlz4-napiなどが動作することが確認されているようです。(napi-rs/napi-rs#900)
+Node.js互換に関する改善 Node-APIの実装以外に関する改善として、npm:経由で読まれたパッケージの依存関係の解析結果がキャッシュされるようになりました。
+これにより、キャッシュが存在する場合は、Viteの起動が3倍近く高速化されているようです。
+キャッシュの仕組みはSQLiteをベースに実装されており、$DENO_DIR/node_analysis_cache_v1にデータベースが作成されます。
+その他の改善として、deno cacheでのnpm:のサポートやrequire()でのJSONファイルの読み込みなどがサポートされています。
+Web Cache APIのバグ修正 Deno v1.26で追加されたCache APIに関するバグ修正が実施されています。
+Cache.put()に渡したResponseオブジェクトがconsumed状態にならない問題が修正 Cache.put()に渡したResponseに紐づくReadableStreamの読み込みでエラーが起きると、リソースリークが発生する問題が修正 Cache.put()で書き込みに失敗したときに、中途半端にキャッシュが保存されないように改善 その他の修正 --unstableを付けないと、Deno.hostname()がundefinedになる問題が修正 (Deno.hostname()はDeno v1.26で安定化されています) リクエストボディの読み込みが最適化 (perf(ext/fetch): consume body using ops (#16038)) 一度、Request#text()などでリクエストボディを消費したにも関わらず、再度Request.bodyを参照するとRequest.bodyUsedがfalseに戻ってしまう問題が修正 Deno.serve()で、ステータスコードが204の際はContent-Lengthが設定されないように修正 SubtleCrypto.deriveBits()でlength引数に与えられた長さが考慮されない問題が修正 https://github.com/denoland/deno/releases/tag/v1.26.1
+deno_std v0.159.0 deno_std v0.159.0がリリースされました。
+std/textprotoの非推奨化 以下の理由などから、std/textprotoが非推奨化されました。
+現在はdeno_stdの内部で使われていないこと deno_stdの方針として、GoスタイルのAPI(Deno.Reader/Deno.Writer)からWeb Streams APIベースへ移行されていること 今後は、このモジュールの使用は避けることが推奨されます。
+std/streams/conversion: iterateReaderのバグ修正 iterateReaderに長年存在していたバグが修正されています。
+具体的な修正内容については、以下の記事で詳細に内容が解説されています。
+Deno のめっちゃ難しいバグを修正した - Qiita また、この修正に関連してiterateReader()の実装が効率化されています。(perf(streams): memory optimizations by avoiding large buffer allocation in a loop (#2748))...</p>
+</div>
+<footer class=entry-footer><span title="2022-10-09 00:00:00 +0000 UTC">October 9, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/10/03〜2022/10/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/09.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2022/09/26〜2022/10/02の最新情報
 </h2>
 </header>
@@ -281,27 +308,6 @@ const ac = new AbortController(); Deno.serve((req) => new Response("Hello, Flash
 </div>
 <footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.25" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/08/15〜2022/08/21の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Denoの今後の計画について Deno公式からBig Changes Ahead for Denoという、Denoの今後の計画などに関する記事が公開されました。
-今のところ、以下の点などに注力されていく予定のようです。
-Node.jsとの互換性の向上 パフォーマンスの向上 エンタープライズユーザへのサポートの強化 開発体験の向上 これらに関連すると思われる直近での変更について簡単にまとめてみます。
-npm:URLのサポート 現在、npm:URLによるnpmパッケージのimportに関する開発が行われています。
-feat(unstable): initial support for npm specifiers (#15484)
-例えば、以下のようにして、npmパッケージをimportすることができるようです。
-import express from "npm:express@5"; import { expect } from "npm:chai@4.2"; この機能には、大まかに以下のような特徴があります。
-デフォルトでnpmパッケージはnpmの公式レジストリからダウンロードされ、DENO_DIRにキャッシュされます。 Node.js互換モード(--compat)とは異なり、npm:URLで読み込まれたモジュール内のみにNode.jsのグローバルAPI(process/global/Bufferなど)が注入されます。 Node.js互換モード(--compat)とは異なり、現時点では--unstableなしで使用できる想定のようです。 型チェック, LSPのサポート, エントリポイントでのnpm:URLの指定(例: deno run npm:mkdirp path/to/dir)などの機能はまだ入っておらず、今後追加されていく予定のようです。 この機能はおそらく、次のv1.25でリリースされるのではないかと思われます。
-新しいHTTPサーバ (Flash) HTTPサーバの高速化を目的に、Deno本体でFlashという新しいHTTPサーバが開発されています。
-feat(ext/flash): An optimized http/1.1 server (#15405)
-feat(unstable): change Deno.serve() API (#15498)...</p>
-</div>
-<footer class=entry-footer><span title="2022-08-21 00:00:00 +0000 UTC">August 21, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/15〜2022/08/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/21.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

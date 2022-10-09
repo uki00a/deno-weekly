@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>news on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/news.html</link><description>Recent content in news on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/news/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/09/26〜2022/10/02の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/02.html</link><pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/02.html</guid><description>Deno v1.26 Deno v1.26がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>news on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/news.html</link><description>Recent content in news on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 09 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/news/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/10/03〜2022/10/09の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/09.html</link><pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/09.html</guid><description>Deno v1.26.1 Deno v1.26.1がリリースされました。
+Node-APIの実装 DenoでNode-APIが実装されました。
+Node-APIで実装されたアドオンのrequire()での読み込みがサポートされます。
+Node-APIを有効化するためには、今のところ、--allow-ffiの指定が必要なようです。 (ただし、将来的にオプションが変わる可能性はあるようです)
+いまのところ、lightningcssやlz4-napiなどが動作することが確認されているようです。(napi-rs/napi-rs#900)
+Node.js互換に関する改善 Node-APIの実装以外に関する改善として、npm:経由で読まれたパッケージの依存関係の解析結果がキャッシュされるようになりました。
+これにより、キャッシュが存在する場合は、Viteの起動が3倍近く高速化されているようです。
+キャッシュの仕組みはSQLiteをベースに実装されており、$DENO_DIR/node_analysis_cache_v1にデータベースが作成されます。
+その他の改善として、deno cacheでのnpm:のサポートやrequire()でのJSONファイルの読み込みなどがサポートされています。
+Web Cache APIのバグ修正 Deno v1.26で追加されたCache APIに関するバグ修正が実施されています。
+Cache.put()に渡したResponseオブジェクトがconsumed状態にならない問題が修正 Cache.put()に渡したResponseに紐づくReadableStreamの読み込みでエラーが起きると、リソースリークが発生する問題が修正 Cache.put()で書き込みに失敗したときに、中途半端にキャッシュが保存されないように改善 その他の修正 --unstableを付けないと、Deno.hostname()がundefinedになる問題が修正 (Deno.hostname()はDeno v1.26で安定化されています) リクエストボディの読み込みが最適化 (perf(ext/fetch): consume body using ops (#16038)) 一度、Request#text()などでリクエストボディを消費したにも関わらず、再度Request.bodyを参照するとRequest.bodyUsedがfalseに戻ってしまう問題が修正 Deno.serve()で、ステータスコードが204の際はContent-Lengthが設定されないように修正 SubtleCrypto.deriveBits()でlength引数に与えられた長さが考慮されない問題が修正 https://github.com/denoland/deno/releases/tag/v1.26.1
+deno_std v0.159.0 deno_std v0.159.0がリリースされました。
+std/textprotoの非推奨化 以下の理由などから、std/textprotoが非推奨化されました。
+現在はdeno_stdの内部で使われていないこと deno_stdの方針として、GoスタイルのAPI(Deno.Reader/Deno.Writer)からWeb Streams APIベースへ移行されていること 今後は、このモジュールの使用は避けることが推奨されます。
+std/streams/conversion: iterateReaderのバグ修正 iterateReaderに長年存在していたバグが修正されています。
+具体的な修正内容については、以下の記事で詳細に内容が解説されています。
+Deno のめっちゃ難しいバグを修正した - Qiita また、この修正に関連してiterateReader()の実装が効率化されています。(perf(streams): memory optimizations by avoiding large buffer allocation in a loop (#2748))</description></item><item><title>2022/09/26〜2022/10/02の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/02.html</link><pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/02.html</guid><description>Deno v1.26 Deno v1.26がリリースされました。
 以下に変更内容をまとめたため、よろしければ参照ください。
 Deno v1.26 deno_std v0.158.0 deno_std v0.158.0がリリースされました。
 std/node child_processパッケージでexec/execFileSync/execSyncが実装されています。
