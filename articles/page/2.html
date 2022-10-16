@@ -77,6 +77,27 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Deno v1.25
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25がリリースされました。
+この記事では主な変更点などについて解説します。
+npmパッケージのサポート Denoでnpmパッケージのimportや実行が実験的にサポートされました。
+npm installやnode_modulesなどを必要とせずにnpmパッケージを利用することができます。
+import express from "npm:express@4.18.1"; const app = express(); app.get("/", (req, res) => { res.send("Hello"); }); app.listen(3000); このファイルを実行すると、npmパッケージがダウンロードされた後、ExpressによってHTTPサーバが起動します。
+$ deno run --unstable --allow-env --allow-read --allow-net main.mjs $ curl http://localhost:3000 Hello 他のサードパーティモジュールなどと同様に、初回実行時のみnpmパッケージがダウンロードされ、DENO_DIRにキャッシュされます。(DENO_DIR/npm/registry.npmjs.orgに保存されるようです)
+また、npxライクにコマンドを実行することもできます。
+$ deno run --unstable --allow-env --allow-read --allow-write npm:make-dir-cli@3.0.0 src/components 制限 現時点では利用するには--unstableが必要になります。 また、--allow-envや--allow-readも必要になります。 ロックファイル/型チェック/deno vendor/deno lsp/deno installなどでは、この機能はまだサポートされていません。 新しいHTTPサーバ (Flash) DenoにはHyperをベースにしたHTTPサーバ(Deno.serveHttp)が組み込まれています。
+このHTTPサーバのさらなる高速化などを目的に、Flashという新しいHTTPサーバが実装されました。
+Deno.serveというAPIによって、Flashを起動することができます。
+const ac = new AbortController(); Deno.serve((req) => new Response("Hello, Flash"), { port: 4500, onListen: ({ port, hostname }) => { console....</p>
+</div>
+<footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.25" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/08/15〜2022/08/21の最新情報
 </h2>
 </header>
@@ -269,27 +290,6 @@ denoland/meet-me Deno公式で、Calendlyのクローンアプリが公開され
 </div>
 <footer class=entry-footer><span title="2022-07-03 00:00:00 +0000 UTC">July 3, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/27〜2022/07/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/03.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/06/20〜2022/06/26の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23.1 Deno v1.23.1がリリースされました。
-FFI関連の変更点 破壊的変更としてDeno.UnsafePointerが削除されました。 (正確にはDeno.UnsafePointer.ofのみ残されています) 今後、ポインタはbigintで表現されます。
-その他には、unstable APIとしてDeno.UnsafeCallbackが追加されています。 JavaScriptの関数を関数ポインタとして受け渡すために利用できます。
-deno fmtの改善 deno fmtコマンドがnode_modulesと.gitディレクトリを無視するようになりました。
-また、JavaScriptファイルのパースに失敗した際に、deno fmt --checkがちゃんと失敗するように修正されています。
-その他の変更点 fetchの呼び出し時に、デフォルトでAccept-Language: *ヘッダが設定されるように修正されました。 deno replコマンドで、直前の文字が空白のときにTabキーを押すと、タブ(\t)が挿入されるように修正されました。 deno runコマンドで.d.ctsや.d.mtsファイルを実行すると、プロセスがパニックする問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.23.1
-deno_std v0.145.0 deno_std v0.145.0がリリースされました。
-std/encoding/json/stream std/encoding/json/streamが追加されました。
-このモジュールでは、下記4フォーマットでのストリーミングがサポートされています。
-JSON Lines ndjson JSON Text Sequences Concatenated JSON JSONParseStreamは上記の上から3つのフォーマットをサポートしています。
-import { JSONParseStream } from "https://deno.land/std@0.145.0/encoding/json/stream.ts"; import { readableStreamFromIterable } from "https://deno.land/std@0.145.0/streams/conversion.ts"; const readable = readableStreamFromIterable([ `{"name": "foo"}`, `{"a": 1, "b": true}`, ]) ....</p>
-</div>
-<footer class=entry-footer><span title="2022-06-26 00:00:00 +0000 UTC">June 26, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/20〜2022/06/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/26.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

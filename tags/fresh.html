@@ -76,6 +76,31 @@ fresh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/10/10〜2022/10/16の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>deno taskの安定化について deno taskコマンドを安定化することが検討されているようです。
+以下のPRではdeno taskを実行した際の警告メッセージが削除されます。
+feat(task): remove warning about being unstable (#16281)
+この変更はv1.27での導入が検討されているようです。
+deno lspでtextDocument/inlayHintが実装 以下のPRでdeno lspにtextDocument/inlayHintが実装されています。
+feat: support inlay hints (#16287)
+textDocument/inlayHintの挙動については、TypeScript公式の以下のページがわかりやすそうです。
+Inlay Hints こちらについてもv1.27でのリリースが検討されているようです
+Bartek Iwańczuk’s “Vite Got Deno-fied” at ViteConf 2022 Bartek Iwańczuk氏によるViteConf 2022での発表内容が公開されています。
+Bartek Iwańczuk’s “Vite Got Deno-fied” at ViteConf 2022 DenoでViteの開発環境をセットアップし、Deno Deployへデプロイするまでの手順が解説されています。
+https://twitter.com/deno_land/status/1580356550966722560
+denoland/fresh_charts Deno公式でFresh向けのチャートライブラリが公開されています。
+denoland/fresh_charts チャートを描画するための&lt;Chart>コンポーネントやハンドラ向けのユーティリティなどが提供されているようです。
+Chart.jsやred-agate-svg-canvasなどを活用して作成されているようです。
+https://github.com/denoland/fresh_charts</p>
+</div>
+<footer class=entry-footer><span title="2022-10-16 00:00:00 +0000 UTC">October 16, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/10/10〜2022/10/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/16.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/10/03〜2022/10/09の最新情報
 </h2>
 </header>
@@ -283,27 +308,6 @@ import { parse } from "https://deno.land/std@0.143.0/flags/mod.ts"; parse(["deno
 </div>
 <footer class=entry-footer><span title="2022-06-12 00:00:00 +0000 UTC">June 12, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/06〜2022/06/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/12.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/02/28〜2022/03/06の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.19.2 Deno v1.19.2がリリースされました。
-リモートスクリプトでのdeno.json(c)の自動読み込みが無効化 Deno v1.18でdeno.json(c)の自動読み込みがサポートされました。
-このリリースでは、リモートスクリプト実行時のdeno.json(c)の自動探索が無効化されています。
-リモートスクリプトを実行する際に、ローカルのdeno.json(c)が読まれてしまうことによる不整合を防止することが目的のようです。
-Proposal: disable auto-discovery of config file for deno run
-deno testの実行時はデフォルトで--no-promptが有効化 Deno v1.19で--promptがデフォルトで有効化されました。
-しかし、deno testの実行時は--promptオプションの必要性が薄いため、このリリースで無効化されています。
-その他の変更点 deno replでnullが適切に表示されない問題が修正されました。 非TTY環境でconsoleを使用した際の色付けが無効化されない問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.19.2
-deno_std v0.128.0 deno_std v0.128.0がリリースされました。
-新機能 streamsモジュールにTextLineStreamが追加されています。
-import { TextLineStream } from "https://deno.land/std@0.128.0/streams/delimiter.ts"; const file = await Deno.open("./path/to/file.txt"); const readable = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new TextLineStream()); for await (const line of readable) { console.log(line); } また、node/cryptoへのcrypto....</p>
-</div>
-<footer class=entry-footer><span title="2022-03-06 00:00:00 +0000 UTC">March 6, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/02/28〜2022/03/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/06.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
