@@ -76,6 +76,25 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/09/13〜2021/09/19の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v2のリリースプランについて Deno v2のリリースプランが公開されました。
+https://github.com/denoland/deno/issues/12110 10/12にDeno v1.15, 11/22にDeno v2がリリース予定とのことです
+また、GitHub Discussionsにて、v2で実施予定の追加の変更点やDenoのエコシステムの拡大に関する議論内容などについて公開されています。
+追加の変更点(今後、内容が変わる可能性があります！):
+NotCapableエラーの導入 DenoのパーミッションエラーとOSによって発生したパーミッションエラーを区別できるようにすることが目的のようです Deno.read()のDeno.write()などの削除 Import AssertionsとJSON Modules opメトリクスのリファクタリング/整頓 Deno 2.0 Release Plan Design Meeting 2021-09-16 Deno v1.14.0 Deno v1.14.0がリリースされました。
+TypeScript v4.4への更新、deno fmtやdeno lintで設定ファイルがサポート、Web Crypto APIの強化、Deno.upgradeWebSocketの安定化、URLPatternの実装、シグナルAPI(unstable)への破壊的変更などが実施されています。
+また、magurotunaさんによる日本語の紹介記事が公開されています(https://zenn.dev/magurotuna/articles/deno-release-note-1-14-0)
+変更点:
+deno fmt/deno lint deno fmt でJSDocコメントへの基本的なサポートが追加されました deno fmtとdeno lintの挙動を設定ファイルやCLIオプションで変更できるようになりました ネイティブHTTPサーバ Deno.upgradeWebSocketが安定化されました Deno.upgradeWebSocket でUpgradeヘッダの大文字・小文字の違いを区別しないように修正されました ネイティブHTTPサーバでリクエストボディが消費されなかった場合に発生するリソースリークが修正されました FFI Deno....</p>
+</div>
+<footer class=entry-footer><span title="2021-09-19 00:00:00 +0000 UTC">September 19, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/09/13〜2021/09/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/19.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/08/23〜2021/08/29の最新情報
 </h2>
 </header>
@@ -265,31 +284,6 @@ denoland/deno_docker 今まで、DenoのDockerイメージはAndy Hayden氏に�
 </div>
 <footer class=entry-footer><span title="2021-06-13 00:00:00 +0000 UTC">June 13, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/07〜2021/06/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/13.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/05/17〜2021/05/23の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.10.2がリリース Denoのv1.10.2がリリースされました。
-このリリースではCVE-2021-32619へのセキュリティ上の修正が含まれるため、できるだけ早くこのバージョンへアップグレードすることを推奨されています。
-その他の変更点:
-.vscode/settings.jsonなどでdeno.configに相対パスが設定されていた場合、deno lspで適切に設定が読まれない問題が修正されました。 TypeScriptファイルをimportする際は、X-TypeScript-Typesヘッダが無視されるようになりました。 https://github.com/denoland/deno/releases/tag/v1.10.2 https://twitter.com/deno_land/status/1394353166863454213 deno_std v0.97.0がリリース io/buffer: Deno Deployでも型エラーなしで使えるようになりました。 io: types.d.tsが追加されました。 io/bufio: readDelimやreadStringDelimでデリミタが内部で複数のチャンクにまたがった際に、誤った結果を返す問題が修正されました。 node/events: EventEmitter#onなどにリスナとして関数以外の値を渡すと、エラーが発生するようになりました。 testing: assertObjectMatchで配列が適切に取り扱われるようになりました。 https://github.com/denoland/deno_std/releases/tag/0.97.0
-denoland/setup-deno v1.0.0がリリース denoland/setup-denoはGitHub ActionsからDenoを利用するためのアクションです。
-v1.0.0がリリースされたため、すでにdenolib/setup-denoをお使いの場合は、そちらから移行するとよさそうです。
-https://github.com/denoland/setup-deno/releases/tag/v1.0.0
-Flat Data Flat Dataは、HTTPエンドポイントまたはSQLクエリからデータを取得し、GitHubリポジトリに格納するためのGitHubアクションです。
-Denoを使用したJavaScript/TypeScriptファイルの実行がサポートされており、ダウンロードされたデータを変換することができます。
-また、GitHubリポジトリに格納されたデータを可視化するために、Flat Viewerというツールも提供されています。
-https://github.com/githubocto/flat Flat Dataについて Flat Viewer packup - Parcelライクなビルドツール packupというParcelビルドツールが公開されました。
-Parcelに影響を受けているようで、以下のような特徴があります。
-設定なしでアプリケーションコードをバンドルできる TypeScriptをサポート esbuildを使用した高速なビルド https://github.com/kt3k/packup
-luath v0.6.0/v0.7.0/v0.8.0がリリース Denoで実装されたフロントエンドビルドツールであるluathのv0.6.0/v0.7.0/v0.8.0がリリースされました。
-変更点:...</p>
-</div>
-<footer class=entry-footer><span title="2021-05-23 00:00:00 +0000 UTC">May 23, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/17〜2021/05/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/23.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

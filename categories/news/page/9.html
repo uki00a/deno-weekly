@@ -76,6 +76,25 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/04/05〜2021/04/11の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno本体の最新情報 Deno v1.9.0のリリースについて 今週は特にリリースはありませんが、2021/4/13にv1.9.0のリリースが予定されています。
+また、v1.9.0のリリースに向けて、以下の機能がmainブランチにマージされています:
+ネイティブHTTPバインディング BLOB URLのサポート fetch APIでのdata URLのサポート https://github.com/denoland/deno/blob/v1.8.3/docs/contributing/release_schedule.md
+サードパーティモジュールなどの最新情報 denoland/setup-deno denoland/setup-denoというGitHub ActionsでDenoを利用するためのアクションがdenoland Organizationにて公開されました。
+https://github.com/denoland/setup-deno denolib/setup-deno - denoland/setup-denoと同様、GitHub ActionsからDenoを利用するためのアクション deno-postgres v0.9.0及びv0.10.0がリリース deno-postgresのv0.9.0及びv0.10.0がリリースされました。
+これらのリリースでは、以下の機能が追加されています:
+scram-sha-256認証のサポート Client#createTransactionが実装され、トランザクションがより扱いやすくなった https://github.com/denodrivers/postgres/releases/tag/v0.9.0 https://github.com/denodrivers/postgres/releases/tag/v0.10.0 rollup-plugin-deno rollup-plugin-denoは、RollupでDeno向けのバンドルを生成するためのRollupプラグインです。
+Node.jsのビルトインモジュールの読み込みをdeno_std/nodeに置換することで、それらに依存したモジュールをDenoで実行できるようにしてくれます。
+https://github.com/egoist/rollup-plugin-deno</p>
+</div>
+<footer class=entry-footer><span title="2021-04-11 00:00:00 +0000 UTC">April 11, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/05〜2021/04/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/11.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/03/29〜2021/04/04の最新情報
 </h2>
 </header>
@@ -308,25 +327,6 @@ deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
 </div>
 <footer class=entry-footer><span title="2021-02-07 00:00:00 +0000 UTC">February 7, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/01〜2021/02/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/07.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/01/25〜2021/01/31の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.7.1がリリース Denoのv1.7.1がリリースされました。
-このリリースに合わせて、stdのv0.85.0もリリースされています。
-v1.7.0でリリースされたDeno.emitやDeno.resolveDnsの安定性の向上 deno lspのバグ修正・安定性の向上 std/nodeでprocess.on("exit")がサポートされた https://github.com/denoland/deno/releases/tag/v1.7.1
-deno-postgresのv0.5.0/v0.6.0がリリース deno-postgresのv0.5.0及びv0.6.0がリリースされました。
-v0.5.0 v0.6.0 これらのリリースにはいくつかの破壊的変更が含まれています:
-Client#queryメソッドが削除され、Client#queryArrayとClient#queryObjectメソッドが追加された Client#queryArrayはクエリの結果をネストされた配列として返却します Client#queryObjectはクエリの結果をオブジェクトの配列として返却します Client#multiQueryメソッドが削除された PostgreSQLのbigint型がJavaScriptのBigIntとして返却されるように変更された v0.4.0まではJavaScriptのString型として返却されていました https://github.com/denodrivers/postgres
-Harmony - Discord APIライブラリ HarmonyというDiscord APIライブラリが公開されました。
-このライブラリを使うことで、Discordボットの開発などを行うことができます。
-https://github.com/harmonyland/harmony</p>
-</div>
-<footer class=entry-footer><span title="2021-01-31 00:00:00 +0000 UTC">January 31, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/25〜2021/01/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/31.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
