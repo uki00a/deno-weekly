@@ -1,0 +1,205 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>2022/10/24〜2022/10/30の最新情報 | 週刊Deno</title>
+<meta name=keywords content="Deno,deno_std,Mongoose,Babel">
+<meta name=description content="Deno v1.27 Deno v1.27がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+ Deno v1.27  deno_std v0.161.0 deno_std v0.161.0がリリースされました。
+std/hashの削除 非推奨化されていたstd/hashモジュールが削除されています。
+今後は、std/cryptoの使用が推奨されます。
+std/node Deno v1.27でのNode-APIのサポートに合わせて、require()での.nodeファイルの読み込みがサポートされています。
+その他には、net.Serverの&#34;close&#34;イベントの発火タイミングの改善やfs.openDirの互換性の向上などが実施されています。
+std/fs/expand_glob expandGlobで、globstarにfalseが指定された際に、&#34;**&#34;が&#34;*&#34;として扱われるように修正されています。
+ https://github.com/denoland/deno_std/releases/tag/0.161.0
+MongooseでのDenoサポートについて 以下のPRでMongooseでのDenoサポートが進められているようです。
+ Deno support (#12397)
+ 今のところ、v6.8でのリリースを目標に作業が進められているようです。
+Babel v7.20.0 @babel/preset-envで&#34;deno&#34;ターゲットがサポートされたようです。
+&#34;targets&#34;オプションで対象のDenoバージョンを指定することができます。
+ https://babeljs.io/blog/2022/10/27/7.20.0">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/10/30.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="2022/10/24〜2022/10/30の最新情報">
+<meta property="og:description" content="Deno v1.27 Deno v1.27がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+ Deno v1.27  deno_std v0.161.0 deno_std v0.161.0がリリースされました。
+std/hashの削除 非推奨化されていたstd/hashモジュールが削除されています。
+今後は、std/cryptoの使用が推奨されます。
+std/node Deno v1.27でのNode-APIのサポートに合わせて、require()での.nodeファイルの読み込みがサポートされています。
+その他には、net.Serverの&#34;close&#34;イベントの発火タイミングの改善やfs.openDirの互換性の向上などが実施されています。
+std/fs/expand_glob expandGlobで、globstarにfalseが指定された際に、&#34;**&#34;が&#34;*&#34;として扱われるように修正されています。
+ https://github.com/denoland/deno_std/releases/tag/0.161.0
+MongooseでのDenoサポートについて 以下のPRでMongooseでのDenoサポートが進められているようです。
+ Deno support (#12397)
+ 今のところ、v6.8でのリリースを目標に作業が進められているようです。
+Babel v7.20.0 @babel/preset-envで&#34;deno&#34;ターゲットがサポートされたようです。
+&#34;targets&#34;オプションで対象のDenoバージョンを指定することができます。
+ https://babeljs.io/blog/2022/10/27/7.20.0">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/10/30.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2022-10-30T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-10-30T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="2022/10/24〜2022/10/30の最新情報">
+<meta name=twitter:description content="Deno v1.27 Deno v1.27がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+ Deno v1.27  deno_std v0.161.0 deno_std v0.161.0がリリースされました。
+std/hashの削除 非推奨化されていたstd/hashモジュールが削除されています。
+今後は、std/cryptoの使用が推奨されます。
+std/node Deno v1.27でのNode-APIのサポートに合わせて、require()での.nodeファイルの読み込みがサポートされています。
+その他には、net.Serverの&#34;close&#34;イベントの発火タイミングの改善やfs.openDirの互換性の向上などが実施されています。
+std/fs/expand_glob expandGlobで、globstarにfalseが指定された際に、&#34;**&#34;が&#34;*&#34;として扱われるように修正されています。
+ https://github.com/denoland/deno_std/releases/tag/0.161.0
+MongooseでのDenoサポートについて 以下のPRでMongooseでのDenoサポートが進められているようです。
+ Deno support (#12397)
+ 今のところ、v6.8でのリリースを目標に作業が進められているようです。
+Babel v7.20.0 @babel/preset-envで&#34;deno&#34;ターゲットがサポートされたようです。
+&#34;targets&#34;オプションで対象のDenoバージョンを指定することができます。
+ https://babeljs.io/blog/2022/10/27/7.20.0">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2022/10/24〜2022/10/30の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/10/30.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2022/10/24〜2022/10/30の最新情報","name":"2022\/10\/24〜2022\/10\/30の最新情報","description":"Deno v1.27 Deno v1.27がリリースされました。\n以下に変更内容をまとめたため、よろしければ参照ください。\n Deno v1.27  deno_std v0.161.0 deno_std v0.161.0がリリースされました。\nstd/hashの削除 非推奨化されていたstd/hashモジュールが削除されています。\n今後は、std/cryptoの使用が推奨されます。\nstd/node Deno v1.27でのNode-APIのサポートに合わせて、require()での.nodeファイルの読み込みがサポートされています。\nその他には、net.Serverの\u0026quot;close\u0026quot;イベントの発火タイミングの改善やfs.openDirの互換性の向上などが実施されています。\nstd/fs/expand_glob expandGlobで、globstarにfalseが指定された際に、\u0026quot;**\u0026quot;が\u0026quot;*\u0026quot;として扱われるように修正されています。\n https://github.com/denoland/deno_std/releases/tag/0.161.0\nMongooseでのDenoサポートについて 以下のPRでMongooseでのDenoサポートが進められているようです。\n Deno support (#12397)\n 今のところ、v6.8でのリリースを目標に作業が進められているようです。\nBabel v7.20.0 @babel/preset-envで\u0026quot;deno\u0026quot;ターゲットがサポートされたようです。\n\u0026quot;targets\u0026quot;オプションで対象のDenoバージョンを指定することができます。\n https://babeljs.io/blog/2022/10/27/7.20.0","keywords":["Deno","deno_std","Mongoose","Babel"],"articleBody":"Deno v1.27 Deno v1.27がリリースされました。\n以下に変更内容をまとめたため、よろしければ参照ください。\n Deno v1.27  deno_std v0.161.0 deno_std v0.161.0がリリースされました。\nstd/hashの削除 非推奨化されていたstd/hashモジュールが削除されています。\n今後は、std/cryptoの使用が推奨されます。\nstd/node Deno v1.27でのNode-APIのサポートに合わせて、require()での.nodeファイルの読み込みがサポートされています。\nその他には、net.Serverの\"close\"イベントの発火タイミングの改善やfs.openDirの互換性の向上などが実施されています。\nstd/fs/expand_glob expandGlobで、globstarにfalseが指定された際に、\"**\"が\"*\"として扱われるように修正されています。\n https://github.com/denoland/deno_std/releases/tag/0.161.0\nMongooseでのDenoサポートについて 以下のPRでMongooseでのDenoサポートが進められているようです。\n Deno support (#12397)\n 今のところ、v6.8でのリリースを目標に作業が進められているようです。\nBabel v7.20.0 @babel/preset-envで\"deno\"ターゲットがサポートされたようです。\n\"targets\"オプションで対象のDenoバージョンを指定することができます。\n https://babeljs.io/blog/2022/10/27/7.20.0\n","wordCount":"32","inLanguage":"en","datePublished":"2022-10-30T00:00:00Z","dateModified":"2022-10-30T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/10/30.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<div class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</div>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
+<span><i class="fa fa-heart"></i>カテゴリー</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+2022/10/24〜2022/10/30の最新情報
+</h1>
+<div class=post-meta><span title="2022-10-30 00:00:00 +0000 UTC">October 30, 2022</span>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#deno-v127 aria-label="Deno v1.27">Deno v1.27</a></li>
+<li>
+<a href=#deno_std-v01610 aria-label="deno_std v0.161.0">deno_std v0.161.0</a><ul>
+<li>
+<a href=#stdhash%e3%81%ae%e5%89%8a%e9%99%a4 aria-label=std/hashの削除><code>std/hash</code>の削除</a></li>
+<li>
+<a href=#stdnode aria-label=std/node><code>std/node</code></a></li>
+<li>
+<a href=#stdfsexpand_glob aria-label=std/fs/expand_glob><code>std/fs/expand_glob</code></a></li></ul>
+</li>
+<li>
+<a href=#mongoose%e3%81%a7%e3%81%aedeno%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=MongooseでのDenoサポートについて>MongooseでのDenoサポートについて</a></li>
+<li>
+<a href=#babel-v7200 aria-label="Babel v7.20.0">Babel v7.20.0</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><h2 id=deno-v127>Deno v1.27<a hidden class=anchor aria-hidden=true href=#deno-v127>#</a></h2>
+<p>Deno v1.27がリリースされました。</p>
+<p>以下に変更内容をまとめたため、よろしければ参照ください。</p>
+<ul>
+<li><a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.27.html>Deno v1.27</a></li>
+</ul>
+<h2 id=deno_std-v01610>deno_std v0.161.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01610>#</a></h2>
+<p>deno_std v0.161.0がリリースされました。</p>
+<h3 id=stdhashの削除><code>std/hash</code>の削除<a hidden class=anchor aria-hidden=true href=#stdhashの削除>#</a></h3>
+<p>非推奨化されていた<code>std/hash</code>モジュールが削除されています。</p>
+<p>今後は、<a href=https://deno.land/std@0.161.0/crypto>std/crypto</a>の使用が推奨されます。</p>
+<h3 id=stdnode><code>std/node</code><a hidden class=anchor aria-hidden=true href=#stdnode>#</a></h3>
+<p><a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.27.html>Deno v1.27</a>でのNode-APIのサポートに合わせて、<code>require()</code>での<code>.node</code>ファイルの読み込みがサポートされています。</p>
+<p>その他には、<code>net.Server</code>の<code>"close"</code>イベントの発火タイミングの改善や<code>fs.openDir</code>の互換性の向上などが実施されています。</p>
+<h3 id=stdfsexpand_glob><code>std/fs/expand_glob</code><a hidden class=anchor aria-hidden=true href=#stdfsexpand_glob>#</a></h3>
+<p><code>expandGlob</code>で、<code>globstar</code>に<code>false</code>が指定された際に、<code>"**"</code>が<code>"*"</code>として扱われるように修正されています。</p>
+<hr>
+<p><a href=https://github.com/denoland/deno_std/releases/tag/0.161.0>https://github.com/denoland/deno_std/releases/tag/0.161.0</a></p>
+<h2 id=mongooseでのdenoサポートについて>MongooseでのDenoサポートについて<a hidden class=anchor aria-hidden=true href=#mongooseでのdenoサポートについて>#</a></h2>
+<p>以下のPRでMongooseでのDenoサポートが進められているようです。</p>
+<blockquote>
+<p><a href=https://github.com/Automattic/mongoose/pull/12397>Deno support (#12397)</a></p>
+</blockquote>
+<p>今のところ、v6.8でのリリースを目標に作業が進められているようです。</p>
+<h2 id=babel-v7200>Babel v7.20.0<a hidden class=anchor aria-hidden=true href=#babel-v7200>#</a></h2>
+<p><code>@babel/preset-env</code>で<code>"deno"</code>ターゲットがサポートされたようです。</p>
+<p><code>"targets"</code>オプションで対象のDenoバージョンを指定することができます。</p>
+<hr>
+<p><a href=https://babeljs.io/blog/2022/10/27/7.20.0>https://babeljs.io/blog/2022/10/27/7.20.0</a></p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/mongoose.html>Mongoose</a></li>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/babel.html>Babel</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

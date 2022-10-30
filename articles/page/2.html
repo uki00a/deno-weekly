@@ -77,6 +77,50 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Fresh v1.1
+</h2>
+</header>
+<div class=entry-content>
+<p>Fresh v1.1がリリースされました。
+この記事では主な変更点などについて解説します。
+アップデート用スクリプトの追加 Freshのアップデート用スクリプトが追加されています。
+$ deno run -A https://fresh.deno.dev/update . このスクリプトを実行すると、各種依存関係や後述するcompilerOptionsやTwindプラグインなどに関する変更が適用されます。
+compilerOptions.jsxとcompilerOptions.jsxImportSourceのサポート Freshのプロジェクトの初期化時に、compilerOptions.jsxとcompilerOptions.jsxImportSourceが自動で設定されるようになりました。
+これにより、.jsx/.tsxファイルで以下2行の指定が不要になります。
+/** @jsx h */ import { h } from "preact"; 前述のアップデートスクリプトを実行すると、既存のプロジェクトにもこの設定が適用されます。
+プラグインシステム ユーザがFreshの挙動を拡張できるようにするために、プラグインシステムが実装されました。
+現時点では、生成されたHTMLに対するスクリプトやスタイルの注入などがサポートされています。将来的には、プラグイン経由でRouteやMiddlewareなどを追加できるようにすることが予定されているようです。
+例として、公式でTwindプラグインが提供されており、start()のpluginsオプションで有効化できます。
+// main.ts import { start } from "$fresh/server.ts"; import twindPlugin from "$fresh/plugins/twind.ts"; import manifest from "./fresh.gen.ts"; import twindConfig from "./twind.config.ts"; await start(manifest, { plugins: [twindPlugin(twindConfig)] }); このTwindプラグインを有効化すると、twを使わずにclassを指定できるようになります (PreactのOption Hooksを使用して twが自動で適用されます)
+&lt;div class="font-bold">foobar&lt;/div> 前述のアップデートスクリプトを実行することで、twを使わずにclassを記述する形式へ自動で変換されます。
+Preact Devtoolsのサポート Preact Devtoolsのサポートが追加されています。
+devモード(deno task start)時は自動で有効化されるため、特に設定などは不要です。...</p>
+</div>
+<footer class=entry-footer><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span></footer>
+<a class=entry-link aria-label="post link to Fresh v1.1" href=https://uki00a.github.io/deno-weekly/articles/fresh/v1.1.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2022/08/29〜2022/09/04の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25.1 Deno v1.25.1がリリースされました。
+Node.js互換に関する変更点
+依存関係の解析結果に関するキャッシュが存在する場合、deno compileが失敗する問題が修正されています。
+npm:URLで読み込まれたパッケージ内で、globalとglobalThisが一致するように修正されました。
+node-fetchなどのglobal.Promiseを参照するパッケージが動かない問題があったようです。 semverの取り扱いに関するnpmとの互換性の向上
+元々、Rustのsemver crateが使われていましたが、自前でパーサが実装されたようです。 *付きのConditional exportsがサポートされています。
+{ "exports": { ".": { "types": "./types/src/index.d.ts", "require": "./cjs/index.cjs", "import": "./esm/index.js" }, "./driver": { "types": "./types/src/driver/index.d.ts", "import": "./esm/driver/index.js" }, "./driver/*": { "types": "./types/src/driver/*.d.ts", "import": "./esm/driver/*.js" } } } package.jsonで"type": "module"が指定されたパッケージについては、"main"ではなく"module"で指定されたファイルが読み込まれるように修正されました。
+fs-extraなどのパッケージが読み込めない問題が修正されました。
+例えば、copyディレクトリとcopy/index.jsが両方存在するようなパッケージでエラーが発生していたようです。 下記のように、Node.jsのグローバルAPIと同名の変数を定義しているコードの読み込みに失敗する問題が修正されました。
+const process = require('process'); その他の変更点...</p>
+</div>
+<footer class=entry-footer><span title="2022-09-04 00:00:00 +0000 UTC">September 4, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/08/29〜2022/09/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/04.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/08/22〜2022/08/28の最新情報
 </h2>
 </header>
@@ -242,45 +286,6 @@ v1.23.4...</p>
 </div>
 <footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.24" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.24.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/07/11〜2022/07/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23.4 Deno v1.23.4がリリースされました。
-V8 Fast API Calls+JITコンパイルによるFFIの最適化 V8 Fast API Callsとtinyccを使用したJITコンパイルにより、FFI(Deno.dlopen)の最適化が行われています。
-Deno.dlopenを呼んだ際に、下記の条件が満たされる外部関数へのバインディングに対して、自動でFast API Calls+JITコンパイルによる最適化が適用されます。
-非Windows環境であること (Windowsではまだこれらの最適化がサポートされていません) パラメータ及び戻り値の型にスカラ型のみが含まれる場合 もしこれらの最適化を無効化したい場合は、callbackオプションにtrueを指定する必要があります。
-const lib = Deno.dlopen( "some_lib.so", { some_func: { parameters: ["usize", "usize"], result: "usize", callback: true }, } ); 細かな詳細については、deno_ffiも参照ください。
-perf(ext/ffi): leverage V8 Fast Calls #15125 fix(ext/ffi): trampoline for fast calls #15139 fix(ext/ffi): allow opting out of fast ffi calls #15131 その他の変更点 Request#json()などに続けてRequest.headersを参照するとプロセスがパニックする問題が解消されています。 deno lspで自動importが効くようになりました。それに伴い、入力補完に関わる挙動も改善されています。 https://github....</p>
-</div>
-<footer class=entry-footer><span title="2022-07-17 00:00:00 +0000 UTC">July 17, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/11〜2022/07/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/17.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/07/04〜2022/07/10の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23.3 Deno v1.23.3がリリースされました。
-このリリースでは、deno testなどの引数にfile:形式でディレクトリを指定すると、エラーが発生する問題が修正されています。
-# v1.23.2まではエラー $ deno test file:///home/foo/sample/tests また、Denoの内部で使用されているTypeScriptがv4.7.4へアップデートされています。
-その他には、いくつかのパフォーマンスチューニングなどが実施されています。
-https://github.com/denoland/deno/releases/tag/v1.23.3
-deno_std v0.147.0 deno_std v0.147.0がリリースされました。
-dotenv dotenvモジュールで、変数の展開がサポートされました。
-例えば、以下のような内容で.envファイルが定義されていたとします。
-HOST=localhost URL=http://${HOST}:${PORT:-3000} このファイルをdotenvモジュールで読み込むと、以下のように評価されます。
-{ HOST: "localhost", URL: "http://localhost:3000" } その他には、stringify()関数が追加されています。
-import { stringify } from "https://deno.land/std@0.147.0/dotenv/mod.ts"; stringify({ PORT: "3000", HOST: "localhost", LOG_LEVEL: "debug" }); // PORT=3000 // HOST=localhost // LOG_LEVEL=debug http oak_commonsのHTTPエラーとコンテントネゴシエーション用のモジュールがdeno_std/httpに取り込まれました。
-http/negotiation
-import { accepts } from "https://deno.land/std@0.147.0/http/negotiation.ts"; const req = new Request("https://github.com", { headers: { accept: "text/html,application/xhtml+xml,application/xml;q=0....</p>
-</div>
-<footer class=entry-footer><span title="2022-07-10 00:00:00 +0000 UTC">July 10, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/04〜2022/07/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/10.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

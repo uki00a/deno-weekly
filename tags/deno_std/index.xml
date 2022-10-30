@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 23 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/10/17〜2022/10/23の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/23.html</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/23.html</guid><description>Deno v1.26.2 Deno v1.26.2がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 30 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/10/24〜2022/10/30の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/30.html</link><pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/30.html</guid><description>Deno v1.27 Deno v1.27がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.27 deno_std v0.161.0 deno_std v0.161.0がリリースされました。
+std/hashの削除 非推奨化されていたstd/hashモジュールが削除されています。
+今後は、std/cryptoの使用が推奨されます。
+std/node Deno v1.27でのNode-APIのサポートに合わせて、require()での.nodeファイルの読み込みがサポートされています。
+その他には、net.Serverの&amp;quot;close&amp;quot;イベントの発火タイミングの改善やfs.openDirの互換性の向上などが実施されています。
+std/fs/expand_glob expandGlobで、globstarにfalseが指定された際に、&amp;quot;**&amp;quot;が&amp;quot;*&amp;quot;として扱われるように修正されています。
+https://github.com/denoland/deno_std/releases/tag/0.161.0
+MongooseでのDenoサポートについて 以下のPRでMongooseでのDenoサポートが進められているようです。
+Deno support (#12397)
+今のところ、v6.8でのリリースを目標に作業が進められているようです。
+Babel v7.20.0 @babel/preset-envで&amp;quot;deno&amp;quot;ターゲットがサポートされたようです。
+&amp;quot;targets&amp;quot;オプションで対象のDenoバージョンを指定することができます。
+https://babeljs.io/blog/2022/10/27/7.20.0</description></item><item><title>2022/10/17〜2022/10/23の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/23.html</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/23.html</guid><description>Deno v1.26.2 Deno v1.26.2がリリースされました。
 サブプロセス関連のAPIやnpmサポートの改善、fetch()の互換性の向上などが実施されています。
 Deno.SpawnOptionsでwindowsRawArgumentsオプションがサポート Windows上でこのオプションにtrueを指定すると、コマンドライン引数のクォーテーションの付与とエスケープがスキップされます。
 const { success, stdout } = await Deno.spawn(cmd, { args, windowsRawArguments: true, }); この機能は、後述するdeno_std v0.160.0におけるwindowsVerbatimArgumentsの実装に利用されています。
