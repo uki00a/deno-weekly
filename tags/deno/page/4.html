@@ -76,6 +76,28 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/05/16〜2022/05/22の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.22 Deno v1.22がリリースされました。
+変更点については以下の記事にまとめたため、詳しくはこちらを参照いただければと思います。
+Deno v1.22 deno_std v0.140.0 deno_std v0.140.0がリリースされました。
+http serve関数などにonListenオプションが追加されています。
+このオプションに関数を設定しておくと、サーバ起動時にそれが呼ばれます。
+import { serve } from "https://deno.land/std@0.140.0/http/server.ts"; serve(() => Response.json({ message: "hello" }), { onListen({ port }) { console.log(`Listening on port ${port}`); }, }); collections/deep_merge deepMerge関数で、循環参照のあるオブジェクトなどで無限ループが発生する問題が修正されています。
+testing/asserts assertRejects()に渡した関数が同期的に例外を投げた場合に成功と扱われてしまう問題が修正されました。
+await assertRejects(() => { throw new Error("foo"); }); // => rejectされたPromiseが返されていないため、エラー https://github.com/denoland/deno_std/releases/tag/0.140.0
+SQLバイディング Deno本体でSQLバインディングを公開するPRが作成されています。
+experiment(runtime): expose SQLite bindings (#14627)
+まだ実際にリリースされるかどうかは不明ですが、今のところ、下記のようにしてクエリを発行できる想定のようです。
+const { Connection } = Deno....</p>
+</div>
+<footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/05/16〜2022/05/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/22.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Deno v1.22
 </h2>
 </header>
@@ -287,31 +309,6 @@ deno_std v0....</p>
 </div>
 <footer class=entry-footer><span title="2022-04-03 00:00:00 +0000 UTC">April 3, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/28〜2022/04/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/03.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/03/21〜2022/03/27の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。
-詳細については下記を参照ください。
-Deno v1.20 deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。
-これにより、cp -Rや|&のサポートなどが行われています。
-deno_task_shell v0.2.0 deno lspでenablePathsオプションがサポート deno lspでenablePathsオプションがサポートされました。
-ワークスペース内の特定のフォルダでのみdeno lspを有効化したいが、それ以外のフォルダでは組み込みのJavaScript/TypeScriptランゲージサーバを使いたいようなときに設定することが想定されているようです。
-https://github.com/denoland/vscode_deno/releases/tag/3.11.0 その他の変更 --unstableなしでdeno benchを実行した際のエラーメッセージが改善 deno upgradeコマンドでDENO_CERT環境変数による証明書の指定がサポート HTTPサーバのパフォーマンスチューニング など
-https://github.com/denoland/deno/releases/tag/v1.20.2
-Deno v1.20.3 Deno v1.20.2に続けて、v1.20.3もリリースされています。
-セキュリティに関する修正が含まれるので早めのアップデートが推奨されています。
-変更点:
-Denoはfetchの第一引数としてURLの指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです) FFI関連の各API(Deno.UnsafeFnPointer#callなど)でちゃんと--unstableオプションが与えられているかチェックされるよう変更されました。 Deno.RunOptionsのcmdプロパティがreadonlyに変更されました。 https://github.com/denoland/deno/releases/tag/v1.20.3
-deno_std v0.131.0 deno_std v0.131.0がリリースされました。
-collections BinaryHeapが追加されました。
-import { BinaryHeap } from "https://deno.land/std@0.132.0/collections/binary_heap.ts"; const heap = new BinaryHeap&lt;number>(); heap....</p>
-</div>
-<footer class=entry-footer><span title="2022-03-27 00:00:00 +0000 UTC">March 27, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/03/21〜2022/03/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/27.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

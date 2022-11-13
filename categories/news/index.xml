@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>news on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/news.html</link><description>Recent content in news on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 06 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/news/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/10/31〜2022/11/06の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/11/06.html</link><pubDate>Sun, 06 Nov 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/11/06.html</guid><description>Deno v1.27.1 ロックファイルに関する機能の追加や改善などが実施されています。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>news on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/news.html</link><description>Recent content in news on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/news/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/11/07〜2022/11/13の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/11/13.html</link><pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/11/13.html</guid><description>Deno v1.27.2 Deno v1.27.2がリリースされています。
+peerDependenciesのサポート DenoでnpmパッケージのpeerDependenciesがサポートされました。
+あるパッケージでpeerDependenciesが定義されていた場合、以下のような動作をするようです。
+依存グラフの中から祖先をたどっていき、もしpeerDependenciesで指定された要件を満たすパッケージが見つからなかった場合、通常のdependenciesと同様に依存が解決されます。(npm v7と同様の挙動) optionalPeerDependenciesについては、依存グラフの祖先に指定された要件を満たすパッケージが見つかった場合のみ解決されます。 それ以外の場合は、pnpmと同様の挙動でoptionalPeerDependenciesが解決されます。 https://github.com/denoland/deno/pull/16561
+その他の変更点 いくつかのバグ修正が実施されています。
+data:URLに対してロックファイルのremoteエントリが作られてしまう問題が修正されています。 Deno.serveHttpで起動したHTTPサーバで圧縮が有効化された状態でストリーミングを行う際に、各チャンクが適切にフラッシュされるように修正されています。 ローカルのnode_modules内のコードでrequireによる相対パス形式での読み込みが行われた際に適切に動作するように修正されています。 https://github.com/denoland/deno/releases/tag/v1.27.2
+deno_std v0.163.0 deno_std v0.163.0がリリースされています。
+std/semverモジュールでinc()とdiff()が非推奨化されました。
+今後は、新しく追加されているincrement()とdifference()の使用が推奨されます。 (動作はそれぞれincとdiffと同様です)
+https://github.com/denoland/deno_std/releases/tag/0.163.0
+denoland/fresh-wordpress-themes WordPressをHeadless CMSとして使いつつ、フロントエンドをFreshで開発するためのテンプレートがDeno公式で公開されました。
+https://github.com/denoland/fresh-wordpress-themes 以下の記事で使用方法などが解説されています。
+Introducing Fresh WordPress Themes esm.sh v98 esm.sh v98がリリースされました。
+新機能としてTree shakingのサポートが追加されています。
+exportsパラメータを指定することで適用されます。
+https://github.com/ije/esm.sh/releases/tag/v98</description></item><item><title>2022/10/31〜2022/11/06の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/11/06.html</link><pubDate>Sun, 06 Nov 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/11/06.html</guid><description>Deno v1.27.1 ロックファイルに関する機能の追加や改善などが実施されています。
 ロックファイルの自動探索 ロックファイルの自動探索が実装されました。
 これは、deno.json(c)と同じディレクトリにdeno.lockというファイルがあれば、それを元に自動でインテグリティチェックを実行する機能です。
 現状、この機能は--unstableを指定したときのみ有効化されます。(Deno v1.28にて安定化予定のようです)

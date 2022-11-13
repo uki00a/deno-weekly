@@ -76,6 +76,32 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/11/07〜2022/11/13の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.27.2 Deno v1.27.2がリリースされています。
+peerDependenciesのサポート DenoでnpmパッケージのpeerDependenciesがサポートされました。
+あるパッケージでpeerDependenciesが定義されていた場合、以下のような動作をするようです。
+依存グラフの中から祖先をたどっていき、もしpeerDependenciesで指定された要件を満たすパッケージが見つからなかった場合、通常のdependenciesと同様に依存が解決されます。(npm v7と同様の挙動) optionalPeerDependenciesについては、依存グラフの祖先に指定された要件を満たすパッケージが見つかった場合のみ解決されます。 それ以外の場合は、pnpmと同様の挙動でoptionalPeerDependenciesが解決されます。 https://github.com/denoland/deno/pull/16561
+その他の変更点 いくつかのバグ修正が実施されています。
+data:URLに対してロックファイルのremoteエントリが作られてしまう問題が修正されています。 Deno.serveHttpで起動したHTTPサーバで圧縮が有効化された状態でストリーミングを行う際に、各チャンクが適切にフラッシュされるように修正されています。 ローカルのnode_modules内のコードでrequireによる相対パス形式での読み込みが行われた際に適切に動作するように修正されています。 https://github.com/denoland/deno/releases/tag/v1.27.2
+deno_std v0.163.0 deno_std v0.163.0がリリースされています。
+std/semverモジュールでinc()とdiff()が非推奨化されました。
+今後は、新しく追加されているincrement()とdifference()の使用が推奨されます。 (動作はそれぞれincとdiffと同様です)
+https://github.com/denoland/deno_std/releases/tag/0.163.0
+denoland/fresh-wordpress-themes WordPressをHeadless CMSとして使いつつ、フロントエンドをFreshで開発するためのテンプレートがDeno公式で公開されました。
+https://github.com/denoland/fresh-wordpress-themes 以下の記事で使用方法などが解説されています。
+Introducing Fresh WordPress Themes esm.sh v98 esm.sh v98がリリースされました。
+新機能としてTree shakingのサポートが追加されています。
+exportsパラメータを指定することで適用されます。
+https://github.com/ije/esm.sh/releases/tag/v98</p>
+</div>
+<footer class=entry-footer><span title="2022-11-13 00:00:00 +0000 UTC">November 13, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/11/07〜2022/11/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/13.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/10/31〜2022/11/06の最新情報
 </h2>
 </header>
@@ -298,26 +324,6 @@ stringify( data: DataItem[], columns: Column[], options?: StringifyOptions, ): P
 </div>
 <footer class=entry-footer><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/09/05〜2022/09/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/11.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/08/29〜2022/09/04の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.25.1 Deno v1.25.1がリリースされました。
-Node.js互換に関する変更点
-依存関係の解析結果に関するキャッシュが存在する場合、deno compileが失敗する問題が修正されています。
-npm:URLで読み込まれたパッケージ内で、globalとglobalThisが一致するように修正されました。
-node-fetchなどのglobal.Promiseを参照するパッケージが動かない問題があったようです。 semverの取り扱いに関するnpmとの互換性の向上
-元々、Rustのsemver crateが使われていましたが、自前でパーサが実装されたようです。 *付きのConditional exportsがサポートされています。
-{ "exports": { ".": { "types": "./types/src/index.d.ts", "require": "./cjs/index.cjs", "import": "./esm/index.js" }, "./driver": { "types": "./types/src/driver/index.d.ts", "import": "./esm/driver/index.js" }, "./driver/*": { "types": "./types/src/driver/*.d.ts", "import": "./esm/driver/*.js" } } } package.jsonで"type": "module"が指定されたパッケージについては、"main"ではなく"module"で指定されたファイルが読み込まれるように修正されました。
-fs-extraなどのパッケージが読み込めない問題が修正されました。
-例えば、copyディレクトリとcopy/index.jsが両方存在するようなパッケージでエラーが発生していたようです。 下記のように、Node.jsのグローバルAPIと同名の変数を定義しているコードの読み込みに失敗する問題が修正されました。
-const process = require('process'); その他の変更点...</p>
-</div>
-<footer class=entry-footer><span title="2022-09-04 00:00:00 +0000 UTC">September 4, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/08/29〜2022/09/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/04.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
