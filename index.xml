@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/11/07〜2022/11/13の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/11/13.html</link><pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/11/13.html</guid><description>Deno v1.27.2 Deno v1.27.2がリリースされています。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 20 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/11/14〜2022/11/20の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/11/20.html</link><pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/11/20.html</guid><description>Deno v1.28.0 Deno v1.28がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.28 Deno v1.28.1 Deno v1.28.1がリリースされました。
+deno installコマンドでnpm:がサポートされています。
+その他には、npmパッケージサポートに関する細かなバグ修正などが実施されています:
+Conditional exportsで指定されたエントリポイントが型定義を持っていない場合にエラーが発生する問題が修正 npmパッケージにfoo.server.jsのようにベースネーム部分に.を含むファイルが存在する場合に、うまく読み込みができない問題が修正 あるnpmパッケージの依存関係のバージョンにdist tagが指定されていた際に、うまく取り扱われない問題が修正 scopedパッケージに対して@types/*パッケージの型定義が適切に適用されない問題が修正 --lock-writeを指定すると、deno.lockからnpmパッケージが消えてしまう問題が解消 https://github.com/denoland/deno/releases/tag/v1.28.1
+deno_std v0.164.0 https://github.com/denoland/deno_std/releases/tag/0.164.0
+std/fmt: durationモジュールが追加 ミリ秒単位で指定された時間のフォーマットされた文字列を取得することができます。
+import { prettyDuration } from &amp;#34;https://deno.land/std@0.165.0/fmt/duration.ts&amp;#34;; prettyDuration(130000, { ignoreZero: true, formatType: &amp;#34;full&amp;#34; }); // =&amp;gt; &amp;#34;2 minutes, 10 seconds&amp;#34; 補足) prettyDurationは以下のPRでformatにリネームされています。この変更は、おそらくv0.166.0あたりでリリースされると思われるため、今後利用する際はprettyDurationではなくformatを使用するとよさそうです。
+https://github.com/denoland/deno_std/pull/2896 std/node: 互換性の向上 node/fs: - read()でコールバックが非同期に呼ばれるように修正 node/http: ServerResponse.finishedが実装 node/http: --unstableが指定されていると、Buffer形式のレスポンスが適切に取り扱われない問題が修正 node/string_decoder: StringDecoder.decodeのパフォーマンスが小さなUint8Arrayに対しては51倍、大きなUint8Arrayに対しては4倍程まで高速化 https://github.</description></item><item><title>Deno v1.28</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.28.html</link><pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.28.html</guid><description>Deno v1.28がリリースされました。
+この記事では主な変更点などについて解説します。
+npmパッケージサポートの安定化 Deno v1.25で実装されたnpmパッケージサポートが安定化されました。
+今後は--unstableなしでnpmパッケージを読み込むことができます。
+$ cat main.js import chalk from &amp;#34;npm:chalk@5.1.2&amp;#34;; console.log(chalk.green(&amp;#34;Deno&amp;#34;)); $ deno run --allow-read --allow-env main.js ただし、リモートモジュールの中にnpm:が含まれていた際は、従来どおり--unstableが要求されるため注意が必要そうです。
+その他にも以下の改善などが実施されています。
+peerDependenciesがサポート deno info --jsonでnpm:がサポート import.meta.resolveでnpm:が無効化 今後npmパッケージサポートに関して計画されている変更内容についてはロードマップを参照ください。
+ロックファイルの自動適用と生成がサポート Denoにはアプリケーションが依存するサードパーティモジュールの内容を元にハッシュ値を計算し、ロックファイルと呼ばれるファイルに保存する機能があります。
+アプリケーションを実行する際にサードパーティモジュールから再度ハッシュ値を計算し、ロックファイルに書き込まれたハッシュ値と比較することで、サードパーティモジュールの内容が改ざんされていないことを保証することができます。(インテグリティチェック)
+この挙動を有効化するには、従来では--lockと--lock-writeの指定が必要でした。
+このリリースでは、deno.json(c)が存在する場合、ロックファイル(deno.lock)の生成とインテグリティチェックが自動で実施されるように挙動が変更されました。
+$ ls deno.json main.js $ deno run main.js $ ls deno.json deno.lock main.js この変更に合わせて、既存のオプションやインテグリティチェックに関する挙動も一部変更されています。
+--lockオプションの引数がオプショナルに変更 (デフォルトはdeno.lock) ロックファイルに列挙されていないパッケージが見つかった際に、インテグリティチェックが失敗しないように挙動が変更 新しく検出されたパッケージについては、ハッシュが自動でロックファイルに書き込まれます。そのパッケージのインテグリティチェックについては、次回以降のDenoの実行から適用されます。 また、このロックファイルの自動適用と生成を無効化するために--no-lockという新しいオプションも追加されています。
+Deno.Commandの追加 Deno.CommandというDenoからサブプロセスを生成するための新しいAPIが実装されました。
+利用するには--unstableと--allow-runの指定が必要です。
+使用例 コマンドの実行結果の非同期での取得:
+const command = new Deno.Command(&amp;#34;deno&amp;#34;, { args: [&amp;#34;info&amp;#34;] }); const { stdout } = await command.</description></item><item><title>2022/11/07〜2022/11/13の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/11/13.html</link><pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/11/13.html</guid><description>Deno v1.27.2 Deno v1.27.2がリリースされています。
 peerDependenciesのサポート DenoでnpmパッケージのpeerDependenciesがサポートされました。
 あるパッケージでpeerDependenciesが定義されていた場合、以下のような動作をするようです。
 依存グラフの中から祖先をたどっていき、もしpeerDependenciesで指定された要件を満たすパッケージが見つからなかった場合、通常のdependenciesと同様に依存が解決されます。(npm v7と同様の挙動) optionalPeerDependenciesについては、依存グラフの祖先に指定された要件を満たすパッケージが見つかった場合のみ解決されます。 それ以外の場合は、pnpmと同様の挙動でoptionalPeerDependenciesが解決されます。 https://github.com/denoland/deno/pull/16561

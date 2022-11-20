@@ -81,6 +81,26 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/08/29〜2022/09/04の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25.1 Deno v1.25.1がリリースされました。
+Node.js互換に関する変更点
+依存関係の解析結果に関するキャッシュが存在する場合、deno compileが失敗する問題が修正されています。
+npm:URLで読み込まれたパッケージ内で、globalとglobalThisが一致するように修正されました。
+node-fetchなどのglobal.Promiseを参照するパッケージが動かない問題があったようです。 semverの取り扱いに関するnpmとの互換性の向上
+元々、Rustのsemver crateが使われていましたが、自前でパーサが実装されたようです。 *付きのConditional exportsがサポートされています。
+{ "exports": { ".": { "types": "./types/src/index.d.ts", "require": "./cjs/index.cjs", "import": "./esm/index.js" }, "./driver": { "types": "./types/src/driver/index.d.ts", "import": "./esm/driver/index.js" }, "./driver/*": { "types": "./types/src/driver/*.d.ts", "import": "./esm/driver/*.js" } } } package.jsonで"type": "module"が指定されたパッケージについては、"main"ではなく"module"で指定されたファイルが読み込まれるように修正されました。
+fs-extraなどのパッケージが読み込めない問題が修正されました。
+例えば、copyディレクトリとcopy/index.jsが両方存在するようなパッケージでエラーが発生していたようです。 下記のように、Node.jsのグローバルAPIと同名の変数を定義しているコードの読み込みに失敗する問題が修正されました。
+const process = require('process'); その他の変更点...</p>
+</div>
+<footer class=entry-footer><span title="2022-09-04 00:00:00 +0000 UTC">September 4, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/08/29〜2022/09/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/04.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/08/08〜2022/08/14の最新情報
 </h2>
 </header>
@@ -272,24 +292,6 @@ feat: remove fresh cli, do manifest generation in process (#223)...</p>
 </div>
 <footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/13〜2022/06/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/19.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/06/06〜2022/06/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.22.3 Deno v1.22.3がリリースされました。
-主な変更点:
-fetch APIの引数にURLオブジェクト渡す形式が非推奨ではなくなりました。(TypeScript公式の型定義でもサポートされたため) // Deno v1.22.3までは、下記の形式は非推奨でした const res = await fetch(new URL("https://example.com")); Import Mapファイルなどの.jsonや.jsonc形式のファイルが変更されたときに、deno lspが自動で変更を検知してくれるようになりました。 --watchオプションで、dynamic importされるファイルが監視されない問題が修正されました。 エラー以外の値がthrowされた際にコンソールへ出力される内容が改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.3
-deno_std v0.143.0 deno_std v0.143.0がリリースされました。
-http/http_statusでの破壊的変更について STATUS_TEXTがMap&lt;Status, string>からReadonly&lt;Record&lt;Status, String>>へ変更されています。(破壊的変更)
-その他にも、いくつかのヘルパー関数やタイプが追加されています。
-import { isErrorStatus, STATUS_TEXT } from "https://deno.land/std@0.143.0/http/http_status.ts"; STATUS_TEXT[404]; // => "Not Found" isErrorStatus(404); // => true isErrorStatus(200); // => false flagsモジュールでnegatableオプションがサポート ここで指定されたフラグのみが、--no-プレフィックスの付与による否定がサポートされます。
-import { parse } from "https://deno.land/std@0.143.0/flags/mod.ts"; parse(["deno", "fmt", "--no-config"], { string: ["config"], negatable: ["config"], }); // => { _: [ "deno", "fmt" ], config: false } parse(["deno", "fmt", "--no-config"], { string: ["config"], }); // => { _: [ "deno", "fmt" ], "no-config": true } dotenvモジュールでインラインコメントがサポート #に続けてコメントを記述できます。...</p>
-</div>
-<footer class=entry-footer><span title="2022-06-12 00:00:00 +0000 UTC">June 12, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/06〜2022/06/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/12.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

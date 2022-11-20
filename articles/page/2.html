@@ -82,6 +82,57 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Deno v1.26
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.26がリリースされました。
+この記事では主な変更点などについて解説します。
+--allow-sysオプションの追加 Deno.osReleaseやDeno.systemMemoryInfoなどのシステム情報を取得するためのAPIの利用を制御するために、--allow-sysオプションが追加されました。
+$ deno run --unstable --allow-sys=osRelease,systemMemoryInfo main.js 元々、これらのAPIを使うには--allow-envの指定が必要でした。
+ただ、これらのAPIの利用に--allow-envを要求することの副作用として、全ての環境変数にアクセスできるようになってしまうという問題がありました。
+この問題を解決するため、--allow-sysという新しいパーミッションが導入されました。
+Cache APIのサポート DenoにCache APIが実装されました。
+const cache = await caches.open("v1"); const req = new Request("https://example.com/"); console.assert(await cache.match(req) === undefined); const res = new Response("foobar"); await cache.put(req, res); const cachedRes = await cache.match(req); console.assert(await cachedRes?.text() === "foobar"); 挙動について localStorageなどと同様にSQLiteをベースに実装されており、利用する際は特にパーミッションなどは要求されません。
+ただし、localStorageとは異なり、DENO_DIRではなく/tmp/deno_cacheにSQLiteのデータベースやキャッシュされたコンテンツなどが保存されます。
+制限 現時点では、いくつかの制限があるようです。
+ignoreSearchやignoreMethodなどのクエリオプションはまだサポートされてないようです。 Cache.deleteを呼んだ際に、SQLiteデータベースに保存されたメタデータは削除されるものの、キャッシュされたコンテンツは削除されないようです。 npmパッケージサポートの改善 今回のv1.26のリリースでは、--no-npmオプションが実装されています。
+これにより、npm:によるnpmパッケージのimportを無効化できます。
+$ deno run --no-npm main.ts また、Denoでnpmパッケージのimportがサポートされたことにより、Deno v1.25.2でNode.js互換モードが削除されています。
+--compatは動かなくなっているためご注意ください
+$ deno run --compat --unstable main....</p>
+</div>
+<footer class=entry-footer><span title="2022-10-02 00:00:00 +0000 UTC">October 2, 2022</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.26" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.26.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2022/09/19〜2022/09/25の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25.4 Deno v1.25.4がリリースされました。
+--node-modules-dirのサポート node_modulesディレクトリの存在に依存したnpmパッケージを動かせるようにするために、--node-modules-dirオプションが実装されました。
+$ deno run -A --unstable --node-modules-dir npm:vite このオプションを指定すると、pnpmライクなレイアウトでnode_modulesが作られます。
+これによって、npm installなしでViteが動かせるようになったようです。
+詳しくは以下を参照いただければと思います。
+vite-deno-example --reload=オプションでnpmパッケージがサポート --reload=npm:で全npmパッケージの再読込み、--reload=npm:&lt;package>で指定されたパッケージだけを再読込みができます。
+パフォーマンスチューニング いくつかのパフォーマンスチューニングが実施されています。
+例)
+CLIの起動の高速化 console.log()などで文字列を出力する際のパフォーマンスが3倍近くまで高速化 TextEncoder.encodeInto()が5.4倍近くまで高速化 ファイルシステム関連のAPIの最適化 CLIの起動の高速化については、現在、様々なアイデアが検討されており、詳細については以下を参照いただければと思います。
+perf: ideas to improve startup time (#15945) その他の変更点 同一ファイルに対して複数回deno docを実行すると、処理が失敗してしまう問題が修正されています。 Windows上でdeno compileを実行したときに、拡張子が非.exe形式の場合に、それが取り除かれてしまう問題が修正されています。 Deno.env.get/Deno.env.setに不正な変数名を指定した際のエラーメッセージが改善されています。 https://github.com/denoland/deno/releases/tag/v1.25.4
+deno_std v0.157.0 deno_std v0.157.0がリリースされました。
+std/collections/deep_merge.tsのバグ修正 ネストされたプロパティにおいてdeepMerge()のreplaceオプションが機能しない問題が修正されています。
+std/nodeの改善 child_process.spawnSyncが実装されています。
+また、FreeBSDでもstd/nodeが動作するように修正が行われています。
+その他には、以下の改善などが実施されています。
+fs.read()やfs.ReadStreamの互換性の向上 net.connect()が失敗したときに、'error' ⇒ 'close'の順にイベントが発火されるように修正されています。 process.envに不正な文字を含む環境変数が指定されたときに、TypeErrorを投げるのではなくundefinedを返すように修正されています。 Windows上でprocess.on('SIGTERM')が無視されるように修正されています。 https://github....</p>
+</div>
+<footer class=entry-footer><span title="2022-09-25 00:00:00 +0000 UTC">September 25, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/09/19〜2022/09/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/25.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2022/09/12〜2022/09/18の最新情報
 </h2>
 </header>
@@ -255,54 +306,6 @@ std/crypto: subtle.timingSafeEqual()が追加 import { crypto } from "https://de
 </div>
 <footer class=entry-footer><span title="2022-08-14 00:00:00 +0000 UTC">August 14, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/08/08〜2022/08/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/14.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/08/01〜2022/08/07の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.24.2 Deno v1.24.2がリリースされました。
-FFIに関する改善 Deno.UnsafePointerView#getArrayBufferがpointerが指すデータのコピーではなく、pointerが指すデータを直接返すように修正されています。
-また、Deno.PointerValueが追加されています。 これに合わせて、ポインタを取り扱う各APIの戻り値などでもこの型が使用されるように修正されています。
-その他には、戻り値が64ビット値の関数に対してもV8 Fast API Callsによる最適化が適用されるようになりました。
-その他の変更点 プロパティにErrorオブジェクトが設定されたオブジェクトをthrowすると、プロセスがパニックする問題が修正されました。 deno vendor: dynamic importに失敗した際に、プロセスがパニックする問題が修正されました。 deno lsp: import節の入力補完において、レジストリ補完の最中のみ/がコミット文字として使用されるように修正されました。 https://github.com/denoland/deno/releases/tag/v1.24.2
-deno_std v0.151.0 deno_std v0.151.0がリリースされました。
-Node.jsの互換レイヤーに関するバグ修正や機能の追加が実施されています。
-変更点:
-node/fs: fs.existsSync()が例外をthrowする可能性がある問題が修正されました。 node/fs: fs.watchFile()とfs.unwatchFile()が実装されました。 node/http(s): http.request()などでprotocolを省略した際に、デフォルトで適切なプロトコルが設定されるように修正されました。 https://github.com/denoland/deno_std/releases/tag/0.151.0
-Deno Merch Deno公式のショップサイトが公開されました。
-https://merch.deno.com/ ソースコードも公開されており、Fresh/Twind/SWR/GraphQL Storefront API (Shopify)をベースに実装されているようです。
-https://github.com/denoland/merch
-Freshのロードマップ Freshのロードマップが公開されました。
-Roadmap (#563) 直近では、以下の変更が予定されているようです。
-プラグインシステムの実装 (現状、Twindプラグインの実装が進行しているようです) &lt;Head>コンポーネントの非推奨化 (&lt;head>タグによって直接メタ情報を埋め込めるようにする予定のようです) https://github.com/denoland/fresh/issues/563
-PrismaのDenoサポートについて Prismaの以下のissueで、Denoのサポートについて議論されています。...</p>
-</div>
-<footer class=entry-footer><span title="2022-08-07 00:00:00 +0000 UTC">August 7, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/01〜2022/08/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/07.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/07/25〜2022/07/31の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.24.1 Deno v1.24.1がリリースされました。
-このリリースはバグ修正がメインです。
-"unhandledrejection"イベントに関する修正 "unhandledrejection"イベントのリスナに関する型定義が修正されています。
-また、モジュールのトップレベルで同期的にエラーが発生した際にも"unhandledrejection"イベントが発火されるように修正されています。
-Deno.Child.unref()に関する修正 Deno.Child.unref()を呼ぶと、Deno.Child.stdoutやDeno.Child.stderrもunrefされるように修正されています。
-その他の変更点 型チェック時(--check)に、TypeScriptのjsxFactoryとjsxFragmentFactoryオプションが自動で設定される問題が修正されています。
-https://github.com/denoland/deno/releases/tag/v1.24.1
-deno_std v0.150.0 deno_std v0.150.0がリリースされました。
-http/http_errors createHttpErrorでheadersオプションがサポートされています。
-import { createHttpError } from "https://deno.land/std@0.150.0/http/http_errors.ts"; import { Status, STATUS_TEXT } from "https://deno.land/std@0.150.0/http/http_status.ts"; const error = createHttpError( Status.Unauthorized, STATUS_TEXT[Status.Unauthorized], { headers: { "WWW-Authenticate": "Basic" } } ); error.headers; // => `Headers { "www-authenticate": "Basic" }` io/writers StringWriterにデータを書き込む際に、引数のUint8Arrayがコピーされるようになりました。
-引数に渡したUint8Arrayが別の箇所で変更されると、StringWriter#toStringが返却する文字列にも影響が出てしまう問題があったようです。
-import { StringWriter } from "https://deno.land/std@0.150.0/io/writers.ts"; const encoder = new TextEncoder(); const w = new StringWriter(); const bytes = encoder....</p>
-</div>
-<footer class=entry-footer><span title="2022-07-31 00:00:00 +0000 UTC">July 31, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/25〜2022/07/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/31.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
