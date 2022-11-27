@@ -77,6 +77,27 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2022/09/26〜2022/10/02の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.26 Deno v1.26がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.26 deno_std v0.158.0 deno_std v0.158.0がリリースされました。
+std/node child_processパッケージでexec/execFileSync/execSyncが実装されています。
+その他には、process.getuid()とprocess.getgid()が実装されています。
+また、fsパッケージのread()やWriteStreamなどの互換性が向上しています。
+std/http/server handlerが返却したResponseのボディがすでに消費されている場合に、500エラーが発生するように修正されています。
+https://github.com/denoland/deno_std/releases/tag/0.158.0
+plug v1.0.0-rc.0 Deno FFI(Deno.dlopen)のヘルパーモジュールであるplugのv1.0.0 RC版が公開されています。
+このリリースでの主要な変更点として、ダイナミックライブラリを読み込むためのprepare()がdlopen()にリネームされています。
+https://github.com/denosaurs/plug/releases/tag/1.0.0-rc.0</p>
+</div>
+<footer class=entry-footer><span title="2022-10-02 00:00:00 +0000 UTC">October 2, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/09/26〜2022/10/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/02.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Deno v1.26
 </h2>
 </header>
@@ -281,26 +302,6 @@ feat(unstable): change Deno.serve() API (#15498)...</p>
 </div>
 <footer class=entry-footer><span title="2022-08-21 00:00:00 +0000 UTC">August 21, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/08/15〜2022/08/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/21.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/08/08〜2022/08/14の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.24.3 Deno v1.24.3がリリースされました。
-fetch()でSOCKSがサポート 検証はしていないのですが、HTTP_PROXYやHTTPS_PROXY環境変数にsocks5:またはsocks5h:形式のURLを指定すると利用できそうです。
-Deno.UnsafePointerViewへの機能追加 Deno.UnsafePointerViewに以下の3つのstaticメソッドが追加されています。
-getCString getArrayBuffer copyInto これらのメソッドの挙動は、Deno.UnsafePointerViewの同名のインスタンスメソッドとほぼ同様です。
-compilerOptions.jsxImportSourceが指定されていると、deno.json(c)をimportできない問題が修正 次のように、compilerOptions.jsxImportSourceが設定されたdeno.jsonが定義されていたとします。
-{ "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" }, "importMap": "./import_map.json" } このファイルをImport assertionsを使用して読み込もうとすると、エラーが発生する問題が修正されています。
-import config from "./deno.json" assert { type: "json" }; // => `error: Loading unprepared module` console.log(config); この修正は、Freshにおけるfeat: support JSX automatic mode (#610)の対応のために実施されたようです。
-その他の修正 --allow-netに空の値を指定するとプロセスがパニックする問題が修正されています。 --locationオプションが指定されていないときはglobalThis.locationが上書きできるようになりました。 https://github.com/denoland/deno/releases/tag/v1.24.3
-deno_std v0.152.0 deno_std v0.152.0がリリースされました。
-std/crypto: subtle.timingSafeEqual()が追加 import { crypto } from "https://deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-08-14 00:00:00 +0000 UTC">August 14, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/08〜2022/08/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/14.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

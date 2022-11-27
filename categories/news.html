@@ -81,6 +81,32 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/11/21〜2022/11/27の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.28.2 Deno v1.28.2がリリースされました。
+CPUプロファイリング 新機能として、以下の3メソッドが実装されています。
+console.profile console.profileEnd console.timeStamp これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。
+--inspectオプションが指定された状態でconsole.profile(label)が呼ばれると、console.profileEnd(label)の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。
+計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。
+Node.js互換性の改善 Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています
+{ "imports": { "preact/": "npm:preact/" } } module.createRequire()でURLオブジェクトがサポート
+deno infoで循環したnpm依存が適切に取り扱われるように改善
+型定義ファイルの検出に関する挙動の改善
+importのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善 その他の変更点 Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。 https://github.com/denoland/deno/releases/tag/v1.28.2
+deno_std v0.166.0 deno_std v0.166.0がリリースされました。
+std/fmtに関する破壊的変更 std/fmt/bytesのprettyBytes()関数がformat()にリネームされています。
+既存のprettyBytes()は非推奨化されており、今後のバージョンで削除される予定です。
+また、std/fmt/durationのprettyDuration()も同様にformat()へリネームされています。
+std/node - Node.js互換性の改善 Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。
+node:console: Deno v1....</p>
+</div>
+<footer class=entry-footer><span title="2022-11-27 00:00:00 +0000 UTC">November 27, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/11/21〜2022/11/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/27.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/11/14〜2022/11/20の最新情報
 </h2>
 </header>
@@ -297,33 +323,6 @@ fs.read()やfs.ReadStreamの互換性の向上 net.connect()が失敗したと�
 </div>
 <footer class=entry-footer><span title="2022-09-25 00:00:00 +0000 UTC">September 25, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/09/19〜2022/09/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/25.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/09/12〜2022/09/18の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.25.3 Deno v1.25.3がリリースされました。
-npmパッケージサポートの改善 esm形式のモジュールからcjs形式のモジュールをimportする際の挙動のNode.jsとの互換性が向上しています。 deno run --unstable npm:&lt;package>@version/subpathで.js形式または拡張子なしのファイルを実行できるようになりました。 typescript/tscを実行できない問題があったようです。 パッケージのサブパスにpackage.jsonがあれば、その定義内容を元にエントリポイントが解決されるようになりました。 --unstableが指定されたときは、NODE_DEBUGとNODE_OPTIONS環境変数に対して--allow-envのチェックがスキップされるように変更されました。 Flash(Deno.serve)の改善 同時に一つのリクエストしか処理できなかった問題が解消されています。
-https://github.com/denoland/deno/releases/tag/v1.25.3
-deno_std v0.156.0 deno_std v0.156.0がリリースされました。
-std/node Deno本体のnpmパッケージサポートの改善に合わせて、バグ修正などが実施されています。
-今回のリリースによってcpy-cliなどが動かせるようになったようです。
-変更点:
-fs: ReadStreamとWriteStreamがnewなしで作成できるようになりました。 process: "FOO" in process.envなどでprocess.envを利用した際に、全パーミッションが要求される問題が解消されています。(内部的にDeno.env.toObject()が使用されないように修正されています) process: process.execPathが書き込み可能なプロパティに変更されました。(pnpmなどの書き込みを行うパッケージが存在したため) std/fs すでにシンボリックリンクが存在する場合にensureSymlinkが失敗しないように改善されています。
-std/http/file_server serveFileにディレクトリのパスが指定された場合、404エラーが返却されるように修正されました。 (今までは200が返却されるものの、ボディを読もうとするとエラーが発生していたようです)
-https://github.com/denoland/deno_std/releases/tag/0.156.0
-Mongooseサポートに向けたunstable APIの安定化について Mongooseのサポートに向けて、下記のAPIの安定化が検討されています。
-Deno.consoleSize() Deno.hostname() Deno.osRelease() Deno.consoleSize()とDeno.hostname()についてはすでにPRが作成されており、次のv1.26あたりで安定化される可能性がありそうです。
-Ultra v2.0.0-beta.6 Island Architectureのサポートなどが追加されています。
-/examples/with-islands https://github.com/exhibitionist-digital/ultra/releases/tag/v2.0.0-beta.6
-deno-sqlite v3.5.0 PreparedQueryに.first()と.firstEntry()が追加されています。
-その影響で既存の.one()と.oneEntry()は非推奨化されています。
-const query = db....</p>
-</div>
-<footer class=entry-footer><span title="2022-09-18 00:00:00 +0000 UTC">September 18, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/09/12〜2022/09/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/18.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

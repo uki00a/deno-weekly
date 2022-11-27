@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Hono on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/hono.html</link><description>Recent content in Hono on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 28 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/hono/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/08/22〜2022/08/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/08/28.html</link><pubDate>Sun, 28 Aug 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/08/28.html</guid><description>Deno v1.25.0 Deno v1.25.0がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Hono on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/hono.html</link><description>Recent content in Hono on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 27 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/hono/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/11/21〜2022/11/27の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/11/27.html</link><pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/11/27.html</guid><description>Deno v1.28.2 Deno v1.28.2がリリースされました。
+CPUプロファイリング 新機能として、以下の3メソッドが実装されています。
+console.profile console.profileEnd console.timeStamp これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。
+--inspectオプションが指定された状態でconsole.profile(label)が呼ばれると、console.profileEnd(label)の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。
+計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。
+Node.js互換性の改善 Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています
+{ &amp;#34;imports&amp;#34;: { &amp;#34;preact/&amp;#34;: &amp;#34;npm:preact/&amp;#34; } } module.createRequire()でURLオブジェクトがサポート
+deno infoで循環したnpm依存が適切に取り扱われるように改善
+型定義ファイルの検出に関する挙動の改善
+importのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善 その他の変更点 Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。 https://github.com/denoland/deno/releases/tag/v1.28.2
+deno_std v0.166.0 deno_std v0.166.0がリリースされました。
+std/fmtに関する破壊的変更 std/fmt/bytesのprettyBytes()関数がformat()にリネームされています。
+既存のprettyBytes()は非推奨化されており、今後のバージョンで削除される予定です。
+また、std/fmt/durationのprettyDuration()も同様にformat()へリネームされています。
+std/node - Node.js互換性の改善 Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。
+node:console: Deno v1.</description></item><item><title>2021/08/22〜2022/08/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/08/28.html</link><pubDate>Sun, 28 Aug 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/08/28.html</guid><description>Deno v1.25.0 Deno v1.25.0がリリースされました。
 以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
 Deno v1.25 deno_std v0.153.0 deno_std v0.153.0がリリースされました。
 std/encoding/csv: parse()が同期的に動作するように (破壊的変更) parse()の引数からBufReaderが削除されています
