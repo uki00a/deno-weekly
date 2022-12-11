@@ -81,6 +81,29 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/07/05〜2021/07/11の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を変更することが検討されています。
+https://github.com/denoland/deno/issues/11340 このissueでは、以下のような方向性が示されています。
+DenoのTypeScriptによる型チェックをデフォルトで無効化したい (現状の--no-checkオプションを付けた際の挙動をデフォルトにしたい) TypeScriptによる型チェックは、--checkオプションを指定したときのみ実施する --no-checkオプションは非推奨化する より詳細な内容や議論などについては上記issueを参照いただければと思います。
+https://github.com/denoland/deno/issues/11340
+Bundler v0.8.0 DenoのフロントエンドビルドツールであるBundlerのv0.8.0がリリースされました。
+このリリースでは、Devサーバのサポートが追加されています。
+https://github.com/timreichen/Bundler/releases/tag/0.8.0
+deno-redis v0.23.0がリリース deno-redisのv0.23.0がリリースされました。
+このリリースでは、いくつかの破壊的変更が実施されています。
+Redis Clusterのクライアント実装が追加されました。 Redis.connectionプロパティが削除されました。(破壊的変更) RedisImplクラスが非公開になり、代わりにcreate関数が追加されました。 (破壊的変更) https://github.com/denodrivers/redis/releases/tag/v0.23.0
+xhr xhrはDenoとDeno Deploy向けのXMLHttpRequestのポリフィルです。
+以下のドキュメントにて、このモジュールを利用してDeno Deploy上でFirebase SDKを使用する方法が紹介されています。
+https://deno.com/deploy/docs/tutorial-firebase https://github.com/kitsonk/xhr https://deno.com/deploy/docs/tutorial-firebase </p>
+</div>
+<footer class=entry-footer><span title="2021-07-11 00:00:00 +0000 UTC">July 11, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/07/05〜2021/07/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/11.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/06/28〜2021/07/04の最新情報
 </h2>
 </header>
@@ -265,25 +288,6 @@ Deno v1.9で実装されたネイティブHTTPサーバがサポートされた 
 </div>
 <footer class=entry-footer><span title="2021-04-18 00:00:00 +0000 UTC">April 18, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/04/12〜2021/04/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/18.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/04/05〜2021/04/11の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno本体の最新情報 Deno v1.9.0のリリースについて 今週は特にリリースはありませんが、2021/4/13にv1.9.0のリリースが予定されています。
-また、v1.9.0のリリースに向けて、以下の機能がmainブランチにマージされています:
-ネイティブHTTPバインディング BLOB URLのサポート fetch APIでのdata URLのサポート https://github.com/denoland/deno/blob/v1.8.3/docs/contributing/release_schedule.md
-サードパーティモジュールなどの最新情報 denoland/setup-deno denoland/setup-denoというGitHub ActionsでDenoを利用するためのアクションがdenoland Organizationにて公開されました。
-https://github.com/denoland/setup-deno denolib/setup-deno - denoland/setup-denoと同様、GitHub ActionsからDenoを利用するためのアクション deno-postgres v0.9.0及びv0.10.0がリリース deno-postgresのv0.9.0及びv0.10.0がリリースされました。
-これらのリリースでは、以下の機能が追加されています:
-scram-sha-256認証のサポート Client#createTransactionが実装され、トランザクションがより扱いやすくなった https://github.com/denodrivers/postgres/releases/tag/v0.9.0 https://github.com/denodrivers/postgres/releases/tag/v0.10.0 rollup-plugin-deno rollup-plugin-denoは、RollupでDeno向けのバンドルを生成するためのRollupプラグインです。
-Node.jsのビルトインモジュールの読み込みをdeno_std/nodeに置換することで、それらに依存したモジュールをDenoで実行できるようにしてくれます。
-https://github.com/egoist/rollup-plugin-deno</p>
-</div>
-<footer class=entry-footer><span title="2021-04-11 00:00:00 +0000 UTC">April 11, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/05〜2021/04/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/11.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

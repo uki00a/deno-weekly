@@ -81,6 +81,27 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/09/26〜2022/10/02の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.26 Deno v1.26がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.26 deno_std v0.158.0 deno_std v0.158.0がリリースされました。
+std/node child_processパッケージでexec/execFileSync/execSyncが実装されています。
+その他には、process.getuid()とprocess.getgid()が実装されています。
+また、fsパッケージのread()やWriteStreamなどの互換性が向上しています。
+std/http/server handlerが返却したResponseのボディがすでに消費されている場合に、500エラーが発生するように修正されています。
+https://github.com/denoland/deno_std/releases/tag/0.158.0
+plug v1.0.0-rc.0 Deno FFI(Deno.dlopen)のヘルパーモジュールであるplugのv1.0.0 RC版が公開されています。
+このリリースでの主要な変更点として、ダイナミックライブラリを読み込むためのprepare()がdlopen()にリネームされています。
+https://github.com/denosaurs/plug/releases/tag/1.0.0-rc.0</p>
+</div>
+<footer class=entry-footer><span title="2022-10-02 00:00:00 +0000 UTC">October 2, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/09/26〜2022/10/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/02.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/09/19〜2022/09/25の最新情報
 </h2>
 </header>
@@ -283,25 +304,6 @@ import { StringWriter } from "https://deno.land/std@0.150.0/io/writers.ts"; cons
 </div>
 <footer class=entry-footer><span title="2022-07-31 00:00:00 +0000 UTC">July 31, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/25〜2022/07/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/31.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/07/18〜2022/07/24の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.24.0 Deno v1.24.0がリリースされました。
-以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
-Deno v1.24 deno_std v0.149.0 deno_std v0.149.0がリリースされました。
-semverモジュールが追加 deno_stdにsemverモジュールが入りました。
-import * as semver from "https://deno.land/std@0.149.0/semver/mod.ts"; semver.valid("v1.2.3"); // => 1.2.3 semver.gt("2.0.0", "1.2.4"); // => true semver.satisfies("1.4.2", ">=1.x"); // => true testing/asserts assertRejectsがthenableなオブジェクトをサポートしました。
-const error = await assertRejects(() => ({ then() { throw new Error("foo"); }, })); console.assert(error.message === "foo"); node process.on("beforeExit")がサポートされました。
-https://github.com/denoland/deno_std/releases/tag/0.149.0
-Denoについてのアンケート Deno公式でアンケートが公開されています。
-https://unf275cfh14.typeform.com/to/k3eQB4Q3 https://twitter.com/deno_land/status/1550209370301952000</p>
-</div>
-<footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/18〜2022/07/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/24.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

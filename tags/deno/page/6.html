@@ -81,6 +81,26 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/02/21〜2022/02/27の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.19.1 Deno v1.19.1がリリースされました。
+新機能としてDeno.dlopenでstatic変数の参照がサポートされています。
+Deno.ForeignStatic その他にも、deno compileで--import-mapオプションがうまく動かなくなっていた問題が修正されています。
+https://github.com/denoland/deno/releases/tag/v1.19.1
+deno_std v0.127.0 deno_std v0.127.0がリリースされました。
+dotenvの追加 deno-dotenvモジュールがdeno_stdにマージされました。
+マイグレーション手順も公開されているので、もしdeno-dotenvを利用されていた場合は参考にするとよさそうです。
+async/abortableの追加 Promiseをキャンセルできるようにするためのユーティリティが追加されています。
+import { abortable } from "https://deno.land/std@0.127.0/async/abortable.ts"; import { delay } from "https://deno.land/std@0.127.0/async/delay.ts"; const controller = new AbortController(); const promise = delay(5000); setTimeout(() => controller.abort(), 2000); await abortable(promise, controller.signal); // => AbortError node fs: fs.realpath.nativeが追加されました。 tls: tls.createServerの基本的なサポートが追加されました。 その他 http/file_server: serveDir関数が追加されました。 testing/aserts: assertAlmostEqualsが追加されました。 https://github.com/denoland/deno_std/releases/tag/0.127.0
+deno.json(c)でのImport Mapサポートについて deno....</p>
+</div>
+<footer class=entry-footer><span title="2022-02-27 00:00:00 +0000 UTC">February 27, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/02/21〜2022/02/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/27.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/02/14〜2022/02/20の最新情報
 </h2>
 </header>
@@ -300,23 +320,6 @@ Get all the network interfaces in Deno feat(ext/net): add op_network_interfaces 
 </div>
 <footer class=entry-footer><span title="2021-12-26 00:00:00 +0000 UTC">December 26, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/12/20〜2021/12/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/26.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/12/13〜2021/12/19の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.17.0 Deno v1.17.0がリリースされました。
---no-check=remoteのサポート リモートモジュール(http:またはhttps:で始まるモジュール)の型チェックのみが無効化されます。
-$ deno run --no-check=remote mod.ts Import assertionsのサポート Import assertionsが実装されました。
-現在はJSON modulesのみがサポートされています。
-import modules from "./modules.json" assert { type: "json" }; Object.keys(modules); Deno.testのシグネチャの向上 Deno v1.16.4までは下記の形式のみがサポートされていました。
-Deno.test(name: string, fn: (t: Deno.TestContext) => void | Promise&lt;void>): void Deno.test(t: Deno.TestDefinition): void v1.17で以下のオーバーロードが追加され、使い勝手が向上しました。
-// オプションを第2引数、テスト関数を第3引数で指定 Deno.test("foo", { permissions: { read: false } }, () => { Deno.cwd(); }); // オプションを第1引数、テスト関数を第2引数で指定 Deno.test({ name: "bar", ignore: Deno.build.os === "windows", }, async () => { // }); Deno....</p>
-</div>
-<footer class=entry-footer><span title="2021-12-19 00:00:00 +0000 UTC">December 19, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/12/13〜2021/12/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/19.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

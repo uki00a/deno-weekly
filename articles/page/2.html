@@ -82,6 +82,31 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2022/10/10〜2022/10/16の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>deno taskの安定化について deno taskコマンドを安定化することが検討されているようです。
+以下のPRではdeno taskを実行した際の警告メッセージが削除されています。
+feat(task): remove warning about being unstable (#16281)
+この変更はv1.27での導入が検討されているようです。
+deno lspでtextDocument/inlayHintが実装 以下のPRでdeno lspにtextDocument/inlayHintが実装されています。
+feat: support inlay hints (#16287)
+textDocument/inlayHintの挙動については、TypeScript公式の以下のページがわかりやすそうです。
+Inlay Hints こちらについてもv1.27でのリリースが検討されているようです
+Bartek Iwańczuk’s “Vite Got Deno-fied” at ViteConf 2022 Bartek Iwańczuk氏によるViteConf 2022での発表内容が公開されています。
+Bartek Iwańczuk’s “Vite Got Deno-fied” at ViteConf 2022 DenoでViteの開発環境をセットアップし、Deno Deployへデプロイするまでの手順が解説されています。
+https://twitter.com/deno_land/status/1580356550966722560
+denoland/fresh_charts Deno公式でFresh向けのチャートライブラリが公開されています。
+denoland/fresh_charts チャートを描画するための&lt;Chart>コンポーネントやハンドラ向けのユーティリティなどが提供されているようです。
+Chart.jsやred-agate-svg-canvasなどを活用して作成されているようです。
+https://github.com/denoland/fresh_charts</p>
+</div>
+<footer class=entry-footer><span title="2022-10-16 00:00:00 +0000 UTC">October 16, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/10/10〜2022/10/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/16.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2022/10/03〜2022/10/09の最新情報
 </h2>
 </header>
@@ -292,27 +317,6 @@ import { CookieMap, mergeHeaders } from "https://deno.land/std@0.153.0/http/cook
 </div>
 <footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/08/22〜2022/08/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/28.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Deno v1.25
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.25がリリースされました。
-この記事では主な変更点などについて解説します。
-npmパッケージのサポート Denoでnpmパッケージのimportや実行が実験的にサポートされました。
-npm installやnode_modulesなどを必要とせずにnpmパッケージを利用することができます。
-import express from "npm:express@4.18.1"; const app = express(); app.get("/", (req, res) => { res.send("Hello"); }); app.listen(3000); このファイルを実行すると、npmパッケージがダウンロードされた後、ExpressによってHTTPサーバが起動します。
-$ deno run --unstable --allow-env --allow-read --allow-net main.mjs $ curl http://localhost:3000 Hello 他のサードパーティモジュールなどと同様に、初回実行時のみnpmパッケージがダウンロードされ、DENO_DIRにキャッシュされます。(DENO_DIR/npm/registry.npmjs.orgに保存されるようです)
-また、npxライクにコマンドを実行することもできます。
-$ deno run --unstable --allow-env --allow-read --allow-write npm:make-dir-cli@3.0.0 src/components 制限 現時点では利用するには--unstableが必要になります。 また、--allow-envや--allow-readも必要になります。 ロックファイル/型チェック/deno vendor/deno lsp/deno installなどでは、この機能はまだサポートされていません。 新しいHTTPサーバ (Flash) DenoにはHyperをベースにしたHTTPサーバ(Deno.serveHttp)が組み込まれています。
-このHTTPサーバのさらなる高速化などを目的に、Flashという新しいHTTPサーバが実装されました。
-Deno.serveというAPIによって、Flashを起動することができます。
-const ac = new AbortController(); Deno.serve((req) => new Response("Hello, Flash"), { port: 4500, onListen: ({ port, hostname }) => { console....</p>
-</div>
-<footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.25" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

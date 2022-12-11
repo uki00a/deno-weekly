@@ -82,6 +82,33 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2022/12/05〜2022/12/22の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>今週のDenoに関するアップデート 今週はDenoのリリースが行われていないため、次のv1.29でリリース予定と思われる変更点についていくつか紹介します。
+deno.json(c)でdeno benchコマンドの設定がサポート deno.json(c)にbenchフィールドが追加されており、filesフィールドによってベンチマーク対象のファイルを設定できます。
+{ "bench": { "files": { "include": ["./benchmark"] } } } https://github.com/denoland/deno/pull/16608
+deno.json(c)でのロックファイルのサポート deno.json(c)のlockオプションでロックファイルに関する設定を変更できるようになりました。
+lock: falseを指定すると、ロックファイルの適用が無効化されます。(--no-lockと同様の挙動)
+{ "lock": false } またlockオプションにロックファイルのパスを指定することもできます。
+{ "lock": "./lock.json" } https://github.com/denoland/deno/pull/16781
+deno initコマンドでdeno.jsoncの生成がサポート deno initコマンドでdeno.jsoncが生成されるようになりました。
+https://github.com/denoland/deno/pull/16389 https://github.com/denoland/deno/pull/17002 Deno名前空間からspawn/spawnSync/spawnChildが削除 Deno v1.28.0でDeno.Commandが実装されたため、Deno.spawnなどのAPIが削除されました。
+https://github.com/denoland/deno/pull/16893
+Deno.TcpConnのsetNoDelayとsetKeepAliveが安定化 Deno v1.19で実装されたDeno.TcpConnのsetNoDelayとsetKeepAliveメソッドが安定化されています。
+今後は--unstableなしで利用できるようになりそうです。
+https://github.com/denoland/deno/pull/17003
+Ultra v2 Ultraのv2がリリースされています。
+Honoとの統合やTwind/react-query/react-router/react-helmetのサポートなどの様々な改善が実施されています。
+以下の記事ではUltra v2の概要や使い方などについて解説されています。
+Building Fullstack React Apps with Ultra https://github.com/exhibitionist-digital/ultra/releases/tag/v2.0.0</p>
+</div>
+<footer class=entry-footer><span title="2022-12-11 00:00:00 +0000 UTC">December 11, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/12/05〜2022/12/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/11.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2022/11/28〜2022/12/04の最新情報
 </h2>
 </header>
@@ -291,31 +318,6 @@ std/node/readline/promisesが実装 std/node/child_process: windowsVerbatimArgum
 </div>
 <footer class=entry-footer><span title="2022-10-23 00:00:00 +0000 UTC">October 23, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/10/17〜2022/10/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/23.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2022/10/10〜2022/10/16の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>deno taskの安定化について deno taskコマンドを安定化することが検討されているようです。
-以下のPRではdeno taskを実行した際の警告メッセージが削除されています。
-feat(task): remove warning about being unstable (#16281)
-この変更はv1.27での導入が検討されているようです。
-deno lspでtextDocument/inlayHintが実装 以下のPRでdeno lspにtextDocument/inlayHintが実装されています。
-feat: support inlay hints (#16287)
-textDocument/inlayHintの挙動については、TypeScript公式の以下のページがわかりやすそうです。
-Inlay Hints こちらについてもv1.27でのリリースが検討されているようです
-Bartek Iwańczuk’s “Vite Got Deno-fied” at ViteConf 2022 Bartek Iwańczuk氏によるViteConf 2022での発表内容が公開されています。
-Bartek Iwańczuk’s “Vite Got Deno-fied” at ViteConf 2022 DenoでViteの開発環境をセットアップし、Deno Deployへデプロイするまでの手順が解説されています。
-https://twitter.com/deno_land/status/1580356550966722560
-denoland/fresh_charts Deno公式でFresh向けのチャートライブラリが公開されています。
-denoland/fresh_charts チャートを描画するための&lt;Chart>コンポーネントやハンドラ向けのユーティリティなどが提供されているようです。
-Chart.jsやred-agate-svg-canvasなどを活用して作成されているようです。
-https://github.com/denoland/fresh_charts</p>
-</div>
-<footer class=entry-footer><span title="2022-10-16 00:00:00 +0000 UTC">October 16, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/10/10〜2022/10/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/16.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

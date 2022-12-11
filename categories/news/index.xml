@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>news on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/news.html</link><description>Recent content in news on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 04 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/news/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/11/28〜2022/12/04の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/04.html</link><pubDate>Sun, 04 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/04.html</guid><description>Deno v1.28.3 Deno v1.28.3がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>news on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/news.html</link><description>Recent content in news on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 11 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/news/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/12/05〜2022/12/22の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/11.html</link><pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/11.html</guid><description>今週のDenoに関するアップデート 今週はDenoのリリースが行われていないため、次のv1.29でリリース予定と思われる変更点についていくつか紹介します。
+deno.json(c)でdeno benchコマンドの設定がサポート deno.json(c)にbenchフィールドが追加されており、filesフィールドによってベンチマーク対象のファイルを設定できます。
+{ &amp;#34;bench&amp;#34;: { &amp;#34;files&amp;#34;: { &amp;#34;include&amp;#34;: [&amp;#34;./benchmark&amp;#34;] } } } https://github.com/denoland/deno/pull/16608
+deno.json(c)でのロックファイルのサポート deno.json(c)のlockオプションでロックファイルに関する設定を変更できるようになりました。
+lock: falseを指定すると、ロックファイルの適用が無効化されます。(--no-lockと同様の挙動)
+{ &amp;#34;lock&amp;#34;: false } またlockオプションにロックファイルのパスを指定することもできます。
+{ &amp;#34;lock&amp;#34;: &amp;#34;./lock.json&amp;#34; } https://github.com/denoland/deno/pull/16781
+deno initコマンドでdeno.jsoncの生成がサポート deno initコマンドでdeno.jsoncが生成されるようになりました。
+https://github.com/denoland/deno/pull/16389 https://github.com/denoland/deno/pull/17002 Deno名前空間からspawn/spawnSync/spawnChildが削除 Deno v1.28.0でDeno.Commandが実装されたため、Deno.spawnなどのAPIが削除されました。
+https://github.com/denoland/deno/pull/16893
+Deno.TcpConnのsetNoDelayとsetKeepAliveが安定化 Deno v1.19で実装されたDeno.TcpConnのsetNoDelayとsetKeepAliveメソッドが安定化されています。
+今後は--unstableなしで利用できるようになりそうです。
+https://github.com/denoland/deno/pull/17003
+Ultra v2 Ultraのv2がリリースされています。
+Honoとの統合やTwind/react-query/react-router/react-helmetのサポートなどの様々な改善が実施されています。
+以下の記事ではUltra v2の概要や使い方などについて解説されています。
+Building Fullstack React Apps with Ultra https://github.com/exhibitionist-digital/ultra/releases/tag/v2.0.0</description></item><item><title>2022/11/28〜2022/12/04の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/04.html</link><pubDate>Sun, 04 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/04.html</guid><description>Deno v1.28.3 Deno v1.28.3がリリースされました。
 大きな変更点として、Deno v1.28.0で実装されたDeno.Commandに関するAPIの変更が実施されています。(Deno.CommandAPIの見直しについて)
 また、Node.js互換性の改善についても引き続き実施されています。
 node:moduleのcreateRequireで絶対パスがサポート deno runコマンドでnpm:と--inspect-brkの併用がサポート packages.jsonのexports.typesサポートに関する改善 その他の変更点 プロセス停止前に未解決のPromiseが存在する際のエラーメッセージが改善 (問題が発生している箇所がエラーメッセージに表示されるように) ReadableStreamのリーダー周辺の型定義の改善 Denoのトランスパイル結果のキャッシュとdeno test --coverageで生成されたカバレッジの整合性が取れなかった場合に、プロセスがパニックする問題が修正 deno replの履歴管理に関する信頼性の向上 https://github.com/denoland/deno/releases/tag/v1.28.3
