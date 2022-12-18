@@ -13,7 +13,7 @@ https://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config(
 リネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
 std/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。
 また、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。
-Elsaの開発が再び再開 Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。</description></item><item><title>2022/12/05〜2022/12/12の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/11.html</link><pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/11.html</guid><description>今週のDenoに関するアップデート 今週はDenoのリリースが行われていないため、次のv1.29でリリース予定と思われる変更点についていくつか紹介します。
+Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。</description></item><item><title>2022/12/05〜2022/12/12の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/11.html</link><pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/11.html</guid><description>今週のDenoに関するアップデート 今週はDenoのリリースが行われていないため、次のv1.29でリリース予定と思われる変更点についていくつか紹介します。
 deno.json(c)でdeno benchコマンドの設定がサポート deno.json(c)にbenchフィールドが追加されており、filesフィールドによってベンチマーク対象のファイルを設定できます。
 { &amp;#34;bench&amp;#34;: { &amp;#34;files&amp;#34;: { &amp;#34;include&amp;#34;: [&amp;#34;./benchmark&amp;#34;] } } } https://github.com/denoland/deno/pull/16608
 deno.json(c)でのロックファイルのサポート deno.json(c)のlockオプションでロックファイルに関する設定を変更できるようになりました。

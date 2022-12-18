@@ -13,7 +13,7 @@ https://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config(
 リネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
 std/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。
 また、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。
-Elsaの開発が再び再開 Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。</description></item><item><title>Deno v1.29</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.29.html</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.29.html</guid><description>Deno v1.29がリリースされました。
+Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。</description></item><item><title>Deno v1.29</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.29.html</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.29.html</guid><description>Deno v1.29がリリースされました。
 この記事では主な変更点などについて解説します。
 サブプロセスAPIに関する変更 Deno.spawn, Deno.spawnSync, Deno.spawnChildの削除 Deno v1.28でDeno.Commandが実装されたため、下記のAPIが削除されています。
 Deno.spawn Deno.spawnSync Deno.spawnChild このあたりの背景などについては、下記の記事で詳しく解説されています。
