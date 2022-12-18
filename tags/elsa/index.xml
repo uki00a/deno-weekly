@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>elsa on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/elsa.html</link><description>Recent content in elsa on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 07 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/elsa/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/03/01〜2021/03/07の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/07.html</link><pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/07.html</guid><description>Deno本体の最新情報 Deno v1.8.0がリリースされました Deno v1.8.0がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>elsa on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/elsa.html</link><description>Recent content in elsa on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/elsa/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/12/12〜2022/12/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/18.html</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/18.html</guid><description>Deno v1.29.0 Deno v1.29がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.29 deno_std v0.168.0 deno_std v0.168.0がリリースされました。
+https://github.com/denoland/deno_std/releases/tag/0.168.0
+std/archiveのファイル構成の変更 新しいファイルとしてstd/archive/untar.tsが追加されています。
+これに伴い、std/archive/tar.tsからの下記の読み込みが非推奨化されています。
+TarHeader Untar TarEntry 今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。
+std/ioのファイル構成の変更 std/ioパッケージの下記ファイルが細分化されています。
+std/io/readers.ts std/io/writers.ts std/io/util.ts 具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。
+例えば、std/io/readers.tsに配置されていたStringReaderは、今後はstd/io/string_reader.tsから読み込むことが推奨されます。
+より詳しくは公式のブログ記事を参照いただければと思います。
+https://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。
+リネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
+std/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。
+また、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。
+Elsaの開発が再び再開 Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。</description></item><item><title>2021/03/01〜2021/03/07の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/07.html</link><pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/07.html</guid><description>Deno本体の最新情報 Deno v1.8.0がリリースされました Deno v1.8.0がリリースされました。
 magurotunaさんによるDeno v1.8.0のまとめが公開されていますので、よろしければそちらも参照ください。
 主な変更点:
 WebGPUがサポートされました(experimental) ICUサポートが追加されました。 テストカバレッジの収集と集計が個別のコマンドに分離されました(収集はdeno test --coverage、集計はdeno coverageコマンドで行います) lcov形式でのカバレッジの集計がサポートされました。 Import maps/Deno.permissions/Deno.link/Deno.symlink/deno lspが安定化されました(--unstableオプションが不要になった) リモートモジュールをダウンロードする際に、Authorizationヘッダにトークンを設定できるようになりました(DENO_AUTH_TOKENS) テストコード中でDeno.exit()の呼び出しがチェックされるようになりました(exitサニタイザ) Deno.metrics()で収集できる情報がより詳細化されました(--unstableを付与したときのみ) deno fmtでJSONファイルのフォーマットがサポートされました。 Deno.emitでIIFE形式の出力サポートされました。 TypeScriptが4.2にアップグレードされました。 https://github.com/denoland/deno/releases/tag/v1.8.0 https://zenn.dev/magurotuna/articles/deno-release-note-1-8-0 deno_std v0.89.0がリリース Deno v1.8.0のリリースに合わせ、deno_stdのv0.89.0がリリースされました。

@@ -81,6 +81,24 @@ release
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Deno v1.29
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.29がリリースされました。
+この記事では主な変更点などについて解説します。
+サブプロセスAPIに関する変更 Deno.spawn, Deno.spawnSync, Deno.spawnChildの削除 Deno v1.28でDeno.Commandが実装されたため、下記のAPIが削除されています。
+Deno.spawn Deno.spawnSync Deno.spawnChild このあたりの背景などについては、下記の記事で詳しく解説されています。
+Deno.run と Deno.spawn と Deno.Command のどれを使えば良いのか また、Deno.Commandについてもv1.28.3でAPIが若干変更されています。
+Deno.spawn系統のAPIからDeno.Commandへの移行について Deno.spawn()はDeno.Child#output(), Deno.spawnSync()はDeno.Child#outputSync()で代用できます。
+const command = new Deno.Command("deno", { args: ["info", "--json"], }); const status = await command.output(); if (status.success) { console.info(new TextDecoder().decode(status.stdout)); } Deno.spawnChild()はDeno.Child#spawn()で代用できます。
+const command = new Deno.Command("deno", { args: ["fmt", "--ext=json", "-"], stdin: "piped", stdout: "piped" }); const child = command.spawn(); const file = await Deno....</p>
+</div>
+<footer class=entry-footer><span title="2022-12-18 00:00:00 +0000 UTC">December 18, 2022</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.29" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.29.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Deno v1.28
 </h2>
 </header>
@@ -292,27 +310,12 @@ const child = Deno....</p>
 <footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.21" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.21.html></a>
 </article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Deno v1.20
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20がリリースされました。
-この記事では新しく追加された機能などについて紹介します。
-(破壊的変更) Deno.testのpermissionsオプションの挙動が変更 ⚠️ この変更はv1.20.1時点ではまだ反映されていません！
-現在、正式な修正用のPRが作成されており、おそらくv1.20.2で反映されるはずです
-https://github.com/denoland/deno/pull/14024 Deno.testやWorkerなどのAPIはpermissionsオプションにより実行時のパーミッションをカスタマイズできます:
-Deno.test({ name: "permissions_test", permissions: { read: true }, fn: async () => { const content = await Deno.readTextFile("./data.txt"); await Deno.writeTextFile("./data.txt", processContent(content)); }, }); 上記のテストコードはDeno.readTextFileとDeno.writeTextFileを実行しており、正しく実行するためには--allow-readと--allow-writeの両方の権限が必要です。
-このテストケースでは、下記宣言により--allow-readを明示的に指定しています。
-permissions: { read: true }, ここではwrite: trueが指定されていないため、このテストケースは権限エラーにより失敗するというのが直感的な挙動なのではないかと思います。
-しかし、Deno v1.19時点では上記のテストコードは成功してしまいます。
-permissions: { read: true }, 実は、Deno v1.19において、この指定は下記宣言と同義になります:
-// `read`以外はすべてCLIオプションで指定された権限(--allow-writeなど)が継承される permissions: { read: true, env: "inherit", ffi: "inherit", hrtime: "inherit", net: "inherit", run: "inherit", write: "inherit", }, この挙動は直感的ではないということで、Deno v1....</p>
-</div>
-<footer class=entry-footer><span title="2022-03-20 00:00:00 +0000 UTC">March 20, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.20" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.20.html></a>
-</article>
+<footer class=page-footer>
+<nav class=pagination>
+<a class=next href=https://uki00a.github.io/deno-weekly/categories/release/page/2.html>Next&nbsp;&nbsp;»
+</a>
+</nav>
+</footer>
 </main>
 <footer class=footer>
 <span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>

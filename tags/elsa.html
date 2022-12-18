@@ -81,6 +81,32 @@ elsa
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/12/12〜2022/12/18の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.29.0 Deno v1.29がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.29 deno_std v0.168.0 deno_std v0.168.0がリリースされました。
+https://github.com/denoland/deno_std/releases/tag/0.168.0
+std/archiveのファイル構成の変更 新しいファイルとしてstd/archive/untar.tsが追加されています。
+これに伴い、std/archive/tar.tsからの下記の読み込みが非推奨化されています。
+TarHeader Untar TarEntry 今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。
+std/ioのファイル構成の変更 std/ioパッケージの下記ファイルが細分化されています。
+std/io/readers.ts std/io/writers.ts std/io/util.ts 具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。
+例えば、std/io/readers.tsに配置されていたStringReaderは、今後はstd/io/string_reader.tsから読み込むことが推奨されます。
+より詳しくは公式のブログ記事を参照いただければと思います。
+https://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。
+リネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
+std/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。
+また、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。
+Elsaの開発が再び再開 Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。...</p>
+</div>
+<footer class=entry-footer><span title="2022-12-18 00:00:00 +0000 UTC">December 18, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/12/12〜2022/12/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/18.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/03/01〜2021/03/07の最新情報
 </h2>
 </header>

@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Articles on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/articles.html</link><description>Recent content in Articles on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 11 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/12/05〜2022/12/12の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/11.html</link><pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/11.html</guid><description>今週のDenoに関するアップデート 今週はDenoのリリースが行われていないため、次のv1.29でリリース予定と思われる変更点についていくつか紹介します。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Articles on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/articles.html</link><description>Recent content in Articles on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/articles/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/12/12〜2022/12/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/18.html</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/18.html</guid><description>Deno v1.29.0 Deno v1.29がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.29 deno_std v0.168.0 deno_std v0.168.0がリリースされました。
+https://github.com/denoland/deno_std/releases/tag/0.168.0
+std/archiveのファイル構成の変更 新しいファイルとしてstd/archive/untar.tsが追加されています。
+これに伴い、std/archive/tar.tsからの下記の読み込みが非推奨化されています。
+TarHeader Untar TarEntry 今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。
+std/ioのファイル構成の変更 std/ioパッケージの下記ファイルが細分化されています。
+std/io/readers.ts std/io/writers.ts std/io/util.ts 具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。
+例えば、std/io/readers.tsに配置されていたStringReaderは、今後はstd/io/string_reader.tsから読み込むことが推奨されます。
+より詳しくは公式のブログ記事を参照いただければと思います。
+https://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。
+リネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
+std/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。
+また、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。
+Elsaの開発が再び再開 Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。</description></item><item><title>Deno v1.29</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.29.html</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.29.html</guid><description>Deno v1.29がリリースされました。
+この記事では主な変更点などについて解説します。
+サブプロセスAPIに関する変更 Deno.spawn, Deno.spawnSync, Deno.spawnChildの削除 Deno v1.28でDeno.Commandが実装されたため、下記のAPIが削除されています。
+Deno.spawn Deno.spawnSync Deno.spawnChild このあたりの背景などについては、下記の記事で詳しく解説されています。
+Deno.run と Deno.spawn と Deno.Command のどれを使えば良いのか また、Deno.Commandについてもv1.28.3でAPIが若干変更されています。
+Deno.spawn系統のAPIからDeno.Commandへの移行について Deno.spawn()はDeno.Child#output(), Deno.spawnSync()はDeno.Child#outputSync()で代用できます。
+const command = new Deno.Command(&amp;#34;deno&amp;#34;, { args: [&amp;#34;info&amp;#34;, &amp;#34;--json&amp;#34;], }); const status = await command.output(); if (status.success) { console.info(new TextDecoder().decode(status.stdout)); } Deno.spawnChild()はDeno.Child#spawn()で代用できます。
+const command = new Deno.Command(&amp;#34;deno&amp;#34;, { args: [&amp;#34;fmt&amp;#34;, &amp;#34;--ext=json&amp;#34;, &amp;#34;-&amp;#34;], stdin: &amp;#34;piped&amp;#34;, stdout: &amp;#34;piped&amp;#34; }); const child = command.spawn(); const file = await Deno.</description></item><item><title>2022/12/05〜2022/12/12の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/11.html</link><pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/11.html</guid><description>今週のDenoに関するアップデート 今週はDenoのリリースが行われていないため、次のv1.29でリリース予定と思われる変更点についていくつか紹介します。
 deno.json(c)でdeno benchコマンドの設定がサポート deno.json(c)にbenchフィールドが追加されており、filesフィールドによってベンチマーク対象のファイルを設定できます。
 { &amp;#34;bench&amp;#34;: { &amp;#34;files&amp;#34;: { &amp;#34;include&amp;#34;: [&amp;#34;./benchmark&amp;#34;] } } } https://github.com/denoland/deno/pull/16608
 deno.json(c)でのロックファイルのサポート deno.json(c)のlockオプションでロックファイルに関する設定を変更できるようになりました。
