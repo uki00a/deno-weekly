@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -76,6 +76,29 @@
 </header>
 <main class=main>
 <article class=first-entry>
+<header class=entry-header>
+<h2>2022/12/19〜2022/12/25の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>今週はDenoでリリースが行われていないため、直近の話題や変更などについて紹介いたします。
+Flash(Deno.serve)の書き換えについて 現在、Flash(Deno.serve)の書き換えが検討されているようです。
+Flashで報告されている様々な問題の解決などが目的のようです。
+以下のissueで解決予定の問題が列挙されています。
+Flash HTTP server rewrite - umbrella issue (denoland/deno#17146)
+Deno.coreの削除について 現在、Denoの内部APIであるDeno.coreの削除が検討されているようです。
+refactor: remove Deno.core (denoland/deno#16881)
+ひとまずはDeno.coreはDeno[Deno.internal].coreへ移動される予定のようで、deno_stdではすでに対応が実施されています。
+refactor: handle Deno[Deno.internal].core (denoland/deno_std#3029)
+ただし、将来的にはDeno[Deno.internal].core自体も削除が予定されているようなので、もしDeno.coreを使用されている場合は、今のうちに対応をしておくとよいかもしれません。
+deno_lintへのguard-for-inルールの追加 deno_lintでguard-for-inルールが実装されているようです。
+feat: Add guard-for-in rule (denoland/deno_lint#1105)
+次のDenoのリリースあたりでdeno lintコマンドから利用できるようになる可能性がありそうです。</p>
+</div>
+<footer class=entry-footer><span title="2022-12-25 00:00:00 +0000 UTC">December 25, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/12/19〜2022/12/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/25.html></a>
+</article>
+<article class=post-entry>
 <header class=entry-header>
 <h2>2022/12/12〜2022/12/18の最新情報
 </h2>
@@ -286,31 +309,6 @@ import { extract } from "https://deno.land/std@0.162.0/encoding/front_matter/any
 </div>
 <footer class=entry-footer><span title="2022-11-06 00:00:00 +0000 UTC">November 6, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/10/31〜2022/11/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/06.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2022/10/24〜2022/10/30の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.27 Deno v1.27がリリースされました。
-以下に変更内容をまとめたため、よろしければ参照ください。
-Deno v1.27 deno_std v0.161.0 deno_std v0.161.0がリリースされました。
-std/hashの削除 非推奨化されていたstd/hashモジュールが削除されています。
-今後は、std/cryptoの使用が推奨されます。
-std/node Deno v1.27でのNode-APIのサポートに合わせて、require()での.nodeファイルの読み込みがサポートされています。
-その他には、net.Serverの"close"イベントの発火タイミングの改善やfs.openDirの互換性の向上などが実施されています。
-std/fs/expand_glob expandGlobで、globstarにfalseが指定された際に、"**"が"*"として扱われるように修正されています。
-https://github.com/denoland/deno_std/releases/tag/0.161.0
-MongooseでのDenoサポートについて 以下のPRでMongooseでのDenoサポートが進められているようです。
-Deno support (#12397)
-今のところ、v6.8でのリリースを目標に作業が進められているようです。
-Babel v7.20.0 @babel/preset-envで"deno"ターゲットがサポートされたようです。
-"targets"オプションで対象のDenoバージョンを指定することができます。
-https://babeljs.io/blog/2022/10/27/7.20.0</p>
-</div>
-<footer class=entry-footer><span title="2022-10-30 00:00:00 +0000 UTC">October 30, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/10/24〜2022/10/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/30.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

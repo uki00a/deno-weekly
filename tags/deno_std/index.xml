@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 18 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/12/12〜2022/12/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/18.html</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/18.html</guid><description>Deno v1.29.0 Deno v1.29がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/12/19〜2022/12/25の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/25.html</link><pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/25.html</guid><description>今週はDenoでリリースが行われていないため、直近の話題や変更などについて紹介いたします。
+Flash(Deno.serve)の書き換えについて 現在、Flash(Deno.serve)の書き換えが検討されているようです。
+Flashで報告されている様々な問題の解決などが目的のようです。
+以下のissueで解決予定の問題が列挙されています。
+Flash HTTP server rewrite - umbrella issue (denoland/deno#17146)
+Deno.coreの削除について 現在、Denoの内部APIであるDeno.coreの削除が検討されているようです。
+refactor: remove Deno.core (denoland/deno#16881)
+ひとまずはDeno.coreはDeno[Deno.internal].coreへ移動される予定のようで、deno_stdではすでに対応が実施されています。
+refactor: handle Deno[Deno.internal].core (denoland/deno_std#3029)
+ただし、将来的にはDeno[Deno.internal].core自体も削除が予定されているようなので、もしDeno.coreを使用されている場合は、今のうちに対応をしておくとよいかもしれません。
+deno_lintへのguard-for-inルールの追加 deno_lintでguard-for-inルールが実装されているようです。
+feat: Add guard-for-in rule (denoland/deno_lint#1105)
+次のDenoのリリースあたりでdeno lintコマンドから利用できるようになる可能性がありそうです。</description></item><item><title>2022/12/12〜2022/12/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/18.html</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/18.html</guid><description>Deno v1.29.0 Deno v1.29がリリースされました。
 以下に変更内容をまとめたため、よろしければ参照ください。
 Deno v1.29 deno_std v0.168.0 deno_std v0.168.0がリリースされました。
 https://github.com/denoland/deno_std/releases/tag/0.168.0

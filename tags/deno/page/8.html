@@ -8,7 +8,7 @@
 <meta name=description content>
 <meta name=author content>
 <link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
@@ -79,6 +79,26 @@
 deno
 </h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/10/18〜2021/10/24の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.15.2 Deno v1.15.2がリリースされました。
+主な変更点:
+Node.js互換モード(--compat)でCommon JS形式のモジュールの実行などがサポートされました。
+deno runコマンドの引数としてCommon JS形式のファイルを直接指定できます
+const EventEmitter = require("events"); const emitter = new EventEmitter(); emitter.on("foo", console.log); emitter.emit("foo", 1); $ deno run --unstable --compat --allow-read main.js TypeScriptのallowSyntheticDefaultImportsオプションがデフォルトで有効化されるようになりました
+https://github.com/denoland/deno/releases/tag/v1.15.2
+deno_std v0.112.0 deno_std v0.112.0がリリースされました。
+大きな変更点として、deno_std/nodeでexpressのHello Worldコードを動かすための対応やpackage.jsonのimportsやexportsのサポートなどが実施されています。
+変更点:
+collections: joinToStringが追加されました node/module: package.jsonのimportsやexportsフィールドのサポートが追加されました node/buffer: Bufferをnewなしで呼べるようになりました node/events: setMaxListenersが実装されました node/process: process.mainModuleが実装されました node/process: process.versionの値がDenoのバージョンからNode.jsのstableバージョンに変更されました node/http: ServerResponseとIncomingMessageでストリーミングがサポートされました node/url: formatが実装されました node/os: devNull定数が追加されました node/global: node/global....</p>
+</div>
+<footer class=entry-footer><span title="2021-10-24 00:00:00 +0000 UTC">October 24, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/10/18〜2021/10/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/24.html></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>2021/10/11〜2021/10/17の最新情報
@@ -262,29 +282,6 @@ Deno.serveHttpが安定化されました Deno.upgradeWebSocketで返却され�
 </div>
 <footer class=entry-footer><span title="2021-08-15 00:00:00 +0000 UTC">August 15, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/08/09〜2021/08/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/15.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/07/26〜2021/08/01の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.12.2がリリース Deno v1.12.2がリリースされました。
-今回のリリースでは、主にバグ修正をメインに実施されています。
-変更点:
-deno lspのdeno/virtualTextDocumentメソッドでdeno:/status.mdを表示する際に、Workspace Settingsセクションが表示されるようになりました --inspectオプションで表示されたデバッグ用URLに対してHTTPなどの非WebSocketリクエストを送信すると、Denoがクラッシュする問題が修正されました Deno.connectTls及びDeno.startTlsで--certオプションで指定した証明書が使用されるように修正されました deno infoコマンドでX-TypeScript-Typesヘッダなどで読み込まれたTypeScriptファイルの情報も表示されるようになりました deno testコマンドの引数に指定したモジュールが、メインモジュールとして読まれる問題が修正されました(import.meta.mainがtrueに設定されてしまう) GCのタイミングで不要になったResponseオブジェクトのボディに紐づくリソースが開放されるようになりました Deno.upgradeWebSocketで、リクエストのConnectionヘッダにカンマ区切りで複数の値が含まれていた場合も、適切に動作するように修正されました Deno.upgradeWebSocketがリクエストのConnectionヘッダの大文字・小文字を区別しなくなりました deno lspでX-TypeScript-Typesによって型定義が提供されるモジュールとimport typeやexport typeなどを併用していると、ホバーなどがうまく機能しなくなる問題が修正されました deno lspでImport mapsファイルが更新された際に、依存関係や診断内容が再計算されない問題などが修正されました https://github.com/denoland/deno/releases/tag/v1.12.2
-deno_std v0.103.0がリリース deno_std v0.103.0がリリースされました
-変更点:
-async/deferred: Deferredオブジェクトにstateプロパティが追加され、Promiseの現在の状態を問い合わせられるようになりました http/file_server: ETagとIf-None-Matchヘッダへのサポートが追加されました http/file_server: Rangeヘッダがサポートされました encoding/base64url: 不正な形式のbase64url文字列が渡された際に、TypeErrorを投げるように修正されました encoding/toml: TOMLパーサが書き直され、ネストされたテーブルなどが適切に取り扱われるように修正されました encoding/yaml: parseAll関数の型定義が改善されました testing/asserts: assertThrowsAsyncのエラーメッセージで実際に投げられたエラーではなく、常にErrorクラスが表示される問題が修正されました testing/asserts: assertEqualsがクラスの違いを考慮するように修正されました https://github.com/denoland/deno_std/releases/tag/0.103.0
-deno-sqlite v2.5.0がリリース deno-sqliteのv2.5.0がリリースされました。
-変更点:
-DBクラスのコンストラクタにoptionsパラメータが追加され、データベースを開く際の挙動を詳細に制御できるようになりました PreparedQueryタイプにcolumnsメソッドが定義されました Deno.fdatasyncSyncを使って、SQLiteがファイルのデータを適切にディスクに同期できるようになりました https://github.com/dyedgreen/deno-sqlite/releases/tag/v2.5.0
-depcheck depcheckはソースコード中の未使用の依存関係を検出するためのDenoモジュールです
-https://github.com/ebebbington/depcheck
-deno-github-contributions-api deno-github-contributions-apiは、Deno Deployで動作するGitHub上でのコントリビューション数を取得するためのAPIです。...</p>
-</div>
-<footer class=entry-footer><span title="2021-08-01 00:00:00 +0000 UTC">August 1, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/26〜2021/08/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/01.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
