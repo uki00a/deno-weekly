@@ -10,7 +10,7 @@ Big news in Deno Land Ryan DahlさんとJerod SantoさんによりBig news in De
 ページ下部にTranscriptがあるため、そこから内容を閲覧することもできます。
 https://changelog.com/jsparty/256 このポッドキャストでは、主にDenoでnpmサポートを導入した背景などについて解説されています。
 また、Denoの将来についてもいくつか話が行われており、以下のような内容の話題が出ていました。
-ShadowRealmなどを活用したパッケージごとのパーミッション管理のサポートについて --allow-writeを指定した際は、ファイルシステム全体ではなく、カレントディレクトリ配下のみへの書き込みを許可すべきでは？ Deno Deployにおける状態管理やCockroachDBやSpannerなどについて また、Denoの直近の開発方針としては、主に以下の点に注力されていく予定のようです。
+ShadowRealmなどを活用したパッケージごとのパーミッション管理のサポートについて --allow-writeを指定した際は、ファイルシステム全体ではなく、カレントディレクトリ配下への書き込みのみを許可すべきでは？ Deno Deployにおける状態管理やCockroachDBやSpannerなどについて また、Denoの直近の開発方針としては、主に以下の点に注力されていく予定のようです。
 npmサポートの拡充 (安定性の向上やdeno compileでのnpm:のサポートなど) Deno Deployでのnpm:のサポート https://deno.news/archive/55-deno-v129-and-npm-install-heat</description></item><item><title>2022/12/19〜2022/12/25の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/12/25.html</link><pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/12/25.html</guid><description>今週はDenoでリリースが行われていないため、直近の話題や変更などについて紹介いたします。
 Flash(Deno.serve)の書き換えについて 現在、Flash(Deno.serve)の書き換えが検討されているようです。
 Flashで報告されている様々な問題の解決などが目的のようです。
