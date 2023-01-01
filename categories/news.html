@@ -81,6 +81,30 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/12/26〜2023/01/01の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno.Connへのunrefとrefメソッドの追加 Deno.Connへunrefとrefメソッドを追加するPRがマージされています。
+feat(unstable): Add Deno.Conn.ref()/unref() (denoland/deno#17170)
+Deno.Connのunrefを呼ぶと、Deno.unrefTimerなどと同様に、読み込み途中のコネクションが存在したとしてもプロセスの終了がブロックされなくなります。(ただし、効果があるのは読み込みに対してのみで、コネクションへの書き込みについてはunrefを呼んだ場合であってもブロックされます)
+これらはunstable APIのようなので、次のDeno v1.29.2あたりでリリースされる可能性がありそうです。
+Deno.osUptime Deno.osUptimeというAPIを追加するPRがマージされています。
+feat(unstable): Add “Deno.osUptime()” API (denoland/deno#17179)
+このAPIを利用することで、システムが起動してからの経過時間を数値として取得できるようです。
+const uptime = Deno.osUptime(); これもunstable APIのため、次のDeno v1.29.2あたりでリリースされる可能性がありそうです。
+Big news in Deno Land Ryan DahlさんとJerod SantoさんによりBig news in Deno Landというポッドキャストが公開されています。
+ページ下部にTranscriptがあるため、そこから内容を閲覧することもできます。
+https://changelog.com/jsparty/256 このポッドキャストでは、主にDenoでnpmサポートを導入した背景などについて解説されています。
+また、Denoの将来についてもいくつか話が行われており、以下のような内容の話題が出ていました。
+ShadowRealmなどを活用したパッケージごとのパーミッション管理のサポートについて --allow-writeを指定した際は、ファイルシステム全体ではなく、カレントディレクトリ配下のみへの書き込みを許可すべきでは？ Deno Deployにおける状態管理やCockroachDBやSpannerなどについて また、Denoの直近の開発方針としては、主に以下の点に注力されていく予定のようです。
+npmサポートの拡充 (安定性の向上やdeno compileでのnpm:のサポートなど) Deno Deployでのnpm:のサポート https://deno.news/archive/55-deno-v129-and-npm-install-heat</p>
+</div>
+<footer class=entry-footer><span title="2023-01-01 00:00:00 +0000 UTC">January 1, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2022/12/26〜2023/01/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/01.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/12/19〜2022/12/25の最新情報
 </h2>
 </header>
@@ -294,31 +318,6 @@ https://babeljs.io/blog/2022/10/27/7.20.0</p>
 <footer class=entry-footer><span title="2022-10-30 00:00:00 +0000 UTC">October 30, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/10/24〜2022/10/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/30.html></a>
 </article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/10/17〜2022/10/23の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.26.2 Deno v1.26.2がリリースされました。
-サブプロセス関連のAPIやnpmサポートの改善、fetch()の互換性の向上などが実施されています。
-Deno.SpawnOptionsでwindowsRawArgumentsオプションがサポート Windows上でこのオプションにtrueを指定すると、コマンドライン引数のクォーテーションの付与とエスケープがスキップされます。
-const { success, stdout } = await Deno.spawn(cmd, { args, windowsRawArguments: true, }); この機能は、後述するdeno_std v0.160.0におけるwindowsVerbatimArgumentsの実装に利用されています。
-npmサポートの改善 dist-tagがサポートされています。
-例)
-import ts from "npm:typescript@next"; その他の改善として、npmレジストリからのパッケージ情報のダウンロード処理が並列化されています。
-Fetch APIの互換性の向上 Fetch Standardとの互換性の改善が実施されています。
-例)
-Headersで不正な形式のヘッダを連続で解析すると、二度目以降の解析時にエラーが発生しない問題が修正 fetch()の呼び出し時にRangeヘッダが指定された際は、Accept-Encoding: identityが自動で設定されるように修正 ResponseやRequestに空のFormDataを渡せるように改善 Responseに設定したReadableStreamから非Uint8Array型のチャンクが読み込まれた際は、TypeErrorが発生するように修正 レスポンスボディがContent-Lengthを超過した際などにTypeErrorが発生するように修正 それ以外にもCache APIやWeb Streams APIなどでも互換性の向上が実施されています。
-その他の変更点 deno taskでのスクリプト実行時にINIT_CWD環境変数が設定されるように修正 (npm runとの互換性の向上が目的のようです) deno.json(c)のimportMapオプションにリモートURLを指定できるように改善 deno lspでの補完時に、スニペットが適切に取り扱われるように修正 コンパイル対象ファイルの名前が@で始まるときに、deno compileがパニックする問題が修正 https://github.com/denoland/deno/releases/tag/v1.26.2
-deno_std v0.160.0 deno_std v0.160.0がリリースされました。
-このリリースではstd/nodeのNode.js互換性の向上が実施されています。
-変更点:
-std/node/readline/promisesが実装 std/node/child_process: windowsVerbatimArgumentsオプションがサポート std/node/fs: Windowsでfs....</p>
-</div>
-<footer class=entry-footer><span title="2022-10-23 00:00:00 +0000 UTC">October 23, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/10/17〜2022/10/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/23.html></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=next href=https://uki00a.github.io/deno-weekly/categories/news/page/2.html>Next&nbsp;&nbsp;»
@@ -327,7 +326,7 @@ std/node/readline/promisesが実装 std/node/child_process: windowsVerbatimArgum
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

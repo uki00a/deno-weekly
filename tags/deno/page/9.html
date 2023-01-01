@@ -81,6 +81,25 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/08/09〜2021/08/15の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.13.0 Deno v1.13.0がリリースされました。
+大きな変更点として、ネイティブHTTPサーバ(Deno.serveHttp)の安定化やTLS関連の機能の強化、プラグインシステムの廃止やFFIの導入などが行われています。
+また、このリリースに合わせて、magurotunaさんによる日本語の紹介記事も公開されています:
+Deno 1.13.0 がリリースされたので新機能や変更点の紹介 変更点:
+Deno.serveHttpが安定化されました Deno.upgradeWebSocketで返却されるオブジェクトのwebsocketプロパティがsocketにリネームされました Deno.upgradeWebSocketで返却されたWebSocketオブジェクトのcloseメソッドを呼ぶ際に、任意のコードを指定できるようになりました WebSocketStreamが実装されました (unstable) プラグインシステムが削除され、代わりにFFIが導入されました (unstable) --unsafely-treat-insecure-origin-as-secureオプションがサポートされ、TLS証明書の検証を無効化できるようになりました Deno.connectTlsでクライアント認証用の証明書と秘密鍵を渡せるようになりました DENO_TLS_CA_STORE環境変数が導入され、TLS接続時にシステムの証明書ストアを使用できるようになりました Deno.runでclearEnvオプションがサポートされ、子プロセスの環境変数をクリアできるようになりました (unstable) Deno.writeFileでAbortSignalがサポートされ、書き込みを中断できるようになりました Deno.permissions配下のAPIが引数としてURLオブジェクトをサポートしました Deno.systemCpuInfoが削除され、代わりにnavigator.hardwareConcurrencyがサポートされました Deno.errors配下の各エラーがErrorクラスを継承するように修正されました SubtleCrypto#importKey/exportKeyが実装されました(HMACキーのみサポート) SubtleCrypto#verifyでHMACキーがサポートされました --locationが指定された場合は、fetchでHTTPリクエストを送信する際にOriginヘッダが設定されるようになりました deno test --docでMarkdownファイル内のtsコードブロックの型チェックがサポートされました structuredCloneが実装されました initializeリクエスト発生時にinitializationOptions.cacheを指定することで、deno lspがDENO_DIRとして認識するディレクトリを指定できるようになりました deno lspでリファクタリングコードアクションがサポートされました —evalオプションがサポートされ、REPL起動時に指定したコードを実行できるようになりました REPLがコードに含まれるexport宣言を無視されるようになりました Import mapsでWindows形式のファイルパスがサポートされました deno docコマンドで不正なURLを指定するとプロセスがパニックする問題が修正されました Deno 1.13.0 がリリースされたので新機能や変更点の紹介 https://deno.com/blog/v1.13 deno_std v0.104.0 deno_stdのv0.104.0がリリースされました。
+新機能としてcryptoモジュールの追加やcollectionsモジュールのさらなる拡張などが行われています。
+また、assertThrows/assertThrowsAsyncのシグネチャの変更やassertThrowsAsyncの非推奨化も実施されています。
+変更点:
+標準のCrypto/SubtleCryptoを拡張することを目的としてcryptoモジュールが追加されました collections: deepMerge, mapNotNullish, findLastIndex, sumOf, associateBy, 及びsortBy関数が実装されました testing: assertThrowsの戻り値がErrorからvoidに変更されました testing: assertThrowsAsyncの戻り値がPromise&lt;Error>からPromise&lt;void>に変更されました testing: assertRejectsが追加され、代わりにassertThrowsAsyncが非推奨化されました http/file_server: If-Modified-Sinceヘッダに応じて304を返却するようになりました node: assert/strict, path/posix, path/win32, fs/promises, stream/promises, timers/promises, util/types, 及びperf_hooksモジュールが追加されました async: deadlineに渡したPromiseがすでにrejectされていた場合、プロセスがクラッシュする問題が修正されました Deno標準ライブラリ0....</p>
+</div>
+<footer class=entry-footer><span title="2021-08-15 00:00:00 +0000 UTC">August 15, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/09〜2021/08/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/08/15.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/07/26〜2021/08/01の最新情報
 </h2>
 </header>
@@ -272,31 +291,6 @@ https://github.com/eta-dev/eta https://eta.js.org/ </p>
 <footer class=entry-footer><span title="2021-06-06 00:00:00 +0000 UTC">June 6, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/01〜2021/06/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/06.html></a>
 </article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/05/17〜2021/05/23の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.10.2がリリース Denoのv1.10.2がリリースされました。
-このリリースではCVE-2021-32619へのセキュリティ上の修正が含まれるため、できるだけ早くこのバージョンへアップグレードすることを推奨されています。
-その他の変更点:
-.vscode/settings.jsonなどでdeno.configに相対パスが設定されていた場合、deno lspで適切に設定が読まれない問題が修正されました。 TypeScriptファイルをimportする際は、X-TypeScript-Typesヘッダが無視されるようになりました。 https://github.com/denoland/deno/releases/tag/v1.10.2 https://twitter.com/deno_land/status/1394353166863454213 deno_std v0.97.0がリリース io/buffer: Deno Deployでも型エラーなしで使えるようになりました。 io: types.d.tsが追加されました。 io/bufio: readDelimやreadStringDelimでデリミタが内部で複数のチャンクにまたがった際に、誤った結果を返す問題が修正されました。 node/events: EventEmitter#onなどにリスナとして関数以外の値を渡すと、エラーが発生するようになりました。 testing: assertObjectMatchで配列が適切に取り扱われるようになりました。 https://github.com/denoland/deno_std/releases/tag/0.97.0
-denoland/setup-deno v1.0.0がリリース denoland/setup-denoはGitHub ActionsからDenoを利用するためのアクションです。
-v1.0.0がリリースされたため、すでにdenolib/setup-denoをお使いの場合は、そちらから移行するとよさそうです。
-https://github.com/denoland/setup-deno/releases/tag/v1.0.0
-Flat Data Flat Dataは、HTTPエンドポイントまたはSQLクエリからデータを取得し、GitHubリポジトリに格納するためのGitHubアクションです。
-Denoを使用したJavaScript/TypeScriptファイルの実行がサポートされており、ダウンロードされたデータを変換することができます。
-また、GitHubリポジトリに格納されたデータを可視化するために、Flat Viewerというツールも提供されています。
-https://github.com/githubocto/flat Flat Dataについて Flat Viewer packup - Parcelライクなビルドツール packupというParcelビルドツールが公開されました。
-Parcelに影響を受けているようで、以下のような特徴があります。
-設定なしでアプリケーションコードをバンドルできる TypeScriptをサポート esbuildを使用した高速なビルド https://github.com/kt3k/packup
-luath v0.6.0/v0.7.0/v0.8.0がリリース Denoで実装されたフロントエンドビルドツールであるluathのv0.6.0/v0.7.0/v0.8.0がリリースされました。
-変更点:...</p>
-</div>
-<footer class=entry-footer><span title="2021-05-23 00:00:00 +0000 UTC">May 23, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/17〜2021/05/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/23.html></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://uki00a.github.io/deno-weekly/tags/deno/page/8.html>
@@ -308,7 +302,7 @@ luath v0.6.0/v0.7.0/v0.8.0がリリース Denoで実装されたフロントエ�
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2022 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
