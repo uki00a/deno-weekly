@@ -81,6 +81,28 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/03/28〜2022/04/03の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。
+Supabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。
+Supabase Functions on Deno Deploy Edge Functions are now available in Supabase Deno v1.20.4 Deno v1.20.4がリリースされました。
+変更点:
+外部モジュールのimport時にリダイレクトが発生すると、deno compileで生成したバイナリがうまく動作しなくなる問題が修正されました。
+Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されました。
+変更前:
+function fetch( input: URL, init?: RequestInit, ): Promise&lt;Response>; 変更後:
+function fetch( input: URL | Request | string, init?: RequestInit, ): Promise&lt;Response>; deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。
+deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。
+https://github.com/denoland/deno/releases/tag/v1.20.4
+deno_std v0....</p>
+</div>
+<footer class=entry-footer><span title="2022-04-03 00:00:00 +0000 UTC">April 3, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/28〜2022/04/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/03.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/03/21〜2022/03/27の最新情報
 </h2>
 </header>
@@ -301,22 +323,6 @@ I’m porting tsc to Go SWCの作者であるkdy1氏により、I’m porting ts
 </div>
 <footer class=entry-footer><span title="2022-01-30 00:00:00 +0000 UTC">January 30, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/24〜2022/01/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/30.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/01/17〜2022/01/23の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.18.0 Deno v1.18.0がリリースされました。
-設定ファイルの自動読み込みがサポート 今までは、設定ファイルを読み込むためには--configの指定が必要でした。
-$ deno run --config ./deno.json ./main.ts 今後は、--configが指定されなかった場合、deno.jsonまたはdeno.jsoncという名前の設定ファイルを自動で読み込まれるようになります。
-Deno.testのsub-steps APIが安定化 Deno.testでテストケースのグループ化を行うためのsub-steps APIが安定化されました。
-今後は--unstableを指定しなくても利用できます。
-Deno.test("nested test case", async (t) => { const success = await t.step("step 1", async (t) => { const success = await t.step("step 1-1", () => { throw new Error("Failed!"); }); if (!success) throw new Error("Failed!"); await t.step("step 1-2", () => {}); }); if (success) throw new Error("Failed!"); }); Web Cryptography APIの実装が完了 このリリースでは、下記の変更が実施されています。...</p>
-</div>
-<footer class=entry-footer><span title="2022-01-23 00:00:00 +0000 UTC">January 23, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/17〜2022/01/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/23.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

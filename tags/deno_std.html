@@ -81,6 +81,25 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/01/02〜2023/01/08の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.29.2 Deno v1.29.2がリリースされました。
+Deno.osUptime() システムが起動してからの経過時間を取得するために、Deno.osUptime()というAPIが追加されました。
+利用するには、--unstableと--allow-sysの指定が必要です。
+Deno.Conn.ref()/unref() Deno.Connへunref()とref()メソッドが追加されました。
+これらのAPIの利用には--unstableの指定が必要です。
+unref()メソッドを呼ぶと、Deno.unrefTimerなどと同様に、読み込み途中のコネクションが存在したとしてもプロセスの終了がブロックされなくなります。(ただし、効果があるのは読み込みに対してのみで、書き込みについてはunrefを呼んだ場合であってもブロックされます)
+ref()メソッドを呼ぶと、unref()されたコネクションをデフォルトの状態に戻すことができます。(通常通り、読み込み途中のコネクションがプロセスの終了をブロックします)
+CLIに関するバグ修正 --node-modules-dirが指定された際にrequire()でパッケージが適切に解決できないケースがある問題が修正されています deno.json(c)でTypeScriptのcompilerOptions.noErrorTruncationオプションを設定できない問題が修正されています dynamic importが使用されていると、"unhandledrejection"のリスナが呼ばれないケースがあった問題が修正されています deno instlallもしくはdeno uninstallを実行する際に、ロックファイルの自動適用が行われてしまう問題が修正されています Deno APIに関する修正 Deno.memoryUsage()から返却されるrssプロパティに正しい値が設定されない問題が修正されています Deno.permissions.revokeまたはDeno.permissions.requestでname: "ffi"が指定された際に、pathオプションにURLオブジェクトを指定できるようになりました。 fetch()関連の修正 下記のケースでプロセスがパニックしてしまう問題が修正されています:
+引数に不正な形式のURLが与えられた場合 bodyオプションに渡したReadableStreamでエラーが発生した場合 deno lsp関連の修正 下記のケースでTest code lensが表示されない問題が修正されています Deno.test()でテスト名がテンプレートリテラルを使用して定義されている場合 下記のように、関数を使用してテストケースが定義されている場合 const test = () => ({ name: "some test", fn: () => {} }); Deno.test(test()); "Add all missing imports"アクションで正しいimport文が生成されないことがある問題が修正されています プライベートフィールド(#someField)の補完が適切に動作するように修正されています https://github.com/denoland/deno/releases/tag/v1.29.2...</p>
+</div>
+<footer class=entry-footer><span title="2023-01-08 00:00:00 +0000 UTC">January 8, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2022/01/02〜2023/01/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/08.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/12/19〜2022/12/25の最新情報
 </h2>
 </header>
@@ -291,33 +310,6 @@ std/node/readline/promisesが実装 std/node/child_process: windowsVerbatimArgum
 </div>
 <footer class=entry-footer><span title="2022-10-23 00:00:00 +0000 UTC">October 23, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/10/17〜2022/10/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/23.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/10/03〜2022/10/09の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.26.1 Deno v1.26.1がリリースされました。
-Node-APIの実装 DenoでNode-APIが実装されました。
-Node-APIで実装されたアドオンのrequire()での読み込みがサポートされます。
-Node-APIを有効化するためには、今のところ、--allow-ffiの指定が必要なようです。 (ただし、将来的にオプションが変わる可能性はあるようです)
-いまのところ、lightningcssやlz4-napiなどが動作することが確認されているようです。(napi-rs/napi-rs#900)
-Node.js互換に関する改善 Node-APIの実装以外に関する改善として、npm:経由で読まれたパッケージの依存関係の解析結果がキャッシュされるようになりました。
-これにより、キャッシュが存在する場合は、Viteの起動が3倍近く高速化されているようです。
-キャッシュの仕組みはSQLiteをベースに実装されており、$DENO_DIR/node_analysis_cache_v1にデータベースが作成されます。
-その他の改善として、deno cacheでのnpm:のサポートやrequire()でのJSONファイルの読み込みなどがサポートされています。
-Web Cache APIのバグ修正 Deno v1.26で追加されたCache APIに関するバグ修正が実施されています。
-Cache.put()に渡したResponseオブジェクトがconsumed状態にならない問題が修正 Cache.put()に渡したResponseに紐づくReadableStreamの読み込みでエラーが起きると、リソースリークが発生する問題が修正 Cache.put()で書き込みに失敗したときに、中途半端にキャッシュが保存されないように改善 その他の修正 --unstableを付けないと、Deno.hostname()がundefinedになる問題が修正 (Deno.hostname()はDeno v1.26で安定化されています) リクエストボディの読み込みが最適化 (perf(ext/fetch): consume body using ops (#16038)) 一度、Request#text()などでリクエストボディを消費したにも関わらず、再度Request.bodyを参照するとRequest.bodyUsedがfalseに戻ってしまう問題が修正 Deno.serve()で、ステータスコードが204の際はContent-Lengthが設定されないように修正 SubtleCrypto.deriveBits()でlength引数に与えられた長さが考慮されない問題が修正 https://github.com/denoland/deno/releases/tag/v1.26.1
-deno_std v0.159.0 deno_std v0.159.0がリリースされました。
-std/textprotoの非推奨化 以下の理由などから、std/textprotoが非推奨化されました。
-現在はdeno_stdの内部で使われていないこと deno_stdの方針として、GoスタイルのAPI(Deno.Reader/Deno.Writer)からWeb Streams APIベースへ移行されていること 今後は、このモジュールの使用は避けることが推奨されます。
-std/streams/conversion: iterateReaderのバグ修正 iterateReaderに長年存在していたバグが修正されています。
-具体的な修正内容については、以下の記事で詳細に内容が解説されています。
-Deno のめっちゃ難しいバグを修正した - Qiita また、この修正に関連してiterateReader()の実装が効率化されています。(perf(streams): memory optimizations by avoiding large buffer allocation in a loop (#2748))...</p>
-</div>
-<footer class=entry-footer><span title="2022-10-09 00:00:00 +0000 UTC">October 9, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/10/03〜2022/10/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/09.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
