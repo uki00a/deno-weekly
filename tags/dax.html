@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Categories | 週刊Deno</title>
+<title>dax | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/categories.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/dax.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/categories/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/dax/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -25,12 +25,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Categories">
+<meta property="og:title" content="dax">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/categories.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/dax.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Categories">
+<meta name=twitter:title content="dax">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -75,19 +75,33 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>Categories</h1>
+<h1>
+dax
+</h1>
 </header>
-<ul class=terms-tags>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/news.html>news <sup><strong><sup>107</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/notice.html>notice <sup><strong><sup>1</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/release.html>release <sup><strong><sup>11</sup></strong></sup> </a>
-</li>
-</ul>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/07/04〜2022/07/10の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.23.3 Deno v1.23.3がリリースされました。
+このリリースでは、deno testなどの引数にfile:形式でディレクトリを指定すると、エラーが発生する問題が修正されています。
+# v1.23.2まではエラー $ deno test file:///home/foo/sample/tests また、Denoの内部で使用されているTypeScriptがv4.7.4へアップデートされています。
+その他には、いくつかのパフォーマンスチューニングなどが実施されています。
+https://github.com/denoland/deno/releases/tag/v1.23.3
+deno_std v0.147.0 deno_std v0.147.0がリリースされました。
+dotenv dotenvモジュールで、変数の展開がサポートされました。
+例えば、以下のような内容で.envファイルが定義されていたとします。
+HOST=localhost URL=http://${HOST}:${PORT:-3000} このファイルをdotenvモジュールで読み込むと、以下のように評価されます。
+{ HOST: "localhost", URL: "http://localhost:3000" } その他には、stringify()関数が追加されています。
+import { stringify } from "https://deno.land/std@0.147.0/dotenv/mod.ts"; stringify({ PORT: "3000", HOST: "localhost", LOG_LEVEL: "debug" }); // PORT=3000 // HOST=localhost // LOG_LEVEL=debug http oak_commonsのHTTPエラーとコンテントネゴシエーション用のモジュールがdeno_std/httpに取り込まれました。
+http/negotiation
+import { accepts } from "https://deno.land/std@0.147.0/http/negotiation.ts"; const req = new Request("https://github.com", { headers: { accept: "text/html,application/xhtml+xml,application/xml;q=0....</p>
+</div>
+<footer class=entry-footer><span title="2022-07-10 00:00:00 +0000 UTC">July 10, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/07/04〜2022/07/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/10.html></a>
+</article>
 </main>
 <footer class=footer>
 <span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>

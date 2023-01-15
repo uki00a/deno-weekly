@@ -81,6 +81,22 @@ GraphQL
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/01/09〜2023/01/15の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.29.3 Deno v1.29.3がリリースされました。
+FFI 構造体の値渡しがサポートされています。
+const Point = ["i32", "i32"]; const dylib = Deno.dlopen(libpath, { make_point: { parameters: ["i32", "i32"], result: { struct: Point }, }, print_point: { parameters: [{ struct: Point }], result: "void", }, }); const point = dylib.symbols.make_point(1, 2); assert(point instanceof Uint8Array); dylib.symbols.print_point(point); https://github.com/denoland/deno/pull/15060
+Node-API 以下のNode-APIがサポートされました。
+napi_ref_threadsafe_function napi_unref_threadsafe_function napi_add_env_cleanup_hook napi_remove_env_cleanup_hook また、Node-API経由で定義したclassの静的プロパティが適切にハンドリングされるように修正されています。
+CLI --reloadと--watchを併用した際に、ファイル変更のたびに--reloadによるモジュールの再ダウンロードが行われてしまう問題が修正されています deno installによって作成されるshimにデフォルトで--no-configが指定されるように修正されています その他 ReadableStreamのasyncIteratorの挙動に関する互換性が向上されています BroadcastChannel.postMessageでのメッセージ送信時に、事前にチャンネルがクローズされていないことが確認されるように修正されています Deno.resolveDnsでサポートしていないタイプのリソースレコードを取得しようとした際に、プロセスがパニックする問題が修正されています https://github....</p>
+</div>
+<footer class=entry-footer><span title="2023-01-15 00:00:00 +0000 UTC">January 15, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2022/01/09〜2023/01/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/15.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/04/11〜2022/04/17の最新情報
 </h2>
 </header>
