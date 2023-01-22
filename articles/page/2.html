@@ -82,6 +82,52 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2022/11/21〜2022/11/27の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.28.2 Deno v1.28.2がリリースされました。
+CPUプロファイリング 新機能として、以下の3メソッドが実装されています。
+console.profile console.profileEnd console.timeStamp これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。
+--inspectオプションが指定された状態でconsole.profile(label)が呼ばれると、console.profileEnd(label)の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。
+計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。
+Node.js互換性の改善 Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています
+{ "imports": { "preact/": "npm:preact/" } } module.createRequire()でURLオブジェクトがサポート
+deno infoで循環したnpm依存が適切に取り扱われるように改善
+型定義ファイルの検出に関する挙動の改善
+importのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善 その他の変更点 Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。 https://github.com/denoland/deno/releases/tag/v1.28.2
+deno_std v0.166.0 deno_std v0.166.0がリリースされました。
+std/fmtに関する破壊的変更 std/fmt/bytesのprettyBytes()関数がformat()にリネームされています。
+既存のprettyBytes()は非推奨化されており、今後のバージョンで削除される予定です。
+また、std/fmt/durationのprettyDuration()も同様にformat()へリネームされています。
+std/node - Node.js互換性の改善 Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。
+node:console: Deno v1....</p>
+</div>
+<footer class=entry-footer><span title="2022-11-27 00:00:00 +0000 UTC">November 27, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/11/21〜2022/11/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/27.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2022/11/14〜2022/11/20の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.28.0 Deno v1.28がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.28 Deno v1.28.1 Deno v1.28.1がリリースされました。
+deno installコマンドでnpm:がサポートされています。
+その他には、npmパッケージサポートに関する細かなバグ修正などが実施されています:
+Conditional exportsで指定されたエントリポイントが型定義を持っていない場合にエラーが発生する問題が修正 npmパッケージにfoo.server.jsのようにベースネーム部分に.を含むファイルが存在する場合に、うまく読み込みができない問題が修正 あるnpmパッケージの依存関係のバージョンにdist tagが指定されていた際に、うまく取り扱われない問題が修正 scopedパッケージに対して@types/*パッケージの型定義が適切に適用されない問題が修正 --lock-writeを指定すると、deno.lockからnpmパッケージが消えてしまう問題が解消 https://github.com/denoland/deno/releases/tag/v1.28.1
+deno_std v0.164.0 deno_std v0.164.0がリリースされました。
+std/fmt: durationモジュールが追加 ミリ秒単位で指定された時間のフォーマットされた文字列を取得することができます。
+import { prettyDuration } from "https://deno.land/std@0.165.0/fmt/duration.ts"; prettyDuration(130000, { ignoreZero: true, formatType: "full" }); // => "2 minutes, 10 seconds" 補足) prettyDurationは以下のPRでformatにリネームされています。この変更は、おそらくv0.166.0あたりでリリースされると思われるため、今後利用する際はprettyDurationではなくformatを使用するとよさそうです。
+https://github.com/denoland/deno_std/pull/2896 std/node: 互換性の向上 node/fs: - read()でコールバックが非同期に呼ばれるように修正 node/http: ServerResponse.finishedが実装 node/http: --unstableが指定されていると、Buffer形式のレスポンスが適切に取り扱われない問題が修正 node/string_decoder: StringDecoder.decodeのパフォーマンスが小さなUint8Arrayに対しては51倍、大きなUint8Arrayに対しては4倍程まで高速化 https://github....</p>
+</div>
+<footer class=entry-footer><span title="2022-11-20 00:00:00 +0000 UTC">November 20, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/11/14〜2022/11/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/20.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Deno v1.28
 </h2>
 </header>
@@ -279,52 +325,6 @@ Deno のめっちゃ難しいバグを修正した - Qiita また、この修正
 </div>
 <footer class=entry-footer><span title="2022-10-09 00:00:00 +0000 UTC">October 9, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/10/03〜2022/10/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/09.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2022/09/26〜2022/10/02の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.26 Deno v1.26がリリースされました。
-以下に変更内容をまとめたため、よろしければ参照ください。
-Deno v1.26 deno_std v0.158.0 deno_std v0.158.0がリリースされました。
-std/node child_processパッケージでexec/execFileSync/execSyncが実装されています。
-その他には、process.getuid()とprocess.getgid()が実装されています。
-また、fsパッケージのread()やWriteStreamなどの互換性が向上しています。
-std/http/server handlerが返却したResponseのボディがすでに消費されている場合に、500エラーが発生するように修正されています。
-https://github.com/denoland/deno_std/releases/tag/0.158.0
-plug v1.0.0-rc.0 Deno FFI(Deno.dlopen)のヘルパーモジュールであるplugのv1.0.0 RC版が公開されています。
-このリリースでの主要な変更点として、ダイナミックライブラリを読み込むためのprepare()がdlopen()にリネームされています。
-https://github.com/denosaurs/plug/releases/tag/1.0.0-rc.0</p>
-</div>
-<footer class=entry-footer><span title="2022-10-02 00:00:00 +0000 UTC">October 2, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/09/26〜2022/10/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/02.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Deno v1.26
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.26がリリースされました。
-この記事では主な変更点などについて解説します。
---allow-sysオプションの追加 Deno.osReleaseやDeno.systemMemoryInfoなどのシステム情報を取得するためのAPIの利用を制御するために、--allow-sysオプションが追加されました。
-$ deno run --unstable --allow-sys=osRelease,systemMemoryInfo main.js 元々、これらのAPIを使うには--allow-envの指定が必要でした。
-ただ、これらのAPIの利用に--allow-envを要求することの副作用として、全ての環境変数にアクセスできるようになってしまうという問題がありました。
-この問題を解決するため、--allow-sysという新しいパーミッションが導入されました。
-Cache APIのサポート DenoにCache APIが実装されました。
-const cache = await caches.open("v1"); const req = new Request("https://example.com/"); console.assert(await cache.match(req) === undefined); const res = new Response("foobar"); await cache.put(req, res); const cachedRes = await cache.match(req); console.assert(await cachedRes?.text() === "foobar"); 挙動について localStorageなどと同様にSQLiteをベースに実装されており、利用する際は特にパーミッションなどは要求されません。
-ただし、localStorageとは異なり、DENO_DIRではなく/tmp/deno_cacheにSQLiteのデータベースやキャッシュされたコンテンツなどが保存されます。
-制限 現時点では、いくつかの制限があるようです。
-ignoreSearchやignoreMethodなどのクエリオプションはまだサポートされてないようです。 Cache.deleteを呼んだ際に、SQLiteデータベースに保存されたメタデータは削除されるものの、キャッシュされたコンテンツは削除されないようです。 npmパッケージサポートの改善 今回のv1.26のリリースでは、--no-npmオプションが実装されています。
-これにより、npm:によるnpmパッケージのimportを無効化できます。
-$ deno run --no-npm main.ts また、Denoでnpmパッケージのimportがサポートされたことにより、Deno v1.25.2でNode.js互換モードが削除されています。
---compatは動かなくなっているためご注意ください
-$ deno run --compat --unstable main....</p>
-</div>
-<footer class=entry-footer><span title="2022-10-02 00:00:00 +0000 UTC">October 2, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.26" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.26.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

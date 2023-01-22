@@ -77,6 +77,46 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/12/06〜2021/12/12の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno.spawnDenoを追加する提案 以下のissueでDeno.spawnDenoというAPIの追加が提案されています
+https://github.com/denoland/deno/issues/13041 背景として、まずdenoland/deno#11016でDeno.runとは異なる新しいサブプロセスAPIが提案されました。
+このissueをベースに以下のようなAPIを追加するPRが作成されていますが、まだマージはされていないようです。
+// 高レベルAPI const cmd = Deno.Command(executable, { args }); const status = await cmd.status(); // 低レベルAPI const cmd = Deno.Command(executable, { args }); const child = cmd.spawn({ stdin: "piped" }); const writer = child.writer.getWriter(); await writer.write(buffer); この変更は今のところv1.17のマイルストーンに入っているため、次のリリースに含まれる可能性がありそうです。
+そして、今回提案されているDeno.spawnDenoは、Node.jsにおけるchild_process.forkに相当する機能のようで、上記のAPIをベースにサンドボックス化されたDenoのサブプロセスを起動する機能のようです。
+起動する際にWorkerのdeno.permissionsと同様にパーミッションなどの指定をサポートすることが想定されています。
+またこの提案に合わせて --no-permission-requestオプションの追加も提案されています。
+このオプションが指定された際はDeno.permissions.requestを無効化し、Deno.spawnDeno経由で起動されたプロセスがパーミッションのエスカレーションをできないようにすることを目的としているようです。
+https://github.com/denoland/deno/issues/13041
+サブステップAPIの安定化について Deno v1.15で導入されたサブステップAPIの安定化が提案されています。
+Deno v1.18での安定化が検討されているようです。
+Deno.test("nested test case", async (t) => { const success = await t.step("step 1", async (t) => { const success = await t....</p>
+</div>
+<footer class=entry-footer><span title="2021-12-12 00:00:00 +0000 UTC">December 12, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/12/06〜2021/12/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/12.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/11/29〜2021/12/05の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.16.4 Deno v1.16.4がリリースされました。
+このリリースはバグ修正がメインです。
+変更点:
+SubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様 https://github.com/denoland/deno/releases/tag/v1.16.4
+deno_std v0.117.0 deno_std v0.117.0がリリースされました。
+httpモジュールでの新機能の追加やnodeモジュールのNode.jsとの互換性の向上が実施されています。
+httpモジュール serveなどの関数でonErrorオプションがサポートされ、handlerで発生したエラーを補足できるようになりました
+const handler = (request: Request) => { throw new Error("Hello"); }; const servePromise = serve(handler, { addr: "localhost:3000", onError(_error) { return new Response("Internal Server Error", { status: 500 }); }, }); nodeモジュール readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util....</p>
+</div>
+<footer class=entry-footer><span title="2021-12-05 00:00:00 +0000 UTC">December 5, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/29〜2021/12/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/05.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/11/22〜2021/11/28の最新情報
 </h2>
 </header>
@@ -242,51 +282,6 @@ Freshのアップデート DenoのWebフレームワークであるFreshがア�
 </div>
 <footer class=entry-footer><span title="2021-10-10 00:00:00 +0000 UTC">October 10, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/10/04〜2021/10/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/10.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/09/27〜2021/10/03の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>DenoのNode.js互換モードについて denoland/deno#12295のissueで、DenoにNode.jsの互換モードを提供することが提案されています。
-Denoを実行する際に--compatオプションを指定すると、Node.jsの組み込みモジュールの読み込みが有効化されるように提案されています。
-$ deno run --compat main.mjs こちらの機能の実装はdenoland/deno#12293のPRにて進行中です。
-今のところ、Import mapsとdeno_std/nodeを併用することで、Node.jsの組み込みモジュールを読み込めるように実装されているようです。
-https://github.com/denoland/deno/issues/12295 https://github.com/denoland/deno/pull/12293 Deno v1.14.2 Deno v1.14.2がリリースされました。
-このリリースはバグ修正やパフォーマンスの最適化などがメインです。
-主な変更点:
-deno fmtやdeno testで.mkd, .mkdn, .mdwn, .mdown, 及び.markdownの拡張子のファイルがサポートされました 一度取り消しされたパーミッションが再び許可されないように修正されました Deno.HttpConnがすでに閉じられている場合にrespondWithを呼ぶと、プロセスがパニックする問題が修正されました 祖先のワーカーが閉じられたときまたは終了したときに、合わせて子孫のワーカーも閉じるまたは終了するように修正されました 祖先のワーカーが終了したもののその子孫に生きているワーカーが存在する場合、プロセスがパニックする問題が修正されました WindowsでDeno.killがサポートされました Request/Response/Eventオブジェクトの生成、Headersオブジェクトの内部実装、パーミッションチェックなどが最適化されました https://github.com/denoland/deno/releases/tag/v1.14.2
-deno_std v0.109.0 deno_std v0.109.0がリリースされました
-変更点:
-node: stream/webの部分的なサポートが追加されました node/events: EventEmitter.callを呼べない問題が修正されました node/module: .mjsファイルをrequireできないように修正されました https://github.com/denoland/deno_std/releases/tag/0.109.0
-lint.deno.landがDeno Deployへ移行 deno_lintの公式サイトであるlint.deno.landがDeno Deployへ移行されました。
-それに合わせて、内部実装がdext.ts+Tailwind CSSからFresh+Twindへ移行されています。
-DenoやDeno Deployなどでフロントエンド開発を行う際に参考になるかもしれないため、興味のある方はソースコードも見てみるとよいかもしれません。
-https://github.com/denoland/deno_lint/pull/905</p>
-</div>
-<footer class=entry-footer><span title="2021-10-03 00:00:00 +0000 UTC">October 3, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/09/27〜2021/10/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/03.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/09/20〜2021/09/26の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.14.1 Deno v1.14.1がリリースされました。
-このリリースはバグ修正がメインです。
-変更点:
-非async関数でfor-awaitを使用したときのエラーメッセージが改善されました v1.14.0で追加されたファイルロックAPIの型定義がlib.deno.ns.d.tsからlib.deno.unstable.d.tsに移動しました deno docでドキュメントを表示する際に、—unstableが必要になるなどの影響があります. (例: deno doc --builtin --unstable Deno.flock) スタックトレース中のData URLの表示が改善されました HMACキーをJSON Web Key形式でエクスポートできない問題が修正されました Deno.readFileの最適化 https://github.com/denoland/deno/releases/tag/v1.14.1
-deno_std v0.108.0 deno_stdのv0.108.0がリリースされました。
-変更点:
-collections: maxWithとminWithに渡した配列にundefinedが含まれていた場合、要素の並び順によって結果が異なってしまう問題が修正されました
-collections: maxBy, minBy, 及びsortByのselector引数でbigintやDateを返却できるように型定義が修正されました
-testing/asserts: assertThrowsやassertRejectsでコールバックがサポートされました
-import { assertEquals, assertRejects } from "https://deno.land/std@0.108.0/testing/asserts.ts"; await assertRejects(() => { return Promise.reject(new Error('foo')); }, (error: Error) => { assertEquals(error.message, 'foo'); }); https://github....</p>
-</div>
-<footer class=entry-footer><span title="2021-09-26 00:00:00 +0000 UTC">September 26, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/09/20〜2021/09/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/26.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

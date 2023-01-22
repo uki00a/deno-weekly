@@ -1,0 +1,251 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Denoのロードマップ (2023年 Q1) | 週刊Deno</title>
+<meta name=keywords content="Deno">
+<meta name=description content="Denoの2023年 Q1のロードマップが公開されました。
+ https://github.com/denoland/deno/issues/17475  このページでは、新しく実装が検討されている機能などについて紹介いたします。
+deno.jsonでのimportsフィールドのサポート 今までDenoでImport Mapsを利用するには、専用のファイルを用意しておき、それを--import-mapオプションで読むこむ必要がありました。
+現在、deno.jsonで直接Import Mapsを定義できるようにするため、importsオプションの追加が検討されています。
+これが実現されれば、以下のようにdeno.jsonで直接マッピングを定義できるようになります。
+{ &#34;imports&#34;: { &#34;redis&#34;: &#34;https://deno.land/x/redis@v0.29.0/mod.ts&#34;, &#34;dax&#34;: &#34;https://deno.land/x/dax@0.24.0/mod.ts&#34; }, &#34;tasks&#34;: { &#34;start&#34;: &#34;deno run --allow-net --allow-env ./main.ts&#34; } } Deno公式が公開している02-deno-canonical-appにも使用例があるため、よろしければそちらも参照いただければと思います。
+deno:URLのサポート deno:という新しいURLスキームの導入が検討されており、これにより、deno.land/xからのモジュールの読み込みを簡略化できます。
+import $ from &#34;deno:dax@24.0/mod.ts&#34;; await $`echo foobar`; また、deno.land/xでも機能の拡張が予定されているようで，/x/some-packageにアクセスされた際は/x/some-package/mod.tsにリダイレクトさせることが検討されているようです。
+例えば、deno:dax@24.0と記述した場合、/x/dax@0.24.0/mod.tsが読み込まれます。
+package.jsonのサポート Deno本体でpackage.jsonのサポートが検討されているようです。
+例えば、以下のような内容のpackage.jsonがあったとします。
+{ &#34;type&#34;: &#34;module&#34;, &#34;scripts&#34;: { &#34;main&#34;: &#34;deno run -A main.ts&#34; }, &#34;dependencies&#34;: { &#34;chalk&#34;: &#34;^5.0&#34;, &#34;deno-redis&#34;: &#34;deno:redis@~0.29.0/mod.ts&#34; } } Denoはpackage.jsonの&#34;dependencies&#34;で定義された依存関係を元に、コード中のbare specifierを解釈します。(もしImport Mapsファイルまたはdeno.jsonでもマッピングが定義されている場合は、package.jsonよりもそれらのファイルの設定が優先されます)
+例えば、以下のようなスクリプトが存在する場合、deno-redisはhttps://deno.land/x/redis@v0.29.0/mod.tsとして解釈され、chalkについてはnpmレジストリからv5.xがダウンロードされます。
+import { connect } from &#34;deno-redis&#34;; import chalk from &#34;chalk&#34;; const redis = await connect({ hostname: &#34;127.">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="Denoのロードマップ (2023年 Q1)">
+<meta property="og:description" content="Denoの2023年 Q1のロードマップが公開されました。
+ https://github.com/denoland/deno/issues/17475  このページでは、新しく実装が検討されている機能などについて紹介いたします。
+deno.jsonでのimportsフィールドのサポート 今までDenoでImport Mapsを利用するには、専用のファイルを用意しておき、それを--import-mapオプションで読むこむ必要がありました。
+現在、deno.jsonで直接Import Mapsを定義できるようにするため、importsオプションの追加が検討されています。
+これが実現されれば、以下のようにdeno.jsonで直接マッピングを定義できるようになります。
+{ &#34;imports&#34;: { &#34;redis&#34;: &#34;https://deno.land/x/redis@v0.29.0/mod.ts&#34;, &#34;dax&#34;: &#34;https://deno.land/x/dax@0.24.0/mod.ts&#34; }, &#34;tasks&#34;: { &#34;start&#34;: &#34;deno run --allow-net --allow-env ./main.ts&#34; } } Deno公式が公開している02-deno-canonical-appにも使用例があるため、よろしければそちらも参照いただければと思います。
+deno:URLのサポート deno:という新しいURLスキームの導入が検討されており、これにより、deno.land/xからのモジュールの読み込みを簡略化できます。
+import $ from &#34;deno:dax@24.0/mod.ts&#34;; await $`echo foobar`; また、deno.land/xでも機能の拡張が予定されているようで，/x/some-packageにアクセスされた際は/x/some-package/mod.tsにリダイレクトさせることが検討されているようです。
+例えば、deno:dax@24.0と記述した場合、/x/dax@0.24.0/mod.tsが読み込まれます。
+package.jsonのサポート Deno本体でpackage.jsonのサポートが検討されているようです。
+例えば、以下のような内容のpackage.jsonがあったとします。
+{ &#34;type&#34;: &#34;module&#34;, &#34;scripts&#34;: { &#34;main&#34;: &#34;deno run -A main.ts&#34; }, &#34;dependencies&#34;: { &#34;chalk&#34;: &#34;^5.0&#34;, &#34;deno-redis&#34;: &#34;deno:redis@~0.29.0/mod.ts&#34; } } Denoはpackage.jsonの&#34;dependencies&#34;で定義された依存関係を元に、コード中のbare specifierを解釈します。(もしImport Mapsファイルまたはdeno.jsonでもマッピングが定義されている場合は、package.jsonよりもそれらのファイルの設定が優先されます)
+例えば、以下のようなスクリプトが存在する場合、deno-redisはhttps://deno.land/x/redis@v0.29.0/mod.tsとして解釈され、chalkについてはnpmレジストリからv5.xがダウンロードされます。
+import { connect } from &#34;deno-redis&#34;; import chalk from &#34;chalk&#34;; const redis = await connect({ hostname: &#34;127.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2023-01-22T00:00:00+00:00">
+<meta property="article:modified_time" content="2023-01-22T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Denoのロードマップ (2023年 Q1)">
+<meta name=twitter:description content="Denoの2023年 Q1のロードマップが公開されました。
+ https://github.com/denoland/deno/issues/17475  このページでは、新しく実装が検討されている機能などについて紹介いたします。
+deno.jsonでのimportsフィールドのサポート 今までDenoでImport Mapsを利用するには、専用のファイルを用意しておき、それを--import-mapオプションで読むこむ必要がありました。
+現在、deno.jsonで直接Import Mapsを定義できるようにするため、importsオプションの追加が検討されています。
+これが実現されれば、以下のようにdeno.jsonで直接マッピングを定義できるようになります。
+{ &#34;imports&#34;: { &#34;redis&#34;: &#34;https://deno.land/x/redis@v0.29.0/mod.ts&#34;, &#34;dax&#34;: &#34;https://deno.land/x/dax@0.24.0/mod.ts&#34; }, &#34;tasks&#34;: { &#34;start&#34;: &#34;deno run --allow-net --allow-env ./main.ts&#34; } } Deno公式が公開している02-deno-canonical-appにも使用例があるため、よろしければそちらも参照いただければと思います。
+deno:URLのサポート deno:という新しいURLスキームの導入が検討されており、これにより、deno.land/xからのモジュールの読み込みを簡略化できます。
+import $ from &#34;deno:dax@24.0/mod.ts&#34;; await $`echo foobar`; また、deno.land/xでも機能の拡張が予定されているようで，/x/some-packageにアクセスされた際は/x/some-package/mod.tsにリダイレクトさせることが検討されているようです。
+例えば、deno:dax@24.0と記述した場合、/x/dax@0.24.0/mod.tsが読み込まれます。
+package.jsonのサポート Deno本体でpackage.jsonのサポートが検討されているようです。
+例えば、以下のような内容のpackage.jsonがあったとします。
+{ &#34;type&#34;: &#34;module&#34;, &#34;scripts&#34;: { &#34;main&#34;: &#34;deno run -A main.ts&#34; }, &#34;dependencies&#34;: { &#34;chalk&#34;: &#34;^5.0&#34;, &#34;deno-redis&#34;: &#34;deno:redis@~0.29.0/mod.ts&#34; } } Denoはpackage.jsonの&#34;dependencies&#34;で定義された依存関係を元に、コード中のbare specifierを解釈します。(もしImport Mapsファイルまたはdeno.jsonでもマッピングが定義されている場合は、package.jsonよりもそれらのファイルの設定が優先されます)
+例えば、以下のようなスクリプトが存在する場合、deno-redisはhttps://deno.land/x/redis@v0.29.0/mod.tsとして解釈され、chalkについてはnpmレジストリからv5.xがダウンロードされます。
+import { connect } from &#34;deno-redis&#34;; import chalk from &#34;chalk&#34;; const redis = await connect({ hostname: &#34;127.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Denoのロードマップ (2023年 Q1)","item":"https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Denoのロードマップ (2023年 Q1)","name":"Denoのロードマップ (2023年 Q1)","description":"Denoの2023年 Q1のロードマップが公開されました。\n https://github.com/denoland/deno/issues/17475  このページでは、新しく実装が検討されている機能などについて紹介いたします。\ndeno.jsonでのimportsフィールドのサポート 今までDenoでImport Mapsを利用するには、専用のファイルを用意しておき、それを--import-mapオプションで読むこむ必要がありました。\n現在、deno.jsonで直接Import Mapsを定義できるようにするため、importsオプションの追加が検討されています。\nこれが実現されれば、以下のようにdeno.jsonで直接マッピングを定義できるようになります。\n{ \u0026#34;imports\u0026#34;: { \u0026#34;redis\u0026#34;: \u0026#34;https://deno.land/x/redis@v0.29.0/mod.ts\u0026#34;, \u0026#34;dax\u0026#34;: \u0026#34;https://deno.land/x/dax@0.24.0/mod.ts\u0026#34; }, \u0026#34;tasks\u0026#34;: { \u0026#34;start\u0026#34;: \u0026#34;deno run --allow-net --allow-env ./main.ts\u0026#34; } } Deno公式が公開している02-deno-canonical-appにも使用例があるため、よろしければそちらも参照いただければと思います。\ndeno:URLのサポート deno:という新しいURLスキームの導入が検討されており、これにより、deno.land/xからのモジュールの読み込みを簡略化できます。\nimport $ from \u0026#34;deno:dax@24.0/mod.ts\u0026#34;; await $`echo foobar`; また、deno.land/xでも機能の拡張が予定されているようで，/x/some-packageにアクセスされた際は/x/some-package/mod.tsにリダイレクトさせることが検討されているようです。\n例えば、deno:dax@24.0と記述した場合、/x/dax@0.24.0/mod.tsが読み込まれます。\npackage.jsonのサポート Deno本体でpackage.jsonのサポートが検討されているようです。\n例えば、以下のような内容のpackage.jsonがあったとします。\n{ \u0026#34;type\u0026#34;: \u0026#34;module\u0026#34;, \u0026#34;scripts\u0026#34;: { \u0026#34;main\u0026#34;: \u0026#34;deno run -A main.ts\u0026#34; }, \u0026#34;dependencies\u0026#34;: { \u0026#34;chalk\u0026#34;: \u0026#34;^5.0\u0026#34;, \u0026#34;deno-redis\u0026#34;: \u0026#34;deno:redis@~0.29.0/mod.ts\u0026#34; } } Denoはpackage.jsonの\u0026quot;dependencies\u0026quot;で定義された依存関係を元に、コード中のbare specifierを解釈します。(もしImport Mapsファイルまたはdeno.jsonでもマッピングが定義されている場合は、package.jsonよりもそれらのファイルの設定が優先されます)\n例えば、以下のようなスクリプトが存在する場合、deno-redisはhttps://deno.land/x/redis@v0.29.0/mod.tsとして解釈され、chalkについてはnpmレジストリからv5.xがダウンロードされます。\nimport { connect } from \u0026#34;deno-redis\u0026#34;; import chalk from \u0026#34;chalk\u0026#34;; const redis = await connect({ hostname: \u0026#34;127.","keywords":["Deno"],"articleBody":"Denoの2023年 Q1のロードマップが公開されました。\n https://github.com/denoland/deno/issues/17475  このページでは、新しく実装が検討されている機能などについて紹介いたします。\ndeno.jsonでのimportsフィールドのサポート 今までDenoでImport Mapsを利用するには、専用のファイルを用意しておき、それを--import-mapオプションで読むこむ必要がありました。\n現在、deno.jsonで直接Import Mapsを定義できるようにするため、importsオプションの追加が検討されています。\nこれが実現されれば、以下のようにdeno.jsonで直接マッピングを定義できるようになります。\n{ \"imports\": { \"redis\": \"https://deno.land/x/redis@v0.29.0/mod.ts\", \"dax\": \"https://deno.land/x/dax@0.24.0/mod.ts\" }, \"tasks\": { \"start\": \"deno run --allow-net --allow-env ./main.ts\" } } Deno公式が公開している02-deno-canonical-appにも使用例があるため、よろしければそちらも参照いただければと思います。\ndeno:URLのサポート deno:という新しいURLスキームの導入が検討されており、これにより、deno.land/xからのモジュールの読み込みを簡略化できます。\nimport $ from \"deno:dax@24.0/mod.ts\"; await $`echo foobar`; また、deno.land/xでも機能の拡張が予定されているようで，/x/some-packageにアクセスされた際は/x/some-package/mod.tsにリダイレクトさせることが検討されているようです。\n例えば、deno:dax@24.0と記述した場合、/x/dax@0.24.0/mod.tsが読み込まれます。\npackage.jsonのサポート Deno本体でpackage.jsonのサポートが検討されているようです。\n例えば、以下のような内容のpackage.jsonがあったとします。\n{ \"type\": \"module\", \"scripts\": { \"main\": \"deno run -A main.ts\" }, \"dependencies\": { \"chalk\": \"^5.0\", \"deno-redis\": \"deno:redis@~0.29.0/mod.ts\" } } Denoはpackage.jsonの\"dependencies\"で定義された依存関係を元に、コード中のbare specifierを解釈します。(もしImport Mapsファイルまたはdeno.jsonでもマッピングが定義されている場合は、package.jsonよりもそれらのファイルの設定が優先されます)\n例えば、以下のようなスクリプトが存在する場合、deno-redisはhttps://deno.land/x/redis@v0.29.0/mod.tsとして解釈され、chalkについてはnpmレジストリからv5.xがダウンロードされます。\nimport { connect } from \"deno-redis\"; import chalk from \"chalk\"; const redis = await connect({ hostname: \"127.0.0.1\", port: 6379, }); const value = await redis.get(\"foo\"); console.log(chalk.blue.bold(value)); また、deno taskによるpackage.jsonのscriptsの実行もサポートが検討されているようです。\n例えば、以下のコマンドによって、package.jsonのscripts.mainで定義されたスクリプトを実行できるようになりそうです。\n$ deno task main 将来的には{ \"type\": \"commonjs\" }もサポートし、CommonJS形式で書かれたアプリも動かせるようにすることが検討されているようです。\nまた、まだ未確定ではあるものの、deno from-nodeコマンドを実装し、package.jsonからdeno.jsonの生成を自動化できるようにすることなども検討されているようです。\n  01-deno-node-compat-app (Deno公式の使用例)  node:URLのサポート ユーザーコードからNode.jsの組み込みモジュールをimportできるようにするために、node:のサポートが検討されています。\n例えば、以下はNode.jsのeventsパッケージを利用する例です。\nimport { EventEmitter } from \"node:events\"; const emitter = new EventEmitter(); emitter.on(\"foo\", (x) = console.log(x)); emitter.emit(\"foo\", \"bar\"); deno bundleコマンドの非推奨化 deno bundleコマンドの非推奨化が予定されています。\n以前にdeno bundleコマンドの代替として検討されていたdeno packコマンドの導入については、今のところ行われない予定のようです。\nその代わり、ユーザーランドで同じ問題が解決できるような手段の提供は検討されているようです。\n例えば、deno_graphなどのように、Deno公式のパッケージとしてdeno.land/xからパッケージが提供される可能性なども考えられそうです。\nおわりに 以上となりますが、以下のissueでこのロードマップについて活発に議論が行われています。\n https://github.com/denoland/deno/issues/17475  議論やフィードバックの内容次第では、方針などが変更される可能性もあるかもしれません。\nもし今後の動きなどに興味がありましたら、こちらのissueをSubscribeするとよさそうです。\n","wordCount":"141","inLanguage":"en","datePublished":"2023-01-22T00:00:00Z","dateModified":"2023-01-22T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<div class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</div>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
+<span><i class="fa fa-heart"></i>カテゴリー</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
+<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+Denoのロードマップ (2023年 Q1)
+</h1>
+<div class=post-meta><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#denojson%e3%81%a7%e3%81%aeimports%e3%83%95%e3%82%a3%e3%83%bc%e3%83%ab%e3%83%89%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=deno.jsonでのimportsフィールドのサポート><code>deno.json</code>での<code>imports</code>フィールドのサポート</a></li>
+<li>
+<a href=#denourl%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=deno:URLのサポート><code>deno:</code>URLのサポート</a></li>
+<li>
+<a href=#packagejson%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=package.jsonのサポート><code>package.json</code>のサポート</a></li>
+<li>
+<a href=#nodeurl%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=node:URLのサポート><code>node:</code>URLのサポート</a></li>
+<li>
+<a href=#deno-bundle%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%81%ae%e9%9d%9e%e6%8e%a8%e5%a5%a8%e5%8c%96 aria-label="deno bundleコマンドの非推奨化"><code>deno bundle</code>コマンドの非推奨化</a></li>
+<li>
+<a href=#%e3%81%8a%e3%82%8f%e3%82%8a%e3%81%ab aria-label=おわりに>おわりに</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><p>Denoの2023年 Q1のロードマップが公開されました。</p>
+<ul>
+<li><a href=https://github.com/denoland/deno/issues/17475>https://github.com/denoland/deno/issues/17475</a></li>
+</ul>
+<p>このページでは、新しく実装が検討されている機能などについて紹介いたします。</p>
+<h2 id=denojsonでのimportsフィールドのサポート><code>deno.json</code>での<code>imports</code>フィールドのサポート<a hidden class=anchor aria-hidden=true href=#denojsonでのimportsフィールドのサポート>#</a></h2>
+<p>今までDenoでImport Mapsを利用するには、専用のファイルを用意しておき、それを<code>--import-map</code>オプションで読むこむ必要がありました。</p>
+<p>現在、<code>deno.json</code>で直接Import Mapsを定義できるようにするため、<code>imports</code>オプションの追加が検討されています。</p>
+<p>これが実現されれば、以下のように<code>deno.json</code>で直接マッピングを定義できるようになります。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;imports&#34;</span>: {
+    <span style=color:#f92672>&#34;redis&#34;</span>: <span style=color:#e6db74>&#34;https://deno.land/x/redis@v0.29.0/mod.ts&#34;</span>,
+    <span style=color:#f92672>&#34;dax&#34;</span>: <span style=color:#e6db74>&#34;https://deno.land/x/dax@0.24.0/mod.ts&#34;</span>
+  },
+  <span style=color:#f92672>&#34;tasks&#34;</span>: {
+    <span style=color:#f92672>&#34;start&#34;</span>: <span style=color:#e6db74>&#34;deno run --allow-net --allow-env ./main.ts&#34;</span>
+  }
+}
+</code></pre></div><p>Deno公式が公開している<a href=https://github.com/denoland/experimental-deno-specifiers-example/tree/e84d01d68edec91493e2beab99f373a7b14d92e9/02-deno-canonical-app>02-deno-canonical-app</a>にも使用例があるため、よろしければそちらも参照いただければと思います。</p>
+<h2 id=denourlのサポート><code>deno:</code>URLのサポート<a hidden class=anchor aria-hidden=true href=#denourlのサポート>#</a></h2>
+<p><code>deno:</code>という新しいURLスキームの導入が検討されており、これにより、<a href=https://deno.land/x>deno.land/x</a>からのモジュールの読み込みを簡略化できます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>$</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;deno:dax@24.0/mod.ts&#34;</span>;
+
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>$</span><span style=color:#e6db74>`echo foobar`</span>;
+</code></pre></div><p>また、<a href=https://deno.land/x>deno.land/x</a>でも機能の拡張が予定されているようで，<code>/x/some-package</code>にアクセスされた際は<code>/x/some-package/mod.ts</code>にリダイレクトさせることが検討されているようです。</p>
+<p>例えば、<code>deno:dax@24.0</code>と記述した場合、<a href=https://deno.land/x/dax@0.24.0/mod.ts>/x/dax@0.24.0/mod.ts</a>が読み込まれます。</p>
+<h2 id=packagejsonのサポート><code>package.json</code>のサポート<a hidden class=anchor aria-hidden=true href=#packagejsonのサポート>#</a></h2>
+<p>Deno本体で<code>package.json</code>のサポートが検討されているようです。</p>
+<p>例えば、以下のような内容の<code>package.json</code>があったとします。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;module&#34;</span>,
+  <span style=color:#f92672>&#34;scripts&#34;</span>: {
+    <span style=color:#f92672>&#34;main&#34;</span>: <span style=color:#e6db74>&#34;deno run -A main.ts&#34;</span>
+  },
+  <span style=color:#f92672>&#34;dependencies&#34;</span>: {
+    <span style=color:#f92672>&#34;chalk&#34;</span>: <span style=color:#e6db74>&#34;^5.0&#34;</span>,
+    <span style=color:#f92672>&#34;deno-redis&#34;</span>: <span style=color:#e6db74>&#34;deno:redis@~0.29.0/mod.ts&#34;</span>
+  }
+}
+</code></pre></div><p>Denoは<code>package.json</code>の<code>"dependencies"</code>で定義された依存関係を元に、コード中のbare specifierを解釈します。(もしImport Mapsファイルまたは<code>deno.json</code>でもマッピングが定義されている場合は、<code>package.json</code>よりもそれらのファイルの設定が優先されます)</p>
+<p>例えば、以下のようなスクリプトが存在する場合、<code>deno-redis</code>は<a href=https://deno.land/x/redis@v0.29.0/mod.ts>https://deno.land/x/redis@v0.29.0/mod.ts</a>として解釈され、<code>chalk</code>についてはnpmレジストリからv5.xがダウンロードされます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>connect</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;deno-redis&#34;</span>;
+<span style=color:#66d9ef>import</span> <span style=color:#a6e22e>chalk</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;chalk&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>redis</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>connect</span>({
+  <span style=color:#a6e22e>hostname</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;127.0.0.1&#34;</span>,
+  <span style=color:#a6e22e>port</span>: <span style=color:#66d9ef>6379</span>,
+});
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>redis</span>.<span style=color:#66d9ef>get</span>(<span style=color:#e6db74>&#34;foo&#34;</span>);
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>chalk</span>.<span style=color:#a6e22e>blue</span>.<span style=color:#a6e22e>bold</span>(<span style=color:#a6e22e>value</span>));
+</code></pre></div><p>また、<code>deno task</code>による<code>package.json</code>の<code>scripts</code>の実行もサポートが検討されているようです。</p>
+<p>例えば、以下のコマンドによって、<code>package.json</code>の<code>scripts.main</code>で定義されたスクリプトを実行できるようになりそうです。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ deno task main
+</code></pre></div><p>将来的には<code>{ "type": "commonjs" }</code>もサポートし、CommonJS形式で書かれたアプリも動かせるようにすることが検討されているようです。</p>
+<p>また、まだ未確定ではあるものの、<code>deno from-node</code>コマンドを実装し、<code>package.json</code>から<code>deno.json</code>の生成を自動化できるようにすることなども検討されているようです。</p>
+<hr>
+<ul>
+<li><a href=https://github.com/denoland/experimental-deno-specifiers-example/tree/e84d01d68edec91493e2beab99f373a7b14d92e9/01-deno-node-compat-app>01-deno-node-compat-app (Deno公式の使用例)</a></li>
+</ul>
+<h2 id=nodeurlのサポート><code>node:</code>URLのサポート<a hidden class=anchor aria-hidden=true href=#nodeurlのサポート>#</a></h2>
+<p>ユーザーコードからNode.jsの組み込みモジュールを<code>import</code>できるようにするために、<code>node:</code>のサポートが検討されています。</p>
+<p>例えば、以下はNode.jsの<code>events</code>パッケージを利用する例です。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>EventEmitter</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;node:events&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>emitter</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>EventEmitter</span>();
+<span style=color:#a6e22e>emitter</span>.<span style=color:#a6e22e>on</span>(<span style=color:#e6db74>&#34;foo&#34;</span>, (<span style=color:#a6e22e>x</span>) <span style=color:#f92672>=&gt;</span> <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>x</span>));
+<span style=color:#a6e22e>emitter</span>.<span style=color:#a6e22e>emit</span>(<span style=color:#e6db74>&#34;foo&#34;</span>, <span style=color:#e6db74>&#34;bar&#34;</span>);
+</code></pre></div><h2 id=deno-bundleコマンドの非推奨化><code>deno bundle</code>コマンドの非推奨化<a hidden class=anchor aria-hidden=true href=#deno-bundleコマンドの非推奨化>#</a></h2>
+<p><code>deno bundle</code>コマンドの非推奨化が予定されています。</p>
+<p>以前に<code>deno bundle</code>コマンドの代替として検討されていた<a href=https://uki00a.github.io/deno-weekly/articles/2022/08/14.html>deno packコマンド</a>の導入については、今のところ行われない予定のようです。</p>
+<p>その代わり、ユーザーランドで同じ問題が解決できるような手段の提供は検討されているようです。</p>
+<p>例えば、<a href=https://github.com/denoland/deno_graph>deno_graph</a>などのように、Deno公式のパッケージとして<a href=https://deno.land/x>deno.land/x</a>からパッケージが提供される可能性なども考えられそうです。</p>
+<h2 id=おわりに>おわりに<a hidden class=anchor aria-hidden=true href=#おわりに>#</a></h2>
+<p>以上となりますが、以下のissueでこのロードマップについて活発に議論が行われています。</p>
+<ul>
+<li><a href=https://github.com/denoland/deno/issues/17475>https://github.com/denoland/deno/issues/17475</a></li>
+</ul>
+<p>議論やフィードバックの内容次第では、方針などが変更される可能性もあるかもしれません。</p>
+<p>もし今後の動きなどに興味がありましたら、こちらのissueをSubscribeするとよさそうです。</p>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

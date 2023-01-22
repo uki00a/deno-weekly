@@ -82,6 +82,49 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Deno v1.23
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.23がリリースされました。
+この記事では主な変更点などについて解説します。
+deno runやdeno cacheなどのコマンドでデフォルトの型チェックが無効化されました 下記コマンドで、デフォルトで型チェックが行われなくなります。
+deno run deno cache deno eval deno repl 今後、型チェックを行いたい場合は、deno checkコマンドを使うか--checkオプションを指定する必要があります。
+$ deno check mod.ts その他のdeno testなどのコマンドでは、引き続きローカルモジュールの型チェックがデフォルトで実行されます。
+deno runが失敗する場合の対処方法 Denoは、型チェックを行わない場合、swcを使用してトランスパイルを行います。
+その関係で、コードの実行時に、まれに問題が発生することがあるようです。
+https://github.com/denoland/deno/issues/14900 問題に遭遇した場合は、--checkオプションを指定するとtscが使用されるため、問題を回避できる可能性があります。
+$ deno run --check mod.ts Deno.sleepSync()の削除 Atomics.waitで代替可能であったり、イベントループを完全にブロックしてしまうなどの問題を抱えていたため、Deno.sleepSync()が削除されました。
+Intl.v8BreakIteratorの削除 非標準APIであるため、Intl.v8BreakIteratorが削除されました。
+代わりにIntl.Segmenterの使用が推奨されます。
+deno taskコマンドの改善 --cwdオプションのサポート --cwdオプションにより、タスク実行時のカレントディレクトリを変更できるようになりました (デフォルトでは、deno.json(c)の配置場所がカレントディレクトリに設定されます)
+$ deno task --cwd ./src build リダイレクションのサポート タスクの定義でリダイレクションがサポートされました。
+{ "tasks": { "test": "echo foo > test.txt" } } また、/dev/nullにリダイレクトすると、出力が捨てられます (Windowsでも動きます)
+コマンドの追加 下記コマンドがサポートされました。...</p>
+</div>
+<footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.23" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.23.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/06/06〜2022/06/12の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.22.3 Deno v1.22.3がリリースされました。
+主な変更点:
+fetch APIの引数にURLオブジェクト渡す形式が非推奨ではなくなりました。(TypeScript公式の型定義でもサポートされたため) // Deno v1.22.3までは、下記の形式は非推奨でした const res = await fetch(new URL("https://example.com")); Import Mapファイルなどの.jsonや.jsonc形式のファイルが変更されたときに、deno lspが自動で変更を検知してくれるようになりました。 --watchオプションで、dynamic importされるファイルが監視されない問題が修正されました。 エラー以外の値がthrowされた際にコンソールへ出力される内容が改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.3
+deno_std v0.143.0 deno_std v0.143.0がリリースされました。
+http/http_statusでの破壊的変更について STATUS_TEXTがMap&lt;Status, string>からReadonly&lt;Record&lt;Status, String>>へ変更されています。(破壊的変更)
+その他にも、いくつかのヘルパー関数やタイプが追加されています。
+import { isErrorStatus, STATUS_TEXT } from "https://deno.land/std@0.143.0/http/http_status.ts"; STATUS_TEXT[404]; // => "Not Found" isErrorStatus(404); // => true isErrorStatus(200); // => false flagsモジュールでnegatableオプションがサポート ここで指定されたフラグのみが、--no-プレフィックスの付与による否定がサポートされます。
+import { parse } from "https://deno.land/std@0.143.0/flags/mod.ts"; parse(["deno", "fmt", "--no-config"], { string: ["config"], negatable: ["config"], }); // => { _: [ "deno", "fmt" ], config: false } parse(["deno", "fmt", "--no-config"], { string: ["config"], }); // => { _: [ "deno", "fmt" ], "no-config": true } dotenvモジュールでインラインコメントがサポート #に続けてコメントを記述できます。...</p>
+</div>
+<footer class=entry-footer><span title="2022-06-12 00:00:00 +0000 UTC">June 12, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/06/06〜2022/06/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/12.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/05/30〜2022/06/05の最新情報
 </h2>
 </header>
@@ -270,60 +313,6 @@ import { describe, it } from "https://deno.land/std@0.136.0/testing/bdd.ts" desc
 </div>
 <footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/04/18〜2022/04/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/24.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Deno v1.21
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.21がリリースされました。
-この記事では新機能や修正点などについて解説します。
-deno checkコマンドの導入 新しいコマンドとしてdeno checkコマンドが追加されました。
-挙動としては基本的にdeno cacheコマンドと同等で、与えられたモジュールの型チェック及びリモートモジュールのダウンロードを行います。
-$ deno check mod.ts deno cacheコマンドとの違い deno cacheコマンドとの大きな違いとして、deno checkコマンドはデフォルトではリモートモジュールの型チェックを行いません。
-deno checkコマンドでリモートモジュールの型チェックも行いたい場合は--remoteオプションを指定する必要があります。
-deno runコマンドでの型チェックについて deno checkコマンドの追加による影響として、将来的にdeno runコマンドではデフォルトで型チェックが行われなくなる予定です。(Deno v1.21時点でもDENO_FUTURE_CHECK=1環境変数を設定することで、この挙動を有効化できます)
-型チェックを行いたいときは、今回追加されたdeno checkコマンドまたはdeno run --checkで明示的に行う必要が出てきます。
-新しいサブプロセスAPI (unstable) DenoにはDeno.run()というサブプロセスを生成するためのAPIがありますが、今回、新しく3種類のAPIが追加されました:
-Deno.spawn() (高レベル) Deno.spawnChild() (低レベル) Deno.spawnSync() (Deno.spawnの同期版) これらのAPIの利用にはDeno.run()と同様に--allow-runパーミッションが必要です。
-また、これらのAPIの追加により、Deno.run()は非推奨化される予定のようです。
-Deno.spawn() これは高レベルAPIという位置づけです。
-指定したコマンドを実行し、そのコマンドの実行結果(status)や標準出力(stdout)及び標準エラー出力(stderr)への出力内容を返却してくれます。
-const { stdout, status } = await Deno.spawn("echo", { args: ["foo"], }); console.assert("foo\n" === new TextDecoder().decode(stdout)); console.assert(status.success); コマンドの出力結果のみが必要で、細かな制御はいらない場合に便利かと思います。
-Deno.spawnChild() こちらは低レベルAPIという位置づけです。
-Deno.Reader/Deno.WriterではなくReadableStream/WritableStreamをベースに実装されています。
-const child = Deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.21" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.21.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/04/11〜2022/04/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20.6 Deno v1.20.6がリリースされました。
-deno fmtコマンドの内部実装で使用されているdprint関連のプラグインがアップデートされています。
-その影響により、deno fmtコマンドのパフォーマンス向上やバグの修正が行われています。 (オブジェクトリテラルと3項演算子を併用した際に、フォーマット結果に一貫性がなくなる問題が修正されているようです)
-https://github.com/denoland/deno/releases/tag/v1.20.6
-deno_std v0.135.0 deno_std v0.135.0がリリースされました。
-このリリースでは破壊的変更が実施されています。
-io/readers: MultiReaderのシグネチャの変更 (破壊的変更) MultiReaderのコンストラクタの引数が可変長引数ではなくDeno.Readerの配列を受け取るように変更されています。
-変更前:
-const readers: Array&lt;Deno.Reader> = [...]; new MultiReader(...readers); 変更後:
-const readers: Array&lt;Deno.Reader> = [...]; new MultiReader(readers); MultiReaderはstd/archive/tar.tsモジュールの内部で使われており、大量のファイルを持つtarファイルを作ろうとすると、maximum call stack exceededエラーが発生してしまう問題があったようです。
-mime/multipartの非推奨化 (破壊的変更) mime/multipartモジュールが非推奨化されました。
-今後はFormDataの使用が推奨されます。
-testing/benchの非推奨化 (破壊的変更) testing/benchモジュールが非推奨化されました。
-今後はDeno.benchの使用が推奨されます。
-testing/bddの追加 testing/bddモジュールが追加されました。
-JestやMochaライクなAPIを使用してテストコードを記述することができます。
-import { assertEquals } from "https://deno.land/std@0.135.0/testing/asserts.ts"; import { describe, it } from "https://deno.land/std@0.135.0/testing/bdd.ts"; describe("sum", () => { it("should return sum of numbers", () => { assertEquals(sum(1, 2, 5), 8) }); it("should return 0 when no arguments are given", () => { assertEquals(sum(), 0); }); }); 定義したテストコードはdeno testコマンドで実行することが出来ます。...</p>
-</div>
-<footer class=entry-footer><span title="2022-04-17 00:00:00 +0000 UTC">April 17, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/11〜2022/04/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/17.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
