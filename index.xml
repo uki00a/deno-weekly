@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 22 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/01/16〜2023/01/22の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/01/22.html</link><pubDate>Sun, 22 Jan 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/01/22.html</guid><description>Denoのロードマップ (2023年 Q1) Denoの2023年 Q1のロードマップが公開されました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>週刊Deno</title><link>https://uki00a.github.io/deno-weekly/</link><description>Recent content on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 29 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/01/23〜2023/01/29の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/01/29.html</link><pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/01/29.html</guid><description>Deno v1.30.0 Deno v1.30がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.30 deno_std v0.175.0 deno_std v0.175.0がリリースされました。
+非推奨APIの整理などが実施されています。
+std/io/buffer.ts: (破壊的変更) 非推奨APIの削除 以下のAPIが削除されています。
+同名のAPIは引き続き別ファイルで提供されているため、もしこれらを利用されている場合は、以下の移行先ファイルへimportを書き換える必要がありそうです。
+対象API 移行先 BufferFullError std/io/buf_reader.ts BufReader std/io/buf_reader.ts PartialReadError std/io/buf_reader.ts ReadLineResult std/io/buf_reader.ts BufWriter std/io/buf_writer.ts BufWriterSync std/io/buf_writer.ts readDelim std/io/read_delim.ts readStringDelim std/io/read_string_delim.ts readLines std/io/read_lines.ts std/io/files.tsモジュールの削除 (破壊的変更) std/io/files.tsが削除されています。
+このファイルで提供されていたAPIはstd/io/read_range.tsから引き続き利用できるため、今後はそちらへ移行する必要がありそうです。
+std/io/readers.tsモジュールの削除 (破壊的変更) std/io/readers.</description></item><item><title>Deno v1.30</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.30.html</link><pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.30.html</guid><description>Deno v1.30がリリースされました。
+この記事では主な変更点などについて解説します。
+Node.js互換性の改善 2023年 Q1のロードマップで発表されていたNode.js組み込みパッケージの利用が正式にサポートされました。
+以下のように、node:&amp;lt;パッケージ名&amp;gt;の形式でimportを記述すると、Node.js組み込みパッケージをDenoから利用することができます。
+import { EventEmitter } from &amp;#34;node:events&amp;#34;; const emitter = new EventEmitter(); emitter.on(&amp;#34;foo&amp;#34;, console.log); emitter.emit(&amp;#34;foo&amp;#34;, &amp;#34;bar&amp;#34;); また、Node-APIの互換性の改善も引き続き実施されており、以下のAPIなどの互換性が向上されています。
+napi_adjust_external_memory napi_detach_arraybuffer napi_is_detached_arraybuffer deno.jsonでのImport Mapsの定義がサポート こちらも2023年 Q1のロードマップで発表されていた機能になります。
+deno.jsonでimportsやscopesなどが定義されていると、--import-map使用時と同様に、deno.jsonの定義内容を元にDenoがbare specifierが解釈してくれます。
+例えば、以下のような内容のdeno.jsonが存在したとします。
+{ &amp;#34;imports&amp;#34;: { &amp;#34;dax&amp;#34;: &amp;#34;https://deno.land/x/dax@0.24.0/mod.ts&amp;#34; } } この場合、ソースコードでは以下のようにしてdaxモジュールを利用することができます。
+import { $ } from &amp;#34;dax&amp;#34;; await $`echo foobar`; deno fmtでセミコロンの有無を制御できるように 今まで、Denoに搭載されたフォーマッタであるdeno fmtコマンドでは、ソースコードにおける行末のセミコロンの有無をカスタマイズすることができませんでした。
+今回のリリースでは、deno.jsonでfmt.options.semiColonsオプションがサポートされました。 このオプションにfalseを設定すると、deno fmtの実行時に行末のセミコロンが取り除かれます。
+{ &amp;#34;fmt&amp;#34;: { &amp;#34;options&amp;#34;: { &amp;#34;semiColons&amp;#34;: false } } } また、--options-no-semicolonsオプションにより、CLI経由でセミコロンの有無を制御することも可能です。</description></item><item><title>2022/01/16〜2023/01/22の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/01/22.html</link><pubDate>Sun, 22 Jan 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/01/22.html</guid><description>Denoのロードマップ (2023年 Q1) Denoの2023年 Q1のロードマップが公開されました。
 以下のページに内容をまとめたため、よろしければ参照いただければと思います。
 Denoのロードマップ (2023年 Q1) https://github.com/denoland/deno/issues/17475
 Deno v1.29.4 Deno v1.29.4がリリースされました。

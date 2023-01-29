@@ -81,6 +81,47 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/08/15〜2022/08/21の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoの今後の計画について Deno公式からBig Changes Ahead for Denoという、Denoの今後の計画などに関する記事が公開されました。
+今のところ、以下の点などに注力されていく予定のようです。
+Node.jsとの互換性の向上 パフォーマンスの向上 エンタープライズユーザへのサポートの強化 開発体験の向上 これらに関連すると思われる直近での変更について簡単にまとめてみます。
+npm:URLのサポート 現在、npm:URLによるnpmパッケージのimportに関する開発が行われています。
+feat(unstable): initial support for npm specifiers (#15484)
+例えば、以下のようにして、npmパッケージをimportすることができるようです。
+import express from "npm:express@5"; import { expect } from "npm:chai@4.2"; この機能には、大まかに以下のような特徴があります。
+デフォルトでnpmパッケージはnpmの公式レジストリからダウンロードされ、DENO_DIRにキャッシュされます。 Node.js互換モード(--compat)とは異なり、npm:URLで読み込まれたモジュール内のみにNode.jsのグローバルAPI(process/global/Bufferなど)が注入されます。 Node.js互換モード(--compat)とは異なり、現時点では--unstableなしで使用できる想定のようです。 型チェック, LSPのサポート, エントリポイントでのnpm:URLの指定(例: deno run npm:mkdirp path/to/dir)などの機能はまだ入っておらず、今後追加されていく予定のようです。 この機能はおそらく、次のv1.25でリリースされるのではないかと思われます。
+新しいHTTPサーバ (Flash) HTTPサーバの高速化を目的に、Deno本体でFlashという新しいHTTPサーバが開発されています。
+feat(ext/flash): An optimized http/1.1 server (#15405)
+feat(unstable): change Deno.serve() API (#15498)...</p>
+</div>
+<footer class=entry-footer><span title="2022-08-21 00:00:00 +0000 UTC">August 21, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/15〜2022/08/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/21.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/08/08〜2022/08/14の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.24.3 Deno v1.24.3がリリースされました。
+fetch()でSOCKSがサポート 検証はしていないのですが、HTTP_PROXYやHTTPS_PROXY環境変数にsocks5:またはsocks5h:形式のURLを指定すると利用できそうです。
+Deno.UnsafePointerViewへの機能追加 Deno.UnsafePointerViewに以下の3つのstaticメソッドが追加されています。
+getCString getArrayBuffer copyInto これらのメソッドの挙動は、Deno.UnsafePointerViewの同名のインスタンスメソッドとほぼ同様です。
+compilerOptions.jsxImportSourceが指定されていると、deno.json(c)をimportできない問題が修正 次のように、compilerOptions.jsxImportSourceが設定されたdeno.jsonが定義されていたとします。
+{ "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" }, "importMap": "./import_map.json" } このファイルをImport assertionsを使用して読み込もうとすると、エラーが発生する問題が修正されています。
+import config from "./deno.json" assert { type: "json" }; // => `error: Loading unprepared module` console.log(config); この修正は、Freshにおけるfeat: support JSX automatic mode (#610)の対応のために実施されたようです。
+その他の修正 --allow-netに空の値を指定するとプロセスがパニックする問題が修正されています。 --locationオプションが指定されていないときはglobalThis.locationが上書きできるようになりました。 https://github.com/denoland/deno/releases/tag/v1.24.3
+deno_std v0.152.0 deno_std v0.152.0がリリースされました。
+std/crypto: subtle.timingSafeEqual()が追加 import { crypto } from "https://deno....</p>
+</div>
+<footer class=entry-footer><span title="2022-08-14 00:00:00 +0000 UTC">August 14, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/08〜2022/08/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/14.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/08/01〜2022/08/07の最新情報
 </h2>
 </header>
@@ -253,51 +294,6 @@ import { JSONParseStream } from "https://deno.land/std@0.145.0/encoding/json/str
 </div>
 <footer class=entry-footer><span title="2022-06-26 00:00:00 +0000 UTC">June 26, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/20〜2022/06/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/26.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/06/13〜2022/06/19の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23 Deno v1.23がリリースされました。
-以下の記事に変更点をまとめたため、詳しくはこちらを参照いただければと思います。
-Deno v1.23 deno_std v0.144.0 deno_std v0.144.0がリリースされました。
-encoding/front_matter 新規モジュールとしてencoding/front_matterが追加されました。
-import { extract } from "https://deno.land/std@0.144.0/encoding/front_matter.ts"; const { attrs, body } = extract&lt;{ title: string, date: Date }>(`--- title: foobar date: 2022-06-12 --- Hello`); console.assert(attrs.title === "foobar"); console.assert(attrs.date instanceof Date); console.assert(body === "Hello"); collections collections/mod.tsをimportすると警告が表示されるようになりました。
-必要に応じて、collections/deep_mergeやcollections/group_byなどの各ファイルを個別にimportすることが推奨されます。
-node process.stdoutとprocess.stderrに下記メソッドが実装されています。
-cursorTo moveCursor clearLine clearScreenDown https://github.com/denoland/deno_std/releases/tag/0.144.0
-Freshのアップデート (CLIの削除) FreshからCLIが削除されています。
-feat: remove fresh cli, do manifest generation in process (#223)...</p>
-</div>
-<footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/13〜2022/06/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/19.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Deno v1.23
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23がリリースされました。
-この記事では主な変更点などについて解説します。
-deno runやdeno cacheなどのコマンドでデフォルトの型チェックが無効化されました 下記コマンドで、デフォルトで型チェックが行われなくなります。
-deno run deno cache deno eval deno repl 今後、型チェックを行いたい場合は、deno checkコマンドを使うか--checkオプションを指定する必要があります。
-$ deno check mod.ts その他のdeno testなどのコマンドでは、引き続きローカルモジュールの型チェックがデフォルトで実行されます。
-deno runが失敗する場合の対処方法 Denoは、型チェックを行わない場合、swcを使用してトランスパイルを行います。
-その関係で、コードの実行時に、まれに問題が発生することがあるようです。
-https://github.com/denoland/deno/issues/14900 問題に遭遇した場合は、--checkオプションを指定するとtscが使用されるため、問題を回避できる可能性があります。
-$ deno run --check mod.ts Deno.sleepSync()の削除 Atomics.waitで代替可能であったり、イベントループを完全にブロックしてしまうなどの問題を抱えていたため、Deno.sleepSync()が削除されました。
-Intl.v8BreakIteratorの削除 非標準APIであるため、Intl.v8BreakIteratorが削除されました。
-代わりにIntl.Segmenterの使用が推奨されます。
-deno taskコマンドの改善 --cwdオプションのサポート --cwdオプションにより、タスク実行時のカレントディレクトリを変更できるようになりました (デフォルトでは、deno.json(c)の配置場所がカレントディレクトリに設定されます)
-$ deno task --cwd ./src build リダイレクションのサポート タスクの定義でリダイレクションがサポートされました。
-{ "tasks": { "test": "echo foo > test.txt" } } また、/dev/nullにリダイレクトすると、出力が捨てられます (Windowsでも動きます)
-コマンドの追加 下記コマンドがサポートされました。...</p>
-</div>
-<footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.23" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.23.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

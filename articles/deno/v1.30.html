@@ -1,0 +1,305 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Deno v1.30 | 週刊Deno</title>
+<meta name=keywords content="Deno">
+<meta name=description content="Deno v1.30がリリースされました。
+この記事では主な変更点などについて解説します。
+Node.js互換性の改善 2023年 Q1のロードマップで発表されていたNode.js組み込みパッケージの利用が正式にサポートされました。
+以下のように、node:<パッケージ名>の形式でimportを記述すると、Node.js組み込みパッケージをDenoから利用することができます。
+import { EventEmitter } from &#34;node:events&#34;; const emitter = new EventEmitter(); emitter.on(&#34;foo&#34;, console.log); emitter.emit(&#34;foo&#34;, &#34;bar&#34;); また、Node-APIの互換性の改善も引き続き実施されており、以下のAPIなどの互換性が向上されています。
+ napi_adjust_external_memory napi_detach_arraybuffer napi_is_detached_arraybuffer  deno.jsonでのImport Mapsの定義がサポート こちらも2023年 Q1のロードマップで発表されていた機能になります。
+deno.jsonでimportsやscopesなどが定義されていると、--import-map使用時と同様に、deno.jsonの定義内容を元にDenoがbare specifierが解釈してくれます。
+例えば、以下のような内容のdeno.jsonが存在したとします。
+{ &#34;imports&#34;: { &#34;dax&#34;: &#34;https://deno.land/x/dax@0.24.0/mod.ts&#34; } } この場合、ソースコードでは以下のようにしてdaxモジュールを利用することができます。
+import { $ } from &#34;dax&#34;; await $`echo foobar`; deno fmtでセミコロンの有無を制御できるように 今まで、Denoに搭載されたフォーマッタであるdeno fmtコマンドでは、ソースコードにおける行末のセミコロンの有無をカスタマイズすることができませんでした。
+今回のリリースでは、deno.jsonでfmt.options.semiColonsオプションがサポートされました。 このオプションにfalseを設定すると、deno fmtの実行時に行末のセミコロンが取り除かれます。
+{ &#34;fmt&#34;: { &#34;options&#34;: { &#34;semiColons&#34;: false } } } また、--options-no-semicolonsオプションにより、CLI経由でセミコロンの有無を制御することも可能です。">
+<meta name=author content>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/deno/v1.30.html>
+<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.bccfefac377bc340f06c260aed1bddf49a4354816d7c570d6aac75a997986c95.css integrity="sha256-vM/vrDd7w0DwbCYK7Rvd9JpDVIFtfFcNaqx1qZeYbJU=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
+<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
+<meta name=twitter:site content="@uki00a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="Deno v1.30">
+<meta property="og:description" content="Deno v1.30がリリースされました。
+この記事では主な変更点などについて解説します。
+Node.js互換性の改善 2023年 Q1のロードマップで発表されていたNode.js組み込みパッケージの利用が正式にサポートされました。
+以下のように、node:<パッケージ名>の形式でimportを記述すると、Node.js組み込みパッケージをDenoから利用することができます。
+import { EventEmitter } from &#34;node:events&#34;; const emitter = new EventEmitter(); emitter.on(&#34;foo&#34;, console.log); emitter.emit(&#34;foo&#34;, &#34;bar&#34;); また、Node-APIの互換性の改善も引き続き実施されており、以下のAPIなどの互換性が向上されています。
+ napi_adjust_external_memory napi_detach_arraybuffer napi_is_detached_arraybuffer  deno.jsonでのImport Mapsの定義がサポート こちらも2023年 Q1のロードマップで発表されていた機能になります。
+deno.jsonでimportsやscopesなどが定義されていると、--import-map使用時と同様に、deno.jsonの定義内容を元にDenoがbare specifierが解釈してくれます。
+例えば、以下のような内容のdeno.jsonが存在したとします。
+{ &#34;imports&#34;: { &#34;dax&#34;: &#34;https://deno.land/x/dax@0.24.0/mod.ts&#34; } } この場合、ソースコードでは以下のようにしてdaxモジュールを利用することができます。
+import { $ } from &#34;dax&#34;; await $`echo foobar`; deno fmtでセミコロンの有無を制御できるように 今まで、Denoに搭載されたフォーマッタであるdeno fmtコマンドでは、ソースコードにおける行末のセミコロンの有無をカスタマイズすることができませんでした。
+今回のリリースでは、deno.jsonでfmt.options.semiColonsオプションがサポートされました。 このオプションにfalseを設定すると、deno fmtの実行時に行末のセミコロンが取り除かれます。
+{ &#34;fmt&#34;: { &#34;options&#34;: { &#34;semiColons&#34;: false } } } また、--options-no-semicolonsオプションにより、CLI経由でセミコロンの有無を制御することも可能です。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/deno/v1.30.html"><meta property="article:section" content="articles">
+<meta property="article:published_time" content="2023-01-29T00:00:00+00:00">
+<meta property="article:modified_time" content="2023-01-29T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Deno v1.30">
+<meta name=twitter:description content="Deno v1.30がリリースされました。
+この記事では主な変更点などについて解説します。
+Node.js互換性の改善 2023年 Q1のロードマップで発表されていたNode.js組み込みパッケージの利用が正式にサポートされました。
+以下のように、node:<パッケージ名>の形式でimportを記述すると、Node.js組み込みパッケージをDenoから利用することができます。
+import { EventEmitter } from &#34;node:events&#34;; const emitter = new EventEmitter(); emitter.on(&#34;foo&#34;, console.log); emitter.emit(&#34;foo&#34;, &#34;bar&#34;); また、Node-APIの互換性の改善も引き続き実施されており、以下のAPIなどの互換性が向上されています。
+ napi_adjust_external_memory napi_detach_arraybuffer napi_is_detached_arraybuffer  deno.jsonでのImport Mapsの定義がサポート こちらも2023年 Q1のロードマップで発表されていた機能になります。
+deno.jsonでimportsやscopesなどが定義されていると、--import-map使用時と同様に、deno.jsonの定義内容を元にDenoがbare specifierが解釈してくれます。
+例えば、以下のような内容のdeno.jsonが存在したとします。
+{ &#34;imports&#34;: { &#34;dax&#34;: &#34;https://deno.land/x/dax@0.24.0/mod.ts&#34; } } この場合、ソースコードでは以下のようにしてdaxモジュールを利用することができます。
+import { $ } from &#34;dax&#34;; await $`echo foobar`; deno fmtでセミコロンの有無を制御できるように 今まで、Denoに搭載されたフォーマッタであるdeno fmtコマンドでは、ソースコードにおける行末のセミコロンの有無をカスタマイズすることができませんでした。
+今回のリリースでは、deno.jsonでfmt.options.semiColonsオプションがサポートされました。 このオプションにfalseを設定すると、deno fmtの実行時に行末のセミコロンが取り除かれます。
+{ &#34;fmt&#34;: { &#34;options&#34;: { &#34;semiColons&#34;: false } } } また、--options-no-semicolonsオプションにより、CLI経由でセミコロンの有無を制御することも可能です。">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Deno v1.30","item":"https://uki00a.github.io/deno-weekly/articles/deno/v1.30.html"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Deno v1.30","name":"Deno v1.30","description":"Deno v1.30がリリースされました。\nこの記事では主な変更点などについて解説します。\nNode.js互換性の改善 2023年 Q1のロードマップで発表されていたNode.js組み込みパッケージの利用が正式にサポートされました。\n以下のように、node:\u0026lt;パッケージ名\u0026gt;の形式でimportを記述すると、Node.js組み込みパッケージをDenoから利用することができます。\nimport { EventEmitter } from \u0026#34;node:events\u0026#34;; const emitter = new EventEmitter(); emitter.on(\u0026#34;foo\u0026#34;, console.log); emitter.emit(\u0026#34;foo\u0026#34;, \u0026#34;bar\u0026#34;); また、Node-APIの互換性の改善も引き続き実施されており、以下のAPIなどの互換性が向上されています。\n napi_adjust_external_memory napi_detach_arraybuffer napi_is_detached_arraybuffer  deno.jsonでのImport Mapsの定義がサポート こちらも2023年 Q1のロードマップで発表されていた機能になります。\ndeno.jsonでimportsやscopesなどが定義されていると、--import-map使用時と同様に、deno.jsonの定義内容を元にDenoがbare specifierが解釈してくれます。\n例えば、以下のような内容のdeno.jsonが存在したとします。\n{ \u0026#34;imports\u0026#34;: { \u0026#34;dax\u0026#34;: \u0026#34;https://deno.land/x/dax@0.24.0/mod.ts\u0026#34; } } この場合、ソースコードでは以下のようにしてdaxモジュールを利用することができます。\nimport { $ } from \u0026#34;dax\u0026#34;; await $`echo foobar`; deno fmtでセミコロンの有無を制御できるように 今まで、Denoに搭載されたフォーマッタであるdeno fmtコマンドでは、ソースコードにおける行末のセミコロンの有無をカスタマイズすることができませんでした。\n今回のリリースでは、deno.jsonでfmt.options.semiColonsオプションがサポートされました。 このオプションにfalseを設定すると、deno fmtの実行時に行末のセミコロンが取り除かれます。\n{ \u0026#34;fmt\u0026#34;: { \u0026#34;options\u0026#34;: { \u0026#34;semiColons\u0026#34;: false } } } また、--options-no-semicolonsオプションにより、CLI経由でセミコロンの有無を制御することも可能です。","keywords":["Deno"],"articleBody":"Deno v1.30がリリースされました。\nこの記事では主な変更点などについて解説します。\nNode.js互換性の改善 2023年 Q1のロードマップで発表されていたNode.js組み込みパッケージの利用が正式にサポートされました。\n以下のように、node:の形式でimportを記述すると、Node.js組み込みパッケージをDenoから利用することができます。\nimport { EventEmitter } from \"node:events\"; const emitter = new EventEmitter(); emitter.on(\"foo\", console.log); emitter.emit(\"foo\", \"bar\"); また、Node-APIの互換性の改善も引き続き実施されており、以下のAPIなどの互換性が向上されています。\n napi_adjust_external_memory napi_detach_arraybuffer napi_is_detached_arraybuffer  deno.jsonでのImport Mapsの定義がサポート こちらも2023年 Q1のロードマップで発表されていた機能になります。\ndeno.jsonでimportsやscopesなどが定義されていると、--import-map使用時と同様に、deno.jsonの定義内容を元にDenoがbare specifierが解釈してくれます。\n例えば、以下のような内容のdeno.jsonが存在したとします。\n{ \"imports\": { \"dax\": \"https://deno.land/x/dax@0.24.0/mod.ts\" } } この場合、ソースコードでは以下のようにしてdaxモジュールを利用することができます。\nimport { $ } from \"dax\"; await $`echo foobar`; deno fmtでセミコロンの有無を制御できるように 今まで、Denoに搭載されたフォーマッタであるdeno fmtコマンドでは、ソースコードにおける行末のセミコロンの有無をカスタマイズすることができませんでした。\n今回のリリースでは、deno.jsonでfmt.options.semiColonsオプションがサポートされました。 このオプションにfalseを設定すると、deno fmtの実行時に行末のセミコロンが取り除かれます。\n{ \"fmt\": { \"options\": { \"semiColons\": false } } } また、--options-no-semicolonsオプションにより、CLI経由でセミコロンの有無を制御することも可能です。\nこのオプションを指定した場合も、フォーマット時に行末のセミコロンが取り除かれます。\n$ deno fmt --options-no-semicolons main.ts Deno.permissionsに同期バージョンのAPIが追加 DenoはDeno.permissions名前空間でquery()やrequest()などのパーミッションを動的に制御するためのAPIを提供しています。\nこれらのAPIはすべて非同期に動作し、戻り値としてPromiseを返却します。\nこのリリースでは、パーミッションを同期的に制御したいケースに対応するため、Deno.permissions名前空間に以下の3つのメソッドが新しく追加されました。\n querySync() requestSync() revokeSync()  挙動としては、各メソッドの非同期バージョン(名前にSyncがつかないメソッド)と同様ですが、戻り値としてPromiseではなく直接結果が返却されます。\nconst status = Deno.permissions.querySync({ name: \"env\", variable: \"DENO_DIR\" }); if (status.state === \"granted\") { const denoDir = Deno.env.get(\"DENO_DIR\"); console.info(denoDir); } Deno.env.hasの追加 新しいAPIとしてDeno.env.hasが実装されました。\n引数で指定した環境変数が定義されていれば、trueが返却されます\nconsole.log(Deno.env.has(\"DENO_DIR\")); このAPIの利用には--allow-envの指定が必要です。\nDeno.testのサブステップAPIでテスト関数を直接渡せるように Deno.testでは以下のように関数を直接渡してテストケースを定義することができます。\nDeno.test(function sumReturnsSumOfNumbers() { assertEquals(sum(1, 2, 3), 6); }); しかし、サブステップAPI(Deno.TestContext#step)にはこのようにして関数を渡すことができませんでした。\nこのリリースでは、サブステップAPIでも関数を直接渡すことができるように改善されています。\n以下のように、step()の引数として直接テスト関数を渡すことができます。\nDeno.test(\"sum\", async (t) = { await t.step(function shouldReturnSumOfNumbers() { assertEquals(sum(1, 2, 5), 8); }); }); Deno.Command#spawnでstdinオプションのデフォルト値が\"inherit\"に変更 Deno.Commandの生成時にstdinオプションが未指定の状態でspawnを実行した際は、 stdinオプションに\"inherit\"が指定された場合と同様の振る舞いをするように挙動が変更されています。\nもし今までのバージョンと同じ振る舞いが必要な際は、stdinオプションに\"null\"を明示する必要があります。\nconst command = new Deno.Command(cmd, { args, stdin: \"null\", }); Deno.writeFile()とDeno.writeTextFile()でReadableStreamがサポート Denoからファイルへ書き込みを行うためのAPIであるDeno.writeFile()とDeno.writeTextFile()にReadableStreamを渡せるようになりました。\nconst stream = new ReadableStream({ pull(controller) { controller.enqueue(\"foo\\n\"); controller.enqueue(\"bar\"); controller.close(); }, }); await Deno.writeTextFile(\"test.txt\", stream); console.info(await Deno.readTextFile(\"test.txt\")); // Output: foo // bar Deno.FsFile#seekのoffset引数でbigintがサポート 以下のように、Deno.FsFileのseek()メソッドにbigintを渡せるようになりました。\nconst file = await Deno.open(filename); try { await file.seek(3n, Deno.SeekMode.Start); const buf = new Uint8Array(100); await file.read(buf); console.info(new TextDecoder().decode(buf)); } finally { file.close(); } Deno.Listenerのref()とunref()メソッドが安定化 Deno.listenrのref()/unref()が安定化され、--unstableオプションなしで利用できるようになりました。\nDeno.ListenerはDeno.listen()などのAPIから返却されるオブジェクトです。\nデフォルトでは、生存中のDeno.Listenerが存在する場合、Denoのプロセスの終了はブロックされます。\nDeno.Listenerのunref()メソッドを呼ぶと、該当のリスナがプロセスの終了をブロックしなくなります。\nref()メソッドはその逆で、unref()されたDeno.Listenerをデフォルトの状態へ戻します。(プロセスの終了がブロックされるようになります)\nDENO_V8_FLAGS環境変数のサポート 今まで、Denoの内部で実行されるv8の挙動をカスタマイズしたい場合は、Denoの実行時に--v8-flagsオプションを指定する必要がありました。\nこのリリースでは、DENO_V8_FLAGS環境変数がサポートされています。\n今後は、この環境変数経由でもv8の挙動をカスタマイズできます。\ndeno upgradeの改善 deno upgradeの実行後に、アップデート後のバージョンのリリースノートへのリンクが表示されるようになりました。\n参考  https://github.com/denoland/deno/releases/tag/v1.30.0 https://deno.com/blog/v1.30  ","wordCount":"216","inLanguage":"en","datePublished":"2023-01-29T00:00:00Z","dateModified":"2023-01-29T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/deno/v1.30.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
+<div class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</div>
+</div>
+<ul id=menu>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
+<span><i class="fa fa-heart"></i>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
+<span><i class="fa fa-heart"></i>カテゴリー</span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
+<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
+<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
+</a>
+</li>
+<li>
+<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
+<span><i class="fa fa-road"></i>About<span class=alert></span></span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>
+Deno v1.30
+</h1>
+<div class=post-meta><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span>
+</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#nodejs%e4%ba%92%e6%8f%9b%e6%80%a7%e3%81%ae%e6%94%b9%e5%96%84 aria-label=Node.js互換性の改善>Node.js互換性の改善</a></li>
+<li>
+<a href=#denojson%e3%81%a7%e3%81%aeimport-maps%e3%81%ae%e5%ae%9a%e7%be%a9%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label="deno.jsonでのImport Mapsの定義がサポート"><code>deno.json</code>でのImport Mapsの定義がサポート</a></li>
+<li>
+<a href=#deno-fmt%e3%81%a7%e3%82%bb%e3%83%9f%e3%82%b3%e3%83%ad%e3%83%b3%e3%81%ae%e6%9c%89%e7%84%a1%e3%82%92%e5%88%b6%e5%be%a1%e3%81%a7%e3%81%8d%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab aria-label="deno fmtでセミコロンの有無を制御できるように"><code>deno fmt</code>でセミコロンの有無を制御できるように</a></li>
+<li>
+<a href=#denopermissions%e3%81%ab%e5%90%8c%e6%9c%9f%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%81%aeapi%e3%81%8c%e8%bf%bd%e5%8a%a0 aria-label=Deno.permissionsに同期バージョンのAPIが追加><code>Deno.permissions</code>に同期バージョンのAPIが追加</a></li>
+<li>
+<a href=#denoenvhas%e3%81%ae%e8%bf%bd%e5%8a%a0 aria-label=Deno.env.hasの追加><code>Deno.env.has</code>の追加</a></li>
+<li>
+<a href=#denotest%e3%81%ae%e3%82%b5%e3%83%96%e3%82%b9%e3%83%86%e3%83%83%e3%83%97api%e3%81%a7%e3%83%86%e3%82%b9%e3%83%88%e9%96%a2%e6%95%b0%e3%82%92%e7%9b%b4%e6%8e%a5%e6%b8%a1%e3%81%9b%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab aria-label=Deno.testのサブステップAPIでテスト関数を直接渡せるように><code>Deno.test</code>のサブステップAPIでテスト関数を直接渡せるように</a></li>
+<li>
+<a href=#denocommandspawn%e3%81%a7stdin%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%ae%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e5%80%a4%e3%81%8cinherit%e3%81%ab%e5%a4%89%e6%9b%b4 aria-label=Deno.Command#spawnでstdinオプションのデフォルト値が&amp;quot;inherit&amp;quot;に変更><code>Deno.Command#spawn</code>で<code>stdin</code>オプションのデフォルト値が<code>"inherit"</code>に変更</a></li>
+<li>
+<a href=#denowritefile%e3%81%a8denowritetextfile%e3%81%a7readablestream%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=Deno.writeFile()とDeno.writeTextFile()でReadableStreamがサポート><code>Deno.writeFile()</code>と<code>Deno.writeTextFile()</code>で<code>ReadableStream</code>がサポート</a></li>
+<li>
+<a href=#denofsfileseek%e3%81%aeoffset%e5%bc%95%e6%95%b0%e3%81%a7bigint%e3%81%8c%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=Deno.FsFile#seekのoffset引数でbigintがサポート><code>Deno.FsFile#seek</code>の<code>offset</code>引数で<code>bigint</code>がサポート</a></li>
+<li>
+<a href=#denolistener%e3%81%aeref%e3%81%a8unref%e3%83%a1%e3%82%bd%e3%83%83%e3%83%89%e3%81%8c%e5%ae%89%e5%ae%9a%e5%8c%96 aria-label=Deno.Listenerのref()とunref()メソッドが安定化><code>Deno.Listener</code>の<code>ref()</code>と<code>unref()</code>メソッドが安定化</a></li>
+<li>
+<a href=#deno_v8_flags%e7%92%b0%e5%a2%83%e5%a4%89%e6%95%b0%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88 aria-label=DENO_V8_FLAGS環境変数のサポート><code>DENO_V8_FLAGS</code>環境変数のサポート</a></li>
+<li>
+<a href=#deno-upgrade%e3%81%ae%e6%94%b9%e5%96%84 aria-label="deno upgradeの改善"><code>deno upgrade</code>の改善</a></li>
+<li>
+<a href=#%e5%8f%82%e8%80%83 aria-label=参考>参考</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content><p>Deno v1.30がリリースされました。</p>
+<p>この記事では主な変更点などについて解説します。</p>
+<h2 id=nodejs互換性の改善>Node.js互換性の改善<a hidden class=anchor aria-hidden=true href=#nodejs互換性の改善>#</a></h2>
+<p><a href=https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html>2023年 Q1のロードマップ</a>で発表されていたNode.js組み込みパッケージの利用が正式にサポートされました。</p>
+<p>以下のように、<code>node:&lt;パッケージ名></code>の形式で<code>import</code>を記述すると、Node.js組み込みパッケージをDenoから利用することができます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>EventEmitter</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;node:events&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>emitter</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>EventEmitter</span>();
+<span style=color:#a6e22e>emitter</span>.<span style=color:#a6e22e>on</span>(<span style=color:#e6db74>&#34;foo&#34;</span>, <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>);
+<span style=color:#a6e22e>emitter</span>.<span style=color:#a6e22e>emit</span>(<span style=color:#e6db74>&#34;foo&#34;</span>, <span style=color:#e6db74>&#34;bar&#34;</span>);
+</code></pre></div><p>また、<a href=https://nodejs.org/docs/latest-v18.x/api/n-api.html>Node-API</a>の互換性の改善も引き続き実施されており、以下のAPIなどの互換性が向上されています。</p>
+<ul>
+<li><a href=https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_adjust_external_memory>napi_adjust_external_memory</a></li>
+<li><a href=https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_detach_arraybuffer>napi_detach_arraybuffer</a></li>
+<li><a href=https://nodejs.org/docs/latest-v18.x/api/n-api.html#napi_is_detached_arraybuffer>napi_is_detached_arraybuffer</a></li>
+</ul>
+<h2 id=denojsonでのimport-mapsの定義がサポート><code>deno.json</code>でのImport Mapsの定義がサポート<a hidden class=anchor aria-hidden=true href=#denojsonでのimport-mapsの定義がサポート>#</a></h2>
+<p>こちらも<a href=https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html>2023年 Q1のロードマップ</a>で発表されていた機能になります。</p>
+<p><code>deno.json</code>で<code>imports</code>や<code>scopes</code>などが定義されていると、<code>--import-map</code>使用時と同様に、<code>deno.json</code>の定義内容を元にDenoがbare specifierが解釈してくれます。</p>
+<p>例えば、以下のような内容の<code>deno.json</code>が存在したとします。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;imports&#34;</span>: {
+    <span style=color:#f92672>&#34;dax&#34;</span>: <span style=color:#e6db74>&#34;https://deno.land/x/dax@0.24.0/mod.ts&#34;</span>
+  }
+}
+</code></pre></div><p>この場合、ソースコードでは以下のようにして<code>dax</code>モジュールを利用することができます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>$</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;dax&#34;</span>;
+
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>$</span><span style=color:#e6db74>`echo foobar`</span>;
+</code></pre></div><h2 id=deno-fmtでセミコロンの有無を制御できるように><code>deno fmt</code>でセミコロンの有無を制御できるように<a hidden class=anchor aria-hidden=true href=#deno-fmtでセミコロンの有無を制御できるように>#</a></h2>
+<p>今まで、Denoに搭載されたフォーマッタである<code>deno fmt</code>コマンドでは、ソースコードにおける行末のセミコロンの有無をカスタマイズすることができませんでした。</p>
+<p>今回のリリースでは、<code>deno.json</code>で<code>fmt.options.semiColons</code>オプションがサポートされました。
+このオプションに<code>false</code>を設定すると、<code>deno fmt</code>の実行時に行末のセミコロンが取り除かれます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;fmt&#34;</span>: {
+    <span style=color:#f92672>&#34;options&#34;</span>: {
+      <span style=color:#f92672>&#34;semiColons&#34;</span>: <span style=color:#66d9ef>false</span>
+    }
+  }
+}
+</code></pre></div><p>また、<code>--options-no-semicolons</code>オプションにより、CLI経由でセミコロンの有無を制御することも可能です。</p>
+<p>このオプションを指定した場合も、フォーマット時に行末のセミコロンが取り除かれます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ deno fmt --options-no-semicolons main.ts
+</code></pre></div><h2 id=denopermissionsに同期バージョンのapiが追加><code>Deno.permissions</code>に同期バージョンのAPIが追加<a hidden class=anchor aria-hidden=true href=#denopermissionsに同期バージョンのapiが追加>#</a></h2>
+<p>Denoは<code>Deno.permissions</code>名前空間で<code>query()</code>や<code>request()</code>などのパーミッションを動的に制御するためのAPIを提供しています。</p>
+<p>これらのAPIはすべて非同期に動作し、戻り値として<code>Promise</code>を返却します。</p>
+<p>このリリースでは、パーミッションを同期的に制御したいケースに対応するため、<code>Deno.permissions</code>名前空間に以下の3つのメソッドが新しく追加されました。</p>
+<ul>
+<li><code>querySync()</code></li>
+<li><code>requestSync()</code></li>
+<li><code>revokeSync()</code></li>
+</ul>
+<p>挙動としては、各メソッドの非同期バージョン(名前に<code>Sync</code>がつかないメソッド)と同様ですが、戻り値として<code>Promise</code>ではなく直接結果が返却されます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>status</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>permissions</span>.<span style=color:#a6e22e>querySync</span>({ <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;env&#34;</span>, <span style=color:#a6e22e>variable</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;DENO_DIR&#34;</span> });
+<span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>status</span>.<span style=color:#a6e22e>state</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;granted&#34;</span>) {
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>denoDir</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>env</span>.<span style=color:#66d9ef>get</span>(<span style=color:#e6db74>&#34;DENO_DIR&#34;</span>);
+  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>info</span>(<span style=color:#a6e22e>denoDir</span>);
+}
+</code></pre></div><h2 id=denoenvhasの追加><code>Deno.env.has</code>の追加<a hidden class=anchor aria-hidden=true href=#denoenvhasの追加>#</a></h2>
+<p>新しいAPIとして<code>Deno.env.has</code>が実装されました。</p>
+<p>引数で指定した環境変数が定義されていれば、<code>true</code>が返却されます</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>env</span>.<span style=color:#a6e22e>has</span>(<span style=color:#e6db74>&#34;DENO_DIR&#34;</span>));
+</code></pre></div><p>このAPIの利用には<code>--allow-env</code>の指定が必要です。</p>
+<h2 id=denotestのサブステップapiでテスト関数を直接渡せるように><code>Deno.test</code>のサブステップAPIでテスト関数を直接渡せるように<a hidden class=anchor aria-hidden=true href=#denotestのサブステップapiでテスト関数を直接渡せるように>#</a></h2>
+<p><code>Deno.test</code>では以下のように関数を直接渡してテストケースを定義することができます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>test</span>(<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>sumReturnsSumOfNumbers() {</span>
+  <span style=color:#a6e22e>assertEquals</span>(<span style=color:#a6e22e>sum</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>6</span>);
+});
+</code></pre></div><p>しかし、サブステップAPI(<code>Deno.TestContext#step</code>)にはこのようにして関数を渡すことができませんでした。</p>
+<p>このリリースでは、サブステップAPIでも関数を直接渡すことができるように改善されています。</p>
+<p>以下のように、<code>step()</code>の引数として直接テスト関数を渡すことができます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>test</span>(<span style=color:#e6db74>&#34;sum&#34;</span>, <span style=color:#66d9ef>async</span> (<span style=color:#a6e22e>t</span>) <span style=color:#f92672>=&gt;</span> {
+  <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>t</span>.<span style=color:#a6e22e>step</span>(<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>shouldReturnSumOfNumbers() {</span>
+    <span style=color:#a6e22e>assertEquals</span>(<span style=color:#a6e22e>sum</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>5</span>), <span style=color:#ae81ff>8</span>);
+  });
+});
+</code></pre></div><h2 id=denocommandspawnでstdinオプションのデフォルト値がinheritに変更><code>Deno.Command#spawn</code>で<code>stdin</code>オプションのデフォルト値が<code>"inherit"</code>に変更<a hidden class=anchor aria-hidden=true href=#denocommandspawnでstdinオプションのデフォルト値がinheritに変更>#</a></h2>
+<p><code>Deno.Command</code>の生成時に<code>stdin</code>オプションが未指定の状態で<code>spawn</code>を実行した際は、 <code>stdin</code>オプションに<code>"inherit"</code>が指定された場合と同様の振る舞いをするように挙動が変更されています。</p>
+<p>もし今までのバージョンと同じ振る舞いが必要な際は、<code>stdin</code>オプションに<code>"null"</code>を明示する必要があります。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>command</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>Command</span>(<span style=color:#a6e22e>cmd</span>, {
+  <span style=color:#a6e22e>args</span>,
+  <span style=color:#a6e22e>stdin</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;null&#34;</span>,
+});
+</code></pre></div><h2 id=denowritefileとdenowritetextfileでreadablestreamがサポート><code>Deno.writeFile()</code>と<code>Deno.writeTextFile()</code>で<code>ReadableStream</code>がサポート<a hidden class=anchor aria-hidden=true href=#denowritefileとdenowritetextfileでreadablestreamがサポート>#</a></h2>
+<p>Denoからファイルへ書き込みを行うためのAPIである<code>Deno.writeFile()</code>と<code>Deno.writeTextFile()</code>に<code>ReadableStream</code>を渡せるようになりました。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>stream</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>ReadableStream</span>({
+  <span style=color:#a6e22e>pull</span>(<span style=color:#a6e22e>controller</span>) {
+    <span style=color:#a6e22e>controller</span>.<span style=color:#a6e22e>enqueue</span>(<span style=color:#e6db74>&#34;foo\n&#34;</span>);
+    <span style=color:#a6e22e>controller</span>.<span style=color:#a6e22e>enqueue</span>(<span style=color:#e6db74>&#34;bar&#34;</span>);
+    <span style=color:#a6e22e>controller</span>.<span style=color:#a6e22e>close</span>();
+  },
+});
+<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>writeTextFile</span>(<span style=color:#e6db74>&#34;test.txt&#34;</span>, <span style=color:#a6e22e>stream</span>);
+
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>info</span>(<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>readTextFile</span>(<span style=color:#e6db74>&#34;test.txt&#34;</span>));
+<span style=color:#75715e>// Output: foo
+</span><span style=color:#75715e>//         bar
+</span></code></pre></div><h2 id=denofsfileseekのoffset引数でbigintがサポート><code>Deno.FsFile#seek</code>の<code>offset</code>引数で<code>bigint</code>がサポート<a hidden class=anchor aria-hidden=true href=#denofsfileseekのoffset引数でbigintがサポート>#</a></h2>
+<p>以下のように、<code>Deno.FsFile</code>の<code>seek()</code>メソッドに<code>bigint</code>を渡せるようになりました。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>file</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>open</span>(<span style=color:#a6e22e>filename</span>);
+<span style=color:#66d9ef>try</span> {
+  <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>seek</span>(<span style=color:#ae81ff>3</span><span style=color:#a6e22e>n</span>, <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>SeekMode</span>.<span style=color:#a6e22e>Start</span>);
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>buf</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Uint8Array</span>(<span style=color:#ae81ff>100</span>);
+  <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>read</span>(<span style=color:#a6e22e>buf</span>);
+  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>info</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>TextDecoder</span>().<span style=color:#a6e22e>decode</span>(<span style=color:#a6e22e>buf</span>));
+} <span style=color:#66d9ef>finally</span> {
+  <span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>close</span>();
+}
+</code></pre></div><h2 id=denolistenerのrefとunrefメソッドが安定化><code>Deno.Listener</code>の<code>ref()</code>と<code>unref()</code>メソッドが安定化<a hidden class=anchor aria-hidden=true href=#denolistenerのrefとunrefメソッドが安定化>#</a></h2>
+<p><code>Deno.listenr</code>の<code>ref()</code>/<code>unref()</code>が安定化され、<code>--unstable</code>オプションなしで利用できるようになりました。</p>
+<p><code>Deno.Listener</code>は<code>Deno.listen()</code>などのAPIから返却されるオブジェクトです。</p>
+<p>デフォルトでは、生存中の<code>Deno.Listener</code>が存在する場合、Denoのプロセスの終了はブロックされます。</p>
+<p><code>Deno.Listener</code>の<code>unref()</code>メソッドを呼ぶと、該当のリスナがプロセスの終了をブロックしなくなります。</p>
+<p><code>ref()</code>メソッドはその逆で、<code>unref()</code>された<code>Deno.Listener</code>をデフォルトの状態へ戻します。(プロセスの終了がブロックされるようになります)</p>
+<h2 id=deno_v8_flags環境変数のサポート><code>DENO_V8_FLAGS</code>環境変数のサポート<a hidden class=anchor aria-hidden=true href=#deno_v8_flags環境変数のサポート>#</a></h2>
+<p>今まで、Denoの内部で実行されるv8の挙動をカスタマイズしたい場合は、Denoの実行時に<code>--v8-flags</code>オプションを指定する必要がありました。</p>
+<p>このリリースでは、<code>DENO_V8_FLAGS</code>環境変数がサポートされています。</p>
+<p>今後は、この環境変数経由でもv8の挙動をカスタマイズできます。</p>
+<h2 id=deno-upgradeの改善><code>deno upgrade</code>の改善<a hidden class=anchor aria-hidden=true href=#deno-upgradeの改善>#</a></h2>
+<p><code>deno upgrade</code>の実行後に、アップデート後のバージョンのリリースノートへのリンクが表示されるようになりました。</p>
+<h2 id=参考>参考<a hidden class=anchor aria-hidden=true href=#参考>#</a></h2>
+<ul>
+<li><a href=https://github.com/denoland/deno/releases/tag/v1.30.0>https://github.com/denoland/deno/releases/tag/v1.30.0</a></li>
+<li><a href=https://deno.com/blog/v1.30>https://deno.com/blog/v1.30</a></li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
+</ul>
+</footer>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

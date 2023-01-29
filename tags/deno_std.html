@@ -81,6 +81,25 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/01/23〜2023/01/29の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.30.0 Deno v1.30がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.30 deno_std v0.175.0 deno_std v0.175.0がリリースされました。
+非推奨APIの整理などが実施されています。
+std/io/buffer.ts: (破壊的変更) 非推奨APIの削除 以下のAPIが削除されています。
+同名のAPIは引き続き別ファイルで提供されているため、もしこれらを利用されている場合は、以下の移行先ファイルへimportを書き換える必要がありそうです。
+対象API 移行先 BufferFullError std/io/buf_reader.ts BufReader std/io/buf_reader.ts PartialReadError std/io/buf_reader.ts ReadLineResult std/io/buf_reader.ts BufWriter std/io/buf_writer.ts BufWriterSync std/io/buf_writer.ts readDelim std/io/read_delim.ts readStringDelim std/io/read_string_delim.ts readLines std/io/read_lines.ts std/io/files.tsモジュールの削除 (破壊的変更) std/io/files.tsが削除されています。
+このファイルで提供されていたAPIはstd/io/read_range.tsから引き続き利用できるため、今後はそちらへ移行する必要がありそうです。
+std/io/readers.tsモジュールの削除 (破壊的変更) std/io/readers....</p>
+</div>
+<footer class=entry-footer><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2022/01/23〜2023/01/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/29.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/01/16〜2023/01/22の最新情報
 </h2>
 </header>
@@ -279,30 +298,6 @@ https://github.com/ije/esm.sh/releases/tag/v98</p>
 </div>
 <footer class=entry-footer><span title="2022-11-13 00:00:00 +0000 UTC">November 13, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/11/07〜2022/11/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/13.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/10/31〜2022/11/06の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.27.1 ロックファイルに関する機能の追加や改善などが実施されています。
-ロックファイルの自動探索 ロックファイルの自動探索が実装されました。
-これは、deno.json(c)と同じディレクトリにdeno.lockというファイルがあれば、それを元に自動でインテグリティチェックを実行する機能です。
-現状、この機能は--unstableを指定したときのみ有効化されます。(Deno v1.28にて安定化予定のようです)
-また、この自動探索を無効化する目的で、--no-lockというオプションも追加されています。
-これらの変更に合わせて、--lockオプションの引数がオプショナルに変更されました。(未指定の場合は、デフォルトでdeno.lockが読み込まれます)
-また、--lock-writeオプションを指定する際の--lockオプションの指定も不要になっています。
-ロックファイルによるインテグリティチェックの挙動が変更 ロックファイルの自動探索機能の実装に合わせて、インテグリティチェックに関する挙動が変更されています。
-具体的には、ロックファイルに列挙されていないパッケージが見つかったときに、インテグリティチェックが失敗しないように挙動が変更されています。
-もしこのようなパッケージがあった際は、ロックファイルへ自動でハッシュが書き込まれ、次回以降からそのパッケージに対するインテグリティチェックが実施されます。
-その他の変更点 deno infoコマンドでnpm:がサポートされました。 Deno.osRelease()が--unstableなしだと利用できなかった問題が解消されています。(このAPIは元々、Deno v1.27.0で安定化される予定でした) Change Array by copyに関する型定義ファイルが追加されました。 Promise.prototype.thenが上書きされても、DenoのコアAPIが影響を受けないように実装が変更されました。 WindowsでDeno.hostname()が空文字列を返すことがある問題が修正されています。 https://github.com/denoland/deno/releases/tag/v1.27.1
-deno_std v0.162.0 deno_std v0.162.0がリリースされました。
-std/encoding/front_matter - YAML以外のフォーマットのサポート std/encoding/front_matter/any.tsを使うと、YAML/TOML/JSONのいずれかのフォーマットで記述されたFront Matterブロックを読み込むことができます。
-import { extract } from "https://deno.land/std@0.162.0/encoding/front_matter/any.ts"; // YAMLでの記述例) let { attrs, body } = extract&lt;{ title: string, date: Date }>(`--- title: foobar date: 2022-06-12 --- Hello`); assert(attrs.title === "foobar"); assert(attrs.date instanceof Date); assert(body === "Hello"); // TOMLでの記述例) ({ attrs, body } = extract&lt;{ title: string, date: Date }>(`---toml title='foobar' date=2022-06-12 --- Hello`)); assert(attrs....</p>
-</div>
-<footer class=entry-footer><span title="2022-11-06 00:00:00 +0000 UTC">November 6, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/10/31〜2022/11/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/06.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

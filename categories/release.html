@@ -81,6 +81,28 @@ release
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Deno v1.30
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.30がリリースされました。
+この記事では主な変更点などについて解説します。
+Node.js互換性の改善 2023年 Q1のロードマップで発表されていたNode.js組み込みパッケージの利用が正式にサポートされました。
+以下のように、node:&lt;パッケージ名>の形式でimportを記述すると、Node.js組み込みパッケージをDenoから利用することができます。
+import { EventEmitter } from "node:events"; const emitter = new EventEmitter(); emitter.on("foo", console.log); emitter.emit("foo", "bar"); また、Node-APIの互換性の改善も引き続き実施されており、以下のAPIなどの互換性が向上されています。
+napi_adjust_external_memory napi_detach_arraybuffer napi_is_detached_arraybuffer deno.jsonでのImport Mapsの定義がサポート こちらも2023年 Q1のロードマップで発表されていた機能になります。
+deno.jsonでimportsやscopesなどが定義されていると、--import-map使用時と同様に、deno.jsonの定義内容を元にDenoがbare specifierが解釈してくれます。
+例えば、以下のような内容のdeno.jsonが存在したとします。
+{ "imports": { "dax": "https://deno.land/x/dax@0.24.0/mod.ts" } } この場合、ソースコードでは以下のようにしてdaxモジュールを利用することができます。
+import { $ } from "dax"; await $`echo foobar`; deno fmtでセミコロンの有無を制御できるように 今まで、Denoに搭載されたフォーマッタであるdeno fmtコマンドでは、ソースコードにおける行末のセミコロンの有無をカスタマイズすることができませんでした。
+今回のリリースでは、deno.jsonでfmt.options.semiColonsオプションがサポートされました。 このオプションにfalseを設定すると、deno fmtの実行時に行末のセミコロンが取り除かれます。
+{ "fmt": { "options": { "semiColons": false } } } また、--options-no-semicolonsオプションにより、CLI経由でセミコロンの有無を制御することも可能です。...</p>
+</div>
+<footer class=entry-footer><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.30" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.30.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Deno v1.29
 </h2>
 </header>
@@ -282,33 +304,6 @@ new Worker(new URL('./worker.js', import.meta.url).href, { type: "module" }); �
 </div>
 <footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.22" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.22.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Deno v1.21
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.21がリリースされました。
-この記事では新機能や修正点などについて解説します。
-deno checkコマンドの導入 新しいコマンドとしてdeno checkコマンドが追加されました。
-挙動としては基本的にdeno cacheコマンドと同等で、与えられたモジュールの型チェック及びリモートモジュールのダウンロードを行います。
-$ deno check mod.ts deno cacheコマンドとの違い deno cacheコマンドとの大きな違いとして、deno checkコマンドはデフォルトではリモートモジュールの型チェックを行いません。
-deno checkコマンドでリモートモジュールの型チェックも行いたい場合は--remoteオプションを指定する必要があります。
-deno runコマンドでの型チェックについて deno checkコマンドの追加による影響として、将来的にdeno runコマンドではデフォルトで型チェックが行われなくなる予定です。(Deno v1.21時点でもDENO_FUTURE_CHECK=1環境変数を設定することで、この挙動を有効化できます)
-型チェックを行いたいときは、今回追加されたdeno checkコマンドまたはdeno run --checkで明示的に行う必要が出てきます。
-新しいサブプロセスAPI (unstable) DenoにはDeno.run()というサブプロセスを生成するためのAPIがありますが、今回、新しく3種類のAPIが追加されました:
-Deno.spawn() (高レベル) Deno.spawnChild() (低レベル) Deno.spawnSync() (Deno.spawnの同期版) これらのAPIの利用にはDeno.run()と同様に--allow-runパーミッションが必要です。
-また、これらのAPIの追加により、Deno.run()は非推奨化される予定のようです。
-Deno.spawn() これは高レベルAPIという位置づけです。
-指定したコマンドを実行し、そのコマンドの実行結果(status)や標準出力(stdout)及び標準エラー出力(stderr)への出力内容を返却してくれます。
-const { stdout, status } = await Deno.spawn("echo", { args: ["foo"], }); console.assert("foo\n" === new TextDecoder().decode(stdout)); console.assert(status.success); コマンドの出力結果のみが必要で、細かな制御はいらない場合に便利かと思います。
-Deno.spawnChild() こちらは低レベルAPIという位置づけです。
-Deno.Reader/Deno.WriterではなくReadableStream/WritableStreamをベースに実装されています。
-const child = Deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.21" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.21.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

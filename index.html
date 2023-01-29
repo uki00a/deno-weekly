@@ -77,6 +77,47 @@
 <main class=main>
 <article class=first-entry>
 <header class=entry-header>
+<h2>2022/01/23〜2023/01/29の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.30.0 Deno v1.30がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.30 deno_std v0.175.0 deno_std v0.175.0がリリースされました。
+非推奨APIの整理などが実施されています。
+std/io/buffer.ts: (破壊的変更) 非推奨APIの削除 以下のAPIが削除されています。
+同名のAPIは引き続き別ファイルで提供されているため、もしこれらを利用されている場合は、以下の移行先ファイルへimportを書き換える必要がありそうです。
+対象API 移行先 BufferFullError std/io/buf_reader.ts BufReader std/io/buf_reader.ts PartialReadError std/io/buf_reader.ts ReadLineResult std/io/buf_reader.ts BufWriter std/io/buf_writer.ts BufWriterSync std/io/buf_writer.ts readDelim std/io/read_delim.ts readStringDelim std/io/read_string_delim.ts readLines std/io/read_lines.ts std/io/files.tsモジュールの削除 (破壊的変更) std/io/files.tsが削除されています。
+このファイルで提供されていたAPIはstd/io/read_range.tsから引き続き利用できるため、今後はそちらへ移行する必要がありそうです。
+std/io/readers.tsモジュールの削除 (破壊的変更) std/io/readers....</p>
+</div>
+<footer class=entry-footer><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2022/01/23〜2023/01/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/29.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Deno v1.30
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.30がリリースされました。
+この記事では主な変更点などについて解説します。
+Node.js互換性の改善 2023年 Q1のロードマップで発表されていたNode.js組み込みパッケージの利用が正式にサポートされました。
+以下のように、node:&lt;パッケージ名>の形式でimportを記述すると、Node.js組み込みパッケージをDenoから利用することができます。
+import { EventEmitter } from "node:events"; const emitter = new EventEmitter(); emitter.on("foo", console.log); emitter.emit("foo", "bar"); また、Node-APIの互換性の改善も引き続き実施されており、以下のAPIなどの互換性が向上されています。
+napi_adjust_external_memory napi_detach_arraybuffer napi_is_detached_arraybuffer deno.jsonでのImport Mapsの定義がサポート こちらも2023年 Q1のロードマップで発表されていた機能になります。
+deno.jsonでimportsやscopesなどが定義されていると、--import-map使用時と同様に、deno.jsonの定義内容を元にDenoがbare specifierが解釈してくれます。
+例えば、以下のような内容のdeno.jsonが存在したとします。
+{ "imports": { "dax": "https://deno.land/x/dax@0.24.0/mod.ts" } } この場合、ソースコードでは以下のようにしてdaxモジュールを利用することができます。
+import { $ } from "dax"; await $`echo foobar`; deno fmtでセミコロンの有無を制御できるように 今まで、Denoに搭載されたフォーマッタであるdeno fmtコマンドでは、ソースコードにおける行末のセミコロンの有無をカスタマイズすることができませんでした。
+今回のリリースでは、deno.jsonでfmt.options.semiColonsオプションがサポートされました。 このオプションにfalseを設定すると、deno fmtの実行時に行末のセミコロンが取り除かれます。
+{ "fmt": { "options": { "semiColons": false } } } また、--options-no-semicolonsオプションにより、CLI経由でセミコロンの有無を制御することも可能です。...</p>
+</div>
+<footer class=entry-footer><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.30" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.30.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2022/01/16〜2023/01/22の最新情報
 </h2>
 </header>
@@ -251,51 +292,6 @@ const command = new Deno.Command("deno", { args: ["fmt", "--ext=json", "-"], std
 </div>
 <footer class=entry-footer><span title="2022-12-18 00:00:00 +0000 UTC">December 18, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.29" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.29.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2022/12/05〜2022/12/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>今週のDenoに関するアップデート 今週はDenoのリリースが行われていないため、次のv1.29でリリース予定と思われる変更点についていくつか紹介します。
-deno.json(c)でdeno benchコマンドの設定がサポート deno.json(c)にbenchフィールドが追加されており、filesフィールドによってベンチマーク対象のファイルを設定できます。
-{ "bench": { "files": { "include": ["./benchmark"] } } } https://github.com/denoland/deno/pull/16608
-deno.json(c)でのロックファイルのサポート deno.json(c)のlockオプションでロックファイルに関する設定を変更できるようになりました。
-lock: falseを指定すると、ロックファイルの適用が無効化されます。(--no-lockと同様の挙動)
-{ "lock": false } またlockオプションにロックファイルのパスを指定することもできます。
-{ "lock": "./lock.json" } https://github.com/denoland/deno/pull/16781
-deno initコマンドでdeno.jsoncの生成がサポート deno initコマンドでdeno.jsoncが生成されるようになりました。
-https://github.com/denoland/deno/pull/16389 https://github.com/denoland/deno/pull/17002 Deno名前空間からspawn/spawnSync/spawnChildが削除 Deno v1.28.0でDeno.Commandが実装されたため、Deno.spawnなどのAPIが削除されました。
-https://github.com/denoland/deno/pull/16893
-Deno.TcpConnのsetNoDelayとsetKeepAliveが安定化 Deno v1.19で実装されたDeno.TcpConnのsetNoDelayとsetKeepAliveメソッドが安定化されています。
-今後は--unstableなしで利用できるようになりそうです。
-https://github.com/denoland/deno/pull/17003
-Ultra v2 Ultraのv2がリリースされています。
-Honoとの統合やTwind/react-query/react-router/react-helmetのサポートなどの様々な改善が実施されています。
-以下の記事ではUltra v2の概要や使い方などについて解説されています。
-Building Fullstack React Apps with Ultra https://github.com/exhibitionist-digital/ultra/releases/tag/v2.0.0</p>
-</div>
-<footer class=entry-footer><span title="2022-12-11 00:00:00 +0000 UTC">December 11, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/12/05〜2022/12/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/11.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2022/11/28〜2022/12/04の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.28.3 Deno v1.28.3がリリースされました。
-大きな変更点として、Deno v1.28.0で実装されたDeno.Commandに関するAPIの変更が実施されています。(Deno.CommandAPIの見直しについて)
-また、Node.js互換性の改善についても引き続き実施されています。
-node:moduleのcreateRequireで絶対パスがサポート deno runコマンドでnpm:と--inspect-brkの併用がサポート packages.jsonのexports.typesサポートに関する改善 その他の変更点 プロセス停止前に未解決のPromiseが存在する際のエラーメッセージが改善 (問題が発生している箇所がエラーメッセージに表示されるように) ReadableStreamのリーダー周辺の型定義の改善 Denoのトランスパイル結果のキャッシュとdeno test --coverageで生成されたカバレッジの整合性が取れなかった場合に、プロセスがパニックする問題が修正 deno replの履歴管理に関する信頼性の向上 https://github.com/denoland/deno/releases/tag/v1.28.3
-deno_std v0.167.0 deno_std v0.167.0がリリースされています。
-std/async/retryモジュールの追加 std/asyncにExponential backoffアルゴリズムに基づいたリトライ機能を提供するモジュールが追加されました。
-import { retry } from "https://deno.land/std@0.167.0/async/retry.ts"; const result = await retry(async () => { const result = await doSomeAsyncOperation(); return result; }, { multiplier: 2, maxTimeout: 16_000, maxAttempts: 10, minTimeout: 500, }); std/testing/typesモジュールの追加 std/testingにTypeScriptの型をテストするためのモジュールが追加されています。
-import type { Has, IsExact, IsNullable } from "https://deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-12-04 00:00:00 +0000 UTC">December 4, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/11/28〜2022/12/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/04.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
