@@ -81,6 +81,26 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/01/30〜2023/02/05の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.30.1 Deno v1.30.1がリリースされました。
+Node.js互換性の改善 Node-APIの互換性が改善されています。
+napi_get_globalでDenoのglobalThisではなくglobalオブジェクトが返されるように修正されています。 napi_create_functionでlengthパラメータが誤ってチェックされていた問題が修正されています。 これらの変更により、Denoでref-napiが動くようになったようです。
+その他には、deno replでnode:URLを使った際に、以下のエラーメッセージが表示されてしまう問題が解消されています。
+Could not set npm package requirements. Error getting response at https://registry.npmjs.org/@types/node: An npm specifier not found in cache: "@types/node", --cached-only is specified. deno lspの改善 Import Maps関連のバグ修正が実施されています。
+Import Mapsを更新した際に、LSPの再起動やコードの編集をせずとも更新内容が反映されるように挙動が改善されました Import Mapsが存在すると、fs形式のimportをnode:fsの形式へ変換するquickfixが機能しなくなる問題が修正されています その他の修正 performance.markのdetailオプションにArrayBufferやTypedArrayを指定するとエラーが発生する問題が修正されています https://github.com/denoland/deno/releases/tag/v1.30.1
+Deno v1.30.2 Deno v1.30.2がリリースされています。
+v1.30.1でCPU使用率の増加が見られたため、それを修正するために、急遽リリースされる運びになったようです。
+deno version 1.30.1 large cpu increase #17629 https://github.com/denoland/deno/releases/tag/v1.30.2
+deno_std v0.176.0 deno_std v0....</p>
+</div>
+<footer class=entry-footer><span title="2023-02-05 00:00:00 +0000 UTC">February 5, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2022/01/30〜2023/02/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/05.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/01/23〜2023/01/29の最新情報
 </h2>
 </header>
@@ -283,24 +303,6 @@ Building Fullstack React Apps with Ultra https://github.com/exhibitionist-digita
 </div>
 <footer class=entry-footer><span title="2022-12-11 00:00:00 +0000 UTC">December 11, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/12/05〜2022/12/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/11.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/11/28〜2022/12/04の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.28.3 Deno v1.28.3がリリースされました。
-大きな変更点として、Deno v1.28.0で実装されたDeno.Commandに関するAPIの変更が実施されています。(Deno.CommandAPIの見直しについて)
-また、Node.js互換性の改善についても引き続き実施されています。
-node:moduleのcreateRequireで絶対パスがサポート deno runコマンドでnpm:と--inspect-brkの併用がサポート packages.jsonのexports.typesサポートに関する改善 その他の変更点 プロセス停止前に未解決のPromiseが存在する際のエラーメッセージが改善 (問題が発生している箇所がエラーメッセージに表示されるように) ReadableStreamのリーダー周辺の型定義の改善 Denoのトランスパイル結果のキャッシュとdeno test --coverageで生成されたカバレッジの整合性が取れなかった場合に、プロセスがパニックする問題が修正 deno replの履歴管理に関する信頼性の向上 https://github.com/denoland/deno/releases/tag/v1.28.3
-deno_std v0.167.0 deno_std v0.167.0がリリースされています。
-std/async/retryモジュールの追加 std/asyncにExponential backoffアルゴリズムに基づいたリトライ機能を提供するモジュールが追加されました。
-import { retry } from "https://deno.land/std@0.167.0/async/retry.ts"; const result = await retry(async () => { const result = await doSomeAsyncOperation(); return result; }, { multiplier: 2, maxTimeout: 16_000, maxAttempts: 10, minTimeout: 500, }); std/testing/typesモジュールの追加 std/testingにTypeScriptの型をテストするためのモジュールが追加されています。
-import type { Has, IsExact, IsNullable } from "https://deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-12-04 00:00:00 +0000 UTC">December 4, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/11/28〜2022/12/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/04.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

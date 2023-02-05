@@ -77,6 +77,31 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2022/10/17〜2022/10/23の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.26.2 Deno v1.26.2がリリースされました。
+サブプロセス関連のAPIやnpmサポートの改善、fetch()の互換性の向上などが実施されています。
+Deno.SpawnOptionsでwindowsRawArgumentsオプションがサポート Windows上でこのオプションにtrueを指定すると、コマンドライン引数のクォーテーションの付与とエスケープがスキップされます。
+const { success, stdout } = await Deno.spawn(cmd, { args, windowsRawArguments: true, }); この機能は、後述するdeno_std v0.160.0におけるwindowsVerbatimArgumentsの実装に利用されています。
+npmサポートの改善 dist-tagがサポートされています。
+例)
+import ts from "npm:typescript@next"; その他の改善として、npmレジストリからのパッケージ情報のダウンロード処理が並列化されています。
+Fetch APIの互換性の向上 Fetch Standardとの互換性の改善が実施されています。
+例)
+Headersで不正な形式のヘッダを連続で解析すると、二度目以降の解析時にエラーが発生しない問題が修正 fetch()の呼び出し時にRangeヘッダが指定された際は、Accept-Encoding: identityが自動で設定されるように修正 ResponseやRequestに空のFormDataを渡せるように改善 Responseに設定したReadableStreamから非Uint8Array型のチャンクが読み込まれた際は、TypeErrorが発生するように修正 レスポンスボディがContent-Lengthを超過した際などにTypeErrorが発生するように修正 それ以外にもCache APIやWeb Streams APIなどでも互換性の向上が実施されています。
+その他の変更点 deno taskでのスクリプト実行時にINIT_CWD環境変数が設定されるように修正 (npm runとの互換性の向上が目的のようです) deno.json(c)のimportMapオプションにリモートURLを指定できるように改善 deno lspでの補完時に、スニペットが適切に取り扱われるように修正 コンパイル対象ファイルの名前が@で始まるときに、deno compileがパニックする問題が修正 https://github.com/denoland/deno/releases/tag/v1.26.2
+deno_std v0.160.0 deno_std v0.160.0がリリースされました。
+このリリースではstd/nodeのNode.js互換性の向上が実施されています。
+変更点:
+std/node/readline/promisesが実装 std/node/child_process: windowsVerbatimArgumentsオプションがサポート std/node/fs: Windowsでfs....</p>
+</div>
+<footer class=entry-footer><span title="2022-10-23 00:00:00 +0000 UTC">October 23, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/10/17〜2022/10/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/23.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2022/10/10〜2022/10/16の最新情報
 </h2>
 </header>
@@ -294,24 +319,6 @@ const process = require('process'); その他の変更点...</p>
 </div>
 <footer class=entry-footer><span title="2022-09-04 00:00:00 +0000 UTC">September 4, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/08/29〜2022/09/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/04.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/08/22〜2022/08/28の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.25.0 Deno v1.25.0がリリースされました。
-以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
-Deno v1.25 deno_std v0.153.0 deno_std v0.153.0がリリースされました。
-std/encoding/csv: parse()が同期的に動作するように (破壊的変更) parse()の引数からBufReaderが削除されています
-これに伴い、parse()の戻り値がstring[][] | Record&lt;string, unknown>[]に変更されています。
-import { parse } from "https://deno.land/std@0.153.0/encoding/csv.ts"; const records = parse(`id,name 1,foo 2,bar`); console.log(records); // Output: [ [ "id", "name" ], [ "1", "foo" ], [ "2", "bar" ] ] std/http/cookie_mapモジュールが追加 MapライクなAPIをベースにCookieを管理するためのユーティリティモジュールが追加されました。
-CookieMapはリクエスト及びレスポンスに関するCookieの管理に利用することができます。
-import { CookieMap, mergeHeaders } from "https://deno.land/std@0.153.0/http/cookie_map.ts"; const req = new Request("http://localhost:3000", { headers: { cookie: "foo=bar; hoge=piyo;" }, }); const cookies = new CookieMap(req); cookies....</p>
-</div>
-<footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/22〜2022/08/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/28.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

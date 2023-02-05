@@ -81,6 +81,27 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/10/04〜2021/10/10の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.14.3 Deno v1.14.3がリリースされました。
+このリリースでは、バグ修正やパフォーマンスチューニングを中心に実施されています。
+変更点:
+fetchで不正な形式のヘッダを指定するとプロセスがパニックする問題が修正されました Deno.listenで抽象ソケットアドレスを指定するとプロセスがパニックする問題が修正されました REPLでglobalThisに代入するとプロセスがパニックする問題が修正されました Workerのmessageハンドラで投げられたエラーが報告されない問題が修正されました Workerのdeno.permissions.envオプションに配列を渡せるようになりました Deno.testでAggregateErrorが投げられた際の出力が改善されました Opの実行、RequestやResponseの作成、Headers.prototype.appendなどが最適化されました https://github.com/denoland/deno/releases/tag/v1.14.3
+deno_std v0.110.0 deno_std v0.110.0がリリースされました。
+std/nodeへの機能追加が実施されています。
+変更点:
+node/buffer: BufferでreadUIntLE及びreadUIntBEが実装されました node/crypto: scrypt, scryptSync, timingSafeEqual, 及びrandomUUIDが実装されました。 node/stream/web: 下記クラスが追加されました。 ReadableByteStreamController TransformStreamDefaultController ByteLengthQueuingStrategy CountQueuingStrategy TextEncoderStream TextDecoderStream node/os: tmpdirが実装されました https://github.com/denoland/deno_std/releases/tag/0.110.0
+Freshのアップデート DenoのWebフレームワークであるFreshがアップデートされました。
+&lt;Head>コンポーネントがサポートされ、&lt;head>配下に要素を追加できるようになっています。
+/** @jsx h */ import { h, Head } from "../deps.ts"; export default function Home() { return ( &lt;div> &lt;Head> &lt;title>Hello&lt;/title> &lt;/Head> &lt;h2>Home&lt;/h2> &lt;/div> ); } https://github....</p>
+</div>
+<footer class=entry-footer><span title="2021-10-10 00:00:00 +0000 UTC">October 10, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/10/04〜2021/10/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/10.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/09/27〜2021/10/03の最新情報
 </h2>
 </header>
@@ -273,22 +294,6 @@ Collection#dropIndexesが実装されました Collection#findAndModifyが実装
 </div>
 <footer class=entry-footer><span title="2021-07-25 00:00:00 +0000 UTC">July 25, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/19〜2021/07/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/25.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/07/12〜2021/07/18の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.12.0のリリース Deno v1.12.0がリリースされました。
-変更点:
-MessageChannelとMessagePortがサポートされました Deno名前空間のObject.freezeによる凍結が解除され、configurableになりました WebAssembly.instantiateStreamingがサポートされました tsconfig.jsonやDeno.emitでtypesオプションがサポートされました /// &lt;reference types="..." />がサポートされました SharedArrayBufferのworker間での共有がサポートされました SubtleCrypto.generateKeyとSubtleCrypto.sign、SubtleCrypto.verifyがサポートされました Deno.createHttpClientでproxyオプションがサポートされました ネイティブHTTPサーバでWebSocketがサポートされました (Deno.upgradeWebSocket) Denoのデバッグ機能(--inspect/--inspect-brk)が改善され、コンソールへの出力がDevToolsとターミナルの両方に出力されるようになりました deno lspのtextDocument/hoverメソッドで依存モジュールの情報を表示できるようになりました REPLの補完の挙動が改善されました REPLでimport宣言がサポートされました REPLでTypeScriptがサポートされました REPLなどでEventやRequestなどのクラスのprototypeを評価しようとすると、プロセスがクラッシュする問題が修正されました deno testで--shuffleと--fail-fast=&lt;N>オプションがサポートされました DedicatedWorkerGlobalScopeのイベントハンドラが仕様通りに動作するように修正されました Deno.ppidとDeno.memoryUsageがstableになりました console.tableの出力が改善されました fetch APIでユーザが指定したHOSTヘッダが無視されるようになりました fetch APIでOPTIONSリクエストを送信したときに、レスポンスボディが設定されるように修正されました performance APIのWeb標準との互換性が向上しました SignalStream#disposeを呼んだ後にもSignalStream#thenで登録したコールバックが呼ばれてしまう問題が修正されました Deno.copyが非推奨化されました 循環依存の関係にある複数のモジュールを平行で動的importすると、プロセスがクラッシュする問題が修正されました https://github.com/denoland/deno/releases/tag/v1.12.0 https://deno.com/blog/v1.12 Deno 1.12.0 がリリースされたので新機能や変更点の紹介 deno_std v0.101.0のリリース deno_stdのv0.101.0がリリースされました。
-このリリースにはいくつかの破壊的変更が含まれています。
-変更点:
-encoding/hex: encodedLen, encodeToString, decodedLen, decodeStringが削除され、errInvalidByteとerrLengthが非公開になりました (破壊的変更) mime/multipart: MultipartReader#readFormの戻り値であるMultipartFormDataの各メソッドが配列を返却するように変更されました。それに合わせて、fileとvalueメソッドがそれぞれfilesとvaluesにリネームされています (破壊的変更) uuid/v4: generate関数が非推奨化されました (Web Crypto APIが実装されたため) uuid/v5: Web Crypto APIの実装に合わせ、generate関数のシグネチャが変更されました (破壊的変更) async: deadline関数とdebounce関数が追加されました encoding/toml: 不適切な形式の文字列が適切に取り扱われるよう修正されました encoding/toml: stringifyで複数の型が混在した配列が適切にシリアライズされない問題が修正されました encoding/toml: 不適切な空白文字が含まれていた際に、例外が投げられるように修正されました hash: BLAKE3ハッシュ関数がサポートされました http/cookie: Domain属性に不適切な形式の値が設定されていないかチェックされるようになりました http/cookie: deleteCookieでPath属性とDomain属性の指定がサポートされました http/cookie: setCookieでmaxAgeオプションに0を指定するとエラーが発生する問題が修正されました io/bufio: readLines関数で、EOFに達した際に余分な空文字列がyieldされる問題が修正されました io/util: Deno v1....</p>
-</div>
-<footer class=entry-footer><span title="2021-07-18 00:00:00 +0000 UTC">July 18, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/12〜2021/07/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/18.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
