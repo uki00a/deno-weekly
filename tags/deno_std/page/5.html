@@ -81,6 +81,26 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/04/04〜2022/04/10の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.20.5 Deno v1.20.5がリリースされました。
+deno lspの新機能 deno lspでTesting APIがサポートされています (https://code.visualstudio.com/api/extension-guides/testing)
+vscodeでTesting: Focus on Test Explorer Viewコマンドを実行すると、テストファイルに含まれるテストケースの一覧を表示できます。
+Deno.Listenerにrefとunrefメソッドが追加 (unstable) unref()が呼ばれたListenerはプロセスの終了をブロックしなくなります (タイマにDeno.unrefTimerを呼んだときと同様の挙動をします)
+後述するdeno_std/node/netでのServer.ref()の実装で利用されています。
+バグ修正 SubtleCrypto.exportKey()でextractable: falseに設定されたキーをエクスポートできてしまう問題が修正されました (https://github.com/denoland/deno/issues/14215) --compatを指定してdeno installを実行した際に、--compatフラグが維持されない問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.20.5
+deno_std v0.134.0 deno_std v0.134.0がリリースされました。
+encoding/csvやnodeモジュールへの機能の追加が行われています。
+encoding/csv CSVStreamが追加されました。
+import { CSVStream } from "https://deno.land/std@0.134.0/encoding/csv/stream.ts"; const file = await Deno.open("path/to/data.csv"); const stream = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new CSVStream()); for await (const record of stream) { console.log(record); } node child_process: ChildProcess.kill()でsignalパラメータがサポートされました。 net: Server....</p>
+</div>
+<footer class=entry-footer><span title="2022-04-10 00:00:00 +0000 UTC">April 10, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/04〜2022/04/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/10.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/03/28〜2022/04/03の最新情報
 </h2>
 </header>
@@ -293,22 +313,6 @@ I’m porting tsc to Go SWCの作者であるkdy1氏により、I’m porting ts
 </div>
 <footer class=entry-footer><span title="2022-01-30 00:00:00 +0000 UTC">January 30, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/24〜2022/01/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/30.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/01/17〜2022/01/23の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.18.0 Deno v1.18.0がリリースされました。
-設定ファイルの自動読み込みがサポート 今までは、設定ファイルを読み込むためには--configの指定が必要でした。
-$ deno run --config ./deno.json ./main.ts 今後は、--configが指定されなかった場合、deno.jsonまたはdeno.jsoncという名前の設定ファイルを自動で読み込まれるようになります。
-Deno.testのsub-steps APIが安定化 Deno.testでテストケースのグループ化を行うためのsub-steps APIが安定化されました。
-今後は--unstableを指定しなくても利用できます。
-Deno.test("nested test case", async (t) => { const success = await t.step("step 1", async (t) => { const success = await t.step("step 1-1", () => { throw new Error("Failed!"); }); if (!success) throw new Error("Failed!"); await t.step("step 1-2", () => {}); }); if (success) throw new Error("Failed!"); }); Web Cryptography APIの実装が完了 このリリースでは、下記の変更が実施されています。...</p>
-</div>
-<footer class=entry-footer><span title="2022-01-23 00:00:00 +0000 UTC">January 23, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/17〜2022/01/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/23.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
