@@ -81,6 +81,27 @@ release
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Deno v1.31
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.31がリリースされました。
+この記事では主な変更点などについて解説します。
+package.jsonサポート Denoでpackage.jsonがサポートされました。
+具体的には、以下のような機能などが実装されています。
+package.jsonの自動探索 dependencies/devDependenciesの定義内容によるbare specifierの解決 deno taskによるscriptsの実行 package.jsonの自動探索 deno.jsonなどのファイルと同様に、Denoがpackage.jsonも自動で探索してくれるようになりました。
+もしpackage.jsonが見つかった場合、必要に応じてdependenciesやdevDependenciesで記述された依存パッケージを自動でダウンロードし、デフォルトでnode_modulesディレクトリに保存してくれます。 (従来通り、package.jsonが存在しない状態でnpm:経由でnpmパッケージをimportした際は、--node-modules-dirを指定しない限り、node_modulesは作成されません)
+もし、package.jsonの自動探索を無効化したい場合は、以下のいずれかの手段で無効化できます (以下の機能は、それぞれ次のリリースであるv1.31.1で追加された機能のためご注意！)
+--no-configまたは--no-npmオプションを指定する。 DENO_NO_PACKAGE_JSON環境変数に1を指定する dependencies/devDependenciesによるbare specifierの解決 Denoがpackage.jsonのdependenciesやdevDependenciesで定義された依存関係を元に、Import Mapsライクにbare specifierを解決してくれるようになりました。
+例えば、以下のような内容のpackage.jsonが存在したとします。
+{ "dependencies": { "chalk": "^5.2.0", "koa": "2" } } この場合、アプリケーションでは以下のようにbare specifierを記述することがでます。
+import chalk from "chalk"; // => `npm:chalk@^5.2.0` import Koa from "koa"; // => `npm:koa@2` const app = new Koa(); app.use((ctx) => { ctx.body = "Hello world"; }); app.listen(3000, () => { console....</p>
+</div>
+<footer class=entry-footer><span title="2023-02-26 00:00:00 +0000 UTC">February 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.31" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.31.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Deno v1.30
 </h2>
 </header>
@@ -282,28 +303,6 @@ $ deno task --cwd ./src build リダイレクションのサポート タスク�
 </div>
 <footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.23" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.23.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Deno v1.22
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.22がリリースされました。
-この記事では、主な変更点についてまとめていきます。
-リモートモジュールの型チェックがデフォルトで無効化 deno runやdeno testなどの各コマンドでリモートモジュールの型チェックがデフォルトで無効化されました。
-今後はローカルのTypeScriptファイルのみが型チェックされます。
-もしリモートモジュールの型チェックも必要な際は--check=allオプションまたはdeno check --remoteを使用します。
-また、次のv1.23のリリースでは、deno runやdeno cacheではデフォルトで一切型チェックが行われなくなる予定です。 (deno checkコマンドや--checkオプションなどで明示的に型チェックする必要があります)
-例えば、CIでdeno cacheコマンドを実行して型チェックを行っている場合などは、今のうちにdeno checkコマンドに移行しておくとよいと思います。
-# mod.tsの型チェックを行う $ deno check mod.ts # deno run実行時に型チェックも行う $ deno run --check main.ts 設定ファイルの読み込みの無効化 Denoはエントリポイントが存在するディレクトリまたはその上位のいずれかのディレクトリにdeno.json(c)というファイルが存在する場合、それを自動で読み込みます。
-このリリースでは、新しく--no-configオプションがサポートされました。 このオプションを指定すると、deno.json(c)の自動探索を無効化できます。
-$ deno run --no-config main.ts (破壊的変更) Worker内でデフォルトでDeno APIが有効化 今までは、Worker内でDeno.readFileなどのAPIを使用したい場合は、denoオプションによって明示的に有効化する必要がありました。
-new Worker(new URL('./worker.js', import.meta.url).href, { deno: { namespace: true }, // Deno APIの使用を有効化 type: "module" }); 今後は上記のようにオプションを指定しなくても、Worker内で常にDenoのAPIを参照できます。
-new Worker(new URL('./worker.js', import.meta.url).href, { type: "module" }); また、この変更の影響により、WorkerOptions....</p>
-</div>
-<footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.22" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.22.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

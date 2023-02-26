@@ -81,6 +81,30 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/02/20〜2023/02/26の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.31 Deno v1.31がリリースされています。
+以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
+Deno v1.31 Deno v1.31.1 Deno v1.31.1がリリースされています。
+package.jsonサポートに関する改善 以下のいずれかの手段によって、package.jsonの自動探索を無効化できるようになりました。
+DENO_NO_PACKAGE_JSON環境変数に1を設定する --no-configまたは--no-npmを指定する また、package.jsonが見つかった際のnpmパッケージのダウンロードに関する挙動が改善されています。package.jsonで依存関係として指定されたいずれかのパッケージが利用されるタイミングまでnpmパッケージのダウンロードが遅延されます。
+これにより、npmパッケージに依存しないスクリプトを実行する場合は、package.jsonがあってもnpmパッケージがダウンロードされなくなります。
+その他には、package.jsonの以下のスキームから始まるspecifierが無視されるように修正されています。
+workspace: file: git: http: https: Deno.serve()でリモートアドレスの取得がサポート Deno.serve()に渡したhandlerの第2引数にオプションが渡されるようになりました。remoteAddrプロパティ(Deno.NetAddr)からリモートアドレスが取得できます。
+Deno.serve({ handler: (req, { remoteAddr }) => { return Response.json(remoteAddr); }, }); その他のバグ修正 リモートモジュールからdata:URLをimportできなくなっていた問題が修正されています。 静的に解析ができないdynamic importが複数同時に実行された際に、まれにDenoがパニックする問題が修正されています。 Import Mapsでローカルモジュールへのマッピングが定義されていた場合、リモートモジュールからそのローカルモジュールをimportできない問題が修正されています。 https://github.com/denoland/deno/releases/tag/v1.31.1
+deno_std v0.178.0 deno_std v0.178.0がリリースされました。
+std/nodeの削除 Deno v1.31でDeno本体にstd/nodeが組み込まれました。
+その影響により、std/nodeが削除されています。
+もし、今後もstd/nodeを利用したい場合は、バージョンを明示した上でimportをするとよさそうです。
+import { EventEmitter } from "https://deno.land/std@0.177.0/node/events.ts"; std/http/file_server Deno DeployでもETagが返却されるように挙動が改善されています。...</p>
+</div>
+<footer class=entry-footer><span title="2023-02-26 00:00:00 +0000 UTC">February 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2022/02/20〜2023/02/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/26.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/02/13〜2023/02/19の最新情報
 </h2>
 </header>
@@ -268,24 +292,6 @@ Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptラン�
 </div>
 <footer class=entry-footer><span title="2022-12-18 00:00:00 +0000 UTC">December 18, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/12/12〜2022/12/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/18.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/11/28〜2022/12/04の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.28.3 Deno v1.28.3がリリースされました。
-大きな変更点として、Deno v1.28.0で実装されたDeno.Commandに関するAPIの変更が実施されています。(Deno.CommandAPIの見直しについて)
-また、Node.js互換性の改善についても引き続き実施されています。
-node:moduleのcreateRequireで絶対パスがサポート deno runコマンドでnpm:と--inspect-brkの併用がサポート packages.jsonのexports.typesサポートに関する改善 その他の変更点 プロセス停止前に未解決のPromiseが存在する際のエラーメッセージが改善 (問題が発生している箇所がエラーメッセージに表示されるように) ReadableStreamのリーダー周辺の型定義の改善 Denoのトランスパイル結果のキャッシュとdeno test --coverageで生成されたカバレッジの整合性が取れなかった場合に、プロセスがパニックする問題が修正 deno replの履歴管理に関する信頼性の向上 https://github.com/denoland/deno/releases/tag/v1.28.3
-deno_std v0.167.0 deno_std v0.167.0がリリースされています。
-std/async/retryモジュールの追加 std/asyncにExponential backoffアルゴリズムに基づいたリトライ機能を提供するモジュールが追加されました。
-import { retry } from "https://deno.land/std@0.167.0/async/retry.ts"; const result = await retry(async () => { const result = await doSomeAsyncOperation(); return result; }, { multiplier: 2, maxTimeout: 16_000, maxAttempts: 10, minTimeout: 500, }); std/testing/typesモジュールの追加 std/testingにTypeScriptの型をテストするためのモジュールが追加されています。
-import type { Has, IsExact, IsNullable } from "https://deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-12-04 00:00:00 +0000 UTC">December 4, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/11/28〜2022/12/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/04.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

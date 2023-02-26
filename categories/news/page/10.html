@@ -81,6 +81,22 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/06/07〜2021/06/13の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.11.0がリリースされました Deno v1.11.0がリリースされました。
+このリリースでは、deno compileやdeno lspへの新機能の追加などが実施されています。
+TypeScriptがv4.3にアップグレードされました Crypto.randomUUID()が実装されました SubtleCrypto.digest()が実装されました fetch()でabortがサポートされました TextDecoderStreamとTextEncoderStreamがサポートされました。 Deno.watchFsがFsWatcherインターフェースを返却されるように修正されました FsWatcher.returnメソッドはv2.0にて削除される予定のようです deno infoコマンドでlocalStorageの保存先が表示されるようになりました deno lintがstableという扱いになりました deno compileでdata:URLのダイナミックimportがサポートされました deno compileでDeno.emit()がサポートされました deno lspのCodeLensでテストコードの実行がサポートされました deno lspでモジュールレジストリの自動検出が実装されました BroadcastChannelが実装されました(unstable) Deno 1.11 Release Notes Deno 1.11.0 がリリースされたので新機能や変更点の紹介 deno_std v0.98.0がリリースされました deno_stdのv0.98.0がリリースされました。
+変更点:
+async: async/teeモジュールが追加されました async/mux: MuxAsyncIterator.addでAsyncIterableがサポートされました io/bufio: readLinesとreadStringDelimにオプションが追加され、TextDecoderの挙動を詳細に制御できるようになりました encoding/binary: readExact関数が追加されました encoding/binary: getNBytes関数において、初回のDeno.Reader.readの呼び出しで指定したバイト数未満のデータしか読めなかった際に、即座に例外が投げられる問題が修正されました encoding/binary: varnumなどの関数でUint8Array.byteOffsetが無視される問題が修正されました node: perf_hooksモジュールが追加されました node/events: EventEmitter#once/getMaxListeners/setMaxListenersがNode.jsと同じ挙動をするように修正されました testing/asserts: WeakMapやWeakSetなどのオブジェクト同士を比較しようとすると、例外が投げられるように変更されました https://github.com/denoland/deno_std/releases/tag/0.98.0
+denoland/deno_docker 今まで、DenoのDockerイメージはAndy Hayden氏によって個人でメンテナンスされていました。...</p>
+</div>
+<footer class=entry-footer><span title="2021-06-13 00:00:00 +0000 UTC">June 13, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/06/07〜2021/06/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/13.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/06/01〜2021/06/06の最新情報
 </h2>
 </header>
@@ -263,33 +279,6 @@ https://github.com/egoist/rollup-plugin-deno</p>
 </div>
 <footer class=entry-footer><span title="2021-04-11 00:00:00 +0000 UTC">April 11, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/04/05〜2021/04/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/11.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/03/29〜2021/04/04の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno本体の最新情報 Deno v1.8.3がリリース Deno v1.8.3がリリースされました。このリリースでは、deno lspへの機能の追加やバグ修正などが行われています。
-変更点:
-deno lspでimportの補完がサポートされた deno lspでtextDocument/selectionRangeが実装された WebSocket#closeですでに閉じているコネクションを再び閉じようとしたときに、例外が投げられないように修正された AbortController.abort()が追加された TypeScriptのlibとしてdom.asynciterableが追加された(Denoのいずれかのバージョンで誤って削除されてしまったようです) https://github.com/denoland/deno/releases/tag/v1.8.3
-deno_std v0.92.0がリリース deno_stdのv0.92.0がリリースされました。
-変更点:
-io/bufio: Deno Deployに対応した node/fs: symlinkとsymlinkSyncが実装された node/util: format関数が実装された io: io/buffer及びio/utilが追加された (Deno v2.0に向けて、Deno.Buffer/readAll/readAllSync/writeAll/writeAllSyncをDeno名前空間からstdへ移行することが目的のようです) https://github.com/denoland/deno_std/releases/tag/0.92.0
-Deno Deployが公開された Deno Deployが公開されました。
-Deno DeployはCDN Edge上でTypeScriptやWebAssemblyなどを動作させることができるサービスです。Cloudflare WorkersのAPIと互換性があります。
-https://deno.com/deploy/docs サードパーティモジュールなどの最新情報 Snel - DenoでSvelteアプリを開発するためのツール SnelはDenoでSvelteアプリを開発するためのツール/フレームワークです。
-.svelteファイルをJavaScriptファイルへコンパイルしたり、HMRを搭載したdevサーバなどが提供されています。
-将来的にはSSRやSSGなどの機能も提供される予定のようです。
-https://github.com/crewdevio/Snel
-Sift - Deno Deployのルーティングライブラリ SiftはDeno Deployのルーティングライブラリです。
-path-to-regexpでサポートされている形式で、ルーティングを定義することができます。
-他にも、静的ファイルの配信やJSXのレンダリングなどがサポートされています。
-https://github.com/satyarohith/sift
-deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用することのできるDOM APIの実装を提供しています。...</p>
-</div>
-<footer class=entry-footer><span title="2021-04-04 00:00:00 +0000 UTC">April 4, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/03/29〜2021/04/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/04.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

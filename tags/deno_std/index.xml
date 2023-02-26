@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 19 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/02/13〜2023/02/19の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/02/19.html</link><pubDate>Sun, 19 Feb 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/02/19.html</guid><description>先週のDenoの変更点 先週はDenoのリリースが行われていないため、直近のコミット内容をいくつか紹介いたします。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 26 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/02/20〜2023/02/26の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/02/26.html</link><pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/02/26.html</guid><description>Deno v1.31 Deno v1.31がリリースされています。
+以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
+Deno v1.31 Deno v1.31.1 Deno v1.31.1がリリースされています。
+package.jsonサポートに関する改善 以下のいずれかの手段によって、package.jsonの自動探索を無効化できるようになりました。
+DENO_NO_PACKAGE_JSON環境変数に1を設定する --no-configまたは--no-npmを指定する また、package.jsonが見つかった際のnpmパッケージのダウンロードに関する挙動が改善されています。package.jsonで依存関係として指定されたいずれかのパッケージが利用されるタイミングまでnpmパッケージのダウンロードが遅延されます。
+これにより、npmパッケージに依存しないスクリプトを実行する場合は、package.jsonがあってもnpmパッケージがダウンロードされなくなります。
+その他には、package.jsonの以下のスキームから始まるspecifierが無視されるように修正されています。
+workspace: file: git: http: https: Deno.serve()でリモートアドレスの取得がサポート Deno.serve()に渡したhandlerの第2引数にオプションが渡されるようになりました。remoteAddrプロパティ(Deno.NetAddr)からリモートアドレスが取得できます。
+Deno.serve({ handler: (req, { remoteAddr }) =&amp;gt; { return Response.json(remoteAddr); }, }); その他のバグ修正 リモートモジュールからdata:URLをimportできなくなっていた問題が修正されています。 静的に解析ができないdynamic importが複数同時に実行された際に、まれにDenoがパニックする問題が修正されています。 Import Mapsでローカルモジュールへのマッピングが定義されていた場合、リモートモジュールからそのローカルモジュールをimportできない問題が修正されています。 https://github.com/denoland/deno/releases/tag/v1.31.1
+deno_std v0.178.0 deno_std v0.178.0がリリースされました。
+std/nodeの削除 Deno v1.31でDeno本体にstd/nodeが組み込まれました。
+その影響により、std/nodeが削除されています。
+もし、今後もstd/nodeを利用したい場合は、バージョンを明示した上でimportをするとよさそうです。
+import { EventEmitter } from &amp;#34;https://deno.land/std@0.177.0/node/events.ts&amp;#34;; std/http/file_server Deno DeployでもETagが返却されるように挙動が改善されています。</description></item><item><title>2022/02/13〜2023/02/19の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/02/19.html</link><pubDate>Sun, 19 Feb 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/02/19.html</guid><description>先週のDenoの変更点 先週はDenoのリリースが行われていないため、直近のコミット内容をいくつか紹介いたします。
 これらの変更が含まれると思われるDeno v1.31については、今週にリリースされる予定のようです。
 deno_std/nodeのDeno本体への組み込み 今まで、deno_std/nodeとDeno本体は別々に開発されていた都合もあり、Denoからnpmパッケージを利用する際は、https://deno.land/std/nodeのダウンロードが背後で行われていました。
 以下のコミットなどにおいて、V8のスナップショットの仕組みを利用して、deno_std/nodeをDeno本体へ組み込む変更が行われています。

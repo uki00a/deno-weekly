@@ -81,6 +81,49 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/01/02〜2023/01/08の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.29.2 Deno v1.29.2がリリースされました。
+Deno.osUptime() システムが起動してからの経過時間を取得するために、Deno.osUptime()というAPIが追加されました。
+利用するには、--unstableと--allow-sysの指定が必要です。
+Deno.Conn.ref()/unref() Deno.Connへunref()とref()メソッドが追加されました。
+これらのAPIの利用には--unstableの指定が必要です。
+unref()メソッドを呼ぶと、Deno.unrefTimerなどと同様に、読み込み途中のコネクションが存在したとしてもプロセスの終了がブロックされなくなります。(ただし、効果があるのは読み込みに対してのみで、書き込みについてはunrefを呼んだ場合であってもブロックされます)
+ref()メソッドを呼ぶと、unref()されたコネクションをデフォルトの状態に戻すことができます。(通常通り、読み込み途中のコネクションがプロセスの終了をブロックします)
+CLIに関するバグ修正 --node-modules-dirが指定された際にrequire()でパッケージが適切に解決できないケースがある問題が修正されています deno.json(c)でTypeScriptのcompilerOptions.noErrorTruncationオプションを設定できない問題が修正されています dynamic importが使用されていると、"unhandledrejection"のリスナが呼ばれないケースがあった問題が修正されています deno instlallもしくはdeno uninstallを実行する際に、ロックファイルの自動適用が行われてしまう問題が修正されています Deno APIに関する修正 Deno.memoryUsage()から返却されるrssプロパティに正しい値が設定されない問題が修正されています Deno.permissions.revokeまたはDeno.permissions.requestでname: "ffi"が指定された際に、pathオプションにURLオブジェクトを指定できるようになりました。 fetch()関連の修正 下記のケースでプロセスがパニックしてしまう問題が修正されています:
+引数に不正な形式のURLが与えられた場合 bodyオプションに渡したReadableStreamでエラーが発生した場合 deno lsp関連の修正 下記のケースでTest code lensが表示されない問題が修正されています Deno.test()でテスト名がテンプレートリテラルを使用して定義されている場合 下記のように、関数を使用してテストケースが定義されている場合 const test = () => ({ name: "some test", fn: () => {} }); Deno.test(test()); "Add all missing imports"アクションで正しいimport文が生成されないことがある問題が修正されています プライベートフィールド(#someField)の補完が適切に動作するように修正されています https://github.com/denoland/deno/releases/tag/v1.29.2...</p>
+</div>
+<footer class=entry-footer><span title="2023-01-08 00:00:00 +0000 UTC">January 8, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2022/01/02〜2023/01/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/08.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2022/12/26〜2023/01/01の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno.Connへのunrefとrefメソッドの追加 Deno.Connへunrefとrefメソッドを追加するPRがマージされています。
+feat(unstable): Add Deno.Conn.ref()/unref() (denoland/deno#17170)
+Deno.Connのunrefを呼ぶと、Deno.unrefTimerなどと同様に、読み込み途中のコネクションが存在したとしてもプロセスの終了がブロックされなくなります。(ただし、効果があるのは読み込みに対してのみで、コネクションへの書き込みについてはunrefを呼んだ場合であってもブロックされます)
+これらはunstable APIのようなので、次のDeno v1.29.2あたりでリリースされる可能性がありそうです。
+Deno.osUptime Deno.osUptimeというAPIを追加するPRがマージされています。
+feat(unstable): Add “Deno.osUptime()” API (denoland/deno#17179)
+このAPIを利用することで、システムが起動してからの経過時間を数値として取得できるようです。
+const uptime = Deno.osUptime(); これもunstable APIのため、次のDeno v1.29.2あたりでリリースされる可能性がありそうです。
+Big news in Deno Land Ryan DahlさんとJerod SantoさんによりBig news in Deno Landというポッドキャストが公開されています。
+ページ下部にTranscriptがあるため、そこから内容を閲覧することもできます。
+https://changelog.com/jsparty/256 このポッドキャストでは、主にDenoでnpmサポートを導入した背景などについて解説されています。
+また、Denoの将来についてもいくつか話が行われており、以下のような内容の話題が出ていました。
+ShadowRealmなどを活用したパッケージごとのパーミッション管理のサポートについて --allow-writeを指定した際は、ファイルシステム全体ではなく、カレントディレクトリ配下への書き込みのみを許可すべきでは？ Deno Deployにおける状態管理やCockroachDBやSpannerなどについて また、Denoの直近の開発方針としては、主に以下の点に注力されていく予定のようです。
+npmサポートの拡充 (安定性の向上やdeno compileでのnpm:のサポートなど) Deno Deployでのnpm:のサポート https://deno.news/archive/55-deno-v129-and-npm-install-heat</p>
+</div>
+<footer class=entry-footer><span title="2023-01-01 00:00:00 +0000 UTC">January 1, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2022/12/26〜2023/01/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/01.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/12/19〜2022/12/25の最新情報
 </h2>
 </header>
@@ -263,56 +306,6 @@ const command = new Deno.Command("deno", { args: ["info"] }); const { stdout } =
 </div>
 <footer class=entry-footer><span title="2022-11-20 00:00:00 +0000 UTC">November 20, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.28" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.28.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/11/07〜2022/11/13の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.27.2 Deno v1.27.2がリリースされています。
-peerDependenciesのサポート DenoでnpmパッケージのpeerDependenciesがサポートされました。
-あるパッケージでpeerDependenciesが定義されていた場合、以下のような動作をするようです。
-依存グラフの中から祖先をたどっていき、もしpeerDependenciesで指定された要件を満たすパッケージが見つからなかった場合、通常のdependenciesと同様に依存が解決されます。(npm v7と同様の挙動) optionalPeerDependenciesについては、依存グラフの祖先に指定された要件を満たすパッケージが見つかった場合のみ解決されます。 それ以外の場合は、pnpmと同様の挙動でoptionalPeerDependenciesが解決されます。 https://github.com/denoland/deno/pull/16561
-その他の変更点 いくつかのバグ修正が実施されています。
-data:URLに対してロックファイルのremoteエントリが作られてしまう問題が修正されています。 Deno.serveHttpで起動したHTTPサーバで圧縮が有効化された状態でストリーミングを行う際に、各チャンクが適切にフラッシュされるように修正されています。 ローカルのnode_modules内のコードでrequireによる相対パス形式での読み込みが行われた際に適切に動作するように修正されています。 https://github.com/denoland/deno/releases/tag/v1.27.2
-deno_std v0.163.0 deno_std v0.163.0がリリースされています。
-std/semverモジュールでinc()とdiff()が非推奨化されました。
-今後は、新しく追加されているincrement()とdifference()の使用が推奨されます。 (動作はそれぞれincとdiffと同様です)
-https://github.com/denoland/deno_std/releases/tag/0.163.0
-denoland/fresh-wordpress-themes WordPressをHeadless CMSとして使いつつ、フロントエンドをFreshで開発するためのテンプレートがDeno公式で公開されました。
-https://github.com/denoland/fresh-wordpress-themes 以下の記事で使用方法などが解説されています。
-Introducing Fresh WordPress Themes esm.sh v98 esm.sh v98がリリースされました。
-新機能としてTree shakingのサポートが追加されています。
-exportsパラメータを指定することで適用されます。
-https://github.com/ije/esm.sh/releases/tag/v98</p>
-</div>
-<footer class=entry-footer><span title="2022-11-13 00:00:00 +0000 UTC">November 13, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/11/07〜2022/11/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/13.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/10/31〜2022/11/06の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.27.1 ロックファイルに関する機能の追加や改善などが実施されています。
-ロックファイルの自動探索 ロックファイルの自動探索が実装されました。
-これは、deno.json(c)と同じディレクトリにdeno.lockというファイルがあれば、それを元に自動でインテグリティチェックを実行する機能です。
-現状、この機能は--unstableを指定したときのみ有効化されます。(Deno v1.28にて安定化予定のようです)
-また、この自動探索を無効化する目的で、--no-lockというオプションも追加されています。
-これらの変更に合わせて、--lockオプションの引数がオプショナルに変更されました。(未指定の場合は、デフォルトでdeno.lockが読み込まれます)
-また、--lock-writeオプションを指定する際の--lockオプションの指定も不要になっています。
-ロックファイルによるインテグリティチェックの挙動が変更 ロックファイルの自動探索機能の実装に合わせて、インテグリティチェックに関する挙動が変更されています。
-具体的には、ロックファイルに列挙されていないパッケージが見つかったときに、インテグリティチェックが失敗しないように挙動が変更されています。
-もしこのようなパッケージがあった際は、ロックファイルへ自動でハッシュが書き込まれ、次回以降からそのパッケージに対するインテグリティチェックが実施されます。
-その他の変更点 deno infoコマンドでnpm:がサポートされました。 Deno.osRelease()が--unstableなしだと利用できなかった問題が解消されています。(このAPIは元々、Deno v1.27.0で安定化される予定でした) Change Array by copyに関する型定義ファイルが追加されました。 Promise.prototype.thenが上書きされても、DenoのコアAPIが影響を受けないように実装が変更されました。 WindowsでDeno.hostname()が空文字列を返すことがある問題が修正されています。 https://github.com/denoland/deno/releases/tag/v1.27.1
-deno_std v0.162.0 deno_std v0.162.0がリリースされました。
-std/encoding/front_matter - YAML以外のフォーマットのサポート std/encoding/front_matter/any.tsを使うと、YAML/TOML/JSONのいずれかのフォーマットで記述されたFront Matterブロックを読み込むことができます。
-import { extract } from "https://deno.land/std@0.162.0/encoding/front_matter/any.ts"; // YAMLでの記述例) let { attrs, body } = extract&lt;{ title: string, date: Date }>(`--- title: foobar date: 2022-06-12 --- Hello`); assert(attrs.title === "foobar"); assert(attrs.date instanceof Date); assert(body === "Hello"); // TOMLでの記述例) ({ attrs, body } = extract&lt;{ title: string, date: Date }>(`---toml title='foobar' date=2022-06-12 --- Hello`)); assert(attrs....</p>
-</div>
-<footer class=entry-footer><span title="2022-11-06 00:00:00 +0000 UTC">November 6, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/10/31〜2022/11/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/06.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

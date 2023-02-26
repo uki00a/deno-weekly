@@ -81,6 +81,26 @@ fresh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/06/13〜2022/06/19の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.23 Deno v1.23がリリースされました。
+以下の記事に変更点をまとめたため、詳しくはこちらを参照いただければと思います。
+Deno v1.23 deno_std v0.144.0 deno_std v0.144.0がリリースされました。
+encoding/front_matter 新規モジュールとしてencoding/front_matterが追加されました。
+import { extract } from "https://deno.land/std@0.144.0/encoding/front_matter.ts"; const { attrs, body } = extract&lt;{ title: string, date: Date }>(`--- title: foobar date: 2022-06-12 --- Hello`); console.assert(attrs.title === "foobar"); console.assert(attrs.date instanceof Date); console.assert(body === "Hello"); collections collections/mod.tsをimportすると警告が表示されるようになりました。
+必要に応じて、collections/deep_mergeやcollections/group_byなどの各ファイルを個別にimportすることが推奨されます。
+node process.stdoutとprocess.stderrに下記メソッドが実装されています。
+cursorTo moveCursor clearLine clearScreenDown https://github.com/denoland/deno_std/releases/tag/0.144.0
+Freshのアップデート (CLIの削除) FreshからCLIが削除されています。
+feat: remove fresh cli, do manifest generation in process (#223)...</p>
+</div>
+<footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/06/13〜2022/06/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/19.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/06/06〜2022/06/12の最新情報
 </h2>
 </header>

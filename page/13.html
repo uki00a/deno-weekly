@@ -77,6 +77,65 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/02/08〜2021/02/14の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno本体の最新情報 Deno v1.7.3/v1.7.4がリリースされました Deno v1.7.3がリリースされました。
+その後、一部のバージョンのLinuxディストリビューションで動作しない問題が発覚したため、その問題を修正したDeno v1.7.4がリリースされました。
+v1.7.3/v1.7.4の主な変更点:
+deno lspでcodeAction/resolveが実装されました。 deno lspにdeno.cacheコードアクションが実装されました。 deno lspにImplementationscode lensが実装されました。 Import mapsがデータURL(data:)を適切にハンドリングするように修正されました。 https://github.com/denoland/deno/releases/tag/v1.7.4 deno_std v0.87.0がリリースされました Deno v1.7.3のリリースに合わせ、deno_std v0.87.0がリリースされました。
+このリリースにはhttp/cookieモジュールに対する破壊的変更が含まれています。
+変更点:
+http/cookie: Cookies及びSameSiteの型エイリアスが削除されました。 http/file_server: SVGファイルに対して適切なContent-Typeが設定されるように修正されました。 https://github.com/denoland/deno_std/releases/tag/0.87.0
+サードパーティモジュールの最新情報 denops.vim - DenoでVim/Neovimプラグインを書くためのエコシステム denops.vimという、Denoを使ってVim/Neovimプラグインを書くためのエコシステムが公開されました。
+coc.nvimに影響を受けているようです。
+サンプルプラグインも公開されているため、興味のある方は見てみるとよいかもしれません。
+https://github.com/vim-denops/denops-helloworld.vim https://github.com/vim-denops/denops.vim https://github.com/vim-denops/denops-deno https://github.com/vim-denops/denops-std-deno slack_web_api - DenoのSlack APIクライアント slack_web_apiはNode.jsの@slack/web-apiをDenoにポートしたモジュールです。
+このモジュールを使用することで、DenoからSlack APIを叩くことができます。
+https://deno.land/x/slack_web_api@1.0.1
+deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。
+このリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。
+変更点:...</p>
+</div>
+<footer class=entry-footer><span title="2021-02-14 00:00:00 +0000 UTC">February 14, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/02/08〜2021/02/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/14.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/02/01〜2021/02/07の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno本体の最新情報 Deno v1.7.2がリリース Deno v1.7.2がリリースされました。これに合わせて、deno_std v0.86.0もリリースされています。
+主な変更点:
+deno lspでtextDocument/codeLens及びtextDocument/codeActionが実装された WPTにパスするよう、File及びBlobの実装がリライトされた https://github.com/denoland/deno/releases/tag/v1.7.2 https://github.com/denoland/deno_std/releases/tag/0.86.0 deno_stdのリポジトリがdeno本体のリポジトリから分離された Denoには標準モジュールとしてdeno_stdが存在します。
+今まで、このdeno_stdの開発は、deno本体と同じリポジトリ内(denoland/deno)で行われていました。
+この度、deno_stdが個別のリポジトリへと分離されました。
+これにより、deno_stdの開発時にRustのセットアップが必要なくなるため、deno_stdへのコントリビューションが行いやすくなるのではないかと思われます。
+https://github.com/denoland/deno_std
+サードパーティモジュールの最新情報 emacs-ng emacs-ngはEmacsのフォークです。
+以下のような機能を備えているようです:
+Denoを組み込むことで、Emacs内でJavaScript/TypeScriptコードの実行を可能とする MozillaのWebRenderをサポート https://github.com/emacs-ng/emacs-ng
+deno-postgres v0.7.0がリリースされた deno-postgres v0.7.0がリリースされました。
+v0.6.0までは、deno-postgresがサポートしていないデータ型を利用しようとすると、例外が発生しました。
+このリリースにおいて、現時点でdeno-postgresでサポートされていない全てのデータ型が、JavaScriptのStringとして返却されるように挙動が変更されました。
+将来的には、ライブラリの利用者が各データ型のハンドリング方法を制御できるようにするために、カスタムのハンドラを登録できるようにすることも検討されているようです。
+https://github.com/denodrivers/postgres/issues/239
+https://github.com/denodrivers/postgres/releases/tag/v0.7.0
+Trex v1.5.0がリリースされた TrexはDenoのパッケージマネージャです。
+このリリースではtrex lsコマンドが実装され、インストールされた依存パッケージの一覧を表示できるようになりました。
+https://github.com/crewdevio/Trex/releases/tag/v1.5.0
+Deno Module Visualizer Deno Module Visualizerが公開されました。
+Deno Module Visualizerは、あるモジュールとその依存関係をGraphvizを使って可視化してくれます。
+使用例:
+deno-postgres v0.7.0 deno-redis v0.17.0 https://deno-visualizer.danopia.net/</p>
+</div>
+<footer class=entry-footer><span title="2021-02-07 00:00:00 +0000 UTC">February 7, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/02/01〜2021/02/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/07.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/01/25〜2021/01/31の最新情報
 </h2>
 </header>
