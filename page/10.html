@@ -77,6 +77,25 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/09/13〜2021/09/19の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v2のリリースプランについて Deno v2のリリースプランが公開されました。
+https://github.com/denoland/deno/issues/12110 10/12にDeno v1.15, 11/22にDeno v2がリリース予定とのことです
+また、GitHub Discussionsにて、v2で実施予定の追加の変更点やDenoのエコシステムの拡大に関する議論内容などについて公開されています。
+追加の変更点(今後、内容が変わる可能性があります！):
+NotCapableエラーの導入 DenoのパーミッションエラーとOSによって発生したパーミッションエラーを区別できるようにすることが目的のようです Deno.read()のDeno.write()などの削除 Import AssertionsとJSON Modules opメトリクスのリファクタリング/整頓 Deno 2.0 Release Plan Design Meeting 2021-09-16 Deno v1.14.0 Deno v1.14.0がリリースされました。
+TypeScript v4.4への更新、deno fmtやdeno lintで設定ファイルがサポート、Web Crypto APIの強化、Deno.upgradeWebSocketの安定化、URLPatternの実装、シグナルAPI(unstable)への破壊的変更などが実施されています。
+また、magurotunaさんによる日本語の紹介記事が公開されています(https://zenn.dev/magurotuna/articles/deno-release-note-1-14-0)
+変更点:
+deno fmt/deno lint deno fmt でJSDocコメントへの基本的なサポートが追加されました deno fmtとdeno lintの挙動を設定ファイルやCLIオプションで変更できるようになりました ネイティブHTTPサーバ Deno.upgradeWebSocketが安定化されました Deno.upgradeWebSocket でUpgradeヘッダの大文字・小文字の違いを区別しないように修正されました ネイティブHTTPサーバでリクエストボディが消費されなかった場合に発生するリソースリークが修正されました FFI Deno....</p>
+</div>
+<footer class=entry-footer><span title="2021-09-19 00:00:00 +0000 UTC">September 19, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/09/13〜2021/09/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/09/19.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/09/06〜2021/09/12の最新情報
 </h2>
 </header>
@@ -264,29 +283,6 @@ encoding/hex: encodedLen, encodeToString, decodedLen, decodeStringが削除さ�
 </div>
 <footer class=entry-footer><span title="2021-07-18 00:00:00 +0000 UTC">July 18, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/12〜2021/07/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/18.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/07/05〜2021/07/11の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を変更することが検討されています。
-https://github.com/denoland/deno/issues/11340 このissueでは、以下のような方向性が示されています。
-DenoのTypeScriptによる型チェックをデフォルトで無効化したい (現状の--no-checkオプションを付けた際の挙動をデフォルトにしたい) TypeScriptによる型チェックは、--checkオプションを指定したときのみ実施する --no-checkオプションは非推奨化する より詳細な内容や議論などについては上記issueを参照いただければと思います。
-https://github.com/denoland/deno/issues/11340
-Bundler v0.8.0 DenoのフロントエンドビルドツールであるBundlerのv0.8.0がリリースされました。
-このリリースでは、Devサーバのサポートが追加されています。
-https://github.com/timreichen/Bundler/releases/tag/0.8.0
-deno-redis v0.23.0がリリース deno-redisのv0.23.0がリリースされました。
-このリリースでは、いくつかの破壊的変更が実施されています。
-Redis Clusterのクライアント実装が追加されました。 Redis.connectionプロパティが削除されました。(破壊的変更) RedisImplクラスが非公開になり、代わりにcreate関数が追加されました。 (破壊的変更) https://github.com/denodrivers/redis/releases/tag/v0.23.0
-xhr xhrはDenoとDeno Deploy向けのXMLHttpRequestのポリフィルです。
-以下のドキュメントにて、このモジュールを利用してDeno Deploy上でFirebase SDKを使用する方法が紹介されています。
-https://deno.com/deploy/docs/tutorial-firebase https://github.com/kitsonk/xhr https://deno.com/deploy/docs/tutorial-firebase </p>
-</div>
-<footer class=entry-footer><span title="2021-07-11 00:00:00 +0000 UTC">July 11, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/05〜2021/07/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/07/11.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

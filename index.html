@@ -77,6 +77,21 @@
 <main class=main>
 <article class=first-entry>
 <header class=entry-header>
+<h2>2022/02/27〜2023/03/05の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Oak v12 Oak v12がリリースされています。
+Router#allの挙動の変更 (破壊的変更) 今までのバージョンでは、Router#allはDELETE/GET/POST/PUTの4つのメソッドに対してミドルウェアを登録していました。
+このバージョンでは、Routerの生成時にmethodsオプションで指定されたメソッドに対してミドルウェアが登録されるように挙動が変更されています。(ただし、OPTIONSについてはミドルウェアの登録がスキップされます)
+methodsオプションのデフォルト値は以下のように定義されているため、このバージョン以降、デフォルトでHEAD/PATCHメソッドに対してもミドルウェアが登録されるようになります。
+[ "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT" ] その他の修正 Router#allowedMethodsで返却されたミドルウェアでOPTIONSメソッドが処理される際に、AllowではなくAllowedという名前のヘッダが返却されていた問題が修正されています。 Cookies#getにObject.prototypeで定義されているメソッドの名前が指定された際に、Cookieが設定されている場合でも、空の値が返却される問題が修正されています。 Content-Lengthが0に設定されたPOSTリクエストを受信した際に、RangeErrorが発生する問題が修正されています。 Release 12.0.0</p>
+</div>
+<footer class=entry-footer><span title="2023-03-05 00:00:00 +0000 UTC">March 5, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2022/02/27〜2023/03/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/05.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2022/02/20〜2023/02/26の最新情報
 </h2>
 </header>
@@ -271,22 +286,6 @@ import { connect } from "deno-redis"; import chalk from "chalk"; const redis = a
 </div>
 <footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
 <a class=entry-link aria-label="post link to Denoのロードマップ (2023年 Q1)" href=https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2022/01/09〜2023/01/15の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.29.3 Deno v1.29.3がリリースされました。
-FFI 構造体の値渡しがサポートされています。
-const Point = ["i32", "i32"]; const dylib = Deno.dlopen(libpath, { make_point: { parameters: ["i32", "i32"], result: { struct: Point }, }, print_point: { parameters: [{ struct: Point }], result: "void", }, }); const point = dylib.symbols.make_point(1, 2); assert(point instanceof Uint8Array); dylib.symbols.print_point(point); https://github.com/denoland/deno/pull/15060
-Node-API 以下のNode-APIがサポートされました。
-napi_ref_threadsafe_function napi_unref_threadsafe_function napi_add_env_cleanup_hook napi_remove_env_cleanup_hook また、Node-API経由で定義したclassの静的プロパティが適切にハンドリングされるように修正されています。
-CLI --reloadと--watchを併用した際に、ファイル変更のたびに--reloadによるモジュールの再ダウンロードが行われてしまう問題が修正されています deno installによって作成されるshimにデフォルトで--no-configが指定されるように修正されています その他 ReadableStreamのasyncIteratorの挙動に関する互換性が向上されています BroadcastChannel.postMessageでのメッセージ送信時に、事前にチャンネルがクローズされていないことが確認されるように修正されています Deno.resolveDnsでサポートしていないタイプのリソースレコードを取得しようとした際に、プロセスがパニックする問題が修正されています https://github....</p>
-</div>
-<footer class=entry-footer><span title="2023-01-15 00:00:00 +0000 UTC">January 15, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2022/01/09〜2023/01/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/15.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

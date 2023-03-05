@@ -81,6 +81,26 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/08/08〜2022/08/14の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.24.3 Deno v1.24.3がリリースされました。
+fetch()でSOCKSがサポート 検証はしていないのですが、HTTP_PROXYやHTTPS_PROXY環境変数にsocks5:またはsocks5h:形式のURLを指定すると利用できそうです。
+Deno.UnsafePointerViewへの機能追加 Deno.UnsafePointerViewに以下の3つのstaticメソッドが追加されています。
+getCString getArrayBuffer copyInto これらのメソッドの挙動は、Deno.UnsafePointerViewの同名のインスタンスメソッドとほぼ同様です。
+compilerOptions.jsxImportSourceが指定されていると、deno.json(c)をimportできない問題が修正 次のように、compilerOptions.jsxImportSourceが設定されたdeno.jsonが定義されていたとします。
+{ "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" }, "importMap": "./import_map.json" } このファイルをImport assertionsを使用して読み込もうとすると、エラーが発生する問題が修正されています。
+import config from "./deno.json" assert { type: "json" }; // => `error: Loading unprepared module` console.log(config); この修正は、Freshにおけるfeat: support JSX automatic mode (#610)の対応のために実施されたようです。
+その他の修正 --allow-netに空の値を指定するとプロセスがパニックする問題が修正されています。 --locationオプションが指定されていないときはglobalThis.locationが上書きできるようになりました。 https://github.com/denoland/deno/releases/tag/v1.24.3
+deno_std v0.152.0 deno_std v0.152.0がリリースされました。
+std/crypto: subtle.timingSafeEqual()が追加 import { crypto } from "https://deno....</p>
+</div>
+<footer class=entry-footer><span title="2022-08-14 00:00:00 +0000 UTC">August 14, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/08〜2022/08/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/14.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/08/01〜2022/08/07の最新情報
 </h2>
 </header>
@@ -270,31 +290,6 @@ import { parse } from "https://deno.land/std@0.143.0/flags/mod.ts"; parse(["deno
 </div>
 <footer class=entry-footer><span title="2022-06-12 00:00:00 +0000 UTC">June 12, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/06/06〜2022/06/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/12.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/05/30〜2022/06/05の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.22.2 Deno v1.22.2がリリースされました。
-主な変更点:
-Deno.getGid()が実装されました。(unstable) POSIX系プラットフォームではプロセスのグループIDが、Windowsではnullが返されます。 利用するには--allow-envの指定が必要です。 Error.captureStackTrace()の型定義が追加されました。 Crypto.getRandomValues()の型定義が改善されました。(BigInt64ArrayやBigUint64Arrayが受け取れず、Float32ArrayやFloat64Arrayが引数として受け取れてしまう問題が解消されています) https://github.com/denoland/deno/releases/tag/v1.22.2
-deno_std v0.142.0 deno_std v0.142.0がリリースされました。
-FNVのサポート (crypto) cryptoモジュールでFNVが実装されました。
-import { crypto } from "https://deno.land/std@0.142.0/crypto/mod.ts"; // ... const digest = await crypto.subtle.digest("FNV32", input); media_typesモジュールの追加 deno_stdにmedia_typesモジュールが追加されました。
-import { contentType } from "https://deno.land/std@0.142.0/media_types/mod.ts"; contentType(".js"); // => "application/javascript; charset=UTF-8" contentType("application/json"); // => "application/json; charset=UTF-8" このモジュールは、以前にもdeno_stdに存在するモジュールの一部でしたが、一度削除されています。
-その後、メンテナンスはoakserver/media_typesのリポジトリに引き継がれていました。
-このリリースで改めてmedia_typesモジュールが復帰したため、oakserver/media_typesのリポジトリはアーカイブされています。
-TextLineStreamにallowCRオプションが追加 (streams/delimiter) このオプションにtrueを指定したときのみCRが取り扱われるように変更されています。
-前回のリリースで、デフォルトでCRが取り扱われるように修正されましたが、デフォルトの挙動を変えてしまうのはまずいということで、このオプションが追加されました。
-https://github.com/denoland/deno_std/releases/tag/0.142.0
-oak_commonsパッケージの機能のdeno_stdへの移行 現在、oak_commonsパッケージで提供されていた機能の一部をdeno_stdへ移植するPRが作成されています。
-例)
-http/http_statusのSTATUS_TEXTがMapからRecord型に変更 http/http_errorsの追加 http/negotiationの追加 crypto/keystackの追加 (Oakの内部でも使われているCookieの署名・検証用モジュール) deno_std v0....</p>
-</div>
-<footer class=entry-footer><span title="2022-06-05 00:00:00 +0000 UTC">June 5, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/30〜2022/06/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/05.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
