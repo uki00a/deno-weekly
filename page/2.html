@@ -77,6 +77,30 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Denoのロードマップ (2023年 Q1)
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoの2023年 Q1のロードマップが公開されました。
+https://github.com/denoland/deno/issues/17475 このページでは、新しく実装が検討されている機能などについて紹介いたします。
+deno.jsonでのimportsフィールドのサポート 今までDenoでImport Mapsを利用するには、専用のファイルを用意しておき、それを--import-mapオプションで読むこむ必要がありました。
+現在、deno.jsonで直接Import Mapsを定義できるようにするため、importsオプションの追加が検討されています。
+これが実現されれば、以下のようにdeno.jsonで直接マッピングを定義できるようになります。
+{ "imports": { "redis": "https://deno.land/x/redis@v0.29.0/mod.ts", "dax": "https://deno.land/x/dax@0.24.0/mod.ts" }, "tasks": { "start": "deno run --allow-net --allow-env ./main.ts" } } Deno公式が公開している02-deno-canonical-appにも使用例があるため、よろしければそちらも参照いただければと思います。
+deno:URLのサポート deno:という新しいURLスキームの導入が検討されており、これにより、deno.land/xからのモジュールの読み込みを簡略化できます。
+import $ from "deno:dax@24.0/mod.ts"; await $`echo foobar`; また、deno.land/xでも機能の拡張が予定されているようで，/x/some-packageにアクセスされた際は/x/some-package/mod.tsにリダイレクトさせることが検討されているようです。
+例えば、deno:dax@24.0と記述した場合、/x/dax@0.24.0/mod.tsが読み込まれます。
+package.jsonのサポート Deno本体でpackage.jsonのサポートが検討されているようです。
+例えば、以下のような内容のpackage.jsonがあったとします。
+{ "type": "module", "scripts": { "main": "deno run -A main.ts" }, "dependencies": { "chalk": "^5.0", "deno-redis": "deno:redis@~0.29.0/mod.ts" } } Denoはpackage.jsonの"dependencies"で定義された依存関係を元に、コード中のbare specifierを解釈します。(もしImport Mapsファイルまたはdeno.jsonでもマッピングが定義されている場合は、package.jsonよりもそれらのファイルの設定が優先されます)
+例えば、以下のようなスクリプトが存在する場合、deno-redisはhttps://deno.land/x/redis@v0.29.0/mod.tsとして解釈され、chalkについてはnpmレジストリからv5.xがダウンロードされます。
+import { connect } from "deno-redis"; import chalk from "chalk"; const redis = await connect({ hostname: "127....</p>
+</div>
+<footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
+<a class=entry-link aria-label="post link to Denoのロードマップ (2023年 Q1)" href=https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2022/01/09〜2023/01/15の最新情報
 </h2>
 </header>
@@ -271,26 +295,6 @@ node:console: Deno v1....</p>
 </div>
 <footer class=entry-footer><span title="2022-11-27 00:00:00 +0000 UTC">November 27, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/11/21〜2022/11/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/27.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2022/11/14〜2022/11/20の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.28.0 Deno v1.28がリリースされました。
-以下に変更内容をまとめたため、よろしければ参照ください。
-Deno v1.28 Deno v1.28.1 Deno v1.28.1がリリースされました。
-deno installコマンドでnpm:がサポートされています。
-その他には、npmパッケージサポートに関する細かなバグ修正などが実施されています:
-Conditional exportsで指定されたエントリポイントが型定義を持っていない場合にエラーが発生する問題が修正 npmパッケージにfoo.server.jsのようにベースネーム部分に.を含むファイルが存在する場合に、うまく読み込みができない問題が修正 あるnpmパッケージの依存関係のバージョンにdist tagが指定されていた際に、うまく取り扱われない問題が修正 scopedパッケージに対して@types/*パッケージの型定義が適切に適用されない問題が修正 --lock-writeを指定すると、deno.lockからnpmパッケージが消えてしまう問題が解消 https://github.com/denoland/deno/releases/tag/v1.28.1
-deno_std v0.164.0 deno_std v0.164.0がリリースされました。
-std/fmt: durationモジュールが追加 ミリ秒単位で指定された時間のフォーマットされた文字列を取得することができます。
-import { prettyDuration } from "https://deno.land/std@0.165.0/fmt/duration.ts"; prettyDuration(130000, { ignoreZero: true, formatType: "full" }); // => "2 minutes, 10 seconds" 補足) prettyDurationは以下のPRでformatにリネームされています。この変更は、おそらくv0.166.0あたりでリリースされると思われるため、今後利用する際はprettyDurationではなくformatを使用するとよさそうです。
-https://github.com/denoland/deno_std/pull/2896 std/node: 互換性の向上 node/fs: - read()でコールバックが非同期に呼ばれるように修正 node/http: ServerResponse.finishedが実装 node/http: --unstableが指定されていると、Buffer形式のレスポンスが適切に取り扱われない問題が修正 node/string_decoder: StringDecoder.decodeのパフォーマンスが小さなUint8Arrayに対しては51倍、大きなUint8Arrayに対しては4倍程まで高速化 https://github....</p>
-</div>
-<footer class=entry-footer><span title="2022-11-20 00:00:00 +0000 UTC">November 20, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/11/14〜2022/11/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/20.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

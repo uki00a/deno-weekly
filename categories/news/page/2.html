@@ -81,6 +81,25 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/01/02〜2023/01/08の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.29.2 Deno v1.29.2がリリースされました。
+Deno.osUptime() システムが起動してからの経過時間を取得するために、Deno.osUptime()というAPIが追加されました。
+利用するには、--unstableと--allow-sysの指定が必要です。
+Deno.Conn.ref()/unref() Deno.Connへunref()とref()メソッドが追加されました。
+これらのAPIの利用には--unstableの指定が必要です。
+unref()メソッドを呼ぶと、Deno.unrefTimerなどと同様に、読み込み途中のコネクションが存在したとしてもプロセスの終了がブロックされなくなります。(ただし、効果があるのは読み込みに対してのみで、書き込みについてはunrefを呼んだ場合であってもブロックされます)
+ref()メソッドを呼ぶと、unref()されたコネクションをデフォルトの状態に戻すことができます。(通常通り、読み込み途中のコネクションがプロセスの終了をブロックします)
+CLIに関するバグ修正 --node-modules-dirが指定された際にrequire()でパッケージが適切に解決できないケースがある問題が修正されています deno.json(c)でTypeScriptのcompilerOptions.noErrorTruncationオプションを設定できない問題が修正されています dynamic importが使用されていると、"unhandledrejection"のリスナが呼ばれないケースがあった問題が修正されています deno instlallもしくはdeno uninstallを実行する際に、ロックファイルの自動適用が行われてしまう問題が修正されています Deno APIに関する修正 Deno.memoryUsage()から返却されるrssプロパティに正しい値が設定されない問題が修正されています Deno.permissions.revokeまたはDeno.permissions.requestでname: "ffi"が指定された際に、pathオプションにURLオブジェクトを指定できるようになりました。 fetch()関連の修正 下記のケースでプロセスがパニックしてしまう問題が修正されています:
+引数に不正な形式のURLが与えられた場合 bodyオプションに渡したReadableStreamでエラーが発生した場合 deno lsp関連の修正 下記のケースでTest code lensが表示されない問題が修正されています Deno.test()でテスト名がテンプレートリテラルを使用して定義されている場合 下記のように、関数を使用してテストケースが定義されている場合 const test = () => ({ name: "some test", fn: () => {} }); Deno.test(test()); "Add all missing imports"アクションで正しいimport文が生成されないことがある問題が修正されています プライベートフィールド(#someField)の補完が適切に動作するように修正されています https://github.com/denoland/deno/releases/tag/v1.29.2...</p>
+</div>
+<footer class=entry-footer><span title="2023-01-08 00:00:00 +0000 UTC">January 8, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2022/01/02〜2023/01/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/08.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/12/26〜2023/01/01の最新情報
 </h2>
 </header>
@@ -292,31 +311,6 @@ import { extract } from "https://deno.land/std@0.162.0/encoding/front_matter/any
 </div>
 <footer class=entry-footer><span title="2022-11-06 00:00:00 +0000 UTC">November 6, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/10/31〜2022/11/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/06.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/10/24〜2022/10/30の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.27 Deno v1.27がリリースされました。
-以下に変更内容をまとめたため、よろしければ参照ください。
-Deno v1.27 deno_std v0.161.0 deno_std v0.161.0がリリースされました。
-std/hashの削除 非推奨化されていたstd/hashモジュールが削除されています。
-今後は、std/cryptoの使用が推奨されます。
-std/node Deno v1.27でのNode-APIのサポートに合わせて、require()での.nodeファイルの読み込みがサポートされています。
-その他には、net.Serverの"close"イベントの発火タイミングの改善やfs.openDirの互換性の向上などが実施されています。
-std/fs/expand_glob expandGlobで、globstarにfalseが指定された際に、"**"が"*"として扱われるように修正されています。
-https://github.com/denoland/deno_std/releases/tag/0.161.0
-MongooseでのDenoサポートについて 以下のPRでMongooseでのDenoサポートが進められているようです。
-Deno support (#12397)
-今のところ、v6.8でのリリースを目標に作業が進められているようです。
-Babel v7.20.0 @babel/preset-envで"deno"ターゲットがサポートされたようです。
-"targets"オプションで対象のDenoバージョンを指定することができます。
-https://babeljs.io/blog/2022/10/27/7.20.0</p>
-</div>
-<footer class=entry-footer><span title="2022-10-30 00:00:00 +0000 UTC">October 30, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/10/24〜2022/10/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/30.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
