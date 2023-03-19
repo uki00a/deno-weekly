@@ -81,6 +81,26 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/06/13〜2022/06/19の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.23 Deno v1.23がリリースされました。
+以下の記事に変更点をまとめたため、詳しくはこちらを参照いただければと思います。
+Deno v1.23 deno_std v0.144.0 deno_std v0.144.0がリリースされました。
+encoding/front_matter 新規モジュールとしてencoding/front_matterが追加されました。
+import { extract } from "https://deno.land/std@0.144.0/encoding/front_matter.ts"; const { attrs, body } = extract&lt;{ title: string, date: Date }>(`--- title: foobar date: 2022-06-12 --- Hello`); console.assert(attrs.title === "foobar"); console.assert(attrs.date instanceof Date); console.assert(body === "Hello"); collections collections/mod.tsをimportすると警告が表示されるようになりました。
+必要に応じて、collections/deep_mergeやcollections/group_byなどの各ファイルを個別にimportすることが推奨されます。
+node process.stdoutとprocess.stderrに下記メソッドが実装されています。
+cursorTo moveCursor clearLine clearScreenDown https://github.com/denoland/deno_std/releases/tag/0.144.0
+Freshのアップデート (CLIの削除) FreshからCLIが削除されています。
+feat: remove fresh cli, do manifest generation in process (#223)...</p>
+</div>
+<footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/06/13〜2022/06/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/19.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/06/06〜2022/06/12の最新情報
 </h2>
 </header>
@@ -292,26 +312,6 @@ import { assertEquals } from "https://deno.land/std@0.135.0/testing/asserts.ts";
 </div>
 <footer class=entry-footer><span title="2022-04-17 00:00:00 +0000 UTC">April 17, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/04/11〜2022/04/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/17.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/04/04〜2022/04/10の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20.5 Deno v1.20.5がリリースされました。
-deno lspの新機能 deno lspでTesting APIがサポートされています (https://code.visualstudio.com/api/extension-guides/testing)
-vscodeでTesting: Focus on Test Explorer Viewコマンドを実行すると、テストファイルに含まれるテストケースの一覧を表示できます。
-Deno.Listenerにrefとunrefメソッドが追加 (unstable) unref()が呼ばれたListenerはプロセスの終了をブロックしなくなります (タイマにDeno.unrefTimerを呼んだときと同様の挙動をします)
-後述するdeno_std/node/netでのServer.ref()の実装で利用されています。
-バグ修正 SubtleCrypto.exportKey()でextractable: falseに設定されたキーをエクスポートできてしまう問題が修正されました (https://github.com/denoland/deno/issues/14215) --compatを指定してdeno installを実行した際に、--compatフラグが維持されない問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.20.5
-deno_std v0.134.0 deno_std v0.134.0がリリースされました。
-encoding/csvやnodeモジュールへの機能の追加が行われています。
-encoding/csv CSVStreamが追加されました。
-import { CSVStream } from "https://deno.land/std@0.134.0/encoding/csv/stream.ts"; const file = await Deno.open("path/to/data.csv"); const stream = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new CSVStream()); for await (const record of stream) { console.log(record); } node child_process: ChildProcess.kill()でsignalパラメータがサポートされました。 net: Server....</p>
-</div>
-<footer class=entry-footer><span title="2022-04-10 00:00:00 +0000 UTC">April 10, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/04〜2022/04/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/10.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

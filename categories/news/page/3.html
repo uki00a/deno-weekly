@@ -81,6 +81,30 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/10/31〜2022/11/06の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.27.1 ロックファイルに関する機能の追加や改善などが実施されています。
+ロックファイルの自動探索 ロックファイルの自動探索が実装されました。
+これは、deno.json(c)と同じディレクトリにdeno.lockというファイルがあれば、それを元に自動でインテグリティチェックを実行する機能です。
+現状、この機能は--unstableを指定したときのみ有効化されます。(Deno v1.28にて安定化予定のようです)
+また、この自動探索を無効化する目的で、--no-lockというオプションも追加されています。
+これらの変更に合わせて、--lockオプションの引数がオプショナルに変更されました。(未指定の場合は、デフォルトでdeno.lockが読み込まれます)
+また、--lock-writeオプションを指定する際の--lockオプションの指定も不要になっています。
+ロックファイルによるインテグリティチェックの挙動が変更 ロックファイルの自動探索機能の実装に合わせて、インテグリティチェックに関する挙動が変更されています。
+具体的には、ロックファイルに列挙されていないパッケージが見つかったときに、インテグリティチェックが失敗しないように挙動が変更されています。
+もしこのようなパッケージがあった際は、ロックファイルへ自動でハッシュが書き込まれ、次回以降からそのパッケージに対するインテグリティチェックが実施されます。
+その他の変更点 deno infoコマンドでnpm:がサポートされました。 Deno.osRelease()が--unstableなしだと利用できなかった問題が解消されています。(このAPIは元々、Deno v1.27.0で安定化される予定でした) Change Array by copyに関する型定義ファイルが追加されました。 Promise.prototype.thenが上書きされても、DenoのコアAPIが影響を受けないように実装が変更されました。 WindowsでDeno.hostname()が空文字列を返すことがある問題が修正されています。 https://github.com/denoland/deno/releases/tag/v1.27.1
+deno_std v0.162.0 deno_std v0.162.0がリリースされました。
+std/encoding/front_matter - YAML以外のフォーマットのサポート std/encoding/front_matter/any.tsを使うと、YAML/TOML/JSONのいずれかのフォーマットで記述されたFront Matterブロックを読み込むことができます。
+import { extract } from "https://deno.land/std@0.162.0/encoding/front_matter/any.ts"; // YAMLでの記述例) let { attrs, body } = extract&lt;{ title: string, date: Date }>(`--- title: foobar date: 2022-06-12 --- Hello`); assert(attrs.title === "foobar"); assert(attrs.date instanceof Date); assert(body === "Hello"); // TOMLでの記述例) ({ attrs, body } = extract&lt;{ title: string, date: Date }>(`---toml title='foobar' date=2022-06-12 --- Hello`)); assert(attrs....</p>
+</div>
+<footer class=entry-footer><span title="2022-11-06 00:00:00 +0000 UTC">November 6, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/10/31〜2022/11/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/06.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/10/24〜2022/10/30の最新情報
 </h2>
 </header>
@@ -299,24 +323,6 @@ const process = require('process'); その他の変更点...</p>
 </div>
 <footer class=entry-footer><span title="2022-09-04 00:00:00 +0000 UTC">September 4, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/08/29〜2022/09/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/04.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/08/22〜2022/08/28の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.25.0 Deno v1.25.0がリリースされました。
-以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
-Deno v1.25 deno_std v0.153.0 deno_std v0.153.0がリリースされました。
-std/encoding/csv: parse()が同期的に動作するように (破壊的変更) parse()の引数からBufReaderが削除されています
-これに伴い、parse()の戻り値がstring[][] | Record&lt;string, unknown>[]に変更されています。
-import { parse } from "https://deno.land/std@0.153.0/encoding/csv.ts"; const records = parse(`id,name 1,foo 2,bar`); console.log(records); // Output: [ [ "id", "name" ], [ "1", "foo" ], [ "2", "bar" ] ] std/http/cookie_mapモジュールが追加 MapライクなAPIをベースにCookieを管理するためのユーティリティモジュールが追加されました。
-CookieMapはリクエスト及びレスポンスに関するCookieの管理に利用することができます。
-import { CookieMap, mergeHeaders } from "https://deno.land/std@0.153.0/http/cookie_map.ts"; const req = new Request("http://localhost:3000", { headers: { cookie: "foo=bar; hoge=piyo;" }, }); const cookies = new CookieMap(req); cookies....</p>
-</div>
-<footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/22〜2022/08/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/28.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

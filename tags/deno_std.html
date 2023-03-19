@@ -81,6 +81,23 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/03/13〜2023/03/19の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.31.3 Deno v1.31.3がリリースされました。
+CLI/APIに関する改善 deno infoとdeno docコマンドで--no-lock/--lockオプションがサポートされました。(挙動はdeno runコマンドなどと同様です) deno.jsonなどでcompilerOptions.typesエントリが定義されていると、型エラーが起きる問題が修正されています。 REPLでglobalThis.Denoやその配下で定義されたプロパティを削除しようとすると、プロセスがパニックする問題が修正されています。 Deno.makeTempFile(Sync)でファイルがすでに存在した際にリトライが行われるように挙動が改善されています。 Deno.serveHttp()でレスポンスエラーが発生した際に、nextRequestから返されるRequestのsignalがabortedに設定されるように修正されました。 Node.js互換性に関する改善 package.jsonが存在する または --node-modules-dirオプションが指定されたが、実行されたスクリプトではnpmパッケージがimportされていない場合に、node_modulesが作成されないように挙動が改善されました。 node_modulesのセットアップ中にプログレスバーが表示されるように挙動が改善されました。(#18136) node:crypto: createCipheriv()が実装されました。 (aes-128-cbcのみサポート) node:fs: writeFile()でencoding: "ascii"オプションがサポートされました。 https://github.com/denoland/deno/releases/tag/v1.31.3
+deno_std v0.180.0 deno_std v0.180.0がリリースされました。
+std/encoding関連モジュールのディレクトリ構造の見直し (破壊的変更) std/encodingで提供されていたcsv/front_matter/json/jsonc/toml/yamlモジュールが、トップレベルのモジュールとして独立しました。
+今後は、例えば、csvモジュールを利用したい場合はstd/csv/mod.ts、yamlモジュールを利用したい場合はstd/yaml/mod.tsから読み込む必要があります。
+ディレクトリの移動に合わせて、以下の変更も実施されています。
+csvモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 csv/stringify.ts csv/parse.ts csv/stream.ts jsonモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 json/json_parse_stream.ts json/json_stringify_stream.ts json/concatenated_json_parse_stream.ts tomlモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 toml/parse.ts toml/stringify.ts std/http/server_sent_event....</p>
+</div>
+<footer class=entry-footer><span title="2023-03-19 00:00:00 +0000 UTC">March 19, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/03/13〜2023/03/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/19.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/03/06〜2023/03/12の最新情報
 </h2>
 </header>
@@ -265,29 +282,6 @@ CLIに関するバグ修正 --node-modules-dirが指定された際にrequire()�
 </div>
 <footer class=entry-footer><span title="2023-01-08 00:00:00 +0000 UTC">January 8, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/01/02〜2023/01/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/08.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/12/19〜2022/12/25の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>今週はDenoでリリースが行われていないため、直近の話題や変更などについて紹介いたします。
-Flash(Deno.serve)の書き換えについて 現在、Flash(Deno.serve)の書き換えが検討されているようです。
-Flashで報告されている様々な問題の解決などが目的のようです。
-以下のissueで解決予定の問題が列挙されています。
-Flash HTTP server rewrite - umbrella issue (denoland/deno#17146)
-Deno.coreの削除について 現在、Denoの内部APIであるDeno.coreの削除が検討されているようです。
-refactor: remove Deno.core (denoland/deno#16881)
-ひとまずはDeno.coreはDeno[Deno.internal].coreへ移動される予定のようで、deno_stdではすでに対応が実施されています。
-refactor: handle Deno[Deno.internal].core (denoland/deno_std#3029)
-ただし、将来的にはDeno[Deno.internal].core自体も削除が予定されているようなので、もしDeno.coreを使用されている場合は、今のうちに対応をしておくとよいかもしれません。
-deno_lintへのguard-for-inルールの追加 deno_lintでguard-for-inルールが実装されているようです。
-feat: Add guard-for-in rule (denoland/deno_lint#1105)
-次のDenoのリリースあたりでdeno lintコマンドから利用できるようになる可能性がありそうです。</p>
-</div>
-<footer class=entry-footer><span title="2022-12-25 00:00:00 +0000 UTC">December 25, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/12/19〜2022/12/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/25.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
