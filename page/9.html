@@ -77,6 +77,70 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/12/27〜2022/01/02の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>ShadowRealmサポートについて DenoでのShadowRealmのサポートに向けて、deno_coreクレートでレルムの作成をサポートすること提案されています。
+その準備として、まずはdeno_coreクレートでリファクタリングなどを進めることが提案されています。
+https://github.com/denoland/deno/issues/13239 現在の進捗については上記issueから確認できます。
+https://github.com/denoland/deno/issues/13239 https://github.com/tc39/proposal-shadowrealm Je Xia氏とDivy Srivastava氏がDeno Land Inc.にジョイン Je Xia氏(esm.shやAleph.jsの作者)と Divy Srivastava氏(Elsaやautopilot-denoなどの作者)がDeno Land Inc.にジョインしたようです。
+現在、Je Xia氏は様々なサーバレス環境で動作させるためにAleph.jsのリライトなどを実施されているようです。
+https://twitter.com/jexia_/status/1473582071238987777 https://twitter.com/jexia_/status/1473131210776150017 https://twitter.com/undefined_void/status/1476975389603811328 https://twitter.com/jexia_/status/1473582071238987777 Diplo Rustで書かれたDenoのスクリプトランナー兼パッケージマネージャ
+diplo.tomlという設定ファイルでタスクの定義や依存関係の管理などを行うようです。
+https://github.com/Tricked-dev/diplo
+deno_python DenoからPythonコードを実行するためのモジュール
+FFI(Deno.dlopen)を利用してPythonのC APIを実行することで実現されているようです。
+https://github.com/denosaurs/deno_python</p>
+</div>
+<footer class=entry-footer><span title="2022-01-02 00:00:00 +0000 UTC">January 2, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/12/27〜2022/01/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/02.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/12/20〜2021/12/26の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.17.1 Deno v1.17.1がリリースされました。
+以下の新機能が追加されています。
+deno lspでのテストのデバッグ用コードレンズ deno replでのImport Assertionsのサポート
+https://github.com/denoland/deno/releases/tag/v1.17.1
+deno_std v0.119.0 deno_std v0.119.0がリリースされました。
+std/hash Tigerハッシュのサポートが追加されました。
+std/cryptoへのTigerハッシュの追加は次のリリース以降になりそうです (#1749)
+std/uuid uuid/mod.tsでvalidate関数が実装されています。
+与えられた文字列が正しい形式のUUIDであるかをチェックできます。
+https://doc.deno.land/https://deno.land/std@0.119.0/uuid/mod.ts/~/validate
+std/node util.debuglog()が利用できるようになりました。
+https://github.com/denoland/deno_std/releases/tag/0.119.0
+Denoでネットワークインターフェースを取得するためのopが実装 下記issueにて提案されていたネットワークインターフェース(IPアドレス、MACアドレス)を取得するための機能が部分的に実装されました。
+Get all the network interfaces in Deno 以下のPRではopのみが実装されており、JavaScript APIはまだ実装されていません。(今のところ、利用するためには--allow-envの指定が必要で、JavaScript APIの名前はDeno.networkInterfacesになりそうです。)
+feat(ext/net): add op_network_interfaces リリースされるバージョンはまだ未定ですが、早ければ次のv1.18で入る可能性がありそうです。
+Get all the network interfaces in Deno feat(ext/net): add op_network_interfaces </p>
+</div>
+<footer class=entry-footer><span title="2021-12-26 00:00:00 +0000 UTC">December 26, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/12/20〜2021/12/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/26.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/12/13〜2021/12/19の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.17.0 Deno v1.17.0がリリースされました。
+--no-check=remoteのサポート リモートモジュール(http:またはhttps:で始まるモジュール)の型チェックのみが無効化されます。
+$ deno run --no-check=remote mod.ts Import assertionsのサポート Import assertionsが実装されました。
+現在はJSON modulesのみがサポートされています。
+import modules from "./modules.json" assert { type: "json" }; Object.keys(modules); Deno.testのシグネチャの向上 Deno v1.16.4までは下記の形式のみがサポートされていました。
+Deno.test(name: string, fn: (t: Deno.TestContext) => void | Promise&lt;void>): void Deno.test(t: Deno.TestDefinition): void v1.17で以下のオーバーロードが追加され、使い勝手が向上しました。
+// オプションを第2引数、テスト関数を第3引数で指定 Deno.test("foo", { permissions: { read: false } }, () => { Deno.cwd(); }); // オプションを第1引数、テスト関数を第2引数で指定 Deno.test({ name: "bar", ignore: Deno.build.os === "windows", }, async () => { // }); Deno....</p>
+</div>
+<footer class=entry-footer><span title="2021-12-19 00:00:00 +0000 UTC">December 19, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/12/13〜2021/12/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/12/19.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/12/06〜2021/12/12の最新情報
 </h2>
 </header>
@@ -227,61 +291,6 @@ http/file_server: エラーログに色がつくようになりました...</p>
 </div>
 <footer class=entry-footer><span title="2021-10-31 00:00:00 +0000 UTC">October 31, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/10/25〜2021/10/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/31.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/10/18〜2021/10/24の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.15.2 Deno v1.15.2がリリースされました。
-主な変更点:
-Node.js互換モード(--compat)でCommon JS形式のモジュールの実行などがサポートされました。
-deno runコマンドの引数としてCommon JS形式のファイルを直接指定できます
-const EventEmitter = require("events"); const emitter = new EventEmitter(); emitter.on("foo", console.log); emitter.emit("foo", 1); $ deno run --unstable --compat --allow-read main.js TypeScriptのallowSyntheticDefaultImportsオプションがデフォルトで有効化されるようになりました
-https://github.com/denoland/deno/releases/tag/v1.15.2
-deno_std v0.112.0 deno_std v0.112.0がリリースされました。
-大きな変更点として、deno_std/nodeでexpressのHello Worldコードを動かすための対応やpackage.jsonのimportsやexportsのサポートなどが実施されています。
-変更点:
-collections: joinToStringが追加されました node/module: package.jsonのimportsやexportsフィールドのサポートが追加されました node/buffer: Bufferをnewなしで呼べるようになりました node/events: setMaxListenersが実装されました node/process: process.mainModuleが実装されました node/process: process.versionの値がDenoのバージョンからNode.jsのstableバージョンに変更されました node/http: ServerResponseとIncomingMessageでストリーミングがサポートされました node/url: formatが実装されました node/os: devNull定数が追加されました node/global: node/global....</p>
-</div>
-<footer class=entry-footer><span title="2021-10-24 00:00:00 +0000 UTC">October 24, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/18〜2021/10/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/24.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/10/11〜2021/10/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.15.0 Deno v1.15.0がリリースされました。
-Node.jsの互換モードやサブテストの実験的な実装や、URLPatternやDeno.killの安定化、deno uninstallコマンドの実装などが行われています。
-新機能:
-CLI Node.js互換モードの実装 (--compat を付与してDenoを実行すると、Node.jsの組み込みモジュールの読み込みが有効化されます) deno uninstallコマンドが実装されました (deno installでインストールされたスクリプトをアンインストールできます) deno lintコマンドで--watchオプションがサポートされました テスト Deno.testでテストケースの入れ子が実験的にサポートされました Deno.testで定義したテストケースがリソースリークによって失敗した際に、より詳細なエラーメッセージが表示されるようになりました (unstableをつけたときのみ) Deno API 下記のAPIが安定化されました Deno.kill Deno.Process.kill Deno.resolveDns URLPattern Deno.startTLS/Deno.connectTLS/Deno.createHttpClientでcaCertsオプションがサポートされ、複数のルート証明書を指定できるようになりました 合わせてDeno.startTLSとDeno.connectTLSのcertFileオプションが非推奨化されています また、Deno.createHttpClientのcertFileオプションが削除されています Deno.resolveDnsの内部でエラーが発生した際に返却されるエラーが改善されました Web Crypto API SubtleCrypto.deriveKeyが実装されました SubtleCrypto.wrapKeyが実装されました SubtleCrypto.exportKeyでRSAキーをspkiフォーマットでエクスポートできるようになりました SubtleCryptoのencryptとdecryptメソッドでAES-CBCによる暗号化と復号がサポートされました SubtleCrypto.deriveBitsでECDH (p256)がサポートされました SubtleCrypto.importKeyでraw形式のECDSAキーをインポートできるようになりました SubtleCryptoでAESキーのインポートとエクスポートがサポートされました FFI関連 (Deno.dlopen) バッファ引数(ArrayBuffer)のサポート 非同期呼び出しのサポート WASM スタックトレースにおけるWebAssembly....</p>
-</div>
-<footer class=entry-footer><span title="2021-10-17 00:00:00 +0000 UTC">October 17, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/11〜2021/10/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/17.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/10/04〜2021/10/10の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.14.3 Deno v1.14.3がリリースされました。
-このリリースでは、バグ修正やパフォーマンスチューニングを中心に実施されています。
-変更点:
-fetchで不正な形式のヘッダを指定するとプロセスがパニックする問題が修正されました Deno.listenで抽象ソケットアドレスを指定するとプロセスがパニックする問題が修正されました REPLでglobalThisに代入するとプロセスがパニックする問題が修正されました Workerのmessageハンドラで投げられたエラーが報告されない問題が修正されました Workerのdeno.permissions.envオプションに配列を渡せるようになりました Deno.testでAggregateErrorが投げられた際の出力が改善されました Opの実行、RequestやResponseの作成、Headers.prototype.appendなどが最適化されました https://github.com/denoland/deno/releases/tag/v1.14.3
-deno_std v0.110.0 deno_std v0.110.0がリリースされました。
-std/nodeへの機能追加が実施されています。
-変更点:
-node/buffer: BufferでreadUIntLE及びreadUIntBEが実装されました node/crypto: scrypt, scryptSync, timingSafeEqual, 及びrandomUUIDが実装されました。 node/stream/web: 下記クラスが追加されました。 ReadableByteStreamController TransformStreamDefaultController ByteLengthQueuingStrategy CountQueuingStrategy TextEncoderStream TextDecoderStream node/os: tmpdirが実装されました https://github.com/denoland/deno_std/releases/tag/0.110.0
-Freshのアップデート DenoのWebフレームワークであるFreshがアップデートされました。
-&lt;Head>コンポーネントがサポートされ、&lt;head>配下に要素を追加できるようになっています。
-/** @jsx h */ import { h, Head } from "../deps.ts"; export default function Home() { return ( &lt;div> &lt;Head> &lt;title>Hello&lt;/title> &lt;/Head> &lt;h2>Home&lt;/h2> &lt;/div> ); } https://github....</p>
-</div>
-<footer class=entry-footer><span title="2021-10-10 00:00:00 +0000 UTC">October 10, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/04〜2021/10/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/10.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -81,6 +81,31 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/03/20〜2023/03/26の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32 Deno v1.32がリリースされました。
+以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
+Deno v1.32 Deno v1.32.1 Deno v1.32.1がリリースされました。
+Resizable ArrayBufferの無効化 Resizable ArrayBufferが無効化されています。
+CVE-2023-28445 もしDeno v1.32.0を使用されている場合は、v1.32.1へのアップデートが推奨されます。
+その他 deno run -に与えられたソースがJavaScriptではなくTypeScriptとして解釈されるように修正されています。(Deno v1.32.0での--extオプション導入時のリグレッションのようです) オブジェクトの値に改行が入った文字列があった際に、Deno.inspectで非compactな形式で結果が返されるように改善されています。 deno lspでenablePathsに末尾の/なしでパスが与えられた際も適切に動作するように修正されています。 (https://github.com/denoland/vscode_deno/issues/827) https://github.com/denoland/deno/releases/tag/v1.32.1
+deno_std v0.181.0 deno_std v0.181.0がリリースされました。
+std/front_matter - +++ブロックがサポート +++ブロックがサポートされました。
+このブロック内ではTOML形式でメタデータを宣言できます。
++++ title = ”hello” +++ 本文... Hugoなどでこの形式がサポートされているようです。
+std/testing/asserts 各種アサーション関数にカスタムのメッセージが与えられた際のエラーメッセージが改善されています。
+例えば、assertEqualsにカスタムのmsg引数を渡した際に、msgに加えてdiffの内容も一緒に表示されるように挙動が改善されています。
+assertEquals(1, 2, "カスタムメッセージ"); 上記のようなコードがあった場合、v0.181.0とv0.180.0ではそれぞれ以下のように出力されます。
+v0.181.0
+error: Uncaught AssertionError: Values are not equal: カスタムメッセージ [Diff] Actual / Expected - 1 + 2 throw new AssertionError(message); v0....</p>
+</div>
+<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/03/20〜2023/03/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/26.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/03/13〜2023/03/19の最新情報
 </h2>
 </header>
@@ -263,25 +288,6 @@ CLI --reloadと--watchを併用した際に、ファイル変更のたびに--re
 </div>
 <footer class=entry-footer><span title="2023-01-15 00:00:00 +0000 UTC">January 15, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/01/09〜2023/01/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/15.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/01/02〜2023/01/08の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.29.2 Deno v1.29.2がリリースされました。
-Deno.osUptime() システムが起動してからの経過時間を取得するために、Deno.osUptime()というAPIが追加されました。
-利用するには、--unstableと--allow-sysの指定が必要です。
-Deno.Conn.ref()/unref() Deno.Connへunref()とref()メソッドが追加されました。
-これらのAPIの利用には--unstableの指定が必要です。
-unref()メソッドを呼ぶと、Deno.unrefTimerなどと同様に、読み込み途中のコネクションが存在したとしてもプロセスの終了がブロックされなくなります。(ただし、効果があるのは読み込みに対してのみで、書き込みについてはunrefを呼んだ場合であってもブロックされます)
-ref()メソッドを呼ぶと、unref()されたコネクションをデフォルトの状態に戻すことができます。(通常通り、読み込み途中のコネクションがプロセスの終了をブロックします)
-CLIに関するバグ修正 --node-modules-dirが指定された際にrequire()でパッケージが適切に解決できないケースがある問題が修正されています deno.json(c)でTypeScriptのcompilerOptions.noErrorTruncationオプションを設定できない問題が修正されています dynamic importが使用されていると、"unhandledrejection"のリスナが呼ばれないケースがあった問題が修正されています deno instlallもしくはdeno uninstallを実行する際に、ロックファイルの自動適用が行われてしまう問題が修正されています Deno APIに関する修正 Deno.memoryUsage()から返却されるrssプロパティに正しい値が設定されない問題が修正されています Deno.permissions.revokeまたはDeno.permissions.requestでname: "ffi"が指定された際に、pathオプションにURLオブジェクトを指定できるようになりました。 fetch()関連の修正 下記のケースでプロセスがパニックしてしまう問題が修正されています:
-引数に不正な形式のURLが与えられた場合 bodyオプションに渡したReadableStreamでエラーが発生した場合 deno lsp関連の修正 下記のケースでTest code lensが表示されない問題が修正されています Deno.test()でテスト名がテンプレートリテラルを使用して定義されている場合 下記のように、関数を使用してテストケースが定義されている場合 const test = () => ({ name: "some test", fn: () => {} }); Deno.test(test()); "Add all missing imports"アクションで正しいimport文が生成されないことがある問題が修正されています プライベートフィールド(#someField)の補完が適切に動作するように修正されています https://github.com/denoland/deno/releases/tag/v1.29.2...</p>
-</div>
-<footer class=entry-footer><span title="2023-01-08 00:00:00 +0000 UTC">January 8, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/01/02〜2023/01/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/08.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

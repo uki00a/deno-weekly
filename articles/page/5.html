@@ -82,6 +82,66 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/08/22〜2022/08/28の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25.0 Deno v1.25.0がリリースされました。
+以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
+Deno v1.25 deno_std v0.153.0 deno_std v0.153.0がリリースされました。
+std/encoding/csv: parse()が同期的に動作するように (破壊的変更) parse()の引数からBufReaderが削除されています
+これに伴い、parse()の戻り値がstring[][] | Record&lt;string, unknown>[]に変更されています。
+import { parse } from "https://deno.land/std@0.153.0/encoding/csv.ts"; const records = parse(`id,name 1,foo 2,bar`); console.log(records); // Output: [ [ "id", "name" ], [ "1", "foo" ], [ "2", "bar" ] ] std/http/cookie_mapモジュールが追加 MapライクなAPIをベースにCookieを管理するためのユーティリティモジュールが追加されました。
+CookieMapはリクエスト及びレスポンスに関するCookieの管理に利用することができます。
+import { CookieMap, mergeHeaders } from "https://deno.land/std@0.153.0/http/cookie_map.ts"; const req = new Request("http://localhost:3000", { headers: { cookie: "foo=bar; hoge=piyo;" }, }); const cookies = new CookieMap(req); cookies....</p>
+</div>
+<footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/22〜2022/08/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/28.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Deno v1.25
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25がリリースされました。
+この記事では主な変更点などについて解説します。
+npmパッケージのサポート Denoでnpmパッケージのimportや実行が実験的にサポートされました。
+npm installやnode_modulesなどを必要とせずにnpmパッケージを利用することができます。
+import express from "npm:express@4.18.1"; const app = express(); app.get("/", (req, res) => { res.send("Hello"); }); app.listen(3000); このファイルを実行すると、npmパッケージがダウンロードされた後、ExpressによってHTTPサーバが起動します。
+$ deno run --unstable --allow-env --allow-read --allow-net main.mjs $ curl http://localhost:3000 Hello 他のサードパーティモジュールなどと同様に、初回実行時のみnpmパッケージがダウンロードされ、DENO_DIRにキャッシュされます。(DENO_DIR/npm/registry.npmjs.orgに保存されるようです)
+また、npxライクにコマンドを実行することもできます。
+$ deno run --unstable --allow-env --allow-read --allow-write npm:make-dir-cli@3.0.0 src/components 制限 現時点では利用するには--unstableが必要になります。 また、--allow-envや--allow-readも必要になります。 ロックファイル/型チェック/deno vendor/deno lsp/deno installなどでは、この機能はまだサポートされていません。 新しいHTTPサーバ (Flash) DenoにはHyperをベースにしたHTTPサーバ(Deno.serveHttp)が組み込まれています。
+このHTTPサーバのさらなる高速化などを目的に、Flashという新しいHTTPサーバが実装されました。
+Deno.serveというAPIによって、Flashを起動することができます。
+const ac = new AbortController(); Deno.serve((req) => new Response("Hello, Flash"), { port: 4500, onListen: ({ port, hostname }) => { console....</p>
+</div>
+<footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.25" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/08/15〜2022/08/21の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoの今後の計画について Deno公式からBig Changes Ahead for Denoという、Denoの今後の計画などに関する記事が公開されました。
+今のところ、以下の点などに注力されていく予定のようです。
+Node.jsとの互換性の向上 パフォーマンスの向上 エンタープライズユーザへのサポートの強化 開発体験の向上 これらに関連すると思われる直近での変更について簡単にまとめてみます。
+npm:URLのサポート 現在、npm:URLによるnpmパッケージのimportに関する開発が行われています。
+feat(unstable): initial support for npm specifiers (#15484)
+例えば、以下のようにして、npmパッケージをimportすることができるようです。
+import express from "npm:express@5"; import { expect } from "npm:chai@4.2"; この機能には、大まかに以下のような特徴があります。
+デフォルトでnpmパッケージはnpmの公式レジストリからダウンロードされ、DENO_DIRにキャッシュされます。 Node.js互換モード(--compat)とは異なり、npm:URLで読み込まれたモジュール内のみにNode.jsのグローバルAPI(process/global/Bufferなど)が注入されます。 Node.js互換モード(--compat)とは異なり、現時点では--unstableなしで使用できる想定のようです。 型チェック, LSPのサポート, エントリポイントでのnpm:URLの指定(例: deno run npm:mkdirp path/to/dir)などの機能はまだ入っておらず、今後追加されていく予定のようです。 この機能はおそらく、次のv1.25でリリースされるのではないかと思われます。
+新しいHTTPサーバ (Flash) HTTPサーバの高速化を目的に、Deno本体でFlashという新しいHTTPサーバが開発されています。
+feat(ext/flash): An optimized http/1.1 server (#15405)
+feat(unstable): change Deno.serve() API (#15498)...</p>
+</div>
+<footer class=entry-footer><span title="2022-08-21 00:00:00 +0000 UTC">August 21, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/15〜2022/08/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/21.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/08/08〜2022/08/14の最新情報
 </h2>
 </header>
@@ -226,74 +286,6 @@ import { accepts } from "https://deno.land/std@0.147.0/http/negotiation.ts"; con
 </div>
 <footer class=entry-footer><span title="2022-07-10 00:00:00 +0000 UTC">July 10, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/04〜2022/07/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/10.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/06/27〜2022/07/03の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23.2 Deno v1.23.2がリリースされました。
-スレッドセーフコールバックのサポート(FFI) 例えば、メインスレッドで登録したコールバック(Deno.UnsafeCallback)をWorkerスレッドから呼び出したり、その逆にWorkerスレッドで登録したコールバックをメインスレッドから呼び出すことができるようになりました。
-また、Deno.UnsafeCallbackにrefとunrefメソッドが実装されており、refを呼ぶことでDenoプロセスの停止を防止することができます。(Deno.refTimerなどと同様の挙動)
-https://github.com/denoland/deno/pull/14942
-その他の変更点 FFIで空のArrayBufferを渡すとプロセスパニックする問題が修正されています。 deno lspのdeno/cacheメソッド(vscode-denoだとDeno: Cache Dependenciesコマンド)で依存関係をキャッシュした際に、TypeScriptのランゲージサービスが自動で再起動されるようになりました。 Deno.bench()やDeno.test()を含むファイルをdeno runで実行すると、エラーが発生する問題が修正されています。 https://github.com/denoland/deno/releases/tag/v1.23.2
-deno_std v0.146.0 deno_std v0.146.0がリリースされました。
-collections: BSTreeとRBTreeのリネーム collectionsモジュールで提供されているBSTreeがBinarySearchTreeに、RBTreeがRedBlackTreeにリネームされています。
-その他の変更点 testing/asserts: assertEqualsで同じ要素を持つSet同士を比較しているにも関わらず、例外が発生するケースがあったため、修正されています。 streams/delimiter: TextLineStreamで大きなチャンクを処理する際にMaximum call stack size exceededエラーが発生することがある問題が修正されました。 node/util: util.inspect()やutil.format()で6つを超える要素数の配列が正しくフォーマットされるように修正されています。 https://github.com/denoland/deno_std/releases/tag/0.146.0
-JITコンパイラによるFFIの最適化 Deno本体へのJITコンパイラの導入により、FFIバインディングを最適化するPRが作成されています。
-perf(ext/ffi): JIT compiler for FFI (#15006)
-内部的には、tinyccが使用されているようです。
-https://github.com/denoland/deno/pull/15006
-Fresh v1 Fresh v1.0.0がリリースされました。
-これに合わせて、Freshのリポジトリがdenoland organization配下に移動されています。
-また、Deno公式でFreshの紹介記事が公開されています。
-Fresh 1.0 https://github.com/denoland/fresh
-denoland/meet-me Deno公式で、Calendlyのクローンアプリが公開されています。...</p>
-</div>
-<footer class=entry-footer><span title="2022-07-03 00:00:00 +0000 UTC">July 3, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/27〜2022/07/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/03.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/06/20〜2022/06/26の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23.1 Deno v1.23.1がリリースされました。
-FFI関連の変更点 破壊的変更としてDeno.UnsafePointerが削除されました。 (正確にはDeno.UnsafePointer.ofのみ残されています) 今後、ポインタはbigintで表現されます。
-その他には、unstable APIとしてDeno.UnsafeCallbackが追加されています。 JavaScriptの関数を関数ポインタとして受け渡すために利用できます。
-deno fmtの改善 deno fmtコマンドがnode_modulesと.gitディレクトリを無視するようになりました。
-また、JavaScriptファイルのパースに失敗した際に、deno fmt --checkがちゃんと失敗するように修正されています。
-その他の変更点 fetchの呼び出し時に、デフォルトでAccept-Language: *ヘッダが設定されるように修正されました。 deno replコマンドで、直前の文字が空白のときにTabキーを押すと、タブ(\t)が挿入されるように修正されました。 deno runコマンドで.d.ctsや.d.mtsファイルを実行すると、プロセスがパニックする問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.23.1
-deno_std v0.145.0 deno_std v0.145.0がリリースされました。
-std/encoding/json/stream std/encoding/json/streamが追加されました。
-このモジュールでは、下記4フォーマットでのストリーミングがサポートされています。
-JSON Lines ndjson JSON Text Sequences Concatenated JSON JSONParseStreamは上記の上から3つのフォーマットをサポートしています。
-import { JSONParseStream } from "https://deno.land/std@0.145.0/encoding/json/stream.ts"; import { readableStreamFromIterable } from "https://deno.land/std@0.145.0/streams/conversion.ts"; const readable = readableStreamFromIterable([ `{"name": "foo"}`, `{"a": 1, "b": true}`, ]) ....</p>
-</div>
-<footer class=entry-footer><span title="2022-06-26 00:00:00 +0000 UTC">June 26, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/20〜2022/06/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/26.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/06/13〜2022/06/19の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23 Deno v1.23がリリースされました。
-以下の記事に変更点をまとめたため、詳しくはこちらを参照いただければと思います。
-Deno v1.23 deno_std v0.144.0 deno_std v0.144.0がリリースされました。
-encoding/front_matter 新規モジュールとしてencoding/front_matterが追加されました。
-import { extract } from "https://deno.land/std@0.144.0/encoding/front_matter.ts"; const { attrs, body } = extract&lt;{ title: string, date: Date }>(`--- title: foobar date: 2022-06-12 --- Hello`); console.assert(attrs.title === "foobar"); console.assert(attrs.date instanceof Date); console.assert(body === "Hello"); collections collections/mod.tsをimportすると警告が表示されるようになりました。
-必要に応じて、collections/deep_mergeやcollections/group_byなどの各ファイルを個別にimportすることが推奨されます。
-node process.stdoutとprocess.stderrに下記メソッドが実装されています。
-cursorTo moveCursor clearLine clearScreenDown https://github.com/denoland/deno_std/releases/tag/0.144.0
-Freshのアップデート (CLIの削除) FreshからCLIが削除されています。
-feat: remove fresh cli, do manifest generation in process (#223)...</p>
-</div>
-<footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/06/13〜2022/06/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/19.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -81,6 +81,34 @@ release
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Deno v1.32
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32がリリースされました。
+この記事では主な変更点などについて解説します。
+WebGPU APIの削除 Deno v1.8で追加されたWebGPU APIが削除されました。
+バイナリサイズや起動速度に影響があったというのが理由のようです。
+ただし、削除は一時的なもののようで、将来的には再びWebGPU APIが追加される想定のようです。
+KVストア Deno本体にKVストアが実装されています。
+ただし、こちらについてはまだ公式では紹介などはされておらず、今後、APIなどに大きな変更が入る可能性もあります。
+詳細については、以下の記事を参照いただければと思います。
+Deno v1.32でKVストアが実装されました TypeScript TypeScript v5.0.2へのアップデート Deno内部に搭載されているTypeScriptがv5.0.2へアップデートされました。
+ただし、制限として、ES Decoratorsのサポートについては現時点では除外されているようです。
+--allを指定しなかった際の初回の型チェックの実行が高速化 Denoでは型チェックの実行結果をSQLiteにキャッシュしておくことで、型チェックの効率化を図っています。
+しかし、初回の型チェック実行時についてはこのキャッシュの仕組みが効かないため、型チェックの実行効率が少し落ちてしまいます。
+この問題を解消するために、--allが指定されていない際は、ローカルのファイルのみを型チェックするように挙動が変更されました。
+これによって、キャッシュが効いていない場合でも、場合によっては2倍程度の高速化が見られることもあるようです。
+CLIに関する改善 deno compileでdynamic importとWeb Workerがサポート deno compileでdynamic importとWeb Workerを使用したコードのバイナリが作成できるようになりました。
+例えば、以下のようなファイルがあったとします。
+// sum.js export function sum(...numbers) { return numbers.reduce((a, b) => a + b, 0); } // main.js const { sum } = await import("./sum.js"); console.info(sum(1, 2, 3)); このようにシンプルなケースでは、特に設定などは不要でうまく動いてくれます。
+$ deno compile -o main main....</p>
+</div>
+<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.32" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.32.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Deno v1.31
 </h2>
 </header>
@@ -278,31 +306,6 @@ v1.23.4...</p>
 </div>
 <footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.24" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.24.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Deno v1.23
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23がリリースされました。
-この記事では主な変更点などについて解説します。
-deno runやdeno cacheなどのコマンドでデフォルトの型チェックが無効化されました 下記コマンドで、デフォルトで型チェックが行われなくなります。
-deno run deno cache deno eval deno repl 今後、型チェックを行いたい場合は、deno checkコマンドを使うか--checkオプションを指定する必要があります。
-$ deno check mod.ts その他のdeno testなどのコマンドでは、引き続きローカルモジュールの型チェックがデフォルトで実行されます。
-deno runが失敗する場合の対処方法 Denoは、型チェックを行わない場合、swcを使用してトランスパイルを行います。
-その関係で、コードの実行時に、まれに問題が発生することがあるようです。
-https://github.com/denoland/deno/issues/14900 問題に遭遇した場合は、--checkオプションを指定するとtscが使用されるため、問題を回避できる可能性があります。
-$ deno run --check mod.ts Deno.sleepSync()の削除 Atomics.waitで代替可能であったり、イベントループを完全にブロックしてしまうなどの問題を抱えていたため、Deno.sleepSync()が削除されました。
-Intl.v8BreakIteratorの削除 非標準APIであるため、Intl.v8BreakIteratorが削除されました。
-代わりにIntl.Segmenterの使用が推奨されます。
-deno taskコマンドの改善 --cwdオプションのサポート --cwdオプションにより、タスク実行時のカレントディレクトリを変更できるようになりました (デフォルトでは、deno.json(c)の配置場所がカレントディレクトリに設定されます)
-$ deno task --cwd ./src build リダイレクションのサポート タスクの定義でリダイレクションがサポートされました。
-{ "tasks": { "test": "echo foo > test.txt" } } また、/dev/nullにリダイレクトすると、出力が捨てられます (Windowsでも動きます)
-コマンドの追加 下記コマンドがサポートされました。...</p>
-</div>
-<footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.23" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.23.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

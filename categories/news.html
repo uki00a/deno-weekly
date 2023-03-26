@@ -81,6 +81,54 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/03/20〜2023/03/26の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32 Deno v1.32がリリースされました。
+以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
+Deno v1.32 Deno v1.32.1 Deno v1.32.1がリリースされました。
+Resizable ArrayBufferの無効化 Resizable ArrayBufferが無効化されています。
+CVE-2023-28445 もしDeno v1.32.0を使用されている場合は、v1.32.1へのアップデートが推奨されます。
+その他 deno run -に与えられたソースがJavaScriptではなくTypeScriptとして解釈されるように修正されています。(Deno v1.32.0での--extオプション導入時のリグレッションのようです) オブジェクトの値に改行が入った文字列があった際に、Deno.inspectで非compactな形式で結果が返されるように改善されています。 deno lspでenablePathsに末尾の/なしでパスが与えられた際も適切に動作するように修正されています。 (https://github.com/denoland/vscode_deno/issues/827) https://github.com/denoland/deno/releases/tag/v1.32.1
+deno_std v0.181.0 deno_std v0.181.0がリリースされました。
+std/front_matter - +++ブロックがサポート +++ブロックがサポートされました。
+このブロック内ではTOML形式でメタデータを宣言できます。
++++ title = ”hello” +++ 本文... Hugoなどでこの形式がサポートされているようです。
+std/testing/asserts 各種アサーション関数にカスタムのメッセージが与えられた際のエラーメッセージが改善されています。
+例えば、assertEqualsにカスタムのmsg引数を渡した際に、msgに加えてdiffの内容も一緒に表示されるように挙動が改善されています。
+assertEquals(1, 2, "カスタムメッセージ"); 上記のようなコードがあった場合、v0.181.0とv0.180.0ではそれぞれ以下のように出力されます。
+v0.181.0
+error: Uncaught AssertionError: Values are not equal: カスタムメッセージ [Diff] Actual / Expected - 1 + 2 throw new AssertionError(message); v0....</p>
+</div>
+<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/03/20〜2023/03/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/26.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Denoでpackage.jsonやnpmパッケージのサポートが入った理由について
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoの公式ブログで、Deno v1.31でpackage.jsonサポートが実装された背景に関する解説が公開されました。
+Why We Added package.json Support to Deno このページでは、こちらの記事を参考に内容を要約していきます。
+背景について Denoにnpmパッケージやpackage.jsonのサポートが導入されたのは、以下における各課題の解決や既存のNode.jsプロジェクトを直接Denoで動作させられるようにすることが目的のようです。
+依存関係の重複問題 例えば、アプリケーションが依存しているモジュールAとモジュールBがそれぞれ以下のモジュールに依存していたとします。
+https://deno.land/std@0.180.0/async/deferred.ts https://deno.land/std@0.181.0/async/deferred.ts もし仮にstd/async/deferred.tsの内容が0.180.0と0.181.0で同一であったとしても、URL importの性質上、これらの両方のバージョンがモジュールグラフの中に含まれてしまうという課題があります。
+既存のリモートモジュール管理における課題 Denoではdeps.tsやImport mapsなどによってリモートモジュールを管理する方法がありますが、これらには以下のような課題があります。
+deps.ts package.jsonなどと比較すると冗長になってしまいがち ただし、Module DeclarationsやModule Source Importsなどの仕組みにより、ある程度改善の余地はある模様です Import Maps 合成可能ではないという欠点があること (プロセスにつき1つしかImport Mapsを使用できない) CDNに関する課題 Denoではesm.shなどを活用することで一部のnpmパッケージを利用することはできるものの、性質上、どうしてもサポートができないnpmパッケージがでてきてしまうという課題があります。
+対象のnpmパッケージがtarアーカイブ中に特定のテキストファイルなどが含まれていることを前提としている場合などは、動作させることが困難になってしまいます。
+例としては、bullmqなどのように、パッケージ内でテキスト形式でLuaスクリプトを管理しているパッケージなども存在し、こういったパッケージをサポートすることが難しくなります。
+今後について npmパッケージやpackage.jsonなどのサポートがDenoに入ったとしても、URL importなどの既存のDenoの仕組みは将来に渡ってもサポートが予定されているということが説明されています。
+また、新しいメジャーバージョン (Deno v2)を数カ月後にリリースすることを目標に開発が進められているようです。
+Deno v2では、上記の依存関係の重複問題などの解消を目的に、deno:URLのサポートなどが検討されているようです。
+import $ from "deno:dax@24.0/mod.ts"; await $`echo foobar`; Deno本体でsemverの解決をできるようにすることで、依存関係の重複問題などを緩和することなどが計画されているようです。</p>
+</div>
+<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to Denoでpackage.jsonやnpmパッケージのサポートが入った理由について" href=https://uki00a.github.io/deno-weekly/articles/deno/why-deno-supports-package-json.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/03/13〜2023/03/19の最新情報
 </h2>
 </header>
@@ -235,57 +283,6 @@ std/io/readers.tsモジュールの削除 (破壊的変更) std/io/readers....</
 </div>
 <footer class=entry-footer><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/01/23〜2023/01/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/29.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/01/16〜2023/01/22の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Denoのロードマップ (2023年 Q1) Denoの2023年 Q1のロードマップが公開されました。
-以下のページに内容をまとめたため、よろしければ参照いただければと思います。
-Denoのロードマップ (2023年 Q1) https://github.com/denoland/deno/issues/17475
-Deno v1.29.4 Deno v1.29.4がリリースされました。
-Node-APIに関する改善 Node-APIの互換性の向上が実施されています。
-napi_get_arraybuffer_info/napi_get_buffer_info/napi_get_typedarray_infoで lengthなどの各引数がNULLであった際のケースが考慮されるように挙動が改善されています。 napi_create_errorやnapi_is_error, napi_throw_errorなどのエラー関連APIの互換性が向上されています。 Flash(Deno.serve)の改善 Request.cloneを呼ぶと、エラーが発生する問題が修正されています。 リクエストメソッドがPOST/PUT/PATCHのいずれかで かつ Deno.serveに渡したハンドラでリクエストボディがconsumeされていない場合、プロセスがパニックする問題が修正されています。 レスポンスボディとして設定したReadableStreamからUint8Array以外の値がenqueueされた際に、Deno.serveに渡したonErrorハンドラが呼ばれず、Unhandled rejectionが発生してしまう問題が修正されています。 Deno APIに関するバグ修正 Deno.copyFileSyncを実行した際に、コピー先のファイルへパーミッションが受け継がれない問題が修正されています。 WindowsでDeno.systemMemoryInfo()を呼んだ際にswapTotalやswapFreeとして返却される値の信頼性が向上されています。 https://github.com/denoland/deno/releases/tag/v1.29.4
-deno_std v0.173.0 deno_std v0.173.0がリリースされました。
-std/node 前回のリリースで追加されたnode:clusterがリバートされています。
-Deno本体でnpm互換が有効化されている場合に、node:clusterを使っていない場合であっても、NODE_CLUSTER_SCHED_POLICYなどの環境変数に対するパーミッションが要求されてしまうためのようです。
-現在、Deno本体でDeno.permissions.querySync()の実装が進められており、これが正式にサポートされたら、改めてnode:clusterを追加することが検討されているようです。
-std/fs/expand_glob expandGlob(Sync)のglobstarオプションのデフォルト値がfalseからtrueへ変更されました。
-std/streams/text_line_stream TextLineStreamで最後の行の後に空文字列が余分にenqueueされてしまう問題が修正されています。
-https://github.com/denoland/deno_std/releases/tag/0.173.0
-eslint_binary eslint_binaryという、DenoのNode.js互換性やV8 Snapshot、ESBuildなどを活用して、ESLintをシングルバイナリ化するプロジェクトが公開されています。
-bartlomieju/eslint_binary このプロジェクトはあくまでPoCのため、今後どうなるかはまだ不明ですが、READMEにロードマップが公開されており、ESLintのCLIをRustで書き直すことなども検討されているようです。
-esm.shの2023年のロードマップ esm.shの今年のロードマップが公開されています。
-Roadmap of 2023 プレイグラウンドにコードの共有機能を実装することや、安定性の向上などを図ることが検討されているようです。...</p>
-</div>
-<footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/01/16〜2023/01/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/22.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Denoのロードマップ (2023年 Q1)
-</h2>
-</header>
-<div class=entry-content>
-<p>Denoの2023年 Q1のロードマップが公開されました。
-https://github.com/denoland/deno/issues/17475 このページでは、新しく実装が検討されている機能などについて紹介いたします。
-deno.jsonでのimportsフィールドのサポート 今までDenoでImport Mapsを利用するには、専用のファイルを用意しておき、それを--import-mapオプションで読むこむ必要がありました。
-現在、deno.jsonで直接Import Mapsを定義できるようにするため、importsオプションの追加が検討されています。
-これが実現されれば、以下のようにdeno.jsonで直接マッピングを定義できるようになります。
-{ "imports": { "redis": "https://deno.land/x/redis@v0.29.0/mod.ts", "dax": "https://deno.land/x/dax@0.24.0/mod.ts" }, "tasks": { "start": "deno run --allow-net --allow-env ./main.ts" } } Deno公式が公開している02-deno-canonical-appにも使用例があるため、よろしければそちらも参照いただければと思います。
-deno:URLのサポート deno:という新しいURLスキームの導入が検討されており、これにより、deno.land/xからのモジュールの読み込みを簡略化できます。
-import $ from "deno:dax@24.0/mod.ts"; await $`echo foobar`; また、deno.land/xでも機能の拡張が予定されているようで，/x/some-packageにアクセスされた際は/x/some-package/mod.tsにリダイレクトさせることが検討されているようです。
-例えば、deno:dax@24.0と記述した場合、/x/dax@0.24.0/mod.tsが読み込まれます。
-package.jsonのサポート Deno本体でpackage.jsonのサポートが検討されているようです。
-例えば、以下のような内容のpackage.jsonがあったとします。
-{ "type": "module", "scripts": { "main": "deno run -A main.ts" }, "dependencies": { "chalk": "^5.0", "deno-redis": "deno:redis@~0.29.0/mod.ts" } } Denoはpackage.jsonの"dependencies"で定義された依存関係を元に、コード中のbare specifierを解釈します。(もしImport Mapsファイルまたはdeno.jsonでもマッピングが定義されている場合は、package.jsonよりもそれらのファイルの設定が優先されます)
-例えば、以下のようなスクリプトが存在する場合、deno-redisはhttps://deno.land/x/redis@v0.29.0/mod.tsとして解釈され、chalkについてはnpmレジストリからv5.xがダウンロードされます。
-import { connect } from "deno-redis"; import chalk from "chalk"; const redis = await connect({ hostname: "127....</p>
-</div>
-<footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
-<a class=entry-link aria-label="post link to Denoのロードマップ (2023年 Q1)" href=https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

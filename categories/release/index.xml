@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>release on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/release.html</link><description>Recent content in release on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 26 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Deno v1.31</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.31.html</link><pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.31.html</guid><description>Deno v1.31がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>release on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/release.html</link><description>Recent content in release on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 26 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Deno v1.32</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.32.html</link><pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.32.html</guid><description>Deno v1.32がリリースされました。
+この記事では主な変更点などについて解説します。
+WebGPU APIの削除 Deno v1.8で追加されたWebGPU APIが削除されました。
+バイナリサイズや起動速度に影響があったというのが理由のようです。
+ただし、削除は一時的なもののようで、将来的には再びWebGPU APIが追加される想定のようです。
+KVストア Deno本体にKVストアが実装されています。
+ただし、こちらについてはまだ公式では紹介などはされておらず、今後、APIなどに大きな変更が入る可能性もあります。
+詳細については、以下の記事を参照いただければと思います。
+Deno v1.32でKVストアが実装されました TypeScript TypeScript v5.0.2へのアップデート Deno内部に搭載されているTypeScriptがv5.0.2へアップデートされました。
+ただし、制限として、ES Decoratorsのサポートについては現時点では除外されているようです。
+--allを指定しなかった際の初回の型チェックの実行が高速化 Denoでは型チェックの実行結果をSQLiteにキャッシュしておくことで、型チェックの効率化を図っています。
+しかし、初回の型チェック実行時についてはこのキャッシュの仕組みが効かないため、型チェックの実行効率が少し落ちてしまいます。
+この問題を解消するために、--allが指定されていない際は、ローカルのファイルのみを型チェックするように挙動が変更されました。
+これによって、キャッシュが効いていない場合でも、場合によっては2倍程度の高速化が見られることもあるようです。
+CLIに関する改善 deno compileでdynamic importとWeb Workerがサポート deno compileでdynamic importとWeb Workerを使用したコードのバイナリが作成できるようになりました。
+例えば、以下のようなファイルがあったとします。
+// sum.js export function sum(...numbers) { return numbers.reduce((a, b) =&amp;gt; a + b, 0); } // main.js const { sum } = await import(&amp;#34;./sum.js&amp;#34;); console.info(sum(1, 2, 3)); このようにシンプルなケースでは、特に設定などは不要でうまく動いてくれます。
+$ deno compile -o main main.</description></item><item><title>Deno v1.31</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.31.html</link><pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.31.html</guid><description>Deno v1.31がリリースされました。
 この記事では主な変更点などについて解説します。
 package.jsonサポート Denoでpackage.jsonがサポートされました。
 具体的には、以下のような機能などが実装されています。
