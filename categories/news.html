@@ -81,6 +81,25 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/04/03〜2023/04/09の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。
+refactor: remove “ext/flash” #18578 これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。
+refactor: “Deno.serve()” API uses “Deno.serveHttp()” internally #18568 Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。
+Extremely experimental HTTP rewrite #18619 Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。
+feat: remove experimental support for Deno flash server docs: remove experimental flash content from README fresh v1.1.5 fresh v1.1.5がリリースされました。
+twindv1プラグインで、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。
+Deno SaaSKit Deno公式からFreshやSupabase, Stripeなどを活用したSaaSプロジェクトのテンプレートが公開されました。
+Announcing Deno SaaSKit: an open-source SaaS template built with Fresh ソースコードやロードマップなどが以下のリポジトリで公開されています。
+https://github.com/denoland/saaskit SaaSKit v1....</p>
+</div>
+<footer class=entry-footer><span title="2023-04-09 00:00:00 +0000 UTC">April 9, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/04/03〜2023/04/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/09.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/03/27〜2023/04/02の最新情報
 </h2>
 </header>
@@ -264,26 +283,6 @@ import * as semver from "https://deno.land/std@0.177.0/semver/mod.ts"; const v =
 </div>
 <footer class=entry-footer><span title="2023-02-12 00:00:00 +0000 UTC">February 12, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/02/06〜2023/02/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/12.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/01/30〜2023/02/05の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.30.1 Deno v1.30.1がリリースされました。
-Node.js互換性の改善 Node-APIの互換性が改善されています。
-napi_get_globalでDenoのglobalThisではなくglobalオブジェクトが返されるように修正されています。 napi_create_functionでlengthパラメータが誤ってチェックされていた問題が修正されています。 これらの変更により、Denoでref-napiが動くようになったようです。
-その他には、deno replでnode:URLを使った際に、以下のエラーメッセージが表示されてしまう問題が解消されています。
-Could not set npm package requirements. Error getting response at https://registry.npmjs.org/@types/node: An npm specifier not found in cache: "@types/node", --cached-only is specified. deno lspの改善 Import Maps関連のバグ修正が実施されています。
-Import Mapsを更新した際に、LSPの再起動やコードの編集をせずとも更新内容が反映されるように挙動が改善されました Import Mapsが存在すると、fs形式のimportをnode:fsの形式へ変換するquickfixが機能しなくなる問題が修正されています その他の修正 performance.markのdetailオプションにArrayBufferやTypedArrayを指定するとエラーが発生する問題が修正されています https://github.com/denoland/deno/releases/tag/v1.30.1
-Deno v1.30.2 Deno v1.30.2がリリースされています。
-v1.30.1でCPU使用率の増加が見られたため、それを修正するために、急遽リリースされる運びになったようです。
-deno version 1.30.1 large cpu increase #17629 https://github.com/denoland/deno/releases/tag/v1.30.2
-deno_std v0.176.0 deno_std v0....</p>
-</div>
-<footer class=entry-footer><span title="2023-02-05 00:00:00 +0000 UTC">February 5, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/01/30〜2023/02/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/05.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

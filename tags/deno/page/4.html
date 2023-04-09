@@ -81,6 +81,27 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Deno v1.27
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.27がリリースされました。
+この記事では主な変更点などについて解説します。
+npmパッケージサポートの改善 Deno v1.25で追加されたnpmパッケージのサポートに関する改善が実施されています。
+型チェックのサポート npm:で読み込んだnpmパッケージに対して型定義が適用されるようになりました
+これにより、deno checkなどのコマンドを実行した際に、npmパッケージを使用しているコードについても適切に型チェックが実行されます。
+import { default as stringWidth } from "npm:string-width@5.1.2"; console.info(stringWidth("foo")); // => 3 console.info(stringWidth(123)); // => 型エラー このように、型定義ファイルを同梱したパッケージについては、自動でそれが読み込まれて適用されます。
+型定義ファイルを同梱していないパッケージについては、@deno-typesを使用することで型定義を適用することができます。
+// @deno-types="npm:@types/express@4.17.14" import { default as express } from "npm:express@4.18.2"; console.info(express("foo")); // => 型エラー Node-APIのサポート Deno本体にNode-APIのサポートが入りました。
+Node-APIは、CやC++などを使用してネイティブアドオンを記述するためにNode.jsから提供されている仕組みです。
+import { compress, uncompress } from "npm:lz4-napi@2.2.0" const data = await Deno.readFile("./deno.json"); const compressed = await compress(data); const uncompressed = await uncompress(compressed); Node-APIのサポートが入ったことにより、例えば、Prismaのクエリエンジンやnode-sqlite3などのパッケージも動かせる可能性が出てきました。
+アップデートチェッカー Denoにアップグレードチェッカーが導入されました。...</p>
+</div>
+<footer class=entry-footer><span title="2022-10-30 00:00:00 +0000 UTC">October 30, 2022</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.27" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.27.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/10/17〜2022/10/23の最新情報
 </h2>
 </header>
@@ -299,24 +320,6 @@ const process = require('process'); その他の変更点...</p>
 </div>
 <footer class=entry-footer><span title="2022-09-04 00:00:00 +0000 UTC">September 4, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/08/29〜2022/09/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/04.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/08/22〜2022/08/28の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.25.0 Deno v1.25.0がリリースされました。
-以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
-Deno v1.25 deno_std v0.153.0 deno_std v0.153.0がリリースされました。
-std/encoding/csv: parse()が同期的に動作するように (破壊的変更) parse()の引数からBufReaderが削除されています
-これに伴い、parse()の戻り値がstring[][] | Record&lt;string, unknown>[]に変更されています。
-import { parse } from "https://deno.land/std@0.153.0/encoding/csv.ts"; const records = parse(`id,name 1,foo 2,bar`); console.log(records); // Output: [ [ "id", "name" ], [ "1", "foo" ], [ "2", "bar" ] ] std/http/cookie_mapモジュールが追加 MapライクなAPIをベースにCookieを管理するためのユーティリティモジュールが追加されました。
-CookieMapはリクエスト及びレスポンスに関するCookieの管理に利用することができます。
-import { CookieMap, mergeHeaders } from "https://deno.land/std@0.153.0/http/cookie_map.ts"; const req = new Request("http://localhost:3000", { headers: { cookie: "foo=bar; hoge=piyo;" }, }); const cookies = new CookieMap(req); cookies....</p>
-</div>
-<footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/22〜2022/08/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/28.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

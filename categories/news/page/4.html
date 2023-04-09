@@ -81,6 +81,32 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/09/19〜2022/09/25の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25.4 Deno v1.25.4がリリースされました。
+--node-modules-dirのサポート node_modulesディレクトリの存在に依存したnpmパッケージを動かせるようにするために、--node-modules-dirオプションが実装されました。
+$ deno run -A --unstable --node-modules-dir npm:vite このオプションを指定すると、pnpmライクなレイアウトでnode_modulesが作られます。
+これによって、npm installなしでViteが動かせるようになったようです。
+詳しくは以下を参照いただければと思います。
+vite-deno-example --reload=オプションでnpmパッケージがサポート --reload=npm:で全npmパッケージの再読込み、--reload=npm:&lt;package>で指定されたパッケージだけを再読込みができます。
+パフォーマンスチューニング いくつかのパフォーマンスチューニングが実施されています。
+例)
+CLIの起動の高速化 console.log()などで文字列を出力する際のパフォーマンスが3倍近くまで高速化 TextEncoder.encodeInto()が5.4倍近くまで高速化 ファイルシステム関連のAPIの最適化 CLIの起動の高速化については、現在、様々なアイデアが検討されており、詳細については以下を参照いただければと思います。
+perf: ideas to improve startup time (#15945) その他の変更点 同一ファイルに対して複数回deno docを実行すると、処理が失敗してしまう問題が修正されています。 Windows上でdeno compileを実行したときに、拡張子が非.exe形式の場合に、それが取り除かれてしまう問題が修正されています。 Deno.env.get/Deno.env.setに不正な変数名を指定した際のエラーメッセージが改善されています。 https://github.com/denoland/deno/releases/tag/v1.25.4
+deno_std v0.157.0 deno_std v0.157.0がリリースされました。
+std/collections/deep_merge.tsのバグ修正 ネストされたプロパティにおいてdeepMerge()のreplaceオプションが機能しない問題が修正されています。
+std/nodeの改善 child_process.spawnSyncが実装されています。
+また、FreeBSDでもstd/nodeが動作するように修正が行われています。
+その他には、以下の改善などが実施されています。
+fs.read()やfs.ReadStreamの互換性の向上 net.connect()が失敗したときに、'error' ⇒ 'close'の順にイベントが発火されるように修正されています。 process.envに不正な文字を含む環境変数が指定されたときに、TypeErrorを投げるのではなくundefinedを返すように修正されています。 Windows上でprocess.on('SIGTERM')が無視されるように修正されています。 https://github....</p>
+</div>
+<footer class=entry-footer><span title="2022-09-25 00:00:00 +0000 UTC">September 25, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/09/19〜2022/09/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/25.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/09/12〜2022/09/18の最新情報
 </h2>
 </header>
@@ -276,22 +302,6 @@ https://unf275cfh14.typeform.com/to/k3eQB4Q3 https://twitter.com/deno_land/statu
 </div>
 <footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/18〜2022/07/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/24.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/07/11〜2022/07/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.23.4 Deno v1.23.4がリリースされました。
-V8 Fast API Calls+JITコンパイルによるFFIの最適化 V8 Fast API Callsとtinyccを使用したJITコンパイルにより、FFI(Deno.dlopen)の最適化が行われています。
-Deno.dlopenを呼んだ際に、下記の条件が満たされる外部関数へのバインディングに対して、自動でFast API Calls+JITコンパイルによる最適化が適用されます。
-非Windows環境であること (Windowsではまだこれらの最適化がサポートされていません) パラメータ及び戻り値の型にスカラ型のみが含まれる場合 もしこれらの最適化を無効化したい場合は、callbackオプションにtrueを指定する必要があります。
-const lib = Deno.dlopen( "some_lib.so", { some_func: { parameters: ["usize", "usize"], result: "usize", callback: true }, } ); 細かな詳細については、deno_ffiも参照ください。
-perf(ext/ffi): leverage V8 Fast Calls #15125 fix(ext/ffi): trampoline for fast calls #15139 fix(ext/ffi): allow opting out of fast ffi calls #15131 その他の変更点 Request#json()などに続けてRequest.headersを参照するとプロセスがパニックする問題が解消されています。 deno lspで自動importが効くようになりました。それに伴い、入力補完に関わる挙動も改善されています。 https://github....</p>
-</div>
-<footer class=entry-footer><span title="2022-07-17 00:00:00 +0000 UTC">July 17, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/11〜2022/07/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/17.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

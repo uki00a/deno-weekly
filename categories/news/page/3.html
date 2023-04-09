@@ -81,6 +81,24 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/11/28〜2022/12/04の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.28.3 Deno v1.28.3がリリースされました。
+大きな変更点として、Deno v1.28.0で実装されたDeno.Commandに関するAPIの変更が実施されています。(Deno.CommandAPIの見直しについて)
+また、Node.js互換性の改善についても引き続き実施されています。
+node:moduleのcreateRequireで絶対パスがサポート deno runコマンドでnpm:と--inspect-brkの併用がサポート packages.jsonのexports.typesサポートに関する改善 その他の変更点 プロセス停止前に未解決のPromiseが存在する際のエラーメッセージが改善 (問題が発生している箇所がエラーメッセージに表示されるように) ReadableStreamのリーダー周辺の型定義の改善 Denoのトランスパイル結果のキャッシュとdeno test --coverageで生成されたカバレッジの整合性が取れなかった場合に、プロセスがパニックする問題が修正 deno replの履歴管理に関する信頼性の向上 https://github.com/denoland/deno/releases/tag/v1.28.3
+deno_std v0.167.0 deno_std v0.167.0がリリースされています。
+std/async/retryモジュールの追加 std/asyncにExponential backoffアルゴリズムに基づいたリトライ機能を提供するモジュールが追加されました。
+import { retry } from "https://deno.land/std@0.167.0/async/retry.ts"; const result = await retry(async () => { const result = await doSomeAsyncOperation(); return result; }, { multiplier: 2, maxTimeout: 16_000, maxAttempts: 10, minTimeout: 500, }); std/testing/typesモジュールの追加 std/testingにTypeScriptの型をテストするためのモジュールが追加されています。
+import type { Has, IsExact, IsNullable } from "https://deno....</p>
+</div>
+<footer class=entry-footer><span title="2022-12-04 00:00:00 +0000 UTC">December 4, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/11/28〜2022/12/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/04.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/11/21〜2022/11/27の最新情報
 </h2>
 </header>
@@ -297,32 +315,6 @@ https://github.com/denosaurs/plug/releases/tag/1.0.0-rc.0</p>
 </div>
 <footer class=entry-footer><span title="2022-10-02 00:00:00 +0000 UTC">October 2, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/09/26〜2022/10/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/02.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/09/19〜2022/09/25の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.25.4 Deno v1.25.4がリリースされました。
---node-modules-dirのサポート node_modulesディレクトリの存在に依存したnpmパッケージを動かせるようにするために、--node-modules-dirオプションが実装されました。
-$ deno run -A --unstable --node-modules-dir npm:vite このオプションを指定すると、pnpmライクなレイアウトでnode_modulesが作られます。
-これによって、npm installなしでViteが動かせるようになったようです。
-詳しくは以下を参照いただければと思います。
-vite-deno-example --reload=オプションでnpmパッケージがサポート --reload=npm:で全npmパッケージの再読込み、--reload=npm:&lt;package>で指定されたパッケージだけを再読込みができます。
-パフォーマンスチューニング いくつかのパフォーマンスチューニングが実施されています。
-例)
-CLIの起動の高速化 console.log()などで文字列を出力する際のパフォーマンスが3倍近くまで高速化 TextEncoder.encodeInto()が5.4倍近くまで高速化 ファイルシステム関連のAPIの最適化 CLIの起動の高速化については、現在、様々なアイデアが検討されており、詳細については以下を参照いただければと思います。
-perf: ideas to improve startup time (#15945) その他の変更点 同一ファイルに対して複数回deno docを実行すると、処理が失敗してしまう問題が修正されています。 Windows上でdeno compileを実行したときに、拡張子が非.exe形式の場合に、それが取り除かれてしまう問題が修正されています。 Deno.env.get/Deno.env.setに不正な変数名を指定した際のエラーメッセージが改善されています。 https://github.com/denoland/deno/releases/tag/v1.25.4
-deno_std v0.157.0 deno_std v0.157.0がリリースされました。
-std/collections/deep_merge.tsのバグ修正 ネストされたプロパティにおいてdeepMerge()のreplaceオプションが機能しない問題が修正されています。
-std/nodeの改善 child_process.spawnSyncが実装されています。
-また、FreeBSDでもstd/nodeが動作するように修正が行われています。
-その他には、以下の改善などが実施されています。
-fs.read()やfs.ReadStreamの互換性の向上 net.connect()が失敗したときに、'error' ⇒ 'close'の順にイベントが発火されるように修正されています。 process.envに不正な文字を含む環境変数が指定されたときに、TypeErrorを投げるのではなくundefinedを返すように修正されています。 Windows上でprocess.on('SIGTERM')が無視されるように修正されています。 https://github....</p>
-</div>
-<footer class=entry-footer><span title="2022-09-25 00:00:00 +0000 UTC">September 25, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/09/19〜2022/09/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/25.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
