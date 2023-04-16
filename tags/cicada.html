@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>news | 週刊Deno</title>
+<title>Cicada | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/categories/news.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/cicada.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/categories/news/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/cicada/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -25,12 +25,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="news">
+<meta property="og:title" content="Cicada">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/categories/news.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/cicada.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="news">
+<meta name=twitter:title content="Cicada">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -76,46 +76,56 @@
 <main class=main>
 <header class=page-header>
 <h1>
-news
+Cicada
 </h1>
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>2021/01/04〜2021/01/10の最新情報
+<h2>2023/04/10〜2023/04/16の最新情報
 </h2>
 </header>
 <div class=entry-content>
-<p>vno vnoはDenoでVue.jsを用いた開発を行うためのビルドツールです。
-現時点では以下のような機能が提供されているようです。
-シングルファイルコンポーネントのビルド・バンドル Devサーバ まだ実装されてはいないものの、将来的にはSSRを実装することも検討されているようです。
-Lume LumeはDenoで実装されたシンプルなスタティックサイトジェネレータです。
-markdown, nunjucks, jsxなど様々な形式でページを記述できる。 プラグインシステムにより拡張が可能。 bench - DenoとNode.jsフレームワークのベンチマーク benchは、Deno及びNode.jsフレームワークのベンチマークを公開しています。
-GitHub Actionsを使用して、毎日、それぞれのフレームワークに対してベンチマークが実行されています。
-現時点では、以下のフレームワークに対するベンチマークが公開されています:
-abc alosaur deno (std/http) dinatra drash express fastify node (httpモジュール) oak servest mandarinets aqua reno </p>
+<p>Deno v1.32.4 Deno v1.32.4がリリースされました。
+Deno v1.32.2以降、Freshが動かなくなっていた問題が解消されています。(#18572)
+Node.js互換性 node:cryptoで以下のAPIが実装されています:
+X509Certificate generateKey hkdf 特定のnpmパッケージのバージョンを更新しようとすると、以下のエラーが起きる問題が解消されています。
+Could not find npm package '&lt;package>’ matching &lt;version>. Try retrieving the latest npm package information by running with --reload deno cache --reload npm:&lt;package>を実行すると、依存している全npmパッケージが再インストールされる問題が解消されています。
+KV Deno.Kvの各メソッドで、キーに配列以外の値を渡せないように挙動が変更されました。
+例えば、今まではkv.get("key")のような呼び方ができましたが、今後はkv.get(["key"])のように呼ぶ必要あります。
+Cache API プログラムの実行をまたいで同一のリクエストに対して複数回Cache.putを呼んだ際に、値がうまく上書きされなくなる問題が修正されています (#18649)
+deno_std v0.183.0 deno_std v0.183.0がリリースされました。
+std/encoding/varint/の削除 非推奨化されていたstd/encoding/varint/が削除されました。
+deno_std v0.179.0でstd/encoding/varint.tsにTypeScriptベースのAPIが追加されているため、今後はこれらの使用が推奨されます。
+std/csv 破壊的変更
+CsvStreamがCsvParseStreamへリネームされています。(CsvStreamはまだ削除はされていないものの、非推奨化されています)
+この変更はJsonParseStream/JsonStringifyStreamを提供するstd/jsonとの一貫性の向上を目的としています。
+parse()などのAPIの型定義が改善されています。
+具体的には、以下のように型推論が効くように変更されています。
+import { parse } from "https://deno.land/std@0.183.0/csv/parse.ts"; const records: Array&lt;Record&lt;"id" | "name", string>> = parse("1,a\n2,b", { columns: ["id", "name"], }); std/http/etag....</p>
 </div>
-<footer class=entry-footer><span title="2021-01-10 00:00:00 +0000 UTC">January 10, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/04〜2021/01/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/10.html></a>
+<footer class=entry-footer><span title="2023-04-16 00:00:00 +0000 UTC">April 16, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/04/10〜2023/04/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/16.html></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>2020/12/28〜2021/01/03の最新情報
+<h2>2023/03/27〜2023/04/02の最新情報
 </h2>
 </header>
 <div class=entry-content>
-<p>Deno@v1.6.3がリリースされた Denoのv1.6.3がリリースされました。
-ハイライト deno lspにtextDocument/renameやcacheコマンドが実装されました。 std@0.83.0も同時にリリースされました。std/node/fsにmkdtempとmkdtempSyncが実装されています。 deno-puppeteerが公開された puppeteerのDenoポートであるdeno-puppeteerが公開されました。</p>
+<p>Deno v1.32.2 Deno v1.32.2がリリースされました。
+KV (Deno.Kv) Deno.KvCommitResult型が追加されています。
+これには、KVにコミットされた値に設定された新しいversionstampが含まれます。
+この追加に合わせて、以下の変更も実施されています。
+Deno.AtomicOperation.commitの戻り値がPromise&lt;boolean>からPromise&lt;Deno.KvCommitResult | null>に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise&lt;void>からPromise&lt;KvCommitResult>に変更されています。 Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry&lt;T> | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)
+これに合わせて、以下のAPIに型引数を指定できるように変更されました。
+Deno.KvListIterator → Deno.KvListIterator&lt;T> Deno.KvEntry → Deno.KvEntry&lt;T> これらの変更により、エントリを取得する際に値の型を指定できるようになりました。
+const entry: Deno.KvEntryMaybe&lt;string> = await kv.get&lt;string>(["str"]); const entries: [Deno.KvEntryMaybe&lt;string>, Deno.KvEntryMaybe&lt;number>] = await kv.getMany&lt;[string, number]>([["str"], ["n"]]); Deno.Kv#getManyが実装されました。
+複数のエントリをまとめて取得できます。
+await kv.set(["key", 1], "foo"); await kv.set(["key", 2], "bar"); const entries = await kv.getMany([ ["key", 1], ["key", 2] ]); assert(entries....</p>
 </div>
-<footer class=entry-footer><span title="2021-01-03 00:00:00 +0000 UTC">January 3, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2020/12/28〜2021/01/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/03.html></a>
+<footer class=entry-footer><span title="2023-04-02 00:00:00 +0000 UTC">April 2, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/03/27〜2023/04/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/02.html></a>
 </article>
-<footer class=page-footer>
-<nav class=pagination>
-<a class=prev href=https://uki00a.github.io/deno-weekly/categories/news/page/12.html>
-«&nbsp;Prev&nbsp;
-</a>
-</nav>
-</footer>
 </main>
 <footer class=footer>
 <span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>

@@ -81,6 +81,33 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/12/05〜2022/12/12の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>今週のDenoに関するアップデート 今週はDenoのリリースが行われていないため、次のv1.29でリリース予定と思われる変更点についていくつか紹介します。
+deno.json(c)でdeno benchコマンドの設定がサポート deno.json(c)にbenchフィールドが追加されており、filesフィールドによってベンチマーク対象のファイルを設定できます。
+{ "bench": { "files": { "include": ["./benchmark"] } } } https://github.com/denoland/deno/pull/16608
+deno.json(c)でのロックファイルのサポート deno.json(c)のlockオプションでロックファイルに関する設定を変更できるようになりました。
+lock: falseを指定すると、ロックファイルの適用が無効化されます。(--no-lockと同様の挙動)
+{ "lock": false } またlockオプションにロックファイルのパスを指定することもできます。
+{ "lock": "./lock.json" } https://github.com/denoland/deno/pull/16781
+deno initコマンドでdeno.jsoncの生成がサポート deno initコマンドでdeno.jsoncが生成されるようになりました。
+https://github.com/denoland/deno/pull/16389 https://github.com/denoland/deno/pull/17002 Deno名前空間からspawn/spawnSync/spawnChildが削除 Deno v1.28.0でDeno.Commandが実装されたため、Deno.spawnなどのAPIが削除されました。
+https://github.com/denoland/deno/pull/16893
+Deno.TcpConnのsetNoDelayとsetKeepAliveが安定化 Deno v1.19で実装されたDeno.TcpConnのsetNoDelayとsetKeepAliveメソッドが安定化されています。
+今後は--unstableなしで利用できるようになりそうです。
+https://github.com/denoland/deno/pull/17003
+Ultra v2 Ultraのv2がリリースされています。
+Honoとの統合やTwind/react-query/react-router/react-helmetのサポートなどの様々な改善が実施されています。
+以下の記事ではUltra v2の概要や使い方などについて解説されています。
+Building Fullstack React Apps with Ultra https://github.com/exhibitionist-digital/ultra/releases/tag/v2.0.0</p>
+</div>
+<footer class=entry-footer><span title="2022-12-11 00:00:00 +0000 UTC">December 11, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/12/05〜2022/12/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/11.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/11/28〜2022/12/04の最新情報
 </h2>
 </header>
@@ -294,27 +321,6 @@ Deno のめっちゃ難しいバグを修正した - Qiita また、この修正
 </div>
 <footer class=entry-footer><span title="2022-10-09 00:00:00 +0000 UTC">October 9, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/10/03〜2022/10/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/09.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/09/26〜2022/10/02の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.26 Deno v1.26がリリースされました。
-以下に変更内容をまとめたため、よろしければ参照ください。
-Deno v1.26 deno_std v0.158.0 deno_std v0.158.0がリリースされました。
-std/node child_processパッケージでexec/execFileSync/execSyncが実装されています。
-その他には、process.getuid()とprocess.getgid()が実装されています。
-また、fsパッケージのread()やWriteStreamなどの互換性が向上しています。
-std/http/server handlerが返却したResponseのボディがすでに消費されている場合に、500エラーが発生するように修正されています。
-https://github.com/denoland/deno_std/releases/tag/0.158.0
-plug v1.0.0-rc.0 Deno FFI(Deno.dlopen)のヘルパーモジュールであるplugのv1.0.0 RC版が公開されています。
-このリリースでの主要な変更点として、ダイナミックライブラリを読み込むためのprepare()がdlopen()にリネームされています。
-https://github.com/denosaurs/plug/releases/tag/1.0.0-rc.0</p>
-</div>
-<footer class=entry-footer><span title="2022-10-02 00:00:00 +0000 UTC">October 2, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/09/26〜2022/10/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/02.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

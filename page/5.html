@@ -77,6 +77,31 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2022/09/05〜2022/09/11の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25.2 Deno v1.25.2がリリースされました。
+(破壊的変更) Node.js互換モード(--compat)の削除 Deno v1.25.0でnpmパッケージのサポートが追加されたため、Node.js互換モード(--compat)が削除されました。
+FFI Rustのdynasmrt crateを使用して、JITの仕組みが再実装されています。
+こちらのコメントによると、これにより以下の点などが改善されているようです。
+Windows x64 PCでもv8 Fast APIを使用した最適化が適用されるようになりました。 Denoからtinyccへの依存がなくなりました。 SElinuxが有効化されている環境でもFFIが動作するようになりました。 その他には、bool型のサポートが追加されています。
+const dylib = Deno.dlopen(libPath, { "do_something_with_bool": { parameters: ["bool"], result: "bool", }, }); npmパッケージサポートの改善 pre-releaseタグがサポートされています。(例: npm:some-package@1.2.3-alpha.4)
+また、パッケージのバージョンが指定されなかった際に、そのパッケージの最新バージョンがインストールされるように改善されています。(dist-tagsのlatest で指定されたバージョンがダウンロードされます)
+その他には、npm:経由で読み込んだパッケージ内ではwindow変数が削除され、cjsモジュールが再帰的に解析されるように改善されています。
+これによりVue.jsがimportできるようになっているようです。
+import { createApp } from "npm:vue@3.2.39" console.log(createApp); deno_std v0.155.0 deno_std v0.155.0がリリースされました。
+std/encoding/csv: stringify()のシグネチャが変更 (破壊的変更) stringify()が同期的に動作するように変更されています。
+また、columnsオプションがオプショナルに変更されています。
+具体的には、以下のように型定義が変更されています。
+v0.154.0:
+stringify( data: DataItem[], columns: Column[], options?: StringifyOptions, ): Promise&lt;string> v0.155.0:...</p>
+</div>
+<footer class=entry-footer><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/09/05〜2022/09/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/11.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Fresh v1.1
 </h2>
 </header>
@@ -265,27 +290,6 @@ https://unf275cfh14.typeform.com/to/k3eQB4Q3 https://twitter.com/deno_land/statu
 </div>
 <footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/18〜2022/07/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/24.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Deno v1.24
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.24がリリースされました。
-この記事では主な変更点などについて解説します。
---checkオプション指定時のトランスパイルの挙動が変更 tscがトランスパイル用途では使用されなくなりました。
-型チェック トランスパイル --check (v1.23) tsc tsc --no-check (v1.23) - swc --check (v1.24) tsc swc --no-check (v1.24) - swc これにより、トランスパイルの効率化が見込まれます。
-また、tscの実行結果をSQLiteにキャッシュする仕組みも導入されており、型チェックについても効率化が図られています。($DENO_DIR/check_cache_v1にSQLiteのデータベースファイルが作成されます)
-FFI(Deno.dlopen)の改善 v1.23.3でV8 Fast API Calls+JITコンパイルの導入による最適化が実施されました。
-今回のリリースでは、64ビット値を取り扱う関数に対してもV8 Fast API Callsを利用した最適化が適用されるように改善されています。
-サブプロセスAPIへの変更 Deno v1.21 で入ったサブプロセスAPIに変更が加わっています。
-Deno.Child.unref()とDeno.Child.ref()のサポート 挙動としてはDeno.refTimerやDeno.unrefTimerと同様で、Deno.Child.unref()を呼ぶと、対象の子プロセスがDenoの終了をブロックしなくなります。
-const child = await Deno.spawnChild("some_long_running_process", { args }); child.unref(); (破壊的変更) Deno.Childの型定義が変更 Deno.spawnChildで返却されるDeno.Childのstdio関連のプロパティに関する型定義が変更されています。
-v1.23.4...</p>
-</div>
-<footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.24" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.24.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

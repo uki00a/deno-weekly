@@ -81,6 +81,27 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/02/06〜2023/02/12の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.30.3 Deno v1.30.3がリリースされました。
+esm.shやunpkg.comなどからパッケージを読み込むと、deno lspが停止してしまう問題が修正されています。
+また、console.log()などでclassを出力する際のフォーマットも改善されています。
+class User {} console.info(User); // v1.30.3: `[Class: User]` // v1.30.2: `[Function: User]` https://github.com/denoland/deno/releases/tag/v1.30.3
+deno_std v0.177.0 deno_std v0.177.0がリリースされました。
+std/encoding/csv - BOMのサポート stringify()にbomオプションを指定できるようになりました。
+trueを指定すると、出力されるCSVの先頭にBOMが付与されます。
+また、trimLeadingSpaceオプションが未設定の場合でもparse()がBOMを認識するように改善されています。
+std/node 以下のバグが修正されています。
+node:child_process: execFile()にutil.promisify()がうまく適用されない問題が修正されています。 node:process: 標準入力にファイルがリダイレクトされている場合に、ファイルの末尾に達してもprocess.stdinからnullが返却されない問題が修正されています。 std/semver semver.increment()のmetadata引数に空文字列が渡された際に、ビルドメタデータが未設定にならない問題が修正されています。
+import * as semver from "https://deno.land/std@0.177.0/semver/mod.ts"; const v = semver.increment( "1.2.3+1", // version "major", // release undefined, // options undefined, // identifier "", // metadata ); assert(v === "2....</p>
+</div>
+<footer class=entry-footer><span title="2023-02-12 00:00:00 +0000 UTC">February 12, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/02/06〜2023/02/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/12.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/01/30〜2023/02/05の最新情報
 </h2>
 </header>
@@ -276,33 +297,6 @@ Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptラン�
 </div>
 <footer class=entry-footer><span title="2022-12-18 00:00:00 +0000 UTC">December 18, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/12/12〜2022/12/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/18.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/12/05〜2022/12/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>今週のDenoに関するアップデート 今週はDenoのリリースが行われていないため、次のv1.29でリリース予定と思われる変更点についていくつか紹介します。
-deno.json(c)でdeno benchコマンドの設定がサポート deno.json(c)にbenchフィールドが追加されており、filesフィールドによってベンチマーク対象のファイルを設定できます。
-{ "bench": { "files": { "include": ["./benchmark"] } } } https://github.com/denoland/deno/pull/16608
-deno.json(c)でのロックファイルのサポート deno.json(c)のlockオプションでロックファイルに関する設定を変更できるようになりました。
-lock: falseを指定すると、ロックファイルの適用が無効化されます。(--no-lockと同様の挙動)
-{ "lock": false } またlockオプションにロックファイルのパスを指定することもできます。
-{ "lock": "./lock.json" } https://github.com/denoland/deno/pull/16781
-deno initコマンドでdeno.jsoncの生成がサポート deno initコマンドでdeno.jsoncが生成されるようになりました。
-https://github.com/denoland/deno/pull/16389 https://github.com/denoland/deno/pull/17002 Deno名前空間からspawn/spawnSync/spawnChildが削除 Deno v1.28.0でDeno.Commandが実装されたため、Deno.spawnなどのAPIが削除されました。
-https://github.com/denoland/deno/pull/16893
-Deno.TcpConnのsetNoDelayとsetKeepAliveが安定化 Deno v1.19で実装されたDeno.TcpConnのsetNoDelayとsetKeepAliveメソッドが安定化されています。
-今後は--unstableなしで利用できるようになりそうです。
-https://github.com/denoland/deno/pull/17003
-Ultra v2 Ultraのv2がリリースされています。
-Honoとの統合やTwind/react-query/react-router/react-helmetのサポートなどの様々な改善が実施されています。
-以下の記事ではUltra v2の概要や使い方などについて解説されています。
-Building Fullstack React Apps with Ultra https://github.com/exhibitionist-digital/ultra/releases/tag/v2.0.0</p>
-</div>
-<footer class=entry-footer><span title="2022-12-11 00:00:00 +0000 UTC">December 11, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/12/05〜2022/12/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/11.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

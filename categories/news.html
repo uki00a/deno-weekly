@@ -81,6 +81,33 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/04/10〜2023/04/16の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32.4 Deno v1.32.4がリリースされました。
+Deno v1.32.2以降、Freshが動かなくなっていた問題が解消されています。(#18572)
+Node.js互換性 node:cryptoで以下のAPIが実装されています:
+X509Certificate generateKey hkdf 特定のnpmパッケージのバージョンを更新しようとすると、以下のエラーが起きる問題が解消されています。
+Could not find npm package '&lt;package>’ matching &lt;version>. Try retrieving the latest npm package information by running with --reload deno cache --reload npm:&lt;package>を実行すると、依存している全npmパッケージが再インストールされる問題が解消されています。
+KV Deno.Kvの各メソッドで、キーに配列以外の値を渡せないように挙動が変更されました。
+例えば、今まではkv.get("key")のような呼び方ができましたが、今後はkv.get(["key"])のように呼ぶ必要あります。
+Cache API プログラムの実行をまたいで同一のリクエストに対して複数回Cache.putを呼んだ際に、値がうまく上書きされなくなる問題が修正されています (#18649)
+deno_std v0.183.0 deno_std v0.183.0がリリースされました。
+std/encoding/varint/の削除 非推奨化されていたstd/encoding/varint/が削除されました。
+deno_std v0.179.0でstd/encoding/varint.tsにTypeScriptベースのAPIが追加されているため、今後はこれらの使用が推奨されます。
+std/csv 破壊的変更
+CsvStreamがCsvParseStreamへリネームされています。(CsvStreamはまだ削除はされていないものの、非推奨化されています)
+この変更はJsonParseStream/JsonStringifyStreamを提供するstd/jsonとの一貫性の向上を目的としています。
+parse()などのAPIの型定義が改善されています。
+具体的には、以下のように型推論が効くように変更されています。
+import { parse } from "https://deno.land/std@0.183.0/csv/parse.ts"; const records: Array&lt;Record&lt;"id" | "name", string>> = parse("1,a\n2,b", { columns: ["id", "name"], }); std/http/etag....</p>
+</div>
+<footer class=entry-footer><span title="2023-04-16 00:00:00 +0000 UTC">April 16, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/04/10〜2023/04/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/16.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/04/03〜2023/04/09の最新情報
 </h2>
 </header>
@@ -262,27 +289,6 @@ Remove std/node, it was merged into Deno itself (denoland/deno_std#3206) 今後�
 </div>
 <footer class=entry-footer><span title="2023-02-19 00:00:00 +0000 UTC">February 19, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/02/13〜2023/02/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/19.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/02/06〜2023/02/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.30.3 Deno v1.30.3がリリースされました。
-esm.shやunpkg.comなどからパッケージを読み込むと、deno lspが停止してしまう問題が修正されています。
-また、console.log()などでclassを出力する際のフォーマットも改善されています。
-class User {} console.info(User); // v1.30.3: `[Class: User]` // v1.30.2: `[Function: User]` https://github.com/denoland/deno/releases/tag/v1.30.3
-deno_std v0.177.0 deno_std v0.177.0がリリースされました。
-std/encoding/csv - BOMのサポート stringify()にbomオプションを指定できるようになりました。
-trueを指定すると、出力されるCSVの先頭にBOMが付与されます。
-また、trimLeadingSpaceオプションが未設定の場合でもparse()がBOMを認識するように改善されています。
-std/node 以下のバグが修正されています。
-node:child_process: execFile()にutil.promisify()がうまく適用されない問題が修正されています。 node:process: 標準入力にファイルがリダイレクトされている場合に、ファイルの末尾に達してもprocess.stdinからnullが返却されない問題が修正されています。 std/semver semver.increment()のmetadata引数に空文字列が渡された際に、ビルドメタデータが未設定にならない問題が修正されています。
-import * as semver from "https://deno.land/std@0.177.0/semver/mod.ts"; const v = semver.increment( "1.2.3+1", // version "major", // release undefined, // options undefined, // identifier "", // metadata ); assert(v === "2....</p>
-</div>
-<footer class=entry-footer><span title="2023-02-12 00:00:00 +0000 UTC">February 12, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/02/06〜2023/02/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/12.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 02 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2023/03/27〜2023/04/02の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/04/02.html</link><pubDate>Sun, 02 Apr 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/04/02.html</guid><description>Deno v1.32.2 Deno v1.32.2がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno_std on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno_std.html</link><description>Recent content in deno_std on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 16 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno_std/index.xml" rel="self" type="application/rss+xml"/><item><title>2023/04/10〜2023/04/16の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/04/16.html</link><pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/04/16.html</guid><description>Deno v1.32.4 Deno v1.32.4がリリースされました。
+Deno v1.32.2以降、Freshが動かなくなっていた問題が解消されています。(#18572)
+Node.js互換性 node:cryptoで以下のAPIが実装されています:
+X509Certificate generateKey hkdf 特定のnpmパッケージのバージョンを更新しようとすると、以下のエラーが起きる問題が解消されています。
+Could not find npm package &amp;#39;&amp;lt;package&amp;gt;’ matching &amp;lt;version&amp;gt;. Try retrieving the latest npm package information by running with --reload deno cache --reload npm:&amp;lt;package&amp;gt;を実行すると、依存している全npmパッケージが再インストールされる問題が解消されています。
+KV Deno.Kvの各メソッドで、キーに配列以外の値を渡せないように挙動が変更されました。
+例えば、今まではkv.get(&amp;quot;key&amp;quot;)のような呼び方ができましたが、今後はkv.get([&amp;quot;key&amp;quot;])のように呼ぶ必要あります。
+Cache API プログラムの実行をまたいで同一のリクエストに対して複数回Cache.putを呼んだ際に、値がうまく上書きされなくなる問題が修正されています (#18649)
+deno_std v0.183.0 deno_std v0.183.0がリリースされました。
+std/encoding/varint/の削除 非推奨化されていたstd/encoding/varint/が削除されました。
+deno_std v0.179.0でstd/encoding/varint.tsにTypeScriptベースのAPIが追加されているため、今後はこれらの使用が推奨されます。
+std/csv 破壊的変更
+CsvStreamがCsvParseStreamへリネームされています。(CsvStreamはまだ削除はされていないものの、非推奨化されています)
+この変更はJsonParseStream/JsonStringifyStreamを提供するstd/jsonとの一貫性の向上を目的としています。
+parse()などのAPIの型定義が改善されています。
+具体的には、以下のように型推論が効くように変更されています。
+import { parse } from &amp;#34;https://deno.land/std@0.183.0/csv/parse.ts&amp;#34;; const records: Array&amp;lt;Record&amp;lt;&amp;#34;id&amp;#34; | &amp;#34;name&amp;#34;, string&amp;gt;&amp;gt; = parse(&amp;#34;1,a\n2,b&amp;#34;, { columns: [&amp;#34;id&amp;#34;, &amp;#34;name&amp;#34;], }); std/http/etag.</description></item><item><title>2023/03/27〜2023/04/02の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/04/02.html</link><pubDate>Sun, 02 Apr 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/04/02.html</guid><description>Deno v1.32.2 Deno v1.32.2がリリースされました。
 KV (Deno.Kv) Deno.KvCommitResult型が追加されています。
 これには、KVにコミットされた値に設定された新しいversionstampが含まれます。
 この追加に合わせて、以下の変更も実施されています。

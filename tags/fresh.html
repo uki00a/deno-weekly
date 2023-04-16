@@ -81,6 +81,33 @@ fresh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/04/10〜2023/04/16の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32.4 Deno v1.32.4がリリースされました。
+Deno v1.32.2以降、Freshが動かなくなっていた問題が解消されています。(#18572)
+Node.js互換性 node:cryptoで以下のAPIが実装されています:
+X509Certificate generateKey hkdf 特定のnpmパッケージのバージョンを更新しようとすると、以下のエラーが起きる問題が解消されています。
+Could not find npm package '&lt;package>’ matching &lt;version>. Try retrieving the latest npm package information by running with --reload deno cache --reload npm:&lt;package>を実行すると、依存している全npmパッケージが再インストールされる問題が解消されています。
+KV Deno.Kvの各メソッドで、キーに配列以外の値を渡せないように挙動が変更されました。
+例えば、今まではkv.get("key")のような呼び方ができましたが、今後はkv.get(["key"])のように呼ぶ必要あります。
+Cache API プログラムの実行をまたいで同一のリクエストに対して複数回Cache.putを呼んだ際に、値がうまく上書きされなくなる問題が修正されています (#18649)
+deno_std v0.183.0 deno_std v0.183.0がリリースされました。
+std/encoding/varint/の削除 非推奨化されていたstd/encoding/varint/が削除されました。
+deno_std v0.179.0でstd/encoding/varint.tsにTypeScriptベースのAPIが追加されているため、今後はこれらの使用が推奨されます。
+std/csv 破壊的変更
+CsvStreamがCsvParseStreamへリネームされています。(CsvStreamはまだ削除はされていないものの、非推奨化されています)
+この変更はJsonParseStream/JsonStringifyStreamを提供するstd/jsonとの一貫性の向上を目的としています。
+parse()などのAPIの型定義が改善されています。
+具体的には、以下のように型推論が効くように変更されています。
+import { parse } from "https://deno.land/std@0.183.0/csv/parse.ts"; const records: Array&lt;Record&lt;"id" | "name", string>> = parse("1,a\n2,b", { columns: ["id", "name"], }); std/http/etag....</p>
+</div>
+<footer class=entry-footer><span title="2023-04-16 00:00:00 +0000 UTC">April 16, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/04/10〜2023/04/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/16.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/04/03〜2023/04/09の最新情報
 </h2>
 </header>
@@ -296,28 +323,6 @@ PrismaのDenoサポートについて Prismaの以下のissueで、Denoのサポ
 </div>
 <footer class=entry-footer><span title="2022-08-07 00:00:00 +0000 UTC">August 7, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/08/01〜2022/08/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/07.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/07/25〜2022/07/31の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.24.1 Deno v1.24.1がリリースされました。
-このリリースはバグ修正がメインです。
-"unhandledrejection"イベントに関する修正 "unhandledrejection"イベントのリスナに関する型定義が修正されています。
-また、モジュールのトップレベルで同期的にエラーが発生した際にも"unhandledrejection"イベントが発火されるように修正されています。
-Deno.Child.unref()に関する修正 Deno.Child.unref()を呼ぶと、Deno.Child.stdoutやDeno.Child.stderrもunrefされるように修正されています。
-その他の変更点 型チェック時(--check)に、TypeScriptのjsxFactoryとjsxFragmentFactoryオプションが自動で設定される問題が修正されています。
-https://github.com/denoland/deno/releases/tag/v1.24.1
-deno_std v0.150.0 deno_std v0.150.0がリリースされました。
-http/http_errors createHttpErrorでheadersオプションがサポートされています。
-import { createHttpError } from "https://deno.land/std@0.150.0/http/http_errors.ts"; import { Status, STATUS_TEXT } from "https://deno.land/std@0.150.0/http/http_status.ts"; const error = createHttpError( Status.Unauthorized, STATUS_TEXT[Status.Unauthorized], { headers: { "WWW-Authenticate": "Basic" } } ); error.headers; // => `Headers { "www-authenticate": "Basic" }` io/writers StringWriterにデータを書き込む際に、引数のUint8Arrayがコピーされるようになりました。
-引数に渡したUint8Arrayが別の箇所で変更されると、StringWriter#toStringが返却する文字列にも影響が出てしまう問題があったようです。
-import { StringWriter } from "https://deno.land/std@0.150.0/io/writers.ts"; const encoder = new TextEncoder(); const w = new StringWriter(); const bytes = encoder....</p>
-</div>
-<footer class=entry-footer><span title="2022-07-31 00:00:00 +0000 UTC">July 31, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/25〜2022/07/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/31.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

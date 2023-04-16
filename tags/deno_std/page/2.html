@@ -81,6 +81,33 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/01/16〜2023/01/22の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoのロードマップ (2023年 Q1) Denoの2023年 Q1のロードマップが公開されました。
+以下のページに内容をまとめたため、よろしければ参照いただければと思います。
+Denoのロードマップ (2023年 Q1) https://github.com/denoland/deno/issues/17475
+Deno v1.29.4 Deno v1.29.4がリリースされました。
+Node-APIに関する改善 Node-APIの互換性の向上が実施されています。
+napi_get_arraybuffer_info/napi_get_buffer_info/napi_get_typedarray_infoで lengthなどの各引数がNULLであった際のケースが考慮されるように挙動が改善されています。 napi_create_errorやnapi_is_error, napi_throw_errorなどのエラー関連APIの互換性が向上されています。 Flash(Deno.serve)の改善 Request.cloneを呼ぶと、エラーが発生する問題が修正されています。 リクエストメソッドがPOST/PUT/PATCHのいずれかで かつ Deno.serveに渡したハンドラでリクエストボディがconsumeされていない場合、プロセスがパニックする問題が修正されています。 レスポンスボディとして設定したReadableStreamからUint8Array以外の値がenqueueされた際に、Deno.serveに渡したonErrorハンドラが呼ばれず、Unhandled rejectionが発生してしまう問題が修正されています。 Deno APIに関するバグ修正 Deno.copyFileSyncを実行した際に、コピー先のファイルへパーミッションが受け継がれない問題が修正されています。 WindowsでDeno.systemMemoryInfo()を呼んだ際にswapTotalやswapFreeとして返却される値の信頼性が向上されています。 https://github.com/denoland/deno/releases/tag/v1.29.4
+deno_std v0.173.0 deno_std v0.173.0がリリースされました。
+std/node 前回のリリースで追加されたnode:clusterがリバートされています。
+Deno本体でnpm互換が有効化されている場合に、node:clusterを使っていない場合であっても、NODE_CLUSTER_SCHED_POLICYなどの環境変数に対するパーミッションが要求されてしまうためのようです。
+現在、Deno本体でDeno.permissions.querySync()の実装が進められており、これが正式にサポートされたら、改めてnode:clusterを追加することが検討されているようです。
+std/fs/expand_glob expandGlob(Sync)のglobstarオプションのデフォルト値がfalseからtrueへ変更されました。
+std/streams/text_line_stream TextLineStreamで最後の行の後に空文字列が余分にenqueueされてしまう問題が修正されています。
+https://github.com/denoland/deno_std/releases/tag/0.173.0
+eslint_binary eslint_binaryという、DenoのNode.js互換性やV8 Snapshot、ESBuildなどを活用して、ESLintをシングルバイナリ化するプロジェクトが公開されています。
+bartlomieju/eslint_binary このプロジェクトはあくまでPoCのため、今後どうなるかはまだ不明ですが、READMEにロードマップが公開されており、ESLintのCLIをRustで書き直すことなども検討されているようです。
+esm.shの2023年のロードマップ esm.shの今年のロードマップが公開されています。
+Roadmap of 2023 プレイグラウンドにコードの共有機能を実装することや、安定性の向上などを図ることが検討されているようです。...</p>
+</div>
+<footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/01/16〜2023/01/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/22.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/01/09〜2023/01/15の最新情報
 </h2>
 </header>
@@ -276,31 +303,6 @@ import { extract } from "https://deno.land/std@0.162.0/encoding/front_matter/any
 </div>
 <footer class=entry-footer><span title="2022-11-06 00:00:00 +0000 UTC">November 6, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/10/31〜2022/11/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/06.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/10/24〜2022/10/30の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.27 Deno v1.27がリリースされました。
-以下に変更内容をまとめたため、よろしければ参照ください。
-Deno v1.27 deno_std v0.161.0 deno_std v0.161.0がリリースされました。
-std/hashの削除 非推奨化されていたstd/hashモジュールが削除されています。
-今後は、std/cryptoの使用が推奨されます。
-std/node Deno v1.27でのNode-APIのサポートに合わせて、require()での.nodeファイルの読み込みがサポートされています。
-その他には、net.Serverの"close"イベントの発火タイミングの改善やfs.openDirの互換性の向上などが実施されています。
-std/fs/expand_glob expandGlobで、globstarにfalseが指定された際に、"**"が"*"として扱われるように修正されています。
-https://github.com/denoland/deno_std/releases/tag/0.161.0
-MongooseでのDenoサポートについて 以下のPRでMongooseでのDenoサポートが進められているようです。
-Deno support (#12397)
-今のところ、v6.8でのリリースを目標に作業が進められているようです。
-Babel v7.20.0 @babel/preset-envで"deno"ターゲットがサポートされたようです。
-"targets"オプションで対象のDenoバージョンを指定することができます。
-https://babeljs.io/blog/2022/10/27/7.20.0</p>
-</div>
-<footer class=entry-footer><span title="2022-10-30 00:00:00 +0000 UTC">October 30, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/10/24〜2022/10/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/30.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

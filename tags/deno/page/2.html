@@ -81,6 +81,25 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/02/13〜2023/02/19の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>先週のDenoの変更点 先週はDenoのリリースが行われていないため、直近のコミット内容をいくつか紹介いたします。
+これらの変更が含まれると思われるDeno v1.31については、今週にリリースされる予定のようです。
+deno_std/nodeのDeno本体への組み込み 今まで、deno_std/nodeとDeno本体は別々に開発されていた都合もあり、Denoからnpmパッケージを利用する際は、https://deno.land/std/nodeのダウンロードが背後で行われていました。
+以下のコミットなどにおいて、V8のスナップショットの仕組みを利用して、deno_std/nodeをDeno本体へ組み込む変更が行われています。
+refactor: allow to provide polyfills for Node modules from the snapshot (denoland/deno#17706) feat(ext/node): embed std/node into the snapshot (denoland/deno#17724) feat: wire up ext/node to the Node compatibility layer (denoland/deno#17785) これにより、https://deno.land/std/nodeからのモジュールのダウンロードが不要になるため、起動の高速化などが期待されます。
+また、deno_std/nodeがDeno本体へ組み込まれたことにより、Node.js互換レイヤーの実装でDenoの内部APIの活用が行いやすくなり、パフォーマンスの向上や今まで実装が難しかったモジュールの対応などが進みやすくなりそうです。具体的には、以下のPRでnode:v8の実装が追加されています。
+feat(ext/node): implement node:v8 (denoland/deno#17806) 今後、Node.js互換レイヤーの実装をJavaScriptからRustに置き換えていくことも検討されているようで、以下のissueで今後の計画が列挙されています。
+Rewrite some of JavaScript API in “ext/node” to Rust (denoland/deno#17809) また、これらの変更を受けて、deno_std/nodeについては削除が検討されているようです。(今後は、Deno本体のリポジトリで開発が進められるようです)
+Remove std/node, it was merged into Deno itself (denoland/deno_std#3206) 今後、もしdeno_std/nodeを利用したいケースが出てきた際は、削除前のバージョンを明示してimportをする必要が出てくるかもしれません。...</p>
+</div>
+<footer class=entry-footer><span title="2023-02-19 00:00:00 +0000 UTC">February 19, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/02/13〜2023/02/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/19.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/02/06〜2023/02/12の最新情報
 </h2>
 </header>
@@ -270,29 +289,6 @@ npmサポートの拡充 (安定性の向上やdeno compileでのnpm:のサポ�
 </div>
 <footer class=entry-footer><span title="2023-01-01 00:00:00 +0000 UTC">January 1, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/12/26〜2023/01/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/01.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/12/19〜2022/12/25の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>今週はDenoでリリースが行われていないため、直近の話題や変更などについて紹介いたします。
-Flash(Deno.serve)の書き換えについて 現在、Flash(Deno.serve)の書き換えが検討されているようです。
-Flashで報告されている様々な問題の解決などが目的のようです。
-以下のissueで解決予定の問題が列挙されています。
-Flash HTTP server rewrite - umbrella issue (denoland/deno#17146)
-Deno.coreの削除について 現在、Denoの内部APIであるDeno.coreの削除が検討されているようです。
-refactor: remove Deno.core (denoland/deno#16881)
-ひとまずはDeno.coreはDeno[Deno.internal].coreへ移動される予定のようで、deno_stdではすでに対応が実施されています。
-refactor: handle Deno[Deno.internal].core (denoland/deno_std#3029)
-ただし、将来的にはDeno[Deno.internal].core自体も削除が予定されているようなので、もしDeno.coreを使用されている場合は、今のうちに対応をしておくとよいかもしれません。
-deno_lintへのguard-for-inルールの追加 deno_lintでguard-for-inルールが実装されているようです。
-feat: Add guard-for-in rule (denoland/deno_lint#1105)
-次のDenoのリリースあたりでdeno lintコマンドから利用できるようになる可能性がありそうです。</p>
-</div>
-<footer class=entry-footer><span title="2022-12-25 00:00:00 +0000 UTC">December 25, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/12/19〜2022/12/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/25.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

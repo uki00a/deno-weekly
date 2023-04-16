@@ -81,6 +81,33 @@ esm.sh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/04/10〜2023/04/16の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32.4 Deno v1.32.4がリリースされました。
+Deno v1.32.2以降、Freshが動かなくなっていた問題が解消されています。(#18572)
+Node.js互換性 node:cryptoで以下のAPIが実装されています:
+X509Certificate generateKey hkdf 特定のnpmパッケージのバージョンを更新しようとすると、以下のエラーが起きる問題が解消されています。
+Could not find npm package '&lt;package>’ matching &lt;version>. Try retrieving the latest npm package information by running with --reload deno cache --reload npm:&lt;package>を実行すると、依存している全npmパッケージが再インストールされる問題が解消されています。
+KV Deno.Kvの各メソッドで、キーに配列以外の値を渡せないように挙動が変更されました。
+例えば、今まではkv.get("key")のような呼び方ができましたが、今後はkv.get(["key"])のように呼ぶ必要あります。
+Cache API プログラムの実行をまたいで同一のリクエストに対して複数回Cache.putを呼んだ際に、値がうまく上書きされなくなる問題が修正されています (#18649)
+deno_std v0.183.0 deno_std v0.183.0がリリースされました。
+std/encoding/varint/の削除 非推奨化されていたstd/encoding/varint/が削除されました。
+deno_std v0.179.0でstd/encoding/varint.tsにTypeScriptベースのAPIが追加されているため、今後はこれらの使用が推奨されます。
+std/csv 破壊的変更
+CsvStreamがCsvParseStreamへリネームされています。(CsvStreamはまだ削除はされていないものの、非推奨化されています)
+この変更はJsonParseStream/JsonStringifyStreamを提供するstd/jsonとの一貫性の向上を目的としています。
+parse()などのAPIの型定義が改善されています。
+具体的には、以下のように型推論が効くように変更されています。
+import { parse } from "https://deno.land/std@0.183.0/csv/parse.ts"; const records: Array&lt;Record&lt;"id" | "name", string>> = parse("1,a\n2,b", { columns: ["id", "name"], }); std/http/etag....</p>
+</div>
+<footer class=entry-footer><span title="2023-04-16 00:00:00 +0000 UTC">April 16, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/04/10〜2023/04/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/16.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/04/03〜2023/04/09の最新情報
 </h2>
 </header>
@@ -281,34 +308,6 @@ import type { PageConfig } from "../deps.ts"; export const config: PageConfig = 
 </div>
 <footer class=entry-footer><span title="2021-11-07 00:00:00 +0000 UTC">November 7, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/11/01〜2021/11/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/07.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/10/25〜2021/10/31の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.15.3 Deno v1.15.3がリリースされました。
-このリリースはバグ修正がメインです。
-変更点:
-TLS接続関連のAPIで発生することのあるプロセスのハングや大きなデータの書き込みがうまくいかない問題などが修正されました Deno.emitでalready borrowed: BorrowMutErrorが発生する問題が修正されました globalThis経由でFormDataなどのWeb APIを参照しようとすると型エラーが発生する問題が修正されました など
-https://github.com/denoland/deno/releases/tag/v1.15.3
-deno_std v0.113.0 deno_std v0.113.0がリリースされました。
-変更点:
-collections: runningReduceに渡すreducer関数にcurrentIndexが渡されるようになりました
-testing/asserts: assertIsErrorが追加されました
-node/module: require()でnode:プレフィックスがサポートされました
-const EventEmitter = require("node:events"); node/module: Common JSモジュールの中でimport/exportを使用した際の警告メッセージが親切になりました
-node/url: url.urlToHttpOptionsが実装されました
-node/os: os.archの返却値がNode.jsに一致するように修正されました
-node/events: onとemitメソッドを非EventEmitterオブジェクトに束縛して実行できるようになりました
-http/file_server: ファイル一覧ページでパンくずリストが表示されるようになりました
-http/file_server: ファイル名に%記号などが含まれている場合、そのファイルに適切にアクセスできない問題が修正されました
-http/file_server: 200や206以外のレスポンスを返却する際に生じるリソースリークが修正されました
-http/file_server: エラーログに色がつくようになりました...</p>
-</div>
-<footer class=entry-footer><span title="2021-10-31 00:00:00 +0000 UTC">October 31, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/25〜2021/10/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/31.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
