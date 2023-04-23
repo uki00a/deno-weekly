@@ -81,6 +81,32 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/12/12〜2022/12/18の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.29.0 Deno v1.29がリリースされました。
+以下に変更内容をまとめたため、よろしければ参照ください。
+Deno v1.29 deno_std v0.168.0 deno_std v0.168.0がリリースされました。
+https://github.com/denoland/deno_std/releases/tag/0.168.0
+std/archiveのファイル構成の変更 新しいファイルとしてstd/archive/untar.tsが追加されています。
+これに伴い、std/archive/tar.tsからの下記の読み込みが非推奨化されています。
+TarHeader Untar TarEntry 今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。
+std/ioのファイル構成の変更 std/ioパッケージの下記ファイルが細分化されています。
+std/io/readers.ts std/io/writers.ts std/io/util.ts 具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。
+例えば、std/io/readers.tsに配置されていたStringReaderは、今後はstd/io/string_reader.tsから読み込むことが推奨されます。
+より詳しくは公式のブログ記事を参照いただければと思います。
+https://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。
+リネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
+std/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。
+また、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。
+Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。...</p>
+</div>
+<footer class=entry-footer><span title="2022-12-18 00:00:00 +0000 UTC">December 18, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/12/12〜2022/12/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/18.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/12/05〜2022/12/12の最新情報
 </h2>
 </header>
@@ -294,33 +320,6 @@ https://github.com/denoland/fresh_charts</p>
 </div>
 <footer class=entry-footer><span title="2022-10-16 00:00:00 +0000 UTC">October 16, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/10/10〜2022/10/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/16.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/10/03〜2022/10/09の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.26.1 Deno v1.26.1がリリースされました。
-Node-APIの実装 DenoでNode-APIが実装されました。
-Node-APIで実装されたアドオンのrequire()での読み込みがサポートされます。
-Node-APIを有効化するためには、今のところ、--allow-ffiの指定が必要なようです。 (ただし、将来的にオプションが変わる可能性はあるようです)
-いまのところ、lightningcssやlz4-napiなどが動作することが確認されているようです。(napi-rs/napi-rs#900)
-Node.js互換に関する改善 Node-APIの実装以外に関する改善として、npm:経由で読まれたパッケージの依存関係の解析結果がキャッシュされるようになりました。
-これにより、キャッシュが存在する場合は、Viteの起動が3倍近く高速化されているようです。
-キャッシュの仕組みはSQLiteをベースに実装されており、$DENO_DIR/node_analysis_cache_v1にデータベースが作成されます。
-その他の改善として、deno cacheでのnpm:のサポートやrequire()でのJSONファイルの読み込みなどがサポートされています。
-Web Cache APIのバグ修正 Deno v1.26で追加されたCache APIに関するバグ修正が実施されています。
-Cache.put()に渡したResponseオブジェクトがconsumed状態にならない問題が修正 Cache.put()に渡したResponseに紐づくReadableStreamの読み込みでエラーが起きると、リソースリークが発生する問題が修正 Cache.put()で書き込みに失敗したときに、中途半端にキャッシュが保存されないように改善 その他の修正 --unstableを付けないと、Deno.hostname()がundefinedになる問題が修正 (Deno.hostname()はDeno v1.26で安定化されています) リクエストボディの読み込みが最適化 (perf(ext/fetch): consume body using ops (#16038)) 一度、Request#text()などでリクエストボディを消費したにも関わらず、再度Request.bodyを参照するとRequest.bodyUsedがfalseに戻ってしまう問題が修正 Deno.serve()で、ステータスコードが204の際はContent-Lengthが設定されないように修正 SubtleCrypto.deriveBits()でlength引数に与えられた長さが考慮されない問題が修正 https://github.com/denoland/deno/releases/tag/v1.26.1
-deno_std v0.159.0 deno_std v0.159.0がリリースされました。
-std/textprotoの非推奨化 以下の理由などから、std/textprotoが非推奨化されました。
-現在はdeno_stdの内部で使われていないこと deno_stdの方針として、GoスタイルのAPI(Deno.Reader/Deno.Writer)からWeb Streams APIベースへ移行されていること 今後は、このモジュールの使用は避けることが推奨されます。
-std/streams/conversion: iterateReaderのバグ修正 iterateReaderに長年存在していたバグが修正されています。
-具体的な修正内容については、以下の記事で詳細に内容が解説されています。
-Deno のめっちゃ難しいバグを修正した - Qiita また、この修正に関連してiterateReader()の実装が効率化されています。(perf(streams): memory optimizations by avoiding large buffer allocation in a loop (#2748))...</p>
-</div>
-<footer class=entry-footer><span title="2022-10-09 00:00:00 +0000 UTC">October 9, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/10/03〜2022/10/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/09.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

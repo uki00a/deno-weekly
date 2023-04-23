@@ -82,6 +82,38 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/01/24〜2022/01/30の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.18.1 Deno v1.18.1がリリースされました。
+Deno.networkInterfaces() Deno.networkInterfaces()が実装されました。
+利用可能なネットワークインターフェースの一覧を取得できます。
+const interfaces = Deno.networkInterfaces(); 利用するには--allow-envと--unstableが必要です。
+deno lsp deno lspでDENO_CERTとDENO_TLS_CA_STOREの環境変数がサポートされました。
+これらの環境変数については、下記を参照ください。
+https://deno.land/manual@v1.18.1/getting_started/setup_your_environment#environment-variables https://github.com/denoland/deno/releases/tag/v1.18.1
+deno_std v0.123.0 deno_std v0.123.0がリリースされました。
+std/node 新しく下記APIが実装されています:
+os.networkInterfaces() process.uptime() child_process.execFile() std/testing assertObjectMatchでArrayBufferを含むオブジェクトが適切に比較されない問題が修正されました。
+https://github.com/denoland/deno_std/releases/tag/0.123.0
+deno_std/archive/tarの現代化について deno_stdにはtarファイルを取り扱うためにarchive/tarが提供されています。
+このarchive/tarはDeno.Readerをベースに実装されています。
+現在、archive/tarをStreams APIで書き直すことが検討されています。
+この一環として、archive/streams.tsを追加するPRが作成されています。
+https://github.com/denoland/deno_std/pull/1855 archive/streams.tsではTarEncoderStreamとTarDecoderStreamを提供し、StreamsベースのAPIを介してtarファイルの操作を行うことができます。
+まだマージされていないものの、次のリリースなどで追加される可能性がありそうです。
+https://github.com/denoland/deno_std/issues/1658 https://github.com/denoland/deno_std/pull/1855 Deno in 2021 Denoの公式ブログポストとしてDeno in 2021という記事が公開されました。
+この記事では、2021年中にDenoに起きたできごとや変更内容などについて解説されています。
+また、Deno v2へのロードマップの公開などもまもなく実施予定とのことです。
+https://deno.com/blog/deno-in-2021
+I’m porting tsc to Go SWCの作者であるkdy1氏により、I’m porting tsc to Goという記事が公開されました。...</p>
+</div>
+<footer class=entry-footer><span title="2022-01-30 00:00:00 +0000 UTC">January 30, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/01/24〜2022/01/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/01/30.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/01/17〜2022/01/23の最新情報
 </h2>
 </header>
@@ -275,25 +307,6 @@ https://github.com/NOVASland/NOVAS</p>
 </div>
 <footer class=entry-footer><span title="2021-11-28 00:00:00 +0000 UTC">November 28, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/11/22〜2021/11/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/28.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/11/15〜2021/11/21の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Slackの次世代開発プラットフォームについて Slackの次世代開発プラットフォームが発表されました。
-CLIやSDKなどでDenoが採用されるようです。
-https://deno.com/blog/slack https://api.slack.com/future Deno v1.16.2 Deno v1.16.2がリリースされました。
-このリリースはバグ修正などがメインです。
-deno testのsub-steps APIを使った際に、テストレポートに実行されたステップ数が表示されるようになりました。 deno test --docでコードブロックにCRLFが含まれていると、適切にタイプチェックが行われない問題が修正されました リモートモジュールのdynamic importに時間がかかる問題が改善されました。 https://github.com/denoland/deno/releases/tag/v1.16.2
-deno_std v0.115.0 deno_std v0.115.0がリリースされました。
-std/fsでの破壊的変更やstd/nodeのNode.jsとの互換性向上などが実施されています。
-std/fs fs/mod.tsからcopy()やcopySync()がexportされなくなりました (これらのAPIは--unstableに依存するためです)
-std/node wasiパッケージが実装されました。 process 下記APIが追加されました process.config process.exitCode process.stdin.setRawMode process.hrtime.bigint process.nextTickのNode.jsとの互換性が向上しました fs 下記APIが追加されました fs.readSync fs.read fs.rm fs.rmSync http Node.jsとの互換性が向上しました。(Server#listen()の引数なしの形式のサポート、ServerResponse#end()で空のレスポンスのサポートなど) util util.isBuffer/util._extend/util.stripVTControlCharactersが追加されました util.isRegExpのNode.jsとの互換性が向上しました events EventEmitterがES6のクラス形式からES5形式の実装に変更されました。(これによりNode....</p>
-</div>
-<footer class=entry-footer><span title="2021-11-21 00:00:00 +0000 UTC">November 21, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/11/15〜2021/11/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/21.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

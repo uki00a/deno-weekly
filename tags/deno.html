@@ -81,6 +81,19 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/04/17〜2023/04/23の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32.5 Deno v1.32.5がリリースされました。
+KV Deno.AtomicOperation.sumが実装されました。
+const kv = await Deno.openKv(":memory:"); const result = await kv.set(["key"], new Deno.KvU64(1n)); const ok = await kv.atomic() .check({ key: ["key"], versionstamp: result.versionstamp }) .mutate({ type: "sum", key: ["key"], value: new Deno.KvU64(2n) }) .commit(); assert(ok); const result2 = await kv.get(["key"]); assert(result2.value instanceof Deno.KvU64); assert(result2.value.value === 3n); Node.js互換性 node:http: ClientRequest.socket.remoteAddressが実装されました node:crypto: createVerifyが実装されました node:path: fromFileUrlなどのNode.jsでは提供されないシンボルがexportされていた問題が修正されました npm: ロックファイルで指定されたバージョンがキャッシュに見つからなかった場合に、そのバージョンのパッケージをダウンロードするように挙動が変更されました (このような場合、今まではエラーが起きていました) バグ修正 deno lsp: Unix系のOSでstatusページが返ってこなくなっていた問題が修正されました deno test --watchの実行中にSIGINTを送信しても、プロセスを停止できない問題が修正されました Deno....</p>
+</div>
+<footer class=entry-footer><span title="2023-04-23 00:00:00 +0000 UTC">April 23, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/04/17〜2023/04/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/23.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/04/10〜2023/04/16の最新情報
 </h2>
 </header>
@@ -283,27 +296,6 @@ import { EventEmitter } from "https://deno.land/std@0.177.0/node/events.ts"; std
 </div>
 <footer class=entry-footer><span title="2023-02-26 00:00:00 +0000 UTC">February 26, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/02/20〜2023/02/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/26.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Deno v1.31
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.31がリリースされました。
-この記事では主な変更点などについて解説します。
-package.jsonサポート Denoでpackage.jsonがサポートされました。
-具体的には、以下のような機能などが実装されています。
-package.jsonの自動探索 dependencies/devDependenciesの定義内容によるbare specifierの解決 deno taskによるscriptsの実行 package.jsonの自動探索 deno.jsonなどのファイルと同様に、Denoがpackage.jsonも自動で探索してくれるようになりました。
-もしpackage.jsonが見つかった場合、必要に応じてdependenciesやdevDependenciesで記述された依存パッケージを自動でダウンロードし、デフォルトでnode_modulesディレクトリに保存してくれます。 (従来通り、package.jsonが存在しない状態でnpm:経由でnpmパッケージをimportした際は、--node-modules-dirを指定しない限り、node_modulesは作成されません)
-もし、package.jsonの自動探索を無効化したい場合は、以下のいずれかの手段で無効化できます (以下の機能は、それぞれ次のリリースであるv1.31.1で追加された機能のためご注意！)
---no-configまたは--no-npmオプションを指定する。 DENO_NO_PACKAGE_JSON環境変数に1を指定する dependencies/devDependenciesによるbare specifierの解決 Denoがpackage.jsonのdependenciesやdevDependenciesで定義された依存関係を元に、Import Mapsライクにbare specifierを解決してくれるようになりました。
-例えば、以下のような内容のpackage.jsonが存在したとします。
-{ "dependencies": { "chalk": "^5.2.0", "koa": "2" } } この場合、アプリケーションでは以下のようにbare specifierを記述することがでます。
-import chalk from "chalk"; // => `npm:chalk@^5.2.0` import Koa from "koa"; // => `npm:koa@2` const app = new Koa(); app.use((ctx) => { ctx.body = "Hello world"; }); app.listen(3000, () => { console....</p>
-</div>
-<footer class=entry-footer><span title="2023-02-26 00:00:00 +0000 UTC">February 26, 2023</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.31" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.31.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

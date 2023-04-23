@@ -81,6 +81,19 @@ esm.sh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/04/17〜2023/04/23の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32.5 Deno v1.32.5がリリースされました。
+KV Deno.AtomicOperation.sumが実装されました。
+const kv = await Deno.openKv(":memory:"); const result = await kv.set(["key"], new Deno.KvU64(1n)); const ok = await kv.atomic() .check({ key: ["key"], versionstamp: result.versionstamp }) .mutate({ type: "sum", key: ["key"], value: new Deno.KvU64(2n) }) .commit(); assert(ok); const result2 = await kv.get(["key"]); assert(result2.value instanceof Deno.KvU64); assert(result2.value.value === 3n); Node.js互換性 node:http: ClientRequest.socket.remoteAddressが実装されました node:crypto: createVerifyが実装されました node:path: fromFileUrlなどのNode.jsでは提供されないシンボルがexportされていた問題が修正されました npm: ロックファイルで指定されたバージョンがキャッシュに見つからなかった場合に、そのバージョンのパッケージをダウンロードするように挙動が変更されました (このような場合、今まではエラーが起きていました) バグ修正 deno lsp: Unix系のOSでstatusページが返ってこなくなっていた問題が修正されました deno test --watchの実行中にSIGINTを送信しても、プロセスを停止できない問題が修正されました Deno....</p>
+</div>
+<footer class=entry-footer><span title="2023-04-23 00:00:00 +0000 UTC">April 23, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/04/17〜2023/04/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/23.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/04/10〜2023/04/16の最新情報
 </h2>
 </header>
@@ -290,24 +303,6 @@ import { BinaryHeap } from "https://deno.land/std@0.132.0/collections/binary_hea
 </div>
 <footer class=entry-footer><span title="2022-03-27 00:00:00 +0000 UTC">March 27, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/21〜2022/03/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/03/27.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/11/01〜2021/11/07の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>2021年のDeno Advent Calendarが公開 Qiitaで2021年のDeno Advent Calendarが公開されました。
-https://qiita.com/advent-calendar/2021/deno
-deployctlがアーカイブ Deno Deployのコマンドラインツールであるdeployctlがアーカイブされました。
-今後は代わりにDeno CLIを使って開発していくようアナウンスされています。
-Deno Deploy Beta 3が来たぞ Freshのアップデート PreactベースのWebフレームワークであるFreshがアップデートされ、MiddlewareとCSPのサポートが追加されました。
-Middlewareサポート Middlewareを利用する際は、pagesディレクトリ配下に下記のいずれかの名前のファイルを用意し、handler関数をexportする必要があります。
-/_middleware.tsx /_middleware.ts /_middleware.jsx /_middleware.js export async function handler(req: Request, handle: () => Promise&lt;Response>) { const start = Date.now(); const resp = await handle(); const end = Date.now(); console.log(`${req.method}${req.url}- ${end - start}ms`); return resp; } CSPサポート CSPサポートを有効化したいときは、対象ページでcspオプションにtrueを設定したconfigオブジェクトをexportします。
-import type { PageConfig } from "../deps.ts"; export const config: PageConfig = { csp: true }; 上記を実施しておくことで、特に設定をしなくとも自動でContent-Security-Policyヘッダを出力してくれます。...</p>
-</div>
-<footer class=entry-footer><span title="2021-11-07 00:00:00 +0000 UTC">November 7, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/11/01〜2021/11/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/07.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

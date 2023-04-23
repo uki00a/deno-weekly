@@ -77,6 +77,30 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2023/02/20〜2023/02/26の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.31 Deno v1.31がリリースされています。
+以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
+Deno v1.31 Deno v1.31.1 Deno v1.31.1がリリースされています。
+package.jsonサポートに関する改善 以下のいずれかの手段によって、package.jsonの自動探索を無効化できるようになりました。
+DENO_NO_PACKAGE_JSON環境変数に1を設定する --no-configまたは--no-npmを指定する また、package.jsonが見つかった際のnpmパッケージのダウンロードに関する挙動が改善されています。package.jsonで依存関係として指定されたいずれかのパッケージが利用されるタイミングまでnpmパッケージのダウンロードが遅延されます。
+これにより、npmパッケージに依存しないスクリプトを実行する場合は、package.jsonがあってもnpmパッケージがダウンロードされなくなります。
+その他には、package.jsonの以下のスキームから始まるspecifierが無視されるように修正されています。
+workspace: file: git: http: https: Deno.serve()でリモートアドレスの取得がサポート Deno.serve()に渡したhandlerの第2引数にオプションが渡されるようになりました。remoteAddrプロパティ(Deno.NetAddr)からリモートアドレスが取得できます。
+Deno.serve({ handler: (req, { remoteAddr }) => { return Response.json(remoteAddr); }, }); その他のバグ修正 リモートモジュールからdata:URLをimportできなくなっていた問題が修正されています。 静的に解析ができないdynamic importが複数同時に実行された際に、まれにDenoがパニックする問題が修正されています。 Import Mapsでローカルモジュールへのマッピングが定義されていた場合、リモートモジュールからそのローカルモジュールをimportできない問題が修正されています。 https://github.com/denoland/deno/releases/tag/v1.31.1
+deno_std v0.178.0 deno_std v0.178.0がリリースされました。
+std/nodeの削除 Deno v1.31でDeno本体にstd/nodeが組み込まれました。
+その影響により、std/nodeが削除されています。
+もし、今後もstd/nodeを利用したい場合は、バージョンを明示した上でimportをするとよさそうです。
+import { EventEmitter } from "https://deno.land/std@0.177.0/node/events.ts"; std/http/file_server Deno DeployでもETagが返却されるように挙動が改善されています。...</p>
+</div>
+<footer class=entry-footer><span title="2023-02-26 00:00:00 +0000 UTC">February 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/02/20〜2023/02/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/26.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Deno v1.31
 </h2>
 </header>
@@ -263,25 +287,6 @@ CLI --reloadと--watchを併用した際に、ファイル変更のたびに--re
 </div>
 <footer class=entry-footer><span title="2023-01-15 00:00:00 +0000 UTC">January 15, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/01/09〜2023/01/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/15.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2023/01/02〜2023/01/08の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.29.2 Deno v1.29.2がリリースされました。
-Deno.osUptime() システムが起動してからの経過時間を取得するために、Deno.osUptime()というAPIが追加されました。
-利用するには、--unstableと--allow-sysの指定が必要です。
-Deno.Conn.ref()/unref() Deno.Connへunref()とref()メソッドが追加されました。
-これらのAPIの利用には--unstableの指定が必要です。
-unref()メソッドを呼ぶと、Deno.unrefTimerなどと同様に、読み込み途中のコネクションが存在したとしてもプロセスの終了がブロックされなくなります。(ただし、効果があるのは読み込みに対してのみで、書き込みについてはunrefを呼んだ場合であってもブロックされます)
-ref()メソッドを呼ぶと、unref()されたコネクションをデフォルトの状態に戻すことができます。(通常通り、読み込み途中のコネクションがプロセスの終了をブロックします)
-CLIに関するバグ修正 --node-modules-dirが指定された際にrequire()でパッケージが適切に解決できないケースがある問題が修正されています deno.json(c)でTypeScriptのcompilerOptions.noErrorTruncationオプションを設定できない問題が修正されています dynamic importが使用されていると、"unhandledrejection"のリスナが呼ばれないケースがあった問題が修正されています deno instlallもしくはdeno uninstallを実行する際に、ロックファイルの自動適用が行われてしまう問題が修正されています Deno APIに関する修正 Deno.memoryUsage()から返却されるrssプロパティに正しい値が設定されない問題が修正されています Deno.permissions.revokeまたはDeno.permissions.requestでname: "ffi"が指定された際に、pathオプションにURLオブジェクトを指定できるようになりました。 fetch()関連の修正 下記のケースでプロセスがパニックしてしまう問題が修正されています:
-引数に不正な形式のURLが与えられた場合 bodyオプションに渡したReadableStreamでエラーが発生した場合 deno lsp関連の修正 下記のケースでTest code lensが表示されない問題が修正されています Deno.test()でテスト名がテンプレートリテラルを使用して定義されている場合 下記のように、関数を使用してテストケースが定義されている場合 const test = () => ({ name: "some test", fn: () => {} }); Deno.test(test()); "Add all missing imports"アクションで正しいimport文が生成されないことがある問題が修正されています プライベートフィールド(#someField)の補完が適切に動作するように修正されています https://github.com/denoland/deno/releases/tag/v1.29.2...</p>
-</div>
-<footer class=entry-footer><span title="2023-01-08 00:00:00 +0000 UTC">January 8, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/01/02〜2023/01/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/08.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

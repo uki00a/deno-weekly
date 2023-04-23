@@ -82,6 +82,25 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/07/18〜2022/07/24の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.24.0 Deno v1.24.0がリリースされました。
+以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
+Deno v1.24 deno_std v0.149.0 deno_std v0.149.0がリリースされました。
+semverモジュールが追加 deno_stdにsemverモジュールが入りました。
+import * as semver from "https://deno.land/std@0.149.0/semver/mod.ts"; semver.valid("v1.2.3"); // => 1.2.3 semver.gt("2.0.0", "1.2.4"); // => true semver.satisfies("1.4.2", ">=1.x"); // => true testing/asserts assertRejectsがthenableなオブジェクトをサポートしました。
+const error = await assertRejects(() => ({ then() { throw new Error("foo"); }, })); console.assert(error.message === "foo"); node process.on("beforeExit")がサポートされました。
+https://github.com/denoland/deno_std/releases/tag/0.149.0
+Denoについてのアンケート Deno公式でアンケートが公開されています。
+https://unf275cfh14.typeform.com/to/k3eQB4Q3 https://twitter.com/deno_land/status/1550209370301952000</p>
+</div>
+<footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/07/18〜2022/07/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/24.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Deno v1.24
 </h2>
 </header>
@@ -275,32 +294,6 @@ http/http_statusのSTATUS_TEXTがMapからRecord型に変更 http/http_errorsの
 </div>
 <footer class=entry-footer><span title="2022-06-05 00:00:00 +0000 UTC">June 5, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/05/30〜2022/06/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/05.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/05/23〜2022/05/29の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
-このリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。
-deno deploy beta 4発表！価格設定をcloudflare workersと比較する その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。
-https://deno.com/blog/deploy-beta4
-Deno v1.22.1 Deno v1.22.1がリリースされました。
-このリリースはバグ修正を中心に行われています。
-主な変更点:
-Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと"close"イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.1
-deno_std v0.141.0 deno_std v0.141.0がリリースされました。
-いくつかの破壊的変更が実施されています。
-testing/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)
-assertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertNotEqualsなどの型定義が修正されています。
-例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。
-assertEquals(123, "foo"); 次のようにすると、型エラーを回避できます。
-assertEquals&lt;unknown>(123, "foo"); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。
-const error = assertThrows(() => { throw new Error("foo"); }); assert(error instanceof Error); assertEquals(error....</p>
-</div>
-<footer class=entry-footer><span title="2022-05-29 00:00:00 +0000 UTC">May 29, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/23〜2022/05/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/29.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

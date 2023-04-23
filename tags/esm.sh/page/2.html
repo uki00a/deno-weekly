@@ -81,6 +81,24 @@ esm.sh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/11/01〜2021/11/07の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>2021年のDeno Advent Calendarが公開 Qiitaで2021年のDeno Advent Calendarが公開されました。
+https://qiita.com/advent-calendar/2021/deno
+deployctlがアーカイブ Deno Deployのコマンドラインツールであるdeployctlがアーカイブされました。
+今後は代わりにDeno CLIを使って開発していくようアナウンスされています。
+Deno Deploy Beta 3が来たぞ Freshのアップデート PreactベースのWebフレームワークであるFreshがアップデートされ、MiddlewareとCSPのサポートが追加されました。
+Middlewareサポート Middlewareを利用する際は、pagesディレクトリ配下に下記のいずれかの名前のファイルを用意し、handler関数をexportする必要があります。
+/_middleware.tsx /_middleware.ts /_middleware.jsx /_middleware.js export async function handler(req: Request, handle: () => Promise&lt;Response>) { const start = Date.now(); const resp = await handle(); const end = Date.now(); console.log(`${req.method}${req.url}- ${end - start}ms`); return resp; } CSPサポート CSPサポートを有効化したいときは、対象ページでcspオプションにtrueを設定したconfigオブジェクトをexportします。
+import type { PageConfig } from "../deps.ts"; export const config: PageConfig = { csp: true }; 上記を実施しておくことで、特に設定をしなくとも自動でContent-Security-Policyヘッダを出力してくれます。...</p>
+</div>
+<footer class=entry-footer><span title="2021-11-07 00:00:00 +0000 UTC">November 7, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/11/01〜2021/11/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/07.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/10/25〜2021/10/31の最新情報
 </h2>
 </header>
