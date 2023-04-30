@@ -81,6 +81,51 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/04/24〜2023/04/30の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33 Deno v1.33がリリースされました。
+以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
+Deno v1.33 Deno v2.0について Deno v1.33のリリースノートでDeno v2.0のリリース時期について書かれています。
+https://deno.com/blog/v1.33 数カ月後にリリースが予定されているようです。
+それまでの間、今後のマイナーリリースではパフォーマンスやNode.js互換性、セキュリティなどの改善が行われる想定のようです。
+deno_std v0.185.0 deno_std v0.185.0がリリースされました。
+std/uuid: UUID v3のサポート std/uuid/v3.tsが実装されています。
+MD5を利用してUUIDを生成するgenerate()や、UUIDの検証をするvalidate()が提供されています。
+std/dotenv: --allow-envなしでの読み込みがサポート restrictEnvAccessToオプションに空の配列やnullまたはundefinedを指定した際に、環境変数を参照せずに.envの内容のみが読み込まれるようになりました。
+この場合、--allow-envの指定が不要になります。
+esbuild_deno_loader v0.7.0 esbuild_deno_loader v0.7.0がリリースされました。
+v0.6.0で提供されていたdenoPluginが以下のように2つのプラグインに分割されています。
+denoResolverPlugin: resolverはimport mapsを考慮した上でspecifierを解決してくれる denoLoaderPlugin: denoResolverPluginが解決したspecifierを元にモジュールを読み込む プラグインを分割することにより、カスタムのスキーマや拡張子などをサポートできるようになったようです。
+例えば、以下ではカスタムのemoji:スキーマをサポートする例が紹介されています。
+examples/custom_scheme_plugin.ts また、configPathとimportMapURLオプションが追加されており、これらにより各プラグインが利用するdeno.jsonやImport Mapsファイルへのパスを指定することができるようです。
+Deno KV Deno KVのホームページが正式に公開されました。
+https://deno.com/kv @ayame113さんによるDeno KVの解説記事も公開されています。
+Deno KV 正式発表！cloudflare KVとcloudflare D1のいいとこ取り？ </p>
+</div>
+<footer class=entry-footer><span title="2023-04-30 00:00:00 +0000 UTC">April 30, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/04/24〜2023/04/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/30.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Deno v1.33
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33がリリースされました。
+この記事では主な変更点などについて解説します。
+dynamic importに関するパーミッションチェックの見直し 静的に解析可能なdynamic importの実行時に、パーミッションが要求されないように挙動が変更されました。
+このリリース以降、以下のコードを実行する際に--allow-netの指定が不要になります。(v1.32までは--allow-netが要求されます)
+const { delay } = await import("https://deno.land/std@0.185.0/async/delay.ts"); await delay(3000); ただし、以下のようにURLを動的に構築している場合などは、従来通り--allow-netの指定が必要です。
+// Denoが`import()`の引数を静的に解析できない場合は、従来どおりパーミッションが要求されます const { delay } = await import(`https://deno.land/std@0.185.0/async/${"delay.ts"}`); await delay(3000); Deno KV Deno.AtomicOperationにmin/maxメソッドが追加 minは引数で指定された値と現在の値を比較し、小さい方の値でエントリを上書きします。maxはその逆の操作です。
+const kv = await Deno.openKv(":memory:"); const result = await kv.set(["key"], new Deno.KvU64(1n)); const commitResult = await kv.atomic() .check({ key: ["key"], versionstamp: result.versionstamp }) .max(["key"], 2n) .commit(); assert(commitResult.ok); const result2 = await kv.get(["key"]); assert(result2.value instanceof Deno.KvU64); assert(result2.value.value === 2n); Deno....</p>
+</div>
+<footer class=entry-footer><span title="2023-04-30 00:00:00 +0000 UTC">April 30, 2023</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.33" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.33.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/04/17〜2023/04/23の最新情報
 </h2>
 </header>
@@ -250,52 +295,6 @@ csvモジュールの細分化 以下のファイルが追加されており、�
 </div>
 <footer class=entry-footer><span title="2023-03-19 00:00:00 +0000 UTC">March 19, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/03/13〜2023/03/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/19.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/03/06〜2023/03/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.31.2 Deno v1.31.2がリリースされました。
-Node.js互換性の改善 循環依存のあるpeerDependenciesの解決が改善
-例えば、以下のようなシナリオにおいて、初回実行時はうまくいくものの、ロックファイルが適用されるとうまく動かないケースがあったようで、この問題が修正されています。
-a -> b -> c -> d -> c -> b (peer) その他の改善
-npm:URLを使っていると、依存関係が変わっていなくても、毎回Lockfileがtouchされてしまう問題が修正されています。 複数のDenoプロセスが同時にnode_modulesを更新できないように制御が入りました。 package.jsonの依存関係の解析に失敗しても、npmパッケージが実際にimportされるタイミングまではエラーが起きないように修正されています。 これにより、package.jsonは存在するものの、スクリプト内でnpmパッケージを利用していないようなケースでエラーが発生しなくなります。 node:cryptoのcreateHashが高速化されています。 util.types.isSharedArrayBufferが動作しない問題が修正されています。 .d.tsファイルの型チェックに関する修正 以下のようなケースで、deno checkなどでうまく型チェックが行われていなかった問題が修正されています。
-エントリポイントに指定した.d.tsファイル エントリポイントに含まれるX-TypeScript-Types/&lt;reference types="..." />経由で読み込まれる.d.tsファイル .d.tsファイル内のファイルタイプが指定されていないコードブロック (deno test --docの実行時のみ) Deno.UnsafePointer.ofの改善 Deno.UnsafePointer.ofでバッファのメモリを取得する際に、もしユーザーがバッファの参照をどこかに保持していなかった場合、孤立したポインタができてしまう可能性がありました。
-この問題を解消するため、Deno.UnsafePointer.ofの内部でWeakMapを使ってポインタとバッファのマッピングが管理されるようになりました。
-その他 WindowsでDeno.stdin.setRaw(false)によって適切にrawモードが無効化されるように修正されています localStorageへのアイテムのINSERT時に、事前に入力内容のサイズがチェックされるように挙動が修正されています https://github.com/denoland/deno/releases/tag/v1.31.2
-deno_std v0.179.0 deno_std v0.179.0がリリースされました。
-std/encoding/varint.tsの追加, std/encoding/varint/mod.tsの非推奨化 TypeScriptをベースに実装されたstd/encoding/varint.tsが追加されました。 (実装はhttps://deno.land/x/varintがベースのようです)
-これに合わせて、WASMベースのstd/encoding/varint/mod.tsが非推奨化されています。
-std/fsの改善 std/fs/expand_glob: expandGlob()にfollowSymlinksオプションが追加されました (trueを指定すると、シンボリックリンクが解決されます) std/fs/ensure_dir: ensureDir()を同じディレクトリに対して並列で呼んだときに、Deno.errors.AlreadyExistsがthrowされる問題が修正されています。 std/fs/ensure_symlink: ensureSymlink()でtargetに対する相対的なリンクを作ろうとすると、意図せぬパスを指すリンクが作成されてしまう問題が修正されています (#2312) std/http/cookie - =の取り扱いが改善 Cookieの値に=が含まれていると、getSetCookiesが意図せぬ値を返す問題が修正されています。...</p>
-</div>
-<footer class=entry-footer><span title="2023-03-12 00:00:00 +0000 UTC">March 12, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/03/06〜2023/03/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/12.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/02/20〜2023/02/26の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.31 Deno v1.31がリリースされています。
-以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
-Deno v1.31 Deno v1.31.1 Deno v1.31.1がリリースされています。
-package.jsonサポートに関する改善 以下のいずれかの手段によって、package.jsonの自動探索を無効化できるようになりました。
-DENO_NO_PACKAGE_JSON環境変数に1を設定する --no-configまたは--no-npmを指定する また、package.jsonが見つかった際のnpmパッケージのダウンロードに関する挙動が改善されています。package.jsonで依存関係として指定されたいずれかのパッケージが利用されるタイミングまでnpmパッケージのダウンロードが遅延されます。
-これにより、npmパッケージに依存しないスクリプトを実行する場合は、package.jsonがあってもnpmパッケージがダウンロードされなくなります。
-その他には、package.jsonの以下のスキームから始まるspecifierが無視されるように修正されています。
-workspace: file: git: http: https: Deno.serve()でリモートアドレスの取得がサポート Deno.serve()に渡したhandlerの第2引数にオプションが渡されるようになりました。remoteAddrプロパティ(Deno.NetAddr)からリモートアドレスが取得できます。
-Deno.serve({ handler: (req, { remoteAddr }) => { return Response.json(remoteAddr); }, }); その他のバグ修正 リモートモジュールからdata:URLをimportできなくなっていた問題が修正されています。 静的に解析ができないdynamic importが複数同時に実行された際に、まれにDenoがパニックする問題が修正されています。 Import Mapsでローカルモジュールへのマッピングが定義されていた場合、リモートモジュールからそのローカルモジュールをimportできない問題が修正されています。 https://github.com/denoland/deno/releases/tag/v1.31.1
-deno_std v0.178.0 deno_std v0.178.0がリリースされました。
-std/nodeの削除 Deno v1.31でDeno本体にstd/nodeが組み込まれました。
-その影響により、std/nodeが削除されています。
-もし、今後もstd/nodeを利用したい場合は、バージョンを明示した上でimportをするとよさそうです。
-import { EventEmitter } from "https://deno.land/std@0.177.0/node/events.ts"; std/http/file_server Deno DeployでもETagが返却されるように挙動が改善されています。...</p>
-</div>
-<footer class=entry-footer><span title="2023-02-26 00:00:00 +0000 UTC">February 26, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/02/20〜2023/02/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/26.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

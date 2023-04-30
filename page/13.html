@@ -77,6 +77,47 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/05/03〜2021/05/09の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>alosaur v0.31.0がリリース DenoのWebフレームワークであるalosaurのv0.31.0がリリースされました。
+変更点:
+ContextがHttpContextにリネームされました Microserviceクラスが実装されました (https://github.com/alosaur/alosaur/tree/master/examples/microservice) OAuthサポートが追加されました https://github.com/alosaur/alosaur/releases/tag/v0.31.0
+alosaur-lite alosaur-liteはDenoのWebフレームワークであるalosaurの軽量版です。(gzip圧縮込みで2.6KB)
+Deno Deployでの使用を想定されているようです。
+https://github.com/alosaur/alosaur-lite
+Oak v7.4.0がリリース Oakのv7.4.0がリリースされました。
+主な変更点:
+send()でRange及びIf-RangeHTTPヘッダのサポートが追加されました。 ルーターをネストできるようになりました。(#275) https://github.com/oakserver/oak/commit/eefd2fdb4a3fc6dfbb52fb1c6d74ff3de4b1b85b
+Effective Deno Denoを有効に活用するためのノウハウをまとめた本をZennで公開しました。
+https://zenn.dev/uki00a/books/effective-deno</p>
+</div>
+<footer class=entry-footer><span title="2021-05-09 00:00:00 +0000 UTC">May 9, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/05/03〜2021/05/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/09.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/04/26〜2021/05/02の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>gql - DenoのGraphQLサーバモジュール gqlはDenoでGraphQLサーバを実装するためのモジュールです。以下のライブラリ・フレームワークがサポートされています。
+std/http Oak Abc Opine deno-libs/tinyhttp https://github.com/deno-libs/gql
+deno-libs/tinyhttp - tinyhttpのDenoポート deno-libs/tinyhttpはNode.jsのtinyhttpパッケージのDenoポートです。
+先述したgqlモジュールでもサポートされています。
+https://github.com/deno-libs/tinyhttp
+crux.land Deno Deployで動作するDenoのスクリプトレジストリ。
+20KB未満の軽量なスクリプトをホストすることを目的としているようです。
+https://crux.land/
+terraform-deploy-provider - Deno Deploy向けのTerraformプロパイダ terraform-deploy-providerはDeno Deploy向けのTerraformプロパイダです。
+https://github.com/wperron/terraform-deploy-provider</p>
+</div>
+<footer class=entry-footer><span title="2021-05-02 00:00:00 +0000 UTC">May 2, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/26〜2021/05/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/05/02.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/04/19〜2021/04/25の最新情報
 </h2>
 </header>
@@ -257,56 +298,6 @@ https://github.com/dsherret/ts-morph/releases/tag/10.0.1 https://deno.land/x/ts_
 </div>
 <footer class=entry-footer><span title="2021-03-07 00:00:00 +0000 UTC">March 7, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/01〜2021/03/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/07.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/02/22〜2021/02/28の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno本体の最新情報 今週は特にリリースなどは行われていません。
-来週の3月2日にDeno v1.8.0のリリースが予定されています。
-https://github.com/denoland/deno/blob/v1.7.5/docs/contributing/release_schedule.md
-サードパーティモジュールの最新情報 Dashport - Passport.jsライクな認証モジュール DashportはNode.jsのPassport.jsに影響を受けた認証モジュールです。
-Passport.js同様、ストラテジによって柔軟に拡張することができます。
-現時点で公式でサポートされているWebフレームワークはOakのみです。
-https://github.com/oslabs-beta/dashport
-pngs pngsはpngイメージのエンコード/デコード用のDenoモジュールです。
-WebAssemblyを使用して実装されています。
-https://github.com/denosaurs/pngs
-deno_license_checker - ライセンスヘッダーのチェックを行うツール deno_license_checkerは、各ソースファイルにライセンスヘッダーが正しい形式で記述されていることをチェックするツールです。
-設定ファイル(.licenserc.json)によって、挙動を細かくカスタマイズすることが出来ます。
-https://github.com/kt3k/deno_license_checker
-deno-redis v0.19.0がリリース deno-redis v0.19.0がリリースされました。
-変更点:
-クライアントサイドキャッシングがサポートされました subscribe及びpsubscribeメソッドがジェネリクスメソッドに変更されました https://github.com/denodrivers/redis/releases/tag/v0.19.0</p>
-</div>
-<footer class=entry-footer><span title="2021-02-28 00:00:00 +0000 UTC">February 28, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/02/22〜2021/02/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/28.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/02/15〜2021/02/21の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno本体の最新情報 Deno v1.7.5がリリース Deno v1.7.5がリリースされました。 このリリースではバグ修正などを中心に実施されています。
-変更点:
-btoa()関数とEventクラスがWPTにパスするように修正され、Web標準との互換性が増しました。 deno lspでデータURLが適切に扱われない問題などが修正されました。 Dynamic importsで発生した例外をcatchできるようになりました。 https://github.com/denoland/deno/releases/tag/v1.7.5
-deno_std v0.88.0がリリース deno_std v0.88.0がリリースされました。
-変更点:
-std/encoding/utf8モジュールが削除されました。 std/testing/asserts: assertEquals()などの関数で、シンボルが適切に取り扱われない問題が修正されました。 std/node: url及びcryptoモジュールをrequire()で読み込めるようになりました。 std/node: ttyモジュールが部分的に実装されました。 std/node: Conditional exportsが実装されました。 https://github.com/denoland/deno_std/releases/tag/0.88.0 https://github.com/denoland/deno_std/compare/0.87.0...0.88.0 vscode_deno v3.0.0がリリース vscode_deno v3.0.0がリリースされました。
-このリリースにおける主要な変更点として、Canaryバージョン同様、deno lspを使用するように変更されています。
-サードパーティモジュールの最新情報 deno_mysql v2.8.0がリリース deno_mysql v2.8.0がリリースされました。
-変更点:
-MariaDB v10.0のサポートが追加されました。 MySQLのTINYINT型がJavaScriptのBoolean型へ変換されないように修正されました。 caching_sha2_password認証プラグインがサポートされました。 configLogger()が実装され、ロギングの挙動をカスタマイズできるようになりました。 https://github.com/denodrivers/mysql/releases/tag/v2.8.0
-Sinco v1.1.0がリリース Since v1.1.0がリリースされました。
-SincoはDenoで実装されたブラウザのオートメーション・テスティングライブラリです。
-変更点:
-HeadlessBrowser#evaluatePage()が実装され、現在のページ内での関数や式の実行がサポートされました。 Dockerコンテナ内での実行がサポートされました。 https://github....</p>
-</div>
-<footer class=entry-footer><span title="2021-02-21 00:00:00 +0000 UTC">February 21, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/02/15〜2021/02/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/02/21.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

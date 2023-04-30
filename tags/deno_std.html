@@ -81,6 +81,34 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/04/24〜2023/04/30の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33 Deno v1.33がリリースされました。
+以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
+Deno v1.33 Deno v2.0について Deno v1.33のリリースノートでDeno v2.0のリリース時期について書かれています。
+https://deno.com/blog/v1.33 数カ月後にリリースが予定されているようです。
+それまでの間、今後のマイナーリリースではパフォーマンスやNode.js互換性、セキュリティなどの改善が行われる想定のようです。
+deno_std v0.185.0 deno_std v0.185.0がリリースされました。
+std/uuid: UUID v3のサポート std/uuid/v3.tsが実装されています。
+MD5を利用してUUIDを生成するgenerate()や、UUIDの検証をするvalidate()が提供されています。
+std/dotenv: --allow-envなしでの読み込みがサポート restrictEnvAccessToオプションに空の配列やnullまたはundefinedを指定した際に、環境変数を参照せずに.envの内容のみが読み込まれるようになりました。
+この場合、--allow-envの指定が不要になります。
+esbuild_deno_loader v0.7.0 esbuild_deno_loader v0.7.0がリリースされました。
+v0.6.0で提供されていたdenoPluginが以下のように2つのプラグインに分割されています。
+denoResolverPlugin: resolverはimport mapsを考慮した上でspecifierを解決してくれる denoLoaderPlugin: denoResolverPluginが解決したspecifierを元にモジュールを読み込む プラグインを分割することにより、カスタムのスキーマや拡張子などをサポートできるようになったようです。
+例えば、以下ではカスタムのemoji:スキーマをサポートする例が紹介されています。
+examples/custom_scheme_plugin.ts また、configPathとimportMapURLオプションが追加されており、これらにより各プラグインが利用するdeno.jsonやImport Mapsファイルへのパスを指定することができるようです。
+Deno KV Deno KVのホームページが正式に公開されました。
+https://deno.com/kv @ayame113さんによるDeno KVの解説記事も公開されています。
+Deno KV 正式発表！cloudflare KVとcloudflare D1のいいとこ取り？ </p>
+</div>
+<footer class=entry-footer><span title="2023-04-30 00:00:00 +0000 UTC">April 30, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/04/24〜2023/04/30の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/30.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/04/17〜2023/04/23の最新情報
 </h2>
 </header>
@@ -266,26 +294,6 @@ import * as semver from "https://deno.land/std@0.177.0/semver/mod.ts"; const v =
 </div>
 <footer class=entry-footer><span title="2023-02-12 00:00:00 +0000 UTC">February 12, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/02/06〜2023/02/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/12.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/01/30〜2023/02/05の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.30.1 Deno v1.30.1がリリースされました。
-Node.js互換性の改善 Node-APIの互換性が改善されています。
-napi_get_globalでDenoのglobalThisではなくglobalオブジェクトが返されるように修正されています。 napi_create_functionでlengthパラメータが誤ってチェックされていた問題が修正されています。 これらの変更により、Denoでref-napiが動くようになったようです。
-その他には、deno replでnode:URLを使った際に、以下のエラーメッセージが表示されてしまう問題が解消されています。
-Could not set npm package requirements. Error getting response at https://registry.npmjs.org/@types/node: An npm specifier not found in cache: "@types/node", --cached-only is specified. deno lspの改善 Import Maps関連のバグ修正が実施されています。
-Import Mapsを更新した際に、LSPの再起動やコードの編集をせずとも更新内容が反映されるように挙動が改善されました Import Mapsが存在すると、fs形式のimportをnode:fsの形式へ変換するquickfixが機能しなくなる問題が修正されています その他の修正 performance.markのdetailオプションにArrayBufferやTypedArrayを指定するとエラーが発生する問題が修正されています https://github.com/denoland/deno/releases/tag/v1.30.1
-Deno v1.30.2 Deno v1.30.2がリリースされています。
-v1.30.1でCPU使用率の増加が見られたため、それを修正するために、急遽リリースされる運びになったようです。
-deno version 1.30.1 large cpu increase #17629 https://github.com/denoland/deno/releases/tag/v1.30.2
-deno_std v0.176.0 deno_std v0....</p>
-</div>
-<footer class=entry-footer><span title="2023-02-05 00:00:00 +0000 UTC">February 5, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/01/30〜2023/02/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/05.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

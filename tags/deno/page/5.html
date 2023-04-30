@@ -81,6 +81,59 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/09/19〜2022/09/25の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25.4 Deno v1.25.4がリリースされました。
+--node-modules-dirのサポート node_modulesディレクトリの存在に依存したnpmパッケージを動かせるようにするために、--node-modules-dirオプションが実装されました。
+$ deno run -A --unstable --node-modules-dir npm:vite このオプションを指定すると、pnpmライクなレイアウトでnode_modulesが作られます。
+これによって、npm installなしでViteが動かせるようになったようです。
+詳しくは以下を参照いただければと思います。
+vite-deno-example --reload=オプションでnpmパッケージがサポート --reload=npm:で全npmパッケージの再読込み、--reload=npm:&lt;package>で指定されたパッケージだけを再読込みができます。
+パフォーマンスチューニング いくつかのパフォーマンスチューニングが実施されています。
+例)
+CLIの起動の高速化 console.log()などで文字列を出力する際のパフォーマンスが3倍近くまで高速化 TextEncoder.encodeInto()が5.4倍近くまで高速化 ファイルシステム関連のAPIの最適化 CLIの起動の高速化については、現在、様々なアイデアが検討されており、詳細については以下を参照いただければと思います。
+perf: ideas to improve startup time (#15945) その他の変更点 同一ファイルに対して複数回deno docを実行すると、処理が失敗してしまう問題が修正されています。 Windows上でdeno compileを実行したときに、拡張子が非.exe形式の場合に、それが取り除かれてしまう問題が修正されています。 Deno.env.get/Deno.env.setに不正な変数名を指定した際のエラーメッセージが改善されています。 https://github.com/denoland/deno/releases/tag/v1.25.4
+deno_std v0.157.0 deno_std v0.157.0がリリースされました。
+std/collections/deep_merge.tsのバグ修正 ネストされたプロパティにおいてdeepMerge()のreplaceオプションが機能しない問題が修正されています。
+std/nodeの改善 child_process.spawnSyncが実装されています。
+また、FreeBSDでもstd/nodeが動作するように修正が行われています。
+その他には、以下の改善などが実施されています。
+fs.read()やfs.ReadStreamの互換性の向上 net.connect()が失敗したときに、'error' ⇒ 'close'の順にイベントが発火されるように修正されています。 process.envに不正な文字を含む環境変数が指定されたときに、TypeErrorを投げるのではなくundefinedを返すように修正されています。 Windows上でprocess.on('SIGTERM')が無視されるように修正されています。 https://github....</p>
+</div>
+<footer class=entry-footer><span title="2022-09-25 00:00:00 +0000 UTC">September 25, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/09/19〜2022/09/25の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/25.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2022/09/12〜2022/09/18の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25.3 Deno v1.25.3がリリースされました。
+npmパッケージサポートの改善 esm形式のモジュールからcjs形式のモジュールをimportする際の挙動のNode.jsとの互換性が向上しています。 deno run --unstable npm:&lt;package>@version/subpathで.js形式または拡張子なしのファイルを実行できるようになりました。 typescript/tscを実行できない問題があったようです。 パッケージのサブパスにpackage.jsonがあれば、その定義内容を元にエントリポイントが解決されるようになりました。 --unstableが指定されたときは、NODE_DEBUGとNODE_OPTIONS環境変数に対して--allow-envのチェックがスキップされるように変更されました。 Flash(Deno.serve)の改善 同時に一つのリクエストしか処理できなかった問題が解消されています。
+https://github.com/denoland/deno/releases/tag/v1.25.3
+deno_std v0.156.0 deno_std v0.156.0がリリースされました。
+std/node Deno本体のnpmパッケージサポートの改善に合わせて、バグ修正などが実施されています。
+今回のリリースによってcpy-cliなどが動かせるようになったようです。
+変更点:
+fs: ReadStreamとWriteStreamがnewなしで作成できるようになりました。 process: "FOO" in process.envなどでprocess.envを利用した際に、全パーミッションが要求される問題が解消されています。(内部的にDeno.env.toObject()が使用されないように修正されています) process: process.execPathが書き込み可能なプロパティに変更されました。(pnpmなどの書き込みを行うパッケージが存在したため) std/fs すでにシンボリックリンクが存在する場合にensureSymlinkが失敗しないように改善されています。
+std/http/file_server serveFileにディレクトリのパスが指定された場合、404エラーが返却されるように修正されました。 (今までは200が返却されるものの、ボディを読もうとするとエラーが発生していたようです)
+https://github.com/denoland/deno_std/releases/tag/0.156.0
+Mongooseサポートに向けたunstable APIの安定化について Mongooseのサポートに向けて、下記のAPIの安定化が検討されています。
+Deno.consoleSize() Deno.hostname() Deno.osRelease() Deno.consoleSize()とDeno.hostname()についてはすでにPRが作成されており、次のv1.26あたりで安定化される可能性がありそうです。
+Ultra v2.0.0-beta.6 Island Architectureのサポートなどが追加されています。
+/examples/with-islands https://github.com/exhibitionist-digital/ultra/releases/tag/v2.0.0-beta.6
+deno-sqlite v3.5.0 PreparedQueryに.first()と.firstEntry()が追加されています。
+その影響で既存の.one()と.oneEntry()は非推奨化されています。
+const query = db....</p>
+</div>
+<footer class=entry-footer><span title="2022-09-18 00:00:00 +0000 UTC">September 18, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/09/12〜2022/09/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/18.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/09/05〜2022/09/11の最新情報
 </h2>
 </header>
@@ -251,46 +304,6 @@ import { StringWriter } from "https://deno.land/std@0.150.0/io/writers.ts"; cons
 </div>
 <footer class=entry-footer><span title="2022-07-31 00:00:00 +0000 UTC">July 31, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/07/25〜2022/07/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/31.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/07/18〜2022/07/24の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.24.0 Deno v1.24.0がリリースされました。
-以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
-Deno v1.24 deno_std v0.149.0 deno_std v0.149.0がリリースされました。
-semverモジュールが追加 deno_stdにsemverモジュールが入りました。
-import * as semver from "https://deno.land/std@0.149.0/semver/mod.ts"; semver.valid("v1.2.3"); // => 1.2.3 semver.gt("2.0.0", "1.2.4"); // => true semver.satisfies("1.4.2", ">=1.x"); // => true testing/asserts assertRejectsがthenableなオブジェクトをサポートしました。
-const error = await assertRejects(() => ({ then() { throw new Error("foo"); }, })); console.assert(error.message === "foo"); node process.on("beforeExit")がサポートされました。
-https://github.com/denoland/deno_std/releases/tag/0.149.0
-Denoについてのアンケート Deno公式でアンケートが公開されています。
-https://unf275cfh14.typeform.com/to/k3eQB4Q3 https://twitter.com/deno_land/status/1550209370301952000</p>
-</div>
-<footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/07/18〜2022/07/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/24.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Deno v1.24
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.24がリリースされました。
-この記事では主な変更点などについて解説します。
---checkオプション指定時のトランスパイルの挙動が変更 tscがトランスパイル用途では使用されなくなりました。
-型チェック トランスパイル --check (v1.23) tsc tsc --no-check (v1.23) - swc --check (v1.24) tsc swc --no-check (v1.24) - swc これにより、トランスパイルの効率化が見込まれます。
-また、tscの実行結果をSQLiteにキャッシュする仕組みも導入されており、型チェックについても効率化が図られています。($DENO_DIR/check_cache_v1にSQLiteのデータベースファイルが作成されます)
-FFI(Deno.dlopen)の改善 v1.23.3でV8 Fast API Calls+JITコンパイルの導入による最適化が実施されました。
-今回のリリースでは、64ビット値を取り扱う関数に対してもV8 Fast API Callsを利用した最適化が適用されるように改善されています。
-サブプロセスAPIへの変更 Deno v1.21 で入ったサブプロセスAPIに変更が加わっています。
-Deno.Child.unref()とDeno.Child.ref()のサポート 挙動としてはDeno.refTimerやDeno.unrefTimerと同様で、Deno.Child.unref()を呼ぶと、対象の子プロセスがDenoの終了をブロックしなくなります。
-const child = await Deno.spawnChild("some_long_running_process", { args }); child.unref(); (破壊的変更) Deno.Childの型定義が変更 Deno.spawnChildで返却されるDeno.Childのstdio関連のプロパティに関する型定義が変更されています。
-v1.23.4...</p>
-</div>
-<footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.24" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.24.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

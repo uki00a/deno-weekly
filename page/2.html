@@ -77,6 +77,43 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2023/03/06〜2023/03/12の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.31.2 Deno v1.31.2がリリースされました。
+Node.js互換性の改善 循環依存のあるpeerDependenciesの解決が改善
+例えば、以下のようなシナリオにおいて、初回実行時はうまくいくものの、ロックファイルが適用されるとうまく動かないケースがあったようで、この問題が修正されています。
+a -> b -> c -> d -> c -> b (peer) その他の改善
+npm:URLを使っていると、依存関係が変わっていなくても、毎回Lockfileがtouchされてしまう問題が修正されています。 複数のDenoプロセスが同時にnode_modulesを更新できないように制御が入りました。 package.jsonの依存関係の解析に失敗しても、npmパッケージが実際にimportされるタイミングまではエラーが起きないように修正されています。 これにより、package.jsonは存在するものの、スクリプト内でnpmパッケージを利用していないようなケースでエラーが発生しなくなります。 node:cryptoのcreateHashが高速化されています。 util.types.isSharedArrayBufferが動作しない問題が修正されています。 .d.tsファイルの型チェックに関する修正 以下のようなケースで、deno checkなどでうまく型チェックが行われていなかった問題が修正されています。
+エントリポイントに指定した.d.tsファイル エントリポイントに含まれるX-TypeScript-Types/&lt;reference types="..." />経由で読み込まれる.d.tsファイル .d.tsファイル内のファイルタイプが指定されていないコードブロック (deno test --docの実行時のみ) Deno.UnsafePointer.ofの改善 Deno.UnsafePointer.ofでバッファのメモリを取得する際に、もしユーザーがバッファの参照をどこかに保持していなかった場合、孤立したポインタができてしまう可能性がありました。
+この問題を解消するため、Deno.UnsafePointer.ofの内部でWeakMapを使ってポインタとバッファのマッピングが管理されるようになりました。
+その他 WindowsでDeno.stdin.setRaw(false)によって適切にrawモードが無効化されるように修正されています localStorageへのアイテムのINSERT時に、事前に入力内容のサイズがチェックされるように挙動が修正されています https://github.com/denoland/deno/releases/tag/v1.31.2
+deno_std v0.179.0 deno_std v0.179.0がリリースされました。
+std/encoding/varint.tsの追加, std/encoding/varint/mod.tsの非推奨化 TypeScriptをベースに実装されたstd/encoding/varint.tsが追加されました。 (実装はhttps://deno.land/x/varintがベースのようです)
+これに合わせて、WASMベースのstd/encoding/varint/mod.tsが非推奨化されています。
+std/fsの改善 std/fs/expand_glob: expandGlob()にfollowSymlinksオプションが追加されました (trueを指定すると、シンボリックリンクが解決されます) std/fs/ensure_dir: ensureDir()を同じディレクトリに対して並列で呼んだときに、Deno.errors.AlreadyExistsがthrowされる問題が修正されています。 std/fs/ensure_symlink: ensureSymlink()でtargetに対する相対的なリンクを作ろうとすると、意図せぬパスを指すリンクが作成されてしまう問題が修正されています (#2312) std/http/cookie - =の取り扱いが改善 Cookieの値に=が含まれていると、getSetCookiesが意図せぬ値を返す問題が修正されています。...</p>
+</div>
+<footer class=entry-footer><span title="2023-03-12 00:00:00 +0000 UTC">March 12, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/03/06〜2023/03/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/12.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2023/02/27〜2023/03/05の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Oak v12 Oak v12がリリースされています。
+Router#allの挙動の変更 (破壊的変更) 今までのバージョンでは、Router#allはDELETE/GET/POST/PUTの4つのメソッドに対してミドルウェアを登録していました。
+このバージョンでは、Routerの生成時にmethodsオプションで指定されたメソッドに対してミドルウェアが登録されるように挙動が変更されています。(ただし、OPTIONSについてはミドルウェアの登録がスキップされます)
+methodsオプションのデフォルト値は以下のように定義されているため、このバージョン以降、デフォルトでHEAD/PATCHメソッドに対してもミドルウェアが登録されるようになります。
+[ "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT" ] その他の修正 Router#allowedMethodsで返却されたミドルウェアでOPTIONSメソッドが処理される際に、AllowではなくAllowedという名前のヘッダが返却されていた問題が修正されています。 Cookies#getにObject.prototypeで定義されているメソッドの名前が指定された際に、Cookieが設定されている場合でも、空の値が返却される問題が修正されています。 Content-Lengthが0に設定されたPOSTリクエストを受信した際に、RangeErrorが発生する問題が修正されています。 Release 12.0.0</p>
+</div>
+<footer class=entry-footer><span title="2023-03-05 00:00:00 +0000 UTC">March 5, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/02/27〜2023/03/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/05.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2023/02/20〜2023/02/26の最新情報
 </h2>
 </header>
@@ -247,46 +284,6 @@ Roadmap of 2023 プレイグラウンドにコードの共有機能を実装す�
 </div>
 <footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/01/16〜2023/01/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/22.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Denoのロードマップ (2023年 Q1)
-</h2>
-</header>
-<div class=entry-content>
-<p>Denoの2023年 Q1のロードマップが公開されました。
-https://github.com/denoland/deno/issues/17475 このページでは、新しく実装が検討されている機能などについて紹介いたします。
-deno.jsonでのimportsフィールドのサポート 今までDenoでImport Mapsを利用するには、専用のファイルを用意しておき、それを--import-mapオプションで読むこむ必要がありました。
-現在、deno.jsonで直接Import Mapsを定義できるようにするため、importsオプションの追加が検討されています。
-これが実現されれば、以下のようにdeno.jsonで直接マッピングを定義できるようになります。
-{ "imports": { "redis": "https://deno.land/x/redis@v0.29.0/mod.ts", "dax": "https://deno.land/x/dax@0.24.0/mod.ts" }, "tasks": { "start": "deno run --allow-net --allow-env ./main.ts" } } Deno公式が公開している02-deno-canonical-appにも使用例があるため、よろしければそちらも参照いただければと思います。
-deno:URLのサポート deno:という新しいURLスキームの導入が検討されており、これにより、deno.land/xからのモジュールの読み込みを簡略化できます。
-import $ from "deno:dax@24.0/mod.ts"; await $`echo foobar`; また、deno.land/xでも機能の拡張が予定されているようで，/x/some-packageにアクセスされた際は/x/some-package/mod.tsにリダイレクトさせることが検討されているようです。
-例えば、deno:dax@24.0と記述した場合、/x/dax@0.24.0/mod.tsが読み込まれます。
-package.jsonのサポート Deno本体でpackage.jsonのサポートが検討されているようです。
-例えば、以下のような内容のpackage.jsonがあったとします。
-{ "type": "module", "scripts": { "main": "deno run -A main.ts" }, "dependencies": { "chalk": "^5.0", "deno-redis": "deno:redis@~0.29.0/mod.ts" } } Denoはpackage.jsonの"dependencies"で定義された依存関係を元に、コード中のbare specifierを解釈します。(もしImport Mapsファイルまたはdeno.jsonでもマッピングが定義されている場合は、package.jsonよりもそれらのファイルの設定が優先されます)
-例えば、以下のようなスクリプトが存在する場合、deno-redisはhttps://deno.land/x/redis@v0.29.0/mod.tsとして解釈され、chalkについてはnpmレジストリからv5.xがダウンロードされます。
-import { connect } from "deno-redis"; import chalk from "chalk"; const redis = await connect({ hostname: "127....</p>
-</div>
-<footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
-<a class=entry-link aria-label="post link to Denoのロードマップ (2023年 Q1)" href=https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2023/01/09〜2023/01/15の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.29.3 Deno v1.29.3がリリースされました。
-FFI 構造体の値渡しがサポートされています。
-const Point = ["i32", "i32"]; const dylib = Deno.dlopen(libpath, { make_point: { parameters: ["i32", "i32"], result: { struct: Point }, }, print_point: { parameters: [{ struct: Point }], result: "void", }, }); const point = dylib.symbols.make_point(1, 2); assert(point instanceof Uint8Array); dylib.symbols.print_point(point); https://github.com/denoland/deno/pull/15060
-Node-API 以下のNode-APIがサポートされました。
-napi_ref_threadsafe_function napi_unref_threadsafe_function napi_add_env_cleanup_hook napi_remove_env_cleanup_hook また、Node-API経由で定義したclassの静的プロパティが適切にハンドリングされるように修正されています。
-CLI --reloadと--watchを併用した際に、ファイル変更のたびに--reloadによるモジュールの再ダウンロードが行われてしまう問題が修正されています deno installによって作成されるshimにデフォルトで--no-configが指定されるように修正されています その他 ReadableStreamのasyncIteratorの挙動に関する互換性が向上されています BroadcastChannel.postMessageでのメッセージ送信時に、事前にチャンネルがクローズされていないことが確認されるように修正されています Deno.resolveDnsでサポートしていないタイプのリソースレコードを取得しようとした際に、プロセスがパニックする問題が修正されています https://github....</p>
-</div>
-<footer class=entry-footer><span title="2023-01-15 00:00:00 +0000 UTC">January 15, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/01/09〜2023/01/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/15.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

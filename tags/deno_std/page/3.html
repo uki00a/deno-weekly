@@ -81,6 +81,32 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/11/07〜2022/11/13の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.27.2 Deno v1.27.2がリリースされています。
+peerDependenciesのサポート DenoでnpmパッケージのpeerDependenciesがサポートされました。
+あるパッケージでpeerDependenciesが定義されていた場合、以下のような動作をするようです。
+依存グラフの中から祖先をたどっていき、もしpeerDependenciesで指定された要件を満たすパッケージが見つからなかった場合、通常のdependenciesと同様に依存が解決されます。(npm v7と同様の挙動) optionalPeerDependenciesについては、依存グラフの祖先に指定された要件を満たすパッケージが見つかった場合のみ解決されます。 それ以外の場合は、pnpmと同様の挙動でoptionalPeerDependenciesが解決されます。 https://github.com/denoland/deno/pull/16561
+その他の変更点 いくつかのバグ修正が実施されています。
+data:URLに対してロックファイルのremoteエントリが作られてしまう問題が修正されています。 Deno.serveHttpで起動したHTTPサーバで圧縮が有効化された状態でストリーミングを行う際に、各チャンクが適切にフラッシュされるように修正されています。 ローカルのnode_modules内のコードでrequireによる相対パス形式での読み込みが行われた際に適切に動作するように修正されています。 https://github.com/denoland/deno/releases/tag/v1.27.2
+deno_std v0.163.0 deno_std v0.163.0がリリースされています。
+std/semverモジュールでinc()とdiff()が非推奨化されました。
+今後は、新しく追加されているincrement()とdifference()の使用が推奨されます。 (動作はそれぞれincとdiffと同様です)
+https://github.com/denoland/deno_std/releases/tag/0.163.0
+denoland/fresh-wordpress-themes WordPressをHeadless CMSとして使いつつ、フロントエンドをFreshで開発するためのテンプレートがDeno公式で公開されました。
+https://github.com/denoland/fresh-wordpress-themes 以下の記事で使用方法などが解説されています。
+Introducing Fresh WordPress Themes esm.sh v98 esm.sh v98がリリースされました。
+新機能としてTree shakingのサポートが追加されています。
+exportsパラメータを指定することで適用されます。
+https://github.com/ije/esm.sh/releases/tag/v98</p>
+</div>
+<footer class=entry-footer><span title="2022-11-13 00:00:00 +0000 UTC">November 13, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/11/07〜2022/11/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/13.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/10/31〜2022/11/06の最新情報
 </h2>
 </header>
@@ -298,26 +324,6 @@ const process = require('process'); その他の変更点...</p>
 </div>
 <footer class=entry-footer><span title="2022-09-04 00:00:00 +0000 UTC">September 4, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/08/29〜2022/09/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/04.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/08/08〜2022/08/14の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.24.3 Deno v1.24.3がリリースされました。
-fetch()でSOCKSがサポート 検証はしていないのですが、HTTP_PROXYやHTTPS_PROXY環境変数にsocks5:またはsocks5h:形式のURLを指定すると利用できそうです。
-Deno.UnsafePointerViewへの機能追加 Deno.UnsafePointerViewに以下の3つのstaticメソッドが追加されています。
-getCString getArrayBuffer copyInto これらのメソッドの挙動は、Deno.UnsafePointerViewの同名のインスタンスメソッドとほぼ同様です。
-compilerOptions.jsxImportSourceが指定されていると、deno.json(c)をimportできない問題が修正 次のように、compilerOptions.jsxImportSourceが設定されたdeno.jsonが定義されていたとします。
-{ "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" }, "importMap": "./import_map.json" } このファイルをImport assertionsを使用して読み込もうとすると、エラーが発生する問題が修正されています。
-import config from "./deno.json" assert { type: "json" }; // => `error: Loading unprepared module` console.log(config); この修正は、Freshにおけるfeat: support JSX automatic mode (#610)の対応のために実施されたようです。
-その他の修正 --allow-netに空の値を指定するとプロセスがパニックする問題が修正されています。 --locationオプションが指定されていないときはglobalThis.locationが上書きできるようになりました。 https://github.com/denoland/deno/releases/tag/v1.24.3
-deno_std v0.152.0 deno_std v0.152.0がリリースされました。
-std/crypto: subtle.timingSafeEqual()が追加 import { crypto } from "https://deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-08-14 00:00:00 +0000 UTC">August 14, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/08〜2022/08/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/14.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

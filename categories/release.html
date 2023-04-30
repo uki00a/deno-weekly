@@ -81,6 +81,23 @@ release
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Deno v1.33
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33がリリースされました。
+この記事では主な変更点などについて解説します。
+dynamic importに関するパーミッションチェックの見直し 静的に解析可能なdynamic importの実行時に、パーミッションが要求されないように挙動が変更されました。
+このリリース以降、以下のコードを実行する際に--allow-netの指定が不要になります。(v1.32までは--allow-netが要求されます)
+const { delay } = await import("https://deno.land/std@0.185.0/async/delay.ts"); await delay(3000); ただし、以下のようにURLを動的に構築している場合などは、従来通り--allow-netの指定が必要です。
+// Denoが`import()`の引数を静的に解析できない場合は、従来どおりパーミッションが要求されます const { delay } = await import(`https://deno.land/std@0.185.0/async/${"delay.ts"}`); await delay(3000); Deno KV Deno.AtomicOperationにmin/maxメソッドが追加 minは引数で指定された値と現在の値を比較し、小さい方の値でエントリを上書きします。maxはその逆の操作です。
+const kv = await Deno.openKv(":memory:"); const result = await kv.set(["key"], new Deno.KvU64(1n)); const commitResult = await kv.atomic() .check({ key: ["key"], versionstamp: result.versionstamp }) .max(["key"], 2n) .commit(); assert(commitResult.ok); const result2 = await kv.get(["key"]); assert(result2.value instanceof Deno.KvU64); assert(result2.value.value === 2n); Deno....</p>
+</div>
+<footer class=entry-footer><span title="2023-04-30 00:00:00 +0000 UTC">April 30, 2023</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.33" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.33.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Deno v1.32
 </h2>
 </header>
@@ -285,27 +302,6 @@ const ac = new AbortController(); Deno.serve((req) => new Response("Hello, Flash
 </div>
 <footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.25" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Deno v1.24
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.24がリリースされました。
-この記事では主な変更点などについて解説します。
---checkオプション指定時のトランスパイルの挙動が変更 tscがトランスパイル用途では使用されなくなりました。
-型チェック トランスパイル --check (v1.23) tsc tsc --no-check (v1.23) - swc --check (v1.24) tsc swc --no-check (v1.24) - swc これにより、トランスパイルの効率化が見込まれます。
-また、tscの実行結果をSQLiteにキャッシュする仕組みも導入されており、型チェックについても効率化が図られています。($DENO_DIR/check_cache_v1にSQLiteのデータベースファイルが作成されます)
-FFI(Deno.dlopen)の改善 v1.23.3でV8 Fast API Calls+JITコンパイルの導入による最適化が実施されました。
-今回のリリースでは、64ビット値を取り扱う関数に対してもV8 Fast API Callsを利用した最適化が適用されるように改善されています。
-サブプロセスAPIへの変更 Deno v1.21 で入ったサブプロセスAPIに変更が加わっています。
-Deno.Child.unref()とDeno.Child.ref()のサポート 挙動としてはDeno.refTimerやDeno.unrefTimerと同様で、Deno.Child.unref()を呼ぶと、対象の子プロセスがDenoの終了をブロックしなくなります。
-const child = await Deno.spawnChild("some_long_running_process", { args }); child.unref(); (破壊的変更) Deno.Childの型定義が変更 Deno.spawnChildで返却されるDeno.Childのstdio関連のプロパティに関する型定義が変更されています。
-v1.23.4...</p>
-</div>
-<footer class=entry-footer><span title="2022-07-24 00:00:00 +0000 UTC">July 24, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.24" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.24.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
