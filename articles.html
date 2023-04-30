@@ -98,7 +98,7 @@ std/dotenv: --allow-envなしでの読み込みがサポート restrictEnvAccess
 この場合、--allow-envの指定が不要になります。
 esbuild_deno_loader v0.7.0 esbuild_deno_loader v0.7.0がリリースされました。
 v0.6.0で提供されていたdenoPluginが以下のように2つのプラグインに分割されています。
-denoResolverPlugin: resolverはimport mapsを考慮した上でspecifierを解決してくれる denoLoaderPlugin: denoResolverPluginが解決したspecifierを元にモジュールを読み込む プラグインを分割することにより、カスタムのスキーマや拡張子などをサポートできるようになったようです。
+denoResolverPlugin: Import mapsを考慮した上でspecifierを解決する denoLoaderPlugin: denoResolverPluginが解決したspecifierを元にモジュールを読み込む プラグインを分割することにより、カスタムのスキーマや拡張子などをサポートできるようになったようです。
 例えば、以下ではカスタムのemoji:スキーマをサポートする例が紹介されています。
 examples/custom_scheme_plugin.ts また、configPathとimportMapURLオプションが追加されており、これらにより各プラグインが利用するdeno.jsonやImport Mapsファイルへのパスを指定することができるようです。
 Deno KV Deno KVのホームページが正式に公開されました。
