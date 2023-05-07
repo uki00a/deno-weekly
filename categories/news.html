@@ -81,6 +81,26 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/05/01〜2023/05/07の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33.2 Deno v1.33.2がリリースされました。
+Deno KV Deno.KvU64にvalueOf/toStringが実装されました。
+assert(new Deno.KvU64(1n) + 2n === 3n); assert(new Deno.KvU64(123n).toString() === "123"); また、Deno.Kvのコンストラクタを直接呼ぶと、エラーが発生するように変更されました。(Deno.openKvの使用が推奨されるため)
+Node.js互換性 node:process: process.releaseが実装されました。 node:http: ClientRequest.setTimeoutに0を渡すとタイムアウトが無効化されるように修正されました。 その他 パフォーマンス向上のため、Windows以外の環境では、グローバルアロケータやArrayBufferの割り当ての用途としてjemallocが使用されるように変更されました。 beforeunloadのリスナ内でpreventDefaultを呼んでいると、Deno.test内で発生したUncaught Errorが画面に表示されなくなる問題が修正されました。 WebSocketクライアントが適切にクローズされなかった場合、WebSocketサーバがハングする問題が修正されました。 引数なしでURL.canParse()が呼ばれた際に、falseを返すのではなくTypeErrorが発生するように修正されました。 deno_std v0.186.0 deno_std v0.186.0がリリースされました。
+std/path sepが非推奨化されました。
+今後はSEPの使用が推奨されます。
+std/async deadline.ts: signalオプションによるキャンセルがサポートされました。 pool.tsがブラウザ互換になりました。 std/http/method.tsの追加 isHttpMethodで与えられた文字列が正しいHTTPメソッドであるか判定できます。
+import { isHttpMethod } from "https://deno.land/std@0.186.0/http/method.ts"; assert(isHttpMethod("GET")); assert(isHttpMethod("POST")); assert(!isHttpMethod("get")); assert(!isHttpMethod("foo")); std/http/file_server.ts Rangeヘッダが仕様どおりにハンドリングされるように改善されました。
+std/http/server.ts serve()ですでに使用中のportを指定した際に、たまにAddrInUseではなくTypeError: Cannot read properties of undefined (reading 'port')が発生する問題が修正されました。
+std/http/server_sent_event.ts ServerSentEventをeventInit引数を渡さずに作成すると、TypeErrorが発生する問題が修正されました。...</p>
+</div>
+<footer class=entry-footer><span title="2023-05-07 00:00:00 +0000 UTC">May 7, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/01〜2023/05/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/05/07.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/04/24〜2023/04/30の最新情報
 </h2>
 </header>
@@ -272,21 +292,6 @@ std/fsの改善 std/fs/expand_glob: expandGlob()にfollowSymlinksオプション
 </div>
 <footer class=entry-footer><span title="2023-03-12 00:00:00 +0000 UTC">March 12, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/03/06〜2023/03/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/12.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/02/27〜2023/03/05の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Oak v12 Oak v12がリリースされています。
-Router#allの挙動の変更 (破壊的変更) 今までのバージョンでは、Router#allはDELETE/GET/POST/PUTの4つのメソッドに対してミドルウェアを登録していました。
-このバージョンでは、Routerの生成時にmethodsオプションで指定されたメソッドに対してミドルウェアが登録されるように挙動が変更されています。(ただし、OPTIONSについてはミドルウェアの登録がスキップされます)
-methodsオプションのデフォルト値は以下のように定義されているため、このバージョン以降、デフォルトでHEAD/PATCHメソッドに対してもミドルウェアが登録されるようになります。
-[ "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT" ] その他の修正 Router#allowedMethodsで返却されたミドルウェアでOPTIONSメソッドが処理される際に、AllowではなくAllowedという名前のヘッダが返却されていた問題が修正されています。 Cookies#getにObject.prototypeで定義されているメソッドの名前が指定された際に、Cookieが設定されている場合でも、空の値が返却される問題が修正されています。 Content-Lengthが0に設定されたPOSTリクエストを受信した際に、RangeErrorが発生する問題が修正されています。 Release 12.0.0</p>
-</div>
-<footer class=entry-footer><span title="2023-03-05 00:00:00 +0000 UTC">March 5, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/02/27〜2023/03/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/05.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

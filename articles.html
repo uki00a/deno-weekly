@@ -82,6 +82,26 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2023/05/01〜2023/05/07の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33.2 Deno v1.33.2がリリースされました。
+Deno KV Deno.KvU64にvalueOf/toStringが実装されました。
+assert(new Deno.KvU64(1n) + 2n === 3n); assert(new Deno.KvU64(123n).toString() === "123"); また、Deno.Kvのコンストラクタを直接呼ぶと、エラーが発生するように変更されました。(Deno.openKvの使用が推奨されるため)
+Node.js互換性 node:process: process.releaseが実装されました。 node:http: ClientRequest.setTimeoutに0を渡すとタイムアウトが無効化されるように修正されました。 その他 パフォーマンス向上のため、Windows以外の環境では、グローバルアロケータやArrayBufferの割り当ての用途としてjemallocが使用されるように変更されました。 beforeunloadのリスナ内でpreventDefaultを呼んでいると、Deno.test内で発生したUncaught Errorが画面に表示されなくなる問題が修正されました。 WebSocketクライアントが適切にクローズされなかった場合、WebSocketサーバがハングする問題が修正されました。 引数なしでURL.canParse()が呼ばれた際に、falseを返すのではなくTypeErrorが発生するように修正されました。 deno_std v0.186.0 deno_std v0.186.0がリリースされました。
+std/path sepが非推奨化されました。
+今後はSEPの使用が推奨されます。
+std/async deadline.ts: signalオプションによるキャンセルがサポートされました。 pool.tsがブラウザ互換になりました。 std/http/method.tsの追加 isHttpMethodで与えられた文字列が正しいHTTPメソッドであるか判定できます。
+import { isHttpMethod } from "https://deno.land/std@0.186.0/http/method.ts"; assert(isHttpMethod("GET")); assert(isHttpMethod("POST")); assert(!isHttpMethod("get")); assert(!isHttpMethod("foo")); std/http/file_server.ts Rangeヘッダが仕様どおりにハンドリングされるように改善されました。
+std/http/server.ts serve()ですでに使用中のportを指定した際に、たまにAddrInUseではなくTypeError: Cannot read properties of undefined (reading 'port')が発生する問題が修正されました。
+std/http/server_sent_event.ts ServerSentEventをeventInit引数を渡さずに作成すると、TypeErrorが発生する問題が修正されました。...</p>
+</div>
+<footer class=entry-footer><span title="2023-05-07 00:00:00 +0000 UTC">May 7, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/01〜2023/05/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/05/07.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2023/04/24〜2023/04/30の最新情報
 </h2>
 </header>
@@ -279,23 +299,6 @@ import $ from "deno:dax@24.0/mod.ts"; await $`echo foobar`; Deno本体でsemver�
 </div>
 <footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
 <a class=entry-link aria-label="post link to Denoでpackage.jsonやnpmパッケージのサポートが入った理由について" href=https://uki00a.github.io/deno-weekly/articles/deno/why-deno-supports-package-json.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2023/03/13〜2023/03/19の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.31.3 Deno v1.31.3がリリースされました。
-CLI/APIに関する改善 deno infoとdeno docコマンドで--no-lock/--lockオプションがサポートされました。(挙動はdeno runコマンドなどと同様です) deno.jsonなどでcompilerOptions.typesエントリが定義されていると、型エラーが起きる問題が修正されています。 REPLでglobalThis.Denoやその配下で定義されたプロパティを削除しようとすると、プロセスがパニックする問題が修正されています。 Deno.makeTempFile(Sync)でファイルがすでに存在した際にリトライが行われるように挙動が改善されています。 Deno.serveHttp()でレスポンスエラーが発生した際に、nextRequestから返されるRequestのsignalがabortedに設定されるように修正されました。 Node.js互換性に関する改善 package.jsonが存在する または --node-modules-dirオプションが指定されたが、実行されたスクリプトではnpmパッケージがimportされていない場合に、node_modulesが作成されないように挙動が改善されました。 node_modulesのセットアップ中にプログレスバーが表示されるように挙動が改善されました。(#18136) node:crypto: createCipheriv()が実装されました。 (aes-128-cbcのみサポート) node:fs: writeFile()でencoding: "ascii"オプションがサポートされました。 https://github.com/denoland/deno/releases/tag/v1.31.3
-deno_std v0.180.0 deno_std v0.180.0がリリースされました。
-std/encoding関連モジュールのディレクトリ構造の見直し (破壊的変更) std/encodingで提供されていたcsv/front_matter/json/jsonc/toml/yamlモジュールが、トップレベルのモジュールとして独立しました。
-今後は、例えば、csvモジュールを利用したい場合はstd/csv/mod.ts、yamlモジュールを利用したい場合はstd/yaml/mod.tsから読み込む必要があります。
-ディレクトリの移動に合わせて、以下の変更も実施されています。
-csvモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 csv/stringify.ts csv/parse.ts csv/stream.ts jsonモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 json/json_parse_stream.ts json/json_stringify_stream.ts json/concatenated_json_parse_stream.ts tomlモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 toml/parse.ts toml/stringify.ts std/http/server_sent_event....</p>
-</div>
-<footer class=entry-footer><span title="2023-03-19 00:00:00 +0000 UTC">March 19, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/03/13〜2023/03/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/19.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

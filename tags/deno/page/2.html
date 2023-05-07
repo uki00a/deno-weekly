@@ -81,6 +81,23 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/03/13〜2023/03/19の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.31.3 Deno v1.31.3がリリースされました。
+CLI/APIに関する改善 deno infoとdeno docコマンドで--no-lock/--lockオプションがサポートされました。(挙動はdeno runコマンドなどと同様です) deno.jsonなどでcompilerOptions.typesエントリが定義されていると、型エラーが起きる問題が修正されています。 REPLでglobalThis.Denoやその配下で定義されたプロパティを削除しようとすると、プロセスがパニックする問題が修正されています。 Deno.makeTempFile(Sync)でファイルがすでに存在した際にリトライが行われるように挙動が改善されています。 Deno.serveHttp()でレスポンスエラーが発生した際に、nextRequestから返されるRequestのsignalがabortedに設定されるように修正されました。 Node.js互換性に関する改善 package.jsonが存在する または --node-modules-dirオプションが指定されたが、実行されたスクリプトではnpmパッケージがimportされていない場合に、node_modulesが作成されないように挙動が改善されました。 node_modulesのセットアップ中にプログレスバーが表示されるように挙動が改善されました。(#18136) node:crypto: createCipheriv()が実装されました。 (aes-128-cbcのみサポート) node:fs: writeFile()でencoding: "ascii"オプションがサポートされました。 https://github.com/denoland/deno/releases/tag/v1.31.3
+deno_std v0.180.0 deno_std v0.180.0がリリースされました。
+std/encoding関連モジュールのディレクトリ構造の見直し (破壊的変更) std/encodingで提供されていたcsv/front_matter/json/jsonc/toml/yamlモジュールが、トップレベルのモジュールとして独立しました。
+今後は、例えば、csvモジュールを利用したい場合はstd/csv/mod.ts、yamlモジュールを利用したい場合はstd/yaml/mod.tsから読み込む必要があります。
+ディレクトリの移動に合わせて、以下の変更も実施されています。
+csvモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 csv/stringify.ts csv/parse.ts csv/stream.ts jsonモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 json/json_parse_stream.ts json/json_stringify_stream.ts json/concatenated_json_parse_stream.ts tomlモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 toml/parse.ts toml/stringify.ts std/http/server_sent_event....</p>
+</div>
+<footer class=entry-footer><span title="2023-03-19 00:00:00 +0000 UTC">March 19, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/03/13〜2023/03/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/19.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/03/06〜2023/03/12の最新情報
 </h2>
 </header>
@@ -273,30 +290,6 @@ Roadmap of 2023 プレイグラウンドにコードの共有機能を実装す�
 </div>
 <footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/01/16〜2023/01/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/22.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Denoのロードマップ (2023年 Q1)
-</h2>
-</header>
-<div class=entry-content>
-<p>Denoの2023年 Q1のロードマップが公開されました。
-https://github.com/denoland/deno/issues/17475 このページでは、新しく実装が検討されている機能などについて紹介いたします。
-deno.jsonでのimportsフィールドのサポート 今までDenoでImport Mapsを利用するには、専用のファイルを用意しておき、それを--import-mapオプションで読むこむ必要がありました。
-現在、deno.jsonで直接Import Mapsを定義できるようにするため、importsオプションの追加が検討されています。
-これが実現されれば、以下のようにdeno.jsonで直接マッピングを定義できるようになります。
-{ "imports": { "redis": "https://deno.land/x/redis@v0.29.0/mod.ts", "dax": "https://deno.land/x/dax@0.24.0/mod.ts" }, "tasks": { "start": "deno run --allow-net --allow-env ./main.ts" } } Deno公式が公開している02-deno-canonical-appにも使用例があるため、よろしければそちらも参照いただければと思います。
-deno:URLのサポート deno:という新しいURLスキームの導入が検討されており、これにより、deno.land/xからのモジュールの読み込みを簡略化できます。
-import $ from "deno:dax@24.0/mod.ts"; await $`echo foobar`; また、deno.land/xでも機能の拡張が予定されているようで，/x/some-packageにアクセスされた際は/x/some-package/mod.tsにリダイレクトさせることが検討されているようです。
-例えば、deno:dax@24.0と記述した場合、/x/dax@0.24.0/mod.tsが読み込まれます。
-package.jsonのサポート Deno本体でpackage.jsonのサポートが検討されているようです。
-例えば、以下のような内容のpackage.jsonがあったとします。
-{ "type": "module", "scripts": { "main": "deno run -A main.ts" }, "dependencies": { "chalk": "^5.0", "deno-redis": "deno:redis@~0.29.0/mod.ts" } } Denoはpackage.jsonの"dependencies"で定義された依存関係を元に、コード中のbare specifierを解釈します。(もしImport Mapsファイルまたはdeno.jsonでもマッピングが定義されている場合は、package.jsonよりもそれらのファイルの設定が優先されます)
-例えば、以下のようなスクリプトが存在する場合、deno-redisはhttps://deno.land/x/redis@v0.29.0/mod.tsとして解釈され、chalkについてはnpmレジストリからv5.xがダウンロードされます。
-import { connect } from "deno-redis"; import chalk from "chalk"; const redis = await connect({ hostname: "127....</p>
-</div>
-<footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
-<a class=entry-link aria-label="post link to Denoのロードマップ (2023年 Q1)" href=https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

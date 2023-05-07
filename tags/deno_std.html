@@ -81,6 +81,26 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/05/01〜2023/05/07の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33.2 Deno v1.33.2がリリースされました。
+Deno KV Deno.KvU64にvalueOf/toStringが実装されました。
+assert(new Deno.KvU64(1n) + 2n === 3n); assert(new Deno.KvU64(123n).toString() === "123"); また、Deno.Kvのコンストラクタを直接呼ぶと、エラーが発生するように変更されました。(Deno.openKvの使用が推奨されるため)
+Node.js互換性 node:process: process.releaseが実装されました。 node:http: ClientRequest.setTimeoutに0を渡すとタイムアウトが無効化されるように修正されました。 その他 パフォーマンス向上のため、Windows以外の環境では、グローバルアロケータやArrayBufferの割り当ての用途としてjemallocが使用されるように変更されました。 beforeunloadのリスナ内でpreventDefaultを呼んでいると、Deno.test内で発生したUncaught Errorが画面に表示されなくなる問題が修正されました。 WebSocketクライアントが適切にクローズされなかった場合、WebSocketサーバがハングする問題が修正されました。 引数なしでURL.canParse()が呼ばれた際に、falseを返すのではなくTypeErrorが発生するように修正されました。 deno_std v0.186.0 deno_std v0.186.0がリリースされました。
+std/path sepが非推奨化されました。
+今後はSEPの使用が推奨されます。
+std/async deadline.ts: signalオプションによるキャンセルがサポートされました。 pool.tsがブラウザ互換になりました。 std/http/method.tsの追加 isHttpMethodで与えられた文字列が正しいHTTPメソッドであるか判定できます。
+import { isHttpMethod } from "https://deno.land/std@0.186.0/http/method.ts"; assert(isHttpMethod("GET")); assert(isHttpMethod("POST")); assert(!isHttpMethod("get")); assert(!isHttpMethod("foo")); std/http/file_server.ts Rangeヘッダが仕様どおりにハンドリングされるように改善されました。
+std/http/server.ts serve()ですでに使用中のportを指定した際に、たまにAddrInUseではなくTypeError: Cannot read properties of undefined (reading 'port')が発生する問題が修正されました。
+std/http/server_sent_event.ts ServerSentEventをeventInit引数を渡さずに作成すると、TypeErrorが発生する問題が修正されました。...</p>
+</div>
+<footer class=entry-footer><span title="2023-05-07 00:00:00 +0000 UTC">May 7, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/01〜2023/05/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/05/07.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/04/24〜2023/04/30の最新情報
 </h2>
 </header>
@@ -273,27 +293,6 @@ Remove std/node, it was merged into Deno itself (denoland/deno_std#3206) 今後�
 </div>
 <footer class=entry-footer><span title="2023-02-19 00:00:00 +0000 UTC">February 19, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/02/13〜2023/02/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/19.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/02/06〜2023/02/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.30.3 Deno v1.30.3がリリースされました。
-esm.shやunpkg.comなどからパッケージを読み込むと、deno lspが停止してしまう問題が修正されています。
-また、console.log()などでclassを出力する際のフォーマットも改善されています。
-class User {} console.info(User); // v1.30.3: `[Class: User]` // v1.30.2: `[Function: User]` https://github.com/denoland/deno/releases/tag/v1.30.3
-deno_std v0.177.0 deno_std v0.177.0がリリースされました。
-std/encoding/csv - BOMのサポート stringify()にbomオプションを指定できるようになりました。
-trueを指定すると、出力されるCSVの先頭にBOMが付与されます。
-また、trimLeadingSpaceオプションが未設定の場合でもparse()がBOMを認識するように改善されています。
-std/node 以下のバグが修正されています。
-node:child_process: execFile()にutil.promisify()がうまく適用されない問題が修正されています。 node:process: 標準入力にファイルがリダイレクトされている場合に、ファイルの末尾に達してもprocess.stdinからnullが返却されない問題が修正されています。 std/semver semver.increment()のmetadata引数に空文字列が渡された際に、ビルドメタデータが未設定にならない問題が修正されています。
-import * as semver from "https://deno.land/std@0.177.0/semver/mod.ts"; const v = semver.increment( "1.2.3+1", // version "major", // release undefined, // options undefined, // identifier "", // metadata ); assert(v === "2....</p>
-</div>
-<footer class=entry-footer><span title="2023-02-12 00:00:00 +0000 UTC">February 12, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/02/06〜2023/02/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/12.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
