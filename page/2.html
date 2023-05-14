@@ -77,6 +77,29 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Denoでpackage.jsonやnpmパッケージのサポートが入った理由について
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoの公式ブログで、Deno v1.31でpackage.jsonサポートが実装された背景に関する解説が公開されました。
+Why We Added package.json Support to Deno このページでは、こちらの記事を参考に内容を要約していきます。
+背景について Denoにnpmパッケージやpackage.jsonのサポートが導入されたのは、以下における各課題の解決や既存のNode.jsプロジェクトを直接Denoで動作させられるようにすることが目的のようです。
+依存関係の重複問題 例えば、アプリケーションが依存しているモジュールAとモジュールBがそれぞれ以下のモジュールに依存していたとします。
+https://deno.land/std@0.180.0/async/deferred.ts https://deno.land/std@0.181.0/async/deferred.ts もし仮にstd/async/deferred.tsの内容が0.180.0と0.181.0で同一であったとしても、URL importの性質上、これらの両方のバージョンがモジュールグラフの中に含まれてしまうという課題があります。
+既存のリモートモジュール管理における課題 Denoではdeps.tsやImport mapsなどによってリモートモジュールを管理する方法がありますが、これらには以下のような課題があります。
+deps.ts package.jsonなどと比較すると冗長になってしまいがち ただし、Module DeclarationsやModule Source Importsなどの仕組みにより、ある程度改善の余地はある模様です Import Maps 合成可能ではないという欠点があること (プロセスにつき1つしかImport Mapsを使用できない) CDNに関する課題 Denoではesm.shなどを活用することで一部のnpmパッケージを利用することはできるものの、性質上、どうしてもサポートができないnpmパッケージがでてきてしまうという課題があります。
+対象のnpmパッケージがtarアーカイブ中に特定のテキストファイルなどが含まれていることを前提としている場合などは、動作させることが困難になってしまいます。
+例としては、bullmqなどのように、パッケージ内でテキスト形式でLuaスクリプトを管理しているパッケージなども存在し、こういったパッケージをサポートすることが難しくなります。
+今後について npmパッケージやpackage.jsonなどのサポートがDenoに入ったとしても、URL importなどの既存のDenoの仕組みは将来に渡ってもサポートが予定されているということが説明されています。
+また、新しいメジャーバージョン (Deno v2)を数カ月後にリリースすることを目標に開発が進められているようです。
+Deno v2では、上記の依存関係の重複問題などの解消を目的に、deno:URLのサポートなどが検討されているようです。
+import $ from "deno:dax@24.0/mod.ts"; await $`echo foobar`; Deno本体でsemverの解決をできるようにすることで、依存関係の重複問題などを緩和することなどが計画されているようです。</p>
+</div>
+<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to Denoでpackage.jsonやnpmパッケージのサポートが入った理由について" href=https://uki00a.github.io/deno-weekly/articles/deno/why-deno-supports-package-json.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2023/03/13〜2023/03/19の最新情報
 </h2>
 </header>
@@ -252,28 +275,6 @@ std/io/readers.tsモジュールの削除 (破壊的変更) std/io/readers....</
 </div>
 <footer class=entry-footer><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/01/23〜2023/01/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/29.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Deno v1.30
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.30がリリースされました。
-この記事では主な変更点などについて解説します。
-Node.js互換性の改善 2023年 Q1のロードマップで発表されていたNode.js組み込みパッケージの利用が正式にサポートされました。
-以下のように、node:&lt;パッケージ名>の形式でimportを記述すると、Node.js組み込みパッケージをDenoから利用することができます。
-import { EventEmitter } from "node:events"; const emitter = new EventEmitter(); emitter.on("foo", console.log); emitter.emit("foo", "bar"); また、Node-APIの互換性の改善も引き続き実施されており、以下のAPIなどの互換性が向上されています。
-napi_adjust_external_memory napi_detach_arraybuffer napi_is_detached_arraybuffer deno.jsonでのImport Mapsの定義がサポート こちらも2023年 Q1のロードマップで発表されていた機能になります。
-deno.jsonでimportsやscopesなどが定義されていると、--import-map使用時と同様に、deno.jsonの定義内容を元にDenoがbare specifierが解釈してくれます。
-例えば、以下のような内容のdeno.jsonが存在したとします。
-{ "imports": { "dax": "https://deno.land/x/dax@0.24.0/mod.ts" } } この場合、ソースコードでは以下のようにしてdaxモジュールを利用することができます。
-import { $ } from "dax"; await $`echo foobar`; deno fmtでセミコロンの有無を制御できるように 今まで、Denoに搭載されたフォーマッタであるdeno fmtコマンドでは、ソースコードにおける行末のセミコロンの有無をカスタマイズすることができませんでした。
-今回のリリースでは、deno.jsonでfmt.options.semiColonsオプションがサポートされました。 このオプションにfalseを設定すると、deno fmtの実行時に行末のセミコロンが取り除かれます。
-{ "fmt": { "options": { "semiColons": false } } } また、--options-no-semicolonsオプションにより、CLI経由でセミコロンの有無を制御することも可能です。...</p>
-</div>
-<footer class=entry-footer><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.30" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.30.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

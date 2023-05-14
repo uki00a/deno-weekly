@@ -81,6 +81,29 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/06/21〜2021/06/27の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.11.2がリリースされました Deno v1.11.2がリリースされました。
+このリリースでは、deno lspへの機能追加やWeb標準との互換性の向上などが実施されています。
+変更点:
+deno lspでリントエラーを無視するためのクイックフィックスアクションが実装されました。 deno lspで文字列やコメント中に現れた識別子がリネームされないように修正されました。 Deno.emit()のmoduleオプションで"es2020"がサポートされました。 Console, URL, URLSearchParams, 及びWebsocketオブジェクトがWPTにパスするように修正されました。 fetchでHEADまたはOPTIONSリクエストを送信する際はレスポンスボディが空になるように修正されました。 WorkerがURLオブジェクトを受け付けるようになりました。 https://github.com/denoland/deno/releases/tag/v1.11.2
+Deno DeployのBeta 1がリリースされました Deno DeployのBeta 1がリリースされました。
+主な変更点:
+BroadcastChannelを使用したエッジワーカー間での通信がサポートされました。(https://deno.com/deploy/docs/runtime-broadcast-channel) カスタムのTLS証明書のサポート https://deno.com/blog/deploy-beta1
+fresh - Deno Deployで動作するWebフレームワーク freshというDeno Deploy上で動作するPreactをベースにしたWebフレームワークが公開されました。
+特徴:
+設定が不要 Next.jsライクなファイルシステムベースのルーティングやAPI Routesなどをサポートしています。 ページのレンダリングはエッジワーカー上で実行されるため、事前のビルドステップが必要ありません。 https://github.com/lucacasonato/fresh
+xml - Denoで動作するXMLモジュール xmlはDenoで動作するXMLモジュールです。
+XMLドキュメントのパースやJavaScriptオブジェクトからXMLドキュメントへの変換などがサポートされています。
+https://github.com/lowlighter/xml</p>
+</div>
+<footer class=entry-footer><span title="2021-06-27 00:00:00 +0000 UTC">June 27, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/06/21〜2021/06/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/06/27.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/06/14〜2021/06/20の最新情報
 </h2>
 </header>
@@ -263,33 +286,6 @@ deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用
 </div>
 <footer class=entry-footer><span title="2021-04-04 00:00:00 +0000 UTC">April 4, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/03/29〜2021/04/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/04.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/03/22〜2021/03/28の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno本体の最新情報 Deno v1.8.2がリリース Deno v1.8.2がリリースされました。
-このリリースでは、バグ修正などを中心に実施されています。
-変更点:
-Deno.createHttpClientを使用した際に、User-Agentヘッダが設定されない問題が修正された deno fmtでmarkdownファイルのスペースなどが適切にフォーマットされない問題が修正された deno lspでエディタ以外でファイルが編集されていると、“The current snapshot version is missing.“エラーが発生する問題が修正された deno lspでファイルの診断(diagnostics)が固有のスレッドで実行されるようになった https://github.com/denoland/deno/releases/tag/v1.8.2
-deno_std v0.91.0がリリース deno_std v0.91.0がリリースされました。
-主な変更点:
-encoding/yaml: EXTENDED_SCHEMAが追加され、Yamlファイル内でJSの関数や正規表現などを使用できるようになった io/streams: readerFromIterable()が追加された node/fs: utimes/utimesSyncが実装された など
-https://github.com/denoland/deno_std/releases/tag/0.91.0
-status.deno.landが公開された status.deno.landが公開されました。
-このサイトでは、Denoのモジュールレジストリなどの運用状況を確認することができます。
-https://status.deno.land
-サードパーティモジュールなどの最新情報 swdev - Service WorkerベースのNo bundleビルドツール swdevという、Service WorkerベースのNo bundleビルドツールが公開されました。
-以下のようが機能が提供されているようです:
-Service Workerを利用したTypeScriptやSvelteファイルの変換 Deno.watchFs()ベースのCache Busting Rollupベースのプロダクションビルド https://github.com/mizchi/swdev
-deno-sqlite v2.4.0がリリース deno-sqlite v2.4.0がリリースされました。
-このリリースでは、以下のような変更が加わっています:
-SQLiteのv3.35.0への更新 DB....</p>
-</div>
-<footer class=entry-footer><span title="2021-03-28 00:00:00 +0000 UTC">March 28, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/03/22〜2021/03/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/28.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

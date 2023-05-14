@@ -81,6 +81,32 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/05/08〜2023/05/14の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33.3 Deno v1.33.3がリリースされました。
+deno compileでnpmパッケージがサポート deno compileでnpm:やnode:URLに依存したアプリケーションの実行可能ファイルの生成がサポートされました。
+利用する際は、現時点では--unstableの指定が必要です。
+import chalk from "npm:chalk@5.2.0"; console.log(chalk.green.bold("Hello")); $ deno compile --unstable --output=example main.js $ ./example また、deno compileによるコンパイル対象として、直接npmパッケージを指定することもできるようです。
+$ deno compile --unstable --output=cowsay npm:cowsay@1.5.0 $ ./cowsay hello Deno.serve() レスポンスの自動的な圧縮が実装されました。
+現時点ではgzipのみがサポートされています。(Content-Encoding: gzip)
+それ以外には、--watchオプションと併用した際の安定性の改善が実施されています。
+Deno.Command Deno.ChildProcess#killが、システムの全実行可能ファイルに対する--allow-run権限を要求する問題が修正されました。
+v1.33.2までは、例えば--allow-run=redis-cliのように特定のバイナリのみを許可している場合、Deno.ChildProcess#killで権限エラーが発生する問題があったため、このリリースで修正されています。
+deno lsp documentPreloadLimitオプションが追加されました。
+これにより、deno lspがプリロードするドキュメント数をカスタマイズできます。
+vscode_denoでは、v3.18.0でdocumentPreloadLimitオプションのサポートが入っているようです。
+その他 Deno.seekSyncとDeno.seekの型定義が統一されていなかった問題が修正されました。(#19060) node:module: Module.runMain()が実装されました。(ts-nodeで使用されているようです) リダイレクトするリモートモジュールへの依存があった場合、deno vendorの実行時にパニックする問題が修正されました。 Deno.UnsafeCallbackが使用されていると、deno testがハングすることのある問題が修正されました。 deno_std v0.187.0 deno_std v0.187.0がリリースされました。
+std/regexpが追加 新しいモジュールとしてstd/regexpが追加されました。
+現状では、正規表現のメタ文字をエスケープするための機能が提供されています。
+import { escape } from "https://deno.land/std@0.187.0/regexp/escape.ts"; const regexp = new RegExp(`^${escape("ba....</p>
+</div>
+<footer class=entry-footer><span title="2023-05-14 00:00:00 +0000 UTC">May 14, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/08〜2023/05/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/05/14.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/05/01〜2023/05/07の最新情報
 </h2>
 </header>
@@ -275,29 +301,6 @@ $ deno compile -o main main....</p>
 </div>
 <footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.32" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.32.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Denoでpackage.jsonやnpmパッケージのサポートが入った理由について
-</h2>
-</header>
-<div class=entry-content>
-<p>Denoの公式ブログで、Deno v1.31でpackage.jsonサポートが実装された背景に関する解説が公開されました。
-Why We Added package.json Support to Deno このページでは、こちらの記事を参考に内容を要約していきます。
-背景について Denoにnpmパッケージやpackage.jsonのサポートが導入されたのは、以下における各課題の解決や既存のNode.jsプロジェクトを直接Denoで動作させられるようにすることが目的のようです。
-依存関係の重複問題 例えば、アプリケーションが依存しているモジュールAとモジュールBがそれぞれ以下のモジュールに依存していたとします。
-https://deno.land/std@0.180.0/async/deferred.ts https://deno.land/std@0.181.0/async/deferred.ts もし仮にstd/async/deferred.tsの内容が0.180.0と0.181.0で同一であったとしても、URL importの性質上、これらの両方のバージョンがモジュールグラフの中に含まれてしまうという課題があります。
-既存のリモートモジュール管理における課題 Denoではdeps.tsやImport mapsなどによってリモートモジュールを管理する方法がありますが、これらには以下のような課題があります。
-deps.ts package.jsonなどと比較すると冗長になってしまいがち ただし、Module DeclarationsやModule Source Importsなどの仕組みにより、ある程度改善の余地はある模様です Import Maps 合成可能ではないという欠点があること (プロセスにつき1つしかImport Mapsを使用できない) CDNに関する課題 Denoではesm.shなどを活用することで一部のnpmパッケージを利用することはできるものの、性質上、どうしてもサポートができないnpmパッケージがでてきてしまうという課題があります。
-対象のnpmパッケージがtarアーカイブ中に特定のテキストファイルなどが含まれていることを前提としている場合などは、動作させることが困難になってしまいます。
-例としては、bullmqなどのように、パッケージ内でテキスト形式でLuaスクリプトを管理しているパッケージなども存在し、こういったパッケージをサポートすることが難しくなります。
-今後について npmパッケージやpackage.jsonなどのサポートがDenoに入ったとしても、URL importなどの既存のDenoの仕組みは将来に渡ってもサポートが予定されているということが説明されています。
-また、新しいメジャーバージョン (Deno v2)を数カ月後にリリースすることを目標に開発が進められているようです。
-Deno v2では、上記の依存関係の重複問題などの解消を目的に、deno:URLのサポートなどが検討されているようです。
-import $ from "deno:dax@24.0/mod.ts"; await $`echo foobar`; Deno本体でsemverの解決をできるようにすることで、依存関係の重複問題などを緩和することなどが計画されているようです。</p>
-</div>
-<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
-<a class=entry-link aria-label="post link to Denoでpackage.jsonやnpmパッケージのサポートが入った理由について" href=https://uki00a.github.io/deno-weekly/articles/deno/why-deno-supports-package-json.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

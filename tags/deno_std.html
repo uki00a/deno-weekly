@@ -81,6 +81,32 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/05/08〜2023/05/14の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33.3 Deno v1.33.3がリリースされました。
+deno compileでnpmパッケージがサポート deno compileでnpm:やnode:URLに依存したアプリケーションの実行可能ファイルの生成がサポートされました。
+利用する際は、現時点では--unstableの指定が必要です。
+import chalk from "npm:chalk@5.2.0"; console.log(chalk.green.bold("Hello")); $ deno compile --unstable --output=example main.js $ ./example また、deno compileによるコンパイル対象として、直接npmパッケージを指定することもできるようです。
+$ deno compile --unstable --output=cowsay npm:cowsay@1.5.0 $ ./cowsay hello Deno.serve() レスポンスの自動的な圧縮が実装されました。
+現時点ではgzipのみがサポートされています。(Content-Encoding: gzip)
+それ以外には、--watchオプションと併用した際の安定性の改善が実施されています。
+Deno.Command Deno.ChildProcess#killが、システムの全実行可能ファイルに対する--allow-run権限を要求する問題が修正されました。
+v1.33.2までは、例えば--allow-run=redis-cliのように特定のバイナリのみを許可している場合、Deno.ChildProcess#killで権限エラーが発生する問題があったため、このリリースで修正されています。
+deno lsp documentPreloadLimitオプションが追加されました。
+これにより、deno lspがプリロードするドキュメント数をカスタマイズできます。
+vscode_denoでは、v3.18.0でdocumentPreloadLimitオプションのサポートが入っているようです。
+その他 Deno.seekSyncとDeno.seekの型定義が統一されていなかった問題が修正されました。(#19060) node:module: Module.runMain()が実装されました。(ts-nodeで使用されているようです) リダイレクトするリモートモジュールへの依存があった場合、deno vendorの実行時にパニックする問題が修正されました。 Deno.UnsafeCallbackが使用されていると、deno testがハングすることのある問題が修正されました。 deno_std v0.187.0 deno_std v0.187.0がリリースされました。
+std/regexpが追加 新しいモジュールとしてstd/regexpが追加されました。
+現状では、正規表現のメタ文字をエスケープするための機能が提供されています。
+import { escape } from "https://deno.land/std@0.187.0/regexp/escape.ts"; const regexp = new RegExp(`^${escape("ba....</p>
+</div>
+<footer class=entry-footer><span title="2023-05-14 00:00:00 +0000 UTC">May 14, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/08〜2023/05/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/05/14.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/05/01〜2023/05/07の最新情報
 </h2>
 </header>
@@ -274,25 +300,6 @@ import { EventEmitter } from "https://deno.land/std@0.177.0/node/events.ts"; std
 </div>
 <footer class=entry-footer><span title="2023-02-26 00:00:00 +0000 UTC">February 26, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/02/20〜2023/02/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/26.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/02/13〜2023/02/19の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>先週のDenoの変更点 先週はDenoのリリースが行われていないため、直近のコミット内容をいくつか紹介いたします。
-これらの変更が含まれると思われるDeno v1.31については、今週にリリースされる予定のようです。
-deno_std/nodeのDeno本体への組み込み 今まで、deno_std/nodeとDeno本体は別々に開発されていた都合もあり、Denoからnpmパッケージを利用する際は、https://deno.land/std/nodeのダウンロードが背後で行われていました。
-以下のコミットなどにおいて、V8のスナップショットの仕組みを利用して、deno_std/nodeをDeno本体へ組み込む変更が行われています。
-refactor: allow to provide polyfills for Node modules from the snapshot (denoland/deno#17706) feat(ext/node): embed std/node into the snapshot (denoland/deno#17724) feat: wire up ext/node to the Node compatibility layer (denoland/deno#17785) これにより、https://deno.land/std/nodeからのモジュールのダウンロードが不要になるため、起動の高速化などが期待されます。
-また、deno_std/nodeがDeno本体へ組み込まれたことにより、Node.js互換レイヤーの実装でDenoの内部APIの活用が行いやすくなり、パフォーマンスの向上や今まで実装が難しかったモジュールの対応などが進みやすくなりそうです。具体的には、以下のPRでnode:v8の実装が追加されています。
-feat(ext/node): implement node:v8 (denoland/deno#17806) 今後、Node.js互換レイヤーの実装をJavaScriptからRustに置き換えていくことも検討されているようで、以下のissueで今後の計画が列挙されています。
-Rewrite some of JavaScript API in “ext/node” to Rust (denoland/deno#17809) また、これらの変更を受けて、deno_std/nodeについては削除が検討されているようです。(今後は、Deno本体のリポジトリで開発が進められるようです)
-Remove std/node, it was merged into Deno itself (denoland/deno_std#3206) 今後、もしdeno_std/nodeを利用したいケースが出てきた際は、削除前のバージョンを明示してimportをする必要が出てくるかもしれません。...</p>
-</div>
-<footer class=entry-footer><span title="2023-02-19 00:00:00 +0000 UTC">February 19, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/02/13〜2023/02/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/19.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

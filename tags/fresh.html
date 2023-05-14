@@ -81,6 +81,32 @@ fresh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/05/08〜2023/05/14の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33.3 Deno v1.33.3がリリースされました。
+deno compileでnpmパッケージがサポート deno compileでnpm:やnode:URLに依存したアプリケーションの実行可能ファイルの生成がサポートされました。
+利用する際は、現時点では--unstableの指定が必要です。
+import chalk from "npm:chalk@5.2.0"; console.log(chalk.green.bold("Hello")); $ deno compile --unstable --output=example main.js $ ./example また、deno compileによるコンパイル対象として、直接npmパッケージを指定することもできるようです。
+$ deno compile --unstable --output=cowsay npm:cowsay@1.5.0 $ ./cowsay hello Deno.serve() レスポンスの自動的な圧縮が実装されました。
+現時点ではgzipのみがサポートされています。(Content-Encoding: gzip)
+それ以外には、--watchオプションと併用した際の安定性の改善が実施されています。
+Deno.Command Deno.ChildProcess#killが、システムの全実行可能ファイルに対する--allow-run権限を要求する問題が修正されました。
+v1.33.2までは、例えば--allow-run=redis-cliのように特定のバイナリのみを許可している場合、Deno.ChildProcess#killで権限エラーが発生する問題があったため、このリリースで修正されています。
+deno lsp documentPreloadLimitオプションが追加されました。
+これにより、deno lspがプリロードするドキュメント数をカスタマイズできます。
+vscode_denoでは、v3.18.0でdocumentPreloadLimitオプションのサポートが入っているようです。
+その他 Deno.seekSyncとDeno.seekの型定義が統一されていなかった問題が修正されました。(#19060) node:module: Module.runMain()が実装されました。(ts-nodeで使用されているようです) リダイレクトするリモートモジュールへの依存があった場合、deno vendorの実行時にパニックする問題が修正されました。 Deno.UnsafeCallbackが使用されていると、deno testがハングすることのある問題が修正されました。 deno_std v0.187.0 deno_std v0.187.0がリリースされました。
+std/regexpが追加 新しいモジュールとしてstd/regexpが追加されました。
+現状では、正規表現のメタ文字をエスケープするための機能が提供されています。
+import { escape } from "https://deno.land/std@0.187.0/regexp/escape.ts"; const regexp = new RegExp(`^${escape("ba....</p>
+</div>
+<footer class=entry-footer><span title="2023-05-14 00:00:00 +0000 UTC">May 14, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/08〜2023/05/14の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/05/14.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/04/10〜2023/04/16の最新情報
 </h2>
 </header>
@@ -297,32 +323,6 @@ devモード(deno task start)時は自動で有効化されるため、特に設
 </div>
 <footer class=entry-footer><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span></footer>
 <a class=entry-link aria-label="post link to Fresh v1.1" href=https://uki00a.github.io/deno-weekly/articles/fresh/v1.1.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/08/01〜2022/08/07の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.24.2 Deno v1.24.2がリリースされました。
-FFIに関する改善 Deno.UnsafePointerView#getArrayBufferがpointerが指すデータのコピーではなく、pointerが指すデータを直接返すように修正されています。
-また、Deno.PointerValueが追加されています。 これに合わせて、ポインタを取り扱う各APIの戻り値などでもこの型が使用されるように修正されています。
-その他には、戻り値が64ビット値の関数に対してもV8 Fast API Callsによる最適化が適用されるようになりました。
-その他の変更点 プロパティにErrorオブジェクトが設定されたオブジェクトをthrowすると、プロセスがパニックする問題が修正されました。 deno vendor: dynamic importに失敗した際に、プロセスがパニックする問題が修正されました。 deno lsp: import節の入力補完において、レジストリ補完の最中のみ/がコミット文字として使用されるように修正されました。 https://github.com/denoland/deno/releases/tag/v1.24.2
-deno_std v0.151.0 deno_std v0.151.0がリリースされました。
-Node.jsの互換レイヤーに関するバグ修正や機能の追加が実施されています。
-変更点:
-node/fs: fs.existsSync()が例外をthrowする可能性がある問題が修正されました。 node/fs: fs.watchFile()とfs.unwatchFile()が実装されました。 node/http(s): http.request()などでprotocolを省略した際に、デフォルトで適切なプロトコルが設定されるように修正されました。 https://github.com/denoland/deno_std/releases/tag/0.151.0
-Deno Merch Deno公式のショップサイトが公開されました。
-https://merch.deno.com/ ソースコードも公開されており、Fresh/Twind/SWR/GraphQL Storefront API (Shopify)をベースに実装されているようです。
-https://github.com/denoland/merch
-Freshのロードマップ Freshのロードマップが公開されました。
-Roadmap (#563) 直近では、以下の変更が予定されているようです。
-プラグインシステムの実装 (現状、Twindプラグインの実装が進行しているようです) &lt;Head>コンポーネントの非推奨化 (&lt;head>タグによって直接メタ情報を埋め込めるようにする予定のようです) https://github.com/denoland/fresh/issues/563
-PrismaのDenoサポートについて Prismaの以下のissueで、Denoのサポートについて議論されています。...</p>
-</div>
-<footer class=entry-footer><span title="2022-08-07 00:00:00 +0000 UTC">August 7, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/01〜2022/08/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/07.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

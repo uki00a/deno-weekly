@@ -82,6 +82,28 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Deno v1.30
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.30がリリースされました。
+この記事では主な変更点などについて解説します。
+Node.js互換性の改善 2023年 Q1のロードマップで発表されていたNode.js組み込みパッケージの利用が正式にサポートされました。
+以下のように、node:&lt;パッケージ名>の形式でimportを記述すると、Node.js組み込みパッケージをDenoから利用することができます。
+import { EventEmitter } from "node:events"; const emitter = new EventEmitter(); emitter.on("foo", console.log); emitter.emit("foo", "bar"); また、Node-APIの互換性の改善も引き続き実施されており、以下のAPIなどの互換性が向上されています。
+napi_adjust_external_memory napi_detach_arraybuffer napi_is_detached_arraybuffer deno.jsonでのImport Mapsの定義がサポート こちらも2023年 Q1のロードマップで発表されていた機能になります。
+deno.jsonでimportsやscopesなどが定義されていると、--import-map使用時と同様に、deno.jsonの定義内容を元にDenoがbare specifierが解釈してくれます。
+例えば、以下のような内容のdeno.jsonが存在したとします。
+{ "imports": { "dax": "https://deno.land/x/dax@0.24.0/mod.ts" } } この場合、ソースコードでは以下のようにしてdaxモジュールを利用することができます。
+import { $ } from "dax"; await $`echo foobar`; deno fmtでセミコロンの有無を制御できるように 今まで、Denoに搭載されたフォーマッタであるdeno fmtコマンドでは、ソースコードにおける行末のセミコロンの有無をカスタマイズすることができませんでした。
+今回のリリースでは、deno.jsonでfmt.options.semiColonsオプションがサポートされました。 このオプションにfalseを設定すると、deno fmtの実行時に行末のセミコロンが取り除かれます。
+{ "fmt": { "options": { "semiColons": false } } } また、--options-no-semicolonsオプションにより、CLI経由でセミコロンの有無を制御することも可能です。...</p>
+</div>
+<footer class=entry-footer><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.30" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.30.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2023/01/16〜2023/01/22の最新情報
 </h2>
 </header>
@@ -283,24 +305,6 @@ Building Fullstack React Apps with Ultra https://github.com/exhibitionist-digita
 </div>
 <footer class=entry-footer><span title="2022-12-11 00:00:00 +0000 UTC">December 11, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/12/05〜2022/12/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/11.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2022/11/28〜2022/12/04の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.28.3 Deno v1.28.3がリリースされました。
-大きな変更点として、Deno v1.28.0で実装されたDeno.Commandに関するAPIの変更が実施されています。(Deno.CommandAPIの見直しについて)
-また、Node.js互換性の改善についても引き続き実施されています。
-node:moduleのcreateRequireで絶対パスがサポート deno runコマンドでnpm:と--inspect-brkの併用がサポート packages.jsonのexports.typesサポートに関する改善 その他の変更点 プロセス停止前に未解決のPromiseが存在する際のエラーメッセージが改善 (問題が発生している箇所がエラーメッセージに表示されるように) ReadableStreamのリーダー周辺の型定義の改善 Denoのトランスパイル結果のキャッシュとdeno test --coverageで生成されたカバレッジの整合性が取れなかった場合に、プロセスがパニックする問題が修正 deno replの履歴管理に関する信頼性の向上 https://github.com/denoland/deno/releases/tag/v1.28.3
-deno_std v0.167.0 deno_std v0.167.0がリリースされています。
-std/async/retryモジュールの追加 std/asyncにExponential backoffアルゴリズムに基づいたリトライ機能を提供するモジュールが追加されました。
-import { retry } from "https://deno.land/std@0.167.0/async/retry.ts"; const result = await retry(async () => { const result = await doSomeAsyncOperation(); return result; }, { multiplier: 2, maxTimeout: 16_000, maxAttempts: 10, minTimeout: 500, }); std/testing/typesモジュールの追加 std/testingにTypeScriptの型をテストするためのモジュールが追加されています。
-import type { Has, IsExact, IsNullable } from "https://deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-12-04 00:00:00 +0000 UTC">December 4, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/11/28〜2022/12/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/12/04.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
