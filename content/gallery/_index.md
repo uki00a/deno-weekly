@@ -16,6 +16,7 @@ title: ギャラリー
 |[deno_mongo](https://github.com/denodrivers/deno_mongo)|MongoDBクライアント|
 |[edgedb-deno](https://github.com/edgedb/edgedb-deno)|EdgeDBドライバ|
 |[x/database](https://github.com/jeremyBanks/database)|データベースドライバの共通インターフェース|
+|[kv-toolbox](https://github.com/kitsonk/kv-toolbox)|Deno KVのユーティリティライブラリ|
 |[Nessie](https://github.com/halvardssm/deno-nessie)|データベースマイグレーションツール|
 |[Oak](https://github.com/oakserver/oak)|Webフレームワーク|
 |[fresh](https://github.com/lucacasonato/fresh)|Deno Deployで動作するPreactベースのフレームワーク|
