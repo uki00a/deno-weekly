@@ -81,6 +81,26 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/05/15〜2023/05/21の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33.4 Deno v1.33.4がリリースされました。
+Node.js互換性の改善 組み込みモジュールの改善
+node:crypto: getDiffieHellman/createDiffieHellmanが実装されました。 node:url: formatにURLオブジェクトを渡した際に、適切にフォーマットが行われなかった問題が修正されました。 node:child_process: spawnのstdioオプションにStreamを渡せるようになりました。 これによりnpm-run-all が動くようになったようです。 Node-API
+napi_add_finalizerが実装されました。 BigInt関連のAPIの互換性が改善されています。 npm
+optionalDependenciesのサポートが改善されています。
+Deno KV Deno.Kv.close()の戻り値の型定義がPromise&lt;void>からvoidへ変更されました。(実装は修正されていませんが、TypeScriptの型定義に誤りがあったようです)
+Deno.serve()のバグ修正 リクエストがキャンセルされると、Denoがパニックすることがある問題が修正されました。
+Web API BroadcastChannelの型定義がlib.deno.unstable.d.tsへ移動されました。 unstable APIであるにも関わらず、--unstableなしでも型定義を参照できてしまう問題があったようです。 WebSocketで短い時間内で多くのメッセージを送信すると、いくつかのメッセージが失われることがある問題が修正されました。 fetch()でIPアドレスを指定してHTTPSリクエストを送信する(例: https://1.1.1.1/)とエラーが発生する問題が解消されました。 deno_std v0.188.0 deno_std v0.188.0がリリースされました。
+std/flags collectとdefaultを併用した際に、オプションにネストされた配列が設定される問題が修正されました。
+import { parse } from "https://deno.land/std@0.188.0/flags/mod.ts"; const options = parse([], { collect: ["values"], default: { values: ["foo", "bar"], }, }); console....</p>
+</div>
+<footer class=entry-footer><span title="2023-05-21 00:00:00 +0000 UTC">May 21, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/15〜2023/05/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/05/21.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/05/08〜2023/05/14の最新情報
 </h2>
 </header>
@@ -276,30 +296,6 @@ std/fsの改善 std/fs/expand_glob: expandGlob()にfollowSymlinksオプション
 </div>
 <footer class=entry-footer><span title="2023-03-12 00:00:00 +0000 UTC">March 12, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/03/06〜2023/03/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/12.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/02/20〜2023/02/26の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.31 Deno v1.31がリリースされています。
-以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
-Deno v1.31 Deno v1.31.1 Deno v1.31.1がリリースされています。
-package.jsonサポートに関する改善 以下のいずれかの手段によって、package.jsonの自動探索を無効化できるようになりました。
-DENO_NO_PACKAGE_JSON環境変数に1を設定する --no-configまたは--no-npmを指定する また、package.jsonが見つかった際のnpmパッケージのダウンロードに関する挙動が改善されています。package.jsonで依存関係として指定されたいずれかのパッケージが利用されるタイミングまでnpmパッケージのダウンロードが遅延されます。
-これにより、npmパッケージに依存しないスクリプトを実行する場合は、package.jsonがあってもnpmパッケージがダウンロードされなくなります。
-その他には、package.jsonの以下のスキームから始まるspecifierが無視されるように修正されています。
-workspace: file: git: http: https: Deno.serve()でリモートアドレスの取得がサポート Deno.serve()に渡したhandlerの第2引数にオプションが渡されるようになりました。remoteAddrプロパティ(Deno.NetAddr)からリモートアドレスが取得できます。
-Deno.serve({ handler: (req, { remoteAddr }) => { return Response.json(remoteAddr); }, }); その他のバグ修正 リモートモジュールからdata:URLをimportできなくなっていた問題が修正されています。 静的に解析ができないdynamic importが複数同時に実行された際に、まれにDenoがパニックする問題が修正されています。 Import Mapsでローカルモジュールへのマッピングが定義されていた場合、リモートモジュールからそのローカルモジュールをimportできない問題が修正されています。 https://github.com/denoland/deno/releases/tag/v1.31.1
-deno_std v0.178.0 deno_std v0.178.0がリリースされました。
-std/nodeの削除 Deno v1.31でDeno本体にstd/nodeが組み込まれました。
-その影響により、std/nodeが削除されています。
-もし、今後もstd/nodeを利用したい場合は、バージョンを明示した上でimportをするとよさそうです。
-import { EventEmitter } from "https://deno.land/std@0.177.0/node/events.ts"; std/http/file_server Deno DeployでもETagが返却されるように挙動が改善されています。...</p>
-</div>
-<footer class=entry-footer><span title="2023-02-26 00:00:00 +0000 UTC">February 26, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/02/20〜2023/02/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/26.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -82,6 +82,26 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2023/05/15〜2023/05/21の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.33.4 Deno v1.33.4がリリースされました。
+Node.js互換性の改善 組み込みモジュールの改善
+node:crypto: getDiffieHellman/createDiffieHellmanが実装されました。 node:url: formatにURLオブジェクトを渡した際に、適切にフォーマットが行われなかった問題が修正されました。 node:child_process: spawnのstdioオプションにStreamを渡せるようになりました。 これによりnpm-run-all が動くようになったようです。 Node-API
+napi_add_finalizerが実装されました。 BigInt関連のAPIの互換性が改善されています。 npm
+optionalDependenciesのサポートが改善されています。
+Deno KV Deno.Kv.close()の戻り値の型定義がPromise&lt;void>からvoidへ変更されました。(実装は修正されていませんが、TypeScriptの型定義に誤りがあったようです)
+Deno.serve()のバグ修正 リクエストがキャンセルされると、Denoがパニックすることがある問題が修正されました。
+Web API BroadcastChannelの型定義がlib.deno.unstable.d.tsへ移動されました。 unstable APIであるにも関わらず、--unstableなしでも型定義を参照できてしまう問題があったようです。 WebSocketで短い時間内で多くのメッセージを送信すると、いくつかのメッセージが失われることがある問題が修正されました。 fetch()でIPアドレスを指定してHTTPSリクエストを送信する(例: https://1.1.1.1/)とエラーが発生する問題が解消されました。 deno_std v0.188.0 deno_std v0.188.0がリリースされました。
+std/flags collectとdefaultを併用した際に、オプションにネストされた配列が設定される問題が修正されました。
+import { parse } from "https://deno.land/std@0.188.0/flags/mod.ts"; const options = parse([], { collect: ["values"], default: { values: ["foo", "bar"], }, }); console....</p>
+</div>
+<footer class=entry-footer><span title="2023-05-21 00:00:00 +0000 UTC">May 21, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/15〜2023/05/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/05/21.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2023/05/08〜2023/05/14の最新情報
 </h2>
 </header>
@@ -274,34 +294,6 @@ error: Uncaught AssertionError: Values are not equal: カスタムメッセー�
 </div>
 <footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/03/20〜2023/03/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/26.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Deno v1.32
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.32がリリースされました。
-この記事では主な変更点などについて解説します。
-WebGPU APIの削除 Deno v1.8で追加されたWebGPU APIが削除されました。
-バイナリサイズや起動速度に影響があったというのが理由のようです。
-ただし、削除は一時的なもののようで、将来的には再びWebGPU APIが追加される想定のようです。
-KVストア Deno本体にKVストアが実装されています。
-ただし、こちらについてはまだ公式では紹介などはされておらず、今後、APIなどに大きな変更が入る可能性もあります。
-詳細については、以下の記事を参照いただければと思います。
-Deno v1.32でKVストアが実装されました TypeScript TypeScript v5.0.2へのアップデート Deno内部に搭載されているTypeScriptがv5.0.2へアップデートされました。
-ただし、制限として、ES Decoratorsのサポートについては現時点では除外されているようです。
---allを指定しなかった際の初回の型チェックの実行が高速化 Denoでは型チェックの実行結果をSQLiteにキャッシュしておくことで、型チェックの効率化を図っています。
-しかし、初回の型チェック実行時についてはこのキャッシュの仕組みが効かないため、型チェックの実行効率が少し落ちてしまいます。
-この問題を解消するために、--allが指定されていない際は、ローカルのファイルのみを型チェックするように挙動が変更されました。
-これによって、キャッシュが効いていない場合でも、場合によっては2倍程度の高速化が見られることもあるようです。
-CLIに関する改善 deno compileでdynamic importとWeb Workerがサポート deno compileでdynamic importとWeb Workerを使用したコードのバイナリが作成できるようになりました。
-例えば、以下のようなファイルがあったとします。
-// sum.js export function sum(...numbers) { return numbers.reduce((a, b) => a + b, 0); } // main.js const { sum } = await import("./sum.js"); console.info(sum(1, 2, 3)); このようにシンプルなケースでは、特に設定などは不要でうまく動いてくれます。
-$ deno compile -o main main....</p>
-</div>
-<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.32" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.32.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

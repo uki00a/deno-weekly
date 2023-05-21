@@ -77,6 +77,34 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Deno v1.32
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32がリリースされました。
+この記事では主な変更点などについて解説します。
+WebGPU APIの削除 Deno v1.8で追加されたWebGPU APIが削除されました。
+バイナリサイズや起動速度に影響があったというのが理由のようです。
+ただし、削除は一時的なもののようで、将来的には再びWebGPU APIが追加される想定のようです。
+KVストア Deno本体にKVストアが実装されています。
+ただし、こちらについてはまだ公式では紹介などはされておらず、今後、APIなどに大きな変更が入る可能性もあります。
+詳細については、以下の記事を参照いただければと思います。
+Deno v1.32でKVストアが実装されました TypeScript TypeScript v5.0.2へのアップデート Deno内部に搭載されているTypeScriptがv5.0.2へアップデートされました。
+ただし、制限として、ES Decoratorsのサポートについては現時点では除外されているようです。
+--allを指定しなかった際の初回の型チェックの実行が高速化 Denoでは型チェックの実行結果をSQLiteにキャッシュしておくことで、型チェックの効率化を図っています。
+しかし、初回の型チェック実行時についてはこのキャッシュの仕組みが効かないため、型チェックの実行効率が少し落ちてしまいます。
+この問題を解消するために、--allが指定されていない際は、ローカルのファイルのみを型チェックするように挙動が変更されました。
+これによって、キャッシュが効いていない場合でも、場合によっては2倍程度の高速化が見られることもあるようです。
+CLIに関する改善 deno compileでdynamic importとWeb Workerがサポート deno compileでdynamic importとWeb Workerを使用したコードのバイナリが作成できるようになりました。
+例えば、以下のようなファイルがあったとします。
+// sum.js export function sum(...numbers) { return numbers.reduce((a, b) => a + b, 0); } // main.js const { sum } = await import("./sum.js"); console.info(sum(1, 2, 3)); このようにシンプルなケースでは、特に設定などは不要でうまく動いてくれます。
+$ deno compile -o main main....</p>
+</div>
+<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.32" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.32.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Denoでpackage.jsonやnpmパッケージのサポートが入った理由について
 </h2>
 </header>
@@ -256,25 +284,6 @@ deno_std v0.176.0 deno_std v0....</p>
 </div>
 <footer class=entry-footer><span title="2023-02-05 00:00:00 +0000 UTC">February 5, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/01/30〜2023/02/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/05.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2023/01/23〜2023/01/29の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.30.0 Deno v1.30がリリースされました。
-以下に変更内容をまとめたため、よろしければ参照ください。
-Deno v1.30 deno_std v0.175.0 deno_std v0.175.0がリリースされました。
-非推奨APIの整理などが実施されています。
-std/io/buffer.ts: (破壊的変更) 非推奨APIの削除 以下のAPIが削除されています。
-同名のAPIは引き続き別ファイルで提供されているため、もしこれらを利用されている場合は、以下の移行先ファイルへimportを書き換える必要がありそうです。
-対象API 移行先 BufferFullError std/io/buf_reader.ts BufReader std/io/buf_reader.ts PartialReadError std/io/buf_reader.ts ReadLineResult std/io/buf_reader.ts BufWriter std/io/buf_writer.ts BufWriterSync std/io/buf_writer.ts readDelim std/io/read_delim.ts readStringDelim std/io/read_string_delim.ts readLines std/io/read_lines.ts std/io/files.tsモジュールの削除 (破壊的変更) std/io/files.tsが削除されています。
-このファイルで提供されていたAPIはstd/io/read_range.tsから引き続き利用できるため、今後はそちらへ移行する必要がありそうです。
-std/io/readers.tsモジュールの削除 (破壊的変更) std/io/readers....</p>
-</div>
-<footer class=entry-footer><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/01/23〜2023/01/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/29.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
