@@ -81,6 +81,24 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/05/22〜2023/05/28の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>deno_std v0.189.0 deno_std v0.189.0がリリースされました。
+std/async/retry.ts retry()の内部でジッターが適用されるようになりました。
+std/collections/group_by.ts groupBy()でIterable&lt;T>型の値がサポートされました。
+import { groupBy } from "https://deno.land/std@0.189.0/collections/group_by.ts"; groupBy( new Set([1, 2, 3, 4, 5]), (x) => x % 2 === 0 ? "even" : "odd", ); // Output: { odd: [ 1, 3, 5 ], even: [ 2, 4 ] } また、selector関数が引数として現在処理中の要素のindexを受け取るように変更されています。
+v0.189.0 v0.188.0 Deno DeployでNode.js組み込みモジュールがサポート Deno DeployでNode.js組み込みモジュールがサポートされたようです。
+Node.js built-ins on Deno Deploy Denoと同様にnode:&lt;パッケージ名>の形式でimportすることで利用できます。
+これにより、esm.shを利用して、Deno DeployでExpressなどのパッケージが動かせるようになったようです。(現状ではtarget=denonextを指定する必要があるようです)
+import express from "https://esm....</p>
+</div>
+<footer class=entry-footer><span title="2023-05-28 00:00:00 +0000 UTC">May 28, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/22〜2023/05/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/05/28.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/05/15〜2023/05/21の最新情報
 </h2>
 </header>
@@ -274,28 +292,6 @@ csvモジュールの細分化 以下のファイルが追加されており、�
 </div>
 <footer class=entry-footer><span title="2023-03-19 00:00:00 +0000 UTC">March 19, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/03/13〜2023/03/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/19.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/03/06〜2023/03/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.31.2 Deno v1.31.2がリリースされました。
-Node.js互換性の改善 循環依存のあるpeerDependenciesの解決が改善
-例えば、以下のようなシナリオにおいて、初回実行時はうまくいくものの、ロックファイルが適用されるとうまく動かないケースがあったようで、この問題が修正されています。
-a -> b -> c -> d -> c -> b (peer) その他の改善
-npm:URLを使っていると、依存関係が変わっていなくても、毎回Lockfileがtouchされてしまう問題が修正されています。 複数のDenoプロセスが同時にnode_modulesを更新できないように制御が入りました。 package.jsonの依存関係の解析に失敗しても、npmパッケージが実際にimportされるタイミングまではエラーが起きないように修正されています。 これにより、package.jsonは存在するものの、スクリプト内でnpmパッケージを利用していないようなケースでエラーが発生しなくなります。 node:cryptoのcreateHashが高速化されています。 util.types.isSharedArrayBufferが動作しない問題が修正されています。 .d.tsファイルの型チェックに関する修正 以下のようなケースで、deno checkなどでうまく型チェックが行われていなかった問題が修正されています。
-エントリポイントに指定した.d.tsファイル エントリポイントに含まれるX-TypeScript-Types/&lt;reference types="..." />経由で読み込まれる.d.tsファイル .d.tsファイル内のファイルタイプが指定されていないコードブロック (deno test --docの実行時のみ) Deno.UnsafePointer.ofの改善 Deno.UnsafePointer.ofでバッファのメモリを取得する際に、もしユーザーがバッファの参照をどこかに保持していなかった場合、孤立したポインタができてしまう可能性がありました。
-この問題を解消するため、Deno.UnsafePointer.ofの内部でWeakMapを使ってポインタとバッファのマッピングが管理されるようになりました。
-その他 WindowsでDeno.stdin.setRaw(false)によって適切にrawモードが無効化されるように修正されています localStorageへのアイテムのINSERT時に、事前に入力内容のサイズがチェックされるように挙動が修正されています https://github.com/denoland/deno/releases/tag/v1.31.2
-deno_std v0.179.0 deno_std v0.179.0がリリースされました。
-std/encoding/varint.tsの追加, std/encoding/varint/mod.tsの非推奨化 TypeScriptをベースに実装されたstd/encoding/varint.tsが追加されました。 (実装はhttps://deno.land/x/varintがベースのようです)
-これに合わせて、WASMベースのstd/encoding/varint/mod.tsが非推奨化されています。
-std/fsの改善 std/fs/expand_glob: expandGlob()にfollowSymlinksオプションが追加されました (trueを指定すると、シンボリックリンクが解決されます) std/fs/ensure_dir: ensureDir()を同じディレクトリに対して並列で呼んだときに、Deno.errors.AlreadyExistsがthrowされる問題が修正されています。 std/fs/ensure_symlink: ensureSymlink()でtargetに対する相対的なリンクを作ろうとすると、意図せぬパスを指すリンクが作成されてしまう問題が修正されています (#2312) std/http/cookie - =の取り扱いが改善 Cookieの値に=が含まれていると、getSetCookiesが意図せぬ値を返す問題が修正されています。...</p>
-</div>
-<footer class=entry-footer><span title="2023-03-12 00:00:00 +0000 UTC">March 12, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/03/06〜2023/03/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/12.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

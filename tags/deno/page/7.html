@@ -81,6 +81,47 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/06/20〜2022/06/26の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.23.1 Deno v1.23.1がリリースされました。
+FFI関連の変更点 破壊的変更としてDeno.UnsafePointerが削除されました。 (正確にはDeno.UnsafePointer.ofのみ残されています) 今後、ポインタはbigintで表現されます。
+その他には、unstable APIとしてDeno.UnsafeCallbackが追加されています。 JavaScriptの関数を関数ポインタとして受け渡すために利用できます。
+deno fmtの改善 deno fmtコマンドがnode_modulesと.gitディレクトリを無視するようになりました。
+また、JavaScriptファイルのパースに失敗した際に、deno fmt --checkがちゃんと失敗するように修正されています。
+その他の変更点 fetchの呼び出し時に、デフォルトでAccept-Language: *ヘッダが設定されるように修正されました。 deno replコマンドで、直前の文字が空白のときにTabキーを押すと、タブ(\t)が挿入されるように修正されました。 deno runコマンドで.d.ctsや.d.mtsファイルを実行すると、プロセスがパニックする問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.23.1
+deno_std v0.145.0 deno_std v0.145.0がリリースされました。
+std/encoding/json/stream std/encoding/json/streamが追加されました。
+このモジュールでは、下記4フォーマットでのストリーミングがサポートされています。
+JSON Lines ndjson JSON Text Sequences Concatenated JSON JSONParseStreamは上記の上から3つのフォーマットをサポートしています。
+import { JSONParseStream } from "https://deno.land/std@0.145.0/encoding/json/stream.ts"; import { readableStreamFromIterable } from "https://deno.land/std@0.145.0/streams/conversion.ts"; const readable = readableStreamFromIterable([ `{"name": "foo"}`, `{"a": 1, "b": true}`, ]) ....</p>
+</div>
+<footer class=entry-footer><span title="2022-06-26 00:00:00 +0000 UTC">June 26, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/06/20〜2022/06/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/26.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/06/13〜2022/06/19の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.23 Deno v1.23がリリースされました。
+以下の記事に変更点をまとめたため、詳しくはこちらを参照いただければと思います。
+Deno v1.23 deno_std v0.144.0 deno_std v0.144.0がリリースされました。
+encoding/front_matter 新規モジュールとしてencoding/front_matterが追加されました。
+import { extract } from "https://deno.land/std@0.144.0/encoding/front_matter.ts"; const { attrs, body } = extract&lt;{ title: string, date: Date }>(`--- title: foobar date: 2022-06-12 --- Hello`); console.assert(attrs.title === "foobar"); console.assert(attrs.date instanceof Date); console.assert(body === "Hello"); collections collections/mod.tsをimportすると警告が表示されるようになりました。
+必要に応じて、collections/deep_mergeやcollections/group_byなどの各ファイルを個別にimportすることが推奨されます。
+node process.stdoutとprocess.stderrに下記メソッドが実装されています。
+cursorTo moveCursor clearLine clearScreenDown https://github.com/denoland/deno_std/releases/tag/0.144.0
+Freshのアップデート (CLIの削除) FreshからCLIが削除されています。
+feat: remove fresh cli, do manifest generation in process (#223)...</p>
+</div>
+<footer class=entry-footer><span title="2022-06-19 00:00:00 +0000 UTC">June 19, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/06/13〜2022/06/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/19.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Deno v1.23
 </h2>
 </header>
@@ -267,51 +308,6 @@ deno testコマンドの--docオプションをデフォルトで有効化する
 </div>
 <footer class=entry-footer><span title="2022-05-08 00:00:00 +0000 UTC">May 8, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/05/02〜2022/05/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/08.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/04/25〜2022/05/01の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.21.1 Deno v1.21.1がリリースされました。
-ネイティブHTTPサーバ(Deno.serveHttp)の変更点 Deno v1.20でレスポンスボディの自動的な圧縮がサポートされました。
-このリリースでは、レスポンスボディにReadableStreamが指定された際の圧縮がサポートされています。
-その他にもいくつかのパフォーマンス改善が実施されています。
-deno taskで引数に--を指定した際の挙動が変更 例えば、deno.jsonで次のようなタスクが定義されていたとします。
-{ "tasks": { "test": "deno test --allow-read" } } 例えば、下記のように--を指定してタスクを実行したとします。
-$ deno task test -- some-test.js この場合、v1.21.0時点では次のようにコマンドが実行されていました。
-$ deno test --allow-read "some-test.js" 今回リリースされたv1.21.1では、次のように変更されています。
-$ deno test --allow-read "--" "some-test.js" Deno.inspectの変更点 strAbbreviateSizeオプションが追加されました。 文字列がこのオプションで指定された長さを超えると省略して表示されます。 デフォルト値は100です。 compact: falseが指定された際であっても、空のIterableオブジェクトはコンパクト化して表示するように修正されています。 deno benchの変更点 deno benchで2つ以上のファイルを実行した際に、前のファイルのベンチマーク結果が次のファイルに影響を与えてしまう問題が修正されました。
-この問題は、例えば、1つ目のベンチマークファイルでグルーピング(groupオプション)を利用しているが、2つ目のベンチマークファイルではグルーピングを利用していないようなケースで発生していたようです。
-その他にも、Exit sanitizerによるオーバーヘッドの削減が実施されています。
-deno testの変更点 Deno v1.21でテストケースの実行時にログに出力された内容がキャプチャされるように改善されました。
-このリリースでは、Deno.spawn()などでstdoutやstderrオプションに"inherit"を指定した際に、サブプロセスの出力内容もキャプチャされるように改善されています。
-他にも、Workerの出力内容もキャプチャするように改善されています。
-その他の変更点 Deno.spawn(Sync)でstdinなどのオプションに"piped"を指定した際にエラーを発生させるよう修正されました。 Worker.terminateが呼び出し元のスレッドをブロックしないように修正されました (https://github.com/denoland/deno/issues/13705) https://github....</p>
-</div>
-<footer class=entry-footer><span title="2022-05-01 00:00:00 +0000 UTC">May 1, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/25〜2022/05/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/01.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/04/18〜2022/04/24の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.21 Deno v1.21がリリースされました。
-個別に記事を書いたので、詳しくはそちらを参照いただければと思います。
-Deno v1.21 deno_std v0.136.0 deno_std v0.136.0がリリースされました。
-testing/snapshot スナップショットテストを行うためのモジュールが追加されました。
-このモジュールではassertSnapshotという関数が公開されており、__snapshots__ディレクトリに保存されたスナップショットと第2引数で指定された値を比較し、マッチしなかった場合、エラーが発生します。
-スナップショットを読み込む必要があるため、利用には--allow-readパーミッションが必要になります。
-import { assertSnapshot } from "https://deno.land/std@0.136.0/testing/snapshot.ts" Deno.test("doSomething", async (t) => { const result = doSomething(); await assertSnapshot(t, result); }); スナップショットを更新したいときは、テストを実行する際に--updateを指定する必要があります。
-この場合、スナップショットを書き込むために、追加で--allow-writeが必要になります。
-# スナップショットは__snapshots__に書き込まれます $ deno test --allow-read --allow-write tests/some_test.js -- --update testing/bdd itに渡すテスト関数がTestContextを受け取るように修正されています。
-import { describe, it } from "https://deno.land/std@0.136.0/testing/bdd.ts" describe("sum", () => { it("should return sum of numbers", (t) => { assertEquals(sum(1, 2, 3), 6, t....</p>
-</div>
-<footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/18〜2022/04/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/24.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

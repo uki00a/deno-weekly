@@ -81,6 +81,30 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Denoのロードマップ (2023年 Q1)
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoの2023年 Q1のロードマップが公開されました。
+https://github.com/denoland/deno/issues/17475 このページでは、新しく実装が検討されている機能などについて紹介いたします。
+deno.jsonでのimportsフィールドのサポート 今までDenoでImport Mapsを利用するには、専用のファイルを用意しておき、それを--import-mapオプションで読むこむ必要がありました。
+現在、deno.jsonで直接Import Mapsを定義できるようにするため、importsオプションの追加が検討されています。
+これが実現されれば、以下のようにdeno.jsonで直接マッピングを定義できるようになります。
+{ "imports": { "redis": "https://deno.land/x/redis@v0.29.0/mod.ts", "dax": "https://deno.land/x/dax@0.24.0/mod.ts" }, "tasks": { "start": "deno run --allow-net --allow-env ./main.ts" } } Deno公式が公開している02-deno-canonical-appにも使用例があるため、よろしければそちらも参照いただければと思います。
+deno:URLのサポート deno:という新しいURLスキームの導入が検討されており、これにより、deno.land/xからのモジュールの読み込みを簡略化できます。
+import $ from "deno:dax@24.0/mod.ts"; await $`echo foobar`; また、deno.land/xでも機能の拡張が予定されているようで，/x/some-packageにアクセスされた際は/x/some-package/mod.tsにリダイレクトさせることが検討されているようです。
+例えば、deno:dax@24.0と記述した場合、/x/dax@0.24.0/mod.tsが読み込まれます。
+package.jsonのサポート Deno本体でpackage.jsonのサポートが検討されているようです。
+例えば、以下のような内容のpackage.jsonがあったとします。
+{ "type": "module", "scripts": { "main": "deno run -A main.ts" }, "dependencies": { "chalk": "^5.0", "deno-redis": "deno:redis@~0.29.0/mod.ts" } } Denoはpackage.jsonの"dependencies"で定義された依存関係を元に、コード中のbare specifierを解釈します。(もしImport Mapsファイルまたはdeno.jsonでもマッピングが定義されている場合は、package.jsonよりもそれらのファイルの設定が優先されます)
+例えば、以下のようなスクリプトが存在する場合、deno-redisはhttps://deno.land/x/redis@v0.29.0/mod.tsとして解釈され、chalkについてはnpmレジストリからv5.xがダウンロードされます。
+import { connect } from "deno-redis"; import chalk from "chalk"; const redis = await connect({ hostname: "127....</p>
+</div>
+<footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
+<a class=entry-link aria-label="post link to Denoのロードマップ (2023年 Q1)" href=https://uki00a.github.io/deno-weekly/articles/deno/roadmap-2023-q1.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/01/09〜2023/01/15の最新情報
 </h2>
 </header>
@@ -277,32 +301,6 @@ https://github.com/denoland/deno_std/pull/2896 std/node: 互換性の向上 node
 </div>
 <footer class=entry-footer><span title="2022-11-20 00:00:00 +0000 UTC">November 20, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/11/14〜2022/11/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/20.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/11/07〜2022/11/13の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.27.2 Deno v1.27.2がリリースされています。
-peerDependenciesのサポート DenoでnpmパッケージのpeerDependenciesがサポートされました。
-あるパッケージでpeerDependenciesが定義されていた場合、以下のような動作をするようです。
-依存グラフの中から祖先をたどっていき、もしpeerDependenciesで指定された要件を満たすパッケージが見つからなかった場合、通常のdependenciesと同様に依存が解決されます。(npm v7と同様の挙動) optionalPeerDependenciesについては、依存グラフの祖先に指定された要件を満たすパッケージが見つかった場合のみ解決されます。 それ以外の場合は、pnpmと同様の挙動でoptionalPeerDependenciesが解決されます。 https://github.com/denoland/deno/pull/16561
-その他の変更点 いくつかのバグ修正が実施されています。
-data:URLに対してロックファイルのremoteエントリが作られてしまう問題が修正されています。 Deno.serveHttpで起動したHTTPサーバで圧縮が有効化された状態でストリーミングを行う際に、各チャンクが適切にフラッシュされるように修正されています。 ローカルのnode_modules内のコードでrequireによる相対パス形式での読み込みが行われた際に適切に動作するように修正されています。 https://github.com/denoland/deno/releases/tag/v1.27.2
-deno_std v0.163.0 deno_std v0.163.0がリリースされています。
-std/semverモジュールでinc()とdiff()が非推奨化されました。
-今後は、新しく追加されているincrement()とdifference()の使用が推奨されます。 (動作はそれぞれincとdiffと同様です)
-https://github.com/denoland/deno_std/releases/tag/0.163.0
-denoland/fresh-wordpress-themes WordPressをHeadless CMSとして使いつつ、フロントエンドをFreshで開発するためのテンプレートがDeno公式で公開されました。
-https://github.com/denoland/fresh-wordpress-themes 以下の記事で使用方法などが解説されています。
-Introducing Fresh WordPress Themes esm.sh v98 esm.sh v98がリリースされました。
-新機能としてTree shakingのサポートが追加されています。
-exportsパラメータを指定することで適用されます。
-https://github.com/ije/esm.sh/releases/tag/v98</p>
-</div>
-<footer class=entry-footer><span title="2022-11-13 00:00:00 +0000 UTC">November 13, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/11/07〜2022/11/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/13.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

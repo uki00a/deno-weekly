@@ -77,6 +77,60 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/03/29〜2021/04/04の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno本体の最新情報 Deno v1.8.3がリリース Deno v1.8.3がリリースされました。このリリースでは、deno lspへの機能の追加やバグ修正などが行われています。
+変更点:
+deno lspでimportの補完がサポートされた deno lspでtextDocument/selectionRangeが実装された WebSocket#closeですでに閉じているコネクションを再び閉じようとしたときに、例外が投げられないように修正された AbortController.abort()が追加された TypeScriptのlibとしてdom.asynciterableが追加された(Denoのいずれかのバージョンで誤って削除されてしまったようです) https://github.com/denoland/deno/releases/tag/v1.8.3
+deno_std v0.92.0がリリース deno_stdのv0.92.0がリリースされました。
+変更点:
+io/bufio: Deno Deployに対応した node/fs: symlinkとsymlinkSyncが実装された node/util: format関数が実装された io: io/buffer及びio/utilが追加された (Deno v2.0に向けて、Deno.Buffer/readAll/readAllSync/writeAll/writeAllSyncをDeno名前空間からstdへ移行することが目的のようです) https://github.com/denoland/deno_std/releases/tag/0.92.0
+Deno Deployが公開された Deno Deployが公開されました。
+Deno DeployはCDN Edge上でTypeScriptやWebAssemblyなどを動作させることができるサービスです。Cloudflare WorkersのAPIと互換性があります。
+https://deno.com/deploy/docs サードパーティモジュールなどの最新情報 Snel - DenoでSvelteアプリを開発するためのツール SnelはDenoでSvelteアプリを開発するためのツール/フレームワークです。
+.svelteファイルをJavaScriptファイルへコンパイルしたり、HMRを搭載したdevサーバなどが提供されています。
+将来的にはSSRやSSGなどの機能も提供される予定のようです。
+https://github.com/crewdevio/Snel
+Sift - Deno Deployのルーティングライブラリ SiftはDeno Deployのルーティングライブラリです。
+path-to-regexpでサポートされている形式で、ルーティングを定義することができます。
+他にも、静的ファイルの配信やJSXのレンダリングなどがサポートされています。
+https://github.com/satyarohith/sift
+deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用することのできるDOM APIの実装を提供しています。...</p>
+</div>
+<footer class=entry-footer><span title="2021-04-04 00:00:00 +0000 UTC">April 4, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/29〜2021/04/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/04/04.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2021/03/22〜2021/03/28の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno本体の最新情報 Deno v1.8.2がリリース Deno v1.8.2がリリースされました。
+このリリースでは、バグ修正などを中心に実施されています。
+変更点:
+Deno.createHttpClientを使用した際に、User-Agentヘッダが設定されない問題が修正された deno fmtでmarkdownファイルのスペースなどが適切にフォーマットされない問題が修正された deno lspでエディタ以外でファイルが編集されていると、“The current snapshot version is missing.“エラーが発生する問題が修正された deno lspでファイルの診断(diagnostics)が固有のスレッドで実行されるようになった https://github.com/denoland/deno/releases/tag/v1.8.2
+deno_std v0.91.0がリリース deno_std v0.91.0がリリースされました。
+主な変更点:
+encoding/yaml: EXTENDED_SCHEMAが追加され、Yamlファイル内でJSの関数や正規表現などを使用できるようになった io/streams: readerFromIterable()が追加された node/fs: utimes/utimesSyncが実装された など
+https://github.com/denoland/deno_std/releases/tag/0.91.0
+status.deno.landが公開された status.deno.landが公開されました。
+このサイトでは、Denoのモジュールレジストリなどの運用状況を確認することができます。
+https://status.deno.land
+サードパーティモジュールなどの最新情報 swdev - Service WorkerベースのNo bundleビルドツール swdevという、Service WorkerベースのNo bundleビルドツールが公開されました。
+以下のようが機能が提供されているようです:
+Service Workerを利用したTypeScriptやSvelteファイルの変換 Deno.watchFs()ベースのCache Busting Rollupベースのプロダクションビルド https://github.com/mizchi/swdev
+deno-sqlite v2.4.0がリリース deno-sqlite v2.4.0がリリースされました。
+このリリースでは、以下のような変更が加わっています:
+SQLiteのv3.35.0への更新 DB....</p>
+</div>
+<footer class=entry-footer><span title="2021-03-28 00:00:00 +0000 UTC">March 28, 2021</span></footer>
+<a class=entry-link aria-label="post link to 2021/03/22〜2021/03/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/03/28.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/03/15〜2021/03/21の最新情報
 </h2>
 </header>
@@ -274,48 +328,6 @@ https://github.com/harmonyland/harmony</p>
 </div>
 <footer class=entry-footer><span title="2021-01-31 00:00:00 +0000 UTC">January 31, 2021</span></footer>
 <a class=entry-link aria-label="post link to 2021/01/25〜2021/01/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/31.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/01/18〜2021/01/24の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
-以下は変更点の要約です:
-deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
-Deno 1.7.0 がリリースされたので新機能や変更点の紹介 deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
-内部的にはRollupのブラウザビルドが利用されています。
-CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。
-https://github.com/cmorten/deno-rollup
-code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。
-設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。
-また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。
-https://github.com/dsherret/code-block-writer</p>
-</div>
-<footer class=entry-footer><span title="2021-01-24 00:00:00 +0000 UTC">January 24, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/18〜2021/01/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/24.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/01/11〜2021/01/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno in 2020 Denoの公式ブログポストにて、Deno in 2020という記事が公開されました。
-この記事では、2020年中にDenoに行われた変更点がまとめられています。
-また、この記事の公開に合わせて、Deno Surveyというアンケートも実施されています。
-https://deno.land/posts/deno-in-2020
-Obsidian - GraphQLクライアント/サーバモジュール ObsidianはDenoで実装されたGraphQLクライアント/サーバモジュールです。
-SSRされたReactアプリケーション向けに最適化されています。
-現時点では、以下のような機能が提供されています:
-Reactとの統合(useObsidianフック、ObsidianWrapperコンポーネント) Oakフレームワークとの統合 クライアントサイド及びサーバサイドでのキャッシュ(サーバサイドキャッシュではRedisが使用されています) GraphQL Playground https://github.com/open-source-labs/obsidian
-Sinco - ブラウザのオートメーション・テストツール SincoはDenoで動作するブラウザのオートメーション・テストツールです。
-現時点ではヘッドレスモードのChromeのみに対応しています。
-https://github.com/drashland/sinco</p>
-</div>
-<footer class=entry-footer><span title="2021-01-17 00:00:00 +0000 UTC">January 17, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/01/11〜2021/01/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/01/17.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

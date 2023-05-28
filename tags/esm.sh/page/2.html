@@ -81,6 +81,22 @@ esm.sh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/07/11〜2022/07/17の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.23.4 Deno v1.23.4がリリースされました。
+V8 Fast API Calls+JITコンパイルによるFFIの最適化 V8 Fast API Callsとtinyccを使用したJITコンパイルにより、FFI(Deno.dlopen)の最適化が行われています。
+Deno.dlopenを呼んだ際に、下記の条件が満たされる外部関数へのバインディングに対して、自動でFast API Calls+JITコンパイルによる最適化が適用されます。
+非Windows環境であること (Windowsではまだこれらの最適化がサポートされていません) パラメータ及び戻り値の型にスカラ型のみが含まれる場合 もしこれらの最適化を無効化したい場合は、callbackオプションにtrueを指定する必要があります。
+const lib = Deno.dlopen( "some_lib.so", { some_func: { parameters: ["usize", "usize"], result: "usize", callback: true }, } ); 細かな詳細については、deno_ffiも参照ください。
+perf(ext/ffi): leverage V8 Fast Calls #15125 fix(ext/ffi): trampoline for fast calls #15139 fix(ext/ffi): allow opting out of fast ffi calls #15131 その他の変更点 Request#json()などに続けてRequest.headersを参照するとプロセスがパニックする問題が解消されています。 deno lspで自動importが効くようになりました。それに伴い、入力補完に関わる挙動も改善されています。 https://github....</p>
+</div>
+<footer class=entry-footer><span title="2022-07-17 00:00:00 +0000 UTC">July 17, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/07/11〜2022/07/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/17.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/03/21〜2022/03/27の最新情報
 </h2>
 </header>

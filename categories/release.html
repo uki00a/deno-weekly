@@ -81,6 +81,26 @@ release
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Deno v1.34
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.34がリリースされました。
+この記事では主な変更点などについて解説します。
+deno.json(c)の拡張 トップレベルのexcludeフィールドがサポート deno fmtやdeno lintなどの各コマンドで共通の除外対象ファイルを定義できます。
+また、トップレベルのexcludeに加えてfmt.excludeやlint.excludeなども一緒に定義されている場合は、それらへマージされます。
+例えば、以下のような設定があったとします。
+{ "fmt": { "exclude": [ "fresh.gen.ts", "README.md" ] }, "lint": { "exclude": [ "fresh.gen.ts" ] } } Deno v1.34以降であれば、以下のように設定をまとめることができます。
+{ "exclude": [ "fresh.gen.ts" ], "fmt": { "exclude": [ "README.md" ] } } globのサポート include/excludeやtasksなどでglob形式で対象を定義することができます。
+{ "lint": { "exclude": ["generated/**/*.ts"] }, "tasks": { "my_task": "cat vendor/**/*.ts" } } またコマンドライン引数でglob式を指定することもできます。
+$ deno lint --ignore='vendor/**/*.ts' nodeModulesDirの追加 { "nodeModulesDir": true } このフィールドにtrueを設定しておくと、依存しているnpmパッケージがnode_modulesディレクトリにも保存されるようになります。(--node-modules-dirが指定された際と同様の振る舞いをします)
+Deno.serve()への変更 Deno.serveの戻り値がPromise&lt;void>から新しく導入されたDeno.Serverに変更されました。...</p>
+</div>
+<footer class=entry-footer><span title="2023-05-28 00:00:00 +0000 UTC">May 28, 2023</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.34" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.34.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Deno v1.33
 </h2>
 </header>
@@ -281,27 +301,6 @@ devモード(deno task start)時は自動で有効化されるため、特に設
 </div>
 <footer class=entry-footer><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span></footer>
 <a class=entry-link aria-label="post link to Fresh v1.1" href=https://uki00a.github.io/deno-weekly/articles/fresh/v1.1.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Deno v1.25
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.25がリリースされました。
-この記事では主な変更点などについて解説します。
-npmパッケージのサポート Denoでnpmパッケージのimportや実行が実験的にサポートされました。
-npm installやnode_modulesなどを必要とせずにnpmパッケージを利用することができます。
-import express from "npm:express@4.18.1"; const app = express(); app.get("/", (req, res) => { res.send("Hello"); }); app.listen(3000); このファイルを実行すると、npmパッケージがダウンロードされた後、ExpressによってHTTPサーバが起動します。
-$ deno run --unstable --allow-env --allow-read --allow-net main.mjs $ curl http://localhost:3000 Hello 他のサードパーティモジュールなどと同様に、初回実行時のみnpmパッケージがダウンロードされ、DENO_DIRにキャッシュされます。(DENO_DIR/npm/registry.npmjs.orgに保存されるようです)
-また、npxライクにコマンドを実行することもできます。
-$ deno run --unstable --allow-env --allow-read --allow-write npm:make-dir-cli@3.0.0 src/components 制限 現時点では利用するには--unstableが必要になります。 また、--allow-envや--allow-readも必要になります。 ロックファイル/型チェック/deno vendor/deno lsp/deno installなどでは、この機能はまだサポートされていません。 新しいHTTPサーバ (Flash) DenoにはHyperをベースにしたHTTPサーバ(Deno.serveHttp)が組み込まれています。
-このHTTPサーバのさらなる高速化などを目的に、Flashという新しいHTTPサーバが実装されました。
-Deno.serveというAPIによって、Flashを起動することができます。
-const ac = new AbortController(); Deno.serve((req) => new Response("Hello, Flash"), { port: 4500, onListen: ({ port, hostname }) => { console....</p>
-</div>
-<footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.25" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -81,6 +81,56 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/10/17〜2022/10/23の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.26.2 Deno v1.26.2がリリースされました。
+サブプロセス関連のAPIやnpmサポートの改善、fetch()の互換性の向上などが実施されています。
+Deno.SpawnOptionsでwindowsRawArgumentsオプションがサポート Windows上でこのオプションにtrueを指定すると、コマンドライン引数のクォーテーションの付与とエスケープがスキップされます。
+const { success, stdout } = await Deno.spawn(cmd, { args, windowsRawArguments: true, }); この機能は、後述するdeno_std v0.160.0におけるwindowsVerbatimArgumentsの実装に利用されています。
+npmサポートの改善 dist-tagがサポートされています。
+例)
+import ts from "npm:typescript@next"; その他の改善として、npmレジストリからのパッケージ情報のダウンロード処理が並列化されています。
+Fetch APIの互換性の向上 Fetch Standardとの互換性の改善が実施されています。
+例)
+Headersで不正な形式のヘッダを連続で解析すると、二度目以降の解析時にエラーが発生しない問題が修正 fetch()の呼び出し時にRangeヘッダが指定された際は、Accept-Encoding: identityが自動で設定されるように修正 ResponseやRequestに空のFormDataを渡せるように改善 Responseに設定したReadableStreamから非Uint8Array型のチャンクが読み込まれた際は、TypeErrorが発生するように修正 レスポンスボディがContent-Lengthを超過した際などにTypeErrorが発生するように修正 それ以外にもCache APIやWeb Streams APIなどでも互換性の向上が実施されています。
+その他の変更点 deno taskでのスクリプト実行時にINIT_CWD環境変数が設定されるように修正 (npm runとの互換性の向上が目的のようです) deno.json(c)のimportMapオプションにリモートURLを指定できるように改善 deno lspでの補完時に、スニペットが適切に取り扱われるように修正 コンパイル対象ファイルの名前が@で始まるときに、deno compileがパニックする問題が修正 https://github.com/denoland/deno/releases/tag/v1.26.2
+deno_std v0.160.0 deno_std v0.160.0がリリースされました。
+このリリースではstd/nodeのNode.js互換性の向上が実施されています。
+変更点:
+std/node/readline/promisesが実装 std/node/child_process: windowsVerbatimArgumentsオプションがサポート std/node/fs: Windowsでfs....</p>
+</div>
+<footer class=entry-footer><span title="2022-10-23 00:00:00 +0000 UTC">October 23, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/10/17〜2022/10/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/23.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2022/10/10〜2022/10/16の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>deno taskの安定化について deno taskコマンドを安定化することが検討されているようです。
+以下のPRではdeno taskを実行した際の警告メッセージが削除されています。
+feat(task): remove warning about being unstable (#16281)
+この変更はv1.27での導入が検討されているようです。
+deno lspでtextDocument/inlayHintが実装 以下のPRでdeno lspにtextDocument/inlayHintが実装されています。
+feat: support inlay hints (#16287)
+textDocument/inlayHintの挙動については、TypeScript公式の以下のページがわかりやすそうです。
+Inlay Hints こちらについてもv1.27でのリリースが検討されているようです
+Bartek Iwańczuk’s “Vite Got Deno-fied” at ViteConf 2022 Bartek Iwańczuk氏によるViteConf 2022での発表内容が公開されています。
+Bartek Iwańczuk’s “Vite Got Deno-fied” at ViteConf 2022 DenoでViteの開発環境をセットアップし、Deno Deployへデプロイするまでの手順が解説されています。
+https://twitter.com/deno_land/status/1580356550966722560
+denoland/fresh_charts Deno公式でFresh向けのチャートライブラリが公開されています。
+denoland/fresh_charts チャートを描画するための&lt;Chart>コンポーネントやハンドラ向けのユーティリティなどが提供されているようです。
+Chart.jsやred-agate-svg-canvasなどを活用して作成されているようです。
+https://github.com/denoland/fresh_charts</p>
+</div>
+<footer class=entry-footer><span title="2022-10-16 00:00:00 +0000 UTC">October 16, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/10/10〜2022/10/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/16.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2022/10/03〜2022/10/09の最新情報
 </h2>
 </header>
@@ -267,48 +317,6 @@ import { CookieMap, mergeHeaders } from "https://deno.land/std@0.153.0/http/cook
 </div>
 <footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/08/22〜2022/08/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/28.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Deno v1.25
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.25がリリースされました。
-この記事では主な変更点などについて解説します。
-npmパッケージのサポート Denoでnpmパッケージのimportや実行が実験的にサポートされました。
-npm installやnode_modulesなどを必要とせずにnpmパッケージを利用することができます。
-import express from "npm:express@4.18.1"; const app = express(); app.get("/", (req, res) => { res.send("Hello"); }); app.listen(3000); このファイルを実行すると、npmパッケージがダウンロードされた後、ExpressによってHTTPサーバが起動します。
-$ deno run --unstable --allow-env --allow-read --allow-net main.mjs $ curl http://localhost:3000 Hello 他のサードパーティモジュールなどと同様に、初回実行時のみnpmパッケージがダウンロードされ、DENO_DIRにキャッシュされます。(DENO_DIR/npm/registry.npmjs.orgに保存されるようです)
-また、npxライクにコマンドを実行することもできます。
-$ deno run --unstable --allow-env --allow-read --allow-write npm:make-dir-cli@3.0.0 src/components 制限 現時点では利用するには--unstableが必要になります。 また、--allow-envや--allow-readも必要になります。 ロックファイル/型チェック/deno vendor/deno lsp/deno installなどでは、この機能はまだサポートされていません。 新しいHTTPサーバ (Flash) DenoにはHyperをベースにしたHTTPサーバ(Deno.serveHttp)が組み込まれています。
-このHTTPサーバのさらなる高速化などを目的に、Flashという新しいHTTPサーバが実装されました。
-Deno.serveというAPIによって、Flashを起動することができます。
-const ac = new AbortController(); Deno.serve((req) => new Response("Hello, Flash"), { port: 4500, onListen: ({ port, hostname }) => { console....</p>
-</div>
-<footer class=entry-footer><span title="2022-08-28 00:00:00 +0000 UTC">August 28, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.25" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/08/15〜2022/08/21の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Denoの今後の計画について Deno公式からBig Changes Ahead for Denoという、Denoの今後の計画などに関する記事が公開されました。
-今のところ、以下の点などに注力されていく予定のようです。
-Node.jsとの互換性の向上 パフォーマンスの向上 エンタープライズユーザへのサポートの強化 開発体験の向上 これらに関連すると思われる直近での変更について簡単にまとめてみます。
-npm:URLのサポート 現在、npm:URLによるnpmパッケージのimportに関する開発が行われています。
-feat(unstable): initial support for npm specifiers (#15484)
-例えば、以下のようにして、npmパッケージをimportすることができるようです。
-import express from "npm:express@5"; import { expect } from "npm:chai@4.2"; この機能には、大まかに以下のような特徴があります。
-デフォルトでnpmパッケージはnpmの公式レジストリからダウンロードされ、DENO_DIRにキャッシュされます。 Node.js互換モード(--compat)とは異なり、npm:URLで読み込まれたモジュール内のみにNode.jsのグローバルAPI(process/global/Bufferなど)が注入されます。 Node.js互換モード(--compat)とは異なり、現時点では--unstableなしで使用できる想定のようです。 型チェック, LSPのサポート, エントリポイントでのnpm:URLの指定(例: deno run npm:mkdirp path/to/dir)などの機能はまだ入っておらず、今後追加されていく予定のようです。 この機能はおそらく、次のv1.25でリリースされるのではないかと思われます。
-新しいHTTPサーバ (Flash) HTTPサーバの高速化を目的に、Deno本体でFlashという新しいHTTPサーバが開発されています。
-feat(ext/flash): An optimized http/1.1 server (#15405)
-feat(unstable): change Deno.serve() API (#15498)...</p>
-</div>
-<footer class=entry-footer><span title="2022-08-21 00:00:00 +0000 UTC">August 21, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/08/15〜2022/08/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/21.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

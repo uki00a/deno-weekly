@@ -77,6 +77,51 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2023/03/27〜2023/04/02の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32.2 Deno v1.32.2がリリースされました。
+KV (Deno.Kv) Deno.KvCommitResult型が追加されています。
+これには、KVにコミットされた値に設定された新しいversionstampが含まれます。
+この追加に合わせて、以下の変更も実施されています。
+Deno.AtomicOperation.commitの戻り値がPromise&lt;boolean>からPromise&lt;Deno.KvCommitResult | null>に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise&lt;void>からPromise&lt;KvCommitResult>に変更されています。 Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry&lt;T> | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)
+これに合わせて、以下のAPIに型引数を指定できるように変更されました。
+Deno.KvListIterator → Deno.KvListIterator&lt;T> Deno.KvEntry → Deno.KvEntry&lt;T> これらの変更により、エントリを取得する際に値の型を指定できるようになりました。
+const entry: Deno.KvEntryMaybe&lt;string> = await kv.get&lt;string>(["str"]); const entries: [Deno.KvEntryMaybe&lt;string>, Deno.KvEntryMaybe&lt;number>] = await kv.getMany&lt;[string, number]>([["str"], ["n"]]); Deno.Kv#getManyが実装されました。
+複数のエントリをまとめて取得できます。
+await kv.set(["key", 1], "foo"); await kv.set(["key", 2], "bar"); const entries = await kv.getMany([ ["key", 1], ["key", 2] ]); assert(entries....</p>
+</div>
+<footer class=entry-footer><span title="2023-04-02 00:00:00 +0000 UTC">April 2, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/03/27〜2023/04/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/02.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2023/03/20〜2023/03/26の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32 Deno v1.32がリリースされました。
+以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
+Deno v1.32 Deno v1.32.1 Deno v1.32.1がリリースされました。
+Resizable ArrayBufferの無効化 Resizable ArrayBufferが無効化されています。
+CVE-2023-28445 もしDeno v1.32.0を使用されている場合は、v1.32.1へのアップデートが推奨されます。
+その他 deno run -に与えられたソースがJavaScriptではなくTypeScriptとして解釈されるように修正されています。(Deno v1.32.0での--extオプション導入時のリグレッションのようです) オブジェクトの値に改行が入った文字列があった際に、Deno.inspectで非compactな形式で結果が返されるように改善されています。 deno lspでenablePathsに末尾の/なしでパスが与えられた際も適切に動作するように修正されています。 (https://github.com/denoland/vscode_deno/issues/827) https://github.com/denoland/deno/releases/tag/v1.32.1
+deno_std v0.181.0 deno_std v0.181.0がリリースされました。
+std/front_matter - +++ブロックがサポート +++ブロックがサポートされました。
+このブロック内ではTOML形式でメタデータを宣言できます。
++++ title = ”hello” +++ 本文... Hugoなどでこの形式がサポートされているようです。
+std/testing/asserts 各種アサーション関数にカスタムのメッセージが与えられた際のエラーメッセージが改善されています。
+例えば、assertEqualsにカスタムのmsg引数を渡した際に、msgに加えてdiffの内容も一緒に表示されるように挙動が改善されています。
+assertEquals(1, 2, "カスタムメッセージ"); 上記のようなコードがあった場合、v0.181.0とv0.180.0ではそれぞれ以下のように出力されます。
+v0.181.0
+error: Uncaught AssertionError: Values are not equal: カスタムメッセージ [Diff] Actual / Expected - 1 + 2 throw new AssertionError(message); v0....</p>
+</div>
+<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/03/20〜2023/03/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/26.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Deno v1.32
 </h2>
 </header>
@@ -243,47 +288,6 @@ Remove std/node, it was merged into Deno itself (denoland/deno_std#3206) 今後�
 </div>
 <footer class=entry-footer><span title="2023-02-19 00:00:00 +0000 UTC">February 19, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/02/13〜2023/02/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/19.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2023/02/06〜2023/02/12の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.30.3 Deno v1.30.3がリリースされました。
-esm.shやunpkg.comなどからパッケージを読み込むと、deno lspが停止してしまう問題が修正されています。
-また、console.log()などでclassを出力する際のフォーマットも改善されています。
-class User {} console.info(User); // v1.30.3: `[Class: User]` // v1.30.2: `[Function: User]` https://github.com/denoland/deno/releases/tag/v1.30.3
-deno_std v0.177.0 deno_std v0.177.0がリリースされました。
-std/encoding/csv - BOMのサポート stringify()にbomオプションを指定できるようになりました。
-trueを指定すると、出力されるCSVの先頭にBOMが付与されます。
-また、trimLeadingSpaceオプションが未設定の場合でもparse()がBOMを認識するように改善されています。
-std/node 以下のバグが修正されています。
-node:child_process: execFile()にutil.promisify()がうまく適用されない問題が修正されています。 node:process: 標準入力にファイルがリダイレクトされている場合に、ファイルの末尾に達してもprocess.stdinからnullが返却されない問題が修正されています。 std/semver semver.increment()のmetadata引数に空文字列が渡された際に、ビルドメタデータが未設定にならない問題が修正されています。
-import * as semver from "https://deno.land/std@0.177.0/semver/mod.ts"; const v = semver.increment( "1.2.3+1", // version "major", // release undefined, // options undefined, // identifier "", // metadata ); assert(v === "2....</p>
-</div>
-<footer class=entry-footer><span title="2023-02-12 00:00:00 +0000 UTC">February 12, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/02/06〜2023/02/12の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/12.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2023/01/30〜2023/02/05の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.30.1 Deno v1.30.1がリリースされました。
-Node.js互換性の改善 Node-APIの互換性が改善されています。
-napi_get_globalでDenoのglobalThisではなくglobalオブジェクトが返されるように修正されています。 napi_create_functionでlengthパラメータが誤ってチェックされていた問題が修正されています。 これらの変更により、Denoでref-napiが動くようになったようです。
-その他には、deno replでnode:URLを使った際に、以下のエラーメッセージが表示されてしまう問題が解消されています。
-Could not set npm package requirements. Error getting response at https://registry.npmjs.org/@types/node: An npm specifier not found in cache: "@types/node", --cached-only is specified. deno lspの改善 Import Maps関連のバグ修正が実施されています。
-Import Mapsを更新した際に、LSPの再起動やコードの編集をせずとも更新内容が反映されるように挙動が改善されました Import Mapsが存在すると、fs形式のimportをnode:fsの形式へ変換するquickfixが機能しなくなる問題が修正されています その他の修正 performance.markのdetailオプションにArrayBufferやTypedArrayを指定するとエラーが発生する問題が修正されています https://github.com/denoland/deno/releases/tag/v1.30.1
-Deno v1.30.2 Deno v1.30.2がリリースされています。
-v1.30.1でCPU使用率の増加が見られたため、それを修正するために、急遽リリースされる運びになったようです。
-deno version 1.30.1 large cpu increase #17629 https://github.com/denoland/deno/releases/tag/v1.30.2
-deno_std v0.176.0 deno_std v0....</p>
-</div>
-<footer class=entry-footer><span title="2023-02-05 00:00:00 +0000 UTC">February 5, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/01/30〜2023/02/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/05.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

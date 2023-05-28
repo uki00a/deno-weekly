@@ -81,6 +81,30 @@ fresh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Fresh v1.1
+</h2>
+</header>
+<div class=entry-content>
+<p>Fresh v1.1がリリースされました。
+この記事では主な変更点などについて解説します。
+アップデート用スクリプトの追加 Freshのアップデート用スクリプトが追加されています。
+$ deno run -A https://fresh.deno.dev/update . このスクリプトを実行すると、各種依存関係や後述するcompilerOptionsやTwindプラグインなどに関する変更が適用されます。
+compilerOptions.jsxとcompilerOptions.jsxImportSourceのサポート Freshのプロジェクトの初期化時に、compilerOptions.jsxとcompilerOptions.jsxImportSourceが自動で設定されるようになりました。
+これにより、.jsx/.tsxファイルで以下2行の指定が不要になります。
+/** @jsx h */ import { h } from "preact"; 前述のアップデートスクリプトを実行すると、既存のプロジェクトにもこの設定が適用されます。
+プラグインシステム ユーザがFreshの挙動を拡張できるようにするために、プラグインシステムが実装されました。
+現時点では、生成されたHTMLに対するスクリプトやスタイルの注入などがサポートされています。将来的には、プラグイン経由でRouteやMiddlewareなどを追加できるようにすることが予定されているようです。
+例として、公式でTwindプラグインが提供されており、start()のpluginsオプションで有効化できます。
+// main.ts import { start } from "$fresh/server.ts"; import twindPlugin from "$fresh/plugins/twind.ts"; import manifest from "./fresh.gen.ts"; import twindConfig from "./twind.config.ts"; await start(manifest, { plugins: [twindPlugin(twindConfig)] }); このTwindプラグインを有効化すると、twを使わずにclassを指定できるようになります (PreactのOption Hooksを使用して twが自動で適用されます)
+&lt;div class="font-bold">foobar&lt;/div> 前述のアップデートスクリプトを実行することで、twを使わずにclassを記述する形式へ自動で変換されます。
+Preact Devtoolsのサポート Preact Devtoolsのサポートが追加されています。
+devモード(deno task start)時は自動で有効化されるため、特に設定などは不要です。...</p>
+</div>
+<footer class=entry-footer><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span></footer>
+<a class=entry-link aria-label="post link to Fresh v1.1" href=https://uki00a.github.io/deno-weekly/articles/fresh/v1.1.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/08/01〜2022/08/07の最新情報
 </h2>
 </header>
@@ -272,24 +296,6 @@ $ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから�
 </div>
 <footer class=entry-footer><span title="2022-02-20 00:00:00 +0000 UTC">February 20, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/14〜2022/02/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/20.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/11/01〜2021/11/07の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>2021年のDeno Advent Calendarが公開 Qiitaで2021年のDeno Advent Calendarが公開されました。
-https://qiita.com/advent-calendar/2021/deno
-deployctlがアーカイブ Deno Deployのコマンドラインツールであるdeployctlがアーカイブされました。
-今後は代わりにDeno CLIを使って開発していくようアナウンスされています。
-Deno Deploy Beta 3が来たぞ Freshのアップデート PreactベースのWebフレームワークであるFreshがアップデートされ、MiddlewareとCSPのサポートが追加されました。
-Middlewareサポート Middlewareを利用する際は、pagesディレクトリ配下に下記のいずれかの名前のファイルを用意し、handler関数をexportする必要があります。
-/_middleware.tsx /_middleware.ts /_middleware.jsx /_middleware.js export async function handler(req: Request, handle: () => Promise&lt;Response>) { const start = Date.now(); const resp = await handle(); const end = Date.now(); console.log(`${req.method}${req.url}- ${end - start}ms`); return resp; } CSPサポート CSPサポートを有効化したいときは、対象ページでcspオプションにtrueを設定したconfigオブジェクトをexportします。
-import type { PageConfig } from "../deps.ts"; export const config: PageConfig = { csp: true }; 上記を実施しておくことで、特に設定をしなくとも自動でContent-Security-Policyヘッダを出力してくれます。...</p>
-</div>
-<footer class=entry-footer><span title="2021-11-07 00:00:00 +0000 UTC">November 7, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/11/01〜2021/11/07の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/11/07.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

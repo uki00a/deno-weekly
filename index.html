@@ -77,6 +77,44 @@
 <main class=main>
 <article class=first-entry>
 <header class=entry-header>
+<h2>2023/05/22〜2023/05/28の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>deno_std v0.189.0 deno_std v0.189.0がリリースされました。
+std/async/retry.ts retry()の内部でジッターが適用されるようになりました。
+std/collections/group_by.ts groupBy()でIterable&lt;T>型の値がサポートされました。
+import { groupBy } from "https://deno.land/std@0.189.0/collections/group_by.ts"; groupBy( new Set([1, 2, 3, 4, 5]), (x) => x % 2 === 0 ? "even" : "odd", ); // Output: { odd: [ 1, 3, 5 ], even: [ 2, 4 ] } また、selector関数が引数として現在処理中の要素のindexを受け取るように変更されています。
+v0.189.0 v0.188.0 Deno DeployでNode.js組み込みモジュールがサポート Deno DeployでNode.js組み込みモジュールがサポートされたようです。
+Node.js built-ins on Deno Deploy Denoと同様にnode:&lt;パッケージ名>の形式でimportすることで利用できます。
+これにより、esm.shを利用して、Deno DeployでExpressなどのパッケージが動かせるようになったようです。(現状ではtarget=denonextを指定する必要があるようです)
+import express from "https://esm....</p>
+</div>
+<footer class=entry-footer><span title="2023-05-28 00:00:00 +0000 UTC">May 28, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/22〜2023/05/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/05/28.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Deno v1.34
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.34がリリースされました。
+この記事では主な変更点などについて解説します。
+deno.json(c)の拡張 トップレベルのexcludeフィールドがサポート deno fmtやdeno lintなどの各コマンドで共通の除外対象ファイルを定義できます。
+また、トップレベルのexcludeに加えてfmt.excludeやlint.excludeなども一緒に定義されている場合は、それらへマージされます。
+例えば、以下のような設定があったとします。
+{ "fmt": { "exclude": [ "fresh.gen.ts", "README.md" ] }, "lint": { "exclude": [ "fresh.gen.ts" ] } } Deno v1.34以降であれば、以下のように設定をまとめることができます。
+{ "exclude": [ "fresh.gen.ts" ], "fmt": { "exclude": [ "README.md" ] } } globのサポート include/excludeやtasksなどでglob形式で対象を定義することができます。
+{ "lint": { "exclude": ["generated/**/*.ts"] }, "tasks": { "my_task": "cat vendor/**/*.ts" } } またコマンドライン引数でglob式を指定することもできます。
+$ deno lint --ignore='vendor/**/*.ts' nodeModulesDirの追加 { "nodeModulesDir": true } このフィールドにtrueを設定しておくと、依存しているnpmパッケージがnode_modulesディレクトリにも保存されるようになります。(--node-modules-dirが指定された際と同様の振る舞いをします)
+Deno.serve()への変更 Deno.serveの戻り値がPromise&lt;void>から新しく導入されたDeno.Serverに変更されました。...</p>
+</div>
+<footer class=entry-footer><span title="2023-05-28 00:00:00 +0000 UTC">May 28, 2023</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.34" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.34.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2023/05/15〜2023/05/21の最新情報
 </h2>
 </header>
@@ -244,51 +282,6 @@ https://github.com/denoland/saaskit SaaSKit v1....</p>
 </div>
 <footer class=entry-footer><span title="2023-04-09 00:00:00 +0000 UTC">April 9, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/04/03〜2023/04/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/09.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2023/03/27〜2023/04/02の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.32.2 Deno v1.32.2がリリースされました。
-KV (Deno.Kv) Deno.KvCommitResult型が追加されています。
-これには、KVにコミットされた値に設定された新しいversionstampが含まれます。
-この追加に合わせて、以下の変更も実施されています。
-Deno.AtomicOperation.commitの戻り値がPromise&lt;boolean>からPromise&lt;Deno.KvCommitResult | null>に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise&lt;void>からPromise&lt;KvCommitResult>に変更されています。 Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry&lt;T> | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)
-これに合わせて、以下のAPIに型引数を指定できるように変更されました。
-Deno.KvListIterator → Deno.KvListIterator&lt;T> Deno.KvEntry → Deno.KvEntry&lt;T> これらの変更により、エントリを取得する際に値の型を指定できるようになりました。
-const entry: Deno.KvEntryMaybe&lt;string> = await kv.get&lt;string>(["str"]); const entries: [Deno.KvEntryMaybe&lt;string>, Deno.KvEntryMaybe&lt;number>] = await kv.getMany&lt;[string, number]>([["str"], ["n"]]); Deno.Kv#getManyが実装されました。
-複数のエントリをまとめて取得できます。
-await kv.set(["key", 1], "foo"); await kv.set(["key", 2], "bar"); const entries = await kv.getMany([ ["key", 1], ["key", 2] ]); assert(entries....</p>
-</div>
-<footer class=entry-footer><span title="2023-04-02 00:00:00 +0000 UTC">April 2, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/03/27〜2023/04/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/02.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2023/03/20〜2023/03/26の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.32 Deno v1.32がリリースされました。
-以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
-Deno v1.32 Deno v1.32.1 Deno v1.32.1がリリースされました。
-Resizable ArrayBufferの無効化 Resizable ArrayBufferが無効化されています。
-CVE-2023-28445 もしDeno v1.32.0を使用されている場合は、v1.32.1へのアップデートが推奨されます。
-その他 deno run -に与えられたソースがJavaScriptではなくTypeScriptとして解釈されるように修正されています。(Deno v1.32.0での--extオプション導入時のリグレッションのようです) オブジェクトの値に改行が入った文字列があった際に、Deno.inspectで非compactな形式で結果が返されるように改善されています。 deno lspでenablePathsに末尾の/なしでパスが与えられた際も適切に動作するように修正されています。 (https://github.com/denoland/vscode_deno/issues/827) https://github.com/denoland/deno/releases/tag/v1.32.1
-deno_std v0.181.0 deno_std v0.181.0がリリースされました。
-std/front_matter - +++ブロックがサポート +++ブロックがサポートされました。
-このブロック内ではTOML形式でメタデータを宣言できます。
-+++ title = ”hello” +++ 本文... Hugoなどでこの形式がサポートされているようです。
-std/testing/asserts 各種アサーション関数にカスタムのメッセージが与えられた際のエラーメッセージが改善されています。
-例えば、assertEqualsにカスタムのmsg引数を渡した際に、msgに加えてdiffの内容も一緒に表示されるように挙動が改善されています。
-assertEquals(1, 2, "カスタムメッセージ"); 上記のようなコードがあった場合、v0.181.0とv0.180.0ではそれぞれ以下のように出力されます。
-v0.181.0
-error: Uncaught AssertionError: Values are not equal: カスタムメッセージ [Diff] Actual / Expected - 1 + 2 throw new AssertionError(message); v0....</p>
-</div>
-<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/03/20〜2023/03/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/26.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
