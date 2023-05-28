@@ -170,7 +170,7 @@ import { groupBy } from &#34;https://deno.land/std@0.189.0/collections/group_by.
 <li><a href=https://deno.com/blog/node-builtins-on-deploy>Node.js built-ins on Deno Deploy</a></li>
 </ul>
 <p>Denoと同様に<code>node:&lt;パッケージ名></code>の形式で<code>import</code>することで利用できます。</p>
-<p>これにより、<a href=esm.sh>esm.sh</a>を利用して、Deno DeployでExpressなどのパッケージが動かせるようになったようです。(現状では<a href=https://uki00a.github.io/deno-weekly/articles/2023/02/26.html>target=denonext</a>を指定する必要があるようです)</p>
+<p>これにより、<a href=https://github.com/esm-dev/esm.sh>esm.sh</a>を利用して、Deno DeployでExpressなどのパッケージが動かせるようになったようです。(現状では<a href=https://uki00a.github.io/deno-weekly/articles/2023/02/26.html>target=denonext</a>を指定する必要があるようです)</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>express</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;https://esm.sh/express@4.18.2?target=denonext&#34;</span>;
 
 <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>app</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>express</span>();
