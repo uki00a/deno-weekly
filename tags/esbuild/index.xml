@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>esbuild on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/esbuild.html</link><description>Recent content in esbuild on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 18 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/esbuild/index.xml" rel="self" type="application/rss+xml"/><item><title>2021/04/12〜2021/04/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/04/18.html</link><pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/04/18.html</guid><description>Deno本体の最新情報 Deno v1.9.0がリリース Deno v1.9.0がリリースされました。このリリースでは、様々な機能の追加やパフォーマンスチューニングなどが実施されています。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>esbuild on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/esbuild.html</link><description>Recent content in esbuild on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 04 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/esbuild/index.xml" rel="self" type="application/rss+xml"/><item><title>2023/05/29〜2023/06/04の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/06/04.html</link><pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/06/04.html</guid><description>Deno v1.34.1 Deno v1.34.1がリリースされました。
+deno compile DENO_DIRが読み取り専用であった際に、deno compileで作ったバイナリがうまく動かない問題が修正されました。 npmパッケージ内に含まれるファイルを読む際に、deno compileに--allow-readを指定しているにも関わらず、バイナリの実行時に再度--allow-readが求められる問題が修正されました。 Node-API napi_get_cb_infoでdata引数が適切に取り扱われるように改善されました。
+Deno.createHttpClient オプションとしてhttp2: falseとhttp1: trueの両方が指定された場合に、ALPNでh2が指定されないように修正されました。
+denoland/deno_kv_oauth Deno公式で、Deno KVをベースにOAuthのアクセストークンやセッションなどの管理を行ってくれるモジュールが公開されています。
+https://github.com/denoland/deno_kv_oauth ロードマップについては、以下で公開されています。
+https://github.com/denoland/deno_kv_oauth/issues/1 window変数の削除について Deno 2.0でwindow変数の削除が検討されているようです。
+remove window variable #13367 背景としては、既存のライブラリにはwindow変数の有無に応じて現在の環境(ブラウザ or Node.js)を判断しているものが多く存在し、Denoでそういったライブラリを利用する際に、意図せずしてブラウザであると判定されてしまうことを防ぎたい、という狙いがあるようです。
+次のマイナーリリースであるDeno 1.35では、window変数が参照された際に警告を表示する変更を入れることが検討されているようです。
+feat(runtime): log deprecated message on first usage of window global #19319 esbuild_deno_loader v0.8.0 esbuild_deno_loader v0.8.0がリリースされました。
+npm:URLやnode_modulesのサポートが行われています。
+&amp;quot;native&amp;quot;ローダーでは、通常のDenoにおけるnpm:などと同様に、依存するnpmパッケージはDenoのグローバルキャッシュ(DENO_DIR)から読み込みやダウンロードなどが行われるようです。
+ただし、Deno Deployなどでも動作する&amp;quot;portable&amp;quot;ローダーでは、--node-modules-dirなどによって事前にnode_modulesディレクトリが作成されていないと動作しないなどの制限があるようです。
+freshでのnpm:サポート またマージはされていませんが、esbuild_deno_loader v0.8.0を活用してfreshにnpm:のサポートを入れる対応が進められているようです。
+feat: limited npm: specifier support #1245</description></item><item><title>2023/04/24〜2023/04/30の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/04/30.html</link><pubDate>Sun, 30 Apr 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/04/30.html</guid><description>Deno v1.33 Deno v1.33がリリースされました。
+以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
+Deno v1.33 Deno v2.0について Deno v1.33のリリースノートでDeno v2.0のリリース時期について書かれています。
+https://deno.com/blog/v1.33 数カ月後にリリースが予定されているようです。
+それまでの間、今後のマイナーリリースではパフォーマンスやNode.js互換性、セキュリティなどの改善が行われる想定のようです。
+deno_std v0.185.0 deno_std v0.185.0がリリースされました。
+std/uuid: UUID v3のサポート std/uuid/v3.tsが実装されています。
+MD5を利用してUUIDを生成するgenerate()や、UUIDの検証をするvalidate()が提供されています。
+std/dotenv: --allow-envなしでの読み込みがサポート restrictEnvAccessToオプションに空の配列やnullまたはundefinedを指定した際に、環境変数を参照せずに.envの内容のみが読み込まれるようになりました。
+この場合、--allow-envの指定が不要になります。
+esbuild_deno_loader v0.7.0 esbuild_deno_loader v0.7.0がリリースされました。
+v0.6.0で提供されていたdenoPluginが以下のように2つのプラグインに分割されています。
+denoResolverPlugin: Import mapsを考慮した上でspecifierを解決する denoLoaderPlugin: denoResolverPluginが解決したspecifierを元にモジュールを読み込む プラグインを分割することにより、カスタムのスキーマや拡張子などをサポートできるようになったようです。
+例えば、以下ではカスタムのemoji:スキーマをサポートする例が紹介されています。
+examples/custom_scheme_plugin.ts また、configPathとimportMapURLオプションが追加されており、これらにより各プラグインが利用するdeno.jsonやImport Mapsファイルへのパスを指定することができるようです。
+Deno KV Deno KVのホームページが正式に公開されました。
+https://deno.com/kv @ayame113さんによるDeno KVの解説記事も公開されています。
+Deno KV 正式発表！cloudflare KVとcloudflare D1のいいとこ取り？</description></item><item><title>2021/04/12〜2021/04/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/04/18.html</link><pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/04/18.html</guid><description>Deno本体の最新情報 Deno v1.9.0がリリース Deno v1.9.0がリリースされました。このリリースでは、様々な機能の追加やパフォーマンスチューニングなどが実施されています。
 また、magurotunaさんによるDeno v1.9.0の解説記事が公開されています。
 変更点:
 Deno本体にネイティブのHTTP/2サーバの実装が組み込まれた Deno内部のJavaScriptとRust間のメッセージングの仕組みが改善され、最大で98%程のパフォーマンス向上が実現された BLOB URLやData URLがサポートされた deno lspのimport補完が向上した deno lspでtextDocument/foldingRange及びtextDocument/selectionRangeが実装された --allow-readや--allow-netなどと同様、--allow-envや--allow-runで許可リストを指定できるようになった deno runコマンドで--promptオプションがサポートされ、対話的に権限を与えられるようになった Deno.fstat(Sync)/ftruncate(Sync)が安定化された Deno.Fileにstat(Sync)/truncate(Sync)メソッドが追加された Deno.Buffer/readAll(Sync)/writeAll(Sync)/iter(Sync)が非推奨化された これらのAPIはv2.0で削除される予定です これらのAPIはdeno_std/ioに移動されています Deno.memoryUsage()が実装された(unstable) TypeScriptのuseDefineForClassFieldsオプションが有効化された https://deno.com/blog/v1.9 https://github.com/denoland/deno/releases/tag/v1.9.0 https://zenn.dev/magurotuna/articles/deno-release-note- deno_std v0.93.0がリリース Deno v1.9.0のリリースに合わせて、deno_std v0.93.0がリリースされました。

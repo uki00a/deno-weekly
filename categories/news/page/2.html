@@ -81,6 +81,31 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/03/20〜2023/03/26の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32 Deno v1.32がリリースされました。
+以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
+Deno v1.32 Deno v1.32.1 Deno v1.32.1がリリースされました。
+Resizable ArrayBufferの無効化 Resizable ArrayBufferが無効化されています。
+CVE-2023-28445 もしDeno v1.32.0を使用されている場合は、v1.32.1へのアップデートが推奨されます。
+その他 deno run -に与えられたソースがJavaScriptではなくTypeScriptとして解釈されるように修正されています。(Deno v1.32.0での--extオプション導入時のリグレッションのようです) オブジェクトの値に改行が入った文字列があった際に、Deno.inspectで非compactな形式で結果が返されるように改善されています。 deno lspでenablePathsに末尾の/なしでパスが与えられた際も適切に動作するように修正されています。 (https://github.com/denoland/vscode_deno/issues/827) https://github.com/denoland/deno/releases/tag/v1.32.1
+deno_std v0.181.0 deno_std v0.181.0がリリースされました。
+std/front_matter - +++ブロックがサポート +++ブロックがサポートされました。
+このブロック内ではTOML形式でメタデータを宣言できます。
++++ title = ”hello” +++ 本文... Hugoなどでこの形式がサポートされているようです。
+std/testing/asserts 各種アサーション関数にカスタムのメッセージが与えられた際のエラーメッセージが改善されています。
+例えば、assertEqualsにカスタムのmsg引数を渡した際に、msgに加えてdiffの内容も一緒に表示されるように挙動が改善されています。
+assertEquals(1, 2, "カスタムメッセージ"); 上記のようなコードがあった場合、v0.181.0とv0.180.0ではそれぞれ以下のように出力されます。
+v0.181.0
+error: Uncaught AssertionError: Values are not equal: カスタムメッセージ [Diff] Actual / Expected - 1 + 2 throw new AssertionError(message); v0....</p>
+</div>
+<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/03/20〜2023/03/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/26.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Denoでpackage.jsonやnpmパッケージのサポートが入った理由について
 </h2>
 </header>
@@ -258,33 +283,6 @@ std/io/readers.tsモジュールの削除 (破壊的変更) std/io/readers....</
 </div>
 <footer class=entry-footer><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/01/23〜2023/01/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/29.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/01/16〜2023/01/22の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Denoのロードマップ (2023年 Q1) Denoの2023年 Q1のロードマップが公開されました。
-以下のページに内容をまとめたため、よろしければ参照いただければと思います。
-Denoのロードマップ (2023年 Q1) https://github.com/denoland/deno/issues/17475
-Deno v1.29.4 Deno v1.29.4がリリースされました。
-Node-APIに関する改善 Node-APIの互換性の向上が実施されています。
-napi_get_arraybuffer_info/napi_get_buffer_info/napi_get_typedarray_infoで lengthなどの各引数がNULLであった際のケースが考慮されるように挙動が改善されています。 napi_create_errorやnapi_is_error, napi_throw_errorなどのエラー関連APIの互換性が向上されています。 Flash(Deno.serve)の改善 Request.cloneを呼ぶと、エラーが発生する問題が修正されています。 リクエストメソッドがPOST/PUT/PATCHのいずれかで かつ Deno.serveに渡したハンドラでリクエストボディがconsumeされていない場合、プロセスがパニックする問題が修正されています。 レスポンスボディとして設定したReadableStreamからUint8Array以外の値がenqueueされた際に、Deno.serveに渡したonErrorハンドラが呼ばれず、Unhandled rejectionが発生してしまう問題が修正されています。 Deno APIに関するバグ修正 Deno.copyFileSyncを実行した際に、コピー先のファイルへパーミッションが受け継がれない問題が修正されています。 WindowsでDeno.systemMemoryInfo()を呼んだ際にswapTotalやswapFreeとして返却される値の信頼性が向上されています。 https://github.com/denoland/deno/releases/tag/v1.29.4
-deno_std v0.173.0 deno_std v0.173.0がリリースされました。
-std/node 前回のリリースで追加されたnode:clusterがリバートされています。
-Deno本体でnpm互換が有効化されている場合に、node:clusterを使っていない場合であっても、NODE_CLUSTER_SCHED_POLICYなどの環境変数に対するパーミッションが要求されてしまうためのようです。
-現在、Deno本体でDeno.permissions.querySync()の実装が進められており、これが正式にサポートされたら、改めてnode:clusterを追加することが検討されているようです。
-std/fs/expand_glob expandGlob(Sync)のglobstarオプションのデフォルト値がfalseからtrueへ変更されました。
-std/streams/text_line_stream TextLineStreamで最後の行の後に空文字列が余分にenqueueされてしまう問題が修正されています。
-https://github.com/denoland/deno_std/releases/tag/0.173.0
-eslint_binary eslint_binaryという、DenoのNode.js互換性やV8 Snapshot、ESBuildなどを活用して、ESLintをシングルバイナリ化するプロジェクトが公開されています。
-bartlomieju/eslint_binary このプロジェクトはあくまでPoCのため、今後どうなるかはまだ不明ですが、READMEにロードマップが公開されており、ESLintのCLIをRustで書き直すことなども検討されているようです。
-esm.shの2023年のロードマップ esm.shの今年のロードマップが公開されています。
-Roadmap of 2023 プレイグラウンドにコードの共有機能を実装することや、安定性の向上などを図ることが検討されているようです。...</p>
-</div>
-<footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/01/16〜2023/01/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/22.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

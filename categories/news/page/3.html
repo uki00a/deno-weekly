@@ -81,6 +81,33 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/01/16〜2023/01/22の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoのロードマップ (2023年 Q1) Denoの2023年 Q1のロードマップが公開されました。
+以下のページに内容をまとめたため、よろしければ参照いただければと思います。
+Denoのロードマップ (2023年 Q1) https://github.com/denoland/deno/issues/17475
+Deno v1.29.4 Deno v1.29.4がリリースされました。
+Node-APIに関する改善 Node-APIの互換性の向上が実施されています。
+napi_get_arraybuffer_info/napi_get_buffer_info/napi_get_typedarray_infoで lengthなどの各引数がNULLであった際のケースが考慮されるように挙動が改善されています。 napi_create_errorやnapi_is_error, napi_throw_errorなどのエラー関連APIの互換性が向上されています。 Flash(Deno.serve)の改善 Request.cloneを呼ぶと、エラーが発生する問題が修正されています。 リクエストメソッドがPOST/PUT/PATCHのいずれかで かつ Deno.serveに渡したハンドラでリクエストボディがconsumeされていない場合、プロセスがパニックする問題が修正されています。 レスポンスボディとして設定したReadableStreamからUint8Array以外の値がenqueueされた際に、Deno.serveに渡したonErrorハンドラが呼ばれず、Unhandled rejectionが発生してしまう問題が修正されています。 Deno APIに関するバグ修正 Deno.copyFileSyncを実行した際に、コピー先のファイルへパーミッションが受け継がれない問題が修正されています。 WindowsでDeno.systemMemoryInfo()を呼んだ際にswapTotalやswapFreeとして返却される値の信頼性が向上されています。 https://github.com/denoland/deno/releases/tag/v1.29.4
+deno_std v0.173.0 deno_std v0.173.0がリリースされました。
+std/node 前回のリリースで追加されたnode:clusterがリバートされています。
+Deno本体でnpm互換が有効化されている場合に、node:clusterを使っていない場合であっても、NODE_CLUSTER_SCHED_POLICYなどの環境変数に対するパーミッションが要求されてしまうためのようです。
+現在、Deno本体でDeno.permissions.querySync()の実装が進められており、これが正式にサポートされたら、改めてnode:clusterを追加することが検討されているようです。
+std/fs/expand_glob expandGlob(Sync)のglobstarオプションのデフォルト値がfalseからtrueへ変更されました。
+std/streams/text_line_stream TextLineStreamで最後の行の後に空文字列が余分にenqueueされてしまう問題が修正されています。
+https://github.com/denoland/deno_std/releases/tag/0.173.0
+eslint_binary eslint_binaryという、DenoのNode.js互換性やV8 Snapshot、ESBuildなどを活用して、ESLintをシングルバイナリ化するプロジェクトが公開されています。
+bartlomieju/eslint_binary このプロジェクトはあくまでPoCのため、今後どうなるかはまだ不明ですが、READMEにロードマップが公開されており、ESLintのCLIをRustで書き直すことなども検討されているようです。
+esm.shの2023年のロードマップ esm.shの今年のロードマップが公開されています。
+Roadmap of 2023 プレイグラウンドにコードの共有機能を実装することや、安定性の向上などを図ることが検討されているようです。...</p>
+</div>
+<footer class=entry-footer><span title="2023-01-22 00:00:00 +0000 UTC">January 22, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/01/16〜2023/01/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/22.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Denoのロードマップ (2023年 Q1)
 </h2>
 </header>
@@ -281,26 +308,6 @@ node:console: Deno v1....</p>
 </div>
 <footer class=entry-footer><span title="2022-11-27 00:00:00 +0000 UTC">November 27, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/11/21〜2022/11/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/27.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/11/14〜2022/11/20の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.28.0 Deno v1.28がリリースされました。
-以下に変更内容をまとめたため、よろしければ参照ください。
-Deno v1.28 Deno v1.28.1 Deno v1.28.1がリリースされました。
-deno installコマンドでnpm:がサポートされています。
-その他には、npmパッケージサポートに関する細かなバグ修正などが実施されています:
-Conditional exportsで指定されたエントリポイントが型定義を持っていない場合にエラーが発生する問題が修正 npmパッケージにfoo.server.jsのようにベースネーム部分に.を含むファイルが存在する場合に、うまく読み込みができない問題が修正 あるnpmパッケージの依存関係のバージョンにdist tagが指定されていた際に、うまく取り扱われない問題が修正 scopedパッケージに対して@types/*パッケージの型定義が適切に適用されない問題が修正 --lock-writeを指定すると、deno.lockからnpmパッケージが消えてしまう問題が解消 https://github.com/denoland/deno/releases/tag/v1.28.1
-deno_std v0.164.0 deno_std v0.164.0がリリースされました。
-std/fmt: durationモジュールが追加 ミリ秒単位で指定された時間のフォーマットされた文字列を取得することができます。
-import { prettyDuration } from "https://deno.land/std@0.165.0/fmt/duration.ts"; prettyDuration(130000, { ignoreZero: true, formatType: "full" }); // => "2 minutes, 10 seconds" 補足) prettyDurationは以下のPRでformatにリネームされています。この変更は、おそらくv0.166.0あたりでリリースされると思われるため、今後利用する際はprettyDurationではなくformatを使用するとよさそうです。
-https://github.com/denoland/deno_std/pull/2896 std/node: 互換性の向上 node/fs: - read()でコールバックが非同期に呼ばれるように修正 node/http: ServerResponse.finishedが実装 node/http: --unstableが指定されていると、Buffer形式のレスポンスが適切に取り扱われない問題が修正 node/string_decoder: StringDecoder.decodeのパフォーマンスが小さなUint8Arrayに対しては51倍、大きなUint8Arrayに対しては4倍程まで高速化 https://github....</p>
-</div>
-<footer class=entry-footer><span title="2022-11-20 00:00:00 +0000 UTC">November 20, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/11/14〜2022/11/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/11/20.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -81,6 +81,30 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/05/29〜2023/06/04の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.34.1 Deno v1.34.1がリリースされました。
+deno compile DENO_DIRが読み取り専用であった際に、deno compileで作ったバイナリがうまく動かない問題が修正されました。 npmパッケージ内に含まれるファイルを読む際に、deno compileに--allow-readを指定しているにも関わらず、バイナリの実行時に再度--allow-readが求められる問題が修正されました。 Node-API napi_get_cb_infoでdata引数が適切に取り扱われるように改善されました。
+Deno.createHttpClient オプションとしてhttp2: falseとhttp1: trueの両方が指定された場合に、ALPNでh2が指定されないように修正されました。
+denoland/deno_kv_oauth Deno公式で、Deno KVをベースにOAuthのアクセストークンやセッションなどの管理を行ってくれるモジュールが公開されています。
+https://github.com/denoland/deno_kv_oauth ロードマップについては、以下で公開されています。
+https://github.com/denoland/deno_kv_oauth/issues/1 window変数の削除について Deno 2.0でwindow変数の削除が検討されているようです。
+remove window variable #13367 背景としては、既存のライブラリにはwindow変数の有無に応じて現在の環境(ブラウザ or Node.js)を判断しているものが多く存在し、Denoでそういったライブラリを利用する際に、意図せずしてブラウザであると判定されてしまうことを防ぎたい、という狙いがあるようです。
+次のマイナーリリースであるDeno 1.35では、window変数が参照された際に警告を表示する変更を入れることが検討されているようです。
+feat(runtime): log deprecated message on first usage of window global #19319 esbuild_deno_loader v0.8.0 esbuild_deno_loader v0.8.0がリリースされました。
+npm:URLやnode_modulesのサポートが行われています。
+"native"ローダーでは、通常のDenoにおけるnpm:などと同様に、依存するnpmパッケージはDenoのグローバルキャッシュ(DENO_DIR)から読み込みやダウンロードなどが行われるようです。
+ただし、Deno Deployなどでも動作する"portable"ローダーでは、--node-modules-dirなどによって事前にnode_modulesディレクトリが作成されていないと動作しないなどの制限があるようです。
+freshでのnpm:サポート またマージはされていませんが、esbuild_deno_loader v0.8.0を活用してfreshにnpm:のサポートを入れる対応が進められているようです。
+feat: limited npm: specifier support #1245 </p>
+</div>
+<footer class=entry-footer><span title="2023-06-04 00:00:00 +0000 UTC">June 4, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/29〜2023/06/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/06/04.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/05/22〜2023/05/28の最新情報
 </h2>
 </header>
@@ -267,25 +291,6 @@ import { parse } from "https://deno.land/std@0.183.0/csv/parse.ts"; const record
 </div>
 <footer class=entry-footer><span title="2023-04-16 00:00:00 +0000 UTC">April 16, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/04/10〜2023/04/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/16.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/04/03〜2023/04/09の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。
-refactor: remove “ext/flash” #18578 これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。
-refactor: “Deno.serve()” API uses “Deno.serveHttp()” internally #18568 Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。
-Extremely experimental HTTP rewrite #18619 Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。
-feat: remove experimental support for Deno flash server docs: remove experimental flash content from README fresh v1.1.5 fresh v1.1.5がリリースされました。
-twindv1プラグインで、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。
-Deno SaaSKit Deno公式からFreshやSupabase, Stripeなどを活用したSaaSプロジェクトのテンプレートが公開されました。
-Announcing Deno SaaSKit: an open-source SaaS template built with Fresh ソースコードやロードマップなどが以下のリポジトリで公開されています。
-https://github.com/denoland/saaskit SaaSKit v1....</p>
-</div>
-<footer class=entry-footer><span title="2023-04-09 00:00:00 +0000 UTC">April 9, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/04/03〜2023/04/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/09.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

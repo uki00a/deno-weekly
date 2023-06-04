@@ -81,6 +81,26 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/04/18〜2022/04/24の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.21 Deno v1.21がリリースされました。
+個別に記事を書いたので、詳しくはそちらを参照いただければと思います。
+Deno v1.21 deno_std v0.136.0 deno_std v0.136.0がリリースされました。
+testing/snapshot スナップショットテストを行うためのモジュールが追加されました。
+このモジュールではassertSnapshotという関数が公開されており、__snapshots__ディレクトリに保存されたスナップショットと第2引数で指定された値を比較し、マッチしなかった場合、エラーが発生します。
+スナップショットを読み込む必要があるため、利用には--allow-readパーミッションが必要になります。
+import { assertSnapshot } from "https://deno.land/std@0.136.0/testing/snapshot.ts" Deno.test("doSomething", async (t) => { const result = doSomething(); await assertSnapshot(t, result); }); スナップショットを更新したいときは、テストを実行する際に--updateを指定する必要があります。
+この場合、スナップショットを書き込むために、追加で--allow-writeが必要になります。
+# スナップショットは__snapshots__に書き込まれます $ deno test --allow-read --allow-write tests/some_test.js -- --update testing/bdd itに渡すテスト関数がTestContextを受け取るように修正されています。
+import { describe, it } from "https://deno.land/std@0.136.0/testing/bdd.ts" describe("sum", () => { it("should return sum of numbers", (t) => { assertEquals(sum(1, 2, 3), 6, t....</p>
+</div>
+<footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/04/18〜2022/04/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/24.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/04/11〜2022/04/17の最新情報
 </h2>
 </header>
@@ -279,36 +299,6 @@ $ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから�
 </div>
 <footer class=entry-footer><span title="2022-02-20 00:00:00 +0000 UTC">February 20, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/14〜2022/02/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/20.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/02/07〜2022/02/13の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>--promptオプションの挙動をデフォルト化するPRがマージされました Denoで--promptオプションをデフォルトで有効化するPRがマージされました。
-feat: prompt by default (#13650)
-次のDeno v1.19でリリースされる可能性がありそうです。
-また、この変更に合わせて、--no-promptオプションが追加されています。 このオプションを指定することで、今まで通り、 許可されていないAPIを実行しようとすると、即時にエラーが発生します。
-ファイルシステムやネットワーク関連APIでのStreams APIのサポートについて Denoのファイルシステム(Deno.File)やネットワーク(Deno.Conn)関連のAPIでStreams APIをサポートすることが検討されています。
-Make FS and net APIs work well with WHATWG streams (#13614)
-まだドラフトの段階ですが、すでにPRも作成されています。
-feat(runtime): web streams in fs & net APIs (#13615)
-背景:
-現在、Denoのファイルシステムやネットワーク関連のAPIはGoのスタイルに従っています(Deno.Reader/Deno.Writer)
-しかし、これらのAPIはfetch()やStreams APIと互換性がありません (一応、この差異を吸収するためにdeno_std/streamsが提供されていたりします)
-この問題を解消するため、Deno.FileやDeno.Connなどにreadableプロパティ(ReadableStream&lt;Uint8Array>型)やwritableプロパティ(WritableStream&lt;Uint8Array>型)を追加することが検討されています。
-N-APIの実装について DenoでN-APIの実装が開始されています。
-Implement NAPI (#13633)
-まだドラフトの段階でありリリース時期も未定ですが、進捗は上記のPRから確認できるので、気になる方はSubscribeするとよいかもしれません。
-Deno.umask()の削除について Deno.umask()を削除するPRが作成されています。
-chore: remove Deno.umask (#13639)
-背景としては、競合状態によるバグが存在するためのようです。
-詳しくは以下のissueを参照ください。
-Proposal: Remove (unstable) Deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-02-13 00:00:00 +0000 UTC">February 13, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/02/07〜2022/02/13の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/13.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

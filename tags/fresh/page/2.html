@@ -81,6 +81,31 @@ fresh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2022/09/05〜2022/09/11の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.25.2 Deno v1.25.2がリリースされました。
+(破壊的変更) Node.js互換モード(--compat)の削除 Deno v1.25.0でnpmパッケージのサポートが追加されたため、Node.js互換モード(--compat)が削除されました。
+FFI Rustのdynasmrt crateを使用して、JITの仕組みが再実装されています。
+こちらのコメントによると、これにより以下の点などが改善されているようです。
+Windows x64 PCでもv8 Fast APIを使用した最適化が適用されるようになりました。 Denoからtinyccへの依存がなくなりました。 SElinuxが有効化されている環境でもFFIが動作するようになりました。 その他には、bool型のサポートが追加されています。
+const dylib = Deno.dlopen(libPath, { "do_something_with_bool": { parameters: ["bool"], result: "bool", }, }); npmパッケージサポートの改善 pre-releaseタグがサポートされています。(例: npm:some-package@1.2.3-alpha.4)
+また、パッケージのバージョンが指定されなかった際に、そのパッケージの最新バージョンがインストールされるように改善されています。(dist-tagsのlatest で指定されたバージョンがダウンロードされます)
+その他には、npm:経由で読み込んだパッケージ内ではwindow変数が削除され、cjsモジュールが再帰的に解析されるように改善されています。
+これによりVue.jsがimportできるようになっているようです。
+import { createApp } from "npm:vue@3.2.39" console.log(createApp); deno_std v0.155.0 deno_std v0.155.0がリリースされました。
+std/encoding/csv: stringify()のシグネチャが変更 (破壊的変更) stringify()が同期的に動作するように変更されています。
+また、columnsオプションがオプショナルに変更されています。
+具体的には、以下のように型定義が変更されています。
+v0.154.0:
+stringify( data: DataItem[], columns: Column[], options?: StringifyOptions, ): Promise&lt;string> v0.155.0:...</p>
+</div>
+<footer class=entry-footer><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2022/09/05〜2022/09/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/11.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Fresh v1.1
 </h2>
 </header>
@@ -277,25 +302,6 @@ deno.json(c)でのImport Mapサポートについて deno....</p>
 </div>
 <footer class=entry-footer><span title="2022-02-27 00:00:00 +0000 UTC">February 27, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/02/21〜2022/02/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/27.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/02/14〜2022/02/20の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.19 Deno v1.19がリリースされました。
---promptオプションの挙動がデフォルト化 例えば、以下のようなファイルがあったとします。
-const content = await Deno.readTextFile("README.md"); このファイルを権限なしで実行しようとすると、下記のように権限を付与するか尋ねられるようになります。
-$ deno run main.ts ⚠️ ️Deno requests read access to "README.md". Run again with --allow-read to bypass this prompt. Allow? [y/n (y = yes allow, n = no deny)] Deno v1.18以前の挙動に戻したいときは--no-promptを指定する必要があります。
-deno vendorコマンドの追加 サードパーティモジュールもバージョン管理に含めたいなどの要求を解決すべく導入されたコマンドです。
-具体的な使い方としては、下記のようにエントリポイントを指定します。
-$ deno vendor mod.ts これにより、vendorディレクトリにmod.tsから依存されているサードパーティモジュールが保存されます。
-また、vendorディレクトリに次のような内容でimport_map.jsonが作成されます。
-{ "imports": { "https://deno.land/": "./deno.land/", "https://unpkg.com/": "./unpkg.com/" }, "scopes": { "./unpkg.com/": { "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Debug.js", "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js": "./unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/helper.js" } } } deno runを実行する際にこのImport Mapファイルを指定することで、vendorディレクトリに保存されたサードパーティモジュールを透過的に読み込むことができます。...</p>
-</div>
-<footer class=entry-footer><span title="2022-02-20 00:00:00 +0000 UTC">February 20, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/02/14〜2022/02/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/02/20.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

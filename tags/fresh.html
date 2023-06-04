@@ -81,6 +81,30 @@ fresh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/05/29〜2023/06/04の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.34.1 Deno v1.34.1がリリースされました。
+deno compile DENO_DIRが読み取り専用であった際に、deno compileで作ったバイナリがうまく動かない問題が修正されました。 npmパッケージ内に含まれるファイルを読む際に、deno compileに--allow-readを指定しているにも関わらず、バイナリの実行時に再度--allow-readが求められる問題が修正されました。 Node-API napi_get_cb_infoでdata引数が適切に取り扱われるように改善されました。
+Deno.createHttpClient オプションとしてhttp2: falseとhttp1: trueの両方が指定された場合に、ALPNでh2が指定されないように修正されました。
+denoland/deno_kv_oauth Deno公式で、Deno KVをベースにOAuthのアクセストークンやセッションなどの管理を行ってくれるモジュールが公開されています。
+https://github.com/denoland/deno_kv_oauth ロードマップについては、以下で公開されています。
+https://github.com/denoland/deno_kv_oauth/issues/1 window変数の削除について Deno 2.0でwindow変数の削除が検討されているようです。
+remove window variable #13367 背景としては、既存のライブラリにはwindow変数の有無に応じて現在の環境(ブラウザ or Node.js)を判断しているものが多く存在し、Denoでそういったライブラリを利用する際に、意図せずしてブラウザであると判定されてしまうことを防ぎたい、という狙いがあるようです。
+次のマイナーリリースであるDeno 1.35では、window変数が参照された際に警告を表示する変更を入れることが検討されているようです。
+feat(runtime): log deprecated message on first usage of window global #19319 esbuild_deno_loader v0.8.0 esbuild_deno_loader v0.8.0がリリースされました。
+npm:URLやnode_modulesのサポートが行われています。
+"native"ローダーでは、通常のDenoにおけるnpm:などと同様に、依存するnpmパッケージはDenoのグローバルキャッシュ(DENO_DIR)から読み込みやダウンロードなどが行われるようです。
+ただし、Deno Deployなどでも動作する"portable"ローダーでは、--node-modules-dirなどによって事前にnode_modulesディレクトリが作成されていないと動作しないなどの制限があるようです。
+freshでのnpm:サポート またマージはされていませんが、esbuild_deno_loader v0.8.0を活用してfreshにnpm:のサポートを入れる対応が進められているようです。
+feat: limited npm: specifier support #1245 </p>
+</div>
+<footer class=entry-footer><span title="2023-06-04 00:00:00 +0000 UTC">June 4, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/29〜2023/06/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/06/04.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/05/22〜2023/05/28の最新情報
 </h2>
 </header>
@@ -292,31 +316,6 @@ Deno のめっちゃ難しいバグを修正した - Qiita また、この修正
 </div>
 <footer class=entry-footer><span title="2022-10-09 00:00:00 +0000 UTC">October 9, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2022/10/03〜2022/10/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/10/09.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2022/09/05〜2022/09/11の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.25.2 Deno v1.25.2がリリースされました。
-(破壊的変更) Node.js互換モード(--compat)の削除 Deno v1.25.0でnpmパッケージのサポートが追加されたため、Node.js互換モード(--compat)が削除されました。
-FFI Rustのdynasmrt crateを使用して、JITの仕組みが再実装されています。
-こちらのコメントによると、これにより以下の点などが改善されているようです。
-Windows x64 PCでもv8 Fast APIを使用した最適化が適用されるようになりました。 Denoからtinyccへの依存がなくなりました。 SElinuxが有効化されている環境でもFFIが動作するようになりました。 その他には、bool型のサポートが追加されています。
-const dylib = Deno.dlopen(libPath, { "do_something_with_bool": { parameters: ["bool"], result: "bool", }, }); npmパッケージサポートの改善 pre-releaseタグがサポートされています。(例: npm:some-package@1.2.3-alpha.4)
-また、パッケージのバージョンが指定されなかった際に、そのパッケージの最新バージョンがインストールされるように改善されています。(dist-tagsのlatest で指定されたバージョンがダウンロードされます)
-その他には、npm:経由で読み込んだパッケージ内ではwindow変数が削除され、cjsモジュールが再帰的に解析されるように改善されています。
-これによりVue.jsがimportできるようになっているようです。
-import { createApp } from "npm:vue@3.2.39" console.log(createApp); deno_std v0.155.0 deno_std v0.155.0がリリースされました。
-std/encoding/csv: stringify()のシグネチャが変更 (破壊的変更) stringify()が同期的に動作するように変更されています。
-また、columnsオプションがオプショナルに変更されています。
-具体的には、以下のように型定義が変更されています。
-v0.154.0:
-stringify( data: DataItem[], columns: Column[], options?: StringifyOptions, ): Promise&lt;string> v0.155.0:...</p>
-</div>
-<footer class=entry-footer><span title="2022-09-11 00:00:00 +0000 UTC">September 11, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2022/09/05〜2022/09/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/09/11.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

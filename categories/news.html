@@ -81,6 +81,30 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/05/29〜2023/06/04の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.34.1 Deno v1.34.1がリリースされました。
+deno compile DENO_DIRが読み取り専用であった際に、deno compileで作ったバイナリがうまく動かない問題が修正されました。 npmパッケージ内に含まれるファイルを読む際に、deno compileに--allow-readを指定しているにも関わらず、バイナリの実行時に再度--allow-readが求められる問題が修正されました。 Node-API napi_get_cb_infoでdata引数が適切に取り扱われるように改善されました。
+Deno.createHttpClient オプションとしてhttp2: falseとhttp1: trueの両方が指定された場合に、ALPNでh2が指定されないように修正されました。
+denoland/deno_kv_oauth Deno公式で、Deno KVをベースにOAuthのアクセストークンやセッションなどの管理を行ってくれるモジュールが公開されています。
+https://github.com/denoland/deno_kv_oauth ロードマップについては、以下で公開されています。
+https://github.com/denoland/deno_kv_oauth/issues/1 window変数の削除について Deno 2.0でwindow変数の削除が検討されているようです。
+remove window variable #13367 背景としては、既存のライブラリにはwindow変数の有無に応じて現在の環境(ブラウザ or Node.js)を判断しているものが多く存在し、Denoでそういったライブラリを利用する際に、意図せずしてブラウザであると判定されてしまうことを防ぎたい、という狙いがあるようです。
+次のマイナーリリースであるDeno 1.35では、window変数が参照された際に警告を表示する変更を入れることが検討されているようです。
+feat(runtime): log deprecated message on first usage of window global #19319 esbuild_deno_loader v0.8.0 esbuild_deno_loader v0.8.0がリリースされました。
+npm:URLやnode_modulesのサポートが行われています。
+"native"ローダーでは、通常のDenoにおけるnpm:などと同様に、依存するnpmパッケージはDenoのグローバルキャッシュ(DENO_DIR)から読み込みやダウンロードなどが行われるようです。
+ただし、Deno Deployなどでも動作する"portable"ローダーでは、--node-modules-dirなどによって事前にnode_modulesディレクトリが作成されていないと動作しないなどの制限があるようです。
+freshでのnpm:サポート またマージはされていませんが、esbuild_deno_loader v0.8.0を活用してfreshにnpm:のサポートを入れる対応が進められているようです。
+feat: limited npm: specifier support #1245 </p>
+</div>
+<footer class=entry-footer><span title="2023-06-04 00:00:00 +0000 UTC">June 4, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/05/29〜2023/06/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/06/04.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/05/22〜2023/05/28の最新情報
 </h2>
 </header>
@@ -269,31 +293,6 @@ await kv.set(["key", 1], "foo"); await kv.set(["key", 2], "bar"); const entries 
 </div>
 <footer class=entry-footer><span title="2023-04-02 00:00:00 +0000 UTC">April 2, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/03/27〜2023/04/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/02.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/03/20〜2023/03/26の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.32 Deno v1.32がリリースされました。
-以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
-Deno v1.32 Deno v1.32.1 Deno v1.32.1がリリースされました。
-Resizable ArrayBufferの無効化 Resizable ArrayBufferが無効化されています。
-CVE-2023-28445 もしDeno v1.32.0を使用されている場合は、v1.32.1へのアップデートが推奨されます。
-その他 deno run -に与えられたソースがJavaScriptではなくTypeScriptとして解釈されるように修正されています。(Deno v1.32.0での--extオプション導入時のリグレッションのようです) オブジェクトの値に改行が入った文字列があった際に、Deno.inspectで非compactな形式で結果が返されるように改善されています。 deno lspでenablePathsに末尾の/なしでパスが与えられた際も適切に動作するように修正されています。 (https://github.com/denoland/vscode_deno/issues/827) https://github.com/denoland/deno/releases/tag/v1.32.1
-deno_std v0.181.0 deno_std v0.181.0がリリースされました。
-std/front_matter - +++ブロックがサポート +++ブロックがサポートされました。
-このブロック内ではTOML形式でメタデータを宣言できます。
-+++ title = ”hello” +++ 本文... Hugoなどでこの形式がサポートされているようです。
-std/testing/asserts 各種アサーション関数にカスタムのメッセージが与えられた際のエラーメッセージが改善されています。
-例えば、assertEqualsにカスタムのmsg引数を渡した際に、msgに加えてdiffの内容も一緒に表示されるように挙動が改善されています。
-assertEquals(1, 2, "カスタムメッセージ"); 上記のようなコードがあった場合、v0.181.0とv0.180.0ではそれぞれ以下のように出力されます。
-v0.181.0
-error: Uncaught AssertionError: Values are not equal: カスタムメッセージ [Diff] Actual / Expected - 1 + 2 throw new AssertionError(message); v0....</p>
-</div>
-<footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/03/20〜2023/03/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/26.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

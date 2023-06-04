@@ -77,6 +77,22 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>2021/07/11〜2022/07/17の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.23.4 Deno v1.23.4がリリースされました。
+V8 Fast API Calls+JITコンパイルによるFFIの最適化 V8 Fast API Callsとtinyccを使用したJITコンパイルにより、FFI(Deno.dlopen)の最適化が行われています。
+Deno.dlopenを呼んだ際に、下記の条件が満たされる外部関数へのバインディングに対して、自動でFast API Calls+JITコンパイルによる最適化が適用されます。
+非Windows環境であること (Windowsではまだこれらの最適化がサポートされていません) パラメータ及び戻り値の型にスカラ型のみが含まれる場合 もしこれらの最適化を無効化したい場合は、callbackオプションにtrueを指定する必要があります。
+const lib = Deno.dlopen( "some_lib.so", { some_func: { parameters: ["usize", "usize"], result: "usize", callback: true }, } ); 細かな詳細については、deno_ffiも参照ください。
+perf(ext/ffi): leverage V8 Fast Calls #15125 fix(ext/ffi): trampoline for fast calls #15139 fix(ext/ffi): allow opting out of fast ffi calls #15131 その他の変更点 Request#json()などに続けてRequest.headersを参照するとプロセスがパニックする問題が解消されています。 deno lspで自動importが効くようになりました。それに伴い、入力補完に関わる挙動も改善されています。 https://github....</p>
+</div>
+<footer class=entry-footer><span title="2022-07-17 00:00:00 +0000 UTC">July 17, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/07/11〜2022/07/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/17.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2021/07/04〜2022/07/10の最新情報
 </h2>
 </header>
@@ -281,28 +297,6 @@ const { Connection } = Deno....</p>
 </div>
 <footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
 <a class=entry-link aria-label="post link to 2021/05/16〜2022/05/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/22.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Deno v1.22
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.22がリリースされました。
-この記事では、主な変更点についてまとめていきます。
-リモートモジュールの型チェックがデフォルトで無効化 deno runやdeno testなどの各コマンドでリモートモジュールの型チェックがデフォルトで無効化されました。
-今後はローカルのTypeScriptファイルのみが型チェックされます。
-もしリモートモジュールの型チェックも必要な際は--check=allオプションまたはdeno check --remoteを使用します。
-また、次のv1.23のリリースでは、deno runやdeno cacheではデフォルトで一切型チェックが行われなくなる予定です。 (deno checkコマンドや--checkオプションなどで明示的に型チェックする必要があります)
-例えば、CIでdeno cacheコマンドを実行して型チェックを行っている場合などは、今のうちにdeno checkコマンドに移行しておくとよいと思います。
-# mod.tsの型チェックを行う $ deno check mod.ts # deno run実行時に型チェックも行う $ deno run --check main.ts 設定ファイルの読み込みの無効化 Denoはエントリポイントが存在するディレクトリまたはその上位のいずれかのディレクトリにdeno.json(c)というファイルが存在する場合、それを自動で読み込みます。
-このリリースでは、新しく--no-configオプションがサポートされました。 このオプションを指定すると、deno.json(c)の自動探索を無効化できます。
-$ deno run --no-config main.ts (破壊的変更) Worker内でデフォルトでDeno APIが有効化 今までは、Worker内でDeno.readFileなどのAPIを使用したい場合は、denoオプションによって明示的に有効化する必要がありました。
-new Worker(new URL('./worker.js', import.meta.url).href, { deno: { namespace: true }, // Deno APIの使用を有効化 type: "module" }); 今後は上記のようにオプションを指定しなくても、Worker内で常にDenoのAPIを参照できます。
-new Worker(new URL('./worker.js', import.meta.url).href, { type: "module" }); また、この変更の影響により、WorkerOptions....</p>
-</div>
-<footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.22" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.22.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

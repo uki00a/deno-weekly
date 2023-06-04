@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>fresh on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/fresh.html</link><description>Recent content in fresh on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 28 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/fresh/index.xml" rel="self" type="application/rss+xml"/><item><title>2023/05/22〜2023/05/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/05/28.html</link><pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/05/28.html</guid><description>Deno v1.34 Deno v1.34がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>fresh on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/fresh.html</link><description>Recent content in fresh on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 04 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/fresh/index.xml" rel="self" type="application/rss+xml"/><item><title>2023/05/29〜2023/06/04の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/06/04.html</link><pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/06/04.html</guid><description>Deno v1.34.1 Deno v1.34.1がリリースされました。
+deno compile DENO_DIRが読み取り専用であった際に、deno compileで作ったバイナリがうまく動かない問題が修正されました。 npmパッケージ内に含まれるファイルを読む際に、deno compileに--allow-readを指定しているにも関わらず、バイナリの実行時に再度--allow-readが求められる問題が修正されました。 Node-API napi_get_cb_infoでdata引数が適切に取り扱われるように改善されました。
+Deno.createHttpClient オプションとしてhttp2: falseとhttp1: trueの両方が指定された場合に、ALPNでh2が指定されないように修正されました。
+denoland/deno_kv_oauth Deno公式で、Deno KVをベースにOAuthのアクセストークンやセッションなどの管理を行ってくれるモジュールが公開されています。
+https://github.com/denoland/deno_kv_oauth ロードマップについては、以下で公開されています。
+https://github.com/denoland/deno_kv_oauth/issues/1 window変数の削除について Deno 2.0でwindow変数の削除が検討されているようです。
+remove window variable #13367 背景としては、既存のライブラリにはwindow変数の有無に応じて現在の環境(ブラウザ or Node.js)を判断しているものが多く存在し、Denoでそういったライブラリを利用する際に、意図せずしてブラウザであると判定されてしまうことを防ぎたい、という狙いがあるようです。
+次のマイナーリリースであるDeno 1.35では、window変数が参照された際に警告を表示する変更を入れることが検討されているようです。
+feat(runtime): log deprecated message on first usage of window global #19319 esbuild_deno_loader v0.8.0 esbuild_deno_loader v0.8.0がリリースされました。
+npm:URLやnode_modulesのサポートが行われています。
+&amp;quot;native&amp;quot;ローダーでは、通常のDenoにおけるnpm:などと同様に、依存するnpmパッケージはDenoのグローバルキャッシュ(DENO_DIR)から読み込みやダウンロードなどが行われるようです。
+ただし、Deno Deployなどでも動作する&amp;quot;portable&amp;quot;ローダーでは、--node-modules-dirなどによって事前にnode_modulesディレクトリが作成されていないと動作しないなどの制限があるようです。
+freshでのnpm:サポート またマージはされていませんが、esbuild_deno_loader v0.8.0を活用してfreshにnpm:のサポートを入れる対応が進められているようです。
+feat: limited npm: specifier support #1245</description></item><item><title>2023/05/22〜2023/05/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/05/28.html</link><pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/05/28.html</guid><description>Deno v1.34 Deno v1.34がリリースされました。
 以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
 Deno v1.34 deno_std v0.189.0 deno_std v0.189.0がリリースされました。
 std/async/retry.ts retry()の内部でジッターが適用されるようになりました。
