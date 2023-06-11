@@ -81,6 +81,29 @@ deno
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/07/04〜2022/07/10の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.23.3 Deno v1.23.3がリリースされました。
+このリリースでは、deno testなどの引数にfile:形式でディレクトリを指定すると、エラーが発生する問題が修正されています。
+# v1.23.2まではエラー $ deno test file:///home/foo/sample/tests また、Denoの内部で使用されているTypeScriptがv4.7.4へアップデートされています。
+その他には、いくつかのパフォーマンスチューニングなどが実施されています。
+https://github.com/denoland/deno/releases/tag/v1.23.3
+deno_std v0.147.0 deno_std v0.147.0がリリースされました。
+dotenv dotenvモジュールで、変数の展開がサポートされました。
+例えば、以下のような内容で.envファイルが定義されていたとします。
+HOST=localhost URL=http://${HOST}:${PORT:-3000} このファイルをdotenvモジュールで読み込むと、以下のように評価されます。
+{ HOST: "localhost", URL: "http://localhost:3000" } その他には、stringify()関数が追加されています。
+import { stringify } from "https://deno.land/std@0.147.0/dotenv/mod.ts"; stringify({ PORT: "3000", HOST: "localhost", LOG_LEVEL: "debug" }); // PORT=3000 // HOST=localhost // LOG_LEVEL=debug http oak_commonsのHTTPエラーとコンテントネゴシエーション用のモジュールがdeno_std/httpに取り込まれました。
+http/negotiation
+import { accepts } from "https://deno.land/std@0.147.0/http/negotiation.ts"; const req = new Request("https://github.com", { headers: { accept: "text/html,application/xhtml+xml,application/xml;q=0....</p>
+</div>
+<footer class=entry-footer><span title="2022-07-10 00:00:00 +0000 UTC">July 10, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/07/04〜2022/07/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/10.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/06/27〜2022/07/03の最新情報
 </h2>
 </header>
@@ -284,31 +307,6 @@ new Worker(new URL('./worker.js', import.meta.url).href, { type: "module" }); �
 </div>
 <footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
 <a class=entry-link aria-label="post link to Deno v1.22" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.22.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/05/09〜2022/05/15の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.21.3 Deno v1.21.3がリリースされました。
-deno task deno task &lt;タスク名>の&lt;タスク名>の直後に--から始まるオプションを指定できない問題が修正されました。
-その他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。
-その他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。
-https://github.com/denoland/deno/releases/tag/v1.21.3
-deno_std v0.139.0 deno_std v0.139.0がリリースされました。
-encoding/jsonc deno_stdにJSONCパーサが実装されました。
-import { parse } from "https://deno.land/std@0.139.0/encoding/jsonc.ts"; console.log(parse(`{ // hello "foo": 1 }`)); // => { foo: 1 } node dnsパッケージで以下のAPIが実装されました。
-dns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI また、netパッケージでUnixドメインソケットがサポートされています。
-testing/snapshot assertSnapshotにオプションを渡せるようになりました。
-例えば、dirオプションによってスナップショットの保存先ディレクトリなどをカスタマイズできます。
-await assertSnapshot(t, actual, { dir: "testdata" }); https://github.com/denoland/deno_std/releases/tag/0.139.0
---no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。
-feat: add –no-config flag (#14555)
-$ deno run --no-config main....</p>
-</div>
-<footer class=entry-footer><span title="2022-05-15 00:00:00 +0000 UTC">May 15, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/09〜2022/05/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/15.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

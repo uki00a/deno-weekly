@@ -81,6 +81,19 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/06/05〜2023/06/11の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.34.2 Deno v1.34.2がリリースされました。
+Node.js互換性 node:http2が追加されました。 http2.connectとhttp2.createServerの基本的な実装が追加されています。 node:fs/promises: FileHandleの以下のメソッドが実装されました。 readFile() read() write() close() node:child_process: spawnのstdioオプションで[0, 1, 2]の指定がサポートされました。 node:process: process.stdoutにpipeされたReadableストリームがクローズされた際に、process.stdoutも一緒にクローズされてしまう問題が修正されています。 Web API 巨大なArrayBufferをconsole.logなどで表示しようとした際に、誤ってdetached状態として表示される問題が修正されました。 EventTargetのリスナ内で同一イベントへのリスナを新しく登録した際に、登録されたばかりのリスナが即座に呼ばれてしまう問題が修正されました。 パフォーマンス改善 主にHTTPサーバ(Deno.serve)に対して、様々なパフォーマンス改善が実施されています。
+perf: use sendto syscalls #19414 perf(ext/http): Add a sync phase to http serving #19321 perf(ext/http): Use flat list of headers for multiple set/get methods #19336 perf(ext/http): Migrate op_http_get_request_headers to v8::Array #19354 perf(ext/http): Migrate op_http_get_request_method_and_url to v8::Array #19355 perf: optimize RegExp usage in JS #19364 perf(http): avoid flattening http headers #19384 deno_std v0....</p>
+</div>
+<footer class=entry-footer><span title="2023-06-11 00:00:00 +0000 UTC">June 11, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/06/05〜2023/06/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/06/11.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/05/29〜2023/06/04の最新情報
 </h2>
 </header>
@@ -273,26 +286,6 @@ https://github.com/denoland/saaskit SaaSKit v1....</p>
 </div>
 <footer class=entry-footer><span title="2023-04-09 00:00:00 +0000 UTC">April 9, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/04/03〜2023/04/09の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/09.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/03/27〜2023/04/02の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.32.2 Deno v1.32.2がリリースされました。
-KV (Deno.Kv) Deno.KvCommitResult型が追加されています。
-これには、KVにコミットされた値に設定された新しいversionstampが含まれます。
-この追加に合わせて、以下の変更も実施されています。
-Deno.AtomicOperation.commitの戻り値がPromise&lt;boolean>からPromise&lt;Deno.KvCommitResult | null>に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise&lt;void>からPromise&lt;KvCommitResult>に変更されています。 Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry&lt;T> | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)
-これに合わせて、以下のAPIに型引数を指定できるように変更されました。
-Deno.KvListIterator → Deno.KvListIterator&lt;T> Deno.KvEntry → Deno.KvEntry&lt;T> これらの変更により、エントリを取得する際に値の型を指定できるようになりました。
-const entry: Deno.KvEntryMaybe&lt;string> = await kv.get&lt;string>(["str"]); const entries: [Deno.KvEntryMaybe&lt;string>, Deno.KvEntryMaybe&lt;number>] = await kv.getMany&lt;[string, number]>([["str"], ["n"]]); Deno.Kv#getManyが実装されました。
-複数のエントリをまとめて取得できます。
-await kv.set(["key", 1], "foo"); await kv.set(["key", 2], "bar"); const entries = await kv.getMany([ ["key", 1], ["key", 2] ]); assert(entries....</p>
-</div>
-<footer class=entry-footer><span title="2023-04-02 00:00:00 +0000 UTC">April 2, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/03/27〜2023/04/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/02.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

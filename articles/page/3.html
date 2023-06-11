@@ -82,6 +82,27 @@ Articles
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Deno v1.31
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.31がリリースされました。
+この記事では主な変更点などについて解説します。
+package.jsonサポート Denoでpackage.jsonがサポートされました。
+具体的には、以下のような機能などが実装されています。
+package.jsonの自動探索 dependencies/devDependenciesの定義内容によるbare specifierの解決 deno taskによるscriptsの実行 package.jsonの自動探索 deno.jsonなどのファイルと同様に、Denoがpackage.jsonも自動で探索してくれるようになりました。
+もしpackage.jsonが見つかった場合、必要に応じてdependenciesやdevDependenciesで記述された依存パッケージを自動でダウンロードし、デフォルトでnode_modulesディレクトリに保存してくれます。 (従来通り、package.jsonが存在しない状態でnpm:経由でnpmパッケージをimportした際は、--node-modules-dirを指定しない限り、node_modulesは作成されません)
+もし、package.jsonの自動探索を無効化したい場合は、以下のいずれかの手段で無効化できます (以下の機能は、それぞれ次のリリースであるv1.31.1で追加された機能のためご注意！)
+--no-configまたは--no-npmオプションを指定する。 DENO_NO_PACKAGE_JSON環境変数に1を指定する dependencies/devDependenciesによるbare specifierの解決 Denoがpackage.jsonのdependenciesやdevDependenciesで定義された依存関係を元に、Import Mapsライクにbare specifierを解決してくれるようになりました。
+例えば、以下のような内容のpackage.jsonが存在したとします。
+{ "dependencies": { "chalk": "^5.2.0", "koa": "2" } } この場合、アプリケーションでは以下のようにbare specifierを記述することがでます。
+import chalk from "chalk"; // => `npm:chalk@^5.2.0` import Koa from "koa"; // => `npm:koa@2` const app = new Koa(); app.use((ctx) => { ctx.body = "Hello world"; }); app.listen(3000, () => { console....</p>
+</div>
+<footer class=entry-footer><span title="2023-02-26 00:00:00 +0000 UTC">February 26, 2023</span></footer>
+<a class=entry-link aria-label="post link to Deno v1.31" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.31.html></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2023/02/13〜2023/02/19の最新情報
 </h2>
 </header>
@@ -266,30 +287,6 @@ CLIに関するバグ修正 --node-modules-dirが指定された際にrequire()�
 </div>
 <footer class=entry-footer><span title="2023-01-08 00:00:00 +0000 UTC">January 8, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/01/02〜2023/01/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/08.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2023/12/26〜2023/01/01の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno.Connへのunrefとrefメソッドの追加 Deno.Connへunrefとrefメソッドを追加するPRがマージされています。
-feat(unstable): Add Deno.Conn.ref()/unref() (denoland/deno#17170)
-Deno.Connのunrefを呼ぶと、Deno.unrefTimerなどと同様に、読み込み途中のコネクションが存在したとしてもプロセスの終了がブロックされなくなります。(ただし、効果があるのは読み込みに対してのみで、コネクションへの書き込みについてはunrefを呼んだ場合であってもブロックされます)
-これらはunstable APIのようなので、次のDeno v1.29.2あたりでリリースされる可能性がありそうです。
-Deno.osUptime Deno.osUptimeというAPIを追加するPRがマージされています。
-feat(unstable): Add “Deno.osUptime()” API (denoland/deno#17179)
-このAPIを利用することで、システムが起動してからの経過時間を数値として取得できるようです。
-const uptime = Deno.osUptime(); これもunstable APIのため、次のDeno v1.29.2あたりでリリースされる可能性がありそうです。
-Big news in Deno Land Ryan DahlさんとJerod SantoさんによりBig news in Deno Landというポッドキャストが公開されています。
-ページ下部にTranscriptがあるため、そこから内容を閲覧することもできます。
-https://changelog.com/jsparty/256 このポッドキャストでは、主にDenoでnpmサポートを導入した背景などについて解説されています。
-また、Denoの将来についてもいくつか話が行われており、以下のような内容の話題が出ていました。
-ShadowRealmなどを活用したパッケージごとのパーミッション管理のサポートについて --allow-writeを指定した際は、ファイルシステム全体ではなく、カレントディレクトリ配下への書き込みのみを許可すべきでは？ Deno Deployにおける状態管理やCockroachDBやSpannerなどについて また、Denoの直近の開発方針としては、主に以下の点に注力されていく予定のようです。
-npmサポートの拡充 (安定性の向上やdeno compileでのnpm:のサポートなど) Deno Deployでのnpm:のサポート https://deno.news/archive/55-deno-v129-and-npm-install-heat</p>
-</div>
-<footer class=entry-footer><span title="2023-01-01 00:00:00 +0000 UTC">January 1, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/12/26〜2023/01/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/01.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

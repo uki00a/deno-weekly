@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Categories | 週刊Deno</title>
+<title>deno_tui | 週刊Deno</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/categories.html>
+<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/deno_tui.html>
 <link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/categories/index.xml>
+<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/deno_tui/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -25,12 +25,12 @@
 <meta name=twitter:site content="@uki00a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Categories">
+<meta property="og:title" content="deno_tui">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/categories.html">
+<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/deno_tui.html">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Categories">
+<meta name=twitter:title content="deno_tui">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -75,19 +75,44 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>Categories</h1>
+<h1>
+deno_tui
+</h1>
 </header>
-<ul class=terms-tags>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/news.html>news <sup><strong><sup>130</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/notice.html>notice <sup><strong><sup>1</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories/release.html>release <sup><strong><sup>16</sup></strong></sup> </a>
-</li>
-</ul>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2023/06/05〜2023/06/11の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.34.2 Deno v1.34.2がリリースされました。
+Node.js互換性 node:http2が追加されました。 http2.connectとhttp2.createServerの基本的な実装が追加されています。 node:fs/promises: FileHandleの以下のメソッドが実装されました。 readFile() read() write() close() node:child_process: spawnのstdioオプションで[0, 1, 2]の指定がサポートされました。 node:process: process.stdoutにpipeされたReadableストリームがクローズされた際に、process.stdoutも一緒にクローズされてしまう問題が修正されています。 Web API 巨大なArrayBufferをconsole.logなどで表示しようとした際に、誤ってdetached状態として表示される問題が修正されました。 EventTargetのリスナ内で同一イベントへのリスナを新しく登録した際に、登録されたばかりのリスナが即座に呼ばれてしまう問題が修正されました。 パフォーマンス改善 主にHTTPサーバ(Deno.serve)に対して、様々なパフォーマンス改善が実施されています。
+perf: use sendto syscalls #19414 perf(ext/http): Add a sync phase to http serving #19321 perf(ext/http): Use flat list of headers for multiple set/get methods #19336 perf(ext/http): Migrate op_http_get_request_headers to v8::Array #19354 perf(ext/http): Migrate op_http_get_request_method_and_url to v8::Array #19355 perf: optimize RegExp usage in JS #19364 perf(http): avoid flattening http headers #19384 deno_std v0....</p>
+</div>
+<footer class=entry-footer><span title="2023-06-11 00:00:00 +0000 UTC">June 11, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/06/05〜2023/06/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/06/11.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>2021/08/15〜2022/08/21の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Denoの今後の計画について Deno公式からBig Changes Ahead for Denoという、Denoの今後の計画などに関する記事が公開されました。
+今のところ、以下の点などに注力されていく予定のようです。
+Node.jsとの互換性の向上 パフォーマンスの向上 エンタープライズユーザへのサポートの強化 開発体験の向上 これらに関連すると思われる直近での変更について簡単にまとめてみます。
+npm:URLのサポート 現在、npm:URLによるnpmパッケージのimportに関する開発が行われています。
+feat(unstable): initial support for npm specifiers (#15484)
+例えば、以下のようにして、npmパッケージをimportすることができるようです。
+import express from "npm:express@5"; import { expect } from "npm:chai@4.2"; この機能には、大まかに以下のような特徴があります。
+デフォルトでnpmパッケージはnpmの公式レジストリからダウンロードされ、DENO_DIRにキャッシュされます。 Node.js互換モード(--compat)とは異なり、npm:URLで読み込まれたモジュール内のみにNode.jsのグローバルAPI(process/global/Bufferなど)が注入されます。 Node.js互換モード(--compat)とは異なり、現時点では--unstableなしで使用できる想定のようです。 型チェック, LSPのサポート, エントリポイントでのnpm:URLの指定(例: deno run npm:mkdirp path/to/dir)などの機能はまだ入っておらず、今後追加されていく予定のようです。 この機能はおそらく、次のv1.25でリリースされるのではないかと思われます。
+新しいHTTPサーバ (Flash) HTTPサーバの高速化を目的に、Deno本体でFlashという新しいHTTPサーバが開発されています。
+feat(ext/flash): An optimized http/1.1 server (#15405)
+feat(unstable): change Deno.serve() API (#15498)...</p>
+</div>
+<footer class=entry-footer><span title="2022-08-21 00:00:00 +0000 UTC">August 21, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/08/15〜2022/08/21の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/08/21.html></a>
+</article>
 </main>
 <footer class=footer>
 <span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>

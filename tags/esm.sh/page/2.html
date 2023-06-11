@@ -81,6 +81,28 @@ esm.sh
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2021/07/25〜2022/07/31の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.24.1 Deno v1.24.1がリリースされました。
+このリリースはバグ修正がメインです。
+"unhandledrejection"イベントに関する修正 "unhandledrejection"イベントのリスナに関する型定義が修正されています。
+また、モジュールのトップレベルで同期的にエラーが発生した際にも"unhandledrejection"イベントが発火されるように修正されています。
+Deno.Child.unref()に関する修正 Deno.Child.unref()を呼ぶと、Deno.Child.stdoutやDeno.Child.stderrもunrefされるように修正されています。
+その他の変更点 型チェック時(--check)に、TypeScriptのjsxFactoryとjsxFragmentFactoryオプションが自動で設定される問題が修正されています。
+https://github.com/denoland/deno/releases/tag/v1.24.1
+deno_std v0.150.0 deno_std v0.150.0がリリースされました。
+http/http_errors createHttpErrorでheadersオプションがサポートされています。
+import { createHttpError } from "https://deno.land/std@0.150.0/http/http_errors.ts"; import { Status, STATUS_TEXT } from "https://deno.land/std@0.150.0/http/http_status.ts"; const error = createHttpError( Status.Unauthorized, STATUS_TEXT[Status.Unauthorized], { headers: { "WWW-Authenticate": "Basic" } } ); error.headers; // => `Headers { "www-authenticate": "Basic" }` io/writers StringWriterにデータを書き込む際に、引数のUint8Arrayがコピーされるようになりました。
+引数に渡したUint8Arrayが別の箇所で変更されると、StringWriter#toStringが返却する文字列にも影響が出てしまう問題があったようです。
+import { StringWriter } from "https://deno.land/std@0.150.0/io/writers.ts"; const encoder = new TextEncoder(); const w = new StringWriter(); const bytes = encoder....</p>
+</div>
+<footer class=entry-footer><span title="2022-07-31 00:00:00 +0000 UTC">July 31, 2022</span></footer>
+<a class=entry-link aria-label="post link to 2021/07/25〜2022/07/31の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/07/31.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2021/07/11〜2022/07/17の最新情報
 </h2>
 </header>

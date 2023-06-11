@@ -81,6 +81,19 @@ deno_std
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/06/05〜2023/06/11の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.34.2 Deno v1.34.2がリリースされました。
+Node.js互換性 node:http2が追加されました。 http2.connectとhttp2.createServerの基本的な実装が追加されています。 node:fs/promises: FileHandleの以下のメソッドが実装されました。 readFile() read() write() close() node:child_process: spawnのstdioオプションで[0, 1, 2]の指定がサポートされました。 node:process: process.stdoutにpipeされたReadableストリームがクローズされた際に、process.stdoutも一緒にクローズされてしまう問題が修正されています。 Web API 巨大なArrayBufferをconsole.logなどで表示しようとした際に、誤ってdetached状態として表示される問題が修正されました。 EventTargetのリスナ内で同一イベントへのリスナを新しく登録した際に、登録されたばかりのリスナが即座に呼ばれてしまう問題が修正されました。 パフォーマンス改善 主にHTTPサーバ(Deno.serve)に対して、様々なパフォーマンス改善が実施されています。
+perf: use sendto syscalls #19414 perf(ext/http): Add a sync phase to http serving #19321 perf(ext/http): Use flat list of headers for multiple set/get methods #19336 perf(ext/http): Migrate op_http_get_request_headers to v8::Array #19354 perf(ext/http): Migrate op_http_get_request_method_and_url to v8::Array #19355 perf: optimize RegExp usage in JS #19364 perf(http): avoid flattening http headers #19384 deno_std v0....</p>
+</div>
+<footer class=entry-footer><span title="2023-06-11 00:00:00 +0000 UTC">June 11, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/06/05〜2023/06/11の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/06/11.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/05/22〜2023/05/28の最新情報
 </h2>
 </header>
@@ -275,23 +288,6 @@ error: Uncaught AssertionError: Values are not equal: カスタムメッセー�
 </div>
 <footer class=entry-footer><span title="2023-03-26 00:00:00 +0000 UTC">March 26, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/03/20〜2023/03/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/26.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/03/13〜2023/03/19の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.31.3 Deno v1.31.3がリリースされました。
-CLI/APIに関する改善 deno infoとdeno docコマンドで--no-lock/--lockオプションがサポートされました。(挙動はdeno runコマンドなどと同様です) deno.jsonなどでcompilerOptions.typesエントリが定義されていると、型エラーが起きる問題が修正されています。 REPLでglobalThis.Denoやその配下で定義されたプロパティを削除しようとすると、プロセスがパニックする問題が修正されています。 Deno.makeTempFile(Sync)でファイルがすでに存在した際にリトライが行われるように挙動が改善されています。 Deno.serveHttp()でレスポンスエラーが発生した際に、nextRequestから返されるRequestのsignalがabortedに設定されるように修正されました。 Node.js互換性に関する改善 package.jsonが存在する または --node-modules-dirオプションが指定されたが、実行されたスクリプトではnpmパッケージがimportされていない場合に、node_modulesが作成されないように挙動が改善されました。 node_modulesのセットアップ中にプログレスバーが表示されるように挙動が改善されました。(#18136) node:crypto: createCipheriv()が実装されました。 (aes-128-cbcのみサポート) node:fs: writeFile()でencoding: "ascii"オプションがサポートされました。 https://github.com/denoland/deno/releases/tag/v1.31.3
-deno_std v0.180.0 deno_std v0.180.0がリリースされました。
-std/encoding関連モジュールのディレクトリ構造の見直し (破壊的変更) std/encodingで提供されていたcsv/front_matter/json/jsonc/toml/yamlモジュールが、トップレベルのモジュールとして独立しました。
-今後は、例えば、csvモジュールを利用したい場合はstd/csv/mod.ts、yamlモジュールを利用したい場合はstd/yaml/mod.tsから読み込む必要があります。
-ディレクトリの移動に合わせて、以下の変更も実施されています。
-csvモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 csv/stringify.ts csv/parse.ts csv/stream.ts jsonモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 json/json_parse_stream.ts json/json_stringify_stream.ts json/concatenated_json_parse_stream.ts tomlモジュールの細分化 以下のファイルが追加されており、必要なAPIのみを個別に読み込めるようになりました。 toml/parse.ts toml/stringify.ts std/http/server_sent_event....</p>
-</div>
-<footer class=entry-footer><span title="2023-03-19 00:00:00 +0000 UTC">March 19, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/03/13〜2023/03/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/03/19.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

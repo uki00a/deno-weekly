@@ -81,6 +81,26 @@ news
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>2023/03/27〜2023/04/02の最新情報
+</h2>
+</header>
+<div class=entry-content>
+<p>Deno v1.32.2 Deno v1.32.2がリリースされました。
+KV (Deno.Kv) Deno.KvCommitResult型が追加されています。
+これには、KVにコミットされた値に設定された新しいversionstampが含まれます。
+この追加に合わせて、以下の変更も実施されています。
+Deno.AtomicOperation.commitの戻り値がPromise&lt;boolean>からPromise&lt;Deno.KvCommitResult | null>に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise&lt;void>からPromise&lt;KvCommitResult>に変更されています。 Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry&lt;T> | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)
+これに合わせて、以下のAPIに型引数を指定できるように変更されました。
+Deno.KvListIterator → Deno.KvListIterator&lt;T> Deno.KvEntry → Deno.KvEntry&lt;T> これらの変更により、エントリを取得する際に値の型を指定できるようになりました。
+const entry: Deno.KvEntryMaybe&lt;string> = await kv.get&lt;string>(["str"]); const entries: [Deno.KvEntryMaybe&lt;string>, Deno.KvEntryMaybe&lt;number>] = await kv.getMany&lt;[string, number]>([["str"], ["n"]]); Deno.Kv#getManyが実装されました。
+複数のエントリをまとめて取得できます。
+await kv.set(["key", 1], "foo"); await kv.set(["key", 2], "bar"); const entries = await kv.getMany([ ["key", 1], ["key", 2] ]); assert(entries....</p>
+</div>
+<footer class=entry-footer><span title="2023-04-02 00:00:00 +0000 UTC">April 2, 2023</span></footer>
+<a class=entry-link aria-label="post link to 2023/03/27〜2023/04/02の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/04/02.html></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>2023/03/20〜2023/03/26の最新情報
 </h2>
 </header>
@@ -264,25 +284,6 @@ deno_std v0.176.0 deno_std v0....</p>
 </div>
 <footer class=entry-footer><span title="2023-02-05 00:00:00 +0000 UTC">February 5, 2023</span></footer>
 <a class=entry-link aria-label="post link to 2023/01/30〜2023/02/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/02/05.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2023/01/23〜2023/01/29の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.30.0 Deno v1.30がリリースされました。
-以下に変更内容をまとめたため、よろしければ参照ください。
-Deno v1.30 deno_std v0.175.0 deno_std v0.175.0がリリースされました。
-非推奨APIの整理などが実施されています。
-std/io/buffer.ts: (破壊的変更) 非推奨APIの削除 以下のAPIが削除されています。
-同名のAPIは引き続き別ファイルで提供されているため、もしこれらを利用されている場合は、以下の移行先ファイルへimportを書き換える必要がありそうです。
-対象API 移行先 BufferFullError std/io/buf_reader.ts BufReader std/io/buf_reader.ts PartialReadError std/io/buf_reader.ts ReadLineResult std/io/buf_reader.ts BufWriter std/io/buf_writer.ts BufWriterSync std/io/buf_writer.ts readDelim std/io/read_delim.ts readStringDelim std/io/read_string_delim.ts readLines std/io/read_lines.ts std/io/files.tsモジュールの削除 (破壊的変更) std/io/files.tsが削除されています。
-このファイルで提供されていたAPIはstd/io/read_range.tsから引き続き利用できるため、今後はそちらへ移行する必要がありそうです。
-std/io/readers.tsモジュールの削除 (破壊的変更) std/io/readers....</p>
-</div>
-<footer class=entry-footer><span title="2023-01-29 00:00:00 +0000 UTC">January 29, 2023</span></footer>
-<a class=entry-link aria-label="post link to 2023/01/23〜2023/01/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/01/29.html></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
