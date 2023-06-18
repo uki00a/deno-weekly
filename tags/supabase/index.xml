@@ -40,4 +40,8 @@ function fetch( input: URL, init?: RequestInit, ): Promise&amp;lt;Response&amp;g
 function fetch( input: URL | Request | string, init?: RequestInit, ): Promise&amp;lt;Response&amp;gt;; deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。
 deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。
 https://github.com/denoland/deno/releases/tag/v1.20.4
-deno_std v0.</description></item></channel></rss>
+deno_std v0.133.0 deno_std v0.133.0がリリースされました。
+testing/mockモジュールが追加 testingモジュールにテストスパイやテストスタブなどを提供するモジュールが追加されました。
+spy
+spy()で関数をラップすることで、assertSpyCall()やassertSpyCalls()などで検証ができます。
+import { assertSpyCall, assertSpyCalls, spy } from &amp;#34;https://deno.</description></item></channel></rss>

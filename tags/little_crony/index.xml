@@ -11,4 +11,7 @@ MariaDB v10.0のサポートが追加されました。 MySQLのTINYINT型がJav
 Sinco v1.1.0がリリース Since v1.1.0がリリースされました。
 SincoはDenoで実装されたブラウザのオートメーション・テスティングライブラリです。
 変更点:
-HeadlessBrowser#evaluatePage()が実装され、現在のページ内での関数や式の実行がサポートされました。 Dockerコンテナ内での実行がサポートされました。 https://github.</description></item></channel></rss>
+HeadlessBrowser#evaluatePage()が実装され、現在のページ内での関数や式の実行がサポートされました。 Dockerコンテナ内での実行がサポートされました。 https://github.com/drashland/sinco/releases/tag/v1.1.0
+little_crony - DenoのCRONライブラリ little_cronyというDenoモジュールが公開されました。
+このモジュールを使用することで、CRON式に基づいてタスクの実行をスケジューリングできます。
+https://github.com/mandarineorg/little-crony</description></item></channel></rss>

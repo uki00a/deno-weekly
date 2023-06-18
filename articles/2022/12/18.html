@@ -1,257 +1,63 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2022/12/12〜2022/12/18の最新情報 | 週刊Deno</title>
-<meta name=keywords content="Deno,deno_std,elsa">
-<meta name=description content="Deno v1.29.0 Deno v1.29がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2022/12/12〜2022/12/18の最新情報 | 週刊Deno</title><meta name=keywords content="Deno,deno_std,elsa"><meta name=description content="Deno v1.29.0 Deno v1.29がリリースされました。
 以下に変更内容をまとめたため、よろしければ参照ください。
- Deno v1.29  deno_std v0.168.0 deno_std v0.168.0がリリースされました。
- https://github.com/denoland/deno_std/releases/tag/0.168.0
+Deno v1.29 deno_std v0.168.0 deno_std v0.168.0がリリースされました。
+https://github.com/denoland/deno_std/releases/tag/0.168.0
 std/archiveのファイル構成の変更 新しいファイルとしてstd/archive/untar.tsが追加されています。
 これに伴い、std/archive/tar.tsからの下記の読み込みが非推奨化されています。
- TarHeader Untar TarEntry  今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。
+TarHeader Untar TarEntry 今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。
 std/ioのファイル構成の変更 std/ioパッケージの下記ファイルが細分化されています。
- std/io/readers.ts std/io/writers.ts std/io/util.ts  具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。
+std/io/readers.ts std/io/writers.ts std/io/util.ts 具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。
 例えば、std/io/readers.tsに配置されていたStringReaderは、今後はstd/io/string_reader.tsから読み込むことが推奨されます。
 より詳しくは公式のブログ記事を参照いただければと思います。
- https://deno.com/blog/v1.29#changes-to-the-standard-modules  std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。
-   リネーム前 リネーム後     config load   configSync loadSync   ConfigOptions LoadOptions    古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
+https://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。
+リネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
 std/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。
 また、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。
-Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/12/18.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2022/12/12〜2022/12/18の最新情報">
-<meta property="og:description" content="Deno v1.29.0 Deno v1.29がリリースされました。
+Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。
+元々、ElsaはGoとQuickJSで実装されていました。
+(まだ未確定ではありますが) 現在は下記のような変更が検討されているようです。
+内部実装のRustへの置き換え V8/JavaScriptCore/QuickJSなどの様々なエンジンのサポート stcの採用 詳細については以下のTweetを参照ください。
+https://twitter.com/undefined_void/status/1601609755759644673 https://twitter.com/undefined_void/status/1601844969157058560 "><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/12/18.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2022/12/12〜2022/12/18の最新情報"><meta property="og:description" content="Deno v1.29.0 Deno v1.29がリリースされました。
 以下に変更内容をまとめたため、よろしければ参照ください。
- Deno v1.29  deno_std v0.168.0 deno_std v0.168.0がリリースされました。
- https://github.com/denoland/deno_std/releases/tag/0.168.0
+Deno v1.29 deno_std v0.168.0 deno_std v0.168.0がリリースされました。
+https://github.com/denoland/deno_std/releases/tag/0.168.0
 std/archiveのファイル構成の変更 新しいファイルとしてstd/archive/untar.tsが追加されています。
 これに伴い、std/archive/tar.tsからの下記の読み込みが非推奨化されています。
- TarHeader Untar TarEntry  今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。
+TarHeader Untar TarEntry 今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。
 std/ioのファイル構成の変更 std/ioパッケージの下記ファイルが細分化されています。
- std/io/readers.ts std/io/writers.ts std/io/util.ts  具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。
+std/io/readers.ts std/io/writers.ts std/io/util.ts 具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。
 例えば、std/io/readers.tsに配置されていたStringReaderは、今後はstd/io/string_reader.tsから読み込むことが推奨されます。
 より詳しくは公式のブログ記事を参照いただければと思います。
- https://deno.com/blog/v1.29#changes-to-the-standard-modules  std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。
-   リネーム前 リネーム後     config load   configSync loadSync   ConfigOptions LoadOptions    古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
+https://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。
+リネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
 std/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。
 また、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。
-Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/12/18.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2022-12-18T00:00:00+00:00">
-<meta property="article:modified_time" content="2022-12-18T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2022/12/12〜2022/12/18の最新情報">
-<meta name=twitter:description content="Deno v1.29.0 Deno v1.29がリリースされました。
+Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。
+元々、ElsaはGoとQuickJSで実装されていました。
+(まだ未確定ではありますが) 現在は下記のような変更が検討されているようです。
+内部実装のRustへの置き換え V8/JavaScriptCore/QuickJSなどの様々なエンジンのサポート stcの採用 詳細については以下のTweetを参照ください。
+https://twitter.com/undefined_void/status/1601609755759644673 https://twitter.com/undefined_void/status/1601844969157058560 "><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/12/18.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2022-12-18T00:00:00+00:00"><meta property="article:modified_time" content="2022-12-18T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2022/12/12〜2022/12/18の最新情報"><meta name=twitter:description content="Deno v1.29.0 Deno v1.29がリリースされました。
 以下に変更内容をまとめたため、よろしければ参照ください。
- Deno v1.29  deno_std v0.168.0 deno_std v0.168.0がリリースされました。
- https://github.com/denoland/deno_std/releases/tag/0.168.0
+Deno v1.29 deno_std v0.168.0 deno_std v0.168.0がリリースされました。
+https://github.com/denoland/deno_std/releases/tag/0.168.0
 std/archiveのファイル構成の変更 新しいファイルとしてstd/archive/untar.tsが追加されています。
 これに伴い、std/archive/tar.tsからの下記の読み込みが非推奨化されています。
- TarHeader Untar TarEntry  今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。
+TarHeader Untar TarEntry 今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。
 std/ioのファイル構成の変更 std/ioパッケージの下記ファイルが細分化されています。
- std/io/readers.ts std/io/writers.ts std/io/util.ts  具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。
+std/io/readers.ts std/io/writers.ts std/io/util.ts 具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。
 例えば、std/io/readers.tsに配置されていたStringReaderは、今後はstd/io/string_reader.tsから読み込むことが推奨されます。
 より詳しくは公式のブログ記事を参照いただければと思います。
- https://deno.com/blog/v1.29#changes-to-the-standard-modules  std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。
-   リネーム前 リネーム後     config load   configSync loadSync   ConfigOptions LoadOptions    古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
+https://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。
+リネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
 std/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。
 また、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。
-Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2022/12/12〜2022/12/18の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/12/18.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2022/12/12〜2022/12/18の最新情報","name":"2022\/12\/12〜2022\/12\/18の最新情報","description":"Deno v1.29.0 Deno v1.29がリリースされました。\n以下に変更内容をまとめたため、よろしければ参照ください。\n Deno v1.29  deno_std v0.168.0 deno_std v0.168.0がリリースされました。\n https://github.com/denoland/deno_std/releases/tag/0.168.0\nstd/archiveのファイル構成の変更 新しいファイルとしてstd/archive/untar.tsが追加されています。\nこれに伴い、std/archive/tar.tsからの下記の読み込みが非推奨化されています。\n TarHeader Untar TarEntry  今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。\nstd/ioのファイル構成の変更 std/ioパッケージの下記ファイルが細分化されています。\n std/io/readers.ts std/io/writers.ts std/io/util.ts  具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。\n例えば、std/io/readers.tsに配置されていたStringReaderは、今後はstd/io/string_reader.tsから読み込むことが推奨されます。\nより詳しくは公式のブログ記事を参照いただければと思います。\n https://deno.com/blog/v1.29#changes-to-the-standard-modules  std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。\n   リネーム前 リネーム後     config load   configSync loadSync   ConfigOptions LoadOptions    古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。\nstd/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。\nまた、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。\nElsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。","keywords":["Deno","deno_std","elsa"],"articleBody":"Deno v1.29.0 Deno v1.29がリリースされました。\n以下に変更内容をまとめたため、よろしければ参照ください。\n Deno v1.29  deno_std v0.168.0 deno_std v0.168.0がリリースされました。\n https://github.com/denoland/deno_std/releases/tag/0.168.0\nstd/archiveのファイル構成の変更 新しいファイルとしてstd/archive/untar.tsが追加されています。\nこれに伴い、std/archive/tar.tsからの下記の読み込みが非推奨化されています。\n TarHeader Untar TarEntry  今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。\nstd/ioのファイル構成の変更 std/ioパッケージの下記ファイルが細分化されています。\n std/io/readers.ts std/io/writers.ts std/io/util.ts  具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。\n例えば、std/io/readers.tsに配置されていたStringReaderは、今後はstd/io/string_reader.tsから読み込むことが推奨されます。\nより詳しくは公式のブログ記事を参照いただければと思います。\n https://deno.com/blog/v1.29#changes-to-the-standard-modules  std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。\n   リネーム前 リネーム後     config load   configSync loadSync   ConfigOptions LoadOptions    古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。\nstd/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。\nまた、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。\nElsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。\n元々、ElsaはGoとQuickJSで実装されていました。\n(まだ未確定ではありますが) 現在は下記のような変更が検討されているようです。\n 内部実装のRustへの置き換え V8/JavaScriptCore/QuickJSなどの様々なエンジンのサポート stcの採用  詳細については以下のTweetを参照ください。\n https://twitter.com/undefined_void/status/1601609755759644673 https://twitter.com/undefined_void/status/1601844969157058560  ","wordCount":"56","inLanguage":"en","datePublished":"2022-12-18T00:00:00Z","dateModified":"2022-12-18T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/12/18.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2022/12/12〜2022/12/18の最新情報
-</h1>
-<div class=post-meta><span title="2022-12-18 00:00:00 +0000 UTC">December 18, 2022</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno-v1290 aria-label="Deno v1.29.0">Deno v1.29.0</a></li>
-<li>
-<a href=#deno_std-v01680 aria-label="deno_std v0.168.0">deno_std v0.168.0</a><ul>
-<li>
-<a href=#stdarchive%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e6%88%90%e3%81%ae%e5%a4%89%e6%9b%b4 aria-label=std/archiveのファイル構成の変更><code>std/archive</code>のファイル構成の変更</a></li>
-<li>
-<a href=#stdio%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e6%88%90%e3%81%ae%e5%a4%89%e6%9b%b4 aria-label=std/ioのファイル構成の変更><code>std/io</code>のファイル構成の変更</a></li>
-<li>
-<a href=#stddotenv---config%e3%81%8cload%e3%81%b8%e3%83%aa%e3%83%8d%e3%83%bc%e3%83%a0 aria-label="std/dotenv - config()がload()へリネーム"><code>std/dotenv</code> - <code>config()</code>が<code>load()</code>へリネーム</a></li>
-<li>
-<a href=#stdnode%e3%81%ae%e6%94%b9%e5%96%84 aria-label=std/nodeの改善><code>std/node</code>の改善</a></li></ul>
-</li>
-<li>
-<a href=#elsa%e3%81%ae%e9%96%8b%e7%99%ba%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=Elsaの開発について>Elsaの開発について</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno-v1290>Deno v1.29.0<a hidden class=anchor aria-hidden=true href=#deno-v1290>#</a></h2>
-<p>Deno v1.29がリリースされました。</p>
-<p>以下に変更内容をまとめたため、よろしければ参照ください。</p>
-<ul>
-<li><a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.29.html>Deno v1.29</a></li>
-</ul>
-<h2 id=deno_std-v01680>deno_std v0.168.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01680>#</a></h2>
-<p>deno_std v0.168.0がリリースされました。</p>
-<hr>
-<p><a href=https://github.com/denoland/deno_std/releases/tag/0.168.0>https://github.com/denoland/deno_std/releases/tag/0.168.0</a></p>
-<h3 id=stdarchiveのファイル構成の変更><code>std/archive</code>のファイル構成の変更<a hidden class=anchor aria-hidden=true href=#stdarchiveのファイル構成の変更>#</a></h3>
-<p>新しいファイルとして<a href=https://deno.land/std@0.168.0/archive/untar.ts>std/archive/untar.ts</a>が追加されています。</p>
-<p>これに伴い、<a href=https://deno.land/std@0.168.0/archive/tar.ts>std/archive/tar.ts</a>からの下記の読み込みが非推奨化されています。</p>
-<ul>
-<li><code>TarHeader</code></li>
-<li><code>Untar</code></li>
-<li><code>TarEntry</code></li>
-</ul>
-<p>今後、これらのAPIを利用する際は、<a href=https://deno.land/std@0.168.0/archive/untar.ts>std/archive/untar.ts</a>から読み込むことが推奨されます。</p>
-<h3 id=stdioのファイル構成の変更><code>std/io</code>のファイル構成の変更<a hidden class=anchor aria-hidden=true href=#stdioのファイル構成の変更>#</a></h3>
-<p><code>std/io</code>パッケージの下記ファイルが細分化されています。</p>
-<ul>
-<li><a href=https://deno.land/std@0.168.0/io/readers.ts>std/io/readers.ts</a></li>
-<li><a href=https://deno.land/std@0.168.0/io/writers.ts>std/io/writers.ts</a></li>
-<li><a href=https://deno.land/std@0.168.0/io/util.ts>std/io/util.ts</a></li>
-</ul>
-<p>具体的には<a href=https://deno.land/std@0.168.0/fs>std/fs</a>などのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。</p>
-<p>例えば、<a href=https://deno.land/std@0.168.0/io/readers.ts>std/io/readers.ts</a>に配置されていた<code>StringReader</code>は、今後は<a href=https://deno.land/std@0.168.0/io/string_reader.ts>std/io/string_reader.ts</a>から読み込むことが推奨されます。</p>
-<p>より詳しくは公式のブログ記事を参照いただければと思います。</p>
-<ul>
-<li><a href=https://deno.com/blog/v1.29#changes-to-the-standard-modules>https://deno.com/blog/v1.29#changes-to-the-standard-modules</a></li>
-</ul>
-<h3 id=stddotenv---configがloadへリネーム><code>std/dotenv</code> - <code>config()</code>が<code>load()</code>へリネーム<a hidden class=anchor aria-hidden=true href=#stddotenv---configがloadへリネーム>#</a></h3>
-<p><code>std/dotenv</code>で提供されているAPIがリネームされています。</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>リネーム前</th>
-<th style=text-align:center>リネーム後</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center><code>config</code></td>
-<td style=text-align:center><code>load</code></td>
-</tr>
-<tr>
-<td style=text-align:center><code>configSync</code></td>
-<td style=text-align:center><code>loadSync</code></td>
-</tr>
-<tr>
-<td style=text-align:center><code>ConfigOptions</code></td>
-<td style=text-align:center><code>LoadOptions</code></td>
-</tr>
-</tbody>
-</table>
-<p>古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。</p>
-<h3 id=stdnodeの改善><code>std/node</code>の改善<a hidden class=anchor aria-hidden=true href=#stdnodeの改善>#</a></h3>
-<p><code>std/node/http</code>の<code>ServerResponse</code>クラスで<code>Transfer-Encoding: chunked</code>が意図通りに動作しない問題が修正されています。</p>
-<p>また、<code>Buffer.toString</code>によるUTF-8のデコードが大幅に高速化されています。</p>
-<h2 id=elsaの開発について>Elsaの開発について<a hidden class=anchor aria-hidden=true href=#elsaの開発について>#</a></h2>
-<p>Denoに影響を受けたJavaScript/TypeScriptランタイムである<a href=https://github.com/elsaland/elsa>Elsa</a>で、内部実装の書き換えが検討されているようです。</p>
-<p>元々、ElsaはGoと<a href=https://github.com/bellard/quickjs>QuickJS</a>で実装されていました。</p>
-<p>(まだ未確定ではありますが) 現在は下記のような変更が検討されているようです。</p>
-<ul>
-<li>内部実装のRustへの置き換え</li>
-<li>V8/JavaScriptCore/QuickJSなどの様々なエンジンのサポート</li>
-<li><a href=https://github.com/dudykr/stc>stc</a>の採用</li>
-</ul>
-<p>詳細については以下のTweetを参照ください。</p>
-<ul>
-<li><a href=https://twitter.com/undefined_void/status/1601609755759644673>https://twitter.com/undefined_void/status/1601609755759644673</a></li>
-<li><a href=https://twitter.com/undefined_void/status/1601844969157058560>https://twitter.com/undefined_void/status/1601844969157058560</a></li>
-</ul>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/elsa.html>elsa</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。
+元々、ElsaはGoとQuickJSで実装されていました。
+(まだ未確定ではありますが) 現在は下記のような変更が検討されているようです。
+内部実装のRustへの置き換え V8/JavaScriptCore/QuickJSなどの様々なエンジンのサポート stcの採用 詳細については以下のTweetを参照ください。
+https://twitter.com/undefined_void/status/1601609755759644673 https://twitter.com/undefined_void/status/1601844969157058560 "><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2022/12/12〜2022/12/18の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/12/18.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2022/12/12〜2022/12/18の最新情報","name":"2022\/12\/12〜2022\/12\/18の最新情報","description":"Deno v1.29.0 Deno v1.29がリリースされました。\n以下に変更内容をまとめたため、よろしければ参照ください。\nDeno v1.29 deno_std v0.168.0 deno_std v0.168.0がリリースされました。\nhttps://github.com/denoland/deno_std/releases/tag/0.168.0\nstd/archiveのファイル構成の変更 新しいファイルとしてstd/archive/untar.tsが追加されています。\nこれに伴い、std/archive/tar.tsからの下記の読み込みが非推奨化されています。\nTarHeader Untar TarEntry 今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。\nstd/ioのファイル構成の変更 std/ioパッケージの下記ファイルが細分化されています。\nstd/io/readers.ts std/io/writers.ts std/io/util.ts 具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。\n例えば、std/io/readers.tsに配置されていたStringReaderは、今後はstd/io/string_reader.tsから読み込むことが推奨されます。\nより詳しくは公式のブログ記事を参照いただければと思います。\nhttps://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。\nリネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。\nstd/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。\nまた、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。\nElsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。\n元々、ElsaはGoとQuickJSで実装されていました。\n(まだ未確定ではありますが) 現在は下記のような変更が検討されているようです。\n内部実装のRustへの置き換え V8/JavaScriptCore/QuickJSなどの様々なエンジンのサポート stcの採用 詳細については以下のTweetを参照ください。\nhttps://twitter.com/undefined_void/status/1601609755759644673 https://twitter.com/undefined_void/status/1601844969157058560 ","keywords":["Deno","deno_std","elsa"],"articleBody":"Deno v1.29.0 Deno v1.29がリリースされました。\n以下に変更内容をまとめたため、よろしければ参照ください。\nDeno v1.29 deno_std v0.168.0 deno_std v0.168.0がリリースされました。\nhttps://github.com/denoland/deno_std/releases/tag/0.168.0\nstd/archiveのファイル構成の変更 新しいファイルとしてstd/archive/untar.tsが追加されています。\nこれに伴い、std/archive/tar.tsからの下記の読み込みが非推奨化されています。\nTarHeader Untar TarEntry 今後、これらのAPIを利用する際は、std/archive/untar.tsから読み込むことが推奨されます。\nstd/ioのファイル構成の変更 std/ioパッケージの下記ファイルが細分化されています。\nstd/io/readers.ts std/io/writers.ts std/io/util.ts 具体的にはstd/fsなどのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。\n例えば、std/io/readers.tsに配置されていたStringReaderは、今後はstd/io/string_reader.tsから読み込むことが推奨されます。\nより詳しくは公式のブログ記事を参照いただければと思います。\nhttps://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config()がload()へリネーム std/dotenvで提供されているAPIがリネームされています。\nリネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。\nstd/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。\nまた、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。\nElsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。\n元々、ElsaはGoとQuickJSで実装されていました。\n(まだ未確定ではありますが) 現在は下記のような変更が検討されているようです。\n内部実装のRustへの置き換え V8/JavaScriptCore/QuickJSなどの様々なエンジンのサポート stcの採用 詳細については以下のTweetを参照ください。\nhttps://twitter.com/undefined_void/status/1601609755759644673 https://twitter.com/undefined_void/status/1601844969157058560 ","wordCount":"56","inLanguage":"en","datePublished":"2022-12-18T00:00:00Z","dateModified":"2022-12-18T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/12/18.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2022/12/12〜2022/12/18の最新情報</h1><div class=post-meta><span title='2022-12-18 00:00:00 +0000 UTC'>December 18, 2022</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno-v1290 aria-label="Deno v1.29.0">Deno v1.29.0</a></li><li><a href=#deno_std-v01680 aria-label="deno_std v0.168.0">deno_std v0.168.0</a><ul><li><a href=#stdarchive%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e6%88%90%e3%81%ae%e5%a4%89%e6%9b%b4 aria-label=std/archiveのファイル構成の変更><code>std/archive</code>のファイル構成の変更</a></li><li><a href=#stdio%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e6%a7%8b%e6%88%90%e3%81%ae%e5%a4%89%e6%9b%b4 aria-label=std/ioのファイル構成の変更><code>std/io</code>のファイル構成の変更</a></li><li><a href=#stddotenv---config%e3%81%8cload%e3%81%b8%e3%83%aa%e3%83%8d%e3%83%bc%e3%83%a0 aria-label="std/dotenv - config()がload()へリネーム"><code>std/dotenv</code> - <code>config()</code>が<code>load()</code>へリネーム</a></li><li><a href=#stdnode%e3%81%ae%e6%94%b9%e5%96%84 aria-label=std/nodeの改善><code>std/node</code>の改善</a></li></ul></li><li><a href=#elsa%e3%81%ae%e9%96%8b%e7%99%ba%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=Elsaの開発について>Elsaの開発について</a></li></ul></div></details></div><div class=post-content><h2 id=deno-v1290>Deno v1.29.0<a hidden class=anchor aria-hidden=true href=#deno-v1290>#</a></h2><p>Deno v1.29がリリースされました。</p><p>以下に変更内容をまとめたため、よろしければ参照ください。</p><ul><li><a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.29.html>Deno v1.29</a></li></ul><h2 id=deno_std-v01680>deno_std v0.168.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01680>#</a></h2><p>deno_std v0.168.0がリリースされました。</p><hr><p><a href=https://github.com/denoland/deno_std/releases/tag/0.168.0>https://github.com/denoland/deno_std/releases/tag/0.168.0</a></p><h3 id=stdarchiveのファイル構成の変更><code>std/archive</code>のファイル構成の変更<a hidden class=anchor aria-hidden=true href=#stdarchiveのファイル構成の変更>#</a></h3><p>新しいファイルとして<a href=https://deno.land/std@0.168.0/archive/untar.ts>std/archive/untar.ts</a>が追加されています。</p><p>これに伴い、<a href=https://deno.land/std@0.168.0/archive/tar.ts>std/archive/tar.ts</a>からの下記の読み込みが非推奨化されています。</p><ul><li><code>TarHeader</code></li><li><code>Untar</code></li><li><code>TarEntry</code></li></ul><p>今後、これらのAPIを利用する際は、<a href=https://deno.land/std@0.168.0/archive/untar.ts>std/archive/untar.ts</a>から読み込むことが推奨されます。</p><h3 id=stdioのファイル構成の変更><code>std/io</code>のファイル構成の変更<a hidden class=anchor aria-hidden=true href=#stdioのファイル構成の変更>#</a></h3><p><code>std/io</code>パッケージの下記ファイルが細分化されています。</p><ul><li><a href=https://deno.land/std@0.168.0/io/readers.ts>std/io/readers.ts</a></li><li><a href=https://deno.land/std@0.168.0/io/writers.ts>std/io/writers.ts</a></li><li><a href=https://deno.land/std@0.168.0/io/util.ts>std/io/util.ts</a></li></ul><p>具体的には<a href=https://deno.land/std@0.168.0/fs>std/fs</a>などのように、各APIがそれぞれ単独のファイルで提供されるように構造が変わっています。</p><p>例えば、<a href=https://deno.land/std@0.168.0/io/readers.ts>std/io/readers.ts</a>に配置されていた<code>StringReader</code>は、今後は<a href=https://deno.land/std@0.168.0/io/string_reader.ts>std/io/string_reader.ts</a>から読み込むことが推奨されます。</p><p>より詳しくは公式のブログ記事を参照いただければと思います。</p><ul><li><a href=https://deno.com/blog/v1.29#changes-to-the-standard-modules>https://deno.com/blog/v1.29#changes-to-the-standard-modules</a></li></ul><h3 id=stddotenv---configがloadへリネーム><code>std/dotenv</code> - <code>config()</code>が<code>load()</code>へリネーム<a hidden class=anchor aria-hidden=true href=#stddotenv---configがloadへリネーム>#</a></h3><p><code>std/dotenv</code>で提供されているAPIがリネームされています。</p><table><thead><tr><th style=text-align:center>リネーム前</th><th style=text-align:center>リネーム後</th></tr></thead><tbody><tr><td style=text-align:center><code>config</code></td><td style=text-align:center><code>load</code></td></tr><tr><td style=text-align:center><code>configSync</code></td><td style=text-align:center><code>loadSync</code></td></tr><tr><td style=text-align:center><code>ConfigOptions</code></td><td style=text-align:center><code>LoadOptions</code></td></tr></tbody></table><p>古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。</p><h3 id=stdnodeの改善><code>std/node</code>の改善<a hidden class=anchor aria-hidden=true href=#stdnodeの改善>#</a></h3><p><code>std/node/http</code>の<code>ServerResponse</code>クラスで<code>Transfer-Encoding: chunked</code>が意図通りに動作しない問題が修正されています。</p><p>また、<code>Buffer.toString</code>によるUTF-8のデコードが大幅に高速化されています。</p><h2 id=elsaの開発について>Elsaの開発について<a hidden class=anchor aria-hidden=true href=#elsaの開発について>#</a></h2><p>Denoに影響を受けたJavaScript/TypeScriptランタイムである<a href=https://github.com/elsaland/elsa>Elsa</a>で、内部実装の書き換えが検討されているようです。</p><p>元々、ElsaはGoと<a href=https://github.com/bellard/quickjs>QuickJS</a>で実装されていました。</p><p>(まだ未確定ではありますが) 現在は下記のような変更が検討されているようです。</p><ul><li>内部実装のRustへの置き換え</li><li>V8/JavaScriptCore/QuickJSなどの様々なエンジンのサポート</li><li><a href=https://github.com/dudykr/stc>stc</a>の採用</li></ul><p>詳細については以下のTweetを参照ください。</p><ul><li><a href=https://twitter.com/undefined_void/status/1601609755759644673>https://twitter.com/undefined_void/status/1601609755759644673</a></li><li><a href=https://twitter.com/undefined_void/status/1601844969157058560>https://twitter.com/undefined_void/status/1601844969157058560</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/elsa.html>elsa</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

@@ -1,204 +1,36 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2021/06/01〜2021/06/06の最新情報 | 週刊Deno</title>
-<meta name=keywords content="deno,twd,Eta">
-<meta name=description content="Deno v1.10.3がリリース Deno v1.10.3がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2021/06/01〜2021/06/06の最新情報 | 週刊Deno</title><meta name=keywords content="deno,twd,Eta"><meta name=description content="Deno v1.10.3がリリース Deno v1.10.3がリリースされました。
 deno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。
 変更点:
- deno lspで// @deno-types=&#34;&#34; と /// <references types=&#34;&#34; />に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=<dir>で<dir>が存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました  wpt.deno.land wpt.deno.landというWebページが公開されました。
+deno lspで// @deno-types=&#34;&#34; と /// <references types=&#34;&#34; />に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=<dir>で<dir>が存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました wpt.deno.land wpt.deno.landというWebページが公開されました。
 このページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。
-  https://wpt.deno.land/ https://github.com/denoland/wpt.deno.land  twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。
+https://wpt.deno.land/ https://github.com/denoland/wpt.deno.land twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。
 引数として与えられたHTMLファイルの内容を元に、twindを使用してスタイルシートが生成されます。
-  https://github.com/kt3k/twd https://github.com/tw-in-js/twind  Eta Etaは軽量性や速度を重視したテンプレートエンジンです。
+https://github.com/kt3k/twd https://github.com/tw-in-js/twind Eta Etaは軽量性や速度を重視したテンプレートエンジンです。
 レイアウトによるテンプレートの再利用や、プラグインによるレンダリングの挙動のカスタマイズなどがサポートされています。
 また、Denoだけでなく、ブラウザやNode.jsもサポートされています。
-  https://github.com/eta-dev/eta https://eta.js.org/  ">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/06/06.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2021/06/01〜2021/06/06の最新情報">
-<meta property="og:description" content="Deno v1.10.3がリリース Deno v1.10.3がリリースされました。
+https://github.com/eta-dev/eta https://eta.js.org/ "><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/06/06.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2021/06/01〜2021/06/06の最新情報"><meta property="og:description" content="Deno v1.10.3がリリース Deno v1.10.3がリリースされました。
 deno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。
 変更点:
- deno lspで// @deno-types=&#34;&#34; と /// <references types=&#34;&#34; />に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=<dir>で<dir>が存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました  wpt.deno.land wpt.deno.landというWebページが公開されました。
+deno lspで// @deno-types=&#34;&#34; と /// <references types=&#34;&#34; />に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=<dir>で<dir>が存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました wpt.deno.land wpt.deno.landというWebページが公開されました。
 このページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。
-  https://wpt.deno.land/ https://github.com/denoland/wpt.deno.land  twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。
+https://wpt.deno.land/ https://github.com/denoland/wpt.deno.land twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。
 引数として与えられたHTMLファイルの内容を元に、twindを使用してスタイルシートが生成されます。
-  https://github.com/kt3k/twd https://github.com/tw-in-js/twind  Eta Etaは軽量性や速度を重視したテンプレートエンジンです。
+https://github.com/kt3k/twd https://github.com/tw-in-js/twind Eta Etaは軽量性や速度を重視したテンプレートエンジンです。
 レイアウトによるテンプレートの再利用や、プラグインによるレンダリングの挙動のカスタマイズなどがサポートされています。
 また、Denoだけでなく、ブラウザやNode.jsもサポートされています。
-  https://github.com/eta-dev/eta https://eta.js.org/  ">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/06/06.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2021-06-06T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-06-06T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2021/06/01〜2021/06/06の最新情報">
-<meta name=twitter:description content="Deno v1.10.3がリリース Deno v1.10.3がリリースされました。
+https://github.com/eta-dev/eta https://eta.js.org/ "><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/06/06.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2021-06-06T00:00:00+00:00"><meta property="article:modified_time" content="2021-06-06T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2021/06/01〜2021/06/06の最新情報"><meta name=twitter:description content="Deno v1.10.3がリリース Deno v1.10.3がリリースされました。
 deno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。
 変更点:
- deno lspで// @deno-types=&#34;&#34; と /// <references types=&#34;&#34; />に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=<dir>で<dir>が存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました  wpt.deno.land wpt.deno.landというWebページが公開されました。
+deno lspで// @deno-types=&#34;&#34; と /// <references types=&#34;&#34; />に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=<dir>で<dir>が存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました wpt.deno.land wpt.deno.landというWebページが公開されました。
 このページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。
-  https://wpt.deno.land/ https://github.com/denoland/wpt.deno.land  twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。
+https://wpt.deno.land/ https://github.com/denoland/wpt.deno.land twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。
 引数として与えられたHTMLファイルの内容を元に、twindを使用してスタイルシートが生成されます。
-  https://github.com/kt3k/twd https://github.com/tw-in-js/twind  Eta Etaは軽量性や速度を重視したテンプレートエンジンです。
+https://github.com/kt3k/twd https://github.com/tw-in-js/twind Eta Etaは軽量性や速度を重視したテンプレートエンジンです。
 レイアウトによるテンプレートの再利用や、プラグインによるレンダリングの挙動のカスタマイズなどがサポートされています。
 また、Denoだけでなく、ブラウザやNode.jsもサポートされています。
-  https://github.com/eta-dev/eta https://eta.js.org/  ">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/06/01〜2021/06/06の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/06/06.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/06/01〜2021/06/06の最新情報","name":"2021\/06\/01〜2021\/06\/06の最新情報","description":"Deno v1.10.3がリリース Deno v1.10.3がリリースされました。\ndeno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。\n変更点:\n deno lspで// @deno-types=\u0026quot;\u0026quot; と /// \u0026lt;references types=\u0026quot;\u0026quot; /\u0026gt;に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=\u0026lt;dir\u0026gt;で\u0026lt;dir\u0026gt;が存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました  wpt.deno.land wpt.deno.landというWebページが公開されました。\nこのページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。\n  https://wpt.deno.land/ https://github.com/denoland/wpt.deno.land  twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。\n引数として与えられたHTMLファイルの内容を元に、twindを使用してスタイルシートが生成されます。\n  https://github.com/kt3k/twd https://github.com/tw-in-js/twind  Eta Etaは軽量性や速度を重視したテンプレートエンジンです。\nレイアウトによるテンプレートの再利用や、プラグインによるレンダリングの挙動のカスタマイズなどがサポートされています。\nまた、Denoだけでなく、ブラウザやNode.jsもサポートされています。\n  https://github.com/eta-dev/eta https://eta.js.org/  ","keywords":["deno","twd","Eta"],"articleBody":"Deno v1.10.3がリリース Deno v1.10.3がリリースされました。\ndeno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。\n変更点:\n deno lspで// @deno-types=\"\" と /// に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=でが存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました  wpt.deno.land wpt.deno.landというWebページが公開されました。\nこのページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。\n  https://wpt.deno.land/ https://github.com/denoland/wpt.deno.land  twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。\n引数として与えられたHTMLファイルの内容を元に、twindを使用してスタイルシートが生成されます。\n  https://github.com/kt3k/twd https://github.com/tw-in-js/twind  Eta Etaは軽量性や速度を重視したテンプレートエンジンです。\nレイアウトによるテンプレートの再利用や、プラグインによるレンダリングの挙動のカスタマイズなどがサポートされています。\nまた、Denoだけでなく、ブラウザやNode.jsもサポートされています。\n  https://github.com/eta-dev/eta https://eta.js.org/  ","wordCount":"55","inLanguage":"en","datePublished":"2021-06-06T00:00:00Z","dateModified":"2021-06-06T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/06/06.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2021/06/01〜2021/06/06の最新情報
-</h1>
-<div class=post-meta><span title="2021-06-06 00:00:00 +0000 UTC">June 6, 2021</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno-v1103%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9httpsgithubcomdenolanddenoreleasestagv1103 aria-label="Deno v1.10.3がリリース"><a href=https://github.com/denoland/deno/releases/tag/v1.10.3>Deno v1.10.3がリリース</a></a></li>
-<li>
-<a href=#wptdenolandhttpswptdenoland aria-label=wpt.deno.land><a href=https://wpt.deno.land/>wpt.deno.land</a></a></li>
-<li>
-<a href=#twdhttpsgithubcomkt3ktwd aria-label=twd><a href=https://github.com/kt3k/twd>twd</a></a></li>
-<li>
-<a href=#etahttpsgithubcometa-deveta aria-label=Eta><a href=https://github.com/eta-dev/eta>Eta</a></a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno-v1103がリリースhttpsgithubcomdenolanddenoreleasestagv1103><a href=https://github.com/denoland/deno/releases/tag/v1.10.3>Deno v1.10.3がリリース</a><a hidden class=anchor aria-hidden=true href=#deno-v1103がリリースhttpsgithubcomdenolanddenoreleasestagv1103>#</a></h2>
-<p>Deno v1.10.3がリリースされました。</p>
-<p><code>deno lsp</code>の効率化や新機能の追加などを中心に、様々な変更が実施されています。</p>
-<p><strong>変更点:</strong></p>
-<ul>
-<li><code>deno lsp</code>で<code>// @deno-types=""</code> と <code>/// &lt;references types="" /></code>に対する診断などがサポートされました</li>
-<li><code>deno lsp</code>でX-Deno-Warningに対する診断がサポートされました</li>
-<li><code>deno lsp</code>でlintのメッセージだけでなく、ヒントも表示されるようになりました</li>
-<li><code>deno lsp</code>でJSONやMarkdownファイルのフォーマットがサポートされました</li>
-<li><code>deno lsp</code>でtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました</li>
-<li><code>deno lsp</code>のコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました</li>
-<li><code>Deno.emit</code>でバンドルする際にソースマップが生成されるようになりました (<code>compilerOptions</code>で<code>sourceMap: false</code>を指定することで無効化可能です)</li>
-<li><code>deno install</code>で<code>file:</code>スキーマがサポートされました</li>
-<li><code>deno test --coverage=&lt;dir></code>で<code>&lt;dir></code>が存在しないときに、パニックする問題が修正されました</li>
-<li>ネイティブHTTPサーバで、<code>respondWith</code>によって空の<code>Blob</code>オブジェクトを返却しようとすると、エラーが発生する問題が修正されました</li>
-<li><code>Request</code>クラスの未実装なプロパティが削除されました</li>
-<li><code>File</code>コンストラクタがWPTにパスするように修正されました</li>
-</ul>
-<h2 id=wptdenolandhttpswptdenoland><a href=https://wpt.deno.land/>wpt.deno.land</a><a hidden class=anchor aria-hidden=true href=#wptdenolandhttpswptdenoland>#</a></h2>
-<p><a href=https://wpt.deno.land/>wpt.deno.land</a>というWebページが公開されました。</p>
-<p>このページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。</p>
-<hr>
-<ul>
-<li><a href=https://wpt.deno.land/>https://wpt.deno.land/</a></li>
-<li><a href=https://github.com/denoland/wpt.deno.land>https://github.com/denoland/wpt.deno.land</a></li>
-</ul>
-<h2 id=twdhttpsgithubcomkt3ktwd><a href=https://github.com/kt3k/twd>twd</a><a hidden class=anchor aria-hidden=true href=#twdhttpsgithubcomkt3ktwd>#</a></h2>
-<p><code>twd</code>という、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。</p>
-<p>引数として与えられたHTMLファイルの内容を元に、<a href=https://github.com/tw-in-js/twind>twind</a>を使用してスタイルシートが生成されます。</p>
-<hr>
-<ul>
-<li><a href=https://github.com/kt3k/twd>https://github.com/kt3k/twd</a></li>
-<li><a href=https://github.com/tw-in-js/twind>https://github.com/tw-in-js/twind</a></li>
-</ul>
-<h2 id=etahttpsgithubcometa-deveta><a href=https://github.com/eta-dev/eta>Eta</a><a hidden class=anchor aria-hidden=true href=#etahttpsgithubcometa-deveta>#</a></h2>
-<p>Etaは軽量性や速度を重視したテンプレートエンジンです。</p>
-<p><a href=https://eta.js.org/docs/learn/layouts>レイアウト</a>によるテンプレートの再利用や、<a href=https://eta.js.org/docs/learn/plugins>プラグイン</a>によるレンダリングの挙動のカスタマイズなどがサポートされています。</p>
-<p>また、Denoだけでなく、ブラウザやNode.jsもサポートされています。</p>
-<hr>
-<ul>
-<li><a href=https://github.com/eta-dev/eta>https://github.com/eta-dev/eta</a></li>
-<li><a href=https://eta.js.org/>https://eta.js.org/</a></li>
-</ul>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/twd.html>twd</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/eta.html>Eta</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+https://github.com/eta-dev/eta https://eta.js.org/ "><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/06/01〜2021/06/06の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/06/06.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/06/01〜2021/06/06の最新情報","name":"2021\/06\/01〜2021\/06\/06の最新情報","description":"Deno v1.10.3がリリース Deno v1.10.3がリリースされました。\ndeno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。\n変更点:\ndeno lspで// @deno-types=\u0026quot;\u0026quot; と /// \u0026lt;references types=\u0026quot;\u0026quot; /\u0026gt;に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=\u0026lt;dir\u0026gt;で\u0026lt;dir\u0026gt;が存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました wpt.deno.land wpt.deno.landというWebページが公開されました。\nこのページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。\nhttps://wpt.deno.land/ https://github.com/denoland/wpt.deno.land twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。\n引数として与えられたHTMLファイルの内容を元に、twindを使用してスタイルシートが生成されます。\nhttps://github.com/kt3k/twd https://github.com/tw-in-js/twind Eta Etaは軽量性や速度を重視したテンプレートエンジンです。\nレイアウトによるテンプレートの再利用や、プラグインによるレンダリングの挙動のカスタマイズなどがサポートされています。\nまた、Denoだけでなく、ブラウザやNode.jsもサポートされています。\nhttps://github.com/eta-dev/eta https://eta.js.org/ ","keywords":["deno","twd","Eta"],"articleBody":"Deno v1.10.3がリリース Deno v1.10.3がリリースされました。\ndeno lspの効率化や新機能の追加などを中心に、様々な変更が実施されています。\n変更点:\ndeno lspで// @deno-types=\"\" と /// に対する診断などがサポートされました deno lspでX-Deno-Warningに対する診断がサポートされました deno lspでlintのメッセージだけでなく、ヒントも表示されるようになりました deno lspでJSONやMarkdownファイルのフォーマットがサポートされました deno lspでtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました deno lspのコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました Deno.emitでバンドルする際にソースマップが生成されるようになりました (compilerOptionsでsourceMap: falseを指定することで無効化可能です) deno installでfile:スキーマがサポートされました deno test --coverage=でが存在しないときに、パニックする問題が修正されました ネイティブHTTPサーバで、respondWithによって空のBlobオブジェクトを返却しようとすると、エラーが発生する問題が修正されました Requestクラスの未実装なプロパティが削除されました FileコンストラクタがWPTにパスするように修正されました wpt.deno.land wpt.deno.landというWebページが公開されました。\nこのページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。\nhttps://wpt.deno.land/ https://github.com/denoland/wpt.deno.land twd twdという、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。\n引数として与えられたHTMLファイルの内容を元に、twindを使用してスタイルシートが生成されます。\nhttps://github.com/kt3k/twd https://github.com/tw-in-js/twind Eta Etaは軽量性や速度を重視したテンプレートエンジンです。\nレイアウトによるテンプレートの再利用や、プラグインによるレンダリングの挙動のカスタマイズなどがサポートされています。\nまた、Denoだけでなく、ブラウザやNode.jsもサポートされています。\nhttps://github.com/eta-dev/eta https://eta.js.org/ ","wordCount":"55","inLanguage":"en","datePublished":"2021-06-06T00:00:00Z","dateModified":"2021-06-06T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/06/06.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2021/06/01〜2021/06/06の最新情報</h1><div class=post-meta><span title='2021-06-06 00:00:00 +0000 UTC'>June 6, 2021</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno-v1103%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9httpsgithubcomdenolanddenoreleasestagv1103 aria-label="Deno v1.10.3がリリース"><a href=https://github.com/denoland/deno/releases/tag/v1.10.3>Deno v1.10.3がリリース</a></a></li><li><a href=#wptdenolandhttpswptdenoland aria-label=wpt.deno.land><a href=https://wpt.deno.land/>wpt.deno.land</a></a></li><li><a href=#twdhttpsgithubcomkt3ktwd aria-label=twd><a href=https://github.com/kt3k/twd>twd</a></a></li><li><a href=#etahttpsgithubcometa-deveta aria-label=Eta><a href=https://github.com/eta-dev/eta>Eta</a></a></li></ul></div></details></div><div class=post-content><h2 id=deno-v1103がリリースhttpsgithubcomdenolanddenoreleasestagv1103><a href=https://github.com/denoland/deno/releases/tag/v1.10.3>Deno v1.10.3がリリース</a><a hidden class=anchor aria-hidden=true href=#deno-v1103がリリースhttpsgithubcomdenolanddenoreleasestagv1103>#</a></h2><p>Deno v1.10.3がリリースされました。</p><p><code>deno lsp</code>の効率化や新機能の追加などを中心に、様々な変更が実施されています。</p><p><strong>変更点:</strong></p><ul><li><code>deno lsp</code>で<code>// @deno-types=""</code> と <code>/// &lt;references types="" /></code>に対する診断などがサポートされました</li><li><code>deno lsp</code>でX-Deno-Warningに対する診断がサポートされました</li><li><code>deno lsp</code>でlintのメッセージだけでなく、ヒントも表示されるようになりました</li><li><code>deno lsp</code>でJSONやMarkdownファイルのフォーマットがサポートされました</li><li><code>deno lsp</code>でtsserverへのリクエストごとに叩かれるopの数が大幅に削減されました</li><li><code>deno lsp</code>のコードアクションでimport節を挿入した際に、拡張子が省かれてしまう問題が修正されました</li><li><code>Deno.emit</code>でバンドルする際にソースマップが生成されるようになりました (<code>compilerOptions</code>で<code>sourceMap: false</code>を指定することで無効化可能です)</li><li><code>deno install</code>で<code>file:</code>スキーマがサポートされました</li><li><code>deno test --coverage=&lt;dir></code>で<code>&lt;dir></code>が存在しないときに、パニックする問題が修正されました</li><li>ネイティブHTTPサーバで、<code>respondWith</code>によって空の<code>Blob</code>オブジェクトを返却しようとすると、エラーが発生する問題が修正されました</li><li><code>Request</code>クラスの未実装なプロパティが削除されました</li><li><code>File</code>コンストラクタがWPTにパスするように修正されました</li></ul><h2 id=wptdenolandhttpswptdenoland><a href=https://wpt.deno.land/>wpt.deno.land</a><a hidden class=anchor aria-hidden=true href=#wptdenolandhttpswptdenoland>#</a></h2><p><a href=https://wpt.deno.land/>wpt.deno.land</a>というWebページが公開されました。</p><p>このページでは、DenoのWPT(Web Platform Tests)への準拠度を確認することができます。</p><hr><ul><li><a href=https://wpt.deno.land/>https://wpt.deno.land/</a></li><li><a href=https://github.com/denoland/wpt.deno.land>https://github.com/denoland/wpt.deno.land</a></li></ul><h2 id=twdhttpsgithubcomkt3ktwd><a href=https://github.com/kt3k/twd>twd</a><a hidden class=anchor aria-hidden=true href=#twdhttpsgithubcomkt3ktwd>#</a></h2><p><code>twd</code>という、Tailwind CSSライクなスタイルシートを生成するCLIツールが公開されました。</p><p>引数として与えられたHTMLファイルの内容を元に、<a href=https://github.com/tw-in-js/twind>twind</a>を使用してスタイルシートが生成されます。</p><hr><ul><li><a href=https://github.com/kt3k/twd>https://github.com/kt3k/twd</a></li><li><a href=https://github.com/tw-in-js/twind>https://github.com/tw-in-js/twind</a></li></ul><h2 id=etahttpsgithubcometa-deveta><a href=https://github.com/eta-dev/eta>Eta</a><a hidden class=anchor aria-hidden=true href=#etahttpsgithubcometa-deveta>#</a></h2><p>Etaは軽量性や速度を重視したテンプレートエンジンです。</p><p><a href=https://eta.js.org/docs/learn/layouts>レイアウト</a>によるテンプレートの再利用や、<a href=https://eta.js.org/docs/learn/plugins>プラグイン</a>によるレンダリングの挙動のカスタマイズなどがサポートされています。</p><p>また、Denoだけでなく、ブラウザやNode.jsもサポートされています。</p><hr><ul><li><a href=https://github.com/eta-dev/eta>https://github.com/eta-dev/eta</a></li><li><a href=https://eta.js.org/>https://eta.js.org/</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/twd.html>twd</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/eta.html>Eta</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

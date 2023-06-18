@@ -1,207 +1,42 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2021/06/14〜2021/06/20の最新情報 | 週刊Deno</title>
-<meta name=keywords content="deno,deno_std,Oak">
-<meta name=description content="Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2021/06/14〜2021/06/20の最新情報 | 週刊Deno</title><meta name=keywords content="deno,deno_std,Oak"><meta name=description content="Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。
 このリリースでは、バグ修正などを中心に行われています。
 主な変更点:
- Deno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。   https://github.com/denoland/deno/releases/tag/v1.11.1
+Deno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。 https://github.com/denoland/deno/releases/tag/v1.11.1
 deno_std v0.99.0がリリースされました deno_stdのv0.99.0がリリースされました。
 変更点:
- mime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました)   https://github.com/denoland/deno_std/releases/tag/0.99.0
+mime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました) https://github.com/denoland/deno_std/releases/tag/0.99.0
 Oak v7.6.0がリリースされました Oakのv7.6.0がリリースされました。
 主な変更点:
- ユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。   https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e
+ユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。 https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e
 Deno internals - how modern JavaScript runtime is built Node.js Wroclaw #10でのBartek Iwańczuk氏の公演がYoutubeで公開されました。
 Denoランタイムの内部構造などついて解説されています。
- https://www.youtube.com/watch?v=LoknuwupOIE">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/06/20.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2021/06/14〜2021/06/20の最新情報">
-<meta property="og:description" content="Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。
+https://www.youtube.com/watch?v=LoknuwupOIE"><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/06/20.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2021/06/14〜2021/06/20の最新情報"><meta property="og:description" content="Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。
 このリリースでは、バグ修正などを中心に行われています。
 主な変更点:
- Deno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。   https://github.com/denoland/deno/releases/tag/v1.11.1
+Deno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。 https://github.com/denoland/deno/releases/tag/v1.11.1
 deno_std v0.99.0がリリースされました deno_stdのv0.99.0がリリースされました。
 変更点:
- mime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました)   https://github.com/denoland/deno_std/releases/tag/0.99.0
+mime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました) https://github.com/denoland/deno_std/releases/tag/0.99.0
 Oak v7.6.0がリリースされました Oakのv7.6.0がリリースされました。
 主な変更点:
- ユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。   https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e
+ユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。 https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e
 Deno internals - how modern JavaScript runtime is built Node.js Wroclaw #10でのBartek Iwańczuk氏の公演がYoutubeで公開されました。
 Denoランタイムの内部構造などついて解説されています。
- https://www.youtube.com/watch?v=LoknuwupOIE">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/06/20.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2021-06-20T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-06-20T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2021/06/14〜2021/06/20の最新情報">
-<meta name=twitter:description content="Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。
+https://www.youtube.com/watch?v=LoknuwupOIE"><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/06/20.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2021-06-20T00:00:00+00:00"><meta property="article:modified_time" content="2021-06-20T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2021/06/14〜2021/06/20の最新情報"><meta name=twitter:description content="Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。
 このリリースでは、バグ修正などを中心に行われています。
 主な変更点:
- Deno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。   https://github.com/denoland/deno/releases/tag/v1.11.1
+Deno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。 https://github.com/denoland/deno/releases/tag/v1.11.1
 deno_std v0.99.0がリリースされました deno_stdのv0.99.0がリリースされました。
 変更点:
- mime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました)   https://github.com/denoland/deno_std/releases/tag/0.99.0
+mime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました) https://github.com/denoland/deno_std/releases/tag/0.99.0
 Oak v7.6.0がリリースされました Oakのv7.6.0がリリースされました。
 主な変更点:
- ユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。   https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e
+ユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。 https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e
 Deno internals - how modern JavaScript runtime is built Node.js Wroclaw #10でのBartek Iwańczuk氏の公演がYoutubeで公開されました。
 Denoランタイムの内部構造などついて解説されています。
- https://www.youtube.com/watch?v=LoknuwupOIE">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/06/14〜2021/06/20の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/06/20.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/06/14〜2021/06/20の最新情報","name":"2021\/06\/14〜2021\/06\/20の最新情報","description":"Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。\nこのリリースでは、バグ修正などを中心に行われています。\n主な変更点:\n Deno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。   https://github.com/denoland/deno/releases/tag/v1.11.1\ndeno_std v0.99.0がリリースされました deno_stdのv0.99.0がリリースされました。\n変更点:\n mime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました)   https://github.com/denoland/deno_std/releases/tag/0.99.0\nOak v7.6.0がリリースされました Oakのv7.6.0がリリースされました。\n主な変更点:\n ユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。   https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e\nDeno internals - how modern JavaScript runtime is built Node.js Wroclaw #10でのBartek Iwańczuk氏の公演がYoutubeで公開されました。\nDenoランタイムの内部構造などついて解説されています。\n https://www.youtube.com/watch?v=LoknuwupOIE","keywords":["deno","deno_std","Oak"],"articleBody":"Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。\nこのリリースでは、バグ修正などを中心に行われています。\n主な変更点:\n Deno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。   https://github.com/denoland/deno/releases/tag/v1.11.1\ndeno_std v0.99.0がリリースされました deno_stdのv0.99.0がリリースされました。\n変更点:\n mime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました)   https://github.com/denoland/deno_std/releases/tag/0.99.0\nOak v7.6.0がリリースされました Oakのv7.6.0がリリースされました。\n主な変更点:\n ユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。   https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e\nDeno internals - how modern JavaScript runtime is built Node.js Wroclaw #10でのBartek Iwańczuk氏の公演がYoutubeで公開されました。\nDenoランタイムの内部構造などついて解説されています。\n https://www.youtube.com/watch?v=LoknuwupOIE\n","wordCount":"50","inLanguage":"en","datePublished":"2021-06-20T00:00:00Z","dateModified":"2021-06-20T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/06/20.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2021/06/14〜2021/06/20の最新情報
-</h1>
-<div class=post-meta><span title="2021-06-20 00:00:00 +0000 UTC">June 20, 2021</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno-v1111%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9%e3%81%95%e3%82%8c%e3%81%be%e3%81%97%e3%81%9fhttpsgithubcomdenolanddenoreleasestagv1111 aria-label="Deno v1.11.1がリリースされました"><a href=https://github.com/denoland/deno/releases/tag/v1.11.1>Deno v1.11.1がリリースされました</a></a></li>
-<li>
-<a href=#deno_std-v0990%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9%e3%81%95%e3%82%8c%e3%81%be%e3%81%97%e3%81%9fhttpsgithubcomdenolanddeno_stdreleasestag0990 aria-label="deno_std v0.99.0がリリースされました"><a href=https://github.com/denoland/deno_std/releases/tag/0.99.0>deno_std v0.99.0がリリースされました</a></a></li>
-<li>
-<a href=#oak-v760%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9%e3%81%95%e3%82%8c%e3%81%be%e3%81%97%e3%81%9fhttpsgithubcomoakserveroakcommitea56a0bdaf5b4547611ef0fcf7846eb393f51d5e aria-label="Oak v7.6.0がリリースされました"><a href=https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e>Oak v7.6.0がリリースされました</a></a></li>
-<li>
-<a href=#deno-internals---how-modern-javascript-runtime-is-builthttpswwwyoutubecomwatchvloknuwupoie aria-label="Deno internals - how modern JavaScript runtime is built"><a href="https://www.youtube.com/watch?v=LoknuwupOIE">Deno internals - how modern JavaScript runtime is built</a></a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno-v1111がリリースされましたhttpsgithubcomdenolanddenoreleasestagv1111><a href=https://github.com/denoland/deno/releases/tag/v1.11.1>Deno v1.11.1がリリースされました</a><a hidden class=anchor aria-hidden=true href=#deno-v1111がリリースされましたhttpsgithubcomdenolanddenoreleasestagv1111>#</a></h2>
-<p>Denoのv1.11.1がリリースされました。</p>
-<p>このリリースでは、バグ修正などを中心に行われています。</p>
-<p><strong>主な変更点:</strong></p>
-<ul>
-<li><code>Deno.inspect</code>で<code>Proxy</code>オブジェクトを渡した際に、<code>showProxy</code>オプションに<code>false</code>が設定されていれば、プロキシ対象のオブジェクトではなく<code>Proxy</code>自身の詳細情報を返却するように修正されました。</li>
-<li><code>globalThis.dispatchEvent</code>を上書きすると、以降、<code>addEventListener</code>で登録した<code>message</code>イベントのリスナが呼ばれなくなる問題が修正されました。</li>
-<li>レスポンスボディとして<code>ReadableStream</code>を使っていると、<code>Deno.serveHttp</code>がハングする問題が修正されました。</li>
-<li>Streams APIのWeb標準との互換性が向上しました。</li>
-<li><code>setTimeout</code>などのAPIにおける最小待ち時間が4ミリ秒に変更されました。</li>
-</ul>
-<hr>
-<p><a href=https://github.com/denoland/deno/releases/tag/v1.11.1>https://github.com/denoland/deno/releases/tag/v1.11.1</a></p>
-<h2 id=deno_std-v0990がリリースされましたhttpsgithubcomdenolanddeno_stdreleasestag0990><a href=https://github.com/denoland/deno_std/releases/tag/0.99.0>deno_std v0.99.0がリリースされました</a><a hidden class=anchor aria-hidden=true href=#deno_std-v0990がリリースされましたhttpsgithubcomdenolanddeno_stdreleasestag0990>#</a></h2>
-<p>deno_stdのv0.99.0がリリースされました。</p>
-<p><strong>変更点:</strong></p>
-<ul>
-<li>mime: MultipartWriter#createPartがpublicメソッドに変更されました</li>
-<li>node/util: util.inheritsが実装されました</li>
-<li>node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました</li>
-<li>node: process.envが列挙可能になりました(<code>{...process.env}</code>でエラーが発生しなくなりました)</li>
-</ul>
-<hr>
-<p><a href=https://github.com/denoland/deno_std/releases/tag/0.99.0>https://github.com/denoland/deno_std/releases/tag/0.99.0</a></p>
-<h2 id=oak-v760がリリースされましたhttpsgithubcomoakserveroakcommitea56a0bdaf5b4547611ef0fcf7846eb393f51d5e><a href=https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e>Oak v7.6.0がリリースされました</a><a hidden class=anchor aria-hidden=true href=#oak-v760がリリースされましたhttpsgithubcomoakserveroakcommitea56a0bdaf5b4547611ef0fcf7846eb393f51d5e>#</a></h2>
-<p>Oakのv7.6.0がリリースされました。</p>
-<p><strong>主な変更点:</strong></p>
-<ul>
-<li>ユニットテスト用のユーティリティが実装されました。 (<a href=https://oakserver.github.io/oak/testing>https://oakserver.github.io/oak/testing</a>)</li>
-<li>proxyミドルウェアが実装されました。</li>
-<li><code>ctx.response.redirect</code>で適切にリダイレクトが行われるようにするために、<code>Referrer</code>ヘッダの代わりに<code>Referer</code>ヘッダが使用されるように変更されました。</li>
-<li>Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。</li>
-</ul>
-<hr>
-<p><a href=https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e>https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e</a></p>
-<h2 id=deno-internals---how-modern-javascript-runtime-is-builthttpswwwyoutubecomwatchvloknuwupoie><a href="https://www.youtube.com/watch?v=LoknuwupOIE">Deno internals - how modern JavaScript runtime is built</a><a hidden class=anchor aria-hidden=true href=#deno-internals---how-modern-javascript-runtime-is-builthttpswwwyoutubecomwatchvloknuwupoie>#</a></h2>
-<p><a href=https://www.meetup.com/ja-JP/Node-js-Wroclaw/events/277960712/>Node.js Wroclaw #10</a>での<a href=https://github.com/bartlomieju>Bartek Iwańczuk</a>氏の公演がYoutubeで公開されました。</p>
-<p>Denoランタイムの内部構造などついて解説されています。</p>
-<hr>
-<p><a href="https://www.youtube.com/watch?v=LoknuwupOIE">https://www.youtube.com/watch?v=LoknuwupOIE</a></p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/oak.html>Oak</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+https://www.youtube.com/watch?v=LoknuwupOIE"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/06/14〜2021/06/20の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/06/20.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/06/14〜2021/06/20の最新情報","name":"2021\/06\/14〜2021\/06\/20の最新情報","description":"Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。\nこのリリースでは、バグ修正などを中心に行われています。\n主な変更点:\nDeno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。 https://github.com/denoland/deno/releases/tag/v1.11.1\ndeno_std v0.99.0がリリースされました deno_stdのv0.99.0がリリースされました。\n変更点:\nmime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました) https://github.com/denoland/deno_std/releases/tag/0.99.0\nOak v7.6.0がリリースされました Oakのv7.6.0がリリースされました。\n主な変更点:\nユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。 https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e\nDeno internals - how modern JavaScript runtime is built Node.js Wroclaw #10でのBartek Iwańczuk氏の公演がYoutubeで公開されました。\nDenoランタイムの内部構造などついて解説されています。\nhttps://www.youtube.com/watch?v=LoknuwupOIE","keywords":["deno","deno_std","Oak"],"articleBody":"Deno v1.11.1がリリースされました Denoのv1.11.1がリリースされました。\nこのリリースでは、バグ修正などを中心に行われています。\n主な変更点:\nDeno.inspectでProxyオブジェクトを渡した際に、showProxyオプションにfalseが設定されていれば、プロキシ対象のオブジェクトではなくProxy自身の詳細情報を返却するように修正されました。 globalThis.dispatchEventを上書きすると、以降、addEventListenerで登録したmessageイベントのリスナが呼ばれなくなる問題が修正されました。 レスポンスボディとしてReadableStreamを使っていると、Deno.serveHttpがハングする問題が修正されました。 Streams APIのWeb標準との互換性が向上しました。 setTimeoutなどのAPIにおける最小待ち時間が4ミリ秒に変更されました。 https://github.com/denoland/deno/releases/tag/v1.11.1\ndeno_std v0.99.0がリリースされました deno_stdのv0.99.0がリリースされました。\n変更点:\nmime: MultipartWriter#createPartがpublicメソッドに変更されました node/util: util.inheritsが実装されました node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました node: process.envが列挙可能になりました({...process.env}でエラーが発生しなくなりました) https://github.com/denoland/deno_std/releases/tag/0.99.0\nOak v7.6.0がリリースされました Oakのv7.6.0がリリースされました。\n主な変更点:\nユニットテスト用のユーティリティが実装されました。 (https://oakserver.github.io/oak/testing) proxyミドルウェアが実装されました。 ctx.response.redirectで適切にリダイレクトが行われるようにするために、Referrerヘッダの代わりにRefererヘッダが使用されるように変更されました。 Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。 https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e\nDeno internals - how modern JavaScript runtime is built Node.js Wroclaw #10でのBartek Iwańczuk氏の公演がYoutubeで公開されました。\nDenoランタイムの内部構造などついて解説されています。\nhttps://www.youtube.com/watch?v=LoknuwupOIE\n","wordCount":"50","inLanguage":"en","datePublished":"2021-06-20T00:00:00Z","dateModified":"2021-06-20T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/06/20.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2021/06/14〜2021/06/20の最新情報</h1><div class=post-meta><span title='2021-06-20 00:00:00 +0000 UTC'>June 20, 2021</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno-v1111%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9%e3%81%95%e3%82%8c%e3%81%be%e3%81%97%e3%81%9fhttpsgithubcomdenolanddenoreleasestagv1111 aria-label="Deno v1.11.1がリリースされました"><a href=https://github.com/denoland/deno/releases/tag/v1.11.1>Deno v1.11.1がリリースされました</a></a></li><li><a href=#deno_std-v0990%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9%e3%81%95%e3%82%8c%e3%81%be%e3%81%97%e3%81%9fhttpsgithubcomdenolanddeno_stdreleasestag0990 aria-label="deno_std v0.99.0がリリースされました"><a href=https://github.com/denoland/deno_std/releases/tag/0.99.0>deno_std v0.99.0がリリースされました</a></a></li><li><a href=#oak-v760%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9%e3%81%95%e3%82%8c%e3%81%be%e3%81%97%e3%81%9fhttpsgithubcomoakserveroakcommitea56a0bdaf5b4547611ef0fcf7846eb393f51d5e aria-label="Oak v7.6.0がリリースされました"><a href=https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e>Oak v7.6.0がリリースされました</a></a></li><li><a href=#deno-internals---how-modern-javascript-runtime-is-builthttpswwwyoutubecomwatchvloknuwupoie aria-label="Deno internals - how modern JavaScript runtime is built"><a href="https://www.youtube.com/watch?v=LoknuwupOIE">Deno internals - how modern JavaScript runtime is built</a></a></li></ul></div></details></div><div class=post-content><h2 id=deno-v1111がリリースされましたhttpsgithubcomdenolanddenoreleasestagv1111><a href=https://github.com/denoland/deno/releases/tag/v1.11.1>Deno v1.11.1がリリースされました</a><a hidden class=anchor aria-hidden=true href=#deno-v1111がリリースされましたhttpsgithubcomdenolanddenoreleasestagv1111>#</a></h2><p>Denoのv1.11.1がリリースされました。</p><p>このリリースでは、バグ修正などを中心に行われています。</p><p><strong>主な変更点:</strong></p><ul><li><code>Deno.inspect</code>で<code>Proxy</code>オブジェクトを渡した際に、<code>showProxy</code>オプションに<code>false</code>が設定されていれば、プロキシ対象のオブジェクトではなく<code>Proxy</code>自身の詳細情報を返却するように修正されました。</li><li><code>globalThis.dispatchEvent</code>を上書きすると、以降、<code>addEventListener</code>で登録した<code>message</code>イベントのリスナが呼ばれなくなる問題が修正されました。</li><li>レスポンスボディとして<code>ReadableStream</code>を使っていると、<code>Deno.serveHttp</code>がハングする問題が修正されました。</li><li>Streams APIのWeb標準との互換性が向上しました。</li><li><code>setTimeout</code>などのAPIにおける最小待ち時間が4ミリ秒に変更されました。</li></ul><hr><p><a href=https://github.com/denoland/deno/releases/tag/v1.11.1>https://github.com/denoland/deno/releases/tag/v1.11.1</a></p><h2 id=deno_std-v0990がリリースされましたhttpsgithubcomdenolanddeno_stdreleasestag0990><a href=https://github.com/denoland/deno_std/releases/tag/0.99.0>deno_std v0.99.0がリリースされました</a><a hidden class=anchor aria-hidden=true href=#deno_std-v0990がリリースされましたhttpsgithubcomdenolanddeno_stdreleasestag0990>#</a></h2><p>deno_stdのv0.99.0がリリースされました。</p><p><strong>変更点:</strong></p><ul><li>mime: MultipartWriter#createPartがpublicメソッドに変更されました</li><li>node/util: util.inheritsが実装されました</li><li>node/events: EventEmitter#removeAllListenersがNode.jsと同じ挙動をするように修正されました</li><li>node: process.envが列挙可能になりました(<code>{...process.env}</code>でエラーが発生しなくなりました)</li></ul><hr><p><a href=https://github.com/denoland/deno_std/releases/tag/0.99.0>https://github.com/denoland/deno_std/releases/tag/0.99.0</a></p><h2 id=oak-v760がリリースされましたhttpsgithubcomoakserveroakcommitea56a0bdaf5b4547611ef0fcf7846eb393f51d5e><a href=https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e>Oak v7.6.0がリリースされました</a><a hidden class=anchor aria-hidden=true href=#oak-v760がリリースされましたhttpsgithubcomoakserveroakcommitea56a0bdaf5b4547611ef0fcf7846eb393f51d5e>#</a></h2><p>Oakのv7.6.0がリリースされました。</p><p><strong>主な変更点:</strong></p><ul><li>ユニットテスト用のユーティリティが実装されました。 (<a href=https://oakserver.github.io/oak/testing>https://oakserver.github.io/oak/testing</a>)</li><li>proxyミドルウェアが実装されました。</li><li><code>ctx.response.redirect</code>で適切にリダイレクトが行われるようにするために、<code>Referrer</code>ヘッダの代わりに<code>Referer</code>ヘッダが使用されるように変更されました。</li><li>Cookieに複数の値を設定したときに、適切に動作が行われるように修正されました。</li></ul><hr><p><a href=https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e>https://github.com/oakserver/oak/commit/ea56a0bdaf5b4547611ef0fcf7846eb393f51d5e</a></p><h2 id=deno-internals---how-modern-javascript-runtime-is-builthttpswwwyoutubecomwatchvloknuwupoie><a href="https://www.youtube.com/watch?v=LoknuwupOIE">Deno internals - how modern JavaScript runtime is built</a><a hidden class=anchor aria-hidden=true href=#deno-internals---how-modern-javascript-runtime-is-builthttpswwwyoutubecomwatchvloknuwupoie>#</a></h2><p><a href=https://www.meetup.com/ja-JP/Node-js-Wroclaw/events/277960712/>Node.js Wroclaw #10</a>での<a href=https://github.com/bartlomieju>Bartek Iwańczuk</a>氏の公演がYoutubeで公開されました。</p><p>Denoランタイムの内部構造などついて解説されています。</p><hr><p><a href="https://www.youtube.com/watch?v=LoknuwupOIE">https://www.youtube.com/watch?v=LoknuwupOIE</a></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/oak.html>Oak</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

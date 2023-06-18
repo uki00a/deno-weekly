@@ -1,273 +1,56 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2021/05/09〜2022/05/15の最新情報 | 週刊Deno</title>
-<meta name=keywords content="Deno,deno_std,deno-sqlite,Aleph.js,Vue.js,Deno Deploy">
-<meta name=description content="Deno v1.21.3 Deno v1.21.3がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2021/05/09〜2022/05/15の最新情報 | 週刊Deno</title><meta name=keywords content="Deno,deno_std,deno-sqlite,Aleph.js,Vue.js,Deno Deploy"><meta name=description content="Deno v1.21.3 Deno v1.21.3がリリースされました。
 deno task deno task <タスク名>の<タスク名>の直後に--から始まるオプションを指定できない問題が修正されました。
 その他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。
 その他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。
- https://github.com/denoland/deno/releases/tag/v1.21.3
+https://github.com/denoland/deno/releases/tag/v1.21.3
 deno_std v0.139.0 deno_std v0.139.0がリリースされました。
 encoding/jsonc deno_stdにJSONCパーサが実装されました。
 import { parse } from &#34;https://deno.land/std@0.139.0/encoding/jsonc.ts&#34;; console.log(parse(`{ // hello &#34;foo&#34;: 1 }`)); // => { foo: 1 } node dnsパッケージで以下のAPIが実装されました。
- dns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI  また、netパッケージでUnixドメインソケットがサポートされています。
+dns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI また、netパッケージでUnixドメインソケットがサポートされています。
 testing/snapshot assertSnapshotにオプションを渡せるようになりました。
 例えば、dirオプションによってスナップショットの保存先ディレクトリなどをカスタマイズできます。
-await assertSnapshot(t, actual, { dir: &#34;testdata&#34; });  https://github.com/denoland/deno_std/releases/tag/0.139.0
+await assertSnapshot(t, actual, { dir: &#34;testdata&#34; }); https://github.com/denoland/deno_std/releases/tag/0.139.0
 --no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。
- feat: add &ndash;no-config flag (#14555)
- $ deno run --no-config main.">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/05/15.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2021/05/09〜2022/05/15の最新情報">
-<meta property="og:description" content="Deno v1.21.3 Deno v1.21.3がリリースされました。
+feat: add &ndash;no-config flag (#14555)
+$ deno run --no-config main.js この機能はDeno v1.22でリリースされる可能性がありそうです。"><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/05/15.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2021/05/09〜2022/05/15の最新情報"><meta property="og:description" content="Deno v1.21.3 Deno v1.21.3がリリースされました。
 deno task deno task <タスク名>の<タスク名>の直後に--から始まるオプションを指定できない問題が修正されました。
 その他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。
 その他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。
- https://github.com/denoland/deno/releases/tag/v1.21.3
+https://github.com/denoland/deno/releases/tag/v1.21.3
 deno_std v0.139.0 deno_std v0.139.0がリリースされました。
 encoding/jsonc deno_stdにJSONCパーサが実装されました。
 import { parse } from &#34;https://deno.land/std@0.139.0/encoding/jsonc.ts&#34;; console.log(parse(`{ // hello &#34;foo&#34;: 1 }`)); // => { foo: 1 } node dnsパッケージで以下のAPIが実装されました。
- dns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI  また、netパッケージでUnixドメインソケットがサポートされています。
+dns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI また、netパッケージでUnixドメインソケットがサポートされています。
 testing/snapshot assertSnapshotにオプションを渡せるようになりました。
 例えば、dirオプションによってスナップショットの保存先ディレクトリなどをカスタマイズできます。
-await assertSnapshot(t, actual, { dir: &#34;testdata&#34; });  https://github.com/denoland/deno_std/releases/tag/0.139.0
+await assertSnapshot(t, actual, { dir: &#34;testdata&#34; }); https://github.com/denoland/deno_std/releases/tag/0.139.0
 --no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。
- feat: add &ndash;no-config flag (#14555)
- $ deno run --no-config main.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/05/15.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2022-05-15T00:00:00+00:00">
-<meta property="article:modified_time" content="2022-05-15T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2021/05/09〜2022/05/15の最新情報">
-<meta name=twitter:description content="Deno v1.21.3 Deno v1.21.3がリリースされました。
+feat: add &ndash;no-config flag (#14555)
+$ deno run --no-config main.js この機能はDeno v1.22でリリースされる可能性がありそうです。"><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/05/15.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2022-05-15T00:00:00+00:00"><meta property="article:modified_time" content="2022-05-15T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2021/05/09〜2022/05/15の最新情報"><meta name=twitter:description content="Deno v1.21.3 Deno v1.21.3がリリースされました。
 deno task deno task <タスク名>の<タスク名>の直後に--から始まるオプションを指定できない問題が修正されました。
 その他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。
 その他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。
- https://github.com/denoland/deno/releases/tag/v1.21.3
+https://github.com/denoland/deno/releases/tag/v1.21.3
 deno_std v0.139.0 deno_std v0.139.0がリリースされました。
 encoding/jsonc deno_stdにJSONCパーサが実装されました。
 import { parse } from &#34;https://deno.land/std@0.139.0/encoding/jsonc.ts&#34;; console.log(parse(`{ // hello &#34;foo&#34;: 1 }`)); // => { foo: 1 } node dnsパッケージで以下のAPIが実装されました。
- dns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI  また、netパッケージでUnixドメインソケットがサポートされています。
+dns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI また、netパッケージでUnixドメインソケットがサポートされています。
 testing/snapshot assertSnapshotにオプションを渡せるようになりました。
 例えば、dirオプションによってスナップショットの保存先ディレクトリなどをカスタマイズできます。
-await assertSnapshot(t, actual, { dir: &#34;testdata&#34; });  https://github.com/denoland/deno_std/releases/tag/0.139.0
+await assertSnapshot(t, actual, { dir: &#34;testdata&#34; }); https://github.com/denoland/deno_std/releases/tag/0.139.0
 --no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。
- feat: add &ndash;no-config flag (#14555)
- $ deno run --no-config main.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/05/09〜2022/05/15の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/05/15.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/05/09〜2022/05/15の最新情報","name":"2021\/05\/09〜2022\/05\/15の最新情報","description":"Deno v1.21.3 Deno v1.21.3がリリースされました。\ndeno task deno task \u0026lt;タスク名\u0026gt;の\u0026lt;タスク名\u0026gt;の直後に--から始まるオプションを指定できない問題が修正されました。\nその他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。\nその他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。\n https://github.com/denoland/deno/releases/tag/v1.21.3\ndeno_std v0.139.0 deno_std v0.139.0がリリースされました。\nencoding/jsonc deno_stdにJSONCパーサが実装されました。\nimport { parse } from \u0026#34;https://deno.land/std@0.139.0/encoding/jsonc.ts\u0026#34;; console.log(parse(`{ // hello \u0026#34;foo\u0026#34;: 1 }`)); // =\u0026gt; { foo: 1 } node dnsパッケージで以下のAPIが実装されました。\n dns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI  また、netパッケージでUnixドメインソケットがサポートされています。\ntesting/snapshot assertSnapshotにオプションを渡せるようになりました。\n例えば、dirオプションによってスナップショットの保存先ディレクトリなどをカスタマイズできます。\nawait assertSnapshot(t, actual, { dir: \u0026#34;testdata\u0026#34; });  https://github.com/denoland/deno_std/releases/tag/0.139.0\n--no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。\n feat: add \u0026ndash;no-config flag (#14555)\n $ deno run --no-config main.","keywords":["Deno","deno_std","deno-sqlite","Aleph.js","Vue.js","Deno Deploy"],"articleBody":"Deno v1.21.3 Deno v1.21.3がリリースされました。\ndeno task deno task のの直後に--から始まるオプションを指定できない問題が修正されました。\nその他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。\nその他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。\n https://github.com/denoland/deno/releases/tag/v1.21.3\ndeno_std v0.139.0 deno_std v0.139.0がリリースされました。\nencoding/jsonc deno_stdにJSONCパーサが実装されました。\nimport { parse } from \"https://deno.land/std@0.139.0/encoding/jsonc.ts\"; console.log(parse(`{ // hello \"foo\": 1 }`)); // = { foo: 1 } node dnsパッケージで以下のAPIが実装されました。\n dns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI  また、netパッケージでUnixドメインソケットがサポートされています。\ntesting/snapshot assertSnapshotにオプションを渡せるようになりました。\n例えば、dirオプションによってスナップショットの保存先ディレクトリなどをカスタマイズできます。\nawait assertSnapshot(t, actual, { dir: \"testdata\" });  https://github.com/denoland/deno_std/releases/tag/0.139.0\n--no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。\n feat: add –no-config flag (#14555)\n $ deno run --no-config main.js この機能はDeno v1.22でリリースされる可能性がありそうです。\n https://github.com/denoland/deno/pull/14555\ndeno_stdへのdeno-sqliteの追加について deno_stdにdeno-sqliteモジュールを追加するPRが作成されています。\n [WIP] feat: Add sqlite database driver (#2230)\n まだ正式に追加されるかどうかはわかりませんが、この変更が入れば、deno_stdでSQLiteのデータベースを操作できるようになりそうです。\n https://github.com/denoland/deno_std/pull/2230\nWeb-interoperable Runtimes Community Group (WinterCG) Web-interoperable Runtimes Community Groupというグループの立ち上げが発表されました。\nhttps://wintercg.org/\n主にDenoやNode.js, Cloudflare Workersなどの非ブラウザ上で動作する各種JavaScriptランタイムの相互運用性の向上を目的としているようです。\n議論の内容やドキュメントなどはGitHub上で公開されています。\n例)\n fetch() Web Crypto APIへのストリーミングのサポート  また、WinterCGのWebサイトはDeno Deployでホストされているようで、ソースコードも公開されています。\nhttps://github.com/wintercg/www\n  https://deno.com/blog/announcing-wintercg https://blog.cloudflare.com/introducing-the-wintercg/  Aleph.js v1.0.0-alpha.42 Aleph.jsのv1.0.0-alpha.42がリリースされました。\nVue.jsのサポートが強化されており、React同様にデータの読み込みやルーティングなどが実装されています。\nhttps://github.com/alephjs/aleph.js/tree/1.0.0-alpha.46/examples/vue-app\n https://github.com/alephjs/aleph.js/releases/tag/1.0.0-alpha.42\nDeno Newsが再開 Deno Newsの更新が再開されたようです。\n#42: Deno News is back! Featuring v1.21, Netlify Edge Functions, and JavaScript Containers\nメールやRSSフィードなどで購読できるようなので、もし興味がありましたら購読しておくとよいかもしれません。\n https://deno.news/archive/42-deno-news-is-back-featuring-v121-netlify-edge\n","wordCount":"131","inLanguage":"en","datePublished":"2022-05-15T00:00:00Z","dateModified":"2022-05-15T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/05/15.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2021/05/09〜2022/05/15の最新情報
-</h1>
-<div class=post-meta><span title="2022-05-15 00:00:00 +0000 UTC">May 15, 2022</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno-v1213 aria-label="Deno v1.21.3">Deno v1.21.3</a><ul>
-<li>
-<a href=#deno-task aria-label="deno task"><code>deno task</code></a></li>
-<li>
-<a href=#%e3%81%9d%e3%81%ae%e4%bb%96%e3%81%ae%e4%bf%ae%e6%ad%a3 aria-label=その他の修正>その他の修正</a></li></ul>
-</li>
-<li>
-<a href=#deno_std-v01390 aria-label="deno_std v0.139.0">deno_std v0.139.0</a><ul>
-<li>
-<a href=#encodingjsonc aria-label=encoding/jsonc><code>encoding/jsonc</code></a></li>
-<li>
-<a href=#node aria-label=node><code>node</code></a></li>
-<li>
-<a href=#testingsnapshot aria-label=testing/snapshot><code>testing/snapshot</code></a></li></ul>
-</li>
-<li>
-<a href=#--no-config%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=--no-configオプションのサポートについて><code>--no-config</code>オプションのサポートについて</a></li>
-<li>
-<a href=#deno_std%e3%81%b8%e3%81%aedeno-sqlite%e3%81%ae%e8%bf%bd%e5%8a%a0%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=deno_stdへのdeno-sqliteの追加について>deno_stdへのdeno-sqliteの追加について</a></li>
-<li>
-<a href=#web-interoperable-runtimes-community-group-wintercg aria-label="Web-interoperable Runtimes Community Group (WinterCG)">Web-interoperable Runtimes Community Group (WinterCG)</a></li>
-<li>
-<a href=#alephjs-v100-alpha42 aria-label="Aleph.js v1.0.0-alpha.42">Aleph.js v1.0.0-alpha.42</a></li>
-<li>
-<a href=#deno-news%e3%81%8c%e5%86%8d%e9%96%8b aria-label="Deno Newsが再開">Deno Newsが再開</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno-v1213>Deno v1.21.3<a hidden class=anchor aria-hidden=true href=#deno-v1213>#</a></h2>
-<p>Deno v1.21.3がリリースされました。</p>
-<h3 id=deno-task><code>deno task</code><a hidden class=anchor aria-hidden=true href=#deno-task>#</a></h3>
-<p><code>deno task &lt;タスク名></code>の<code>&lt;タスク名></code>の直後に<code>--</code>から始まるオプションを指定できない問題が修正されました。</p>
-<h3 id=その他の修正>その他の修正<a hidden class=anchor aria-hidden=true href=#その他の修正>#</a></h3>
-<p><code>Deno.connectTls</code>で作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。</p>
-<p>その他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。</p>
-<hr>
-<p><a href=https://github.com/denoland/deno/releases/tag/v1.21.3>https://github.com/denoland/deno/releases/tag/v1.21.3</a></p>
-<h2 id=deno_std-v01390>deno_std v0.139.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01390>#</a></h2>
-<p>deno_std v0.139.0がリリースされました。</p>
-<h3 id=encodingjsonc><code>encoding/jsonc</code><a hidden class=anchor aria-hidden=true href=#encodingjsonc>#</a></h3>
-<p>deno_stdにJSONCパーサが実装されました。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>parse</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.139.0/encoding/jsonc.ts&#34;</span>;
-
-<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>parse</span>(<span style=color:#e6db74>`{
-</span><span style=color:#e6db74>  // hello
-</span><span style=color:#e6db74>  &#34;foo&#34;: 1
-</span><span style=color:#e6db74>}`</span>)); <span style=color:#75715e>// =&gt; { foo: 1 }
-</span></code></pre></div><h3 id=node><code>node</code><a hidden class=anchor aria-hidden=true href=#node>#</a></h3>
-<p><code>dns</code>パッケージで以下のAPIが実装されました。</p>
-<ul>
-<li><code>dns.Resolver</code></li>
-<li><code>dns.setServers</code> / <code>dns.getServers</code></li>
-<li><code>dns.resolveAny</code>や<code>dns.resolve4</code>などの問い合わせAPI</li>
-</ul>
-<p>また、<code>net</code>パッケージでUnixドメインソケットがサポートされています。</p>
-<h3 id=testingsnapshot><code>testing/snapshot</code><a hidden class=anchor aria-hidden=true href=#testingsnapshot>#</a></h3>
-<p><code>assertSnapshot</code>に<a href=https://doc.deno.land/https://deno.land/std@0.139.0/testing/snapshot.ts/~/SnapshotOptions>オプション</a>を渡せるようになりました。</p>
-<p>例えば、<code>dir</code>オプションによってスナップショットの保存先ディレクトリなどをカスタマイズできます。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>  <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>assertSnapshot</span>(<span style=color:#a6e22e>t</span>, <span style=color:#a6e22e>actual</span>, { <span style=color:#a6e22e>dir</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;testdata&#34;</span> });
-</code></pre></div><hr>
-<p><a href=https://github.com/denoland/deno_std/releases/tag/0.139.0>https://github.com/denoland/deno_std/releases/tag/0.139.0</a></p>
-<h2 id=--no-configオプションのサポートについて><code>--no-config</code>オプションのサポートについて<a hidden class=anchor aria-hidden=true href=#--no-configオプションのサポートについて>#</a></h2>
-<p><code>deno.json(c)</code>の自動的な読み込みを無効化するために、<code>--no-config</code>オプションを追加するPRが作成されています。</p>
-<blockquote>
-<p><a href=https://github.com/denoland/deno/pull/14555>feat: add &ndash;no-config flag (#14555)</a></p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ deno run --no-config main.js
-</code></pre></div><p>この機能はDeno v1.22でリリースされる可能性がありそうです。</p>
-<hr>
-<p><a href=https://github.com/denoland/deno/pull/14555>https://github.com/denoland/deno/pull/14555</a></p>
-<h2 id=deno_stdへのdeno-sqliteの追加について>deno_stdへのdeno-sqliteの追加について<a hidden class=anchor aria-hidden=true href=#deno_stdへのdeno-sqliteの追加について>#</a></h2>
-<p>deno_stdに<a href=https://github.com/dyedgreen/deno-sqlite>deno-sqlite</a>モジュールを追加するPRが作成されています。</p>
-<blockquote>
-<p><a href=https://github.com/denoland/deno_std/pull/2230>[WIP] feat: Add sqlite database driver (#2230)</a></p>
-</blockquote>
-<p>まだ正式に追加されるかどうかはわかりませんが、この変更が入れば、deno_stdでSQLiteのデータベースを操作できるようになりそうです。</p>
-<hr>
-<p><a href=https://github.com/denoland/deno_std/pull/2230>https://github.com/denoland/deno_std/pull/2230</a></p>
-<h2 id=web-interoperable-runtimes-community-group-wintercg>Web-interoperable Runtimes Community Group (WinterCG)<a hidden class=anchor aria-hidden=true href=#web-interoperable-runtimes-community-group-wintercg>#</a></h2>
-<p><strong>Web-interoperable Runtimes Community Group</strong>というグループの立ち上げが発表されました。</p>
-<p><a href=https://wintercg.org/>https://wintercg.org/</a></p>
-<p>主にDenoやNode.js, Cloudflare Workersなどの非ブラウザ上で動作する各種JavaScriptランタイムの相互運用性の向上を目的としているようです。</p>
-<p>議論の内容やドキュメントなどはGitHub上で公開されています。</p>
-<p>例)</p>
-<ul>
-<li><a href=https://github.com/wintercg/fetch>fetch()</a></li>
-<li><a href=https://github.com/wintercg/proposal-webcrypto-streams>Web Crypto APIへのストリーミングのサポート</a></li>
-</ul>
-<p>また、WinterCGのWebサイトはDeno Deployでホストされているようで、ソースコードも公開されています。</p>
-<p><a href=https://github.com/wintercg/www>https://github.com/wintercg/www</a></p>
-<hr>
-<ul>
-<li><a href=https://deno.com/blog/announcing-wintercg>https://deno.com/blog/announcing-wintercg</a></li>
-<li><a href=https://blog.cloudflare.com/introducing-the-wintercg/>https://blog.cloudflare.com/introducing-the-wintercg/</a></li>
-</ul>
-<h2 id=alephjs-v100-alpha42>Aleph.js v1.0.0-alpha.42<a hidden class=anchor aria-hidden=true href=#alephjs-v100-alpha42>#</a></h2>
-<p>Aleph.jsのv1.0.0-alpha.42がリリースされました。</p>
-<p>Vue.jsのサポートが強化されており、React同様にデータの読み込みやルーティングなどが実装されています。</p>
-<p><a href=https://github.com/alephjs/aleph.js/tree/1.0.0-alpha.46/examples/vue-app>https://github.com/alephjs/aleph.js/tree/1.0.0-alpha.46/examples/vue-app</a></p>
-<hr>
-<p><a href=https://github.com/alephjs/aleph.js/releases/tag/1.0.0-alpha.42>https://github.com/alephjs/aleph.js/releases/tag/1.0.0-alpha.42</a></p>
-<h2 id=deno-newsが再開>Deno Newsが再開<a hidden class=anchor aria-hidden=true href=#deno-newsが再開>#</a></h2>
-<p><a href=https://deno.news/>Deno News</a>の更新が再開されたようです。</p>
-<p><a href=https://deno.news/archive/42-deno-news-is-back-featuring-v121-netlify-edge>#42: Deno News is back! Featuring v1.21, Netlify Edge Functions, and JavaScript Containers</a></p>
-<p>メールやRSSフィードなどで購読できるようなので、もし興味がありましたら購読しておくとよいかもしれません。</p>
-<hr>
-<p><a href=https://deno.news/archive/42-deno-news-is-back-featuring-v121-netlify-edge>https://deno.news/archive/42-deno-news-is-back-featuring-v121-netlify-edge</a></p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno-sqlite.html>deno-sqlite</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/aleph.js.html>Aleph.js</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/vue.js.html>Vue.js</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno-deploy.html>Deno Deploy</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+feat: add &ndash;no-config flag (#14555)
+$ deno run --no-config main.js この機能はDeno v1.22でリリースされる可能性がありそうです。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/05/09〜2022/05/15の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/05/15.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/05/09〜2022/05/15の最新情報","name":"2021\/05\/09〜2022\/05\/15の最新情報","description":"Deno v1.21.3 Deno v1.21.3がリリースされました。\ndeno task deno task \u0026lt;タスク名\u0026gt;の\u0026lt;タスク名\u0026gt;の直後に--から始まるオプションを指定できない問題が修正されました。\nその他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。\nその他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。\nhttps://github.com/denoland/deno/releases/tag/v1.21.3\ndeno_std v0.139.0 deno_std v0.139.0がリリースされました。\nencoding/jsonc deno_stdにJSONCパーサが実装されました。\nimport { parse } from \u0026#34;https://deno.land/std@0.139.0/encoding/jsonc.ts\u0026#34;; console.log(parse(`{ // hello \u0026#34;foo\u0026#34;: 1 }`)); // =\u0026gt; { foo: 1 } node dnsパッケージで以下のAPIが実装されました。\ndns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI また、netパッケージでUnixドメインソケットがサポートされています。\ntesting/snapshot assertSnapshotにオプションを渡せるようになりました。\n例えば、dirオプションによってスナップショットの保存先ディレクトリなどをカスタマイズできます。\nawait assertSnapshot(t, actual, { dir: \u0026#34;testdata\u0026#34; }); https://github.com/denoland/deno_std/releases/tag/0.139.0\n--no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。\nfeat: add \u0026ndash;no-config flag (#14555)\n$ deno run --no-config main.js この機能はDeno v1.22でリリースされる可能性がありそうです。","keywords":["Deno","deno_std","deno-sqlite","Aleph.js","Vue.js","Deno Deploy"],"articleBody":"Deno v1.21.3 Deno v1.21.3がリリースされました。\ndeno task deno task \u003cタスク名\u003eの\u003cタスク名\u003eの直後に--から始まるオプションを指定できない問題が修正されました。\nその他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。\nその他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。\nhttps://github.com/denoland/deno/releases/tag/v1.21.3\ndeno_std v0.139.0 deno_std v0.139.0がリリースされました。\nencoding/jsonc deno_stdにJSONCパーサが実装されました。\nimport { parse } from \"https://deno.land/std@0.139.0/encoding/jsonc.ts\"; console.log(parse(`{ // hello \"foo\": 1 }`)); // =\u003e { foo: 1 } node dnsパッケージで以下のAPIが実装されました。\ndns.Resolver dns.setServers / dns.getServers dns.resolveAnyやdns.resolve4などの問い合わせAPI また、netパッケージでUnixドメインソケットがサポートされています。\ntesting/snapshot assertSnapshotにオプションを渡せるようになりました。\n例えば、dirオプションによってスナップショットの保存先ディレクトリなどをカスタマイズできます。\nawait assertSnapshot(t, actual, { dir: \"testdata\" }); https://github.com/denoland/deno_std/releases/tag/0.139.0\n--no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。\nfeat: add –no-config flag (#14555)\n$ deno run --no-config main.js この機能はDeno v1.22でリリースされる可能性がありそうです。\nhttps://github.com/denoland/deno/pull/14555\ndeno_stdへのdeno-sqliteの追加について deno_stdにdeno-sqliteモジュールを追加するPRが作成されています。\n[WIP] feat: Add sqlite database driver (#2230)\nまだ正式に追加されるかどうかはわかりませんが、この変更が入れば、deno_stdでSQLiteのデータベースを操作できるようになりそうです。\nhttps://github.com/denoland/deno_std/pull/2230\nWeb-interoperable Runtimes Community Group (WinterCG) Web-interoperable Runtimes Community Groupというグループの立ち上げが発表されました。\nhttps://wintercg.org/\n主にDenoやNode.js, Cloudflare Workersなどの非ブラウザ上で動作する各種JavaScriptランタイムの相互運用性の向上を目的としているようです。\n議論の内容やドキュメントなどはGitHub上で公開されています。\n例)\nfetch() Web Crypto APIへのストリーミングのサポート また、WinterCGのWebサイトはDeno Deployでホストされているようで、ソースコードも公開されています。\nhttps://github.com/wintercg/www\nhttps://deno.com/blog/announcing-wintercg https://blog.cloudflare.com/introducing-the-wintercg/ Aleph.js v1.0.0-alpha.42 Aleph.jsのv1.0.0-alpha.42がリリースされました。\nVue.jsのサポートが強化されており、React同様にデータの読み込みやルーティングなどが実装されています。\nhttps://github.com/alephjs/aleph.js/tree/1.0.0-alpha.46/examples/vue-app\nhttps://github.com/alephjs/aleph.js/releases/tag/1.0.0-alpha.42\nDeno Newsが再開 Deno Newsの更新が再開されたようです。\n#42: Deno News is back! Featuring v1.21, Netlify Edge Functions, and JavaScript Containers\nメールやRSSフィードなどで購読できるようなので、もし興味がありましたら購読しておくとよいかもしれません。\nhttps://deno.news/archive/42-deno-news-is-back-featuring-v121-netlify-edge\n","wordCount":"131","inLanguage":"en","datePublished":"2022-05-15T00:00:00Z","dateModified":"2022-05-15T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/05/15.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2021/05/09〜2022/05/15の最新情報</h1><div class=post-meta><span title='2022-05-15 00:00:00 +0000 UTC'>May 15, 2022</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno-v1213 aria-label="Deno v1.21.3">Deno v1.21.3</a><ul><li><a href=#deno-task aria-label="deno task"><code>deno task</code></a></li><li><a href=#%e3%81%9d%e3%81%ae%e4%bb%96%e3%81%ae%e4%bf%ae%e6%ad%a3 aria-label=その他の修正>その他の修正</a></li></ul></li><li><a href=#deno_std-v01390 aria-label="deno_std v0.139.0">deno_std v0.139.0</a><ul><li><a href=#encodingjsonc aria-label=encoding/jsonc><code>encoding/jsonc</code></a></li><li><a href=#node aria-label=node><code>node</code></a></li><li><a href=#testingsnapshot aria-label=testing/snapshot><code>testing/snapshot</code></a></li></ul></li><li><a href=#--no-config%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=--no-configオプションのサポートについて><code>--no-config</code>オプションのサポートについて</a></li><li><a href=#deno_std%e3%81%b8%e3%81%aedeno-sqlite%e3%81%ae%e8%bf%bd%e5%8a%a0%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=deno_stdへのdeno-sqliteの追加について>deno_stdへのdeno-sqliteの追加について</a></li><li><a href=#web-interoperable-runtimes-community-group-wintercg aria-label="Web-interoperable Runtimes Community Group (WinterCG)">Web-interoperable Runtimes Community Group (WinterCG)</a></li><li><a href=#alephjs-v100-alpha42 aria-label="Aleph.js v1.0.0-alpha.42">Aleph.js v1.0.0-alpha.42</a></li><li><a href=#deno-news%e3%81%8c%e5%86%8d%e9%96%8b aria-label="Deno Newsが再開">Deno Newsが再開</a></li></ul></div></details></div><div class=post-content><h2 id=deno-v1213>Deno v1.21.3<a hidden class=anchor aria-hidden=true href=#deno-v1213>#</a></h2><p>Deno v1.21.3がリリースされました。</p><h3 id=deno-task><code>deno task</code><a hidden class=anchor aria-hidden=true href=#deno-task>#</a></h3><p><code>deno task &lt;タスク名></code>の<code>&lt;タスク名></code>の直後に<code>--</code>から始まるオプションを指定できない問題が修正されました。</p><h3 id=その他の修正>その他の修正<a hidden class=anchor aria-hidden=true href=#その他の修正>#</a></h3><p><code>Deno.connectTls</code>で作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。</p><p>その他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。</p><hr><p><a href=https://github.com/denoland/deno/releases/tag/v1.21.3>https://github.com/denoland/deno/releases/tag/v1.21.3</a></p><h2 id=deno_std-v01390>deno_std v0.139.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01390>#</a></h2><p>deno_std v0.139.0がリリースされました。</p><h3 id=encodingjsonc><code>encoding/jsonc</code><a hidden class=anchor aria-hidden=true href=#encodingjsonc>#</a></h3><p>deno_stdにJSONCパーサが実装されました。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>parse</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.139.0/encoding/jsonc.ts&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>parse</span>(<span style=color:#e6db74>`{
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  // hello
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  &#34;foo&#34;: 1
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>}`</span>)); <span style=color:#75715e>// =&gt; { foo: 1 }
+</span></span></span></code></pre></div><h3 id=node><code>node</code><a hidden class=anchor aria-hidden=true href=#node>#</a></h3><p><code>dns</code>パッケージで以下のAPIが実装されました。</p><ul><li><code>dns.Resolver</code></li><li><code>dns.setServers</code> / <code>dns.getServers</code></li><li><code>dns.resolveAny</code>や<code>dns.resolve4</code>などの問い合わせAPI</li></ul><p>また、<code>net</code>パッケージでUnixドメインソケットがサポートされています。</p><h3 id=testingsnapshot><code>testing/snapshot</code><a hidden class=anchor aria-hidden=true href=#testingsnapshot>#</a></h3><p><code>assertSnapshot</code>に<a href=https://doc.deno.land/https://deno.land/std@0.139.0/testing/snapshot.ts/~/SnapshotOptions>オプション</a>を渡せるようになりました。</p><p>例えば、<code>dir</code>オプションによってスナップショットの保存先ディレクトリなどをカスタマイズできます。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span>  <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>assertSnapshot</span>(<span style=color:#a6e22e>t</span>, <span style=color:#a6e22e>actual</span>, { <span style=color:#a6e22e>dir</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;testdata&#34;</span> });
+</span></span></code></pre></div><hr><p><a href=https://github.com/denoland/deno_std/releases/tag/0.139.0>https://github.com/denoland/deno_std/releases/tag/0.139.0</a></p><h2 id=--no-configオプションのサポートについて><code>--no-config</code>オプションのサポートについて<a hidden class=anchor aria-hidden=true href=#--no-configオプションのサポートについて>#</a></h2><p><code>deno.json(c)</code>の自動的な読み込みを無効化するために、<code>--no-config</code>オプションを追加するPRが作成されています。</p><blockquote><p><a href=https://github.com/denoland/deno/pull/14555>feat: add &ndash;no-config flag (#14555)</a></p></blockquote><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ deno run --no-config main.js
+</span></span></code></pre></div><p>この機能はDeno v1.22でリリースされる可能性がありそうです。</p><hr><p><a href=https://github.com/denoland/deno/pull/14555>https://github.com/denoland/deno/pull/14555</a></p><h2 id=deno_stdへのdeno-sqliteの追加について>deno_stdへのdeno-sqliteの追加について<a hidden class=anchor aria-hidden=true href=#deno_stdへのdeno-sqliteの追加について>#</a></h2><p>deno_stdに<a href=https://github.com/dyedgreen/deno-sqlite>deno-sqlite</a>モジュールを追加するPRが作成されています。</p><blockquote><p><a href=https://github.com/denoland/deno_std/pull/2230>[WIP] feat: Add sqlite database driver (#2230)</a></p></blockquote><p>まだ正式に追加されるかどうかはわかりませんが、この変更が入れば、deno_stdでSQLiteのデータベースを操作できるようになりそうです。</p><hr><p><a href=https://github.com/denoland/deno_std/pull/2230>https://github.com/denoland/deno_std/pull/2230</a></p><h2 id=web-interoperable-runtimes-community-group-wintercg>Web-interoperable Runtimes Community Group (WinterCG)<a hidden class=anchor aria-hidden=true href=#web-interoperable-runtimes-community-group-wintercg>#</a></h2><p><strong>Web-interoperable Runtimes Community Group</strong>というグループの立ち上げが発表されました。</p><p><a href=https://wintercg.org/>https://wintercg.org/</a></p><p>主にDenoやNode.js, Cloudflare Workersなどの非ブラウザ上で動作する各種JavaScriptランタイムの相互運用性の向上を目的としているようです。</p><p>議論の内容やドキュメントなどはGitHub上で公開されています。</p><p>例)</p><ul><li><a href=https://github.com/wintercg/fetch>fetch()</a></li><li><a href=https://github.com/wintercg/proposal-webcrypto-streams>Web Crypto APIへのストリーミングのサポート</a></li></ul><p>また、WinterCGのWebサイトはDeno Deployでホストされているようで、ソースコードも公開されています。</p><p><a href=https://github.com/wintercg/www>https://github.com/wintercg/www</a></p><hr><ul><li><a href=https://deno.com/blog/announcing-wintercg>https://deno.com/blog/announcing-wintercg</a></li><li><a href=https://blog.cloudflare.com/introducing-the-wintercg/>https://blog.cloudflare.com/introducing-the-wintercg/</a></li></ul><h2 id=alephjs-v100-alpha42>Aleph.js v1.0.0-alpha.42<a hidden class=anchor aria-hidden=true href=#alephjs-v100-alpha42>#</a></h2><p>Aleph.jsのv1.0.0-alpha.42がリリースされました。</p><p>Vue.jsのサポートが強化されており、React同様にデータの読み込みやルーティングなどが実装されています。</p><p><a href=https://github.com/alephjs/aleph.js/tree/1.0.0-alpha.46/examples/vue-app>https://github.com/alephjs/aleph.js/tree/1.0.0-alpha.46/examples/vue-app</a></p><hr><p><a href=https://github.com/alephjs/aleph.js/releases/tag/1.0.0-alpha.42>https://github.com/alephjs/aleph.js/releases/tag/1.0.0-alpha.42</a></p><h2 id=deno-newsが再開>Deno Newsが再開<a hidden class=anchor aria-hidden=true href=#deno-newsが再開>#</a></h2><p><a href=https://deno.news/>Deno News</a>の更新が再開されたようです。</p><p><a href=https://deno.news/archive/42-deno-news-is-back-featuring-v121-netlify-edge>#42: Deno News is back! Featuring v1.21, Netlify Edge Functions, and JavaScript Containers</a></p><p>メールやRSSフィードなどで購読できるようなので、もし興味がありましたら購読しておくとよいかもしれません。</p><hr><p><a href=https://deno.news/archive/42-deno-news-is-back-featuring-v121-netlify-edge>https://deno.news/archive/42-deno-news-is-back-featuring-v121-netlify-edge</a></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno-sqlite.html>deno-sqlite</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/aleph.js.html>Aleph.js</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/vue.js.html>Vue.js</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno-deploy.html>Deno Deploy</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

@@ -1,306 +1,92 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2021/01/03〜2022/01/09の最新情報 | 週刊Deno</title>
-<meta name=keywords content="Deno,deno_std">
-<meta name=description content="Deno v1.17.2 Deno v1.17.2がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2021/01/03〜2022/01/09の最新情報 | 週刊Deno</title><meta name=keywords content="Deno,deno_std"><meta name=description content="Deno v1.17.2 Deno v1.17.2がリリースされました。
 バグ修正などが中心に行われています。
 主な変更点:
-  deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。
-  JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。
-  ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。
-  SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。
-  SubtleCrypto.deriveKeyでAES-CTRがサポートされました。
-  FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。
-  以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。
-Deno.test(function name() {});   Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。
-   https://github.com/denoland/deno/releases/tag/v1.17.2
+deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。
+JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。
+ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。
+SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。
+SubtleCrypto.deriveKeyでAES-CTRがサポートされました。
+FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。
+以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。
+Deno.test(function name() {}); Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。
+https://github.com/denoland/deno/releases/tag/v1.17.2
 deno_std v0.120.0 deno_std v0.120.0がリリースされました。
 crypto Tigerハッシュがサポートされました。
 uuid version()が実装されました。
-node  https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。  path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。
+node https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。 path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。
 fs/expand_glob expandGlob()のextendedオプションのデフォルト値がtrueに変更されました。
 testing/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。
- https://github.com/denoland/deno_std/releases/tag/0.120.0
-設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/01/09.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2021/01/03〜2022/01/09の最新情報">
-<meta property="og:description" content="Deno v1.17.2 Deno v1.17.2がリリースされました。
+https://github.com/denoland/deno_std/releases/tag/0.120.0
+設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)
+https://github.com/denoland/deno/pull/13313 Denoを実行する際に--configオプションが指定されなかった際は以下の名前のファイルを探し、見つかったらそれを自動的に読み込む機能のようです。
+deno.json deno.jsonc https://github.com/denoland/deno/pull/13313
+deno_std/testingへのJestライクなアサーションAPIの追加について deno_stdへtesting/expect.tsを追加し、JestライクなアサーションAPIを提供することが提案されています。
+https://github.com/denoland/deno_std/issues/1779 expect(add(1, 2)).toEqual(3) 提案の背景としては以下のような理由があるようです。
+Node.jsにおけるJestの使用率の高さ VitestでJest互換なAPIが実装されたこと まだ確定ではありませんが、将来的には実装される可能性がありそうです。
+https://github.com/denoland/deno_std/issues/1779
+deno_std/mime/multipartの削除に関する提案 deno_stdからmime/multipartを削除することが提案されています。
+https://github.com/denoland/deno_std/issues/1778 背景としては、DenoにはすでにFormDataが実装されているため、mime/multipartの必要性が低いというのが理由のようです。
+今のところ、Deno v1."><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/01/09.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2021/01/03〜2022/01/09の最新情報"><meta property="og:description" content="Deno v1.17.2 Deno v1.17.2がリリースされました。
 バグ修正などが中心に行われています。
 主な変更点:
-  deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。
-  JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。
-  ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。
-  SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。
-  SubtleCrypto.deriveKeyでAES-CTRがサポートされました。
-  FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。
-  以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。
-Deno.test(function name() {});   Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。
-   https://github.com/denoland/deno/releases/tag/v1.17.2
+deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。
+JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。
+ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。
+SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。
+SubtleCrypto.deriveKeyでAES-CTRがサポートされました。
+FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。
+以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。
+Deno.test(function name() {}); Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。
+https://github.com/denoland/deno/releases/tag/v1.17.2
 deno_std v0.120.0 deno_std v0.120.0がリリースされました。
 crypto Tigerハッシュがサポートされました。
 uuid version()が実装されました。
-node  https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。  path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。
+node https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。 path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。
 fs/expand_glob expandGlob()のextendedオプションのデフォルト値がtrueに変更されました。
 testing/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。
- https://github.com/denoland/deno_std/releases/tag/0.120.0
-設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/01/09.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2022-01-09T00:00:00+00:00">
-<meta property="article:modified_time" content="2022-01-09T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2021/01/03〜2022/01/09の最新情報">
-<meta name=twitter:description content="Deno v1.17.2 Deno v1.17.2がリリースされました。
+https://github.com/denoland/deno_std/releases/tag/0.120.0
+設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)
+https://github.com/denoland/deno/pull/13313 Denoを実行する際に--configオプションが指定されなかった際は以下の名前のファイルを探し、見つかったらそれを自動的に読み込む機能のようです。
+deno.json deno.jsonc https://github.com/denoland/deno/pull/13313
+deno_std/testingへのJestライクなアサーションAPIの追加について deno_stdへtesting/expect.tsを追加し、JestライクなアサーションAPIを提供することが提案されています。
+https://github.com/denoland/deno_std/issues/1779 expect(add(1, 2)).toEqual(3) 提案の背景としては以下のような理由があるようです。
+Node.jsにおけるJestの使用率の高さ VitestでJest互換なAPIが実装されたこと まだ確定ではありませんが、将来的には実装される可能性がありそうです。
+https://github.com/denoland/deno_std/issues/1779
+deno_std/mime/multipartの削除に関する提案 deno_stdからmime/multipartを削除することが提案されています。
+https://github.com/denoland/deno_std/issues/1778 背景としては、DenoにはすでにFormDataが実装されているため、mime/multipartの必要性が低いというのが理由のようです。
+今のところ、Deno v1."><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/01/09.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2022-01-09T00:00:00+00:00"><meta property="article:modified_time" content="2022-01-09T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2021/01/03〜2022/01/09の最新情報"><meta name=twitter:description content="Deno v1.17.2 Deno v1.17.2がリリースされました。
 バグ修正などが中心に行われています。
 主な変更点:
-  deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。
-  JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。
-  ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。
-  SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。
-  SubtleCrypto.deriveKeyでAES-CTRがサポートされました。
-  FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。
-  以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。
-Deno.test(function name() {});   Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。
-   https://github.com/denoland/deno/releases/tag/v1.17.2
+deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。
+JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。
+ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。
+SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。
+SubtleCrypto.deriveKeyでAES-CTRがサポートされました。
+FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。
+以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。
+Deno.test(function name() {}); Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。
+https://github.com/denoland/deno/releases/tag/v1.17.2
 deno_std v0.120.0 deno_std v0.120.0がリリースされました。
 crypto Tigerハッシュがサポートされました。
 uuid version()が実装されました。
-node  https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。  path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。
+node https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。 path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。
 fs/expand_glob expandGlob()のextendedオプションのデフォルト値がtrueに変更されました。
 testing/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。
- https://github.com/denoland/deno_std/releases/tag/0.120.0
-設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/01/03〜2022/01/09の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/01/09.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/01/03〜2022/01/09の最新情報","name":"2021\/01\/03〜2022\/01\/09の最新情報","description":"Deno v1.17.2 Deno v1.17.2がリリースされました。\nバグ修正などが中心に行われています。\n主な変更点:\n  deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。\n  JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。\n  ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。\n  SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。\n  SubtleCrypto.deriveKeyでAES-CTRがサポートされました。\n  FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。\n  以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。\nDeno.test(function name() {});   Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。\n   https://github.com/denoland/deno/releases/tag/v1.17.2\ndeno_std v0.120.0 deno_std v0.120.0がリリースされました。\ncrypto Tigerハッシュがサポートされました。\nuuid version()が実装されました。\nnode  https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。  path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。\nfs/expand_glob expandGlob()のextendedオプションのデフォルト値がtrueに変更されました。\ntesting/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。\n https://github.com/denoland/deno_std/releases/tag/0.120.0\n設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)","keywords":["Deno","deno_std"],"articleBody":"Deno v1.17.2 Deno v1.17.2がリリースされました。\nバグ修正などが中心に行われています。\n主な変更点:\n  deno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。\n  JSON modulesを使用するとdeno bundleが失敗する問題が修正されました。\n  ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。\n  SubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。\n  SubtleCrypto.deriveKeyでAES-CTRがサポートされました。\n  FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。\n  以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。\nDeno.test(function name() {});   Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。\n   https://github.com/denoland/deno/releases/tag/v1.17.2\ndeno_std v0.120.0 deno_std v0.120.0がリリースされました。\ncrypto Tigerハッシュがサポートされました。\nuuid version()が実装されました。\nnode  https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。  path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。\nfs/expand_glob expandGlob()のextendedオプションのデフォルト値がtrueに変更されました。\ntesting/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。\n https://github.com/denoland/deno_std/releases/tag/0.120.0\n設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)\n https://github.com/denoland/deno/pull/13313  Denoを実行する際に--configオプションが指定されなかった際は以下の名前のファイルを探し、見つかったらそれを自動的に読み込む機能のようです。\n deno.json deno.jsonc   https://github.com/denoland/deno/pull/13313\ndeno_std/testingへのJestライクなアサーションAPIの追加について deno_stdへtesting/expect.tsを追加し、JestライクなアサーションAPIを提供することが提案されています。\n https://github.com/denoland/deno_std/issues/1779  expect(add(1, 2)).toEqual(3) 提案の背景としては以下のような理由があるようです。\n Node.jsにおけるJestの使用率の高さ VitestでJest互換なAPIが実装されたこと  まだ確定ではありませんが、将来的には実装される可能性がありそうです。\n https://github.com/denoland/deno_std/issues/1779\ndeno_std/mime/multipartの削除に関する提案 deno_stdからmime/multipartを削除することが提案されています。\n https://github.com/denoland/deno_std/issues/1778  背景としては、DenoにはすでにFormDataが実装されているため、mime/multipartの必要性が低いというのが理由のようです。\n今のところ、Deno v1.18のリリースに合わせて非推奨化し、Deno v1.19で削除する予定のようです。\n https://github.com/denoland/deno_std/issues/1778\nesm.sh v61 esm.shのv61がリリースされました。\nReact 17の新しいJSX Transformのサポートが追加されています。\n https://github.com/alephjs/esm.sh/releases/tag/v61\ndeno_which whichコマンドのように実行可能ファイルのパスを探すためのDenoモジュール\n https://github.com/dsherret/deno_which\n","wordCount":"83","inLanguage":"en","datePublished":"2022-01-09T00:00:00Z","dateModified":"2022-01-09T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/01/09.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2021/01/03〜2022/01/09の最新情報
-</h1>
-<div class=post-meta><span title="2022-01-09 00:00:00 +0000 UTC">January 9, 2022</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno-v1172 aria-label="Deno v1.17.2">Deno v1.17.2</a></li>
-<li>
-<a href=#deno_std-v01200 aria-label="deno_std v0.120.0">deno_std v0.120.0</a><ul>
-<li>
-<a href=#crypto aria-label=crypto><code>crypto</code></a></li>
-<li>
-<a href=#uuid aria-label=uuid><code>uuid</code></a></li>
-<li>
-<a href=#node aria-label=node><code>node</code></a></li>
-<li>
-<a href=#pathglob aria-label=path/glob><code>path/glob</code></a></li>
-<li>
-<a href=#fsexpand_glob aria-label=fs/expand_glob><code>fs/expand_glob</code></a></li>
-<li>
-<a href=#testingasserts aria-label=testing/asserts><code>testing/asserts</code></a></li></ul>
-</li>
-<li>
-<a href=#%e8%a8%ad%e5%ae%9a%e3%83%95%e3%82%a1%e3%82%a4%e3%83%abdenojson%e3%81%ae%e8%87%aa%e5%8b%95%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=設定ファイル(deno.json)の自動読み込みについて>設定ファイル(<code>deno.json</code>)の自動読み込みについて</a></li>
-<li>
-<a href=#deno_stdtesting%e3%81%b8%e3%81%aejest%e3%83%a9%e3%82%a4%e3%82%af%e3%81%aa%e3%82%a2%e3%82%b5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3api%e3%81%ae%e8%bf%bd%e5%8a%a0%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=deno_std/testingへのJestライクなアサーションAPIの追加について><code>deno_std/testing</code>へのJestライクなアサーションAPIの追加について</a></li>
-<li>
-<a href=#deno_stdmimemultipart%e3%81%ae%e5%89%8a%e9%99%a4%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e6%8f%90%e6%a1%88 aria-label=deno_std/mime/multipartの削除に関する提案><code>deno_std/mime/multipart</code>の削除に関する提案</a></li>
-<li>
-<a href=#esmsh-v61 aria-label="esm.sh v61">esm.sh v61</a></li>
-<li>
-<a href=#deno_which aria-label=deno_which>deno_which</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno-v1172>Deno v1.17.2<a hidden class=anchor aria-hidden=true href=#deno-v1172>#</a></h2>
-<p>Deno v1.17.2がリリースされました。</p>
-<p>バグ修正などが中心に行われています。</p>
-<p><strong>主な変更点:</strong></p>
-<ul>
-<li>
-<p><code>deno test</code>と<code>deno fmt</code>で拡張子が<code>.mts</code>, <code>.cjs</code>, 及び<code>.cts</code>のファイルがサポートされました。</p>
-</li>
-<li>
-<p><a href=https://github.com/tc39/proposal-json-modules>JSON modules</a>を使用すると<code>deno bundle</code>が失敗する問題が修正されました。</p>
-</li>
-<li>
-<p>ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。</p>
-</li>
-<li>
-<p><code>SubtleCrypto.exportKey</code>でAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。</p>
-</li>
-<li>
-<p><code>SubtleCrypto.deriveKey</code>でAES-CTRがサポートされました。</p>
-</li>
-<li>
-<p>FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。</p>
-</li>
-<li>
-<p>以下のような名前付き関数を使用したテストケースで<code>deno lsp</code>のテスト用コードレンズが動かない問題が修正されました。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>test</span>(<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>name() {</span>});
-</code></pre></div></li>
-<li>
-<p><code>Deno.addSignalListener()</code>で<code>SIGSEGV</code>などのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。</p>
-</li>
-</ul>
-<hr>
-<p><a href=https://github.com/denoland/deno/releases/tag/v1.17.2>https://github.com/denoland/deno/releases/tag/v1.17.2</a></p>
-<h2 id=deno_std-v01200>deno_std v0.120.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01200>#</a></h2>
-<p>deno_std v0.120.0がリリースされました。</p>
-<h3 id=crypto><code>crypto</code><a hidden class=anchor aria-hidden=true href=#crypto>#</a></h3>
-<p>Tigerハッシュがサポートされました。</p>
-<h3 id=uuid><code>uuid</code><a hidden class=anchor aria-hidden=true href=#uuid>#</a></h3>
-<p><a href=https://doc.deno.land/https://deno.land/std@0.120.0/uuid/mod.ts/~/version>version()</a>が実装されました。</p>
-<h3 id=node><code>node</code><a hidden class=anchor aria-hidden=true href=#node>#</a></h3>
-<ul>
-<li><code>https.request()</code>が実装されました。</li>
-<li><code>process.execPath</code>が実装されました。</li>
-<li><code>vm.runInThisContext()</code>が追加されました。</li>
-<li><code>process.exit()</code>を使うと<code>'exit'</code>イベントが2回発火する問題が修正されました。</li>
-<li><code>fs.readdir()</code>でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。</li>
-<li><code>child_process.spawn</code>で<code>env</code>オプションに数値やBoolean型の値を指定できるようになりました。</li>
-</ul>
-<h3 id=pathglob><code>path/glob</code><a hidden class=anchor aria-hidden=true href=#pathglob>#</a></h3>
-<p><code>joinGlobs()</code>の<code>extended</code>オプションのデフォルト値が<code>true</code>に変更されました。</p>
-<h3 id=fsexpand_glob><code>fs/expand_glob</code><a hidden class=anchor aria-hidden=true href=#fsexpand_glob>#</a></h3>
-<p><code>expandGlob()</code>の<code>extended</code>オプションのデフォルト値が<code>true</code>に変更されました。</p>
-<h3 id=testingasserts><code>testing/asserts</code><a hidden class=anchor aria-hidden=true href=#testingasserts>#</a></h3>
-<p><code>assertEquals</code>で<code>0</code>と<code>-0</code>が不一致と判断される問題が修正されました。</p>
-<hr>
-<p><a href=https://github.com/denoland/deno_std/releases/tag/0.120.0>https://github.com/denoland/deno_std/releases/tag/0.120.0</a></p>
-<h2 id=設定ファイルdenojsonの自動読み込みについて>設定ファイル(<code>deno.json</code>)の自動読み込みについて<a hidden class=anchor aria-hidden=true href=#設定ファイルdenojsonの自動読み込みについて>#</a></h2>
-<p>以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (<strong>まだマージはされていません</strong>)</p>
-<ul>
-<li><a href=https://github.com/denoland/deno/pull/13313>https://github.com/denoland/deno/pull/13313</a></li>
-</ul>
-<p>Denoを実行する際に<code>--config</code>オプションが指定されなかった際は以下の名前のファイルを探し、見つかったらそれを自動的に読み込む機能のようです。</p>
-<ul>
-<li><code>deno.json</code></li>
-<li><code>deno.jsonc</code></li>
-</ul>
-<hr>
-<p><a href=https://github.com/denoland/deno/pull/13313>https://github.com/denoland/deno/pull/13313</a></p>
-<h2 id=deno_stdtestingへのjestライクなアサーションapiの追加について><code>deno_std/testing</code>へのJestライクなアサーションAPIの追加について<a hidden class=anchor aria-hidden=true href=#deno_stdtestingへのjestライクなアサーションapiの追加について>#</a></h2>
-<p><code>deno_std</code>へ<code>testing/expect.ts</code>を追加し、JestライクなアサーションAPIを提供することが提案されています。</p>
-<ul>
-<li><a href=https://github.com/denoland/deno_std/issues/1779>https://github.com/denoland/deno_std/issues/1779</a></li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#a6e22e>expect</span>(<span style=color:#a6e22e>add</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>)).<span style=color:#a6e22e>toEqual</span>(<span style=color:#ae81ff>3</span>)
-</code></pre></div><p>提案の背景としては以下のような理由があるようです。</p>
-<ul>
-<li>Node.jsにおけるJestの使用率の高さ</li>
-<li><a href=https://github.com/vitest-dev/vitest>Vitest</a>でJest互換なAPIが実装されたこと</li>
-</ul>
-<p>まだ確定ではありませんが、将来的には実装される可能性がありそうです。</p>
-<hr>
-<p><a href=https://github.com/denoland/deno_std/issues/1779>https://github.com/denoland/deno_std/issues/1779</a></p>
-<h2 id=deno_stdmimemultipartの削除に関する提案><code>deno_std/mime/multipart</code>の削除に関する提案<a hidden class=anchor aria-hidden=true href=#deno_stdmimemultipartの削除に関する提案>#</a></h2>
-<p><code>deno_std</code>から<a href=https://deno.land/std@0.120.0/mime/multipart.ts>mime/multipart</a>を削除することが提案されています。</p>
-<ul>
-<li><a href=https://github.com/denoland/deno_std/issues/1778>https://github.com/denoland/deno_std/issues/1778</a></li>
-</ul>
-<p>背景としては、Denoにはすでに<code>FormData</code>が実装されているため、<code>mime/multipart</code>の必要性が低いというのが理由のようです。</p>
-<p>今のところ、Deno v1.18のリリースに合わせて非推奨化し、Deno v1.19で削除する予定のようです。</p>
-<hr>
-<p><a href=https://github.com/denoland/deno_std/issues/1778>https://github.com/denoland/deno_std/issues/1778</a></p>
-<h2 id=esmsh-v61>esm.sh v61<a hidden class=anchor aria-hidden=true href=#esmsh-v61>#</a></h2>
-<p><a href=https://github.com/alephjs/esm.sh>esm.sh</a>のv61がリリースされました。</p>
-<p><a href=https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>React 17の新しいJSX Transform</a>のサポートが追加されています。</p>
-<hr>
-<p><a href=https://github.com/alephjs/esm.sh/releases/tag/v61>https://github.com/alephjs/esm.sh/releases/tag/v61</a></p>
-<h2 id=deno_which>deno_which<a hidden class=anchor aria-hidden=true href=#deno_which>#</a></h2>
-<p><code>which</code>コマンドのように実行可能ファイルのパスを探すためのDenoモジュール</p>
-<hr>
-<p><a href=https://github.com/dsherret/deno_which>https://github.com/dsherret/deno_which</a></p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+https://github.com/denoland/deno_std/releases/tag/0.120.0
+設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)
+https://github.com/denoland/deno/pull/13313 Denoを実行する際に--configオプションが指定されなかった際は以下の名前のファイルを探し、見つかったらそれを自動的に読み込む機能のようです。
+deno.json deno.jsonc https://github.com/denoland/deno/pull/13313
+deno_std/testingへのJestライクなアサーションAPIの追加について deno_stdへtesting/expect.tsを追加し、JestライクなアサーションAPIを提供することが提案されています。
+https://github.com/denoland/deno_std/issues/1779 expect(add(1, 2)).toEqual(3) 提案の背景としては以下のような理由があるようです。
+Node.jsにおけるJestの使用率の高さ VitestでJest互換なAPIが実装されたこと まだ確定ではありませんが、将来的には実装される可能性がありそうです。
+https://github.com/denoland/deno_std/issues/1779
+deno_std/mime/multipartの削除に関する提案 deno_stdからmime/multipartを削除することが提案されています。
+https://github.com/denoland/deno_std/issues/1778 背景としては、DenoにはすでにFormDataが実装されているため、mime/multipartの必要性が低いというのが理由のようです。
+今のところ、Deno v1."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/01/03〜2022/01/09の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/01/09.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/01/03〜2022/01/09の最新情報","name":"2021\/01\/03〜2022\/01\/09の最新情報","description":"Deno v1.17.2 Deno v1.17.2がリリースされました。\nバグ修正などが中心に行われています。\n主な変更点:\ndeno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。\nJSON modulesを使用するとdeno bundleが失敗する問題が修正されました。\nファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。\nSubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。\nSubtleCrypto.deriveKeyでAES-CTRがサポートされました。\nFFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。\n以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。\nDeno.test(function name() {}); Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。\nhttps://github.com/denoland/deno/releases/tag/v1.17.2\ndeno_std v0.120.0 deno_std v0.120.0がリリースされました。\ncrypto Tigerハッシュがサポートされました。\nuuid version()が実装されました。\nnode https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。 path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。\nfs/expand_glob expandGlob()のextendedオプションのデフォルト値がtrueに変更されました。\ntesting/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。\nhttps://github.com/denoland/deno_std/releases/tag/0.120.0\n設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)\nhttps://github.com/denoland/deno/pull/13313 Denoを実行する際に--configオプションが指定されなかった際は以下の名前のファイルを探し、見つかったらそれを自動的に読み込む機能のようです。\ndeno.json deno.jsonc https://github.com/denoland/deno/pull/13313\ndeno_std/testingへのJestライクなアサーションAPIの追加について deno_stdへtesting/expect.tsを追加し、JestライクなアサーションAPIを提供することが提案されています。\nhttps://github.com/denoland/deno_std/issues/1779 expect(add(1, 2)).toEqual(3) 提案の背景としては以下のような理由があるようです。\nNode.jsにおけるJestの使用率の高さ VitestでJest互換なAPIが実装されたこと まだ確定ではありませんが、将来的には実装される可能性がありそうです。\nhttps://github.com/denoland/deno_std/issues/1779\ndeno_std/mime/multipartの削除に関する提案 deno_stdからmime/multipartを削除することが提案されています。\nhttps://github.com/denoland/deno_std/issues/1778 背景としては、DenoにはすでにFormDataが実装されているため、mime/multipartの必要性が低いというのが理由のようです。\n今のところ、Deno v1.","keywords":["Deno","deno_std"],"articleBody":"Deno v1.17.2 Deno v1.17.2がリリースされました。\nバグ修正などが中心に行われています。\n主な変更点:\ndeno testとdeno fmtで拡張子が.mts, .cjs, 及び.ctsのファイルがサポートされました。\nJSON modulesを使用するとdeno bundleが失敗する問題が修正されました。\nファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。\nSubtleCrypto.exportKeyでAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。\nSubtleCrypto.deriveKeyでAES-CTRがサポートされました。\nFFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。\n以下のような名前付き関数を使用したテストケースでdeno lspのテスト用コードレンズが動かない問題が修正されました。\nDeno.test(function name() {}); Deno.addSignalListener()でSIGSEGVなどのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。\nhttps://github.com/denoland/deno/releases/tag/v1.17.2\ndeno_std v0.120.0 deno_std v0.120.0がリリースされました。\ncrypto Tigerハッシュがサポートされました。\nuuid version()が実装されました。\nnode https.request()が実装されました。 process.execPathが実装されました。 vm.runInThisContext()が追加されました。 process.exit()を使うと'exit'イベントが2回発火する問題が修正されました。 fs.readdir()でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。 child_process.spawnでenvオプションに数値やBoolean型の値を指定できるようになりました。 path/glob joinGlobs()のextendedオプションのデフォルト値がtrueに変更されました。\nfs/expand_glob expandGlob()のextendedオプションのデフォルト値がtrueに変更されました。\ntesting/asserts assertEqualsで0と-0が不一致と判断される問題が修正されました。\nhttps://github.com/denoland/deno_std/releases/tag/0.120.0\n設定ファイル(deno.json)の自動読み込みについて 以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (まだマージはされていません)\nhttps://github.com/denoland/deno/pull/13313 Denoを実行する際に--configオプションが指定されなかった際は以下の名前のファイルを探し、見つかったらそれを自動的に読み込む機能のようです。\ndeno.json deno.jsonc https://github.com/denoland/deno/pull/13313\ndeno_std/testingへのJestライクなアサーションAPIの追加について deno_stdへtesting/expect.tsを追加し、JestライクなアサーションAPIを提供することが提案されています。\nhttps://github.com/denoland/deno_std/issues/1779 expect(add(1, 2)).toEqual(3) 提案の背景としては以下のような理由があるようです。\nNode.jsにおけるJestの使用率の高さ VitestでJest互換なAPIが実装されたこと まだ確定ではありませんが、将来的には実装される可能性がありそうです。\nhttps://github.com/denoland/deno_std/issues/1779\ndeno_std/mime/multipartの削除に関する提案 deno_stdからmime/multipartを削除することが提案されています。\nhttps://github.com/denoland/deno_std/issues/1778 背景としては、DenoにはすでにFormDataが実装されているため、mime/multipartの必要性が低いというのが理由のようです。\n今のところ、Deno v1.18のリリースに合わせて非推奨化し、Deno v1.19で削除する予定のようです。\nhttps://github.com/denoland/deno_std/issues/1778\nesm.sh v61 esm.shのv61がリリースされました。\nReact 17の新しいJSX Transformのサポートが追加されています。\nhttps://github.com/alephjs/esm.sh/releases/tag/v61\ndeno_which whichコマンドのように実行可能ファイルのパスを探すためのDenoモジュール\nhttps://github.com/dsherret/deno_which\n","wordCount":"83","inLanguage":"en","datePublished":"2022-01-09T00:00:00Z","dateModified":"2022-01-09T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/01/09.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2021/01/03〜2022/01/09の最新情報</h1><div class=post-meta><span title='2022-01-09 00:00:00 +0000 UTC'>January 9, 2022</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno-v1172 aria-label="Deno v1.17.2">Deno v1.17.2</a></li><li><a href=#deno_std-v01200 aria-label="deno_std v0.120.0">deno_std v0.120.0</a><ul><li><a href=#crypto aria-label=crypto><code>crypto</code></a></li><li><a href=#uuid aria-label=uuid><code>uuid</code></a></li><li><a href=#node aria-label=node><code>node</code></a></li><li><a href=#pathglob aria-label=path/glob><code>path/glob</code></a></li><li><a href=#fsexpand_glob aria-label=fs/expand_glob><code>fs/expand_glob</code></a></li><li><a href=#testingasserts aria-label=testing/asserts><code>testing/asserts</code></a></li></ul></li><li><a href=#%e8%a8%ad%e5%ae%9a%e3%83%95%e3%82%a1%e3%82%a4%e3%83%abdenojson%e3%81%ae%e8%87%aa%e5%8b%95%e8%aa%ad%e3%81%bf%e8%be%bc%e3%81%bf%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=設定ファイル(deno.json)の自動読み込みについて>設定ファイル(<code>deno.json</code>)の自動読み込みについて</a></li><li><a href=#deno_stdtesting%e3%81%b8%e3%81%aejest%e3%83%a9%e3%82%a4%e3%82%af%e3%81%aa%e3%82%a2%e3%82%b5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3api%e3%81%ae%e8%bf%bd%e5%8a%a0%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=deno_std/testingへのJestライクなアサーションAPIの追加について><code>deno_std/testing</code>へのJestライクなアサーションAPIの追加について</a></li><li><a href=#deno_stdmimemultipart%e3%81%ae%e5%89%8a%e9%99%a4%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e6%8f%90%e6%a1%88 aria-label=deno_std/mime/multipartの削除に関する提案><code>deno_std/mime/multipart</code>の削除に関する提案</a></li><li><a href=#esmsh-v61 aria-label="esm.sh v61">esm.sh v61</a></li><li><a href=#deno_which aria-label=deno_which>deno_which</a></li></ul></div></details></div><div class=post-content><h2 id=deno-v1172>Deno v1.17.2<a hidden class=anchor aria-hidden=true href=#deno-v1172>#</a></h2><p>Deno v1.17.2がリリースされました。</p><p>バグ修正などが中心に行われています。</p><p><strong>主な変更点:</strong></p><ul><li><p><code>deno test</code>と<code>deno fmt</code>で拡張子が<code>.mts</code>, <code>.cjs</code>, 及び<code>.cts</code>のファイルがサポートされました。</p></li><li><p><a href=https://github.com/tc39/proposal-json-modules>JSON modules</a>を使用すると<code>deno bundle</code>が失敗する問題が修正されました。</p></li><li><p>ファイルの末尾に空行があると、全コードが実行されていたとしてもカバレッジが100%にならない問題が修正されました。</p></li><li><p><code>SubtleCrypto.exportKey</code>でAES/HMACキーをJWK形式でエクスポートする際にbase64ではなくbase64urlを使用するように修正されました。</p></li><li><p><code>SubtleCrypto.deriveKey</code>でAES-CTRがサポートされました。</p></li><li><p>FFI経由で関数を呼ぶ際に不正な形式のパラメータを渡すとプロセスがパニックする問題が修正されました。</p></li><li><p>以下のような名前付き関数を使用したテストケースで<code>deno lsp</code>のテスト用コードレンズが動かない問題が修正されました。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>test</span>(<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>name() {</span>});
+</span></span></code></pre></div></li><li><p><code>Deno.addSignalListener()</code>で<code>SIGSEGV</code>などのシグナルのハンドラを登録しようとした際に、プロセスがパニックする問題が修正されました。</p></li></ul><hr><p><a href=https://github.com/denoland/deno/releases/tag/v1.17.2>https://github.com/denoland/deno/releases/tag/v1.17.2</a></p><h2 id=deno_std-v01200>deno_std v0.120.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01200>#</a></h2><p>deno_std v0.120.0がリリースされました。</p><h3 id=crypto><code>crypto</code><a hidden class=anchor aria-hidden=true href=#crypto>#</a></h3><p>Tigerハッシュがサポートされました。</p><h3 id=uuid><code>uuid</code><a hidden class=anchor aria-hidden=true href=#uuid>#</a></h3><p><a href=https://doc.deno.land/https://deno.land/std@0.120.0/uuid/mod.ts/~/version>version()</a>が実装されました。</p><h3 id=node><code>node</code><a hidden class=anchor aria-hidden=true href=#node>#</a></h3><ul><li><code>https.request()</code>が実装されました。</li><li><code>process.execPath</code>が実装されました。</li><li><code>vm.runInThisContext()</code>が追加されました。</li><li><code>process.exit()</code>を使うと<code>'exit'</code>イベントが2回発火する問題が修正されました。</li><li><code>fs.readdir()</code>でディレクトリが存在しなかったときにエラーが正しく扱われない問題が修正されました。</li><li><code>child_process.spawn</code>で<code>env</code>オプションに数値やBoolean型の値を指定できるようになりました。</li></ul><h3 id=pathglob><code>path/glob</code><a hidden class=anchor aria-hidden=true href=#pathglob>#</a></h3><p><code>joinGlobs()</code>の<code>extended</code>オプションのデフォルト値が<code>true</code>に変更されました。</p><h3 id=fsexpand_glob><code>fs/expand_glob</code><a hidden class=anchor aria-hidden=true href=#fsexpand_glob>#</a></h3><p><code>expandGlob()</code>の<code>extended</code>オプションのデフォルト値が<code>true</code>に変更されました。</p><h3 id=testingasserts><code>testing/asserts</code><a hidden class=anchor aria-hidden=true href=#testingasserts>#</a></h3><p><code>assertEquals</code>で<code>0</code>と<code>-0</code>が不一致と判断される問題が修正されました。</p><hr><p><a href=https://github.com/denoland/deno_std/releases/tag/0.120.0>https://github.com/denoland/deno_std/releases/tag/0.120.0</a></p><h2 id=設定ファイルdenojsonの自動読み込みについて>設定ファイル(<code>deno.json</code>)の自動読み込みについて<a hidden class=anchor aria-hidden=true href=#設定ファイルdenojsonの自動読み込みについて>#</a></h2><p>以下のPRでDenoに設定ファイルの自動読み込み機能が実装されています (<strong>まだマージはされていません</strong>)</p><ul><li><a href=https://github.com/denoland/deno/pull/13313>https://github.com/denoland/deno/pull/13313</a></li></ul><p>Denoを実行する際に<code>--config</code>オプションが指定されなかった際は以下の名前のファイルを探し、見つかったらそれを自動的に読み込む機能のようです。</p><ul><li><code>deno.json</code></li><li><code>deno.jsonc</code></li></ul><hr><p><a href=https://github.com/denoland/deno/pull/13313>https://github.com/denoland/deno/pull/13313</a></p><h2 id=deno_stdtestingへのjestライクなアサーションapiの追加について><code>deno_std/testing</code>へのJestライクなアサーションAPIの追加について<a hidden class=anchor aria-hidden=true href=#deno_stdtestingへのjestライクなアサーションapiの追加について>#</a></h2><p><code>deno_std</code>へ<code>testing/expect.ts</code>を追加し、JestライクなアサーションAPIを提供することが提案されています。</p><ul><li><a href=https://github.com/denoland/deno_std/issues/1779>https://github.com/denoland/deno_std/issues/1779</a></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#a6e22e>expect</span>(<span style=color:#a6e22e>add</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>)).<span style=color:#a6e22e>toEqual</span>(<span style=color:#ae81ff>3</span>)
+</span></span></code></pre></div><p>提案の背景としては以下のような理由があるようです。</p><ul><li>Node.jsにおけるJestの使用率の高さ</li><li><a href=https://github.com/vitest-dev/vitest>Vitest</a>でJest互換なAPIが実装されたこと</li></ul><p>まだ確定ではありませんが、将来的には実装される可能性がありそうです。</p><hr><p><a href=https://github.com/denoland/deno_std/issues/1779>https://github.com/denoland/deno_std/issues/1779</a></p><h2 id=deno_stdmimemultipartの削除に関する提案><code>deno_std/mime/multipart</code>の削除に関する提案<a hidden class=anchor aria-hidden=true href=#deno_stdmimemultipartの削除に関する提案>#</a></h2><p><code>deno_std</code>から<a href=https://deno.land/std@0.120.0/mime/multipart.ts>mime/multipart</a>を削除することが提案されています。</p><ul><li><a href=https://github.com/denoland/deno_std/issues/1778>https://github.com/denoland/deno_std/issues/1778</a></li></ul><p>背景としては、Denoにはすでに<code>FormData</code>が実装されているため、<code>mime/multipart</code>の必要性が低いというのが理由のようです。</p><p>今のところ、Deno v1.18のリリースに合わせて非推奨化し、Deno v1.19で削除する予定のようです。</p><hr><p><a href=https://github.com/denoland/deno_std/issues/1778>https://github.com/denoland/deno_std/issues/1778</a></p><h2 id=esmsh-v61>esm.sh v61<a hidden class=anchor aria-hidden=true href=#esmsh-v61>#</a></h2><p><a href=https://github.com/alephjs/esm.sh>esm.sh</a>のv61がリリースされました。</p><p><a href=https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>React 17の新しいJSX Transform</a>のサポートが追加されています。</p><hr><p><a href=https://github.com/alephjs/esm.sh/releases/tag/v61>https://github.com/alephjs/esm.sh/releases/tag/v61</a></p><h2 id=deno_which>deno_which<a hidden class=anchor aria-hidden=true href=#deno_which>#</a></h2><p><code>which</code>コマンドのように実行可能ファイルのパスを探すためのDenoモジュール</p><hr><p><a href=https://github.com/dsherret/deno_which>https://github.com/dsherret/deno_which</a></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

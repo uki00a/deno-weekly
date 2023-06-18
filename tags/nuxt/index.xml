@@ -12,4 +12,4 @@ Headersで不正な形式のヘッダを連続で解析すると、二度目以�
 deno_std v0.160.0 deno_std v0.160.0がリリースされました。
 このリリースではstd/nodeのNode.js互換性の向上が実施されています。
 変更点:
-std/node/readline/promisesが実装 std/node/child_process: windowsVerbatimArgumentsオプションがサポート std/node/fs: Windowsでfs.</description></item></channel></rss>
+std/node/readline/promisesが実装 std/node/child_process: windowsVerbatimArgumentsオプションがサポート std/node/fs: Windowsでfs.access()が失敗する問題が修正 std/node/fs: fs.Dirでディレクトリエントリを読み込んだ際に、 Deno.DirEntryではなくfs.Direntが返却されるように修正されています https://github.</description></item></channel></rss>

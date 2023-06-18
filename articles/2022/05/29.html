@@ -1,18 +1,11 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2021/05/23〜2022/05/29の最新情報 | 週刊Deno</title>
-<meta name=keywords content="Deno,deno_std,Deno Deploy,denoflare">
-<meta name=description content="Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2021/05/23〜2022/05/29の最新情報 | 週刊Deno</title><meta name=keywords content="Deno,deno_std,Deno Deploy,denoflare"><meta name=description content="Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
 このリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。
- deno deploy beta 4発表！価格設定をcloudflare workersと比較する  その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。
- https://deno.com/blog/deploy-beta4
+deno deploy beta 4発表！価格設定をcloudflare workersと比較する その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。
+https://deno.com/blog/deploy-beta4
 Deno v1.22.1 Deno v1.22.1がリリースされました。
 このリリースはバグ修正を中心に行われています。
 主な変更点:
- Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと&#34;close&#34;イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。   https://github.com/denoland/deno/releases/tag/v1.22.1
+Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと&#34;close&#34;イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.1
 deno_std v0.141.0 deno_std v0.141.0がリリースされました。
 いくつかの破壊的変更が実施されています。
 testing/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)
@@ -20,35 +13,16 @@ assertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertN
 例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。
 assertEquals(123, &#34;foo&#34;); 次のようにすると、型エラーを回避できます。
 assertEquals<unknown>(123, &#34;foo&#34;); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。
-const error = assertThrows(() => { throw new Error(&#34;foo&#34;); }); assert(error instanceof Error); assertEquals(error.">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/05/29.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2021/05/23〜2022/05/29の最新情報">
-<meta property="og:description" content="Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
+const error = assertThrows(() => { throw new Error(&#34;foo&#34;); }); assert(error instanceof Error); assertEquals(error.message, &#34;foo&#34;); flags parse()関数にcollectオプションが追加されました。(破壊的変更)"><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/05/29.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2021/05/23〜2022/05/29の最新情報"><meta property="og:description" content="Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
 このリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。
- deno deploy beta 4発表！価格設定をcloudflare workersと比較する  その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。
- https://deno.com/blog/deploy-beta4
+deno deploy beta 4発表！価格設定をcloudflare workersと比較する その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。
+https://deno.com/blog/deploy-beta4
 Deno v1.22.1 Deno v1.22.1がリリースされました。
 このリリースはバグ修正を中心に行われています。
 主な変更点:
- Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと&#34;close&#34;イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。   https://github.com/denoland/deno/releases/tag/v1.22.1
+Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと&#34;close&#34;イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.1
 deno_std v0.141.0 deno_std v0.141.0がリリースされました。
 いくつかの破壊的変更が実施されています。
 testing/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)
@@ -56,21 +30,14 @@ assertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertN
 例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。
 assertEquals(123, &#34;foo&#34;); 次のようにすると、型エラーを回避できます。
 assertEquals<unknown>(123, &#34;foo&#34;); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。
-const error = assertThrows(() => { throw new Error(&#34;foo&#34;); }); assert(error instanceof Error); assertEquals(error.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/05/29.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2022-05-29T00:00:00+00:00">
-<meta property="article:modified_time" content="2022-05-29T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2021/05/23〜2022/05/29の最新情報">
-<meta name=twitter:description content="Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
+const error = assertThrows(() => { throw new Error(&#34;foo&#34;); }); assert(error instanceof Error); assertEquals(error.message, &#34;foo&#34;); flags parse()関数にcollectオプションが追加されました。(破壊的変更)"><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/05/29.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2022-05-29T00:00:00+00:00"><meta property="article:modified_time" content="2022-05-29T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2021/05/23〜2022/05/29の最新情報"><meta name=twitter:description content="Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
 このリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。
- deno deploy beta 4発表！価格設定をcloudflare workersと比較する  その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。
- https://deno.com/blog/deploy-beta4
+deno deploy beta 4発表！価格設定をcloudflare workersと比較する その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。
+https://deno.com/blog/deploy-beta4
 Deno v1.22.1 Deno v1.22.1がリリースされました。
 このリリースはバグ修正を中心に行われています。
 主な変更点:
- Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと&#34;close&#34;イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。   https://github.com/denoland/deno/releases/tag/v1.22.1
+Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと&#34;close&#34;イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.1
 deno_std v0.141.0 deno_std v0.141.0がリリースされました。
 いくつかの破壊的変更が実施されています。
 testing/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)
@@ -78,254 +45,57 @@ assertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertN
 例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。
 assertEquals(123, &#34;foo&#34;); 次のようにすると、型エラーを回避できます。
 assertEquals<unknown>(123, &#34;foo&#34;); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。
-const error = assertThrows(() => { throw new Error(&#34;foo&#34;); }); assert(error instanceof Error); assertEquals(error.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/05/23〜2022/05/29の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/05/29.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/05/23〜2022/05/29の最新情報","name":"2021\/05\/23〜2022\/05\/29の最新情報","description":"Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。\nこのリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。\n deno deploy beta 4発表！価格設定をcloudflare workersと比較する  その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。\n https://deno.com/blog/deploy-beta4\nDeno v1.22.1 Deno v1.22.1がリリースされました。\nこのリリースはバグ修正を中心に行われています。\n主な変更点:\n Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと\u0026quot;close\u0026quot;イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。   https://github.com/denoland/deno/releases/tag/v1.22.1\ndeno_std v0.141.0 deno_std v0.141.0がリリースされました。\nいくつかの破壊的変更が実施されています。\ntesting/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)\nassertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertNotEqualsなどの型定義が修正されています。\n例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。\nassertEquals(123, \u0026#34;foo\u0026#34;); 次のようにすると、型エラーを回避できます。\nassertEquals\u0026lt;unknown\u0026gt;(123, \u0026#34;foo\u0026#34;); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。\nconst error = assertThrows(() =\u0026gt; { throw new Error(\u0026#34;foo\u0026#34;); }); assert(error instanceof Error); assertEquals(error.","keywords":["Deno","deno_std","Deno Deploy","denoflare"],"articleBody":"Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。\nこのリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。\n deno deploy beta 4発表！価格設定をcloudflare workersと比較する  その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。\n https://deno.com/blog/deploy-beta4\nDeno v1.22.1 Deno v1.22.1がリリースされました。\nこのリリースはバグ修正を中心に行われています。\n主な変更点:\n Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと\"close\"イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。   https://github.com/denoland/deno/releases/tag/v1.22.1\ndeno_std v0.141.0 deno_std v0.141.0がリリースされました。\nいくつかの破壊的変更が実施されています。\ntesting/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)\nassertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertNotEqualsなどの型定義が修正されています。\n例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。\nassertEquals(123, \"foo\"); 次のようにすると、型エラーを回避できます。\nassertEqualsunknown(123, \"foo\"); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。\nconst error = assertThrows(() = { throw new Error(\"foo\"); }); assert(error instanceof Error); assertEquals(error.message, \"foo\"); flags parse()関数にcollectオプションが追加されました。(破壊的変更)\n下記のように、collectオプションで指定されたフラグのみ、複数回の指定が許容されるように挙動が変更されています。\nimport { parse } from \"https://deno.land/std@0.140.0/flags/mod.ts\"; parse([ \"deno\", \"run\", \"--check=true\", \"--config\", \"deno.json\", \"--check=false\", \"--config=tsconfig.json\", \"main.ts\", ], { boolean: [\"check\"], string: [\"config\"], collect: [\"config\"], }); // { // _: [ \"deno\", \"run\", \"main.ts\" ], // check: false, // config: [ \"deno.json\", \"tsconfig.json\" ] // } streams toTransformStream()の追加 streams/conversionにtoTransformStream()が追加されました。\nジェネレータ関数をTransformStreamに変換できます。\nimport { readableStreamFromIterable } from \"https://deno.land/std@0.140.0/streams/conversion.ts\"; const readable = readableStreamFromIterable([\"a\", \"b\", \"c\"]) .pipeThrough(toTransformStream(async function* transformer(source) { for await (const x of source) { yield x.repeat(2); } })); for await (const x of readable) { console.log(x); // aa, bb, cc } earlyZipReadableStreams()の追加 streams/mergeにearlyZipReadableStreams()が追加されています。\n既存のzipReadableStreams()とは異なり、指定されたReadableStreamのうちいずれか一つでも処理が停止したら、earlyZipReadableStreams()から返却されるReadableStreamも停止します。\nimport { readableStreamFromIterable } from \"https://deno.land/std@0.140.0/streams/conversion.ts\"; import { earlyZipReadableStreams } from \"https://deno.land/std@0.140.0/streams/merge.ts\"; const a = readableStreamFromIterable([1, 2, 3]); const b = readableStreamFromIterable([4, 5, 6, 7, 8]); for await (const x of earlyZipReadableStreams(a, b)) { console.log(x); // 1, 4, 2, 5, 3, 6 } TextLineStreamの改善 streams/delimiterのTextLineStreamで\\rがサポートされました。\nhttp http/utilモジュールが追加されています。\n現在は、ETag値を比較するcompareEtagという関数が公開されています。\nnode dnsパッケージで下記レコードの問い合わせがサポートされました。\n NAPTR (dns.resolveNaptr) NS (dns.resolveNs) CAA (dns.resolveCaa) SOA (dns.resolveSoa)  また、fsパッケージのReadStreamが、実装はされていたもののexportされていなかった問題が修正されています。\nasync/pool pooledMapの戻り値の順番が引数のIterableと一致するように修正されています。\n https://github.com/denoland/deno_std/releases/tag/0.141.0\ndenoland/examples denoland/examplesというリポジトリが公開されています。\nReactなどを使ったexampleアプリの一覧などが掲載されています。\n https://github.com/denoland/examples\ndenoflare v0.5.0 denoflare v0.5.0がリリースされました。\n大きな変更点として、R2のサポートが追加されています。\n Denoflare ❤️ Cloudflare R2   https://github.com/skymethod/denoflare/releases/tag/v0.5.0\n","wordCount":"240","inLanguage":"en","datePublished":"2022-05-29T00:00:00Z","dateModified":"2022-05-29T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/05/29.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2021/05/23〜2022/05/29の最新情報
-</h1>
-<div class=post-meta><span title="2022-05-29 00:00:00 +0000 UTC">May 29, 2022</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno-deploy-beta-4 aria-label="Deno Deploy Beta 4">Deno Deploy Beta 4</a></li>
-<li>
-<a href=#deno-v1221 aria-label="Deno v1.22.1">Deno v1.22.1</a></li>
-<li>
-<a href=#deno_std-v01410 aria-label="deno_std v0.141.0">deno_std v0.141.0</a><ul>
-<li>
-<a href=#testingasserts aria-label=testing/asserts><code>testing/asserts</code></a><ul>
-<li>
-<a href=#assertstrictequals%e3%81%aa%e3%81%a9%e3%81%ae%e6%94%b9%e5%96%84 aria-label=assertStrictEqualsなどの改善><code>assertStrictEquals</code>などの改善</a></li>
-<li>
-<a href=#assertequals%e3%81%aa%e3%81%a9%e3%81%ae%e5%9e%8b%e5%ae%9a%e7%be%a9%e3%81%ae%e6%94%b9%e5%96%84-%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4 aria-label="assertEqualsなどの型定義の改善 (破壊的変更)"><code>assertEquals</code>などの型定義の改善 (<strong>破壊的変更</strong>)</a></li>
-<li>
-<a href=#assertrejects%e3%82%84assertthrows%e3%81%ae%e6%88%bb%e3%82%8a%e5%80%a4%e3%81%ae%e5%a4%89%e6%9b%b4 aria-label=assertRejectsやassertThrowsの戻り値の変更><code>assertRejects</code>や<code>assertThrows</code>の戻り値の変更</a></li></ul>
-</li>
-<li>
-<a href=#flags aria-label=flags><code>flags</code></a></li>
-<li>
-<a href=#streams aria-label=streams><code>streams</code></a><ul>
-<li>
-<a href=#totransformstream%e3%81%ae%e8%bf%bd%e5%8a%a0 aria-label=toTransformStream()の追加><code>toTransformStream()</code>の追加</a></li>
-<li>
-<a href=#earlyzipreadablestreams%e3%81%ae%e8%bf%bd%e5%8a%a0 aria-label=earlyZipReadableStreams()の追加><code>earlyZipReadableStreams()</code>の追加</a></li>
-<li>
-<a href=#textlinestream%e3%81%ae%e6%94%b9%e5%96%84 aria-label=TextLineStreamの改善><code>TextLineStream</code>の改善</a></li></ul>
-</li>
-<li>
-<a href=#http aria-label=http><code>http</code></a></li>
-<li>
-<a href=#node aria-label=node><code>node</code></a></li>
-<li>
-<a href=#asyncpool aria-label=async/pool><code>async/pool</code></a></li></ul>
-</li>
-<li>
-<a href=#denolandexamples aria-label=denoland/examples>denoland/examples</a></li>
-<li>
-<a href=#denoflare-v050 aria-label="denoflare v0.5.0">denoflare v0.5.0</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno-deploy-beta-4>Deno Deploy Beta 4<a hidden class=anchor aria-hidden=true href=#deno-deploy-beta-4>#</a></h2>
-<p><a href=https://deno.com/blog/deploy-beta4>Deno Deploy Beta 4</a>が発表されました。</p>
-<p>このリリースに合わせて、有料のProプランが公開されています。
-詳しくは、以下の記事で価格設定などについて解説されています。</p>
-<ul>
-<li><a href=https://qiita.com/access3151fq/items/74597aedbb601d0d2fbd>deno deploy beta 4発表！価格設定をcloudflare workersと比較する</a></li>
-</ul>
-<p>その他にも、ダッシュボードがリニューアルされています。
-リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。</p>
-<hr>
-<p><a href=https://deno.com/blog/deploy-beta4>https://deno.com/blog/deploy-beta4</a></p>
-<h2 id=deno-v1221>Deno v1.22.1<a hidden class=anchor aria-hidden=true href=#deno-v1221>#</a></h2>
-<p>Deno v1.22.1がリリースされました。</p>
-<p>このリリースはバグ修正を中心に行われています。</p>
-<p><strong>主な変更点:</strong></p>
-<ul>
-<li><code>Deno.ChildStatus.signal</code>の型が<code>string</code>から<code>Deno.Signal</code>に変更されました。</li>
-<li><code>deno test --coverage</code>で、<code>interface</code>のみを含むファイルなどで計測結果が<code>NaN%</code>と表示される問題が修正されました。</li>
-<li><code>WebSocket.close</code>を呼ぶと<code>"close"</code>イベントが2回発火される問題が修正されました。</li>
-<li><code>globalThis.dispatchEvent</code>が改ざんされている(<code>delete</code>による削除など)と、<code>Deno.exit()</code>でエラーが発生する問題が修正されました。</li>
-<li><code>Deno.permissions.query()</code>などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。</li>
-</ul>
-<hr>
-<p><a href=https://github.com/denoland/deno/releases/tag/v1.22.1>https://github.com/denoland/deno/releases/tag/v1.22.1</a></p>
-<h2 id=deno_std-v01410>deno_std v0.141.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01410>#</a></h2>
-<p>deno_std v0.141.0がリリースされました。</p>
-<p>いくつかの破壊的変更が実施されています。</p>
-<h3 id=testingasserts><code>testing/asserts</code><a hidden class=anchor aria-hidden=true href=#testingasserts>#</a></h3>
-<h4 id=assertstrictequalsなどの改善><code>assertStrictEquals</code>などの改善<a hidden class=anchor aria-hidden=true href=#assertstrictequalsなどの改善>#</a></h4>
-<p><code>assertStrictEquals</code> / <code>assertAlmostEquals</code> / <code>assertNotStrictEquals</code>の内部の比較処理で、<code>===</code>の代わりに<code>Object.is()</code>を使用するように修正されています。(Node.jsの<code>assert</code>パッケージなどと同様の挙動に変わりました。)</p>
-<h4 id=assertequalsなどの型定義の改善-破壊的変更><code>assertEquals</code>などの型定義の改善 (<strong>破壊的変更</strong>)<a hidden class=anchor aria-hidden=true href=#assertequalsなどの型定義の改善-破壊的変更>#</a></h4>
-<p><code>assertEquals</code>や<code>assertNotEquals</code>などの型定義が修正されています。</p>
-<p>例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>assertEquals</span>(<span style=color:#ae81ff>123</span>, <span style=color:#e6db74>&#34;foo&#34;</span>);
-</code></pre></div><p>次のようにすると、型エラーを回避できます。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#a6e22e>assertEquals</span>&lt;<span style=color:#f92672>unknown</span>&gt;(<span style=color:#ae81ff>123</span>, <span style=color:#e6db74>&#34;foo&#34;</span>);
-</code></pre></div><h4 id=assertrejectsやassertthrowsの戻り値の変更><code>assertRejects</code>や<code>assertThrows</code>の戻り値の変更<a hidden class=anchor aria-hidden=true href=#assertrejectsやassertthrowsの戻り値の変更>#</a></h4>
-<p><code>assertRejects</code>や<code>assertThrows</code>で補足された例外が戻り値として返却されるように修正されました。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>error</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>assertThrows</span>(() <span style=color:#f92672>=&gt;</span> {
-  <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;foo&#34;</span>);
-});
-<span style=color:#a6e22e>assert</span>(<span style=color:#a6e22e>error</span> <span style=color:#66d9ef>instanceof</span> Error);
-<span style=color:#a6e22e>assertEquals</span>(<span style=color:#a6e22e>error</span>.<span style=color:#a6e22e>message</span>, <span style=color:#e6db74>&#34;foo&#34;</span>);
-</code></pre></div><h3 id=flags><code>flags</code><a hidden class=anchor aria-hidden=true href=#flags>#</a></h3>
-<p><code>parse()</code>関数に<code>collect</code>オプションが追加されました。(<strong>破壊的変更</strong>)</p>
-<p>下記のように、<code>collect</code>オプションで指定されたフラグのみ、複数回の指定が許容されるように挙動が変更されています。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>parse</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.140.0/flags/mod.ts&#34;</span>;
-
-<span style=color:#a6e22e>parse</span>([
-  <span style=color:#e6db74>&#34;deno&#34;</span>,
-  <span style=color:#e6db74>&#34;run&#34;</span>,
-  <span style=color:#e6db74>&#34;--check=true&#34;</span>,
-  <span style=color:#e6db74>&#34;--config&#34;</span>,
-  <span style=color:#e6db74>&#34;deno.json&#34;</span>,
-  <span style=color:#e6db74>&#34;--check=false&#34;</span>,
-  <span style=color:#e6db74>&#34;--config=tsconfig.json&#34;</span>,
-  <span style=color:#e6db74>&#34;main.ts&#34;</span>,
-], {
-  <span style=color:#66d9ef>boolean</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;check&#34;</span>],
-  <span style=color:#66d9ef>string</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;config&#34;</span>],
-  <span style=color:#a6e22e>collect</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;config&#34;</span>],
-});
-<span style=color:#75715e>// {
-</span><span style=color:#75715e>//   _: [ &#34;deno&#34;, &#34;run&#34;, &#34;main.ts&#34; ],
-</span><span style=color:#75715e>//   check: false,
-</span><span style=color:#75715e>//   config: [ &#34;deno.json&#34;, &#34;tsconfig.json&#34; ]
-</span><span style=color:#75715e>// }
-</span></code></pre></div><h3 id=streams><code>streams</code><a hidden class=anchor aria-hidden=true href=#streams>#</a></h3>
-<h4 id=totransformstreamの追加><code>toTransformStream()</code>の追加<a hidden class=anchor aria-hidden=true href=#totransformstreamの追加>#</a></h4>
-<p><code>streams/conversion</code>に<code>toTransformStream()</code>が追加されました。</p>
-<p>ジェネレータ関数を<code>TransformStream</code>に変換できます。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>readableStreamFromIterable</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.140.0/streams/conversion.ts&#34;</span>;
-
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>readable</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readableStreamFromIterable</span>([<span style=color:#e6db74>&#34;a&#34;</span>, <span style=color:#e6db74>&#34;b&#34;</span>, <span style=color:#e6db74>&#34;c&#34;</span>])
-  .<span style=color:#a6e22e>pipeThrough</span>(<span style=color:#a6e22e>toTransformStream</span>(<span style=color:#66d9ef>async</span> <span style=color:#66d9ef>function</span><span style=color:#f92672>*</span> <span style=color:#a6e22e>transformer</span>(<span style=color:#a6e22e>source</span>) {
-    <span style=color:#66d9ef>for</span> <span style=color:#66d9ef>await</span> (<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>source</span>) {
-      <span style=color:#66d9ef>yield</span> <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>repeat</span>(<span style=color:#ae81ff>2</span>);
-    }
-  }));
-
-<span style=color:#66d9ef>for</span> <span style=color:#66d9ef>await</span> (<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>readable</span>) {
-  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>x</span>); <span style=color:#75715e>// aa, bb, cc
-</span><span style=color:#75715e></span>}
-</code></pre></div><h4 id=earlyzipreadablestreamsの追加><code>earlyZipReadableStreams()</code>の追加<a hidden class=anchor aria-hidden=true href=#earlyzipreadablestreamsの追加>#</a></h4>
-<p><code>streams/merge</code>に<code>earlyZipReadableStreams()</code>が追加されています。</p>
-<p>既存の<code>zipReadableStreams()</code>とは異なり、指定された<code>ReadableStream</code>のうちいずれか一つでも処理が停止したら、<code>earlyZipReadableStreams()</code>から返却される<code>ReadableStream</code>も停止します。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>readableStreamFromIterable</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.140.0/streams/conversion.ts&#34;</span>;
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>earlyZipReadableStreams</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.140.0/streams/merge.ts&#34;</span>;
-
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readableStreamFromIterable</span>([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]);
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readableStreamFromIterable</span>([<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>]);
-<span style=color:#66d9ef>for</span> <span style=color:#66d9ef>await</span> (<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>earlyZipReadableStreams</span>(<span style=color:#a6e22e>a</span>, <span style=color:#a6e22e>b</span>)) {
-  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>x</span>); <span style=color:#75715e>// 1, 4, 2, 5, 3, 6
-</span><span style=color:#75715e></span>}
-</code></pre></div><h4 id=textlinestreamの改善><code>TextLineStream</code>の改善<a hidden class=anchor aria-hidden=true href=#textlinestreamの改善>#</a></h4>
-<p><code>streams/delimiter</code>の<code>TextLineStream</code>で<code>\r</code>がサポートされました。</p>
-<h3 id=http><code>http</code><a hidden class=anchor aria-hidden=true href=#http>#</a></h3>
-<p><code>http/util</code>モジュールが追加されています。</p>
-<p>現在は、ETag値を比較する<code>compareEtag</code>という関数が公開されています。</p>
-<h3 id=node><code>node</code><a hidden class=anchor aria-hidden=true href=#node>#</a></h3>
-<p><code>dns</code>パッケージで下記レコードの問い合わせがサポートされました。</p>
-<ul>
-<li><code>NAPTR</code> (<code>dns.resolveNaptr</code>)</li>
-<li><code>NS</code> (<code>dns.resolveNs</code>)</li>
-<li><code>CAA</code> (<code>dns.resolveCaa</code>)</li>
-<li><code>SOA</code> (<code>dns.resolveSoa</code>)</li>
-</ul>
-<p>また、<code>fs</code>パッケージの<code>ReadStream</code>が、実装はされていたものの<code>export</code>されていなかった問題が修正されています。</p>
-<h3 id=asyncpool><code>async/pool</code><a hidden class=anchor aria-hidden=true href=#asyncpool>#</a></h3>
-<p><code>pooledMap</code>の戻り値の順番が引数の<code>Iterable</code>と一致するように修正されています。</p>
-<hr>
-<p><a href=https://github.com/denoland/deno_std/releases/tag/0.141.0>https://github.com/denoland/deno_std/releases/tag/0.141.0</a></p>
-<h2 id=denolandexamples>denoland/examples<a hidden class=anchor aria-hidden=true href=#denolandexamples>#</a></h2>
-<p><a href=https://github.com/denoland/examples>denoland/examples</a>というリポジトリが公開されています。</p>
-<p>Reactなどを使ったexampleアプリの一覧などが掲載されています。</p>
-<hr>
-<p><a href=https://github.com/denoland/examples>https://github.com/denoland/examples</a></p>
-<h2 id=denoflare-v050>denoflare v0.5.0<a hidden class=anchor aria-hidden=true href=#denoflare-v050>#</a></h2>
-<p>denoflare v0.5.0がリリースされました。</p>
-<p>大きな変更点として、<a href=https://developers.cloudflare.com/r2/>R2</a>のサポートが追加されています。</p>
-<ul>
-<li><a href=https://github.com/skymethod/denoflare-docs/blob/7bde904b4662da1b6ef819698ab3d6f2a36cc9de/r2/index.md>Denoflare ❤️ Cloudflare R2</a></li>
-</ul>
-<hr>
-<p><a href=https://github.com/skymethod/denoflare/releases/tag/v0.5.0>https://github.com/skymethod/denoflare/releases/tag/v0.5.0</a></p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno-deploy.html>Deno Deploy</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/denoflare.html>denoflare</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+const error = assertThrows(() => { throw new Error(&#34;foo&#34;); }); assert(error instanceof Error); assertEquals(error.message, &#34;foo&#34;); flags parse()関数にcollectオプションが追加されました。(破壊的変更)"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/05/23〜2022/05/29の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/05/29.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/05/23〜2022/05/29の最新情報","name":"2021\/05\/23〜2022\/05\/29の最新情報","description":"Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。\nこのリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。\ndeno deploy beta 4発表！価格設定をcloudflare workersと比較する その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。\nhttps://deno.com/blog/deploy-beta4\nDeno v1.22.1 Deno v1.22.1がリリースされました。\nこのリリースはバグ修正を中心に行われています。\n主な変更点:\nDeno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと\u0026quot;close\u0026quot;イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.1\ndeno_std v0.141.0 deno_std v0.141.0がリリースされました。\nいくつかの破壊的変更が実施されています。\ntesting/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)\nassertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertNotEqualsなどの型定義が修正されています。\n例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。\nassertEquals(123, \u0026#34;foo\u0026#34;); 次のようにすると、型エラーを回避できます。\nassertEquals\u0026lt;unknown\u0026gt;(123, \u0026#34;foo\u0026#34;); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。\nconst error = assertThrows(() =\u0026gt; { throw new Error(\u0026#34;foo\u0026#34;); }); assert(error instanceof Error); assertEquals(error.message, \u0026#34;foo\u0026#34;); flags parse()関数にcollectオプションが追加されました。(破壊的変更)","keywords":["Deno","deno_std","Deno Deploy","denoflare"],"articleBody":"Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。\nこのリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。\ndeno deploy beta 4発表！価格設定をcloudflare workersと比較する その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。\nhttps://deno.com/blog/deploy-beta4\nDeno v1.22.1 Deno v1.22.1がリリースされました。\nこのリリースはバグ修正を中心に行われています。\n主な変更点:\nDeno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと\"close\"イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.1\ndeno_std v0.141.0 deno_std v0.141.0がリリースされました。\nいくつかの破壊的変更が実施されています。\ntesting/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)\nassertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertNotEqualsなどの型定義が修正されています。\n例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。\nassertEquals(123, \"foo\"); 次のようにすると、型エラーを回避できます。\nassertEquals\u003cunknown\u003e(123, \"foo\"); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。\nconst error = assertThrows(() =\u003e { throw new Error(\"foo\"); }); assert(error instanceof Error); assertEquals(error.message, \"foo\"); flags parse()関数にcollectオプションが追加されました。(破壊的変更)\n下記のように、collectオプションで指定されたフラグのみ、複数回の指定が許容されるように挙動が変更されています。\nimport { parse } from \"https://deno.land/std@0.140.0/flags/mod.ts\"; parse([ \"deno\", \"run\", \"--check=true\", \"--config\", \"deno.json\", \"--check=false\", \"--config=tsconfig.json\", \"main.ts\", ], { boolean: [\"check\"], string: [\"config\"], collect: [\"config\"], }); // { // _: [ \"deno\", \"run\", \"main.ts\" ], // check: false, // config: [ \"deno.json\", \"tsconfig.json\" ] // } streams toTransformStream()の追加 streams/conversionにtoTransformStream()が追加されました。\nジェネレータ関数をTransformStreamに変換できます。\nimport { readableStreamFromIterable } from \"https://deno.land/std@0.140.0/streams/conversion.ts\"; const readable = readableStreamFromIterable([\"a\", \"b\", \"c\"]) .pipeThrough(toTransformStream(async function* transformer(source) { for await (const x of source) { yield x.repeat(2); } })); for await (const x of readable) { console.log(x); // aa, bb, cc } earlyZipReadableStreams()の追加 streams/mergeにearlyZipReadableStreams()が追加されています。\n既存のzipReadableStreams()とは異なり、指定されたReadableStreamのうちいずれか一つでも処理が停止したら、earlyZipReadableStreams()から返却されるReadableStreamも停止します。\nimport { readableStreamFromIterable } from \"https://deno.land/std@0.140.0/streams/conversion.ts\"; import { earlyZipReadableStreams } from \"https://deno.land/std@0.140.0/streams/merge.ts\"; const a = readableStreamFromIterable([1, 2, 3]); const b = readableStreamFromIterable([4, 5, 6, 7, 8]); for await (const x of earlyZipReadableStreams(a, b)) { console.log(x); // 1, 4, 2, 5, 3, 6 } TextLineStreamの改善 streams/delimiterのTextLineStreamで\\rがサポートされました。\nhttp http/utilモジュールが追加されています。\n現在は、ETag値を比較するcompareEtagという関数が公開されています。\nnode dnsパッケージで下記レコードの問い合わせがサポートされました。\nNAPTR (dns.resolveNaptr) NS (dns.resolveNs) CAA (dns.resolveCaa) SOA (dns.resolveSoa) また、fsパッケージのReadStreamが、実装はされていたもののexportされていなかった問題が修正されています。\nasync/pool pooledMapの戻り値の順番が引数のIterableと一致するように修正されています。\nhttps://github.com/denoland/deno_std/releases/tag/0.141.0\ndenoland/examples denoland/examplesというリポジトリが公開されています。\nReactなどを使ったexampleアプリの一覧などが掲載されています。\nhttps://github.com/denoland/examples\ndenoflare v0.5.0 denoflare v0.5.0がリリースされました。\n大きな変更点として、R2のサポートが追加されています。\nDenoflare ❤️ Cloudflare R2 https://github.com/skymethod/denoflare/releases/tag/v0.5.0\n","wordCount":"240","inLanguage":"en","datePublished":"2022-05-29T00:00:00Z","dateModified":"2022-05-29T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/05/29.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2021/05/23〜2022/05/29の最新情報</h1><div class=post-meta><span title='2022-05-29 00:00:00 +0000 UTC'>May 29, 2022</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno-deploy-beta-4 aria-label="Deno Deploy Beta 4">Deno Deploy Beta 4</a></li><li><a href=#deno-v1221 aria-label="Deno v1.22.1">Deno v1.22.1</a></li><li><a href=#deno_std-v01410 aria-label="deno_std v0.141.0">deno_std v0.141.0</a><ul><li><a href=#testingasserts aria-label=testing/asserts><code>testing/asserts</code></a><ul><li><a href=#assertstrictequals%e3%81%aa%e3%81%a9%e3%81%ae%e6%94%b9%e5%96%84 aria-label=assertStrictEqualsなどの改善><code>assertStrictEquals</code>などの改善</a></li><li><a href=#assertequals%e3%81%aa%e3%81%a9%e3%81%ae%e5%9e%8b%e5%ae%9a%e7%be%a9%e3%81%ae%e6%94%b9%e5%96%84-%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4 aria-label="assertEqualsなどの型定義の改善 (破壊的変更)"><code>assertEquals</code>などの型定義の改善 (<strong>破壊的変更</strong>)</a></li><li><a href=#assertrejects%e3%82%84assertthrows%e3%81%ae%e6%88%bb%e3%82%8a%e5%80%a4%e3%81%ae%e5%a4%89%e6%9b%b4 aria-label=assertRejectsやassertThrowsの戻り値の変更><code>assertRejects</code>や<code>assertThrows</code>の戻り値の変更</a></li></ul></li><li><a href=#flags aria-label=flags><code>flags</code></a></li><li><a href=#streams aria-label=streams><code>streams</code></a><ul><li><a href=#totransformstream%e3%81%ae%e8%bf%bd%e5%8a%a0 aria-label=toTransformStream()の追加><code>toTransformStream()</code>の追加</a></li><li><a href=#earlyzipreadablestreams%e3%81%ae%e8%bf%bd%e5%8a%a0 aria-label=earlyZipReadableStreams()の追加><code>earlyZipReadableStreams()</code>の追加</a></li><li><a href=#textlinestream%e3%81%ae%e6%94%b9%e5%96%84 aria-label=TextLineStreamの改善><code>TextLineStream</code>の改善</a></li></ul></li><li><a href=#http aria-label=http><code>http</code></a></li><li><a href=#node aria-label=node><code>node</code></a></li><li><a href=#asyncpool aria-label=async/pool><code>async/pool</code></a></li></ul></li><li><a href=#denolandexamples aria-label=denoland/examples>denoland/examples</a></li><li><a href=#denoflare-v050 aria-label="denoflare v0.5.0">denoflare v0.5.0</a></li></ul></div></details></div><div class=post-content><h2 id=deno-deploy-beta-4>Deno Deploy Beta 4<a hidden class=anchor aria-hidden=true href=#deno-deploy-beta-4>#</a></h2><p><a href=https://deno.com/blog/deploy-beta4>Deno Deploy Beta 4</a>が発表されました。</p><p>このリリースに合わせて、有料のProプランが公開されています。
+詳しくは、以下の記事で価格設定などについて解説されています。</p><ul><li><a href=https://qiita.com/access3151fq/items/74597aedbb601d0d2fbd>deno deploy beta 4発表！価格設定をcloudflare workersと比較する</a></li></ul><p>その他にも、ダッシュボードがリニューアルされています。
+リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。</p><hr><p><a href=https://deno.com/blog/deploy-beta4>https://deno.com/blog/deploy-beta4</a></p><h2 id=deno-v1221>Deno v1.22.1<a hidden class=anchor aria-hidden=true href=#deno-v1221>#</a></h2><p>Deno v1.22.1がリリースされました。</p><p>このリリースはバグ修正を中心に行われています。</p><p><strong>主な変更点:</strong></p><ul><li><code>Deno.ChildStatus.signal</code>の型が<code>string</code>から<code>Deno.Signal</code>に変更されました。</li><li><code>deno test --coverage</code>で、<code>interface</code>のみを含むファイルなどで計測結果が<code>NaN%</code>と表示される問題が修正されました。</li><li><code>WebSocket.close</code>を呼ぶと<code>"close"</code>イベントが2回発火される問題が修正されました。</li><li><code>globalThis.dispatchEvent</code>が改ざんされている(<code>delete</code>による削除など)と、<code>Deno.exit()</code>でエラーが発生する問題が修正されました。</li><li><code>Deno.permissions.query()</code>などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。</li></ul><hr><p><a href=https://github.com/denoland/deno/releases/tag/v1.22.1>https://github.com/denoland/deno/releases/tag/v1.22.1</a></p><h2 id=deno_std-v01410>deno_std v0.141.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01410>#</a></h2><p>deno_std v0.141.0がリリースされました。</p><p>いくつかの破壊的変更が実施されています。</p><h3 id=testingasserts><code>testing/asserts</code><a hidden class=anchor aria-hidden=true href=#testingasserts>#</a></h3><h4 id=assertstrictequalsなどの改善><code>assertStrictEquals</code>などの改善<a hidden class=anchor aria-hidden=true href=#assertstrictequalsなどの改善>#</a></h4><p><code>assertStrictEquals</code> / <code>assertAlmostEquals</code> / <code>assertNotStrictEquals</code>の内部の比較処理で、<code>===</code>の代わりに<code>Object.is()</code>を使用するように修正されています。(Node.jsの<code>assert</code>パッケージなどと同様の挙動に変わりました。)</p><h4 id=assertequalsなどの型定義の改善-破壊的変更><code>assertEquals</code>などの型定義の改善 (<strong>破壊的変更</strong>)<a hidden class=anchor aria-hidden=true href=#assertequalsなどの型定義の改善-破壊的変更>#</a></h4><p><code>assertEquals</code>や<code>assertNotEquals</code>などの型定義が修正されています。</p><p>例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#a6e22e>assertEquals</span>(<span style=color:#ae81ff>123</span>, <span style=color:#e6db74>&#34;foo&#34;</span>);
+</span></span></code></pre></div><p>次のようにすると、型エラーを回避できます。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#a6e22e>assertEquals</span>&lt;<span style=color:#f92672>unknown</span>&gt;(<span style=color:#ae81ff>123</span>, <span style=color:#e6db74>&#34;foo&#34;</span>);
+</span></span></code></pre></div><h4 id=assertrejectsやassertthrowsの戻り値の変更><code>assertRejects</code>や<code>assertThrows</code>の戻り値の変更<a hidden class=anchor aria-hidden=true href=#assertrejectsやassertthrowsの戻り値の変更>#</a></h4><p><code>assertRejects</code>や<code>assertThrows</code>で補足された例外が戻り値として返却されるように修正されました。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>error</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>assertThrows</span>(() <span style=color:#f92672>=&gt;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;foo&#34;</span>);
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>assert</span>(<span style=color:#a6e22e>error</span> <span style=color:#66d9ef>instanceof</span> Error);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>assertEquals</span>(<span style=color:#a6e22e>error</span>.<span style=color:#a6e22e>message</span>, <span style=color:#e6db74>&#34;foo&#34;</span>);
+</span></span></code></pre></div><h3 id=flags><code>flags</code><a hidden class=anchor aria-hidden=true href=#flags>#</a></h3><p><code>parse()</code>関数に<code>collect</code>オプションが追加されました。(<strong>破壊的変更</strong>)</p><p>下記のように、<code>collect</code>オプションで指定されたフラグのみ、複数回の指定が許容されるように挙動が変更されています。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>parse</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.140.0/flags/mod.ts&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>parse</span>([
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;deno&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;run&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;--check=true&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;--config&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;deno.json&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;--check=false&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;--config=tsconfig.json&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;main.ts&#34;</span>,
+</span></span><span style=display:flex><span>], {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>boolean</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;check&#34;</span>],
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>string</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;config&#34;</span>],
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>collect</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;config&#34;</span>],
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#75715e>// {
+</span></span></span><span style=display:flex><span><span style=color:#75715e>//   _: [ &#34;deno&#34;, &#34;run&#34;, &#34;main.ts&#34; ],
+</span></span></span><span style=display:flex><span><span style=color:#75715e>//   check: false,
+</span></span></span><span style=display:flex><span><span style=color:#75715e>//   config: [ &#34;deno.json&#34;, &#34;tsconfig.json&#34; ]
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// }
+</span></span></span></code></pre></div><h3 id=streams><code>streams</code><a hidden class=anchor aria-hidden=true href=#streams>#</a></h3><h4 id=totransformstreamの追加><code>toTransformStream()</code>の追加<a hidden class=anchor aria-hidden=true href=#totransformstreamの追加>#</a></h4><p><code>streams/conversion</code>に<code>toTransformStream()</code>が追加されました。</p><p>ジェネレータ関数を<code>TransformStream</code>に変換できます。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>readableStreamFromIterable</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.140.0/streams/conversion.ts&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>readable</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readableStreamFromIterable</span>([<span style=color:#e6db74>&#34;a&#34;</span>, <span style=color:#e6db74>&#34;b&#34;</span>, <span style=color:#e6db74>&#34;c&#34;</span>])
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>pipeThrough</span>(<span style=color:#a6e22e>toTransformStream</span>(<span style=color:#66d9ef>async</span> <span style=color:#66d9ef>function</span><span style=color:#f92672>*</span> <span style=color:#a6e22e>transformer</span>(<span style=color:#a6e22e>source</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> <span style=color:#66d9ef>await</span> (<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>source</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>yield</span> <span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>repeat</span>(<span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> <span style=color:#66d9ef>await</span> (<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>readable</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>x</span>); <span style=color:#75715e>// aa, bb, cc
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></div><h4 id=earlyzipreadablestreamsの追加><code>earlyZipReadableStreams()</code>の追加<a hidden class=anchor aria-hidden=true href=#earlyzipreadablestreamsの追加>#</a></h4><p><code>streams/merge</code>に<code>earlyZipReadableStreams()</code>が追加されています。</p><p>既存の<code>zipReadableStreams()</code>とは異なり、指定された<code>ReadableStream</code>のうちいずれか一つでも処理が停止したら、<code>earlyZipReadableStreams()</code>から返却される<code>ReadableStream</code>も停止します。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>readableStreamFromIterable</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.140.0/streams/conversion.ts&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>earlyZipReadableStreams</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.140.0/streams/merge.ts&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readableStreamFromIterable</span>([<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>]);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readableStreamFromIterable</span>([<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>6</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>8</span>]);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> <span style=color:#66d9ef>await</span> (<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x</span> <span style=color:#66d9ef>of</span> <span style=color:#a6e22e>earlyZipReadableStreams</span>(<span style=color:#a6e22e>a</span>, <span style=color:#a6e22e>b</span>)) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>x</span>); <span style=color:#75715e>// 1, 4, 2, 5, 3, 6
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></div><h4 id=textlinestreamの改善><code>TextLineStream</code>の改善<a hidden class=anchor aria-hidden=true href=#textlinestreamの改善>#</a></h4><p><code>streams/delimiter</code>の<code>TextLineStream</code>で<code>\r</code>がサポートされました。</p><h3 id=http><code>http</code><a hidden class=anchor aria-hidden=true href=#http>#</a></h3><p><code>http/util</code>モジュールが追加されています。</p><p>現在は、ETag値を比較する<code>compareEtag</code>という関数が公開されています。</p><h3 id=node><code>node</code><a hidden class=anchor aria-hidden=true href=#node>#</a></h3><p><code>dns</code>パッケージで下記レコードの問い合わせがサポートされました。</p><ul><li><code>NAPTR</code> (<code>dns.resolveNaptr</code>)</li><li><code>NS</code> (<code>dns.resolveNs</code>)</li><li><code>CAA</code> (<code>dns.resolveCaa</code>)</li><li><code>SOA</code> (<code>dns.resolveSoa</code>)</li></ul><p>また、<code>fs</code>パッケージの<code>ReadStream</code>が、実装はされていたものの<code>export</code>されていなかった問題が修正されています。</p><h3 id=asyncpool><code>async/pool</code><a hidden class=anchor aria-hidden=true href=#asyncpool>#</a></h3><p><code>pooledMap</code>の戻り値の順番が引数の<code>Iterable</code>と一致するように修正されています。</p><hr><p><a href=https://github.com/denoland/deno_std/releases/tag/0.141.0>https://github.com/denoland/deno_std/releases/tag/0.141.0</a></p><h2 id=denolandexamples>denoland/examples<a hidden class=anchor aria-hidden=true href=#denolandexamples>#</a></h2><p><a href=https://github.com/denoland/examples>denoland/examples</a>というリポジトリが公開されています。</p><p>Reactなどを使ったexampleアプリの一覧などが掲載されています。</p><hr><p><a href=https://github.com/denoland/examples>https://github.com/denoland/examples</a></p><h2 id=denoflare-v050>denoflare v0.5.0<a hidden class=anchor aria-hidden=true href=#denoflare-v050>#</a></h2><p>denoflare v0.5.0がリリースされました。</p><p>大きな変更点として、<a href=https://developers.cloudflare.com/r2/>R2</a>のサポートが追加されています。</p><ul><li><a href=https://github.com/skymethod/denoflare-docs/blob/7bde904b4662da1b6ef819698ab3d6f2a36cc9de/r2/index.md>Denoflare ❤️ Cloudflare R2</a></li></ul><hr><p><a href=https://github.com/skymethod/denoflare/releases/tag/v0.5.0>https://github.com/skymethod/denoflare/releases/tag/v0.5.0</a></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno-deploy.html>Deno Deploy</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/denoflare.html>denoflare</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

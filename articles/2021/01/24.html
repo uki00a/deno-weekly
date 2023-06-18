@@ -1,189 +1,36 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2021/01/18〜2021/01/24の最新情報 | 週刊Deno</title>
-<meta name=keywords content="deno,deno-rollup">
-<meta name=description content="Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2021/01/18〜2021/01/24の最新情報 | 週刊Deno</title><meta name=keywords content="deno,deno-rollup"><meta name=description content="Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
 以下は変更点の要約です:
- deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された  また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
- Deno 1.7.0 がリリースされたので新機能や変更点の紹介  deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
+deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
+Deno 1.7.0 がリリースされたので新機能や変更点の紹介 deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
 内部的にはRollupのブラウザビルドが利用されています。
 CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。
 https://github.com/cmorten/deno-rollup
 code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。
 設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。
 また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。
-https://github.com/dsherret/code-block-writer">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/01/24.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2021/01/18〜2021/01/24の最新情報">
-<meta property="og:description" content="Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
+https://github.com/dsherret/code-block-writer"><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/01/24.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2021/01/18〜2021/01/24の最新情報"><meta property="og:description" content="Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
 以下は変更点の要約です:
- deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された  また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
- Deno 1.7.0 がリリースされたので新機能や変更点の紹介  deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
+deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
+Deno 1.7.0 がリリースされたので新機能や変更点の紹介 deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
 内部的にはRollupのブラウザビルドが利用されています。
 CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。
 https://github.com/cmorten/deno-rollup
 code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。
 設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。
 また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。
-https://github.com/dsherret/code-block-writer">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/01/24.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2021-01-24T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-01-24T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2021/01/18〜2021/01/24の最新情報">
-<meta name=twitter:description content="Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
+https://github.com/dsherret/code-block-writer"><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/01/24.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2021-01-24T00:00:00+00:00"><meta property="article:modified_time" content="2021-01-24T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2021/01/18〜2021/01/24の最新情報"><meta name=twitter:description content="Deno v1.7.0がリリース Deno v1.7.0がリリースされました。
 以下は変更点の要約です:
- deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された  また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
- Deno 1.7.0 がリリースされたので新機能や変更点の紹介  deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
+deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。
+Deno 1.7.0 がリリースされたので新機能や変更点の紹介 deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。
 内部的にはRollupのブラウザビルドが利用されています。
 CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。
 https://github.com/cmorten/deno-rollup
 code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。
 設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。
 また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。
-https://github.com/dsherret/code-block-writer">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/01/18〜2021/01/24の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/01/24.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/01/18〜2021/01/24の最新情報","name":"2021\/01\/18〜2021\/01\/24の最新情報","description":"Deno v1.7.0がリリース Deno v1.7.0がリリースされました。\n以下は変更点の要約です:\n deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された  また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。\n Deno 1.7.0 がリリースされたので新機能や変更点の紹介  deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。\n内部的にはRollupのブラウザビルドが利用されています。\nCLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。\nhttps://github.com/cmorten/deno-rollup\ncode-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。\n設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。\nまた、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。\nhttps://github.com/dsherret/code-block-writer","keywords":["deno","deno-rollup"],"articleBody":"Deno v1.7.0がリリース Deno v1.7.0がリリースされました。\n以下は変更点の要約です:\n deno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された  また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。\n Deno 1.7.0 がリリースされたので新機能や変更点の紹介  deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。\n内部的にはRollupのブラウザビルドが利用されています。\nCLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。\nhttps://github.com/cmorten/deno-rollup\ncode-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。\n設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。\nまた、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。\nhttps://github.com/dsherret/code-block-writer\n","wordCount":"40","inLanguage":"en","datePublished":"2021-01-24T00:00:00Z","dateModified":"2021-01-24T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/01/24.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2021/01/18〜2021/01/24の最新情報
-</h1>
-<div class=post-meta><span title="2021-01-24 00:00:00 +0000 UTC">January 24, 2021</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno-v170%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9httpsdenolandpostsv17 aria-label="Deno v1.7.0がリリース"><a href=https://deno.land/posts/v1.7>Deno v1.7.0がリリース</a></a></li>
-<li>
-<a href=#deno-rolluphttpsgithubcomcmortendeno-rollup---rollup%e3%81%aedeno%e3%83%9d%e3%83%bc%e3%83%88 aria-label="deno-rollup - RollupのDenoポート"><a href=https://github.com/cmorten/deno-rollup>deno-rollup</a> - RollupのDenoポート</a></li>
-<li>
-<a href=#code-block-writerhttpsgithubcomdsherretcode-block-writer---javascripttypescript%e3%82%b3%e3%83%bc%e3%83%89%e3%81%ae%e7%94%9f%e6%88%90%e3%82%92%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab aria-label="code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール"><a href=https://github.com/dsherret/code-block-writer>code-block-writer</a> - JavaScript/TypeScriptコードの生成をサポートするモジュール</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno-v170がリリースhttpsdenolandpostsv17><a href=https://deno.land/posts/v1.7>Deno v1.7.0がリリース</a><a hidden class=anchor aria-hidden=true href=#deno-v170がリリースhttpsdenolandpostsv17>#</a></h2>
-<p>Deno v1.7.0がリリースされました。</p>
-<p>以下は変更点の要約です:</p>
-<ul>
-<li><code>deno compile</code>コマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた</li>
-<li><code>import</code>及びWorkerでData URLがサポートされた</li>
-<li><code>Deno.resolveDns</code>が実装された</li>
-<li><code>Deno.transpileOnly</code>/<code>bundle</code>/<code>compile</code>が、<code>Deno.emit</code>という単一のAPIに統合された</li>
-<li><code>deno fmt</code>コマンドでマークダウンファイルがサポートされた</li>
-<li><code>ReadableStream</code>で<code>asyncIterator</code>プロトコルが実装された</li>
-<li><code>ReadableStream#getIterator</code>が非推奨になった(v1.8で削除されることが予定されています)</li>
-<li><code>Worker</code>を起動する際に、パーミッションを指定できるようになった</li>
-<li><code>globalThis.location</code>及び<code>--location</code>フラグがサポートされた</li>
-<li><code>fetch</code>及び<code>Worker</code>で相対URLを指定できるようになった</li>
-<li><code>fetch</code>でリクエストボディのストリミーングがサポートされた</li>
-<li>TLSセッションキャッシュが実装された</li>
-</ul>
-<p>また、<a href=https://zenn.dev/magurotuna>magurotuna</a>さんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。</p>
-<ul>
-<li><a href=https://zenn.dev/magurotuna/articles/55575eb16ae422>Deno 1.7.0 がリリースされたので新機能や変更点の紹介</a></li>
-</ul>
-<h2 id=deno-rolluphttpsgithubcomcmortendeno-rollup---rollupのdenoポート><a href=https://github.com/cmorten/deno-rollup>deno-rollup</a> - RollupのDenoポート<a hidden class=anchor aria-hidden=true href=#deno-rolluphttpsgithubcomcmortendeno-rollup---rollupのdenoポート>#</a></h2>
-<p><code>deno-rollup</code>はRollupをDenoから使用できるようにしたパッケージです。</p>
-<p>内部的にはRollupのブラウザビルドが利用されています。</p>
-<p>CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。</p>
-<p><a href=https://github.com/cmorten/deno-rollup>https://github.com/cmorten/deno-rollup</a></p>
-<h2 id=code-block-writerhttpsgithubcomdsherretcode-block-writer---javascripttypescriptコードの生成をサポートするモジュール><a href=https://github.com/dsherret/code-block-writer>code-block-writer</a> - JavaScript/TypeScriptコードの生成をサポートするモジュール<a hidden class=anchor aria-hidden=true href=#code-block-writerhttpsgithubcomdsherretcode-block-writer---javascripttypescriptコードの生成をサポートするモジュール>#</a></h2>
-<p><code>code-block-writer</code>はJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。</p>
-<p>設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。</p>
-<p>また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。</p>
-<p><a href=https://github.com/dsherret/code-block-writer>https://github.com/dsherret/code-block-writer</a></p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno-rollup.html>deno-rollup</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+https://github.com/dsherret/code-block-writer"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/01/18〜2021/01/24の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/01/24.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/01/18〜2021/01/24の最新情報","name":"2021\/01\/18〜2021\/01\/24の最新情報","description":"Deno v1.7.0がリリース Deno v1.7.0がリリースされました。\n以下は変更点の要約です:\ndeno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。\nDeno 1.7.0 がリリースされたので新機能や変更点の紹介 deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。\n内部的にはRollupのブラウザビルドが利用されています。\nCLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。\nhttps://github.com/cmorten/deno-rollup\ncode-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。\n設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。\nまた、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。\nhttps://github.com/dsherret/code-block-writer","keywords":["deno","deno-rollup"],"articleBody":"Deno v1.7.0がリリース Deno v1.7.0がリリースされました。\n以下は変更点の要約です:\ndeno compileコマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた import及びWorkerでData URLがサポートされた Deno.resolveDnsが実装された Deno.transpileOnly/bundle/compileが、Deno.emitという単一のAPIに統合された deno fmtコマンドでマークダウンファイルがサポートされた ReadableStreamでasyncIteratorプロトコルが実装された ReadableStream#getIteratorが非推奨になった(v1.8で削除されることが予定されています) Workerを起動する際に、パーミッションを指定できるようになった globalThis.location及び--locationフラグがサポートされた fetch及びWorkerで相対URLを指定できるようになった fetchでリクエストボディのストリミーングがサポートされた TLSセッションキャッシュが実装された また、magurotunaさんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。\nDeno 1.7.0 がリリースされたので新機能や変更点の紹介 deno-rollup - RollupのDenoポート deno-rollupはRollupをDenoから使用できるようにしたパッケージです。\n内部的にはRollupのブラウザビルドが利用されています。\nCLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。\nhttps://github.com/cmorten/deno-rollup\ncode-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール code-block-writerはJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。\n設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。\nまた、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。\nhttps://github.com/dsherret/code-block-writer\n","wordCount":"40","inLanguage":"en","datePublished":"2021-01-24T00:00:00Z","dateModified":"2021-01-24T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/01/24.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2021/01/18〜2021/01/24の最新情報</h1><div class=post-meta><span title='2021-01-24 00:00:00 +0000 UTC'>January 24, 2021</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno-v170%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9httpsdenolandpostsv17 aria-label="Deno v1.7.0がリリース"><a href=https://deno.land/posts/v1.7>Deno v1.7.0がリリース</a></a></li><li><a href=#deno-rolluphttpsgithubcomcmortendeno-rollup---rollup%e3%81%aedeno%e3%83%9d%e3%83%bc%e3%83%88 aria-label="deno-rollup - RollupのDenoポート"><a href=https://github.com/cmorten/deno-rollup>deno-rollup</a> - RollupのDenoポート</a></li><li><a href=#code-block-writerhttpsgithubcomdsherretcode-block-writer---javascripttypescript%e3%82%b3%e3%83%bc%e3%83%89%e3%81%ae%e7%94%9f%e6%88%90%e3%82%92%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88%e3%81%99%e3%82%8b%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab aria-label="code-block-writer - JavaScript/TypeScriptコードの生成をサポートするモジュール"><a href=https://github.com/dsherret/code-block-writer>code-block-writer</a> - JavaScript/TypeScriptコードの生成をサポートするモジュール</a></li></ul></div></details></div><div class=post-content><h2 id=deno-v170がリリースhttpsdenolandpostsv17><a href=https://deno.land/posts/v1.7>Deno v1.7.0がリリース</a><a hidden class=anchor aria-hidden=true href=#deno-v170がリリースhttpsdenolandpostsv17>#</a></h2><p>Deno v1.7.0がリリースされました。</p><p>以下は変更点の要約です:</p><ul><li><code>deno compile</code>コマンドでクロスコンパイルや軽量バイナリの生成、パーミッションの指定などがサポートされた</li><li><code>import</code>及びWorkerでData URLがサポートされた</li><li><code>Deno.resolveDns</code>が実装された</li><li><code>Deno.transpileOnly</code>/<code>bundle</code>/<code>compile</code>が、<code>Deno.emit</code>という単一のAPIに統合された</li><li><code>deno fmt</code>コマンドでマークダウンファイルがサポートされた</li><li><code>ReadableStream</code>で<code>asyncIterator</code>プロトコルが実装された</li><li><code>ReadableStream#getIterator</code>が非推奨になった(v1.8で削除されることが予定されています)</li><li><code>Worker</code>を起動する際に、パーミッションを指定できるようになった</li><li><code>globalThis.location</code>及び<code>--location</code>フラグがサポートされた</li><li><code>fetch</code>及び<code>Worker</code>で相対URLを指定できるようになった</li><li><code>fetch</code>でリクエストボディのストリミーングがサポートされた</li><li>TLSセッションキャッシュが実装された</li></ul><p>また、<a href=https://zenn.dev/magurotuna>magurotuna</a>さんによって、Deno v1.7.0に関する日本語の紹介記事が書かれています。</p><ul><li><a href=https://zenn.dev/magurotuna/articles/55575eb16ae422>Deno 1.7.0 がリリースされたので新機能や変更点の紹介</a></li></ul><h2 id=deno-rolluphttpsgithubcomcmortendeno-rollup---rollupのdenoポート><a href=https://github.com/cmorten/deno-rollup>deno-rollup</a> - RollupのDenoポート<a hidden class=anchor aria-hidden=true href=#deno-rolluphttpsgithubcomcmortendeno-rollup---rollupのdenoポート>#</a></h2><p><code>deno-rollup</code>はRollupをDenoから使用できるようにしたパッケージです。</p><p>内部的にはRollupのブラウザビルドが利用されています。</p><p>CLIまたはJavaScript APIが提供されており、それらを使用することでソースコードをバンドルできます。</p><p><a href=https://github.com/cmorten/deno-rollup>https://github.com/cmorten/deno-rollup</a></p><h2 id=code-block-writerhttpsgithubcomdsherretcode-block-writer---javascripttypescriptコードの生成をサポートするモジュール><a href=https://github.com/dsherret/code-block-writer>code-block-writer</a> - JavaScript/TypeScriptコードの生成をサポートするモジュール<a hidden class=anchor aria-hidden=true href=#code-block-writerhttpsgithubcomdsherretcode-block-writer---javascripttypescriptコードの生成をサポートするモジュール>#</a></h2><p><code>code-block-writer</code>はJavaScript/TypeScriptコードの生成をサポートするDenoモジュールです。</p><p>設定を変更することでインデント幅や文字列を囲むのに使用するクォートなどを柔軟に変更することができます。</p><p>また、このモジュールはnpmパッケージとしても公開されており、Node.jsからも使用することができます。</p><p><a href=https://github.com/dsherret/code-block-writer>https://github.com/dsherret/code-block-writer</a></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno-rollup.html>deno-rollup</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

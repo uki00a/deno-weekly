@@ -1,91 +1,5 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>Node.js | 週刊Deno</title>
-<meta name=keywords content>
-<meta name=description content>
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/node.js.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/node.js/index.xml>
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Node.js">
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/node.js.html">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Node.js">
-<meta name=twitter:description content>
-</head>
-<body class=list id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<header class=page-header>
-<h1>
-Node.js
-</h1>
-</header>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/04/11〜2022/04/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20.6 Deno v1.20.6がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Node.js | 週刊Deno</title><meta name=keywords content><meta name=description content><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/tags/node.js.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/tags/node.js/index.xml><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="Node.js"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/tags/node.js.html"><meta name=twitter:card content="summary"><meta name=twitter:title content="Node.js"><meta name=twitter:description content></head><body class=list id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><header class=page-header><h1>Node.js</h1></header><article class="post-entry tag-entry"><header class=entry-header><h2>2021/04/11〜2022/04/17の最新情報</h2></header><div class=entry-content><p>Deno v1.20.6 Deno v1.20.6がリリースされました。
 deno fmtコマンドの内部実装で使用されているdprint関連のプラグインがアップデートされています。
 その影響により、deno fmtコマンドのパフォーマンス向上やバグの修正が行われています。 (オブジェクトリテラルと3項演算子を併用した際に、フォーマット結果に一貫性がなくなる問題が修正されているようです)
 https://github.com/denoland/deno/releases/tag/v1.20.6
@@ -101,32 +15,13 @@ testing/benchの非推奨化 (破壊的変更) testing/benchモジュールが�
 今後はDeno.benchの使用が推奨されます。
 testing/bddの追加 testing/bddモジュールが追加されました。
 JestやMochaライクなAPIを使用してテストコードを記述することができます。
-import { assertEquals } from "https://deno.land/std@0.135.0/testing/asserts.ts"; import { describe, it } from "https://deno.land/std@0.135.0/testing/bdd.ts"; describe("sum", () => { it("should return sum of numbers", () => { assertEquals(sum(1, 2, 5), 8) }); it("should return 0 when no arguments are given", () => { assertEquals(sum(), 0); }); }); 定義したテストコードはdeno testコマンドで実行することが出来ます。...</p>
-</div>
-<footer class=entry-footer><span title="2022-04-17 00:00:00 +0000 UTC">April 17, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/11〜2022/04/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/17.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/10/11〜2021/10/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.15.0 Deno v1.15.0がリリースされました。
+import { assertEquals } from "https://deno.land/std@0.135.0/testing/asserts.ts"; import { describe, it } from "https://deno.land/std@0.135.0/testing/bdd.ts"; describe("sum", () => { it("should return sum of numbers", () => { assertEquals(sum(1, 2, 5), 8) }); it("should return 0 when no arguments are given", () => { assertEquals(sum(), 0); }); }); 定義したテストコードはdeno testコマンドで実行することが出来ます。...</p></div><footer class=entry-footer><span title='2022-04-17 00:00:00 +0000 UTC'>April 17, 2022</span></footer><a class=entry-link aria-label="post link to 2021/04/11〜2022/04/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/17.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2021/10/11〜2021/10/17の最新情報</h2></header><div class=entry-content><p>Deno v1.15.0 Deno v1.15.0がリリースされました。
 Node.jsの互換モードやサブテストの実験的な実装や、URLPatternやDeno.killの安定化、deno uninstallコマンドの実装などが行われています。
 新機能:
-CLI Node.js互換モードの実装 (--compat を付与してDenoを実行すると、Node.jsの組み込みモジュールの読み込みが有効化されます) deno uninstallコマンドが実装されました (deno installでインストールされたスクリプトをアンインストールできます) deno lintコマンドで--watchオプションがサポートされました テスト Deno.testでテストケースの入れ子が実験的にサポートされました Deno.testで定義したテストケースがリソースリークによって失敗した際に、より詳細なエラーメッセージが表示されるようになりました (unstableをつけたときのみ) Deno API 下記のAPIが安定化されました Deno.kill Deno.Process.kill Deno.resolveDns URLPattern Deno.startTLS/Deno.connectTLS/Deno.createHttpClientでcaCertsオプションがサポートされ、複数のルート証明書を指定できるようになりました 合わせてDeno.startTLSとDeno.connectTLSのcertFileオプションが非推奨化されています また、Deno.createHttpClientのcertFileオプションが削除されています Deno.resolveDnsの内部でエラーが発生した際に返却されるエラーが改善されました Web Crypto API SubtleCrypto.deriveKeyが実装されました SubtleCrypto.wrapKeyが実装されました SubtleCrypto.exportKeyでRSAキーをspkiフォーマットでエクスポートできるようになりました SubtleCryptoのencryptとdecryptメソッドでAES-CBCによる暗号化と復号がサポートされました SubtleCrypto.deriveBitsでECDH (p256)がサポートされました SubtleCrypto.importKeyでraw形式のECDSAキーをインポートできるようになりました SubtleCryptoでAESキーのインポートとエクスポートがサポートされました FFI関連 (Deno.dlopen) バッファ引数(ArrayBuffer)のサポート 非同期呼び出しのサポート WASM スタックトレースにおけるWebAssembly....</p>
-</div>
-<footer class=entry-footer><span title="2021-10-17 00:00:00 +0000 UTC">October 17, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/11〜2021/10/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/17.html></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>2021/10/04〜2021/10/10の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.14.3 Deno v1.14.3がリリースされました。
+CLI Node.js互換モードの実装 (--compat を付与してDenoを実行すると、Node.jsの組み込みモジュールの読み込みが有効化されます) deno uninstallコマンドが実装されました (deno installでインストールされたスクリプトをアンインストールできます) deno lintコマンドで--watchオプションがサポートされました テスト Deno.testでテストケースの入れ子が実験的にサポートされました Deno.testで定義したテストケースがリソースリークによって失敗した際に、より詳細なエラーメッセージが表示されるようになりました (unstableをつけたときのみ) Deno API 下記のAPIが安定化されました Deno.kill Deno.Process.kill Deno.resolveDns URLPattern Deno.startTLS/Deno.connectTLS/Deno.createHttpClientでcaCertsオプションがサポートされ、複数のルート証明書を指定できるようになりました 合わせてDeno.startTLSとDeno.connectTLSのcertFileオプションが非推奨化されています また、Deno.createHttpClientのcertFileオプションが削除されています Deno.resolveDnsの内部でエラーが発生した際に返却されるエラーが改善されました Web Crypto API SubtleCrypto.deriveKeyが実装されました SubtleCrypto.wrapKeyが実装されました SubtleCrypto.exportKeyでRSAキーをspkiフォーマットでエクスポートできるようになりました SubtleCryptoのencryptとdecryptメソッドでAES-CBCによる暗号化と復号がサポートされました SubtleCrypto.deriveBitsでECDH (p256)がサポートされました SubtleCrypto.importKeyでraw形式のECDSAキーをインポートできるようになりました SubtleCryptoでAESキーのインポートとエクスポートがサポートされました FFI関連 (Deno.dlopen) バッファ引数(ArrayBuffer)のサポート 非同期呼び出しのサポート WASM スタックトレースにおけるWebAssembly.compileStreaming経由でコンパイルされたWASMモジュールのURLの表示が改善されました WebAssembly.ModuleをWorker間で受け渡せるようになりました その他 ファイルシステム関連のAPIでエラーが発生した際に、対象のファイル名がスタックトレースに表示されるよう改善されました DOMException.stackプロパティが実装されました https://github.com/denoland/deno/releases/tag/v1.15.0 https://deno.com/blog/v1.15 deno_std v0.111.0 deno_std v0.111.0がリリースされました。
+std/fs, std/hash, 及びstd/ioで既存APIの非推奨化や破壊的変更が実施されています。
+変更点:
+fs: existsとexistsSyncが非推奨化されました hash: 非推奨化されました (cryptoモジュールが追加されたため) io: ディレクトリ構造が大幅に変更されました std/io/bufio....</p></div><footer class=entry-footer><span title='2021-10-17 00:00:00 +0000 UTC'>October 17, 2021</span></footer><a class=entry-link aria-label="post link to 2021/10/11〜2021/10/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/17.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2021/10/04〜2021/10/10の最新情報</h2></header><div class=entry-content><p>Deno v1.14.3 Deno v1.14.3がリリースされました。
 このリリースでは、バグ修正やパフォーマンスチューニングを中心に実施されています。
 変更点:
 fetchで不正な形式のヘッダを指定するとプロセスがパニックする問題が修正されました Deno.listenで抽象ソケットアドレスを指定するとプロセスがパニックする問題が修正されました REPLでglobalThisに代入するとプロセスがパニックする問題が修正されました Workerのmessageハンドラで投げられたエラーが報告されない問題が修正されました Workerのdeno.permissions.envオプションに配列を渡せるようになりました Deno.testでAggregateErrorが投げられた際の出力が改善されました Opの実行、RequestやResponseの作成、Headers.prototype.appendなどが最適化されました https://github.com/denoland/deno/releases/tag/v1.14.3
@@ -136,24 +31,8 @@ std/nodeへの機能追加が実施されています。
 node/buffer: BufferでreadUIntLE及びreadUIntBEが実装されました node/crypto: scrypt, scryptSync, timingSafeEqual, 及びrandomUUIDが実装されました。 node/stream/web: 下記クラスが追加されました。 ReadableByteStreamController TransformStreamDefaultController ByteLengthQueuingStrategy CountQueuingStrategy TextEncoderStream TextDecoderStream node/os: tmpdirが実装されました https://github.com/denoland/deno_std/releases/tag/0.110.0
 Freshのアップデート DenoのWebフレームワークであるFreshがアップデートされました。
 &lt;Head>コンポーネントがサポートされ、&lt;head>配下に要素を追加できるようになっています。
-/** @jsx h */ import { h, Head } from "../deps.ts"; export default function Home() { return ( &lt;div> &lt;Head> &lt;title>Hello&lt;/title> &lt;/Head> &lt;h2>Home&lt;/h2> &lt;/div> ); } https://github....</p>
-</div>
-<footer class=entry-footer><span title="2021-10-10 00:00:00 +0000 UTC">October 10, 2021</span></footer>
-<a class=entry-link aria-label="post link to 2021/10/04〜2021/10/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/10.html></a>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+/** @jsx h */ import { h, Head } from "../deps.ts"; export default function Home() { return ( &lt;div> &lt;Head> &lt;title>Hello&lt;/title> &lt;/Head> &lt;h2>Home&lt;/h2> &lt;/div> ); } https://github.com/lucacasonato/fresh/pull/67
+deno-postgres v0.13.0 deno-postgres v0....</p></div><footer class=entry-footer><span title='2021-10-10 00:00:00 +0000 UTC'>October 10, 2021</span></footer><a class=entry-link aria-label="post link to 2021/10/04〜2021/10/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2021/10/10.html></a></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

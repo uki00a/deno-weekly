@@ -6,7 +6,9 @@ feat: remove experimental support for Deno flash server docs: remove experimenta
 twindv1プラグインで、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。
 Deno SaaSKit Deno公式からFreshやSupabase, Stripeなどを活用したSaaSプロジェクトのテンプレートが公開されました。
 Announcing Deno SaaSKit: an open-source SaaS template built with Fresh ソースコードやロードマップなどが以下のリポジトリで公開されています。
-https://github.com/denoland/saaskit SaaSKit v1.</description></item><item><title>2022/11/21〜2022/11/27の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/11/27.html</link><pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/11/27.html</guid><description>Deno v1.28.2 Deno v1.28.2がリリースされました。
+https://github.com/denoland/saaskit SaaSKit v1.0 Hono v3 先日リリースされたHono v3に関する解説記事が公開されています。
+Honoのv3が出ました esm.sh v114 esm.sh v114がリリースされました。
+esm.shが内部で使用するパッケージマネージャーがyarnからpnpmへ移行されたようです。</description></item><item><title>2022/11/21〜2022/11/27の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/11/27.html</link><pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/11/27.html</guid><description>Deno v1.28.2 Deno v1.28.2がリリースされました。
 CPUプロファイリング 新機能として、以下の3メソッドが実装されています。
 console.profile console.profileEnd console.timeStamp これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。
 --inspectオプションが指定された状態でconsole.profile(label)が呼ばれると、console.profileEnd(label)の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。
@@ -21,7 +23,7 @@ std/fmtに関する破壊的変更 std/fmt/bytesのprettyBytes()関数がformat(
 既存のprettyBytes()は非推奨化されており、今後のバージョンで削除される予定です。
 また、std/fmt/durationのprettyDuration()も同様にformat()へリネームされています。
 std/node - Node.js互換性の改善 Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。
-node:console: Deno v1.</description></item><item><title>2021/08/22〜2022/08/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/08/28.html</link><pubDate>Sun, 28 Aug 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/08/28.html</guid><description>Deno v1.25.0 Deno v1.25.0がリリースされました。
+node:console: Deno v1.28.2に合わせて、consoleにprofile/profileEnd/timeStampが追加されています。 node:timers: timeout.refresh()が実装されています。 node:process: argvがexportされました。 process.kill(pid, 0)が適切に動作するように修正 (第2引数に0を指定すると、pidで指定されたプロセスの生存確認ができます) node:crypto: HMACサポートが追加されています。 (crypto.Hmac/crypto.createHmac) node:http: http.request()のheadersオプションで指定されたヘッダが渡されない問題が修正 IncomingMessage.statusMessageの上書きができない問題が解消 下記いずれかの条件を満たす場合、ClientRequestでリクエストボディのchunk送信が無効化されるように修正 Transfer-Encoding: chunkedが未指定の場合 Content-Lengthが指定された場合 node:fs: fs.</description></item><item><title>2021/08/22〜2022/08/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/08/28.html</link><pubDate>Sun, 28 Aug 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/08/28.html</guid><description>Deno v1.25.0 Deno v1.25.0がリリースされました。
 以下の記事に変更点をまとめたため、詳しくはそちらを参照いただければと思います。
 Deno v1.25 deno_std v0.153.0 deno_std v0.153.0がリリースされました。
 std/encoding/csv: parse()が同期的に動作するように (破壊的変更) parse()の引数からBufReaderが削除されています

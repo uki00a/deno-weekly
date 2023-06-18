@@ -13,4 +13,4 @@ assertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertN
 例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。
 assertEquals(123, &amp;#34;foo&amp;#34;); 次のようにすると、型エラーを回避できます。
 assertEquals&amp;lt;unknown&amp;gt;(123, &amp;#34;foo&amp;#34;); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。
-const error = assertThrows(() =&amp;gt; { throw new Error(&amp;#34;foo&amp;#34;); }); assert(error instanceof Error); assertEquals(error.</description></item></channel></rss>
+const error = assertThrows(() =&amp;gt; { throw new Error(&amp;#34;foo&amp;#34;); }); assert(error instanceof Error); assertEquals(error.message, &amp;#34;foo&amp;#34;); flags parse()関数にcollectオプションが追加されました。(破壊的変更)</description></item></channel></rss>

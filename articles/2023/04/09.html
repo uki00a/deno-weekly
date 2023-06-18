@@ -1,199 +1,36 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2023/04/03〜2023/04/09の最新情報 | 週刊Deno</title>
-<meta name=keywords content="Deno,Oak,fresh,Hono,esm.sh">
-<meta name=description content="Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。
- refactor: remove &ldquo;ext/flash&rdquo; #18578  これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。
- refactor: &ldquo;Deno.serve()&rdquo; API uses &ldquo;Deno.serveHttp()&rdquo; internally #18568  Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。
- Extremely experimental HTTP rewrite #18619  Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。
- feat: remove experimental support for Deno flash server docs: remove experimental flash content from README  fresh v1.1.5 fresh v1.1.5がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2023/04/03〜2023/04/09の最新情報 | 週刊Deno</title><meta name=keywords content="Deno,Oak,fresh,Hono,esm.sh"><meta name=description content="Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。
+refactor: remove &ldquo;ext/flash&rdquo; #18578 これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。
+refactor: &ldquo;Deno.serve()&rdquo; API uses &ldquo;Deno.serveHttp()&rdquo; internally #18568 Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。
+Extremely experimental HTTP rewrite #18619 Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。
+feat: remove experimental support for Deno flash server docs: remove experimental flash content from README fresh v1.1.5 fresh v1.1.5がリリースされました。
 twindv1プラグインで、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。
 Deno SaaSKit Deno公式からFreshやSupabase, Stripeなどを活用したSaaSプロジェクトのテンプレートが公開されました。
- Announcing Deno SaaSKit: an open-source SaaS template built with Fresh  ソースコードやロードマップなどが以下のリポジトリで公開されています。
- https://github.com/denoland/saaskit SaaSKit v1.">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2023/04/09.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2023/04/03〜2023/04/09の最新情報">
-<meta property="og:description" content="Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。
- refactor: remove &ldquo;ext/flash&rdquo; #18578  これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。
- refactor: &ldquo;Deno.serve()&rdquo; API uses &ldquo;Deno.serveHttp()&rdquo; internally #18568  Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。
- Extremely experimental HTTP rewrite #18619  Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。
- feat: remove experimental support for Deno flash server docs: remove experimental flash content from README  fresh v1.1.5 fresh v1.1.5がリリースされました。
+Announcing Deno SaaSKit: an open-source SaaS template built with Fresh ソースコードやロードマップなどが以下のリポジトリで公開されています。
+https://github.com/denoland/saaskit SaaSKit v1.0 Hono v3 先日リリースされたHono v3に関する解説記事が公開されています。
+Honoのv3が出ました esm.sh v114 esm.sh v114がリリースされました。
+esm.shが内部で使用するパッケージマネージャーがyarnからpnpmへ移行されたようです。"><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2023/04/09.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2023/04/03〜2023/04/09の最新情報"><meta property="og:description" content="Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。
+refactor: remove &ldquo;ext/flash&rdquo; #18578 これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。
+refactor: &ldquo;Deno.serve()&rdquo; API uses &ldquo;Deno.serveHttp()&rdquo; internally #18568 Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。
+Extremely experimental HTTP rewrite #18619 Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。
+feat: remove experimental support for Deno flash server docs: remove experimental flash content from README fresh v1.1.5 fresh v1.1.5がリリースされました。
 twindv1プラグインで、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。
 Deno SaaSKit Deno公式からFreshやSupabase, Stripeなどを活用したSaaSプロジェクトのテンプレートが公開されました。
- Announcing Deno SaaSKit: an open-source SaaS template built with Fresh  ソースコードやロードマップなどが以下のリポジトリで公開されています。
- https://github.com/denoland/saaskit SaaSKit v1.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2023/04/09.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2023-04-09T00:00:00+00:00">
-<meta property="article:modified_time" content="2023-04-09T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2023/04/03〜2023/04/09の最新情報">
-<meta name=twitter:description content="Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。
- refactor: remove &ldquo;ext/flash&rdquo; #18578  これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。
- refactor: &ldquo;Deno.serve()&rdquo; API uses &ldquo;Deno.serveHttp()&rdquo; internally #18568  Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。
- Extremely experimental HTTP rewrite #18619  Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。
- feat: remove experimental support for Deno flash server docs: remove experimental flash content from README  fresh v1.1.5 fresh v1.1.5がリリースされました。
+Announcing Deno SaaSKit: an open-source SaaS template built with Fresh ソースコードやロードマップなどが以下のリポジトリで公開されています。
+https://github.com/denoland/saaskit SaaSKit v1.0 Hono v3 先日リリースされたHono v3に関する解説記事が公開されています。
+Honoのv3が出ました esm.sh v114 esm.sh v114がリリースされました。
+esm.shが内部で使用するパッケージマネージャーがyarnからpnpmへ移行されたようです。"><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2023/04/09.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2023-04-09T00:00:00+00:00"><meta property="article:modified_time" content="2023-04-09T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2023/04/03〜2023/04/09の最新情報"><meta name=twitter:description content="Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。
+refactor: remove &ldquo;ext/flash&rdquo; #18578 これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。
+refactor: &ldquo;Deno.serve()&rdquo; API uses &ldquo;Deno.serveHttp()&rdquo; internally #18568 Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。
+Extremely experimental HTTP rewrite #18619 Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。
+feat: remove experimental support for Deno flash server docs: remove experimental flash content from README fresh v1.1.5 fresh v1.1.5がリリースされました。
 twindv1プラグインで、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。
 Deno SaaSKit Deno公式からFreshやSupabase, Stripeなどを活用したSaaSプロジェクトのテンプレートが公開されました。
- Announcing Deno SaaSKit: an open-source SaaS template built with Fresh  ソースコードやロードマップなどが以下のリポジトリで公開されています。
- https://github.com/denoland/saaskit SaaSKit v1.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2023/04/03〜2023/04/09の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2023/04/09.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2023/04/03〜2023/04/09の最新情報","name":"2023\/04\/03〜2023\/04\/09の最新情報","description":"Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。\n refactor: remove \u0026ldquo;ext/flash\u0026rdquo; #18578  これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。\n refactor: \u0026ldquo;Deno.serve()\u0026rdquo; API uses \u0026ldquo;Deno.serveHttp()\u0026rdquo; internally #18568  Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。\n Extremely experimental HTTP rewrite #18619  Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。\n feat: remove experimental support for Deno flash server docs: remove experimental flash content from README  fresh v1.1.5 fresh v1.1.5がリリースされました。\ntwindv1プラグインで、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。\nDeno SaaSKit Deno公式からFreshやSupabase, Stripeなどを活用したSaaSプロジェクトのテンプレートが公開されました。\n Announcing Deno SaaSKit: an open-source SaaS template built with Fresh  ソースコードやロードマップなどが以下のリポジトリで公開されています。\n https://github.com/denoland/saaskit SaaSKit v1.","keywords":["Deno","Oak","fresh","Hono","esm.sh"],"articleBody":"Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。\n refactor: remove “ext/flash” #18578  これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。\n refactor: “Deno.serve()” API uses “Deno.serveHttp()” internally #18568  Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。\n Extremely experimental HTTP rewrite #18619  Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。\n feat: remove experimental support for Deno flash server docs: remove experimental flash content from README  fresh v1.1.5 fresh v1.1.5がリリースされました。\ntwindv1プラグインで、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。\nDeno SaaSKit Deno公式からFreshやSupabase, Stripeなどを活用したSaaSプロジェクトのテンプレートが公開されました。\n Announcing Deno SaaSKit: an open-source SaaS template built with Fresh  ソースコードやロードマップなどが以下のリポジトリで公開されています。\n https://github.com/denoland/saaskit SaaSKit v1.0  Hono v3 先日リリースされたHono v3に関する解説記事が公開されています。\n Honoのv3が出ました  esm.sh v114 esm.sh v114がリリースされました。\nesm.shが内部で使用するパッケージマネージャーがyarnからpnpmへ移行されたようです。\nこれによりビルド時のパフォーマンス向上やディスクスペースの節約などが期待されるようです。\n","wordCount":"71","inLanguage":"en","datePublished":"2023-04-09T00:00:00Z","dateModified":"2023-04-09T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2023/04/09.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2023/04/03〜2023/04/09の最新情報
-</h1>
-<div class=post-meta><span title="2023-04-09 00:00:00 +0000 UTC">April 9, 2023</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#flash%e3%81%ae%e5%89%8a%e9%99%a4%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=Flashの削除について>Flashの削除について</a></li>
-<li>
-<a href=#fresh-v115 aria-label="fresh v1.1.5">fresh v1.1.5</a></li>
-<li>
-<a href=#deno-saaskit aria-label="Deno SaaSKit">Deno SaaSKit</a></li>
-<li>
-<a href=#hono-v3 aria-label="Hono v3">Hono v3</a></li>
-<li>
-<a href=#esmsh-v114 aria-label="esm.sh v114">esm.sh v114</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=flashの削除について>Flashの削除について<a hidden class=anchor aria-hidden=true href=#flashの削除について>#</a></h2>
-<p>まだリリースはされていませんが、<a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html>Deno v1.25</a>で実装された<a href=https://github.com/denoland/deno/tree/v1.32.3/ext/flash>Flash</a>というHTTPサーバを削除する対応が実施されているようです。</p>
-<ul>
-<li><a href=https://github.com/denoland/deno/pull/18578>refactor: remove &ldquo;ext/flash&rdquo; #18578</a></li>
-</ul>
-<p>これに伴い、Flashを起動するためのAPIであった<a href="https://deno.land/api@v1.32.3?s=Deno.serve&unstable=">Deno.serve()</a>についても、一時的に<a href="https://deno.land/api@v1.32.3?s=Deno.serveHttp">Deno.serveHttp()</a>ベースの実装へ書き換えられています。</p>
-<ul>
-<li><a href=https://github.com/denoland/deno/pull/18568>refactor: &ldquo;Deno.serve()&rdquo; API uses &ldquo;Deno.serveHttp()&rdquo; internally #18568</a></li>
-</ul>
-<p><code>Deno.serve()</code>については、現在、上記とは別に改めて<a href=https://github.com/hyperium/hyper>hyper</a>ベースの実装への書き換えが試みられているようです。</p>
-<ul>
-<li><a href=https://github.com/denoland/deno/pull/18619>Extremely experimental HTTP rewrite #18619</a></li>
-</ul>
-<p>Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。</p>
-<ul>
-<li><a href=https://github.com/oakserver/oak/commit/d9f8829a1ce698cd5f4f3625d4066ff87bdbb6fb>feat: remove experimental support for Deno flash server</a></li>
-<li><a href=https://github.com/oakserver/oak/commit/024aa8ad2467790976af24d8719ed3b512a5f81b>docs: remove experimental flash content from README</a></li>
-</ul>
-<h2 id=fresh-v115>fresh v1.1.5<a hidden class=anchor aria-hidden=true href=#fresh-v115>#</a></h2>
-<p><a href=https://github.com/denoland/fresh/releases/tag/1.1.5>fresh v1.1.5</a>がリリースされました。</p>
-<p><a href=https://github.com/denoland/fresh/blob/1.1.5/plugins/twindv1.ts>twindv1プラグイン</a>で、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。</p>
-<h2 id=deno-saaskit>Deno SaaSKit<a hidden class=anchor aria-hidden=true href=#deno-saaskit>#</a></h2>
-<p>Deno公式から<a href=https://github.com/denoland/fresh>Fresh</a>や<a href=https://www.npmjs.com/package/@supabase/supabase-js>Supabase</a>, <a href=https://www.npmjs.com/package/stripe>Stripe</a>などを活用したSaaSプロジェクトのテンプレートが公開されました。</p>
-<ul>
-<li><a href=https://deno.com/blog/announcing-deno-saaskit>Announcing Deno SaaSKit: an open-source SaaS template built with Fresh</a></li>
-</ul>
-<p>ソースコードやロードマップなどが以下のリポジトリで公開されています。</p>
-<ul>
-<li><a href=https://github.com/denoland/saaskit>https://github.com/denoland/saaskit</a></li>
-<li><a href=https://github.com/orgs/denoland/projects/35>SaaSKit v1.0</a></li>
-</ul>
-<h2 id=hono-v3>Hono v3<a hidden class=anchor aria-hidden=true href=#hono-v3>#</a></h2>
-<p>先日リリースされた<a href=https://github.com/honojs/hono/releases/tag/v3.0.0>Hono v3</a>に関する解説記事が公開されています。</p>
-<ul>
-<li><a href=https://zenn.dev/yusukebe/articles/53713b41b906de>Honoのv3が出ました</a></li>
-</ul>
-<h2 id=esmsh-v114>esm.sh v114<a hidden class=anchor aria-hidden=true href=#esmsh-v114>#</a></h2>
-<p><a href=https://github.com/esm-dev/esm.sh/releases/tag/v114>esm.sh v114</a>がリリースされました。</p>
-<p><a href=https://github.com/esm-dev/esm.sh>esm.sh</a>が内部で使用するパッケージマネージャーがyarnからpnpmへ移行されたようです。</p>
-<p>これによりビルド時のパフォーマンス向上やディスクスペースの節約などが期待されるようです。</p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/oak.html>Oak</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/fresh.html>fresh</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/hono.html>Hono</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/esm.sh.html>esm.sh</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+Announcing Deno SaaSKit: an open-source SaaS template built with Fresh ソースコードやロードマップなどが以下のリポジトリで公開されています。
+https://github.com/denoland/saaskit SaaSKit v1.0 Hono v3 先日リリースされたHono v3に関する解説記事が公開されています。
+Honoのv3が出ました esm.sh v114 esm.sh v114がリリースされました。
+esm.shが内部で使用するパッケージマネージャーがyarnからpnpmへ移行されたようです。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2023/04/03〜2023/04/09の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2023/04/09.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2023/04/03〜2023/04/09の最新情報","name":"2023\/04\/03〜2023\/04\/09の最新情報","description":"Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。\nrefactor: remove \u0026ldquo;ext/flash\u0026rdquo; #18578 これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。\nrefactor: \u0026ldquo;Deno.serve()\u0026rdquo; API uses \u0026ldquo;Deno.serveHttp()\u0026rdquo; internally #18568 Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。\nExtremely experimental HTTP rewrite #18619 Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。\nfeat: remove experimental support for Deno flash server docs: remove experimental flash content from README fresh v1.1.5 fresh v1.1.5がリリースされました。\ntwindv1プラグインで、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。\nDeno SaaSKit Deno公式からFreshやSupabase, Stripeなどを活用したSaaSプロジェクトのテンプレートが公開されました。\nAnnouncing Deno SaaSKit: an open-source SaaS template built with Fresh ソースコードやロードマップなどが以下のリポジトリで公開されています。\nhttps://github.com/denoland/saaskit SaaSKit v1.0 Hono v3 先日リリースされたHono v3に関する解説記事が公開されています。\nHonoのv3が出ました esm.sh v114 esm.sh v114がリリースされました。\nesm.shが内部で使用するパッケージマネージャーがyarnからpnpmへ移行されたようです。","keywords":["Deno","Oak","fresh","Hono","esm.sh"],"articleBody":"Flashの削除について まだリリースはされていませんが、Deno v1.25で実装されたFlashというHTTPサーバを削除する対応が実施されているようです。\nrefactor: remove “ext/flash” #18578 これに伴い、Flashを起動するためのAPIであったDeno.serve()についても、一時的にDeno.serveHttp()ベースの実装へ書き換えられています。\nrefactor: “Deno.serve()” API uses “Deno.serveHttp()” internally #18568 Deno.serve()については、現在、上記とは別に改めてhyperベースの実装への書き換えが試みられているようです。\nExtremely experimental HTTP rewrite #18619 Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。\nfeat: remove experimental support for Deno flash server docs: remove experimental flash content from README fresh v1.1.5 fresh v1.1.5がリリースされました。\ntwindv1プラグインで、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。\nDeno SaaSKit Deno公式からFreshやSupabase, Stripeなどを活用したSaaSプロジェクトのテンプレートが公開されました。\nAnnouncing Deno SaaSKit: an open-source SaaS template built with Fresh ソースコードやロードマップなどが以下のリポジトリで公開されています。\nhttps://github.com/denoland/saaskit SaaSKit v1.0 Hono v3 先日リリースされたHono v3に関する解説記事が公開されています。\nHonoのv3が出ました esm.sh v114 esm.sh v114がリリースされました。\nesm.shが内部で使用するパッケージマネージャーがyarnからpnpmへ移行されたようです。\nこれによりビルド時のパフォーマンス向上やディスクスペースの節約などが期待されるようです。\n","wordCount":"71","inLanguage":"en","datePublished":"2023-04-09T00:00:00Z","dateModified":"2023-04-09T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2023/04/09.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2023/04/03〜2023/04/09の最新情報</h1><div class=post-meta><span title='2023-04-09 00:00:00 +0000 UTC'>April 9, 2023</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#flash%e3%81%ae%e5%89%8a%e9%99%a4%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=Flashの削除について>Flashの削除について</a></li><li><a href=#fresh-v115 aria-label="fresh v1.1.5">fresh v1.1.5</a></li><li><a href=#deno-saaskit aria-label="Deno SaaSKit">Deno SaaSKit</a></li><li><a href=#hono-v3 aria-label="Hono v3">Hono v3</a></li><li><a href=#esmsh-v114 aria-label="esm.sh v114">esm.sh v114</a></li></ul></div></details></div><div class=post-content><h2 id=flashの削除について>Flashの削除について<a hidden class=anchor aria-hidden=true href=#flashの削除について>#</a></h2><p>まだリリースはされていませんが、<a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.25.html>Deno v1.25</a>で実装された<a href=https://github.com/denoland/deno/tree/v1.32.3/ext/flash>Flash</a>というHTTPサーバを削除する対応が実施されているようです。</p><ul><li><a href=https://github.com/denoland/deno/pull/18578>refactor: remove &ldquo;ext/flash&rdquo; #18578</a></li></ul><p>これに伴い、Flashを起動するためのAPIであった<a href="https://deno.land/api@v1.32.3?s=Deno.serve&amp;unstable=">Deno.serve()</a>についても、一時的に<a href="https://deno.land/api@v1.32.3?s=Deno.serveHttp">Deno.serveHttp()</a>ベースの実装へ書き換えられています。</p><ul><li><a href=https://github.com/denoland/deno/pull/18568>refactor: &ldquo;Deno.serve()&rdquo; API uses &ldquo;Deno.serveHttp()&rdquo; internally #18568</a></li></ul><p><code>Deno.serve()</code>については、現在、上記とは別に改めて<a href=https://github.com/hyperium/hyper>hyper</a>ベースの実装への書き換えが試みられているようです。</p><ul><li><a href=https://github.com/denoland/deno/pull/18619>Extremely experimental HTTP rewrite #18619</a></li></ul><p>Oakでもすでに対応が行われており、次のリリースあたりでFlashのサポートが削除される可能性が高そうです。</p><ul><li><a href=https://github.com/oakserver/oak/commit/d9f8829a1ce698cd5f4f3625d4066ff87bdbb6fb>feat: remove experimental support for Deno flash server</a></li><li><a href=https://github.com/oakserver/oak/commit/024aa8ad2467790976af24d8719ed3b512a5f81b>docs: remove experimental flash content from README</a></li></ul><h2 id=fresh-v115>fresh v1.1.5<a hidden class=anchor aria-hidden=true href=#fresh-v115>#</a></h2><p><a href=https://github.com/denoland/fresh/releases/tag/1.1.5>fresh v1.1.5</a>がリリースされました。</p><p><a href=https://github.com/denoland/fresh/blob/1.1.5/plugins/twindv1.ts>twindv1プラグイン</a>で、SSRとCSR時に生成されたスタイルが一部重複してしまうことがある問題について改善されています。</p><h2 id=deno-saaskit>Deno SaaSKit<a hidden class=anchor aria-hidden=true href=#deno-saaskit>#</a></h2><p>Deno公式から<a href=https://github.com/denoland/fresh>Fresh</a>や<a href=https://www.npmjs.com/package/@supabase/supabase-js>Supabase</a>, <a href=https://www.npmjs.com/package/stripe>Stripe</a>などを活用したSaaSプロジェクトのテンプレートが公開されました。</p><ul><li><a href=https://deno.com/blog/announcing-deno-saaskit>Announcing Deno SaaSKit: an open-source SaaS template built with Fresh</a></li></ul><p>ソースコードやロードマップなどが以下のリポジトリで公開されています。</p><ul><li><a href=https://github.com/denoland/saaskit>https://github.com/denoland/saaskit</a></li><li><a href=https://github.com/orgs/denoland/projects/35>SaaSKit v1.0</a></li></ul><h2 id=hono-v3>Hono v3<a hidden class=anchor aria-hidden=true href=#hono-v3>#</a></h2><p>先日リリースされた<a href=https://github.com/honojs/hono/releases/tag/v3.0.0>Hono v3</a>に関する解説記事が公開されています。</p><ul><li><a href=https://zenn.dev/yusukebe/articles/53713b41b906de>Honoのv3が出ました</a></li></ul><h2 id=esmsh-v114>esm.sh v114<a hidden class=anchor aria-hidden=true href=#esmsh-v114>#</a></h2><p><a href=https://github.com/esm-dev/esm.sh/releases/tag/v114>esm.sh v114</a>がリリースされました。</p><p><a href=https://github.com/esm-dev/esm.sh>esm.sh</a>が内部で使用するパッケージマネージャーがyarnからpnpmへ移行されたようです。</p><p>これによりビルド時のパフォーマンス向上やディスクスペースの節約などが期待されるようです。</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/oak.html>Oak</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/fresh.html>fresh</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/hono.html>Hono</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/esm.sh.html>esm.sh</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

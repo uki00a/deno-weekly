@@ -14,4 +14,5 @@ Fresh v1 Fresh v1.0.0がリリースされました。
 これに合わせて、Freshのリポジトリがdenoland organization配下に移動されています。
 また、Deno公式でFreshの紹介記事が公開されています。
 Fresh 1.0 https://github.com/denoland/fresh
-denoland/meet-me Deno公式で、Calendlyのクローンアプリが公開されています。</description></item></channel></rss>
+denoland/meet-me Deno公式で、Calendlyのクローンアプリが公開されています。
+denoland/meet-me Deno Deploy+Firebase+Aleph.jsを使用して実装されているようです。</description></item></channel></rss>

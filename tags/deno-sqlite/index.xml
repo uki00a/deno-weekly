@@ -27,7 +27,7 @@ Ultra v2.0.0-beta.6 Island Architectureのサポートなどが追加されて�
 /examples/with-islands https://github.com/exhibitionist-digital/ultra/releases/tag/v2.0.0-beta.6
 deno-sqlite v3.5.0 PreparedQueryに.first()と.firstEntry()が追加されています。
 その影響で既存の.one()と.oneEntry()は非推奨化されています。
-const query = db.</description></item><item><title>2021/05/09〜2022/05/15の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/15.html</link><pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/15.html</guid><description>Deno v1.21.3 Deno v1.21.3がリリースされました。
+const query = db.prepareQuery(&amp;#34;SELECT * FROM users WHERE id = ?&amp;#34;); const found = query.first([123]); if (!</description></item><item><title>2021/05/09〜2022/05/15の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/15.html</link><pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/15.html</guid><description>Deno v1.21.3 Deno v1.21.3がリリースされました。
 deno task deno task &amp;lt;タスク名&amp;gt;の&amp;lt;タスク名&amp;gt;の直後に--から始まるオプションを指定できない問題が修正されました。
 その他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。
 その他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。
@@ -41,7 +41,7 @@ testing/snapshot assertSnapshotにオプションを渡せるようになりま�
 await assertSnapshot(t, actual, { dir: &amp;#34;testdata&amp;#34; }); https://github.com/denoland/deno_std/releases/tag/0.139.0
 --no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。
 feat: add &amp;ndash;no-config flag (#14555)
-$ deno run --no-config main.</description></item><item><title>2021/03/14〜2022/03/20の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/03/20.html</link><pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/03/20.html</guid><description>Deno v1.20 Deno v1.20がリリースされました。
+$ deno run --no-config main.js この機能はDeno v1.22でリリースされる可能性がありそうです。</description></item><item><title>2021/03/14〜2022/03/20の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/03/20.html</link><pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/03/20.html</guid><description>Deno v1.20 Deno v1.20がリリースされました。
 詳しくは下記の記事を参照ください:
 Deno v1.20 deno_std v0.130.0 deno_std v0.130.0がリリースされました。
 std/testing/assertsモジュールでassertInstanceOfが実装されました。
@@ -80,7 +80,9 @@ deno-sqlite v2.5.0がリリース deno-sqliteのv2.5.0がリリースされま�
 DBクラスのコンストラクタにoptionsパラメータが追加され、データベースを開く際の挙動を詳細に制御できるようになりました PreparedQueryタイプにcolumnsメソッドが定義されました Deno.fdatasyncSyncを使って、SQLiteがファイルのデータを適切にディスクに同期できるようになりました https://github.com/dyedgreen/deno-sqlite/releases/tag/v2.5.0
 depcheck depcheckはソースコード中の未使用の依存関係を検出するためのDenoモジュールです
 https://github.com/ebebbington/depcheck
-deno-github-contributions-api deno-github-contributions-apiは、Deno Deployで動作するGitHub上でのコントリビューション数を取得するためのAPIです。</description></item><item><title>2021/03/22〜2021/03/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/28.html</link><pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/28.html</guid><description>Deno本体の最新情報 Deno v1.8.2がリリース Deno v1.8.2がリリースされました。
+deno-github-contributions-api deno-github-contributions-apiは、Deno Deployで動作するGitHub上でのコントリビューション数を取得するためのAPIです。
+DenoでGitHubの草を取得できるAPIを作った(ターミナル/JSON/SVG対応)の記事にて、実際にDeno Deployで開発をする上でのノウハウなどが解説されています。
+https://github.com/kawarimidoll/deno-github-contributions-api DenoでGitHubの草を取得できるAPIを作った(ターミナル/JSON/SVG対応)</description></item><item><title>2021/03/22〜2021/03/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/28.html</link><pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/28.html</guid><description>Deno本体の最新情報 Deno v1.8.2がリリース Deno v1.8.2がリリースされました。
 このリリースでは、バグ修正などを中心に実施されています。
 変更点:
 Deno.createHttpClientを使用した際に、User-Agentヘッダが設定されない問題が修正された deno fmtでmarkdownファイルのスペースなどが適切にフォーマットされない問題が修正された deno lspでエディタ以外でファイルが編集されていると、&amp;ldquo;The current snapshot version is missing.&amp;ldquo;エラーが発生する問題が修正された deno lspでファイルの診断(diagnostics)が固有のスレッドで実行されるようになった https://github.com/denoland/deno/releases/tag/v1.8.2
@@ -96,4 +98,8 @@ https://status.deno.land
 Service Workerを利用したTypeScriptやSvelteファイルの変換 Deno.watchFs()ベースのCache Busting Rollupベースのプロダクションビルド https://github.com/mizchi/swdev
 deno-sqlite v2.4.0がリリース deno-sqlite v2.4.0がリリースされました。
 このリリースでは、以下のような変更が加わっています:
-SQLiteのv3.35.0への更新 DB.</description></item></channel></rss>
+SQLiteのv3.35.0への更新 DB.prepareQuery()の追加 JSON1拡張の有効化 https://github.com/dyedgreen/deno-sqlite/releases/tag/v2.4.0
+deno-redis v0.21.0がリリース deno-redis v0.21.0がリリースされました。
+このリリースでは、Redisコマンドを実行するための低レベルインターフェースであるCommandExecutorに破壊的変更が加わっています。
+変更点:
+CommandExecutor#exec()の戻り値の型が変更された 一部のコマンドの引数としてNumber及びUint8Arrayを渡せるようになった CLIENT KILLコマンドがサポートされた https://github.</description></item></channel></rss>

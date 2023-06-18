@@ -1,211 +1,27 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2021/05/10〜2021/05/16の最新情報 | 週刊Deno</title>
-<meta name=keywords content="deno,deno_std,angular_deno,sono.io,pagic">
-<meta name=description content="Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2021/05/10〜2021/05/16の最新情報 | 週刊Deno</title><meta name=keywords content="deno,deno_std,angular_deno,sono.io,pagic"><meta name=description content="Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。
 このリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。
 変更点:
- deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が&#34;esm&#34; | &#34;iife&#34;から&#34;module&#34; | &#34;classic&#34;に変更された    公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート  deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。
+deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が&#34;esm&#34; | &#34;iife&#34;から&#34;module&#34; | &#34;classic&#34;に変更された 公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。
 変更点:
- http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった   https://github.">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/05/16.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2021/05/10〜2021/05/16の最新情報">
-<meta property="og:description" content="Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。
+http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511
+angular_deno angular_denoはDenoで動作するAngularコンポーネントのレンダリングエンジンです。
+https://github.com/alosaur/angular_deno"><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/05/16.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2021/05/10〜2021/05/16の最新情報"><meta property="og:description" content="Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。
 このリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。
 変更点:
- deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が&#34;esm&#34; | &#34;iife&#34;から&#34;module&#34; | &#34;classic&#34;に変更された    公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート  deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。
+deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が&#34;esm&#34; | &#34;iife&#34;から&#34;module&#34; | &#34;classic&#34;に変更された 公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。
 変更点:
- http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった   https://github.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/05/16.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2021-05-16T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-05-16T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2021/05/10〜2021/05/16の最新情報">
-<meta name=twitter:description content="Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。
+http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511
+angular_deno angular_denoはDenoで動作するAngularコンポーネントのレンダリングエンジンです。
+https://github.com/alosaur/angular_deno"><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/05/16.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2021-05-16T00:00:00+00:00"><meta property="article:modified_time" content="2021-05-16T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2021/05/10〜2021/05/16の最新情報"><meta name=twitter:description content="Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。
 このリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。
 変更点:
- deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が&#34;esm&#34; | &#34;iife&#34;から&#34;module&#34; | &#34;classic&#34;に変更された    公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート  deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。
+deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が&#34;esm&#34; | &#34;iife&#34;から&#34;module&#34; | &#34;classic&#34;に変更された 公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。
 変更点:
- http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった   https://github.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/05/10〜2021/05/16の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/05/16.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/05/10〜2021/05/16の最新情報","name":"2021\/05\/10〜2021\/05\/16の最新情報","description":"Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。\nこのリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。\n変更点:\n deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が\u0026quot;esm\u0026quot; | \u0026quot;iife\u0026quot;から\u0026quot;module\u0026quot; | \u0026quot;classic\u0026quot;に変更された    公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート  deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。\n変更点:\n http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった   https://github.","keywords":["deno","deno_std","angular_deno","sono.io","pagic"],"articleBody":"Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。\nこのリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。\n変更点:\n deno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が\"esm\" | \"iife\"から\"module\" | \"classic\"に変更された    公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート  deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。\n変更点:\n http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった   https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511\nangular_deno angular_denoはDenoで動作するAngularコンポーネントのレンダリングエンジンです。\n https://github.com/alosaur/angular_deno\nsono.io sono.ioはWebSocketを使ったリアルタイムアプリケーションを実装するためのモジュールです。\n実験的ではありますが、WebRTCのサポートも提供されています。\n  https://github.com/oslabs-beta/sono.io 公式ドキュメント  Pagic v1.3.0がリリース DenoのスタティックサイトジェネレータであるPagicのv1.3.0がリリースされました。\nこのリリースでは、SEO関連のmetaタグのサポートが追加されています。\n https://github.com/xcatliu/pagic/releases/tag/v1.3.0\n","wordCount":"80","inLanguage":"en","datePublished":"2021-05-16T00:00:00Z","dateModified":"2021-05-16T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/05/16.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2021/05/10〜2021/05/16の最新情報
-</h1>
-<div class=post-meta><span title="2021-05-16 00:00:00 +0000 UTC">May 16, 2021</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno-v1101%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9 aria-label="Deno v1.10.1がリリース">Deno v1.10.1がリリース</a></li>
-<li>
-<a href=#deno_std-v0960%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9httpsgithubcomdenolanddeno_stdblobmainreleasesmd0960--20210511 aria-label="deno_std v0.96.0がリリース"><a href=https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511>deno_std v0.96.0がリリース</a></a></li>
-<li>
-<a href=#angular_denohttpsgithubcomalosaurangular_deno aria-label=angular_deno><a href=https://github.com/alosaur/angular_deno>angular_deno</a></a></li>
-<li>
-<a href=#sonoiohttpsgithubcomoslabs-betasonoio aria-label=sono.io><a href=https://github.com/oslabs-beta/sono.io>sono.io</a></a></li>
-<li>
-<a href=#pagic-v130%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9httpsgithubcomxcatliupagicreleasestagv130 aria-label="Pagic v1.3.0がリリース"><a href=https://github.com/xcatliu/pagic/releases/tag/v1.3.0>Pagic v1.3.0がリリース</a></a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno-v1101がリリース>Deno v1.10.1がリリース<a hidden class=anchor aria-hidden=true href=#deno-v1101がリリース>#</a></h2>
-<p>Deno v1.10.0及びv1.10.1がリリースされました。</p>
-<p>このリリースでは、<code>deno test</code>コマンドの大幅な拡張やWebStorage APIの実装などが実施されています。</p>
-<p><strong>変更点:</strong></p>
-<ul>
-<li><code>deno test</code>コマンドに<code>--jobs</code>オプションが追加され、テストの並行実行がサポートされた</li>
-<li><code>deno test</code>コマンドに<code>--doc</code>オプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた</li>
-<li><code>deno test</code>コマンドに<code>--watch</code>オプションが追加された</li>
-<li><code>Deno.test</code>に<code>permissions</code>オプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable)</li>
-<li>Web Workerで<a href=https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm>structured clone algorithm</a>がサポートされた</li>
-<li><code>localStorage</code>と<code>sessionStorage</code>が実装された</li>
-<li>Markdownファイルで<code>deno-fmt-ignore-file</code>ディレクティブがサポートされた</li>
-<li><code>WebAssembly.Memory</code>で<code>shared</code>オプションがサポートされ、<code>SharedArrayBuffer</code>を受け付けるようになった</li>
-<li><code>--import-map</code>オプションでリモートURLを指定できるようになった</li>
-<li>ネイティブプラグインAPIに変更が行われた</li>
-<li><code>deno lint</code>や<code>deno compile</code>で<code>--unstable</code>オプションの指定が必須でなくなった</li>
-<li><code>TextEncoder#encodeInto</code>のパフォーマンス及びWeb標準との互換性の向上が行われた</li>
-<li><code>Deno.emit</code>の<code>bundle</code>オプションの型が<code>"esm" | "iife"</code>から<code>"module" | "classic"</code>に変更された</li>
-</ul>
-<hr>
-<ul>
-<li><a href=https://deno.com/blog/v1.10>公式ブログポスト</a></li>
-<li><a href=https://zenn.dev/magurotuna/articles/deno-release-note-1-10-1>Deno 1.10.1 がリリースされたので新機能や変更点の紹介</a></li>
-<li><a href=https://github.com/denoland/deno/releases/tag/v1.10.1>v1.10.1のリリースノート</a></li>
-<li><a href=https://github.com/denoland/deno/releases/tag/v1.10.0>v1.10.0のリリースノート</a></li>
-</ul>
-<h2 id=deno_std-v0960がリリースhttpsgithubcomdenolanddeno_stdblobmainreleasesmd0960--20210511><a href=https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511>deno_std v0.96.0がリリース</a><a hidden class=anchor aria-hidden=true href=#deno_std-v0960がリリースhttpsgithubcomdenolanddeno_stdblobmainreleasesmd0960--20210511>#</a></h2>
-<p>deno_stdのv0.96.0がリリースされました。</p>
-<p><strong>変更点:</strong></p>
-<ul>
-<li>http: カスタムのレスポンステキストを指定できるようになった</li>
-<li>io/util: <code>readRange()</code>関数が実装された</li>
-<li>mime/multipart: <code>MultipartReader#readForm()</code>で<code>ReadFormOptions</code>というオブジェクト形式の引数がサポートされた</li>
-<li>node: <code>console</code>モジュールが追加された</li>
-<li>node/assert: <code>rejects()</code>と<code>doesNotReject()</code>が実装された</li>
-<li>node/assert: <code>fail()</code>が実装された</li>
-<li>node/os: <code>homedir()</code>が実装された</li>
-<li>io/streams: <code>readableStreamFromReader()</code>でバイトReadableStreamが使用されないように修正された</li>
-<li>io/bufio: <code>readDelim()</code>のパフォーマンスが向上した</li>
-<li>bytes: <code>readDelim()</code>のパフォーマンス向上のため、<code>bytes_list.ts</code>が追加された</li>
-<li>node/stream: <code>Stream</code>がdefault exportされるようになった</li>
-</ul>
-<hr>
-<p><a href=https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511>https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511</a></p>
-<h2 id=angular_denohttpsgithubcomalosaurangular_deno><a href=https://github.com/alosaur/angular_deno>angular_deno</a><a hidden class=anchor aria-hidden=true href=#angular_denohttpsgithubcomalosaurangular_deno>#</a></h2>
-<p><code>angular_deno</code>はDenoで動作するAngularコンポーネントのレンダリングエンジンです。</p>
-<hr>
-<p><a href=https://github.com/alosaur/angular_deno>https://github.com/alosaur/angular_deno</a></p>
-<h2 id=sonoiohttpsgithubcomoslabs-betasonoio><a href=https://github.com/oslabs-beta/sono.io>sono.io</a><a hidden class=anchor aria-hidden=true href=#sonoiohttpsgithubcomoslabs-betasonoio>#</a></h2>
-<p><code>sono.io</code>はWebSocketを使ったリアルタイムアプリケーションを実装するためのモジュールです。</p>
-<p>実験的ではありますが、WebRTCのサポートも提供されています。</p>
-<hr>
-<ul>
-<li><a href=https://github.com/oslabs-beta/sono.io>https://github.com/oslabs-beta/sono.io</a></li>
-<li><a href=https://sono.land/>公式ドキュメント</a></li>
-</ul>
-<h2 id=pagic-v130がリリースhttpsgithubcomxcatliupagicreleasestagv130><a href=https://github.com/xcatliu/pagic/releases/tag/v1.3.0>Pagic v1.3.0がリリース</a><a hidden class=anchor aria-hidden=true href=#pagic-v130がリリースhttpsgithubcomxcatliupagicreleasestagv130>#</a></h2>
-<p>DenoのスタティックサイトジェネレータであるPagicのv1.3.0がリリースされました。</p>
-<p>このリリースでは、SEO関連のmetaタグのサポートが追加されています。</p>
-<hr>
-<p><a href=https://github.com/xcatliu/pagic/releases/tag/v1.3.0>https://github.com/xcatliu/pagic/releases/tag/v1.3.0</a></p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/angular_deno.html>angular_deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/sono.io.html>sono.io</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/pagic.html>pagic</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+http: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511
+angular_deno angular_denoはDenoで動作するAngularコンポーネントのレンダリングエンジンです。
+https://github.com/alosaur/angular_deno"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/05/10〜2021/05/16の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/05/16.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/05/10〜2021/05/16の最新情報","name":"2021\/05\/10〜2021\/05\/16の最新情報","description":"Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。\nこのリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。\n変更点:\ndeno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が\u0026quot;esm\u0026quot; | \u0026quot;iife\u0026quot;から\u0026quot;module\u0026quot; | \u0026quot;classic\u0026quot;に変更された 公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。\n変更点:\nhttp: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511\nangular_deno angular_denoはDenoで動作するAngularコンポーネントのレンダリングエンジンです。\nhttps://github.com/alosaur/angular_deno","keywords":["deno","deno_std","angular_deno","sono.io","pagic"],"articleBody":"Deno v1.10.1がリリース Deno v1.10.0及びv1.10.1がリリースされました。\nこのリリースでは、deno testコマンドの大幅な拡張やWebStorage APIの実装などが実施されています。\n変更点:\ndeno testコマンドに--jobsオプションが追加され、テストの並行実行がサポートされた deno testコマンドに--docオプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた deno testコマンドに--watchオプションが追加された Deno.testにpermissionsオプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable) Web Workerでstructured clone algorithmがサポートされた localStorageとsessionStorageが実装された Markdownファイルでdeno-fmt-ignore-fileディレクティブがサポートされた WebAssembly.Memoryでsharedオプションがサポートされ、SharedArrayBufferを受け付けるようになった --import-mapオプションでリモートURLを指定できるようになった ネイティブプラグインAPIに変更が行われた deno lintやdeno compileで--unstableオプションの指定が必須でなくなった TextEncoder#encodeIntoのパフォーマンス及びWeb標準との互換性の向上が行われた Deno.emitのbundleオプションの型が\"esm\" | \"iife\"から\"module\" | \"classic\"に変更された 公式ブログポスト Deno 1.10.1 がリリースされたので新機能や変更点の紹介 v1.10.1のリリースノート v1.10.0のリリースノート deno_std v0.96.0がリリース deno_stdのv0.96.0がリリースされました。\n変更点:\nhttp: カスタムのレスポンステキストを指定できるようになった io/util: readRange()関数が実装された mime/multipart: MultipartReader#readForm()でReadFormOptionsというオブジェクト形式の引数がサポートされた node: consoleモジュールが追加された node/assert: rejects()とdoesNotReject()が実装された node/assert: fail()が実装された node/os: homedir()が実装された io/streams: readableStreamFromReader()でバイトReadableStreamが使用されないように修正された io/bufio: readDelim()のパフォーマンスが向上した bytes: readDelim()のパフォーマンス向上のため、bytes_list.tsが追加された node/stream: Streamがdefault exportされるようになった https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511\nangular_deno angular_denoはDenoで動作するAngularコンポーネントのレンダリングエンジンです。\nhttps://github.com/alosaur/angular_deno\nsono.io sono.ioはWebSocketを使ったリアルタイムアプリケーションを実装するためのモジュールです。\n実験的ではありますが、WebRTCのサポートも提供されています。\nhttps://github.com/oslabs-beta/sono.io 公式ドキュメント Pagic v1.3.0がリリース DenoのスタティックサイトジェネレータであるPagicのv1.3.0がリリースされました。\nこのリリースでは、SEO関連のmetaタグのサポートが追加されています。\nhttps://github.com/xcatliu/pagic/releases/tag/v1.3.0\n","wordCount":"80","inLanguage":"en","datePublished":"2021-05-16T00:00:00Z","dateModified":"2021-05-16T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/05/16.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2021/05/10〜2021/05/16の最新情報</h1><div class=post-meta><span title='2021-05-16 00:00:00 +0000 UTC'>May 16, 2021</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno-v1101%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9 aria-label="Deno v1.10.1がリリース">Deno v1.10.1がリリース</a></li><li><a href=#deno_std-v0960%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9httpsgithubcomdenolanddeno_stdblobmainreleasesmd0960--20210511 aria-label="deno_std v0.96.0がリリース"><a href=https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511>deno_std v0.96.0がリリース</a></a></li><li><a href=#angular_denohttpsgithubcomalosaurangular_deno aria-label=angular_deno><a href=https://github.com/alosaur/angular_deno>angular_deno</a></a></li><li><a href=#sonoiohttpsgithubcomoslabs-betasonoio aria-label=sono.io><a href=https://github.com/oslabs-beta/sono.io>sono.io</a></a></li><li><a href=#pagic-v130%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9httpsgithubcomxcatliupagicreleasestagv130 aria-label="Pagic v1.3.0がリリース"><a href=https://github.com/xcatliu/pagic/releases/tag/v1.3.0>Pagic v1.3.0がリリース</a></a></li></ul></div></details></div><div class=post-content><h2 id=deno-v1101がリリース>Deno v1.10.1がリリース<a hidden class=anchor aria-hidden=true href=#deno-v1101がリリース>#</a></h2><p>Deno v1.10.0及びv1.10.1がリリースされました。</p><p>このリリースでは、<code>deno test</code>コマンドの大幅な拡張やWebStorage APIの実装などが実施されています。</p><p><strong>変更点:</strong></p><ul><li><code>deno test</code>コマンドに<code>--jobs</code>オプションが追加され、テストの並行実行がサポートされた</li><li><code>deno test</code>コマンドに<code>--doc</code>オプションが追加され、ドキュメンテーションコメント内のコードの型チェックがサポートされた</li><li><code>deno test</code>コマンドに<code>--watch</code>オプションが追加された</li><li><code>Deno.test</code>に<code>permissions</code>オプションが追加され、テストケースごとにパーミッションを指定できるようになった(unstable)</li><li>Web Workerで<a href=https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm>structured clone algorithm</a>がサポートされた</li><li><code>localStorage</code>と<code>sessionStorage</code>が実装された</li><li>Markdownファイルで<code>deno-fmt-ignore-file</code>ディレクティブがサポートされた</li><li><code>WebAssembly.Memory</code>で<code>shared</code>オプションがサポートされ、<code>SharedArrayBuffer</code>を受け付けるようになった</li><li><code>--import-map</code>オプションでリモートURLを指定できるようになった</li><li>ネイティブプラグインAPIに変更が行われた</li><li><code>deno lint</code>や<code>deno compile</code>で<code>--unstable</code>オプションの指定が必須でなくなった</li><li><code>TextEncoder#encodeInto</code>のパフォーマンス及びWeb標準との互換性の向上が行われた</li><li><code>Deno.emit</code>の<code>bundle</code>オプションの型が<code>"esm" | "iife"</code>から<code>"module" | "classic"</code>に変更された</li></ul><hr><ul><li><a href=https://deno.com/blog/v1.10>公式ブログポスト</a></li><li><a href=https://zenn.dev/magurotuna/articles/deno-release-note-1-10-1>Deno 1.10.1 がリリースされたので新機能や変更点の紹介</a></li><li><a href=https://github.com/denoland/deno/releases/tag/v1.10.1>v1.10.1のリリースノート</a></li><li><a href=https://github.com/denoland/deno/releases/tag/v1.10.0>v1.10.0のリリースノート</a></li></ul><h2 id=deno_std-v0960がリリースhttpsgithubcomdenolanddeno_stdblobmainreleasesmd0960--20210511><a href=https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511>deno_std v0.96.0がリリース</a><a hidden class=anchor aria-hidden=true href=#deno_std-v0960がリリースhttpsgithubcomdenolanddeno_stdblobmainreleasesmd0960--20210511>#</a></h2><p>deno_stdのv0.96.0がリリースされました。</p><p><strong>変更点:</strong></p><ul><li>http: カスタムのレスポンステキストを指定できるようになった</li><li>io/util: <code>readRange()</code>関数が実装された</li><li>mime/multipart: <code>MultipartReader#readForm()</code>で<code>ReadFormOptions</code>というオブジェクト形式の引数がサポートされた</li><li>node: <code>console</code>モジュールが追加された</li><li>node/assert: <code>rejects()</code>と<code>doesNotReject()</code>が実装された</li><li>node/assert: <code>fail()</code>が実装された</li><li>node/os: <code>homedir()</code>が実装された</li><li>io/streams: <code>readableStreamFromReader()</code>でバイトReadableStreamが使用されないように修正された</li><li>io/bufio: <code>readDelim()</code>のパフォーマンスが向上した</li><li>bytes: <code>readDelim()</code>のパフォーマンス向上のため、<code>bytes_list.ts</code>が追加された</li><li>node/stream: <code>Stream</code>がdefault exportされるようになった</li></ul><hr><p><a href=https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511>https://github.com/denoland/deno_std/blob/main/Releases.md#0960--20210511</a></p><h2 id=angular_denohttpsgithubcomalosaurangular_deno><a href=https://github.com/alosaur/angular_deno>angular_deno</a><a hidden class=anchor aria-hidden=true href=#angular_denohttpsgithubcomalosaurangular_deno>#</a></h2><p><code>angular_deno</code>はDenoで動作するAngularコンポーネントのレンダリングエンジンです。</p><hr><p><a href=https://github.com/alosaur/angular_deno>https://github.com/alosaur/angular_deno</a></p><h2 id=sonoiohttpsgithubcomoslabs-betasonoio><a href=https://github.com/oslabs-beta/sono.io>sono.io</a><a hidden class=anchor aria-hidden=true href=#sonoiohttpsgithubcomoslabs-betasonoio>#</a></h2><p><code>sono.io</code>はWebSocketを使ったリアルタイムアプリケーションを実装するためのモジュールです。</p><p>実験的ではありますが、WebRTCのサポートも提供されています。</p><hr><ul><li><a href=https://github.com/oslabs-beta/sono.io>https://github.com/oslabs-beta/sono.io</a></li><li><a href=https://sono.land/>公式ドキュメント</a></li></ul><h2 id=pagic-v130がリリースhttpsgithubcomxcatliupagicreleasestagv130><a href=https://github.com/xcatliu/pagic/releases/tag/v1.3.0>Pagic v1.3.0がリリース</a><a hidden class=anchor aria-hidden=true href=#pagic-v130がリリースhttpsgithubcomxcatliupagicreleasestagv130>#</a></h2><p>DenoのスタティックサイトジェネレータであるPagicのv1.3.0がリリースされました。</p><p>このリリースでは、SEO関連のmetaタグのサポートが追加されています。</p><hr><p><a href=https://github.com/xcatliu/pagic/releases/tag/v1.3.0>https://github.com/xcatliu/pagic/releases/tag/v1.3.0</a></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/angular_deno.html>angular_deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/sono.io.html>sono.io</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/pagic.html>pagic</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

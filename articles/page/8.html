@@ -1,92 +1,35 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>Articles | 週刊Deno</title>
-<meta name=keywords content>
-<meta name=description content="Articles - 週刊Deno">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/articles/index.xml>
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Articles">
-<meta property="og:description" content>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles.html">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Articles">
-<meta name=twitter:description content>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Articles","item":"https://uki00a.github.io/deno-weekly/articles.html"}]}</script>
-</head>
-<body class=list id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<header class=page-header>
-<h1>
-Articles
-</h1>
-</header>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/05/16〜2022/05/22の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.22 Deno v1.22がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Articles | 週刊Deno</title><meta name=keywords content><meta name=description content="Articles - 週刊Deno"><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://uki00a.github.io/deno-weekly/articles/index.xml><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="Articles"><meta property="og:description" content><meta property="og:type" content="website"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles.html"><meta name=twitter:card content="summary"><meta name=twitter:title content="Articles"><meta name=twitter:description content><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Articles","item":"https://uki00a.github.io/deno-weekly/articles.html"}]}</script></head><body class=list id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><header class=page-header><h1>Articles</h1></header><article class=post-entry><header class=entry-header><h2>2021/05/30〜2022/06/05の最新情報</h2></header><div class=entry-content><p>Deno v1.22.2 Deno v1.22.2がリリースされました。
+主な変更点:
+Deno.getGid()が実装されました。(unstable) POSIX系プラットフォームではプロセスのグループIDが、Windowsではnullが返されます。 利用するには--allow-envの指定が必要です。 Error.captureStackTrace()の型定義が追加されました。 Crypto.getRandomValues()の型定義が改善されました。(BigInt64ArrayやBigUint64Arrayが受け取れず、Float32ArrayやFloat64Arrayが引数として受け取れてしまう問題が解消されています) https://github.com/denoland/deno/releases/tag/v1.22.2
+deno_std v0.142.0 deno_std v0.142.0がリリースされました。
+FNVのサポート (crypto) cryptoモジュールでFNVが実装されました。
+import { crypto } from "https://deno.land/std@0.142.0/crypto/mod.ts"; // ... const digest = await crypto.subtle.digest("FNV32", input); media_typesモジュールの追加 deno_stdにmedia_typesモジュールが追加されました。
+import { contentType } from "https://deno.land/std@0.142.0/media_types/mod.ts"; contentType(".js"); // => "application/javascript; charset=UTF-8" contentType("application/json"); // => "application/json; charset=UTF-8" このモジュールは、以前にもdeno_stdに存在するモジュールの一部でしたが、一度削除されています。
+その後、メンテナンスはoakserver/media_typesのリポジトリに引き継がれていました。
+このリリースで改めてmedia_typesモジュールが復帰したため、oakserver/media_typesのリポジトリはアーカイブされています。
+TextLineStreamにallowCRオプションが追加 (streams/delimiter) このオプションにtrueを指定したときのみCRが取り扱われるように変更されています。
+前回のリリースで、デフォルトでCRが取り扱われるように修正されましたが、デフォルトの挙動を変えてしまうのはまずいということで、このオプションが追加されました。
+https://github.com/denoland/deno_std/releases/tag/0.142.0
+oak_commonsパッケージの機能のdeno_stdへの移行 現在、oak_commonsパッケージで提供されていた機能の一部をdeno_stdへ移植するPRが作成されています。
+例)
+http/http_statusのSTATUS_TEXTがMapからRecord型に変更 http/http_errorsの追加 http/negotiationの追加 crypto/keystackの追加 (Oakの内部でも使われているCookieの署名・検証用モジュール) deno_std v0.142.0で追加されたmedia_typesモジュールも、元々は oakserver/media_typesリポジトリで管理されていたものであり、これらの変更が入る可能性も比較的高そうに見えます。
+deno_redis v0....</p></div><footer class=entry-footer><span title='2022-06-05 00:00:00 +0000 UTC'>June 5, 2022</span></footer><a class=entry-link aria-label="post link to 2021/05/30〜2022/06/05の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/06/05.html></a></article><article class=post-entry><header class=entry-header><h2>2021/05/23〜2022/05/29の最新情報</h2></header><div class=entry-content><p>Deno Deploy Beta 4 Deno Deploy Beta 4が発表されました。
+このリリースに合わせて、有料のProプランが公開されています。 詳しくは、以下の記事で価格設定などについて解説されています。
+deno deploy beta 4発表！価格設定をcloudflare workersと比較する その他にも、ダッシュボードがリニューアルされています。 リクエストごとの平均CPU時間の可視化やログのUIの改善などが実施されています。
+https://deno.com/blog/deploy-beta4
+Deno v1.22.1 Deno v1.22.1がリリースされました。
+このリリースはバグ修正を中心に行われています。
+主な変更点:
+Deno.ChildStatus.signalの型がstringからDeno.Signalに変更されました。 deno test --coverageで、interfaceのみを含むファイルなどで計測結果がNaN%と表示される問題が修正されました。 WebSocket.closeを呼ぶと"close"イベントが2回発火される問題が修正されました。 globalThis.dispatchEventが改ざんされている(deleteによる削除など)と、Deno.exit()でエラーが発生する問題が修正されました。 Deno.permissions.query()などのパーミッション関連のAPIに不正な形式の引数を与えた際のエラーメッセージが改善されました。 https://github.com/denoland/deno/releases/tag/v1.22.1
+deno_std v0.141.0 deno_std v0.141.0がリリースされました。
+いくつかの破壊的変更が実施されています。
+testing/asserts assertStrictEqualsなどの改善 assertStrictEquals / assertAlmostEquals / assertNotStrictEqualsの内部の比較処理で、===の代わりにObject.is()を使用するように修正されています。(Node.jsのassertパッケージなどと同様の挙動に変わりました。)
+assertEqualsなどの型定義の改善 (破壊的変更) assertEqualsやassertNotEqualsなどの型定義が修正されています。
+例えば、下記のように異なる型の値同士を比較すると、型エラーが発生します。
+assertEquals(123, "foo"); 次のようにすると、型エラーを回避できます。
+assertEquals&lt;unknown>(123, "foo"); assertRejectsやassertThrowsの戻り値の変更 assertRejectsやassertThrowsで補足された例外が戻り値として返却されるように修正されました。
+const error = assertThrows(() => { throw new Error("foo"); }); assert(error instanceof Error); assertEquals(error.message, "foo"); flags parse()関数にcollectオプションが追加されました。(破壊的変更)...</p></div><footer class=entry-footer><span title='2022-05-29 00:00:00 +0000 UTC'>May 29, 2022</span></footer><a class=entry-link aria-label="post link to 2021/05/23〜2022/05/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/29.html></a></article><article class=post-entry><header class=entry-header><h2>2021/05/16〜2022/05/22の最新情報</h2></header><div class=entry-content><p>Deno v1.22 Deno v1.22がリリースされました。
 変更点については以下の記事にまとめたため、詳しくはこちらを参照いただければと思います。
 Deno v1.22 deno_std v0.140.0 deno_std v0.140.0がリリースされました。
 http serve関数などにonListenオプションが追加されています。
@@ -97,18 +40,7 @@ await assertRejects(() => { throw new Error("foo"); }); // => rejectされたPro
 SQLバイディング Deno本体でSQLバインディングを公開するPRが作成されています。
 experiment(runtime): expose SQLite bindings (#14627)
 まだ実際にリリースされるかどうかは不明ですが、今のところ、下記のようにしてクエリを発行できる想定のようです。
-const { Connection } = Deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/16〜2022/05/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/22.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Deno v1.22
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.22がリリースされました。
+const { Connection } = Deno.sqlite; const conn = new Connection("sqlite....</p></div><footer class=entry-footer><span title='2022-05-22 00:00:00 +0000 UTC'>May 22, 2022</span></footer><a class=entry-link aria-label="post link to 2021/05/16〜2022/05/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/22.html></a></article><article class=post-entry><header class=entry-header><h2>Deno v1.22</h2></header><div class=entry-content><p>Deno v1.22がリリースされました。
 この記事では、主な変更点についてまとめていきます。
 リモートモジュールの型チェックがデフォルトで無効化 deno runやdeno testなどの各コマンドでリモートモジュールの型チェックがデフォルトで無効化されました。
 今後はローカルのTypeScriptファイルのみが型チェックされます。
@@ -119,18 +51,7 @@ const { Connection } = Deno....</p>
 このリリースでは、新しく--no-configオプションがサポートされました。 このオプションを指定すると、deno.json(c)の自動探索を無効化できます。
 $ deno run --no-config main.ts (破壊的変更) Worker内でデフォルトでDeno APIが有効化 今までは、Worker内でDeno.readFileなどのAPIを使用したい場合は、denoオプションによって明示的に有効化する必要がありました。
 new Worker(new URL('./worker.js', import.meta.url).href, { deno: { namespace: true }, // Deno APIの使用を有効化 type: "module" }); 今後は上記のようにオプションを指定しなくても、Worker内で常にDenoのAPIを参照できます。
-new Worker(new URL('./worker.js', import.meta.url).href, { type: "module" }); また、この変更の影響により、WorkerOptions....</p>
-</div>
-<footer class=entry-footer><span title="2022-05-22 00:00:00 +0000 UTC">May 22, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.22" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.22.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/05/09〜2022/05/15の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.21.3 Deno v1.21.3がリリースされました。
+new Worker(new URL('./worker.js', import.meta.url).href, { type: "module" }); また、この変更の影響により、WorkerOptions....</p></div><footer class=entry-footer><span title='2022-05-22 00:00:00 +0000 UTC'>May 22, 2022</span></footer><a class=entry-link aria-label="post link to Deno v1.22" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.22.html></a></article><article class=post-entry><header class=entry-header><h2>2021/05/09〜2022/05/15の最新情報</h2></header><div class=entry-content><p>Deno v1.21.3 Deno v1.21.3がリリースされました。
 deno task deno task &lt;タスク名>の&lt;タスク名>の直後に--から始まるオプションを指定できない問題が修正されました。
 その他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。
 その他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。
@@ -144,18 +65,7 @@ testing/snapshot assertSnapshotにオプションを渡せるようになりま�
 await assertSnapshot(t, actual, { dir: "testdata" }); https://github.com/denoland/deno_std/releases/tag/0.139.0
 --no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。
 feat: add –no-config flag (#14555)
-$ deno run --no-config main....</p>
-</div>
-<footer class=entry-footer><span title="2022-05-15 00:00:00 +0000 UTC">May 15, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/09〜2022/05/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/15.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/05/02〜2022/05/08の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.21.2 Deno v1.21.2がリリースされました。
+$ deno run --no-config main.js この機能はDeno v1.22でリリースされる可能性がありそうです。...</p></div><footer class=entry-footer><span title='2022-05-15 00:00:00 +0000 UTC'>May 15, 2022</span></footer><a class=entry-link aria-label="post link to 2021/05/09〜2022/05/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/15.html></a></article><article class=post-entry><header class=entry-header><h2>2021/05/02〜2022/05/08の最新情報</h2></header><div class=entry-content><p>Deno v1.21.2 Deno v1.21.2がリリースされました。
 変更点:
 lib.dom.extras.d.tsが追加されました。 lib.dom.d.tsを読み込んでもURLPatternが利用できない(型エラーが発生する)問題を解消するための修正です。 このファイルには、URLPatternに関する型定義が含まれています。 lib.dom.d.tsを読み込むと自動でこのファイルも読み込まれます。 deno test --coverageによる計測対象から.snapファイルが除外されるように修正されました。 (deno_stdでスナップショットテスティングがサポートされたため) HTTPサーバ(Deno.serveHttp)でレスポンスボディにReadableStreamを指定した際に、対象のリソースが自動で閉じられない問題が修正されました。 deno taskでタスクの引数に-を含むオプションを指定した際に、そのオプションが適切に渡されない問題が修正されました。 deno testやdeno benchの引数にfile:形式のURLを指定すると、プロセスがパニックする問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.21.2
 deno_std v0.138.0 deno_std v0.138.0がリリースされました。
@@ -170,18 +80,10 @@ Denoの全コマンドで--no-check=remoteをデフォルトの挙動にする �
 今のところ、この変更はDeno v1.22でのリリースが想定されているようです。
 また、Deno v1.23ではdeno runなどの各コマンドでの型チェックがデフォルトで無効化されることが予定されています。(型チェックを行いたいときはdeno checkコマンドを利用します)
 https://github.com/denoland/deno/issues/14498
-deno testコマンドの--docオプションをデフォルトで有効化する deno testコマンドには--docオプションを付与することで、MarkdownファイルやJSDocコメント中のコードブロックに対して型チェックを行う機能があります。...</p>
-</div>
-<footer class=entry-footer><span title="2022-05-08 00:00:00 +0000 UTC">May 8, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/05/02〜2022/05/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/08.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/04/25〜2022/05/01の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.21.1 Deno v1.21.1がリリースされました。
+deno testコマンドの--docオプションをデフォルトで有効化する deno testコマンドには--docオプションを付与することで、MarkdownファイルやJSDocコメント中のコードブロックに対して型チェックを行う機能があります。
+現在、以下のissueで、deno testコマンドの--docオプションの挙動をデフォルトで有効化することが提案されています。
+“deno test –doc” on by default (#14499)
+この変更はDeno v1....</p></div><footer class=entry-footer><span title='2022-05-08 00:00:00 +0000 UTC'>May 8, 2022</span></footer><a class=entry-link aria-label="post link to 2021/05/02〜2022/05/08の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/08.html></a></article><article class=post-entry><header class=entry-header><h2>2021/04/25〜2022/05/01の最新情報</h2></header><div class=entry-content><p>Deno v1.21.1 Deno v1.21.1がリリースされました。
 ネイティブHTTPサーバ(Deno.serveHttp)の変更点 Deno v1.20でレスポンスボディの自動的な圧縮がサポートされました。
 このリリースでは、レスポンスボディにReadableStreamが指定された際の圧縮がサポートされています。
 その他にもいくつかのパフォーマンス改善が実施されています。
@@ -195,18 +97,9 @@ $ deno test --allow-read "--" "some-test.js" Deno.inspectの変更点 strAbbrevi
 deno testの変更点 Deno v1.21でテストケースの実行時にログに出力された内容がキャプチャされるように改善されました。
 このリリースでは、Deno.spawn()などでstdoutやstderrオプションに"inherit"を指定した際に、サブプロセスの出力内容もキャプチャされるように改善されています。
 他にも、Workerの出力内容もキャプチャするように改善されています。
-その他の変更点 Deno.spawn(Sync)でstdinなどのオプションに"piped"を指定した際にエラーを発生させるよう修正されました。 Worker.terminateが呼び出し元のスレッドをブロックしないように修正されました (https://github.com/denoland/deno/issues/13705) https://github....</p>
-</div>
-<footer class=entry-footer><span title="2022-05-01 00:00:00 +0000 UTC">May 1, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/25〜2022/05/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/01.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/04/18〜2022/04/24の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.21 Deno v1.21がリリースされました。
+その他の変更点 Deno.spawn(Sync)でstdinなどのオプションに"piped"を指定した際にエラーを発生させるよう修正されました。 Worker.terminateが呼び出し元のスレッドをブロックしないように修正されました (https://github.com/denoland/deno/issues/13705) https://github.com/denoland/deno/releases/tag/v1.21.1
+deno_std v0.137.0 deno_std v0.137.0がリリースされました。
+testing/mock stub()やspy()の使用時に、対象オブジェクトのメソッドの型が自動で推論されるように修正されました。(型定義の修正のみで挙動には影響はありません)...</p></div><footer class=entry-footer><span title='2022-05-01 00:00:00 +0000 UTC'>May 1, 2022</span></footer><a class=entry-link aria-label="post link to 2021/04/25〜2022/05/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/05/01.html></a></article><article class=post-entry><header class=entry-header><h2>2021/04/18〜2022/04/24の最新情報</h2></header><div class=entry-content><p>Deno v1.21 Deno v1.21がリリースされました。
 個別に記事を書いたので、詳しくはそちらを参照いただければと思います。
 Deno v1.21 deno_std v0.136.0 deno_std v0.136.0がリリースされました。
 testing/snapshot スナップショットテストを行うためのモジュールが追加されました。
@@ -215,18 +108,7 @@ testing/snapshot スナップショットテストを行うためのモジュー
 import { assertSnapshot } from "https://deno.land/std@0.136.0/testing/snapshot.ts" Deno.test("doSomething", async (t) => { const result = doSomething(); await assertSnapshot(t, result); }); スナップショットを更新したいときは、テストを実行する際に--updateを指定する必要があります。
 この場合、スナップショットを書き込むために、追加で--allow-writeが必要になります。
 # スナップショットは__snapshots__に書き込まれます $ deno test --allow-read --allow-write tests/some_test.js -- --update testing/bdd itに渡すテスト関数がTestContextを受け取るように修正されています。
-import { describe, it } from "https://deno.land/std@0.136.0/testing/bdd.ts" describe("sum", () => { it("should return sum of numbers", (t) => { assertEquals(sum(1, 2, 3), 6, t....</p>
-</div>
-<footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/18〜2022/04/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/24.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Deno v1.21
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.21がリリースされました。
+import { describe, it } from "https://deno.land/std@0.136.0/testing/bdd.ts" describe("sum", () => { it("should return sum of numbers", (t) => { assertEquals(sum(1, 2, 3), 6, t....</p></div><footer class=entry-footer><span title='2022-04-24 00:00:00 +0000 UTC'>April 24, 2022</span></footer><a class=entry-link aria-label="post link to 2021/04/18〜2022/04/24の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/24.html></a></article><article class=post-entry><header class=entry-header><h2>Deno v1.21</h2></header><div class=entry-content><p>Deno v1.21がリリースされました。
 この記事では新機能や修正点などについて解説します。
 deno checkコマンドの導入 新しいコマンドとしてdeno checkコマンドが追加されました。
 挙動としては基本的にdeno cacheコマンドと同等で、与えられたモジュールの型チェック及びリモートモジュールのダウンロードを行います。
@@ -242,18 +124,7 @@ Deno.spawn() これは高レベルAPIという位置づけです。
 const { stdout, status } = await Deno.spawn("echo", { args: ["foo"], }); console.assert("foo\n" === new TextDecoder().decode(stdout)); console.assert(status.success); コマンドの出力結果のみが必要で、細かな制御はいらない場合に便利かと思います。
 Deno.spawnChild() こちらは低レベルAPIという位置づけです。
 Deno.Reader/Deno.WriterではなくReadableStream/WritableStreamをベースに実装されています。
-const child = Deno....</p>
-</div>
-<footer class=entry-footer><span title="2022-04-24 00:00:00 +0000 UTC">April 24, 2022</span></footer>
-<a class=entry-link aria-label="post link to Deno v1.21" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.21.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/04/11〜2022/04/17の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20.6 Deno v1.20.6がリリースされました。
+const child = Deno.spawnChild("deno", { args: ["--version"], }); for await (const output of child....</p></div><footer class=entry-footer><span title='2022-04-24 00:00:00 +0000 UTC'>April 24, 2022</span></footer><a class=entry-link aria-label="post link to Deno v1.21" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.21.html></a></article><article class=post-entry><header class=entry-header><h2>2021/04/11〜2022/04/17の最新情報</h2></header><div class=entry-content><p>Deno v1.20.6 Deno v1.20.6がリリースされました。
 deno fmtコマンドの内部実装で使用されているdprint関連のプラグインがアップデートされています。
 その影響により、deno fmtコマンドのパフォーマンス向上やバグの修正が行われています。 (オブジェクトリテラルと3項演算子を併用した際に、フォーマット結果に一貫性がなくなる問題が修正されているようです)
 https://github.com/denoland/deno/releases/tag/v1.20.6
@@ -269,75 +140,8 @@ testing/benchの非推奨化 (破壊的変更) testing/benchモジュールが�
 今後はDeno.benchの使用が推奨されます。
 testing/bddの追加 testing/bddモジュールが追加されました。
 JestやMochaライクなAPIを使用してテストコードを記述することができます。
-import { assertEquals } from "https://deno.land/std@0.135.0/testing/asserts.ts"; import { describe, it } from "https://deno.land/std@0.135.0/testing/bdd.ts"; describe("sum", () => { it("should return sum of numbers", () => { assertEquals(sum(1, 2, 5), 8) }); it("should return 0 when no arguments are given", () => { assertEquals(sum(), 0); }); }); 定義したテストコードはdeno testコマンドで実行することが出来ます。...</p>
-</div>
-<footer class=entry-footer><span title="2022-04-17 00:00:00 +0000 UTC">April 17, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/11〜2022/04/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/17.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/04/04〜2022/04/10の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Deno v1.20.5 Deno v1.20.5がリリースされました。
-deno lspの新機能 deno lspでTesting APIがサポートされています (https://code.visualstudio.com/api/extension-guides/testing)
-vscodeでTesting: Focus on Test Explorer Viewコマンドを実行すると、テストファイルに含まれるテストケースの一覧を表示できます。
-Deno.Listenerにrefとunrefメソッドが追加 (unstable) unref()が呼ばれたListenerはプロセスの終了をブロックしなくなります (タイマにDeno.unrefTimerを呼んだときと同様の挙動をします)
-後述するdeno_std/node/netでのServer.ref()の実装で利用されています。
-バグ修正 SubtleCrypto.exportKey()でextractable: falseに設定されたキーをエクスポートできてしまう問題が修正されました (https://github.com/denoland/deno/issues/14215) --compatを指定してdeno installを実行した際に、--compatフラグが維持されない問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.20.5
-deno_std v0.134.0 deno_std v0.134.0がリリースされました。
-encoding/csvやnodeモジュールへの機能の追加が行われています。
-encoding/csv CSVStreamが追加されました。
-import { CSVStream } from "https://deno.land/std@0.134.0/encoding/csv/stream.ts"; const file = await Deno.open("path/to/data.csv"); const stream = file.readable .pipeThrough(new TextDecoderStream()) .pipeThrough(new CSVStream()); for await (const record of stream) { console.log(record); } node child_process: ChildProcess.kill()でsignalパラメータがサポートされました。 net: Server....</p>
-</div>
-<footer class=entry-footer><span title="2022-04-10 00:00:00 +0000 UTC">April 10, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/04/04〜2022/04/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/10.html></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2021/03/28〜2022/04/03の最新情報
-</h2>
-</header>
-<div class=entry-content>
-<p>Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。
-Supabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。
-Supabase Functions on Deno Deploy Edge Functions are now available in Supabase Deno v1.20.4 Deno v1.20.4がリリースされました。
-変更点:
-外部モジュールのimport時にリダイレクトが発生すると、deno compileで生成したバイナリがうまく動作しなくなる問題が修正されました。
-Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されました。
-変更前:
-function fetch( input: URL, init?: RequestInit, ): Promise&lt;Response>; 変更後:
-function fetch( input: URL | Request | string, init?: RequestInit, ): Promise&lt;Response>; deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。
-deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。
-https://github.com/denoland/deno/releases/tag/v1.20.4
-deno_std v0....</p>
-</div>
-<footer class=entry-footer><span title="2022-04-03 00:00:00 +0000 UTC">April 3, 2022</span></footer>
-<a class=entry-link aria-label="post link to 2021/03/28〜2022/04/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/03.html></a>
-</article>
-<footer class=page-footer>
-<nav class=pagination>
-<a class=prev href=https://uki00a.github.io/deno-weekly/articles/page/7.html>
-«&nbsp;Prev&nbsp;
-</a>
-<a class=next href=https://uki00a.github.io/deno-weekly/articles/page/9.html>Next&nbsp;&nbsp;»
-</a>
-</nav>
-</footer>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+import { assertEquals } from "https://deno.land/std@0.135.0/testing/asserts.ts"; import { describe, it } from "https://deno.land/std@0.135.0/testing/bdd.ts"; describe("sum", () => { it("should return sum of numbers", () => { assertEquals(sum(1, 2, 5), 8) }); it("should return 0 when no arguments are given", () => { assertEquals(sum(), 0); }); }); 定義したテストコードはdeno testコマンドで実行することが出来ます。...</p></div><footer class=entry-footer><span title='2022-04-17 00:00:00 +0000 UTC'>April 17, 2022</span></footer><a class=entry-link aria-label="post link to 2021/04/11〜2022/04/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2022/04/17.html></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://uki00a.github.io/deno-weekly/articles/page/7.html>«&nbsp;Prev&nbsp;</a>
+<a class=next href=https://uki00a.github.io/deno-weekly/articles/page/9.html>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

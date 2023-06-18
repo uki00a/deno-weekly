@@ -12,4 +12,4 @@ testing/snapshot assertSnapshotにオプションを渡せるようになりま�
 await assertSnapshot(t, actual, { dir: &amp;#34;testdata&amp;#34; }); https://github.com/denoland/deno_std/releases/tag/0.139.0
 --no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。
 feat: add &amp;ndash;no-config flag (#14555)
-$ deno run --no-config main.</description></item></channel></rss>
+$ deno run --no-config main.js この機能はDeno v1.22でリリースされる可能性がありそうです。</description></item></channel></rss>

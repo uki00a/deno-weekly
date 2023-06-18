@@ -14,4 +14,6 @@ wizard wizardというBDDスタイルのAPIを提供するテストライブラ�
 https://github.com/deno-libs/wizard
 deno-redis v0.20.0 deno-redis v0.20.0がリリースされました。
 変更点:
-CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下のコマンドがサポートされました: CLIENT UNBLOCK CLIENT UNPAUSE CLIENT INFO CLIENT TRACKINGINFO CLIENT LIST https://github.</description></item></channel></rss>
+CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下のコマンドがサポートされました: CLIENT UNBLOCK CLIENT UNPAUSE CLIENT INFO CLIENT TRACKINGINFO CLIENT LIST https://github.com/denodrivers/redis/releases/tag/v0.20.0
+deno-codeview deno-codeviewは、deno test --coverageによって生成されたカバレッジプロファイルを解析し、WebViewにカバレッジレポートを表示するツールです。
+https://github.com/c4spar/deno-codeview</description></item></channel></rss>

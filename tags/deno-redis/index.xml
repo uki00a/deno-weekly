@@ -7,7 +7,11 @@ node-fetchなどのglobal.Promiseを参照するパッケージが動かない�
 { &amp;#34;exports&amp;#34;: { &amp;#34;.&amp;#34;: { &amp;#34;types&amp;#34;: &amp;#34;./types/src/index.d.ts&amp;#34;, &amp;#34;require&amp;#34;: &amp;#34;./cjs/index.cjs&amp;#34;, &amp;#34;import&amp;#34;: &amp;#34;./esm/index.js&amp;#34; }, &amp;#34;./driver&amp;#34;: { &amp;#34;types&amp;#34;: &amp;#34;./types/src/driver/index.d.ts&amp;#34;, &amp;#34;import&amp;#34;: &amp;#34;./esm/driver/index.js&amp;#34; }, &amp;#34;./driver/*&amp;#34;: { &amp;#34;types&amp;#34;: &amp;#34;./types/src/driver/*.d.ts&amp;#34;, &amp;#34;import&amp;#34;: &amp;#34;./esm/driver/*.js&amp;#34; } } } package.jsonで&amp;quot;type&amp;quot;: &amp;quot;module&amp;quot;が指定されたパッケージについては、&amp;quot;main&amp;quot;ではなく&amp;quot;module&amp;quot;で指定されたファイルが読み込まれるように修正されました。
 fs-extraなどのパッケージが読み込めない問題が修正されました。
 例えば、copyディレクトリとcopy/index.jsが両方存在するようなパッケージでエラーが発生していたようです。 下記のように、Node.jsのグローバルAPIと同名の変数を定義しているコードの読み込みに失敗する問題が修正されました。
-const process = require(&amp;#39;process&amp;#39;); その他の変更点</description></item><item><title>2021/05/30〜2022/06/05の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/06/05.html</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/06/05.html</guid><description>Deno v1.22.2 Deno v1.22.2がリリースされました。
+const process = require(&amp;#39;process&amp;#39;); その他の変更点
+Deno.serve()のportオプションに使用中のポートを指定すると、プロセスがパニックする問題が修正されました。 deno checkコマンドに--remoteと--no-remoteが同時に与えられたときは、エラーが発生するように修正されました。 Deno.readTextFile()などでv8の最大文字列長を超えるファイルを読もうとすると、プロセスがパニックする問題が修正されました。 サーバから送信されたもののまだ読み込まれていないメッセージが存在すると、WebSocketStream.closeが永遠に解決しない問題が修正されました。 TextDecoderの最適化 deno-csvのベンチマークが1.4x程に高速化されているようです。 https://github.com/denoland/deno/releases/tag/v1.25.1
+deno_std v0.154.0 deno_std v0.154.0がリリースされました。
+頭字語に関する命名形式の変更 (破壊的変更) deno_stdで提供されているAPIの頭字語に関する命名形式が以下のように変更されています。
+CSVStream =&amp;gt; CsvStream JSONParseStream =&amp;gt; JsonParseStream TextProtoReader#readMIMEHeader =&amp;gt; TextProtoReader#readMimeHeader 古い形式の命名は非推奨化されています。</description></item><item><title>2021/05/30〜2022/06/05の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/06/05.html</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/06/05.html</guid><description>Deno v1.22.2 Deno v1.22.2がリリースされました。
 主な変更点:
 Deno.getGid()が実装されました。(unstable) POSIX系プラットフォームではプロセスのグループIDが、Windowsではnullが返されます。 利用するには--allow-envの指定が必要です。 Error.captureStackTrace()の型定義が追加されました。 Crypto.getRandomValues()の型定義が改善されました。(BigInt64ArrayやBigUint64Arrayが受け取れず、Float32ArrayやFloat64Arrayが引数として受け取れてしまう問題が解消されています) https://github.com/denoland/deno/releases/tag/v1.22.2
 deno_std v0.142.0 deno_std v0.142.0がリリースされました。
@@ -21,7 +25,8 @@ TextLineStreamにallowCRオプションが追加 (streams/delimiter) このオ�
 https://github.com/denoland/deno_std/releases/tag/0.142.0
 oak_commonsパッケージの機能のdeno_stdへの移行 現在、oak_commonsパッケージで提供されていた機能の一部をdeno_stdへ移植するPRが作成されています。
 例)
-http/http_statusのSTATUS_TEXTがMapからRecord型に変更 http/http_errorsの追加 http/negotiationの追加 crypto/keystackの追加 (Oakの内部でも使われているCookieの署名・検証用モジュール) deno_std v0.</description></item><item><title>2021/07/05〜2021/07/11の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/07/11.html</link><pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/07/11.html</guid><description>Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を変更することが検討されています。
+http/http_statusのSTATUS_TEXTがMapからRecord型に変更 http/http_errorsの追加 http/negotiationの追加 crypto/keystackの追加 (Oakの内部でも使われているCookieの署名・検証用モジュール) deno_std v0.142.0で追加されたmedia_typesモジュールも、元々は oakserver/media_typesリポジトリで管理されていたものであり、これらの変更が入る可能性も比較的高そうに見えます。
+deno_redis v0.</description></item><item><title>2021/07/05〜2021/07/11の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/07/11.html</link><pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/07/11.html</guid><description>Denoのデフォルトの型チェックの挙動について DenoのGitHubリポジトリにて、Denoのデフォルトの型チェックの挙動を変更することが検討されています。
 https://github.com/denoland/deno/issues/11340 このissueでは、以下のような方向性が示されています。
 DenoのTypeScriptによる型チェックをデフォルトで無効化したい (現状の--no-checkオプションを付けた際の挙動をデフォルトにしたい) TypeScriptによる型チェックは、--checkオプションを指定したときのみ実施する --no-checkオプションは非推奨化する より詳細な内容や議論などについては上記issueを参照いただければと思います。
 https://github.com/denoland/deno/issues/11340
@@ -49,7 +54,11 @@ https://status.deno.land
 Service Workerを利用したTypeScriptやSvelteファイルの変換 Deno.watchFs()ベースのCache Busting Rollupベースのプロダクションビルド https://github.com/mizchi/swdev
 deno-sqlite v2.4.0がリリース deno-sqlite v2.4.0がリリースされました。
 このリリースでは、以下のような変更が加わっています:
-SQLiteのv3.35.0への更新 DB.</description></item><item><title>2021/03/08〜2021/03/14の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/14.html</link><pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/14.html</guid><description>Deno本体の最新情報 Deno v1.8.1のリリース Deno v1.8.1がリリースされました。このリリースでは、バグの修正を中心に実施されています。
+SQLiteのv3.35.0への更新 DB.prepareQuery()の追加 JSON1拡張の有効化 https://github.com/dyedgreen/deno-sqlite/releases/tag/v2.4.0
+deno-redis v0.21.0がリリース deno-redis v0.21.0がリリースされました。
+このリリースでは、Redisコマンドを実行するための低レベルインターフェースであるCommandExecutorに破壊的変更が加わっています。
+変更点:
+CommandExecutor#exec()の戻り値の型が変更された 一部のコマンドの引数としてNumber及びUint8Arrayを渡せるようになった CLIENT KILLコマンドがサポートされた https://github.</description></item><item><title>2021/03/08〜2021/03/14の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/14.html</link><pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/14.html</guid><description>Deno本体の最新情報 Deno v1.8.1のリリース Deno v1.8.1がリリースされました。このリリースでは、バグの修正を中心に実施されています。
 主な変更点:
 importsNotUsedAsValuesオプションがswcに渡されるようになりました。 Windows上でdeno compileを実行すると、ターゲットに関わらず常に.exeが拡張子として付与される問題が修正されました。 Worker内でトップレベルawaitが使用されていると、ブロックが発生する問題が修正されました。 https://github.com/denoland/deno/releases/tag/v1.8.1
 deno_std v0.90.0のリリース deno_std v0.90.0がリリースされました。
@@ -65,7 +74,9 @@ wizard wizardというBDDスタイルのAPIを提供するテストライブラ�
 https://github.com/deno-libs/wizard
 deno-redis v0.20.0 deno-redis v0.20.0がリリースされました。
 変更点:
-CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下のコマンドがサポートされました: CLIENT UNBLOCK CLIENT UNPAUSE CLIENT INFO CLIENT TRACKINGINFO CLIENT LIST https://github.</description></item><item><title>2021/02/22〜2021/02/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/02/28.html</link><pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/02/28.html</guid><description>Deno本体の最新情報 今週は特にリリースなどは行われていません。
+CLIENT PAUSEコマンドでMODEを指定できるようになりました 以下のコマンドがサポートされました: CLIENT UNBLOCK CLIENT UNPAUSE CLIENT INFO CLIENT TRACKINGINFO CLIENT LIST https://github.com/denodrivers/redis/releases/tag/v0.20.0
+deno-codeview deno-codeviewは、deno test --coverageによって生成されたカバレッジプロファイルを解析し、WebViewにカバレッジレポートを表示するツールです。
+https://github.com/c4spar/deno-codeview</description></item><item><title>2021/02/22〜2021/02/28の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/02/28.html</link><pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/02/28.html</guid><description>Deno本体の最新情報 今週は特にリリースなどは行われていません。
 来週の3月2日にDeno v1.8.0のリリースが予定されています。
 https://github.com/denoland/deno/blob/v1.7.5/docs/contributing/release_schedule.md
 サードパーティモジュールの最新情報 Dashport - Passport.jsライクな認証モジュール DashportはNode.jsのPassport.jsに影響を受けた認証モジュールです。
@@ -95,4 +106,9 @@ https://github.com/vim-denops/denops-helloworld.vim https://github.com/vim-denop
 https://deno.land/x/slack_web_api@1.0.1
 deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。
 このリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。
-変更点:</description></item></channel></rss>
+変更点:
+全メソッド・プロパティがキャメルケース形式へリネームされました。 CLIENT PAUSEコマンドが実装されました。 https://github.com/denodrivers/redis/releases/tag/v0.18.0
+deno-postgres v0.8.0がリリース deno-postgres v0.8.0がリリースされました。
+このリリースでは、いくつかの新機能が追加されています。
+変更点:
+SSL/TLS接続がサポートされました(Deno.startTlsに依存するため、現時点では--unstableフラグが必要です) テンプレートリテラルを使用したSQLの実行がサポートされました。 name_too_longエラーが発生した際に、例外が発生しないように修正されました。 https://github.com/denodrivers/postgres/releases/tag/v0.8.0</description></item></channel></rss>

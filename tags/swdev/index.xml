@@ -14,4 +14,8 @@ https://status.deno.land
 Service Workerを利用したTypeScriptやSvelteファイルの変換 Deno.watchFs()ベースのCache Busting Rollupベースのプロダクションビルド https://github.com/mizchi/swdev
 deno-sqlite v2.4.0がリリース deno-sqlite v2.4.0がリリースされました。
 このリリースでは、以下のような変更が加わっています:
-SQLiteのv3.35.0への更新 DB.</description></item></channel></rss>
+SQLiteのv3.35.0への更新 DB.prepareQuery()の追加 JSON1拡張の有効化 https://github.com/dyedgreen/deno-sqlite/releases/tag/v2.4.0
+deno-redis v0.21.0がリリース deno-redis v0.21.0がリリースされました。
+このリリースでは、Redisコマンドを実行するための低レベルインターフェースであるCommandExecutorに破壊的変更が加わっています。
+変更点:
+CommandExecutor#exec()の戻り値の型が変更された 一部のコマンドの引数としてNumber及びUint8Arrayを渡せるようになった CLIENT KILLコマンドがサポートされた https://github.</description></item></channel></rss>

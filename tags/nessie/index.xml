@@ -12,4 +12,8 @@ Oak v7.7.0 DenoのWebフレームワークであるOakのv7.7.0がリリース�
 主な変更点:
 Context#sendEventsでkeepAliveオプションが追加され、Server-Sent Eventsサーバでコネクションのポーリングが行えるようになりました。 proxyミドルウェアでクエリパラメータが送信されない問題が修正されました。 https://github.com/oakserver/oak/commit/5403ac08ddf295cda388ac4f1f12f630d2e77a2f
 Trex v1.8.0 Denoのパッケージ管理ツールであるTrexのv1.8.0がリリースされました。
-このリリースではtrex execコマンドがサポートされ、deno.land/xで公開されているCLIツールをインストールせずに直接実行できるようになりました。</description></item></channel></rss>
+このリリースではtrex execコマンドがサポートされ、deno.land/xで公開されているCLIツールをインストールせずに直接実行できるようになりました。
+https://github.com/crewdevio/Trex/releases/tag/v1.8.0
+Nessie v2.0.0のリリース DenoのデータベースマイグレーションツールであるNessieのv2がリリースされました。
+主な変更点:
+Dockerイメージが公開されました。 (https://hub.docker.com/r/halvardm/nessie) マイグレーションファイルの名前が小文字アルファベット・数値・アンダースコアのみを含むスネークケース形式のみに制限されました。 NessieErrorオブジェクトが追加されました。 https://github.com/halvardssm/deno-nessie/pull/118</description></item></channel></rss>

@@ -1,309 +1,56 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2022/11/21〜2022/11/27の最新情報 | 週刊Deno</title>
-<meta name=keywords content="Deno,deno_std,Hono">
-<meta name=description content="Deno v1.28.2 Deno v1.28.2がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2022/11/21〜2022/11/27の最新情報 | 週刊Deno</title><meta name=keywords content="Deno,deno_std,Hono"><meta name=description content="Deno v1.28.2 Deno v1.28.2がリリースされました。
 CPUプロファイリング 新機能として、以下の3メソッドが実装されています。
- console.profile console.profileEnd console.timeStamp  これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。
+console.profile console.profileEnd console.timeStamp これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。
 --inspectオプションが指定された状態でconsole.profile(label)が呼ばれると、console.profileEnd(label)の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。
 計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。
-Node.js互換性の改善   Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています
-{ &#34;imports&#34;: { &#34;preact/&#34;: &#34;npm:preact/&#34; } }   module.createRequire()でURLオブジェクトがサポート
-  deno infoで循環したnpm依存が適切に取り扱われるように改善
-  型定義ファイルの検出に関する挙動の改善
- importのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善    その他の変更点  Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。   https://github.com/denoland/deno/releases/tag/v1.28.2
+Node.js互換性の改善 Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています
+{ &#34;imports&#34;: { &#34;preact/&#34;: &#34;npm:preact/&#34; } } module.createRequire()でURLオブジェクトがサポート
+deno infoで循環したnpm依存が適切に取り扱われるように改善
+型定義ファイルの検出に関する挙動の改善
+importのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善 その他の変更点 Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。 https://github.com/denoland/deno/releases/tag/v1.28.2
 deno_std v0.166.0 deno_std v0.166.0がリリースされました。
 std/fmtに関する破壊的変更 std/fmt/bytesのprettyBytes()関数がformat()にリネームされています。
 既存のprettyBytes()は非推奨化されており、今後のバージョンで削除される予定です。
 また、std/fmt/durationのprettyDuration()も同様にformat()へリネームされています。
 std/node - Node.js互換性の改善 Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。
- node:console: Deno v1.">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/11/27.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2022/11/21〜2022/11/27の最新情報">
-<meta property="og:description" content="Deno v1.28.2 Deno v1.28.2がリリースされました。
+node:console: Deno v1.28.2に合わせて、consoleにprofile/profileEnd/timeStampが追加されています。 node:timers: timeout.refresh()が実装されています。 node:process: argvがexportされました。 process.kill(pid, 0)が適切に動作するように修正 (第2引数に0を指定すると、pidで指定されたプロセスの生存確認ができます) node:crypto: HMACサポートが追加されています。 (crypto.Hmac/crypto.createHmac) node:http: http.request()のheadersオプションで指定されたヘッダが渡されない問題が修正 IncomingMessage.statusMessageの上書きができない問題が解消 下記いずれかの条件を満たす場合、ClientRequestでリクエストボディのchunk送信が無効化されるように修正 Transfer-Encoding: chunkedが未指定の場合 Content-Lengthが指定された場合 node:fs: fs."><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2022/11/27.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2022/11/21〜2022/11/27の最新情報"><meta property="og:description" content="Deno v1.28.2 Deno v1.28.2がリリースされました。
 CPUプロファイリング 新機能として、以下の3メソッドが実装されています。
- console.profile console.profileEnd console.timeStamp  これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。
+console.profile console.profileEnd console.timeStamp これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。
 --inspectオプションが指定された状態でconsole.profile(label)が呼ばれると、console.profileEnd(label)の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。
 計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。
-Node.js互換性の改善   Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています
-{ &#34;imports&#34;: { &#34;preact/&#34;: &#34;npm:preact/&#34; } }   module.createRequire()でURLオブジェクトがサポート
-  deno infoで循環したnpm依存が適切に取り扱われるように改善
-  型定義ファイルの検出に関する挙動の改善
- importのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善    その他の変更点  Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。   https://github.com/denoland/deno/releases/tag/v1.28.2
+Node.js互換性の改善 Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています
+{ &#34;imports&#34;: { &#34;preact/&#34;: &#34;npm:preact/&#34; } } module.createRequire()でURLオブジェクトがサポート
+deno infoで循環したnpm依存が適切に取り扱われるように改善
+型定義ファイルの検出に関する挙動の改善
+importのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善 その他の変更点 Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。 https://github.com/denoland/deno/releases/tag/v1.28.2
 deno_std v0.166.0 deno_std v0.166.0がリリースされました。
 std/fmtに関する破壊的変更 std/fmt/bytesのprettyBytes()関数がformat()にリネームされています。
 既存のprettyBytes()は非推奨化されており、今後のバージョンで削除される予定です。
 また、std/fmt/durationのprettyDuration()も同様にformat()へリネームされています。
 std/node - Node.js互換性の改善 Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。
- node:console: Deno v1.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/11/27.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2022-11-27T00:00:00+00:00">
-<meta property="article:modified_time" content="2022-11-27T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2022/11/21〜2022/11/27の最新情報">
-<meta name=twitter:description content="Deno v1.28.2 Deno v1.28.2がリリースされました。
+node:console: Deno v1.28.2に合わせて、consoleにprofile/profileEnd/timeStampが追加されています。 node:timers: timeout.refresh()が実装されています。 node:process: argvがexportされました。 process.kill(pid, 0)が適切に動作するように修正 (第2引数に0を指定すると、pidで指定されたプロセスの生存確認ができます) node:crypto: HMACサポートが追加されています。 (crypto.Hmac/crypto.createHmac) node:http: http.request()のheadersオプションで指定されたヘッダが渡されない問題が修正 IncomingMessage.statusMessageの上書きができない問題が解消 下記いずれかの条件を満たす場合、ClientRequestでリクエストボディのchunk送信が無効化されるように修正 Transfer-Encoding: chunkedが未指定の場合 Content-Lengthが指定された場合 node:fs: fs."><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2022/11/27.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2022-11-27T00:00:00+00:00"><meta property="article:modified_time" content="2022-11-27T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2022/11/21〜2022/11/27の最新情報"><meta name=twitter:description content="Deno v1.28.2 Deno v1.28.2がリリースされました。
 CPUプロファイリング 新機能として、以下の3メソッドが実装されています。
- console.profile console.profileEnd console.timeStamp  これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。
+console.profile console.profileEnd console.timeStamp これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。
 --inspectオプションが指定された状態でconsole.profile(label)が呼ばれると、console.profileEnd(label)の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。
 計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。
-Node.js互換性の改善   Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています
-{ &#34;imports&#34;: { &#34;preact/&#34;: &#34;npm:preact/&#34; } }   module.createRequire()でURLオブジェクトがサポート
-  deno infoで循環したnpm依存が適切に取り扱われるように改善
-  型定義ファイルの検出に関する挙動の改善
- importのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善    その他の変更点  Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。   https://github.com/denoland/deno/releases/tag/v1.28.2
+Node.js互換性の改善 Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています
+{ &#34;imports&#34;: { &#34;preact/&#34;: &#34;npm:preact/&#34; } } module.createRequire()でURLオブジェクトがサポート
+deno infoで循環したnpm依存が適切に取り扱われるように改善
+型定義ファイルの検出に関する挙動の改善
+importのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善 その他の変更点 Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。 https://github.com/denoland/deno/releases/tag/v1.28.2
 deno_std v0.166.0 deno_std v0.166.0がリリースされました。
 std/fmtに関する破壊的変更 std/fmt/bytesのprettyBytes()関数がformat()にリネームされています。
 既存のprettyBytes()は非推奨化されており、今後のバージョンで削除される予定です。
 また、std/fmt/durationのprettyDuration()も同様にformat()へリネームされています。
 std/node - Node.js互換性の改善 Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。
- node:console: Deno v1.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2022/11/21〜2022/11/27の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/11/27.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2022/11/21〜2022/11/27の最新情報","name":"2022\/11\/21〜2022\/11\/27の最新情報","description":"Deno v1.28.2 Deno v1.28.2がリリースされました。\nCPUプロファイリング 新機能として、以下の3メソッドが実装されています。\n console.profile console.profileEnd console.timeStamp  これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。\n--inspectオプションが指定された状態でconsole.profile(label)が呼ばれると、console.profileEnd(label)の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。\n計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。\nNode.js互換性の改善   Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています\n{ \u0026#34;imports\u0026#34;: { \u0026#34;preact/\u0026#34;: \u0026#34;npm:preact/\u0026#34; } }   module.createRequire()でURLオブジェクトがサポート\n  deno infoで循環したnpm依存が適切に取り扱われるように改善\n  型定義ファイルの検出に関する挙動の改善\n importのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善    その他の変更点  Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。   https://github.com/denoland/deno/releases/tag/v1.28.2\ndeno_std v0.166.0 deno_std v0.166.0がリリースされました。\nstd/fmtに関する破壊的変更 std/fmt/bytesのprettyBytes()関数がformat()にリネームされています。\n既存のprettyBytes()は非推奨化されており、今後のバージョンで削除される予定です。\nまた、std/fmt/durationのprettyDuration()も同様にformat()へリネームされています。\nstd/node - Node.js互換性の改善 Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。\n node:console: Deno v1.","keywords":["Deno","deno_std","Hono"],"articleBody":"Deno v1.28.2 Deno v1.28.2がリリースされました。\nCPUプロファイリング 新機能として、以下の3メソッドが実装されています。\n console.profile console.profileEnd console.timeStamp  これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。\n--inspectオプションが指定された状態でconsole.profile(label)が呼ばれると、console.profileEnd(label)の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。\n計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。\nNode.js互換性の改善   Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています\n{ \"imports\": { \"preact/\": \"npm:preact/\" } }   module.createRequire()でURLオブジェクトがサポート\n  deno infoで循環したnpm依存が適切に取り扱われるように改善\n  型定義ファイルの検出に関する挙動の改善\n importのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善    その他の変更点  Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。   https://github.com/denoland/deno/releases/tag/v1.28.2\ndeno_std v0.166.0 deno_std v0.166.0がリリースされました。\nstd/fmtに関する破壊的変更 std/fmt/bytesのprettyBytes()関数がformat()にリネームされています。\n既存のprettyBytes()は非推奨化されており、今後のバージョンで削除される予定です。\nまた、std/fmt/durationのprettyDuration()も同様にformat()へリネームされています。\nstd/node - Node.js互換性の改善 Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。\n node:console: Deno v1.28.2に合わせて、consoleにprofile/profileEnd/timeStampが追加されています。 node:timers: timeout.refresh()が実装されています。 node:process:  argvがexportされました。 process.kill(pid, 0)が適切に動作するように修正 (第2引数に0を指定すると、pidで指定されたプロセスの生存確認ができます)   node:crypto: HMACサポートが追加されています。 (crypto.Hmac/crypto.createHmac) node:http:  http.request()のheadersオプションで指定されたヘッダが渡されない問題が修正 IncomingMessage.statusMessageの上書きができない問題が解消 下記いずれかの条件を満たす場合、ClientRequestでリクエストボディのchunk送信が無効化されるように修正  Transfer-Encoding: chunkedが未指定の場合 Content-Lengthが指定された場合     node:fs: fs.ReadStreamとfs.WriteStreamの型定義が改善 (instanceofによるnarrowingが適切に機能するように)  std/http/cookieの改善 setCookieのexpiresオプションで数値の指定がサポートされています。\nまた、setCookieのvalueに空白を含む文字列を渡した際のエラーメッセージも改善されています。\n https://github.com/denoland/deno_std/releases/tag/0.166.0\nDeno.CommandAPIの見直しについて Deno v1.28で実装されたDeno.Commandに関して、APIの見直しが検討されているようです。\n Split state and configuration in new subprocess API (#16799)\n 具体的には、下記のようにAPIが変更されることが検討されているようです:\n Deno.ChildProcessという新しい型を導入 Deno.Commandの下記プロパティをDeno.ChildProcessへ移動  stdin stdout stderr pid status   Deno.Command.spawnの戻り値がvoidからDeno.ChildProcessへ変更  この変更に関する背景として、サブプロセスに関する設定(CLI引数やパイプなど)とサブプロセスに関する状態(プロセスIDや終了コードなど)をDeno.Commandという単一のAPIが持つことにより、混乱を生んでしまうということが背景にあるようです。\nDeno.Commandにはサブプロセスの設定を、Deno.ChildProcessにサブプロセスの状態を保持させることで、この問題を解消する狙いがあるようです。\nこの変更に関してはすでにPRが作成されており、早ければDeno v1.29あたりでリリースされる可能性もありそうです。\ntea Homebrewの作者によるDenoで実装された新しいパッケージマネージャが公開されています。\n https://github.com/teaxyz/cli   https://twitter.com/Linda_pp/status/1594487254281379840\nJSConf JP 2022 JSConf JP 2022でのスライドが公開されています。\nいくつかのスライドでDenoに関して言及されています:\n About npm: support of Deno Hono - Ultrafast web framework for Cloudflare Workers, Deno, Bun, and Node.js Web Runtime  ","wordCount":"133","inLanguage":"en","datePublished":"2022-11-27T00:00:00Z","dateModified":"2022-11-27T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/11/27.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2022/11/21〜2022/11/27の最新情報
-</h1>
-<div class=post-meta><span title="2022-11-27 00:00:00 +0000 UTC">November 27, 2022</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno-v1282 aria-label="Deno v1.28.2">Deno v1.28.2</a><ul>
-<li>
-<a href=#cpu%e3%83%97%e3%83%ad%e3%83%95%e3%82%a1%e3%82%a4%e3%83%aa%e3%83%b3%e3%82%b0 aria-label=CPUプロファイリング>CPUプロファイリング</a></li>
-<li>
-<a href=#nodejs%e4%ba%92%e6%8f%9b%e6%80%a7%e3%81%ae%e6%94%b9%e5%96%84 aria-label=Node.js互換性の改善>Node.js互換性の改善</a></li>
-<li>
-<a href=#%e3%81%9d%e3%81%ae%e4%bb%96%e3%81%ae%e5%a4%89%e6%9b%b4%e7%82%b9 aria-label=その他の変更点>その他の変更点</a></li></ul>
-</li>
-<li>
-<a href=#deno_std-v01660 aria-label="deno_std v0.166.0">deno_std v0.166.0</a><ul>
-<li>
-<a href=#stdfmt%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4 aria-label=std/fmtに関する破壊的変更><code>std/fmt</code>に関する破壊的変更</a></li>
-<li>
-<a href=#stdnode---nodejs%e4%ba%92%e6%8f%9b%e6%80%a7%e3%81%ae%e6%94%b9%e5%96%84 aria-label="std/node - Node.js互換性の改善"><code>std/node</code> - Node.js互換性の改善</a></li>
-<li>
-<a href=#stdhttpcookie%e3%81%ae%e6%94%b9%e5%96%84 aria-label=std/http/cookieの改善><code>std/http/cookie</code>の改善</a></li></ul>
-</li>
-<li>
-<a href=#denocommandapi%e3%81%ae%e8%a6%8b%e7%9b%b4%e3%81%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=Deno.CommandAPIの見直しについて><code>Deno.Command</code>APIの見直しについて</a></li>
-<li>
-<a href=#tea aria-label=tea>tea</a></li>
-<li>
-<a href=#jsconf-jp-2022 aria-label="JSConf JP 2022">JSConf JP 2022</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno-v1282>Deno v1.28.2<a hidden class=anchor aria-hidden=true href=#deno-v1282>#</a></h2>
-<p>Deno v1.28.2がリリースされました。</p>
-<h3 id=cpuプロファイリング>CPUプロファイリング<a hidden class=anchor aria-hidden=true href=#cpuプロファイリング>#</a></h3>
-<p>新機能として、以下の3メソッドが実装されています。</p>
-<ul>
-<li><code>console.profile</code></li>
-<li><code>console.profileEnd</code></li>
-<li><code>console.timeStamp</code></li>
-</ul>
-<p>これらのAPIはDenoを実行する際に<code>--inspect</code>を指定した場合のみ有効化されます。</p>
-<p><code>--inspect</code>オプションが指定された状態で<code>console.profile(label)</code>が呼ばれると、<code>console.profileEnd(label)</code>の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。</p>
-<p>計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。</p>
-<h3 id=nodejs互換性の改善>Node.js互換性の改善<a hidden class=anchor aria-hidden=true href=#nodejs互換性の改善>#</a></h3>
-<ul>
-<li>
-<p>Import Mapsファイルの定義に<code>/</code>が含まれれているとマッピングがうまく動作しない問題が解消されています</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;imports&#34;</span>: {
-    <span style=color:#f92672>&#34;preact/&#34;</span>: <span style=color:#e6db74>&#34;npm:preact/&#34;</span>
-  }
-}
-</code></pre></div></li>
-<li>
-<p><code>module.createRequire()</code>でURLオブジェクトがサポート</p>
-</li>
-<li>
-<p><code>deno info</code>で循環したnpm依存が適切に取り扱われるように改善</p>
-</li>
-<li>
-<p>型定義ファイルの検出に関する挙動の改善</p>
-<ul>
-<li><code>import</code>のパスにディレクトリが指定された際の型定義ファイルの検出が改善 (<code>import * as mod from ./sub_dir</code>とすると、<code>./sub_dir/index.d.ts</code>などのファイルが自動で探索されます)</li>
-<li><code>package.json</code>で<code>exports</code>と<code>types</code>の両方が定義されているときに、<code>exports</code>から先に処理されるように修正</li>
-<li><code>package.json</code>で<code>types</code>エントリが未定義だった際に、<code>main</code>で指定されたエントリポイントを元に型定義が解決されるように挙動が改善</li>
-</ul>
-</li>
-</ul>
-<h3 id=その他の変更点>その他の変更点<a hidden class=anchor aria-hidden=true href=#その他の変更点>#</a></h3>
-<ul>
-<li><code>Deno.serve</code>と<code>--watch</code>オプションを併用したときに、<code>AddrInUse</code>エラーが出る問題が解消されています。</li>
-</ul>
-<hr>
-<p><a href=https://github.com/denoland/deno/releases/tag/v1.28.2>https://github.com/denoland/deno/releases/tag/v1.28.2</a></p>
-<h2 id=deno_std-v01660>deno_std v0.166.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01660>#</a></h2>
-<p>deno_std v0.166.0がリリースされました。</p>
-<h3 id=stdfmtに関する破壊的変更><code>std/fmt</code>に関する破壊的変更<a hidden class=anchor aria-hidden=true href=#stdfmtに関する破壊的変更>#</a></h3>
-<p><code>std/fmt/bytes</code>の<code>prettyBytes()</code>関数が<code>format()</code>にリネームされています。</p>
-<p>既存の<code>prettyBytes()</code>は非推奨化されており、今後のバージョンで削除される予定です。</p>
-<p>また、<code>std/fmt/duration</code>の<code>prettyDuration()</code>も同様に<code>format()</code>へリネームされています。</p>
-<h3 id=stdnode---nodejs互換性の改善><code>std/node</code> - Node.js互換性の改善<a hidden class=anchor aria-hidden=true href=#stdnode---nodejs互換性の改善>#</a></h3>
-<p>Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。</p>
-<ul>
-<li><code>node:console</code>: Deno v1.28.2に合わせて、<code>console</code>に<code>profile</code>/<code>profileEnd</code>/<code>timeStamp</code>が追加されています。</li>
-<li><code>node:timers</code>: <code>timeout.refresh()</code>が実装されています。</li>
-<li><code>node:process</code>:
-<ul>
-<li><code>argv</code>が<code>export</code>されました。</li>
-<li><code>process.kill(pid, 0)</code>が適切に動作するように修正 (第2引数に<code>0</code>を指定すると、<code>pid</code>で指定されたプロセスの生存確認ができます)</li>
-</ul>
-</li>
-<li><code>node:crypto</code>: HMACサポートが追加されています。 (<code>crypto.Hmac</code>/<code>crypto.createHmac</code>)</li>
-<li><code>node:http</code>:
-<ul>
-<li><code>http.request()</code>の<code>headers</code>オプションで指定されたヘッダが渡されない問題が修正</li>
-<li><code>IncomingMessage.statusMessage</code>の上書きができない問題が解消</li>
-<li>下記いずれかの条件を満たす場合、<code>ClientRequest</code>でリクエストボディのchunk送信が無効化されるように修正
-<ul>
-<li><code>Transfer-Encoding: chunked</code>が未指定の場合</li>
-<li><code>Content-Length</code>が指定された場合</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>node:fs</code>: <code>fs.ReadStream</code>と<code>fs.WriteStream</code>の型定義が改善 (<code>instanceof</code>によるnarrowingが適切に機能するように)</li>
-</ul>
-<h3 id=stdhttpcookieの改善><code>std/http/cookie</code>の改善<a hidden class=anchor aria-hidden=true href=#stdhttpcookieの改善>#</a></h3>
-<p><code>setCookie</code>の<code>expires</code>オプションで数値の指定がサポートされています。</p>
-<p>また、<code>setCookie</code>の<code>value</code>に空白を含む文字列を渡した際のエラーメッセージも改善されています。</p>
-<hr>
-<p><a href=https://github.com/denoland/deno_std/releases/tag/0.166.0>https://github.com/denoland/deno_std/releases/tag/0.166.0</a></p>
-<h2 id=denocommandapiの見直しについて><code>Deno.Command</code>APIの見直しについて<a hidden class=anchor aria-hidden=true href=#denocommandapiの見直しについて>#</a></h2>
-<p><a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.28.html>Deno v1.28</a>で実装された<code>Deno.Command</code>に関して、APIの見直しが検討されているようです。</p>
-<blockquote>
-<p><a href=https://github.com/denoland/deno/issues/16799>Split state and configuration in new subprocess API (#16799)</a></p>
-</blockquote>
-<p>具体的には、下記のようにAPIが変更されることが検討されているようです:</p>
-<ul>
-<li><code>Deno.ChildProcess</code>という新しい型を導入</li>
-<li><code>Deno.Command</code>の下記プロパティを<code>Deno.ChildProcess</code>へ移動
-<ul>
-<li><code>stdin</code></li>
-<li><code>stdout</code></li>
-<li><code>stderr</code></li>
-<li><code>pid</code></li>
-<li><code>status</code></li>
-</ul>
-</li>
-<li><code>Deno.Command.spawn</code>の戻り値が<code>void</code>から<code>Deno.ChildProcess</code>へ変更</li>
-</ul>
-<p>この変更に関する背景として、サブプロセスに関する設定(CLI引数やパイプなど)とサブプロセスに関する状態(プロセスIDや終了コードなど)を<code>Deno.Command</code>という単一のAPIが持つことにより、混乱を生んでしまうということが背景にあるようです。</p>
-<p><code>Deno.Command</code>にはサブプロセスの設定を、<code>Deno.ChildProcess</code>にサブプロセスの状態を保持させることで、この問題を解消する狙いがあるようです。</p>
-<p>この変更に関してはすでに<a href=https://github.com/denoland/deno/pull/16812>PR</a>が作成されており、早ければDeno v1.29あたりでリリースされる可能性もありそうです。</p>
-<h2 id=tea>tea<a hidden class=anchor aria-hidden=true href=#tea>#</a></h2>
-<p>Homebrewの作者によるDenoで実装された新しいパッケージマネージャが公開されています。</p>
-<ul>
-<li><a href=https://github.com/teaxyz/cli>https://github.com/teaxyz/cli</a></li>
-</ul>
-<hr>
-<p><a href=https://twitter.com/Linda_pp/status/1594487254281379840>https://twitter.com/Linda_pp/status/1594487254281379840</a></p>
-<h2 id=jsconf-jp-2022>JSConf JP 2022<a hidden class=anchor aria-hidden=true href=#jsconf-jp-2022>#</a></h2>
-<p><a href=https://jsconf.jp/2022/>JSConf JP 2022</a>でのスライドが公開されています。</p>
-<p>いくつかのスライドでDenoに関して言及されています:</p>
-<ul>
-<li><a href=https://kt3k.github.io/talk_jsconfjp_2022/>About <code>npm:</code> support of Deno</a></li>
-<li><a href=https://speakerdeck.com/yusukebe/hono-ultrafast-web-framework-for-cloudflare-workers-deno-bun-and-node-dot-js>Hono - Ultrafast web framework for Cloudflare Workers, Deno, Bun, and Node.js</a></li>
-<li><a href=https://speakerdeck.com/dynamis/web-runtime>Web Runtime</a></li>
-</ul>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/hono.html>Hono</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+node:console: Deno v1.28.2に合わせて、consoleにprofile/profileEnd/timeStampが追加されています。 node:timers: timeout.refresh()が実装されています。 node:process: argvがexportされました。 process.kill(pid, 0)が適切に動作するように修正 (第2引数に0を指定すると、pidで指定されたプロセスの生存確認ができます) node:crypto: HMACサポートが追加されています。 (crypto.Hmac/crypto.createHmac) node:http: http.request()のheadersオプションで指定されたヘッダが渡されない問題が修正 IncomingMessage.statusMessageの上書きができない問題が解消 下記いずれかの条件を満たす場合、ClientRequestでリクエストボディのchunk送信が無効化されるように修正 Transfer-Encoding: chunkedが未指定の場合 Content-Lengthが指定された場合 node:fs: fs."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2022/11/21〜2022/11/27の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2022/11/27.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2022/11/21〜2022/11/27の最新情報","name":"2022\/11\/21〜2022\/11\/27の最新情報","description":"Deno v1.28.2 Deno v1.28.2がリリースされました。\nCPUプロファイリング 新機能として、以下の3メソッドが実装されています。\nconsole.profile console.profileEnd console.timeStamp これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。\n--inspectオプションが指定された状態でconsole.profile(label)が呼ばれると、console.profileEnd(label)の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。\n計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。\nNode.js互換性の改善 Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています\n{ \u0026#34;imports\u0026#34;: { \u0026#34;preact/\u0026#34;: \u0026#34;npm:preact/\u0026#34; } } module.createRequire()でURLオブジェクトがサポート\ndeno infoで循環したnpm依存が適切に取り扱われるように改善\n型定義ファイルの検出に関する挙動の改善\nimportのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善 その他の変更点 Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。 https://github.com/denoland/deno/releases/tag/v1.28.2\ndeno_std v0.166.0 deno_std v0.166.0がリリースされました。\nstd/fmtに関する破壊的変更 std/fmt/bytesのprettyBytes()関数がformat()にリネームされています。\n既存のprettyBytes()は非推奨化されており、今後のバージョンで削除される予定です。\nまた、std/fmt/durationのprettyDuration()も同様にformat()へリネームされています。\nstd/node - Node.js互換性の改善 Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。\nnode:console: Deno v1.28.2に合わせて、consoleにprofile/profileEnd/timeStampが追加されています。 node:timers: timeout.refresh()が実装されています。 node:process: argvがexportされました。 process.kill(pid, 0)が適切に動作するように修正 (第2引数に0を指定すると、pidで指定されたプロセスの生存確認ができます) node:crypto: HMACサポートが追加されています。 (crypto.Hmac/crypto.createHmac) node:http: http.request()のheadersオプションで指定されたヘッダが渡されない問題が修正 IncomingMessage.statusMessageの上書きができない問題が解消 下記いずれかの条件を満たす場合、ClientRequestでリクエストボディのchunk送信が無効化されるように修正 Transfer-Encoding: chunkedが未指定の場合 Content-Lengthが指定された場合 node:fs: fs.","keywords":["Deno","deno_std","Hono"],"articleBody":"Deno v1.28.2 Deno v1.28.2がリリースされました。\nCPUプロファイリング 新機能として、以下の3メソッドが実装されています。\nconsole.profile console.profileEnd console.timeStamp これらのAPIはDenoを実行する際に--inspectを指定した場合のみ有効化されます。\n--inspectオプションが指定された状態でconsole.profile(label)が呼ばれると、console.profileEnd(label)の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。\n計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。\nNode.js互換性の改善 Import Mapsファイルの定義に/が含まれれているとマッピングがうまく動作しない問題が解消されています\n{ \"imports\": { \"preact/\": \"npm:preact/\" } } module.createRequire()でURLオブジェクトがサポート\ndeno infoで循環したnpm依存が適切に取り扱われるように改善\n型定義ファイルの検出に関する挙動の改善\nimportのパスにディレクトリが指定された際の型定義ファイルの検出が改善 (import * as mod from ./sub_dirとすると、./sub_dir/index.d.tsなどのファイルが自動で探索されます) package.jsonでexportsとtypesの両方が定義されているときに、exportsから先に処理されるように修正 package.jsonでtypesエントリが未定義だった際に、mainで指定されたエントリポイントを元に型定義が解決されるように挙動が改善 その他の変更点 Deno.serveと--watchオプションを併用したときに、AddrInUseエラーが出る問題が解消されています。 https://github.com/denoland/deno/releases/tag/v1.28.2\ndeno_std v0.166.0 deno_std v0.166.0がリリースされました。\nstd/fmtに関する破壊的変更 std/fmt/bytesのprettyBytes()関数がformat()にリネームされています。\n既存のprettyBytes()は非推奨化されており、今後のバージョンで削除される予定です。\nまた、std/fmt/durationのprettyDuration()も同様にformat()へリネームされています。\nstd/node - Node.js互換性の改善 Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。\nnode:console: Deno v1.28.2に合わせて、consoleにprofile/profileEnd/timeStampが追加されています。 node:timers: timeout.refresh()が実装されています。 node:process: argvがexportされました。 process.kill(pid, 0)が適切に動作するように修正 (第2引数に0を指定すると、pidで指定されたプロセスの生存確認ができます) node:crypto: HMACサポートが追加されています。 (crypto.Hmac/crypto.createHmac) node:http: http.request()のheadersオプションで指定されたヘッダが渡されない問題が修正 IncomingMessage.statusMessageの上書きができない問題が解消 下記いずれかの条件を満たす場合、ClientRequestでリクエストボディのchunk送信が無効化されるように修正 Transfer-Encoding: chunkedが未指定の場合 Content-Lengthが指定された場合 node:fs: fs.ReadStreamとfs.WriteStreamの型定義が改善 (instanceofによるnarrowingが適切に機能するように) std/http/cookieの改善 setCookieのexpiresオプションで数値の指定がサポートされています。\nまた、setCookieのvalueに空白を含む文字列を渡した際のエラーメッセージも改善されています。\nhttps://github.com/denoland/deno_std/releases/tag/0.166.0\nDeno.CommandAPIの見直しについて Deno v1.28で実装されたDeno.Commandに関して、APIの見直しが検討されているようです。\nSplit state and configuration in new subprocess API (#16799)\n具体的には、下記のようにAPIが変更されることが検討されているようです:\nDeno.ChildProcessという新しい型を導入 Deno.Commandの下記プロパティをDeno.ChildProcessへ移動 stdin stdout stderr pid status Deno.Command.spawnの戻り値がvoidからDeno.ChildProcessへ変更 この変更に関する背景として、サブプロセスに関する設定(CLI引数やパイプなど)とサブプロセスに関する状態(プロセスIDや終了コードなど)をDeno.Commandという単一のAPIが持つことにより、混乱を生んでしまうということが背景にあるようです。\nDeno.Commandにはサブプロセスの設定を、Deno.ChildProcessにサブプロセスの状態を保持させることで、この問題を解消する狙いがあるようです。\nこの変更に関してはすでにPRが作成されており、早ければDeno v1.29あたりでリリースされる可能性もありそうです。\ntea Homebrewの作者によるDenoで実装された新しいパッケージマネージャが公開されています。\nhttps://github.com/teaxyz/cli https://twitter.com/Linda_pp/status/1594487254281379840\nJSConf JP 2022 JSConf JP 2022でのスライドが公開されています。\nいくつかのスライドでDenoに関して言及されています:\nAbout npm: support of Deno Hono - Ultrafast web framework for Cloudflare Workers, Deno, Bun, and Node.js Web Runtime ","wordCount":"133","inLanguage":"en","datePublished":"2022-11-27T00:00:00Z","dateModified":"2022-11-27T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2022/11/27.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2022/11/21〜2022/11/27の最新情報</h1><div class=post-meta><span title='2022-11-27 00:00:00 +0000 UTC'>November 27, 2022</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno-v1282 aria-label="Deno v1.28.2">Deno v1.28.2</a><ul><li><a href=#cpu%e3%83%97%e3%83%ad%e3%83%95%e3%82%a1%e3%82%a4%e3%83%aa%e3%83%b3%e3%82%b0 aria-label=CPUプロファイリング>CPUプロファイリング</a></li><li><a href=#nodejs%e4%ba%92%e6%8f%9b%e6%80%a7%e3%81%ae%e6%94%b9%e5%96%84 aria-label=Node.js互換性の改善>Node.js互換性の改善</a></li><li><a href=#%e3%81%9d%e3%81%ae%e4%bb%96%e3%81%ae%e5%a4%89%e6%9b%b4%e7%82%b9 aria-label=その他の変更点>その他の変更点</a></li></ul></li><li><a href=#deno_std-v01660 aria-label="deno_std v0.166.0">deno_std v0.166.0</a><ul><li><a href=#stdfmt%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e7%a0%b4%e5%a3%8a%e7%9a%84%e5%a4%89%e6%9b%b4 aria-label=std/fmtに関する破壊的変更><code>std/fmt</code>に関する破壊的変更</a></li><li><a href=#stdnode---nodejs%e4%ba%92%e6%8f%9b%e6%80%a7%e3%81%ae%e6%94%b9%e5%96%84 aria-label="std/node - Node.js互換性の改善"><code>std/node</code> - Node.js互換性の改善</a></li><li><a href=#stdhttpcookie%e3%81%ae%e6%94%b9%e5%96%84 aria-label=std/http/cookieの改善><code>std/http/cookie</code>の改善</a></li></ul></li><li><a href=#denocommandapi%e3%81%ae%e8%a6%8b%e7%9b%b4%e3%81%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label=Deno.CommandAPIの見直しについて><code>Deno.Command</code>APIの見直しについて</a></li><li><a href=#tea aria-label=tea>tea</a></li><li><a href=#jsconf-jp-2022 aria-label="JSConf JP 2022">JSConf JP 2022</a></li></ul></div></details></div><div class=post-content><h2 id=deno-v1282>Deno v1.28.2<a hidden class=anchor aria-hidden=true href=#deno-v1282>#</a></h2><p>Deno v1.28.2がリリースされました。</p><h3 id=cpuプロファイリング>CPUプロファイリング<a hidden class=anchor aria-hidden=true href=#cpuプロファイリング>#</a></h3><p>新機能として、以下の3メソッドが実装されています。</p><ul><li><code>console.profile</code></li><li><code>console.profileEnd</code></li><li><code>console.timeStamp</code></li></ul><p>これらのAPIはDenoを実行する際に<code>--inspect</code>を指定した場合のみ有効化されます。</p><p><code>--inspect</code>オプションが指定された状態で<code>console.profile(label)</code>が呼ばれると、<code>console.profileEnd(label)</code>の呼び出しまでの間に実行された処理に関するCPUプロファイルを計測することができます。</p><p>計測結果はChrome DevToolsの「Profile」タブから閲覧することができます。</p><h3 id=nodejs互換性の改善>Node.js互換性の改善<a hidden class=anchor aria-hidden=true href=#nodejs互換性の改善>#</a></h3><ul><li><p>Import Mapsファイルの定義に<code>/</code>が含まれれているとマッピングがうまく動作しない問題が解消されています</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;imports&#34;</span>: {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;preact/&#34;</span>: <span style=color:#e6db74>&#34;npm:preact/&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></li><li><p><code>module.createRequire()</code>でURLオブジェクトがサポート</p></li><li><p><code>deno info</code>で循環したnpm依存が適切に取り扱われるように改善</p></li><li><p>型定義ファイルの検出に関する挙動の改善</p><ul><li><code>import</code>のパスにディレクトリが指定された際の型定義ファイルの検出が改善 (<code>import * as mod from ./sub_dir</code>とすると、<code>./sub_dir/index.d.ts</code>などのファイルが自動で探索されます)</li><li><code>package.json</code>で<code>exports</code>と<code>types</code>の両方が定義されているときに、<code>exports</code>から先に処理されるように修正</li><li><code>package.json</code>で<code>types</code>エントリが未定義だった際に、<code>main</code>で指定されたエントリポイントを元に型定義が解決されるように挙動が改善</li></ul></li></ul><h3 id=その他の変更点>その他の変更点<a hidden class=anchor aria-hidden=true href=#その他の変更点>#</a></h3><ul><li><code>Deno.serve</code>と<code>--watch</code>オプションを併用したときに、<code>AddrInUse</code>エラーが出る問題が解消されています。</li></ul><hr><p><a href=https://github.com/denoland/deno/releases/tag/v1.28.2>https://github.com/denoland/deno/releases/tag/v1.28.2</a></p><h2 id=deno_std-v01660>deno_std v0.166.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01660>#</a></h2><p>deno_std v0.166.0がリリースされました。</p><h3 id=stdfmtに関する破壊的変更><code>std/fmt</code>に関する破壊的変更<a hidden class=anchor aria-hidden=true href=#stdfmtに関する破壊的変更>#</a></h3><p><code>std/fmt/bytes</code>の<code>prettyBytes()</code>関数が<code>format()</code>にリネームされています。</p><p>既存の<code>prettyBytes()</code>は非推奨化されており、今後のバージョンで削除される予定です。</p><p>また、<code>std/fmt/duration</code>の<code>prettyDuration()</code>も同様に<code>format()</code>へリネームされています。</p><h3 id=stdnode---nodejs互換性の改善><code>std/node</code> - Node.js互換性の改善<a hidden class=anchor aria-hidden=true href=#stdnode---nodejs互換性の改善>#</a></h3><p>Deno本体でのNode.js互換性の改善に向けた様々な修正が行われています。</p><ul><li><code>node:console</code>: Deno v1.28.2に合わせて、<code>console</code>に<code>profile</code>/<code>profileEnd</code>/<code>timeStamp</code>が追加されています。</li><li><code>node:timers</code>: <code>timeout.refresh()</code>が実装されています。</li><li><code>node:process</code>:<ul><li><code>argv</code>が<code>export</code>されました。</li><li><code>process.kill(pid, 0)</code>が適切に動作するように修正 (第2引数に<code>0</code>を指定すると、<code>pid</code>で指定されたプロセスの生存確認ができます)</li></ul></li><li><code>node:crypto</code>: HMACサポートが追加されています。 (<code>crypto.Hmac</code>/<code>crypto.createHmac</code>)</li><li><code>node:http</code>:<ul><li><code>http.request()</code>の<code>headers</code>オプションで指定されたヘッダが渡されない問題が修正</li><li><code>IncomingMessage.statusMessage</code>の上書きができない問題が解消</li><li>下記いずれかの条件を満たす場合、<code>ClientRequest</code>でリクエストボディのchunk送信が無効化されるように修正<ul><li><code>Transfer-Encoding: chunked</code>が未指定の場合</li><li><code>Content-Length</code>が指定された場合</li></ul></li></ul></li><li><code>node:fs</code>: <code>fs.ReadStream</code>と<code>fs.WriteStream</code>の型定義が改善 (<code>instanceof</code>によるnarrowingが適切に機能するように)</li></ul><h3 id=stdhttpcookieの改善><code>std/http/cookie</code>の改善<a hidden class=anchor aria-hidden=true href=#stdhttpcookieの改善>#</a></h3><p><code>setCookie</code>の<code>expires</code>オプションで数値の指定がサポートされています。</p><p>また、<code>setCookie</code>の<code>value</code>に空白を含む文字列を渡した際のエラーメッセージも改善されています。</p><hr><p><a href=https://github.com/denoland/deno_std/releases/tag/0.166.0>https://github.com/denoland/deno_std/releases/tag/0.166.0</a></p><h2 id=denocommandapiの見直しについて><code>Deno.Command</code>APIの見直しについて<a hidden class=anchor aria-hidden=true href=#denocommandapiの見直しについて>#</a></h2><p><a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.28.html>Deno v1.28</a>で実装された<code>Deno.Command</code>に関して、APIの見直しが検討されているようです。</p><blockquote><p><a href=https://github.com/denoland/deno/issues/16799>Split state and configuration in new subprocess API (#16799)</a></p></blockquote><p>具体的には、下記のようにAPIが変更されることが検討されているようです:</p><ul><li><code>Deno.ChildProcess</code>という新しい型を導入</li><li><code>Deno.Command</code>の下記プロパティを<code>Deno.ChildProcess</code>へ移動<ul><li><code>stdin</code></li><li><code>stdout</code></li><li><code>stderr</code></li><li><code>pid</code></li><li><code>status</code></li></ul></li><li><code>Deno.Command.spawn</code>の戻り値が<code>void</code>から<code>Deno.ChildProcess</code>へ変更</li></ul><p>この変更に関する背景として、サブプロセスに関する設定(CLI引数やパイプなど)とサブプロセスに関する状態(プロセスIDや終了コードなど)を<code>Deno.Command</code>という単一のAPIが持つことにより、混乱を生んでしまうということが背景にあるようです。</p><p><code>Deno.Command</code>にはサブプロセスの設定を、<code>Deno.ChildProcess</code>にサブプロセスの状態を保持させることで、この問題を解消する狙いがあるようです。</p><p>この変更に関してはすでに<a href=https://github.com/denoland/deno/pull/16812>PR</a>が作成されており、早ければDeno v1.29あたりでリリースされる可能性もありそうです。</p><h2 id=tea>tea<a hidden class=anchor aria-hidden=true href=#tea>#</a></h2><p>Homebrewの作者によるDenoで実装された新しいパッケージマネージャが公開されています。</p><ul><li><a href=https://github.com/teaxyz/cli>https://github.com/teaxyz/cli</a></li></ul><hr><p><a href=https://twitter.com/Linda_pp/status/1594487254281379840>https://twitter.com/Linda_pp/status/1594487254281379840</a></p><h2 id=jsconf-jp-2022>JSConf JP 2022<a hidden class=anchor aria-hidden=true href=#jsconf-jp-2022>#</a></h2><p><a href=https://jsconf.jp/2022/>JSConf JP 2022</a>でのスライドが公開されています。</p><p>いくつかのスライドでDenoに関して言及されています:</p><ul><li><a href=https://kt3k.github.io/talk_jsconfjp_2022/>About <code>npm:</code> support of Deno</a></li><li><a href=https://speakerdeck.com/yusukebe/hono-ultrafast-web-framework-for-cloudflare-workers-deno-bun-and-node-dot-js>Hono - Ultrafast web framework for Cloudflare Workers, Deno, Bun, and Node.js</a></li><li><a href=https://speakerdeck.com/dynamis/web-runtime>Web Runtime</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/hono.html>Hono</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

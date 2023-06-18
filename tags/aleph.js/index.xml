@@ -14,7 +14,8 @@ Fresh v1 Fresh v1.0.0がリリースされました。
 これに合わせて、Freshのリポジトリがdenoland organization配下に移動されています。
 また、Deno公式でFreshの紹介記事が公開されています。
 Fresh 1.0 https://github.com/denoland/fresh
-denoland/meet-me Deno公式で、Calendlyのクローンアプリが公開されています。</description></item><item><title>2021/05/16〜2022/05/22の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/22.html</link><pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/22.html</guid><description>Deno v1.22 Deno v1.22がリリースされました。
+denoland/meet-me Deno公式で、Calendlyのクローンアプリが公開されています。
+denoland/meet-me Deno Deploy+Firebase+Aleph.jsを使用して実装されているようです。</description></item><item><title>2021/05/16〜2022/05/22の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/22.html</link><pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/22.html</guid><description>Deno v1.22 Deno v1.22がリリースされました。
 変更点については以下の記事にまとめたため、詳しくはこちらを参照いただければと思います。
 Deno v1.22 deno_std v0.140.0 deno_std v0.140.0がリリースされました。
 http serve関数などにonListenオプションが追加されています。
@@ -25,7 +26,7 @@ await assertRejects(() =&amp;gt; { throw new Error(&amp;#34;foo&amp;#34;); }); /
 SQLバイディング Deno本体でSQLバインディングを公開するPRが作成されています。
 experiment(runtime): expose SQLite bindings (#14627)
 まだ実際にリリースされるかどうかは不明ですが、今のところ、下記のようにしてクエリを発行できる想定のようです。
-const { Connection } = Deno.</description></item><item><title>2021/05/09〜2022/05/15の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/15.html</link><pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/15.html</guid><description>Deno v1.21.3 Deno v1.21.3がリリースされました。
+const { Connection } = Deno.sqlite; const conn = new Connection(&amp;#34;sqlite.</description></item><item><title>2021/05/09〜2022/05/15の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/15.html</link><pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/15.html</guid><description>Deno v1.21.3 Deno v1.21.3がリリースされました。
 deno task deno task &amp;lt;タスク名&amp;gt;の&amp;lt;タスク名&amp;gt;の直後に--から始まるオプションを指定できない問題が修正されました。
 その他の修正 Deno.connectTlsで作成したTLSコネクションを閉じる前に、ハンドシェイクが完了することが保証されるようになりました。
 その他にも、Windows上で標準出力や標準エラー出力にマルチバイト文字を書き込んだ際の挙動の改善などが実施されています。
@@ -39,7 +40,7 @@ testing/snapshot assertSnapshotにオプションを渡せるようになりま�
 await assertSnapshot(t, actual, { dir: &amp;#34;testdata&amp;#34; }); https://github.com/denoland/deno_std/releases/tag/0.139.0
 --no-configオプションのサポートについて deno.json(c)の自動的な読み込みを無効化するために、--no-configオプションを追加するPRが作成されています。
 feat: add &amp;ndash;no-config flag (#14555)
-$ deno run --no-config main.</description></item><item><title>2021/04/25〜2022/05/01の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/01.html</link><pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/01.html</guid><description>Deno v1.21.1 Deno v1.21.1がリリースされました。
+$ deno run --no-config main.js この機能はDeno v1.22でリリースされる可能性がありそうです。</description></item><item><title>2021/04/25〜2022/05/01の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/05/01.html</link><pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/05/01.html</guid><description>Deno v1.21.1 Deno v1.21.1がリリースされました。
 ネイティブHTTPサーバ(Deno.serveHttp)の変更点 Deno v1.20でレスポンスボディの自動的な圧縮がサポートされました。
 このリリースでは、レスポンスボディにReadableStreamが指定された際の圧縮がサポートされています。
 その他にもいくつかのパフォーマンス改善が実施されています。
@@ -53,7 +54,9 @@ $ deno test --allow-read &amp;#34;--&amp;#34; &amp;#34;some-test.js&amp;#34; Den
 deno testの変更点 Deno v1.21でテストケースの実行時にログに出力された内容がキャプチャされるように改善されました。
 このリリースでは、Deno.spawn()などでstdoutやstderrオプションに&amp;quot;inherit&amp;quot;を指定した際に、サブプロセスの出力内容もキャプチャされるように改善されています。
 他にも、Workerの出力内容もキャプチャするように改善されています。
-その他の変更点 Deno.spawn(Sync)でstdinなどのオプションに&amp;quot;piped&amp;quot;を指定した際にエラーを発生させるよう修正されました。 Worker.terminateが呼び出し元のスレッドをブロックしないように修正されました (https://github.com/denoland/deno/issues/13705) https://github.</description></item><item><title>2021/04/18〜2022/04/24の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/04/24.html</link><pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/04/24.html</guid><description>Deno v1.21 Deno v1.21がリリースされました。
+その他の変更点 Deno.spawn(Sync)でstdinなどのオプションに&amp;quot;piped&amp;quot;を指定した際にエラーを発生させるよう修正されました。 Worker.terminateが呼び出し元のスレッドをブロックしないように修正されました (https://github.com/denoland/deno/issues/13705) https://github.com/denoland/deno/releases/tag/v1.21.1
+deno_std v0.137.0 deno_std v0.137.0がリリースされました。
+testing/mock stub()やspy()の使用時に、対象オブジェクトのメソッドの型が自動で推論されるように修正されました。(型定義の修正のみで挙動には影響はありません)</description></item><item><title>2021/04/18〜2022/04/24の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/04/24.html</link><pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/04/24.html</guid><description>Deno v1.21 Deno v1.21がリリースされました。
 個別に記事を書いたので、詳しくはそちらを参照いただければと思います。
 Deno v1.21 deno_std v0.136.0 deno_std v0.136.0がリリースされました。
 testing/snapshot スナップショットテストを行うためのモジュールが追加されました。
@@ -79,7 +82,10 @@ deno_std v0.108.0 deno_stdのv0.108.0がリリースされました。
 collections: maxWithとminWithに渡した配列にundefinedが含まれていた場合、要素の並び順によって結果が異なってしまう問題が修正されました
 collections: maxBy, minBy, 及びsortByのselector引数でbigintやDateを返却できるように型定義が修正されました
 testing/asserts: assertThrowsやassertRejectsでコールバックがサポートされました
-import { assertEquals, assertRejects } from &amp;#34;https://deno.land/std@0.108.0/testing/asserts.ts&amp;#34;; await assertRejects(() =&amp;gt; { return Promise.reject(new Error(&amp;#39;foo&amp;#39;)); }, (error: Error) =&amp;gt; { assertEquals(error.message, &amp;#39;foo&amp;#39;); }); https://github.</description></item><item><title>2021/09/13〜2021/09/19の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/09/19.html</link><pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/09/19.html</guid><description>Deno v2のリリースプランについて Deno v2のリリースプランが公開されました。
+import { assertEquals, assertRejects } from &amp;#34;https://deno.land/std@0.108.0/testing/asserts.ts&amp;#34;; await assertRejects(() =&amp;gt; { return Promise.reject(new Error(&amp;#39;foo&amp;#39;)); }, (error: Error) =&amp;gt; { assertEquals(error.message, &amp;#39;foo&amp;#39;); }); https://github.com/denoland/deno_std/releases/tag/0.108.0 https://github.com/denoland/deno_std/pull/1300 Freshのアップデート PreactベースのWebフレームワークであるFreshでアップデートが実施されました。
+いくつかの破壊的変更に加え、静的ファイルの配信やSuspenseのサポートなどが追加されています。
+変更点:
+バンドルの高速化のため、Deno CLIではesbuild-wasmの代わりにdeno-esbuildが使用されるように変更されました ページとAPIルートが区別されなくなりました (破壊的変更) 今までは pages/api配下はAPIルート、それ以外のpages配下のファイルはページとして扱われていましたが、それらの区別がなくなります デフォルトでクライアント側のJavaScriptが無効化されました (破壊的変更) クライアントサイドレンダリングを有効化したいときは、ページでruntimeJSを trueに設定した状態でconfigをexportする必要があります config.</description></item><item><title>2021/09/13〜2021/09/19の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/09/19.html</link><pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/09/19.html</guid><description>Deno v2のリリースプランについて Deno v2のリリースプランが公開されました。
 https://github.com/denoland/deno/issues/12110 10/12にDeno v1.15, 11/22にDeno v2がリリース予定とのことです
 また、GitHub Discussionsにて、v2で実施予定の追加の変更点やDenoのエコシステムの拡大に関する議論内容などについて公開されています。
 追加の変更点(今後、内容が変わる可能性があります！):
@@ -87,7 +93,7 @@ NotCapableエラーの導入 DenoのパーミッションエラーとOSによっ
 TypeScript v4.4への更新、deno fmtやdeno lintで設定ファイルがサポート、Web Crypto APIの強化、Deno.upgradeWebSocketの安定化、URLPatternの実装、シグナルAPI(unstable)への破壊的変更などが実施されています。
 また、magurotunaさんによる日本語の紹介記事が公開されています(https://zenn.dev/magurotuna/articles/deno-release-note-1-14-0)
 変更点:
-deno fmt/deno lint deno fmt でJSDocコメントへの基本的なサポートが追加されました deno fmtとdeno lintの挙動を設定ファイルやCLIオプションで変更できるようになりました ネイティブHTTPサーバ Deno.upgradeWebSocketが安定化されました Deno.upgradeWebSocket でUpgradeヘッダの大文字・小文字の違いを区別しないように修正されました ネイティブHTTPサーバでリクエストボディが消費されなかった場合に発生するリソースリークが修正されました FFI Deno.</description></item><item><title>2021/08/30〜2021/09/05の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/09/05.html</link><pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/09/05.html</guid><description>Aleph.js v0.3.0-beta.9 Aleph.jsのv0.3.0-beta.9がリリースされました。
+deno fmt/deno lint deno fmt でJSDocコメントへの基本的なサポートが追加されました deno fmtとdeno lintの挙動を設定ファイルやCLIオプションで変更できるようになりました ネイティブHTTPサーバ Deno.upgradeWebSocketが安定化されました Deno.upgradeWebSocket でUpgradeヘッダの大文字・小文字の違いを区別しないように修正されました ネイティブHTTPサーバでリクエストボディが消費されなかった場合に発生するリソースリークが修正されました FFI Deno.FFIPermissionDescriptorがDeno.FfiPermissionDescriptorにリネームされました (破壊的変更) Deno.dlopenの引数としてURLオブジェクトがサポートされました Web Crypto API SubtleCrypto#generateKey でAESキーの生成がサポートされました SubtleCrypto#exportKey でRSAキーをPKCS #8形式でエクスポートできるようになりました SubtleCrypto#generateKeyでECDHがサポートされました SubtleCrypto#importKey/deriveBits でHKDFとPBKDF2がサポートされました SubtleCrypto#encrypt/decrypt/generateKeyでRSA-OAEPがサポートされました SubtleCrypto#importKeyでRSAキーをPKCS #8フォーマットでインポートできるようになりました SubtleCrypto#importKeyでJWK形式のHMACキーのインポートがサポートされました SubtleCrypto#exportKeyでHMACキーをJWK形式でエクスポートできるようになりました SubtleCrypto.</description></item><item><title>2021/08/30〜2021/09/05の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/09/05.html</link><pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/09/05.html</guid><description>Aleph.js v0.3.0-beta.9 Aleph.jsのv0.3.0-beta.9がリリースされました。
 主な変更点として、サーバから返却されるCache-Controlの値がpublic, max-age=0, must-revalidateに変更されています。
 また、このリリースに合わせてWindi CSS向けのプラグインが公開されています (https://github.com/ije/aleph-plugin-windicss)
 https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.9 https://github.com/ije/aleph-plugin-windicss Deno Deploy Beta2 Deno DeployのBeta2がリリースされました。
@@ -111,4 +117,4 @@ https://developer.mozilla.org/ja/docs/Web/API/URL https://developer.mozilla.org/
 Aleph.js v0.3.0 betaバージョン Next.jsライクなフレームワークであるAleph.jsのv0.3.0 betaバージョンが公開されました。
 様々な機能の追加やパフォーマンスの向上などが図られています。
 主な変更点:
-新しいプラグインシステムの提供 (Aleph.jsのランタイムを拡張し、コードの変換プロセスに介入したりカスタムファイルタイプのサポートなどを追加できる仕組み) deno_std/http/serverからネイティブHTTP(Deno.serveHttp)への移行 APIミドルウェアがサポートされました。api/_middlewares.</description></item></channel></rss>
+新しいプラグインシステムの提供 (Aleph.jsのランタイムを拡張し、コードの変換プロセスに介入したりカスタムファイルタイプのサポートなどを追加できる仕組み) deno_std/http/serverからネイティブHTTP(Deno.serveHttp)への移行 APIミドルウェアがサポートされました。api/_middlewares.tsまたはaleph.config.tsでAPIミドルウェアを定義できます。 Pageコンポーネントでssrオプションを宣言できるようになりました。(Next.jsにおけるgetStaticProps/getStaticPaths相当の機能) linkタグを使用したScoped CSSのサポート VercelのServerless Functionsのサポート aleph.config.tsでImport mapsが使用できない問題が修正されました useDenoを使用したページにおけるHMRサポートの向上 devサーバの起動に関するパフォーマンス向上 https://github.com/alephjs/aleph.js/releases/tag/v0.3.0-beta.1 https://github.</description></item></channel></rss>

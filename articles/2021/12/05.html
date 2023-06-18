@@ -1,240 +1,44 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2021/11/29〜2021/12/05の最新情報 | 週刊Deno</title>
-<meta name=keywords content="Deno,deno_std,Opine,graffiti">
-<meta name=description content="Deno v1.16.4 Deno v1.16.4がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2021/11/29〜2021/12/05の最新情報 | 週刊Deno</title><meta name=keywords content="Deno,deno_std,Opine,graffiti"><meta name=description content="Deno v1.16.4 Deno v1.16.4がリリースされました。
 このリリースはバグ修正がメインです。
 変更点:
- SubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました  WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様     https://github.com/denoland/deno/releases/tag/v1.16.4
+SubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様 https://github.com/denoland/deno/releases/tag/v1.16.4
 deno_std v0.117.0 deno_std v0.117.0がリリースされました。
 httpモジュールでの新機能の追加やnodeモジュールのNode.jsとの互換性の向上が実施されています。
 httpモジュール serveなどの関数でonErrorオプションがサポートされ、handlerで発生したエラーを補足できるようになりました
-const handler = (request: Request) => { throw new Error(&#34;Hello&#34;); }; const servePromise = serve(handler, { addr: &#34;localhost:3000&#34;, onError(_error) { return new Response(&#34;Internal Server Error&#34;, { status: 500 }); }, }); nodeモジュール  readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util.">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/12/05.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2021/11/29〜2021/12/05の最新情報">
-<meta property="og:description" content="Deno v1.16.4 Deno v1.16.4がリリースされました。
+const handler = (request: Request) => { throw new Error(&#34;Hello&#34;); }; const servePromise = serve(handler, { addr: &#34;localhost:3000&#34;, onError(_error) { return new Response(&#34;Internal Server Error&#34;, { status: 500 }); }, }); nodeモジュール readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util.inspect()の互換性が向上しました streams: Node.jsとの互換性が大幅に向上しました https://github.com/denoland/deno_std/releases/tag/0.117.0
+Denoの--no-check=remoteオプションのサポートについて 以下のプルリクエストでDenoに--no-check=remoteオプションが追加されました。
+https://github.com/denoland/deno/pull/12766 内容としては、Denoを実行する際に--no-check=remoteを指定することで、リモートモジュール(URLがhttps:やhttp:で始まるモジュール)の型チェックのみをスキップさせるというものです。"><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/12/05.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2021/11/29〜2021/12/05の最新情報"><meta property="og:description" content="Deno v1.16.4 Deno v1.16.4がリリースされました。
 このリリースはバグ修正がメインです。
 変更点:
- SubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました  WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様     https://github.com/denoland/deno/releases/tag/v1.16.4
+SubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様 https://github.com/denoland/deno/releases/tag/v1.16.4
 deno_std v0.117.0 deno_std v0.117.0がリリースされました。
 httpモジュールでの新機能の追加やnodeモジュールのNode.jsとの互換性の向上が実施されています。
 httpモジュール serveなどの関数でonErrorオプションがサポートされ、handlerで発生したエラーを補足できるようになりました
-const handler = (request: Request) => { throw new Error(&#34;Hello&#34;); }; const servePromise = serve(handler, { addr: &#34;localhost:3000&#34;, onError(_error) { return new Response(&#34;Internal Server Error&#34;, { status: 500 }); }, }); nodeモジュール  readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/12/05.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2021-12-05T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-12-05T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2021/11/29〜2021/12/05の最新情報">
-<meta name=twitter:description content="Deno v1.16.4 Deno v1.16.4がリリースされました。
+const handler = (request: Request) => { throw new Error(&#34;Hello&#34;); }; const servePromise = serve(handler, { addr: &#34;localhost:3000&#34;, onError(_error) { return new Response(&#34;Internal Server Error&#34;, { status: 500 }); }, }); nodeモジュール readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util.inspect()の互換性が向上しました streams: Node.jsとの互換性が大幅に向上しました https://github.com/denoland/deno_std/releases/tag/0.117.0
+Denoの--no-check=remoteオプションのサポートについて 以下のプルリクエストでDenoに--no-check=remoteオプションが追加されました。
+https://github.com/denoland/deno/pull/12766 内容としては、Denoを実行する際に--no-check=remoteを指定することで、リモートモジュール(URLがhttps:やhttp:で始まるモジュール)の型チェックのみをスキップさせるというものです。"><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/12/05.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2021-12-05T00:00:00+00:00"><meta property="article:modified_time" content="2021-12-05T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2021/11/29〜2021/12/05の最新情報"><meta name=twitter:description content="Deno v1.16.4 Deno v1.16.4がリリースされました。
 このリリースはバグ修正がメインです。
 変更点:
- SubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました  WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様     https://github.com/denoland/deno/releases/tag/v1.16.4
+SubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様 https://github.com/denoland/deno/releases/tag/v1.16.4
 deno_std v0.117.0 deno_std v0.117.0がリリースされました。
 httpモジュールでの新機能の追加やnodeモジュールのNode.jsとの互換性の向上が実施されています。
 httpモジュール serveなどの関数でonErrorオプションがサポートされ、handlerで発生したエラーを補足できるようになりました
-const handler = (request: Request) => { throw new Error(&#34;Hello&#34;); }; const servePromise = serve(handler, { addr: &#34;localhost:3000&#34;, onError(_error) { return new Response(&#34;Internal Server Error&#34;, { status: 500 }); }, }); nodeモジュール  readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/11/29〜2021/12/05の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/12/05.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/11/29〜2021/12/05の最新情報","name":"2021\/11\/29〜2021\/12\/05の最新情報","description":"Deno v1.16.4 Deno v1.16.4がリリースされました。\nこのリリースはバグ修正がメインです。\n変更点:\n SubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました  WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様     https://github.com/denoland/deno/releases/tag/v1.16.4\ndeno_std v0.117.0 deno_std v0.117.0がリリースされました。\nhttpモジュールでの新機能の追加やnodeモジュールのNode.jsとの互換性の向上が実施されています。\nhttpモジュール serveなどの関数でonErrorオプションがサポートされ、handlerで発生したエラーを補足できるようになりました\nconst handler = (request: Request) =\u0026gt; { throw new Error(\u0026#34;Hello\u0026#34;); }; const servePromise = serve(handler, { addr: \u0026#34;localhost:3000\u0026#34;, onError(_error) { return new Response(\u0026#34;Internal Server Error\u0026#34;, { status: 500 }); }, }); nodeモジュール  readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util.","keywords":["Deno","deno_std","Opine","graffiti"],"articleBody":"Deno v1.16.4 Deno v1.16.4がリリースされました。\nこのリリースはバグ修正がメインです。\n変更点:\n SubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました  WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様     https://github.com/denoland/deno/releases/tag/v1.16.4\ndeno_std v0.117.0 deno_std v0.117.0がリリースされました。\nhttpモジュールでの新機能の追加やnodeモジュールのNode.jsとの互換性の向上が実施されています。\nhttpモジュール serveなどの関数でonErrorオプションがサポートされ、handlerで発生したエラーを補足できるようになりました\nconst handler = (request: Request) = { throw new Error(\"Hello\"); }; const servePromise = serve(handler, { addr: \"localhost:3000\", onError(_error) { return new Response(\"Internal Server Error\", { status: 500 }); }, }); nodeモジュール  readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util.inspect()の互換性が向上しました streams: Node.jsとの互換性が大幅に向上しました   https://github.com/denoland/deno_std/releases/tag/0.117.0\nDenoの--no-check=remoteオプションのサポートについて 以下のプルリクエストでDenoに--no-check=remoteオプションが追加されました。\n https://github.com/denoland/deno/pull/12766  内容としては、Denoを実行する際に--no-check=remoteを指定することで、リモートモジュール(URLがhttps:やhttp:で始まるモジュール)の型チェックのみをスキップさせるというものです。\n$ deno run --no-check=remote main.ts まだリリースはされていませんが、次のメジャーリリース(v1.17.0)あたりで導入されそうです。\n https://github.com/denoland/deno/pull/12766\ndoc.deno.landがリニューアル DenoのAPIドキュメンテーションサイトであるdoc.deno.landがリニューアルされました。\nこれに合わせてリポジトリがdenoland/doc_websiteからdenoland/doclandへ移行されており、内部実装もVercel+Next.jsからDeno Deploy+Oak+NanoJSX+Twindに移行されています。\n https://twitter.com/deno_land/status/1466810485337120779\nOpine v2.0.0 DenoのExpressポートであるOpineのv2.0.0がリリースされました。\n大きな変更点として内部実装がDenoネイティブHTTPサーバ(Deno.serveHttp)に置き換えられており、パフォーマンスの向上などが期待されます。\nまた補足ですが、OpineはNode.js互換モードが成熟しExpressが安定して動くようになったら、メンテナンスモードへ移行される予定のようです。\n  https://github.com/asos-craigmorten/opine/releases/tag/2.0.0 https://github.com/asos-craigmorten/opine/compare/1.9.0...1.9.1  graffiti DenoまたはNode.jsを使用してデスクトップアプリなどを開発するためのプラットフォーム\nまだ開発途中の段階のようですが、Electronなどと同様にHTML/CSSなどのWeb技術を用いてデスクトップアプリを開発できるようにすることを目指しているようです。\n https://github.com/cztomsik/graffiti\nDenoに今後導入される新機能 Denoに今後導入される新機能という記事が公開されました。\nDenoでの直近の変更内容や、2.0で導入予定の機能などについて詳しくまとめられています\n https://qiita.com/access3151fq/items/a4b3db6bbd1e2d2d92df\n","wordCount":"98","inLanguage":"en","datePublished":"2021-12-05T00:00:00Z","dateModified":"2021-12-05T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/12/05.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2021/11/29〜2021/12/05の最新情報
-</h1>
-<div class=post-meta><span title="2021-12-05 00:00:00 +0000 UTC">December 5, 2021</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno-v1164 aria-label="Deno v1.16.4">Deno v1.16.4</a></li>
-<li>
-<a href=#deno_std-v01170 aria-label="deno_std v0.117.0">deno_std v0.117.0</a><ul>
-<li>
-<a href=#http%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab aria-label=httpモジュール><code>http</code>モジュール</a></li>
-<li>
-<a href=#node%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab aria-label=nodeモジュール><code>node</code>モジュール</a></li></ul>
-</li>
-<li>
-<a href=#deno%e3%81%ae--no-checkremote%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label="Denoの--no-check=remoteオプションのサポートについて">Denoの<code>--no-check=remote</code>オプションのサポートについて</a></li>
-<li>
-<a href=#docdenoland%e3%81%8c%e3%83%aa%e3%83%8b%e3%83%a5%e3%83%bc%e3%82%a2%e3%83%ab aria-label=doc.deno.landがリニューアル>doc.deno.landがリニューアル</a></li>
-<li>
-<a href=#opine-v200 aria-label="Opine v2.0.0">Opine v2.0.0</a></li>
-<li>
-<a href=#graffiti aria-label=graffiti>graffiti</a></li>
-<li>
-<a href=#deno%e3%81%ab%e4%bb%8a%e5%be%8c%e5%b0%8e%e5%85%a5%e3%81%95%e3%82%8c%e3%82%8b%e6%96%b0%e6%a9%9f%e8%83%bd aria-label=Denoに今後導入される新機能>Denoに今後導入される新機能</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno-v1164>Deno v1.16.4<a hidden class=anchor aria-hidden=true href=#deno-v1164>#</a></h2>
-<p>Deno v1.16.4がリリースされました。</p>
-<p>このリリースはバグ修正がメインです。</p>
-<p><strong>変更点:</strong></p>
-<ul>
-<li><code>SubtleCrypto.encrypt</code>で指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました</li>
-<li><code>deno test</code>の<a href=https://deno.land/manual@v1.16.4/testing/sanitizers>Opサニタイザー</a>の安定性が向上しました</li>
-<li><code>WebSocketStream</code>の作成後に<code>AbortController</code>で中断すると、<code>AbortError</code>ではなく<code>Deno.errors.BadResource</code>エラーが発生する問題が修正されました</li>
-<li><code>Worker#terminate</code>を呼ぶと、プロセスがまれにパニックする問題が修正されました
-<ul>
-<li><a href=https://github.com/denoland/deno/issues/12658>WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<p><a href=https://github.com/denoland/deno/releases/tag/v1.16.4>https://github.com/denoland/deno/releases/tag/v1.16.4</a></p>
-<h2 id=deno_std-v01170>deno_std v0.117.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01170>#</a></h2>
-<p>deno_std v0.117.0がリリースされました。</p>
-<p><code>http</code>モジュールでの新機能の追加や<code>node</code>モジュールのNode.jsとの互換性の向上が実施されています。</p>
-<h3 id=httpモジュール><code>http</code>モジュール<a hidden class=anchor aria-hidden=true href=#httpモジュール>#</a></h3>
-<p><code>serve</code>などの関数で<code>onError</code>オプションがサポートされ、<code>handler</code>で発生したエラーを補足できるようになりました</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>handler</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>request</span>: <span style=color:#66d9ef>Request</span>) <span style=color:#f92672>=&gt;</span> {
-  <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;Hello&#34;</span>);
-};
-
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>servePromise</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>serve</span>(<span style=color:#a6e22e>handler</span>, {
-  <span style=color:#a6e22e>addr</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;localhost:3000&#34;</span>,
-  <span style=color:#a6e22e>onError</span>(<span style=color:#a6e22e>_error</span>) {
-    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Response</span>(<span style=color:#e6db74>&#34;Internal Server Error&#34;</span>, { <span style=color:#a6e22e>status</span>: <span style=color:#66d9ef>500</span> });
-  },
-});
-</code></pre></div><h3 id=nodeモジュール><code>node</code>モジュール<a hidden class=anchor aria-hidden=true href=#nodeモジュール>#</a></h3>
-<ul>
-<li><code>readline</code>: <code>createInterface()</code>が実装されました</li>
-<li><code>process</code>: <code>process.stdin.read()</code>で読み込みが非同期に行われるようになりました</li>
-<li><code>buffer</code>: <code>Buffer</code>でbase64エンコーディングがサポートされました. また<code>indexOf()</code>や<code>includes()</code>などの互換性も向上されています</li>
-<li><code>fs</code>: <code>rm</code>/<code>rmSync</code>/<code>stat</code>/<code>statSync</code>/<code>writeFile</code>/<code>writeFileSync</code>などの互換性が向上しました</li>
-<li><code>util</code>: <code>util.inspect()</code>の互換性が向上しました</li>
-<li><code>streams</code>: Node.jsとの互換性が大幅に向上しました</li>
-</ul>
-<hr>
-<p><a href=https://github.com/denoland/deno_std/releases/tag/0.117.0>https://github.com/denoland/deno_std/releases/tag/0.117.0</a></p>
-<h2 id=denoの--no-checkremoteオプションのサポートについて>Denoの<code>--no-check=remote</code>オプションのサポートについて<a hidden class=anchor aria-hidden=true href=#denoの--no-checkremoteオプションのサポートについて>#</a></h2>
-<p>以下のプルリクエストでDenoに<code>--no-check=remote</code>オプションが追加されました。</p>
-<ul>
-<li><a href=https://github.com/denoland/deno/pull/12766>https://github.com/denoland/deno/pull/12766</a></li>
-</ul>
-<p>内容としては、Denoを実行する際に<code>--no-check=remote</code>を指定することで、リモートモジュール(URLが<code>https:</code>や<code>http:</code>で始まるモジュール)の型チェックのみをスキップさせるというものです。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ deno run --no-check<span style=color:#f92672>=</span>remote main.ts
-</code></pre></div><p>まだリリースはされていませんが、次のメジャーリリース(v1.17.0)あたりで導入されそうです。</p>
-<hr>
-<p><a href=https://github.com/denoland/deno/pull/12766>https://github.com/denoland/deno/pull/12766</a></p>
-<h2 id=docdenolandがリニューアル>doc.deno.landがリニューアル<a hidden class=anchor aria-hidden=true href=#docdenolandがリニューアル>#</a></h2>
-<p>DenoのAPIドキュメンテーションサイトである<a href=https://doc.deno.land/>doc.deno.land</a>がリニューアルされました。</p>
-<p>これに合わせてリポジトリが<a href=https://github.com/denoland/doc_website>denoland/doc_website</a>から<a href=https://github.com/denoland/docland>denoland/docland</a>へ移行されており、内部実装もVercel+Next.jsからDeno Deploy+<a href=https://github.com/oakserver/oak>Oak</a>+<a href=https://github.com/nanojsx/nano>NanoJSX</a>+<a href=https://github.com/tw-in-js/twind>Twind</a>に移行されています。</p>
-<hr>
-<p><a href=https://twitter.com/deno_land/status/1466810485337120779>https://twitter.com/deno_land/status/1466810485337120779</a></p>
-<h2 id=opine-v200>Opine v2.0.0<a hidden class=anchor aria-hidden=true href=#opine-v200>#</a></h2>
-<p>DenoのExpressポートであるOpineのv2.0.0がリリースされました。</p>
-<p>大きな変更点として内部実装がDenoネイティブHTTPサーバ(<code>Deno.serveHttp</code>)に置き換えられており、パフォーマンスの向上などが期待されます。</p>
-<p>また補足ですが、OpineはNode.js互換モードが成熟しExpressが安定して動くようになったら、メンテナンスモードへ移行される予定のようです。</p>
-<hr>
-<ul>
-<li><a href=https://github.com/asos-craigmorten/opine/releases/tag/2.0.0>https://github.com/asos-craigmorten/opine/releases/tag/2.0.0</a></li>
-<li><a href=https://github.com/asos-craigmorten/opine/compare/1.9.0...1.9.1>https://github.com/asos-craigmorten/opine/compare/1.9.0...1.9.1</a></li>
-</ul>
-<h2 id=graffiti>graffiti<a hidden class=anchor aria-hidden=true href=#graffiti>#</a></h2>
-<p>DenoまたはNode.jsを使用してデスクトップアプリなどを開発するためのプラットフォーム</p>
-<p>まだ開発途中の段階のようですが、Electronなどと同様にHTML/CSSなどのWeb技術を用いてデスクトップアプリを開発できるようにすることを目指しているようです。</p>
-<hr>
-<p><a href=https://github.com/cztomsik/graffiti>https://github.com/cztomsik/graffiti</a></p>
-<h2 id=denoに今後導入される新機能>Denoに今後導入される新機能<a hidden class=anchor aria-hidden=true href=#denoに今後導入される新機能>#</a></h2>
-<p><a href=https://qiita.com/access3151fq/items/a4b3db6bbd1e2d2d92df>Denoに今後導入される新機能</a>という記事が公開されました。</p>
-<p>Denoでの直近の変更内容や、2.0で導入予定の機能などについて詳しくまとめられています</p>
-<hr>
-<p><a href=https://qiita.com/access3151fq/items/a4b3db6bbd1e2d2d92df>https://qiita.com/access3151fq/items/a4b3db6bbd1e2d2d92df</a></p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/opine.html>Opine</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/graffiti.html>graffiti</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+const handler = (request: Request) => { throw new Error(&#34;Hello&#34;); }; const servePromise = serve(handler, { addr: &#34;localhost:3000&#34;, onError(_error) { return new Response(&#34;Internal Server Error&#34;, { status: 500 }); }, }); nodeモジュール readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util.inspect()の互換性が向上しました streams: Node.jsとの互換性が大幅に向上しました https://github.com/denoland/deno_std/releases/tag/0.117.0
+Denoの--no-check=remoteオプションのサポートについて 以下のプルリクエストでDenoに--no-check=remoteオプションが追加されました。
+https://github.com/denoland/deno/pull/12766 内容としては、Denoを実行する際に--no-check=remoteを指定することで、リモートモジュール(URLがhttps:やhttp:で始まるモジュール)の型チェックのみをスキップさせるというものです。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/11/29〜2021/12/05の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/12/05.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/11/29〜2021/12/05の最新情報","name":"2021\/11\/29〜2021\/12\/05の最新情報","description":"Deno v1.16.4 Deno v1.16.4がリリースされました。\nこのリリースはバグ修正がメインです。\n変更点:\nSubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様 https://github.com/denoland/deno/releases/tag/v1.16.4\ndeno_std v0.117.0 deno_std v0.117.0がリリースされました。\nhttpモジュールでの新機能の追加やnodeモジュールのNode.jsとの互換性の向上が実施されています。\nhttpモジュール serveなどの関数でonErrorオプションがサポートされ、handlerで発生したエラーを補足できるようになりました\nconst handler = (request: Request) =\u0026gt; { throw new Error(\u0026#34;Hello\u0026#34;); }; const servePromise = serve(handler, { addr: \u0026#34;localhost:3000\u0026#34;, onError(_error) { return new Response(\u0026#34;Internal Server Error\u0026#34;, { status: 500 }); }, }); nodeモジュール readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util.inspect()の互換性が向上しました streams: Node.jsとの互換性が大幅に向上しました https://github.com/denoland/deno_std/releases/tag/0.117.0\nDenoの--no-check=remoteオプションのサポートについて 以下のプルリクエストでDenoに--no-check=remoteオプションが追加されました。\nhttps://github.com/denoland/deno/pull/12766 内容としては、Denoを実行する際に--no-check=remoteを指定することで、リモートモジュール(URLがhttps:やhttp:で始まるモジュール)の型チェックのみをスキップさせるというものです。","keywords":["Deno","deno_std","Opine","graffiti"],"articleBody":"Deno v1.16.4 Deno v1.16.4がリリースされました。\nこのリリースはバグ修正がメインです。\n変更点:\nSubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました deno testのOpサニタイザーの安定性が向上しました WebSocketStreamの作成後にAbortControllerで中断すると、AbortErrorではなくDeno.errors.BadResourceエラーが発生する問題が修正されました Worker#terminateを呼ぶと、プロセスがまれにパニックする問題が修正されました WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様 https://github.com/denoland/deno/releases/tag/v1.16.4\ndeno_std v0.117.0 deno_std v0.117.0がリリースされました。\nhttpモジュールでの新機能の追加やnodeモジュールのNode.jsとの互換性の向上が実施されています。\nhttpモジュール serveなどの関数でonErrorオプションがサポートされ、handlerで発生したエラーを補足できるようになりました\nconst handler = (request: Request) =\u003e { throw new Error(\"Hello\"); }; const servePromise = serve(handler, { addr: \"localhost:3000\", onError(_error) { return new Response(\"Internal Server Error\", { status: 500 }); }, }); nodeモジュール readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util.inspect()の互換性が向上しました streams: Node.jsとの互換性が大幅に向上しました https://github.com/denoland/deno_std/releases/tag/0.117.0\nDenoの--no-check=remoteオプションのサポートについて 以下のプルリクエストでDenoに--no-check=remoteオプションが追加されました。\nhttps://github.com/denoland/deno/pull/12766 内容としては、Denoを実行する際に--no-check=remoteを指定することで、リモートモジュール(URLがhttps:やhttp:で始まるモジュール)の型チェックのみをスキップさせるというものです。\n$ deno run --no-check=remote main.ts まだリリースはされていませんが、次のメジャーリリース(v1.17.0)あたりで導入されそうです。\nhttps://github.com/denoland/deno/pull/12766\ndoc.deno.landがリニューアル DenoのAPIドキュメンテーションサイトであるdoc.deno.landがリニューアルされました。\nこれに合わせてリポジトリがdenoland/doc_websiteからdenoland/doclandへ移行されており、内部実装もVercel+Next.jsからDeno Deploy+Oak+NanoJSX+Twindに移行されています。\nhttps://twitter.com/deno_land/status/1466810485337120779\nOpine v2.0.0 DenoのExpressポートであるOpineのv2.0.0がリリースされました。\n大きな変更点として内部実装がDenoネイティブHTTPサーバ(Deno.serveHttp)に置き換えられており、パフォーマンスの向上などが期待されます。\nまた補足ですが、OpineはNode.js互換モードが成熟しExpressが安定して動くようになったら、メンテナンスモードへ移行される予定のようです。\nhttps://github.com/asos-craigmorten/opine/releases/tag/2.0.0 https://github.com/asos-craigmorten/opine/compare/1.9.0...1.9.1 graffiti DenoまたはNode.jsを使用してデスクトップアプリなどを開発するためのプラットフォーム\nまだ開発途中の段階のようですが、Electronなどと同様にHTML/CSSなどのWeb技術を用いてデスクトップアプリを開発できるようにすることを目指しているようです。\nhttps://github.com/cztomsik/graffiti\nDenoに今後導入される新機能 Denoに今後導入される新機能という記事が公開されました。\nDenoでの直近の変更内容や、2.0で導入予定の機能などについて詳しくまとめられています\nhttps://qiita.com/access3151fq/items/a4b3db6bbd1e2d2d92df\n","wordCount":"98","inLanguage":"en","datePublished":"2021-12-05T00:00:00Z","dateModified":"2021-12-05T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/12/05.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2021/11/29〜2021/12/05の最新情報</h1><div class=post-meta><span title='2021-12-05 00:00:00 +0000 UTC'>December 5, 2021</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno-v1164 aria-label="Deno v1.16.4">Deno v1.16.4</a></li><li><a href=#deno_std-v01170 aria-label="deno_std v0.117.0">deno_std v0.117.0</a><ul><li><a href=#http%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab aria-label=httpモジュール><code>http</code>モジュール</a></li><li><a href=#node%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab aria-label=nodeモジュール><code>node</code>モジュール</a></li></ul></li><li><a href=#deno%e3%81%ae--no-checkremote%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%ae%e3%82%b5%e3%83%9d%e3%83%bc%e3%83%88%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6 aria-label="Denoの--no-check=remoteオプションのサポートについて">Denoの<code>--no-check=remote</code>オプションのサポートについて</a></li><li><a href=#docdenoland%e3%81%8c%e3%83%aa%e3%83%8b%e3%83%a5%e3%83%bc%e3%82%a2%e3%83%ab aria-label=doc.deno.landがリニューアル>doc.deno.landがリニューアル</a></li><li><a href=#opine-v200 aria-label="Opine v2.0.0">Opine v2.0.0</a></li><li><a href=#graffiti aria-label=graffiti>graffiti</a></li><li><a href=#deno%e3%81%ab%e4%bb%8a%e5%be%8c%e5%b0%8e%e5%85%a5%e3%81%95%e3%82%8c%e3%82%8b%e6%96%b0%e6%a9%9f%e8%83%bd aria-label=Denoに今後導入される新機能>Denoに今後導入される新機能</a></li></ul></div></details></div><div class=post-content><h2 id=deno-v1164>Deno v1.16.4<a hidden class=anchor aria-hidden=true href=#deno-v1164>#</a></h2><p>Deno v1.16.4がリリースされました。</p><p>このリリースはバグ修正がメインです。</p><p><strong>変更点:</strong></p><ul><li><code>SubtleCrypto.encrypt</code>で指定されたキーとアルゴリズムが一致しない場合、例外が投げられるようになりました</li><li><code>deno test</code>の<a href=https://deno.land/manual@v1.16.4/testing/sanitizers>Opサニタイザー</a>の安定性が向上しました</li><li><code>WebSocketStream</code>の作成後に<code>AbortController</code>で中断すると、<code>AbortError</code>ではなく<code>Deno.errors.BadResource</code>エラーが発生する問題が修正されました</li><li><code>Worker#terminate</code>を呼ぶと、プロセスがまれにパニックする問題が修正されました<ul><li><a href=https://github.com/denoland/deno/issues/12658>WorkerのメインモジュールでTop-Level Awaitが使われておりなおかつWorkerが作成後即座にterminateされると発生した模様</a></li></ul></li></ul><hr><p><a href=https://github.com/denoland/deno/releases/tag/v1.16.4>https://github.com/denoland/deno/releases/tag/v1.16.4</a></p><h2 id=deno_std-v01170>deno_std v0.117.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01170>#</a></h2><p>deno_std v0.117.0がリリースされました。</p><p><code>http</code>モジュールでの新機能の追加や<code>node</code>モジュールのNode.jsとの互換性の向上が実施されています。</p><h3 id=httpモジュール><code>http</code>モジュール<a hidden class=anchor aria-hidden=true href=#httpモジュール>#</a></h3><p><code>serve</code>などの関数で<code>onError</code>オプションがサポートされ、<code>handler</code>で発生したエラーを補足できるようになりました</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>handler</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>request</span>: <span style=color:#66d9ef>Request</span>) <span style=color:#f92672>=&gt;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;Hello&#34;</span>);
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>servePromise</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>serve</span>(<span style=color:#a6e22e>handler</span>, {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>addr</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;localhost:3000&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>onError</span>(<span style=color:#a6e22e>_error</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Response</span>(<span style=color:#e6db74>&#34;Internal Server Error&#34;</span>, { <span style=color:#a6e22e>status</span>: <span style=color:#66d9ef>500</span> });
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>});
+</span></span></code></pre></div><h3 id=nodeモジュール><code>node</code>モジュール<a hidden class=anchor aria-hidden=true href=#nodeモジュール>#</a></h3><ul><li><code>readline</code>: <code>createInterface()</code>が実装されました</li><li><code>process</code>: <code>process.stdin.read()</code>で読み込みが非同期に行われるようになりました</li><li><code>buffer</code>: <code>Buffer</code>でbase64エンコーディングがサポートされました. また<code>indexOf()</code>や<code>includes()</code>などの互換性も向上されています</li><li><code>fs</code>: <code>rm</code>/<code>rmSync</code>/<code>stat</code>/<code>statSync</code>/<code>writeFile</code>/<code>writeFileSync</code>などの互換性が向上しました</li><li><code>util</code>: <code>util.inspect()</code>の互換性が向上しました</li><li><code>streams</code>: Node.jsとの互換性が大幅に向上しました</li></ul><hr><p><a href=https://github.com/denoland/deno_std/releases/tag/0.117.0>https://github.com/denoland/deno_std/releases/tag/0.117.0</a></p><h2 id=denoの--no-checkremoteオプションのサポートについて>Denoの<code>--no-check=remote</code>オプションのサポートについて<a hidden class=anchor aria-hidden=true href=#denoの--no-checkremoteオプションのサポートについて>#</a></h2><p>以下のプルリクエストでDenoに<code>--no-check=remote</code>オプションが追加されました。</p><ul><li><a href=https://github.com/denoland/deno/pull/12766>https://github.com/denoland/deno/pull/12766</a></li></ul><p>内容としては、Denoを実行する際に<code>--no-check=remote</code>を指定することで、リモートモジュール(URLが<code>https:</code>や<code>http:</code>で始まるモジュール)の型チェックのみをスキップさせるというものです。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ deno run --no-check<span style=color:#f92672>=</span>remote main.ts
+</span></span></code></pre></div><p>まだリリースはされていませんが、次のメジャーリリース(v1.17.0)あたりで導入されそうです。</p><hr><p><a href=https://github.com/denoland/deno/pull/12766>https://github.com/denoland/deno/pull/12766</a></p><h2 id=docdenolandがリニューアル>doc.deno.landがリニューアル<a hidden class=anchor aria-hidden=true href=#docdenolandがリニューアル>#</a></h2><p>DenoのAPIドキュメンテーションサイトである<a href=https://doc.deno.land/>doc.deno.land</a>がリニューアルされました。</p><p>これに合わせてリポジトリが<a href=https://github.com/denoland/doc_website>denoland/doc_website</a>から<a href=https://github.com/denoland/docland>denoland/docland</a>へ移行されており、内部実装もVercel+Next.jsからDeno Deploy+<a href=https://github.com/oakserver/oak>Oak</a>+<a href=https://github.com/nanojsx/nano>NanoJSX</a>+<a href=https://github.com/tw-in-js/twind>Twind</a>に移行されています。</p><hr><p><a href=https://twitter.com/deno_land/status/1466810485337120779>https://twitter.com/deno_land/status/1466810485337120779</a></p><h2 id=opine-v200>Opine v2.0.0<a hidden class=anchor aria-hidden=true href=#opine-v200>#</a></h2><p>DenoのExpressポートであるOpineのv2.0.0がリリースされました。</p><p>大きな変更点として内部実装がDenoネイティブHTTPサーバ(<code>Deno.serveHttp</code>)に置き換えられており、パフォーマンスの向上などが期待されます。</p><p>また補足ですが、OpineはNode.js互換モードが成熟しExpressが安定して動くようになったら、メンテナンスモードへ移行される予定のようです。</p><hr><ul><li><a href=https://github.com/asos-craigmorten/opine/releases/tag/2.0.0>https://github.com/asos-craigmorten/opine/releases/tag/2.0.0</a></li><li><a href=https://github.com/asos-craigmorten/opine/compare/1.9.0...1.9.1>https://github.com/asos-craigmorten/opine/compare/1.9.0...1.9.1</a></li></ul><h2 id=graffiti>graffiti<a hidden class=anchor aria-hidden=true href=#graffiti>#</a></h2><p>DenoまたはNode.jsを使用してデスクトップアプリなどを開発するためのプラットフォーム</p><p>まだ開発途中の段階のようですが、Electronなどと同様にHTML/CSSなどのWeb技術を用いてデスクトップアプリを開発できるようにすることを目指しているようです。</p><hr><p><a href=https://github.com/cztomsik/graffiti>https://github.com/cztomsik/graffiti</a></p><h2 id=denoに今後導入される新機能>Denoに今後導入される新機能<a hidden class=anchor aria-hidden=true href=#denoに今後導入される新機能>#</a></h2><p><a href=https://qiita.com/access3151fq/items/a4b3db6bbd1e2d2d92df>Denoに今後導入される新機能</a>という記事が公開されました。</p><p>Denoでの直近の変更内容や、2.0で導入予定の機能などについて詳しくまとめられています</p><hr><p><a href=https://qiita.com/access3151fq/items/a4b3db6bbd1e2d2d92df>https://qiita.com/access3151fq/items/a4b3db6bbd1e2d2d92df</a></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/opine.html>Opine</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/graffiti.html>graffiti</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

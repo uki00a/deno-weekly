@@ -1,343 +1,61 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2023/03/27〜2023/04/02の最新情報 | 週刊Deno</title>
-<meta name=keywords content="Deno,deno_std,Cicada">
-<meta name=description content="Deno v1.32.2 Deno v1.32.2がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2023/03/27〜2023/04/02の最新情報 | 週刊Deno</title><meta name=keywords content="Deno,deno_std,Cicada"><meta name=description content="Deno v1.32.2 Deno v1.32.2がリリースされました。
 KV (Deno.Kv) Deno.KvCommitResult型が追加されています。
 これには、KVにコミットされた値に設定された新しいversionstampが含まれます。
 この追加に合わせて、以下の変更も実施されています。
- Deno.AtomicOperation.commitの戻り値がPromise<boolean>からPromise<Deno.KvCommitResult | null>に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise<void>からPromise<KvCommitResult>に変更されています。   Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry<T> | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)
+Deno.AtomicOperation.commitの戻り値がPromise<boolean>からPromise<Deno.KvCommitResult | null>に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise<void>からPromise<KvCommitResult>に変更されています。 Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry<T> | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)
 これに合わせて、以下のAPIに型引数を指定できるように変更されました。
- Deno.KvListIterator → Deno.KvListIterator<T> Deno.KvEntry → Deno.KvEntry<T>  これらの変更により、エントリを取得する際に値の型を指定できるようになりました。
-const entry: Deno.KvEntryMaybe<string> = await kv.get<string>([&#34;str&#34;]); const entries: [Deno.KvEntryMaybe<string>, Deno.KvEntryMaybe<number>] = await kv.getMany<[string, number]>([[&#34;str&#34;], [&#34;n&#34;]]);  Deno.Kv#getManyが実装されました。
+Deno.KvListIterator → Deno.KvListIterator<T> Deno.KvEntry → Deno.KvEntry<T> これらの変更により、エントリを取得する際に値の型を指定できるようになりました。
+const entry: Deno.KvEntryMaybe<string> = await kv.get<string>([&#34;str&#34;]); const entries: [Deno.KvEntryMaybe<string>, Deno.KvEntryMaybe<number>] = await kv.getMany<[string, number]>([[&#34;str&#34;], [&#34;n&#34;]]); Deno.Kv#getManyが実装されました。
 複数のエントリをまとめて取得できます。
-await kv.set([&#34;key&#34;, 1], &#34;foo&#34;); await kv.set([&#34;key&#34;, 2], &#34;bar&#34;); const entries = await kv.getMany([ [&#34;key&#34;, 1], [&#34;key&#34;, 2] ]); assert(entries.">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2023/04/02.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2023/03/27〜2023/04/02の最新情報">
-<meta property="og:description" content="Deno v1.32.2 Deno v1.32.2がリリースされました。
+await kv.set([&#34;key&#34;, 1], &#34;foo&#34;); await kv.set([&#34;key&#34;, 2], &#34;bar&#34;); const entries = await kv.getMany([ [&#34;key&#34;, 1], [&#34;key&#34;, 2] ]); assert(entries.length === 2); assert(entries[0].value === &#34;foo&#34;); assert(entries[1]."><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2023/04/02.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2023/03/27〜2023/04/02の最新情報"><meta property="og:description" content="Deno v1.32.2 Deno v1.32.2がリリースされました。
 KV (Deno.Kv) Deno.KvCommitResult型が追加されています。
 これには、KVにコミットされた値に設定された新しいversionstampが含まれます。
 この追加に合わせて、以下の変更も実施されています。
- Deno.AtomicOperation.commitの戻り値がPromise<boolean>からPromise<Deno.KvCommitResult | null>に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise<void>からPromise<KvCommitResult>に変更されています。   Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry<T> | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)
+Deno.AtomicOperation.commitの戻り値がPromise<boolean>からPromise<Deno.KvCommitResult | null>に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise<void>からPromise<KvCommitResult>に変更されています。 Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry<T> | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)
 これに合わせて、以下のAPIに型引数を指定できるように変更されました。
- Deno.KvListIterator → Deno.KvListIterator<T> Deno.KvEntry → Deno.KvEntry<T>  これらの変更により、エントリを取得する際に値の型を指定できるようになりました。
-const entry: Deno.KvEntryMaybe<string> = await kv.get<string>([&#34;str&#34;]); const entries: [Deno.KvEntryMaybe<string>, Deno.KvEntryMaybe<number>] = await kv.getMany<[string, number]>([[&#34;str&#34;], [&#34;n&#34;]]);  Deno.Kv#getManyが実装されました。
+Deno.KvListIterator → Deno.KvListIterator<T> Deno.KvEntry → Deno.KvEntry<T> これらの変更により、エントリを取得する際に値の型を指定できるようになりました。
+const entry: Deno.KvEntryMaybe<string> = await kv.get<string>([&#34;str&#34;]); const entries: [Deno.KvEntryMaybe<string>, Deno.KvEntryMaybe<number>] = await kv.getMany<[string, number]>([[&#34;str&#34;], [&#34;n&#34;]]); Deno.Kv#getManyが実装されました。
 複数のエントリをまとめて取得できます。
-await kv.set([&#34;key&#34;, 1], &#34;foo&#34;); await kv.set([&#34;key&#34;, 2], &#34;bar&#34;); const entries = await kv.getMany([ [&#34;key&#34;, 1], [&#34;key&#34;, 2] ]); assert(entries.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2023/04/02.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2023-04-02T00:00:00+00:00">
-<meta property="article:modified_time" content="2023-04-02T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2023/03/27〜2023/04/02の最新情報">
-<meta name=twitter:description content="Deno v1.32.2 Deno v1.32.2がリリースされました。
+await kv.set([&#34;key&#34;, 1], &#34;foo&#34;); await kv.set([&#34;key&#34;, 2], &#34;bar&#34;); const entries = await kv.getMany([ [&#34;key&#34;, 1], [&#34;key&#34;, 2] ]); assert(entries.length === 2); assert(entries[0].value === &#34;foo&#34;); assert(entries[1]."><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2023/04/02.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2023-04-02T00:00:00+00:00"><meta property="article:modified_time" content="2023-04-02T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2023/03/27〜2023/04/02の最新情報"><meta name=twitter:description content="Deno v1.32.2 Deno v1.32.2がリリースされました。
 KV (Deno.Kv) Deno.KvCommitResult型が追加されています。
 これには、KVにコミットされた値に設定された新しいversionstampが含まれます。
 この追加に合わせて、以下の変更も実施されています。
- Deno.AtomicOperation.commitの戻り値がPromise<boolean>からPromise<Deno.KvCommitResult | null>に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise<void>からPromise<KvCommitResult>に変更されています。   Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry<T> | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)
+Deno.AtomicOperation.commitの戻り値がPromise<boolean>からPromise<Deno.KvCommitResult | null>に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise<void>からPromise<KvCommitResult>に変更されています。 Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry<T> | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)
 これに合わせて、以下のAPIに型引数を指定できるように変更されました。
- Deno.KvListIterator → Deno.KvListIterator<T> Deno.KvEntry → Deno.KvEntry<T>  これらの変更により、エントリを取得する際に値の型を指定できるようになりました。
-const entry: Deno.KvEntryMaybe<string> = await kv.get<string>([&#34;str&#34;]); const entries: [Deno.KvEntryMaybe<string>, Deno.KvEntryMaybe<number>] = await kv.getMany<[string, number]>([[&#34;str&#34;], [&#34;n&#34;]]);  Deno.Kv#getManyが実装されました。
+Deno.KvListIterator → Deno.KvListIterator<T> Deno.KvEntry → Deno.KvEntry<T> これらの変更により、エントリを取得する際に値の型を指定できるようになりました。
+const entry: Deno.KvEntryMaybe<string> = await kv.get<string>([&#34;str&#34;]); const entries: [Deno.KvEntryMaybe<string>, Deno.KvEntryMaybe<number>] = await kv.getMany<[string, number]>([[&#34;str&#34;], [&#34;n&#34;]]); Deno.Kv#getManyが実装されました。
 複数のエントリをまとめて取得できます。
-await kv.set([&#34;key&#34;, 1], &#34;foo&#34;); await kv.set([&#34;key&#34;, 2], &#34;bar&#34;); const entries = await kv.getMany([ [&#34;key&#34;, 1], [&#34;key&#34;, 2] ]); assert(entries.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2023/03/27〜2023/04/02の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2023/04/02.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2023/03/27〜2023/04/02の最新情報","name":"2023\/03\/27〜2023\/04\/02の最新情報","description":"Deno v1.32.2 Deno v1.32.2がリリースされました。\nKV (Deno.Kv) Deno.KvCommitResult型が追加されています。\nこれには、KVにコミットされた値に設定された新しいversionstampが含まれます。\nこの追加に合わせて、以下の変更も実施されています。\n Deno.AtomicOperation.commitの戻り値がPromise\u0026lt;boolean\u0026gt;からPromise\u0026lt;Deno.KvCommitResult | null\u0026gt;に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise\u0026lt;void\u0026gt;からPromise\u0026lt;KvCommitResult\u0026gt;に変更されています。   Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry\u0026lt;T\u0026gt; | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)\nこれに合わせて、以下のAPIに型引数を指定できるように変更されました。\n Deno.KvListIterator → Deno.KvListIterator\u0026lt;T\u0026gt; Deno.KvEntry → Deno.KvEntry\u0026lt;T\u0026gt;  これらの変更により、エントリを取得する際に値の型を指定できるようになりました。\nconst entry: Deno.KvEntryMaybe\u0026lt;string\u0026gt; = await kv.get\u0026lt;string\u0026gt;([\u0026#34;str\u0026#34;]); const entries: [Deno.KvEntryMaybe\u0026lt;string\u0026gt;, Deno.KvEntryMaybe\u0026lt;number\u0026gt;] = await kv.getMany\u0026lt;[string, number]\u0026gt;([[\u0026#34;str\u0026#34;], [\u0026#34;n\u0026#34;]]);  Deno.Kv#getManyが実装されました。\n複数のエントリをまとめて取得できます。\nawait kv.set([\u0026#34;key\u0026#34;, 1], \u0026#34;foo\u0026#34;); await kv.set([\u0026#34;key\u0026#34;, 2], \u0026#34;bar\u0026#34;); const entries = await kv.getMany([ [\u0026#34;key\u0026#34;, 1], [\u0026#34;key\u0026#34;, 2] ]); assert(entries.","keywords":["Deno","deno_std","Cicada"],"articleBody":"Deno v1.32.2 Deno v1.32.2がリリースされました。\nKV (Deno.Kv) Deno.KvCommitResult型が追加されています。\nこれには、KVにコミットされた値に設定された新しいversionstampが含まれます。\nこの追加に合わせて、以下の変更も実施されています。\n Deno.AtomicOperation.commitの戻り値がPromiseからPromiseに変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromiseからPromiseに変更されています。   Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)\nこれに合わせて、以下のAPIに型引数を指定できるように変更されました。\n Deno.KvListIterator → Deno.KvListIterator Deno.KvEntry → Deno.KvEntry  これらの変更により、エントリを取得する際に値の型を指定できるようになりました。\nconst entry: Deno.KvEntryMaybestring = await kv.getstring([\"str\"]); const entries: [Deno.KvEntryMaybestring, Deno.KvEntryMaybenumber] = await kv.getMany[string, number]([[\"str\"], [\"n\"]]);  Deno.Kv#getManyが実装されました。\n複数のエントリをまとめて取得できます。\nawait kv.set([\"key\", 1], \"foo\"); await kv.set([\"key\", 2], \"bar\"); const entries = await kv.getMany([ [\"key\", 1], [\"key\", 2] ]); assert(entries.length === 2); assert(entries[0].value === \"foo\"); assert(entries[1].value === \"bar\"); Node.js互換性の改善 node:cryptoの改善\n以下の機能が実装されています。\n checkPrime createSecretKey createCipherivとcreateDecipherivでaes-128-ecbがサポート createSign  以下のアルゴリズムがサポートされています。  sha224 sha256 sha384 sha512 RSA-SHA224 RSA-SHA256 RSA-SHA384 RSA-SHA512     crypto.Cipher/crypto.DecipherをNode.jsのTransform Streamとして扱えるように改善されています。   REPL(deno repl)でのpackage.jsonサポートが改善されています。\n package.jsonで定義されたパッケージのbare specifierによる読み込みがサポート LSPの警告メッセージが表示される問題が解消されています。 実際に使用されるまでは、package.jsonで定義された依存パッケージが読み込まれないように挙動が改善されました。   deno coverageでnpmパッケージを使用したコードのカバレッジを計測する際に、依存しているnpmパッケージに対してもカバレッジが計測されてしまう問題が解消されています。\ndeno testの改善 サニタイザやレポーティングに関するコードがJavaScriptからRustへ移植されています。\nこれにより以下のような改善がなされたようです。\n 非ユーザーエラーに関するレポーティングの改善 テストステップ(Deno.TestContext.step)における失敗がテスト結果のサマリにも含まれるように 出力の一貫性が向上  deno lspのバグ修正  Go to referencesの実行時に、まだエディタで開いたことのないファイルの定義が表示されない問題が修正されています。 data:URLからimportしているファイルでエラーが発生する問題が修正されています。 textDocument/referencesでcontext.includeDeclarationパラメータが考慮されていなかった問題が修正されています。  Web APIに関するバグ修正  ReadableStreamByobReaderにFloat64Arrayを与えた際に意図した通りに動作しなかった問題が解消されています。 TextEncoder.encodeIntoに1バイトの非ascii文字を含む文字列を渡すと、誤った結果が返される問題が修正されています。  Deno v1.32.3 Deno v1.32.3がリリースされました。\n一部の状況でdeno replが停止してしまう問題が起きていたため、それに関する改善などが実施されています。\ndeno lsp deno replに関する問題を修正するために、deno replからLSPを起動するときのみファイルのプリロードが無効化されました。\nまた、メモリ使用量の削減などのため、deno lspがプリロードするファイル数にも制限が入りました。(デフォルトは1000で、今のところこの制限を調整する方法はまだ提供されていません)\n型チェックに関する修正 Deno v1.32.0以降、エントリポイント以外のTypeScriptファイルに型エラーがあった場合、その型エラーを修正したとしても、キャッシュされた実行結果が表示されてしまう問題が修正されています。\n  deno check cache causes wrong results #18516  deno_std v0.182.0 deno_std v0.182.0がリリースされました。\nstd/fs exists()の非推奨化が解除されました。\nまた、Windowsで読み込み権限のないファイルをチェックした場合、trueを返すように挙動が変更されています。\nその他にも、新しく以下のオプションが追加されています。\n   オプション 説明     isReadable trueを指定すると、ファイルが存在して かつ 読み込み可能なときだけtrueを返却します   isDirectory trueを指定すると、対象のパスがディレクトリのときのみtrueを返却します   isFile trueを指定すると、対象のパスがファイルのときのみtrueを返却します     std/fs/walk\nWalkErrorが追加されました。\nwalkでのエラー発生時に、このエラーが投げられます。\nstd/streams/text_delimiter_stream TextDelimiterStreamにdispositionオプションが追加されました。\n挙動はDelimiterStreamの同名のオプションと同様です。\nstd/csv CsvStringifyStreamが追加されました。\nimport { CsvStringifyStream } from \"https://deno.land/std@0.182.0/csv/csv_stringify_stream.ts\"; import { readableStreamFromIterable } from \"https://deno.land/std@0.182.0/streams/readable_stream_from_iterable.ts\"; const file = await Deno.open(\"data.csv\", { create: true, write: true }); const readable = readableStreamFromIterable([ { id: 1, name: \"foo\" }, { id: 2, name: \"bar\" }, { id: 3, name: \"baz\" }, ]); await readable .pipeThrough(new CsvStringifyStream({ columns: [\"id\", \"name\"] })) .pipeThrough(new TextEncoderStream()) .pipeTo(file.writable); std/encoding/base58 decode()で先頭のバイトが欠けた状態で結果が返却されてしまう問題が修正されています。\nCicada CicadaというCI/CDパイプラインをDenoで記述するためのフレームワークが公開されています。\n現在はまだアーリーアクセス版のようですが、将来的にはOSSとして公開される予定のようです。\n  https://discord.com/channels/684898665143206084/712010403302866974/1088942762461778076  ","wordCount":"231","inLanguage":"en","datePublished":"2023-04-02T00:00:00Z","dateModified":"2023-04-02T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2023/04/02.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2023/03/27〜2023/04/02の最新情報
-</h1>
-<div class=post-meta><span title="2023-04-02 00:00:00 +0000 UTC">April 2, 2023</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno-v1322 aria-label="Deno v1.32.2">Deno v1.32.2</a><ul>
-<li>
-<a href=#kv-denokv aria-label="KV (Deno.Kv)">KV (<code>Deno.Kv</code>)</a></li>
-<li>
-<a href=#nodejs%e4%ba%92%e6%8f%9b%e6%80%a7%e3%81%ae%e6%94%b9%e5%96%84 aria-label=Node.js互換性の改善>Node.js互換性の改善</a></li>
-<li>
-<a href=#deno-test%e3%81%ae%e6%94%b9%e5%96%84 aria-label="deno testの改善"><code>deno test</code>の改善</a></li>
-<li>
-<a href=#deno-lsp%e3%81%ae%e3%83%90%e3%82%b0%e4%bf%ae%e6%ad%a3 aria-label="deno lspのバグ修正"><code>deno lsp</code>のバグ修正</a></li>
-<li>
-<a href=#web-api%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e3%83%90%e3%82%b0%e4%bf%ae%e6%ad%a3 aria-label="Web APIに関するバグ修正">Web APIに関するバグ修正</a></li></ul>
-</li>
-<li>
-<a href=#deno-v1323 aria-label="Deno v1.32.3">Deno v1.32.3</a><ul>
-<li>
-<a href=#deno-lsp aria-label="deno lsp"><code>deno lsp</code></a></li>
-<li>
-<a href=#%e5%9e%8b%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e4%bf%ae%e6%ad%a3 aria-label=型チェックに関する修正>型チェックに関する修正</a></li></ul>
-</li>
-<li>
-<a href=#deno_std-v01820 aria-label="deno_std v0.182.0">deno_std v0.182.0</a><ul>
-<li>
-<a href=#stdfs aria-label=std/fs><code>std/fs</code></a></li>
-<li>
-<a href=#stdstreamstext_delimiter_stream aria-label=std/streams/text_delimiter_stream><code>std/streams/text_delimiter_stream</code></a></li>
-<li>
-<a href=#stdcsv aria-label=std/csv><code>std/csv</code></a></li>
-<li>
-<a href=#stdencodingbase58 aria-label=std/encoding/base58><code>std/encoding/base58</code></a></li></ul>
-</li>
-<li>
-<a href=#cicada aria-label=Cicada>Cicada</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno-v1322>Deno v1.32.2<a hidden class=anchor aria-hidden=true href=#deno-v1322>#</a></h2>
-<p><a href=https://github.com/denoland/deno/releases/tag/v1.32.2>Deno v1.32.2</a>がリリースされました。</p>
-<h3 id=kv-denokv>KV (<code>Deno.Kv</code>)<a hidden class=anchor aria-hidden=true href=#kv-denokv>#</a></h3>
-<p><a href="https://deno.land/api@v1.32.2?s=Deno.KvCommitResult&unstable=">Deno.KvCommitResult</a>型が追加されています。</p>
-<p>これには、KVにコミットされた値に設定された新しい<code>versionstamp</code>が含まれます。</p>
-<p>この追加に合わせて、以下の変更も実施されています。</p>
-<ul>
-<li><a href="https://deno.land/api@v1.32.2?s=Deno.AtomicOperation&unstable=">Deno.AtomicOperation.commit</a>の戻り値が<code>Promise&lt;boolean></code>から<code>Promise&lt;Deno.KvCommitResult | null></code>に変更されています。(コミット成功時は<code>Deno.KvCommitResult</code>、失敗時は<code>null</code>が返却されます)</li>
-<li><a href="https://deno.land/api@v1.32.2?unstable=&s=Deno.Kv">Deno.Kv.set</a>の戻り値が<code>Promise&lt;void></code>から<code>Promise&lt;KvCommitResult></code>に変更されています。</li>
-</ul>
-<hr>
-<p><a href="https://deno.land/api@v1.32.2?s=Deno.KvEntryMaybe&unstable=">Deno.KvEntryMaybe</a>が追加されています。(この型の実体は<code>Deno.KvEntry&lt;T> | { key: Deno.KvKey, value: null, versionstamp: null }</code>のaliasです)</p>
-<p>これに合わせて、以下のAPIに型引数を指定できるように変更されました。</p>
-<ul>
-<li><a href="https://deno.land/api@v1.32.1?s=Deno.KvListIterator&unstable="><code>Deno.KvListIterator</code></a> → <a href="https://deno.land/api@v1.32.2?s=Deno.KvListIterator&unstable="><code>Deno.KvListIterator&lt;T></code></a></li>
-<li><a href="https://deno.land/api@v1.32.1?s=Deno.KvEntry&unstable="><code>Deno.KvEntry</code></a> → <a href="https://deno.land/api@v1.32.2?s=Deno.KvEntry&unstable="><code>Deno.KvEntry&lt;T></code></a></li>
-</ul>
-<p>これらの変更により、エントリを取得する際に値の型を指定できるようになりました。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>entry</span>: <span style=color:#66d9ef>Deno.KvEntryMaybe</span>&lt;<span style=color:#f92672>string</span>&gt; <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>kv</span>.<span style=color:#66d9ef>get</span>&lt;<span style=color:#f92672>string</span>&gt;([<span style=color:#e6db74>&#34;str&#34;</span>]);
-
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>entries</span><span style=color:#f92672>:</span> [<span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>KvEntryMaybe</span>&lt;<span style=color:#f92672>string</span>&gt;, <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>KvEntryMaybe</span>&lt;<span style=color:#f92672>number</span>&gt;] <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>kv</span>.<span style=color:#a6e22e>getMany</span><span style=color:#f92672>&lt;</span>[<span style=color:#66d9ef>string</span>, <span style=color:#66d9ef>number</span>]<span style=color:#f92672>&gt;</span>([[<span style=color:#e6db74>&#34;str&#34;</span>], [<span style=color:#e6db74>&#34;n&#34;</span>]]);
-</code></pre></div><hr>
-<p><code>Deno.Kv#getMany</code>が実装されました。</p>
-<p>複数のエントリをまとめて取得できます。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>await</span> <span style=color:#a6e22e>kv</span>.<span style=color:#a6e22e>set</span>([<span style=color:#e6db74>&#34;key&#34;</span>, <span style=color:#ae81ff>1</span>], <span style=color:#e6db74>&#34;foo&#34;</span>);
-<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>kv</span>.<span style=color:#a6e22e>set</span>([<span style=color:#e6db74>&#34;key&#34;</span>, <span style=color:#ae81ff>2</span>], <span style=color:#e6db74>&#34;bar&#34;</span>);
-
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>entries</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>kv</span>.<span style=color:#a6e22e>getMany</span>([
-  [<span style=color:#e6db74>&#34;key&#34;</span>, <span style=color:#ae81ff>1</span>],
-  [<span style=color:#e6db74>&#34;key&#34;</span>, <span style=color:#ae81ff>2</span>]
-]);
-
-<span style=color:#a6e22e>assert</span>(<span style=color:#a6e22e>entries</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>2</span>);
-<span style=color:#a6e22e>assert</span>(<span style=color:#a6e22e>entries</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;foo&#34;</span>);
-<span style=color:#a6e22e>assert</span>(<span style=color:#a6e22e>entries</span>[<span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;bar&#34;</span>);
-</code></pre></div><h3 id=nodejs互換性の改善>Node.js互換性の改善<a hidden class=anchor aria-hidden=true href=#nodejs互換性の改善>#</a></h3>
-<p><strong><a href=https://nodejs.org/docs/latest-v18.x/api/crypto.html>node:crypto</a>の改善</strong></p>
-<p>以下の機能が実装されています。</p>
-<ul>
-<li><code>checkPrime</code></li>
-<li><code>createSecretKey</code></li>
-<li><code>createCipheriv</code>と<code>createDecipheriv</code>で<code>aes-128-ecb</code>がサポート</li>
-<li><code>createSign</code>
-<ul>
-<li>以下のアルゴリズムがサポートされています。
-<ul>
-<li><code>sha224</code></li>
-<li><code>sha256</code></li>
-<li><code>sha384</code></li>
-<li><code>sha512</code></li>
-<li><code>RSA-SHA224</code></li>
-<li><code>RSA-SHA256</code></li>
-<li><code>RSA-SHA384</code></li>
-<li><code>RSA-SHA512</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>crypto.Cipher</code>/<code>crypto.Decipher</code>をNode.jsのTransform Streamとして扱えるように改善されています。</li>
-</ul>
-<hr>
-<p>REPL(<code>deno repl</code>)での<code>package.json</code>サポートが改善されています。</p>
-<ul>
-<li><code>package.json</code>で定義されたパッケージのbare specifierによる読み込みがサポート</li>
-<li>LSPの警告メッセージが表示される問題が解消されています。</li>
-<li>実際に使用されるまでは、<code>package.json</code>で定義された依存パッケージが読み込まれないように挙動が改善されました。</li>
-</ul>
-<hr>
-<p><code>deno coverage</code>でnpmパッケージを使用したコードのカバレッジを計測する際に、依存しているnpmパッケージに対してもカバレッジが計測されてしまう問題が解消されています。</p>
-<h3 id=deno-testの改善><code>deno test</code>の改善<a hidden class=anchor aria-hidden=true href=#deno-testの改善>#</a></h3>
-<p><a href=https://deno.land/manual@v1.32.2/basics/testing/sanitizers>サニタイザ</a>やレポーティングに関するコードがJavaScriptからRustへ移植されています。</p>
-<p>これにより以下のような改善がなされたようです。</p>
-<ul>
-<li>非ユーザーエラーに関するレポーティングの改善</li>
-<li>テストステップ(<a href="https://deno.land/api@v1.32.2?s=Deno.TestContext">Deno.TestContext.step</a>)における失敗がテスト結果のサマリにも含まれるように</li>
-<li>出力の一貫性が向上</li>
-</ul>
-<h3 id=deno-lspのバグ修正><code>deno lsp</code>のバグ修正<a hidden class=anchor aria-hidden=true href=#deno-lspのバグ修正>#</a></h3>
-<ul>
-<li><em>Go to references</em>の実行時に、まだエディタで開いたことのないファイルの定義が表示されない問題が修正されています。</li>
-<li><code>data:</code>URLから<code>import</code>しているファイルでエラーが発生する問題が修正されています。</li>
-<li><code>textDocument/references</code>で<code>context.includeDeclaration</code>パラメータが考慮されていなかった問題が修正されています。</li>
-</ul>
-<h3 id=web-apiに関するバグ修正>Web APIに関するバグ修正<a hidden class=anchor aria-hidden=true href=#web-apiに関するバグ修正>#</a></h3>
-<ul>
-<li><code>ReadableStreamByobReader</code>に<code>Float64Array</code>を与えた際に意図した通りに動作しなかった問題が解消されています。</li>
-<li><code>TextEncoder.encodeInto</code>に1バイトの非ascii文字を含む文字列を渡すと、誤った結果が返される問題が修正されています。</li>
-</ul>
-<h2 id=deno-v1323>Deno v1.32.3<a hidden class=anchor aria-hidden=true href=#deno-v1323>#</a></h2>
-<p><a href=https://github.com/denoland/deno/releases/tag/v1.32.3>Deno v1.32.3</a>がリリースされました。</p>
-<p><a href=https://github.com/denoland/deno/issues/18538>一部の状況で<code>deno repl</code>が停止してしまう</a>問題が起きていたため、それに関する改善などが実施されています。</p>
-<h3 id=deno-lsp><code>deno lsp</code><a hidden class=anchor aria-hidden=true href=#deno-lsp>#</a></h3>
-<p><code>deno repl</code>に関する問題を修正するために、<code>deno repl</code>からLSPを起動するときのみファイルのプリロードが無効化されました。</p>
-<p>また、メモリ使用量の削減などのため、<code>deno lsp</code>がプリロードするファイル数にも制限が入りました。(デフォルトは<code>1000</code>で、今のところこの制限を調整する方法はまだ提供されていません)</p>
-<h3 id=型チェックに関する修正>型チェックに関する修正<a hidden class=anchor aria-hidden=true href=#型チェックに関する修正>#</a></h3>
-<p><a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.32.html>Deno v1.32.0</a>以降、エントリポイント以外のTypeScriptファイルに型エラーがあった場合、その型エラーを修正したとしても、キャッシュされた実行結果が表示されてしまう問題が修正されています。</p>
-<hr>
-<ul>
-<li><a href=https://github.com/denoland/deno/issues/18516><code>deno check</code> cache causes wrong results #18516</a></li>
-</ul>
-<h2 id=deno_std-v01820>deno_std v0.182.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01820>#</a></h2>
-<p><a href=https://github.com/denoland/deno_std/releases/tag/0.182.0>deno_std v0.182.0</a>がリリースされました。</p>
-<h3 id=stdfs><code>std/fs</code><a hidden class=anchor aria-hidden=true href=#stdfs>#</a></h3>
-<p><strong><a href="https://deno.land/std@0.182.0/fs/exists.ts?s=exists">exists()</a>の非推奨化が解除されました。</strong></p>
-<p>また、Windowsで読み込み権限のないファイルをチェックした場合、<code>true</code>を返すように挙動が変更されています。</p>
-<p>その他にも、新しく以下の<a href="https://deno.land/std@0.182.0/fs/exists.ts?s=ExistsOptions">オプション</a>が追加されています。</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>オプション</th>
-<th style=text-align:center>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center><code>isReadable</code></td>
-<td style=text-align:center><code>true</code>を指定すると、ファイルが存在して かつ 読み込み可能なときだけ<code>true</code>を返却します</td>
-</tr>
-<tr>
-<td style=text-align:center><code>isDirectory</code></td>
-<td style=text-align:center><code>true</code>を指定すると、対象のパスがディレクトリのときのみ<code>true</code>を返却します</td>
-</tr>
-<tr>
-<td style=text-align:center><code>isFile</code></td>
-<td style=text-align:center><code>true</code>を指定すると、対象のパスがファイルのときのみ<code>true</code>を返却します</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><strong><code>std/fs/walk</code></strong></p>
-<p><code>WalkError</code>が追加されました。</p>
-<p><a href="https://deno.land/std@0.182.0/fs/walk.ts?s=walk">walk</a>でのエラー発生時に、このエラーが投げられます。</p>
-<h3 id=stdstreamstext_delimiter_stream><code>std/streams/text_delimiter_stream</code><a hidden class=anchor aria-hidden=true href=#stdstreamstext_delimiter_stream>#</a></h3>
-<p><a href="https://deno.land/std@0.182.0/streams/text_delimiter_stream.ts?s=TextDelimiterStream">TextDelimiterStream</a>に<code>disposition</code>オプションが追加されました。</p>
-<p>挙動は<a href=https://uki00a.github.io/deno-weekly/articles/2023/02/26.html><code>DelimiterStream</code>の同名のオプション</a>と同様です。</p>
-<h3 id=stdcsv><code>std/csv</code><a hidden class=anchor aria-hidden=true href=#stdcsv>#</a></h3>
-<p><a href="https://deno.land/std@0.182.0/csv/csv_stringify_stream.ts?s=CsvStringifyStream">CsvStringifyStream</a>が追加されました。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>CsvStringifyStream</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.182.0/csv/csv_stringify_stream.ts&#34;</span>;
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>readableStreamFromIterable</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.182.0/streams/readable_stream_from_iterable.ts&#34;</span>;
-
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>file</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>open</span>(<span style=color:#e6db74>&#34;data.csv&#34;</span>, { <span style=color:#a6e22e>create</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>, <span style=color:#a6e22e>write</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span> });
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>readable</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readableStreamFromIterable</span>([
-  { <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>, <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;foo&#34;</span> },
-  { <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>2</span>, <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;bar&#34;</span> },
-  { <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>3</span>, <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;baz&#34;</span> },
-]);
-
-<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>readable</span>
-  .<span style=color:#a6e22e>pipeThrough</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CsvStringifyStream</span>({ <span style=color:#a6e22e>columns</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;id&#34;</span>, <span style=color:#e6db74>&#34;name&#34;</span>] }))
-  .<span style=color:#a6e22e>pipeThrough</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>TextEncoderStream</span>())
-  .<span style=color:#a6e22e>pipeTo</span>(<span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>writable</span>);
-</code></pre></div><h3 id=stdencodingbase58><code>std/encoding/base58</code><a hidden class=anchor aria-hidden=true href=#stdencodingbase58>#</a></h3>
-<p><code>decode()</code>で先頭のバイトが欠けた状態で結果が返却されてしまう問題が修正されています。</p>
-<h2 id=cicada>Cicada<a hidden class=anchor aria-hidden=true href=#cicada>#</a></h2>
-<p><a href=https://cicada.build/>Cicada</a>というCI/CDパイプラインをDenoで記述するためのフレームワークが公開されています。</p>
-<p>現在はまだアーリーアクセス版のようですが、将来的にはOSSとして公開される予定のようです。</p>
-<hr>
-<ul>
-<li><a href=https://discord.com/channels/684898665143206084/712010403302866974/1088942762461778076>https://discord.com/channels/684898665143206084/712010403302866974/1088942762461778076</a></li>
-</ul>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/cicada.html>Cicada</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+await kv.set([&#34;key&#34;, 1], &#34;foo&#34;); await kv.set([&#34;key&#34;, 2], &#34;bar&#34;); const entries = await kv.getMany([ [&#34;key&#34;, 1], [&#34;key&#34;, 2] ]); assert(entries.length === 2); assert(entries[0].value === &#34;foo&#34;); assert(entries[1]."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2023/03/27〜2023/04/02の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2023/04/02.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2023/03/27〜2023/04/02の最新情報","name":"2023\/03\/27〜2023\/04\/02の最新情報","description":"Deno v1.32.2 Deno v1.32.2がリリースされました。\nKV (Deno.Kv) Deno.KvCommitResult型が追加されています。\nこれには、KVにコミットされた値に設定された新しいversionstampが含まれます。\nこの追加に合わせて、以下の変更も実施されています。\nDeno.AtomicOperation.commitの戻り値がPromise\u0026lt;boolean\u0026gt;からPromise\u0026lt;Deno.KvCommitResult | null\u0026gt;に変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromise\u0026lt;void\u0026gt;からPromise\u0026lt;KvCommitResult\u0026gt;に変更されています。 Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry\u0026lt;T\u0026gt; | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)\nこれに合わせて、以下のAPIに型引数を指定できるように変更されました。\nDeno.KvListIterator → Deno.KvListIterator\u0026lt;T\u0026gt; Deno.KvEntry → Deno.KvEntry\u0026lt;T\u0026gt; これらの変更により、エントリを取得する際に値の型を指定できるようになりました。\nconst entry: Deno.KvEntryMaybe\u0026lt;string\u0026gt; = await kv.get\u0026lt;string\u0026gt;([\u0026#34;str\u0026#34;]); const entries: [Deno.KvEntryMaybe\u0026lt;string\u0026gt;, Deno.KvEntryMaybe\u0026lt;number\u0026gt;] = await kv.getMany\u0026lt;[string, number]\u0026gt;([[\u0026#34;str\u0026#34;], [\u0026#34;n\u0026#34;]]); Deno.Kv#getManyが実装されました。\n複数のエントリをまとめて取得できます。\nawait kv.set([\u0026#34;key\u0026#34;, 1], \u0026#34;foo\u0026#34;); await kv.set([\u0026#34;key\u0026#34;, 2], \u0026#34;bar\u0026#34;); const entries = await kv.getMany([ [\u0026#34;key\u0026#34;, 1], [\u0026#34;key\u0026#34;, 2] ]); assert(entries.length === 2); assert(entries[0].value === \u0026#34;foo\u0026#34;); assert(entries[1].","keywords":["Deno","deno_std","Cicada"],"articleBody":"Deno v1.32.2 Deno v1.32.2がリリースされました。\nKV (Deno.Kv) Deno.KvCommitResult型が追加されています。\nこれには、KVにコミットされた値に設定された新しいversionstampが含まれます。\nこの追加に合わせて、以下の変更も実施されています。\nDeno.AtomicOperation.commitの戻り値がPromiseからPromiseに変更されています。(コミット成功時はDeno.KvCommitResult、失敗時はnullが返却されます) Deno.Kv.setの戻り値がPromiseからPromiseに変更されています。 Deno.KvEntryMaybeが追加されています。(この型の実体はDeno.KvEntry | { key: Deno.KvKey, value: null, versionstamp: null }のaliasです)\nこれに合わせて、以下のAPIに型引数を指定できるように変更されました。\nDeno.KvListIterator → Deno.KvListIterator Deno.KvEntry → Deno.KvEntry これらの変更により、エントリを取得する際に値の型を指定できるようになりました。\nconst entry: Deno.KvEntryMaybe\u003cstring\u003e = await kv.get\u003cstring\u003e([\"str\"]); const entries: [Deno.KvEntryMaybe\u003cstring\u003e, Deno.KvEntryMaybe\u003cnumber\u003e] = await kv.getMany\u003c[string, number]\u003e([[\"str\"], [\"n\"]]); Deno.Kv#getManyが実装されました。\n複数のエントリをまとめて取得できます。\nawait kv.set([\"key\", 1], \"foo\"); await kv.set([\"key\", 2], \"bar\"); const entries = await kv.getMany([ [\"key\", 1], [\"key\", 2] ]); assert(entries.length === 2); assert(entries[0].value === \"foo\"); assert(entries[1].value === \"bar\"); Node.js互換性の改善 node:cryptoの改善\n以下の機能が実装されています。\ncheckPrime createSecretKey createCipherivとcreateDecipherivでaes-128-ecbがサポート createSign 以下のアルゴリズムがサポートされています。 sha224 sha256 sha384 sha512 RSA-SHA224 RSA-SHA256 RSA-SHA384 RSA-SHA512 crypto.Cipher/crypto.DecipherをNode.jsのTransform Streamとして扱えるように改善されています。 REPL(deno repl)でのpackage.jsonサポートが改善されています。\npackage.jsonで定義されたパッケージのbare specifierによる読み込みがサポート LSPの警告メッセージが表示される問題が解消されています。 実際に使用されるまでは、package.jsonで定義された依存パッケージが読み込まれないように挙動が改善されました。 deno coverageでnpmパッケージを使用したコードのカバレッジを計測する際に、依存しているnpmパッケージに対してもカバレッジが計測されてしまう問題が解消されています。\ndeno testの改善 サニタイザやレポーティングに関するコードがJavaScriptからRustへ移植されています。\nこれにより以下のような改善がなされたようです。\n非ユーザーエラーに関するレポーティングの改善 テストステップ(Deno.TestContext.step)における失敗がテスト結果のサマリにも含まれるように 出力の一貫性が向上 deno lspのバグ修正 Go to referencesの実行時に、まだエディタで開いたことのないファイルの定義が表示されない問題が修正されています。 data:URLからimportしているファイルでエラーが発生する問題が修正されています。 textDocument/referencesでcontext.includeDeclarationパラメータが考慮されていなかった問題が修正されています。 Web APIに関するバグ修正 ReadableStreamByobReaderにFloat64Arrayを与えた際に意図した通りに動作しなかった問題が解消されています。 TextEncoder.encodeIntoに1バイトの非ascii文字を含む文字列を渡すと、誤った結果が返される問題が修正されています。 Deno v1.32.3 Deno v1.32.3がリリースされました。\n一部の状況でdeno replが停止してしまう問題が起きていたため、それに関する改善などが実施されています。\ndeno lsp deno replに関する問題を修正するために、deno replからLSPを起動するときのみファイルのプリロードが無効化されました。\nまた、メモリ使用量の削減などのため、deno lspがプリロードするファイル数にも制限が入りました。(デフォルトは1000で、今のところこの制限を調整する方法はまだ提供されていません)\n型チェックに関する修正 Deno v1.32.0以降、エントリポイント以外のTypeScriptファイルに型エラーがあった場合、その型エラーを修正したとしても、キャッシュされた実行結果が表示されてしまう問題が修正されています。\ndeno check cache causes wrong results #18516 deno_std v0.182.0 deno_std v0.182.0がリリースされました。\nstd/fs exists()の非推奨化が解除されました。\nまた、Windowsで読み込み権限のないファイルをチェックした場合、trueを返すように挙動が変更されています。\nその他にも、新しく以下のオプションが追加されています。\nオプション 説明 isReadable trueを指定すると、ファイルが存在して かつ 読み込み可能なときだけtrueを返却します isDirectory trueを指定すると、対象のパスがディレクトリのときのみtrueを返却します isFile trueを指定すると、対象のパスがファイルのときのみtrueを返却します std/fs/walk\nWalkErrorが追加されました。\nwalkでのエラー発生時に、このエラーが投げられます。\nstd/streams/text_delimiter_stream TextDelimiterStreamにdispositionオプションが追加されました。\n挙動はDelimiterStreamの同名のオプションと同様です。\nstd/csv CsvStringifyStreamが追加されました。\nimport { CsvStringifyStream } from \"https://deno.land/std@0.182.0/csv/csv_stringify_stream.ts\"; import { readableStreamFromIterable } from \"https://deno.land/std@0.182.0/streams/readable_stream_from_iterable.ts\"; const file = await Deno.open(\"data.csv\", { create: true, write: true }); const readable = readableStreamFromIterable([ { id: 1, name: \"foo\" }, { id: 2, name: \"bar\" }, { id: 3, name: \"baz\" }, ]); await readable .pipeThrough(new CsvStringifyStream({ columns: [\"id\", \"name\"] })) .pipeThrough(new TextEncoderStream()) .pipeTo(file.writable); std/encoding/base58 decode()で先頭のバイトが欠けた状態で結果が返却されてしまう問題が修正されています。\nCicada CicadaというCI/CDパイプラインをDenoで記述するためのフレームワークが公開されています。\n現在はまだアーリーアクセス版のようですが、将来的にはOSSとして公開される予定のようです。\nhttps://discord.com/channels/684898665143206084/712010403302866974/1088942762461778076 ","wordCount":"231","inLanguage":"en","datePublished":"2023-04-02T00:00:00Z","dateModified":"2023-04-02T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2023/04/02.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2023/03/27〜2023/04/02の最新情報</h1><div class=post-meta><span title='2023-04-02 00:00:00 +0000 UTC'>April 2, 2023</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno-v1322 aria-label="Deno v1.32.2">Deno v1.32.2</a><ul><li><a href=#kv-denokv aria-label="KV (Deno.Kv)">KV (<code>Deno.Kv</code>)</a></li><li><a href=#nodejs%e4%ba%92%e6%8f%9b%e6%80%a7%e3%81%ae%e6%94%b9%e5%96%84 aria-label=Node.js互換性の改善>Node.js互換性の改善</a></li><li><a href=#deno-test%e3%81%ae%e6%94%b9%e5%96%84 aria-label="deno testの改善"><code>deno test</code>の改善</a></li><li><a href=#deno-lsp%e3%81%ae%e3%83%90%e3%82%b0%e4%bf%ae%e6%ad%a3 aria-label="deno lspのバグ修正"><code>deno lsp</code>のバグ修正</a></li><li><a href=#web-api%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e3%83%90%e3%82%b0%e4%bf%ae%e6%ad%a3 aria-label="Web APIに関するバグ修正">Web APIに関するバグ修正</a></li></ul></li><li><a href=#deno-v1323 aria-label="Deno v1.32.3">Deno v1.32.3</a><ul><li><a href=#deno-lsp aria-label="deno lsp"><code>deno lsp</code></a></li><li><a href=#%e5%9e%8b%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e4%bf%ae%e6%ad%a3 aria-label=型チェックに関する修正>型チェックに関する修正</a></li></ul></li><li><a href=#deno_std-v01820 aria-label="deno_std v0.182.0">deno_std v0.182.0</a><ul><li><a href=#stdfs aria-label=std/fs><code>std/fs</code></a></li><li><a href=#stdstreamstext_delimiter_stream aria-label=std/streams/text_delimiter_stream><code>std/streams/text_delimiter_stream</code></a></li><li><a href=#stdcsv aria-label=std/csv><code>std/csv</code></a></li><li><a href=#stdencodingbase58 aria-label=std/encoding/base58><code>std/encoding/base58</code></a></li></ul></li><li><a href=#cicada aria-label=Cicada>Cicada</a></li></ul></div></details></div><div class=post-content><h2 id=deno-v1322>Deno v1.32.2<a hidden class=anchor aria-hidden=true href=#deno-v1322>#</a></h2><p><a href=https://github.com/denoland/deno/releases/tag/v1.32.2>Deno v1.32.2</a>がリリースされました。</p><h3 id=kv-denokv>KV (<code>Deno.Kv</code>)<a hidden class=anchor aria-hidden=true href=#kv-denokv>#</a></h3><p><a href="https://deno.land/api@v1.32.2?s=Deno.KvCommitResult&amp;unstable=">Deno.KvCommitResult</a>型が追加されています。</p><p>これには、KVにコミットされた値に設定された新しい<code>versionstamp</code>が含まれます。</p><p>この追加に合わせて、以下の変更も実施されています。</p><ul><li><a href="https://deno.land/api@v1.32.2?s=Deno.AtomicOperation&amp;unstable=">Deno.AtomicOperation.commit</a>の戻り値が<code>Promise&lt;boolean></code>から<code>Promise&lt;Deno.KvCommitResult | null></code>に変更されています。(コミット成功時は<code>Deno.KvCommitResult</code>、失敗時は<code>null</code>が返却されます)</li><li><a href="https://deno.land/api@v1.32.2?unstable=&amp;s=Deno.Kv">Deno.Kv.set</a>の戻り値が<code>Promise&lt;void></code>から<code>Promise&lt;KvCommitResult></code>に変更されています。</li></ul><hr><p><a href="https://deno.land/api@v1.32.2?s=Deno.KvEntryMaybe&amp;unstable=">Deno.KvEntryMaybe</a>が追加されています。(この型の実体は<code>Deno.KvEntry&lt;T> | { key: Deno.KvKey, value: null, versionstamp: null }</code>のaliasです)</p><p>これに合わせて、以下のAPIに型引数を指定できるように変更されました。</p><ul><li><a href="https://deno.land/api@v1.32.1?s=Deno.KvListIterator&amp;unstable="><code>Deno.KvListIterator</code></a> → <a href="https://deno.land/api@v1.32.2?s=Deno.KvListIterator&amp;unstable="><code>Deno.KvListIterator&lt;T></code></a></li><li><a href="https://deno.land/api@v1.32.1?s=Deno.KvEntry&amp;unstable="><code>Deno.KvEntry</code></a> → <a href="https://deno.land/api@v1.32.2?s=Deno.KvEntry&amp;unstable="><code>Deno.KvEntry&lt;T></code></a></li></ul><p>これらの変更により、エントリを取得する際に値の型を指定できるようになりました。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-typescript data-lang=typescript><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>entry</span>: <span style=color:#66d9ef>Deno.KvEntryMaybe</span>&lt;<span style=color:#f92672>string</span>&gt; <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>kv</span>.<span style=color:#66d9ef>get</span>&lt;<span style=color:#f92672>string</span>&gt;([<span style=color:#e6db74>&#34;str&#34;</span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>entries</span><span style=color:#f92672>:</span> [<span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>KvEntryMaybe</span>&lt;<span style=color:#f92672>string</span>&gt;, <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>KvEntryMaybe</span>&lt;<span style=color:#f92672>number</span>&gt;] <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>kv</span>.<span style=color:#a6e22e>getMany</span><span style=color:#f92672>&lt;</span>[<span style=color:#66d9ef>string</span>, <span style=color:#66d9ef>number</span>]<span style=color:#f92672>&gt;</span>([[<span style=color:#e6db74>&#34;str&#34;</span>], [<span style=color:#e6db74>&#34;n&#34;</span>]]);
+</span></span></code></pre></div><hr><p><code>Deno.Kv#getMany</code>が実装されました。</p><p>複数のエントリをまとめて取得できます。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>await</span> <span style=color:#a6e22e>kv</span>.<span style=color:#a6e22e>set</span>([<span style=color:#e6db74>&#34;key&#34;</span>, <span style=color:#ae81ff>1</span>], <span style=color:#e6db74>&#34;foo&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>await</span> <span style=color:#a6e22e>kv</span>.<span style=color:#a6e22e>set</span>([<span style=color:#e6db74>&#34;key&#34;</span>, <span style=color:#ae81ff>2</span>], <span style=color:#e6db74>&#34;bar&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>entries</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>kv</span>.<span style=color:#a6e22e>getMany</span>([
+</span></span><span style=display:flex><span>  [<span style=color:#e6db74>&#34;key&#34;</span>, <span style=color:#ae81ff>1</span>],
+</span></span><span style=display:flex><span>  [<span style=color:#e6db74>&#34;key&#34;</span>, <span style=color:#ae81ff>2</span>]
+</span></span><span style=display:flex><span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>assert</span>(<span style=color:#a6e22e>entries</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>assert</span>(<span style=color:#a6e22e>entries</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;foo&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>assert</span>(<span style=color:#a6e22e>entries</span>[<span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#34;bar&#34;</span>);
+</span></span></code></pre></div><h3 id=nodejs互換性の改善>Node.js互換性の改善<a hidden class=anchor aria-hidden=true href=#nodejs互換性の改善>#</a></h3><p><strong><a href=https://nodejs.org/docs/latest-v18.x/api/crypto.html>node:crypto</a>の改善</strong></p><p>以下の機能が実装されています。</p><ul><li><code>checkPrime</code></li><li><code>createSecretKey</code></li><li><code>createCipheriv</code>と<code>createDecipheriv</code>で<code>aes-128-ecb</code>がサポート</li><li><code>createSign</code><ul><li>以下のアルゴリズムがサポートされています。<ul><li><code>sha224</code></li><li><code>sha256</code></li><li><code>sha384</code></li><li><code>sha512</code></li><li><code>RSA-SHA224</code></li><li><code>RSA-SHA256</code></li><li><code>RSA-SHA384</code></li><li><code>RSA-SHA512</code></li></ul></li></ul></li><li><code>crypto.Cipher</code>/<code>crypto.Decipher</code>をNode.jsのTransform Streamとして扱えるように改善されています。</li></ul><hr><p>REPL(<code>deno repl</code>)での<code>package.json</code>サポートが改善されています。</p><ul><li><code>package.json</code>で定義されたパッケージのbare specifierによる読み込みがサポート</li><li>LSPの警告メッセージが表示される問題が解消されています。</li><li>実際に使用されるまでは、<code>package.json</code>で定義された依存パッケージが読み込まれないように挙動が改善されました。</li></ul><hr><p><code>deno coverage</code>でnpmパッケージを使用したコードのカバレッジを計測する際に、依存しているnpmパッケージに対してもカバレッジが計測されてしまう問題が解消されています。</p><h3 id=deno-testの改善><code>deno test</code>の改善<a hidden class=anchor aria-hidden=true href=#deno-testの改善>#</a></h3><p><a href=https://deno.land/manual@v1.32.2/basics/testing/sanitizers>サニタイザ</a>やレポーティングに関するコードがJavaScriptからRustへ移植されています。</p><p>これにより以下のような改善がなされたようです。</p><ul><li>非ユーザーエラーに関するレポーティングの改善</li><li>テストステップ(<a href="https://deno.land/api@v1.32.2?s=Deno.TestContext">Deno.TestContext.step</a>)における失敗がテスト結果のサマリにも含まれるように</li><li>出力の一貫性が向上</li></ul><h3 id=deno-lspのバグ修正><code>deno lsp</code>のバグ修正<a hidden class=anchor aria-hidden=true href=#deno-lspのバグ修正>#</a></h3><ul><li><em>Go to references</em>の実行時に、まだエディタで開いたことのないファイルの定義が表示されない問題が修正されています。</li><li><code>data:</code>URLから<code>import</code>しているファイルでエラーが発生する問題が修正されています。</li><li><code>textDocument/references</code>で<code>context.includeDeclaration</code>パラメータが考慮されていなかった問題が修正されています。</li></ul><h3 id=web-apiに関するバグ修正>Web APIに関するバグ修正<a hidden class=anchor aria-hidden=true href=#web-apiに関するバグ修正>#</a></h3><ul><li><code>ReadableStreamByobReader</code>に<code>Float64Array</code>を与えた際に意図した通りに動作しなかった問題が解消されています。</li><li><code>TextEncoder.encodeInto</code>に1バイトの非ascii文字を含む文字列を渡すと、誤った結果が返される問題が修正されています。</li></ul><h2 id=deno-v1323>Deno v1.32.3<a hidden class=anchor aria-hidden=true href=#deno-v1323>#</a></h2><p><a href=https://github.com/denoland/deno/releases/tag/v1.32.3>Deno v1.32.3</a>がリリースされました。</p><p><a href=https://github.com/denoland/deno/issues/18538>一部の状況で<code>deno repl</code>が停止してしまう</a>問題が起きていたため、それに関する改善などが実施されています。</p><h3 id=deno-lsp><code>deno lsp</code><a hidden class=anchor aria-hidden=true href=#deno-lsp>#</a></h3><p><code>deno repl</code>に関する問題を修正するために、<code>deno repl</code>からLSPを起動するときのみファイルのプリロードが無効化されました。</p><p>また、メモリ使用量の削減などのため、<code>deno lsp</code>がプリロードするファイル数にも制限が入りました。(デフォルトは<code>1000</code>で、今のところこの制限を調整する方法はまだ提供されていません)</p><h3 id=型チェックに関する修正>型チェックに関する修正<a hidden class=anchor aria-hidden=true href=#型チェックに関する修正>#</a></h3><p><a href=https://uki00a.github.io/deno-weekly/articles/deno/v1.32.html>Deno v1.32.0</a>以降、エントリポイント以外のTypeScriptファイルに型エラーがあった場合、その型エラーを修正したとしても、キャッシュされた実行結果が表示されてしまう問題が修正されています。</p><hr><ul><li><a href=https://github.com/denoland/deno/issues/18516><code>deno check</code> cache causes wrong results #18516</a></li></ul><h2 id=deno_std-v01820>deno_std v0.182.0<a hidden class=anchor aria-hidden=true href=#deno_std-v01820>#</a></h2><p><a href=https://github.com/denoland/deno_std/releases/tag/0.182.0>deno_std v0.182.0</a>がリリースされました。</p><h3 id=stdfs><code>std/fs</code><a hidden class=anchor aria-hidden=true href=#stdfs>#</a></h3><p><strong><a href="https://deno.land/std@0.182.0/fs/exists.ts?s=exists">exists()</a>の非推奨化が解除されました。</strong></p><p>また、Windowsで読み込み権限のないファイルをチェックした場合、<code>true</code>を返すように挙動が変更されています。</p><p>その他にも、新しく以下の<a href="https://deno.land/std@0.182.0/fs/exists.ts?s=ExistsOptions">オプション</a>が追加されています。</p><table><thead><tr><th style=text-align:center>オプション</th><th style=text-align:center>説明</th></tr></thead><tbody><tr><td style=text-align:center><code>isReadable</code></td><td style=text-align:center><code>true</code>を指定すると、ファイルが存在して かつ 読み込み可能なときだけ<code>true</code>を返却します</td></tr><tr><td style=text-align:center><code>isDirectory</code></td><td style=text-align:center><code>true</code>を指定すると、対象のパスがディレクトリのときのみ<code>true</code>を返却します</td></tr><tr><td style=text-align:center><code>isFile</code></td><td style=text-align:center><code>true</code>を指定すると、対象のパスがファイルのときのみ<code>true</code>を返却します</td></tr></tbody></table><hr><p><strong><code>std/fs/walk</code></strong></p><p><code>WalkError</code>が追加されました。</p><p><a href="https://deno.land/std@0.182.0/fs/walk.ts?s=walk">walk</a>でのエラー発生時に、このエラーが投げられます。</p><h3 id=stdstreamstext_delimiter_stream><code>std/streams/text_delimiter_stream</code><a hidden class=anchor aria-hidden=true href=#stdstreamstext_delimiter_stream>#</a></h3><p><a href="https://deno.land/std@0.182.0/streams/text_delimiter_stream.ts?s=TextDelimiterStream">TextDelimiterStream</a>に<code>disposition</code>オプションが追加されました。</p><p>挙動は<a href=https://uki00a.github.io/deno-weekly/articles/2023/02/26.html><code>DelimiterStream</code>の同名のオプション</a>と同様です。</p><h3 id=stdcsv><code>std/csv</code><a hidden class=anchor aria-hidden=true href=#stdcsv>#</a></h3><p><a href="https://deno.land/std@0.182.0/csv/csv_stringify_stream.ts?s=CsvStringifyStream">CsvStringifyStream</a>が追加されました。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>CsvStringifyStream</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.182.0/csv/csv_stringify_stream.ts&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>readableStreamFromIterable</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;https://deno.land/std@0.182.0/streams/readable_stream_from_iterable.ts&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>file</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>Deno</span>.<span style=color:#a6e22e>open</span>(<span style=color:#e6db74>&#34;data.csv&#34;</span>, { <span style=color:#a6e22e>create</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>, <span style=color:#a6e22e>write</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span> });
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>readable</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>readableStreamFromIterable</span>([
+</span></span><span style=display:flex><span>  { <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>, <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;foo&#34;</span> },
+</span></span><span style=display:flex><span>  { <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>2</span>, <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;bar&#34;</span> },
+</span></span><span style=display:flex><span>  { <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>3</span>, <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;baz&#34;</span> },
+</span></span><span style=display:flex><span>]);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>await</span> <span style=color:#a6e22e>readable</span>
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>pipeThrough</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CsvStringifyStream</span>({ <span style=color:#a6e22e>columns</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;id&#34;</span>, <span style=color:#e6db74>&#34;name&#34;</span>] }))
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>pipeThrough</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>TextEncoderStream</span>())
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>pipeTo</span>(<span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>writable</span>);
+</span></span></code></pre></div><h3 id=stdencodingbase58><code>std/encoding/base58</code><a hidden class=anchor aria-hidden=true href=#stdencodingbase58>#</a></h3><p><code>decode()</code>で先頭のバイトが欠けた状態で結果が返却されてしまう問題が修正されています。</p><h2 id=cicada>Cicada<a hidden class=anchor aria-hidden=true href=#cicada>#</a></h2><p><a href=https://cicada.build/>Cicada</a>というCI/CDパイプラインをDenoで記述するためのフレームワークが公開されています。</p><p>現在はまだアーリーアクセス版のようですが、将来的にはOSSとして公開される予定のようです。</p><hr><ul><li><a href=https://discord.com/channels/684898665143206084/712010403302866974/1088942762461778076>https://discord.com/channels/684898665143206084/712010403302866974/1088942762461778076</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/cicada.html>Cicada</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

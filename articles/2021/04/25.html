@@ -1,241 +1,45 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>2021/04/19〜2021/04/25の最新情報 | 週刊Deno</title>
-<meta name=keywords content="deno,deno_std,deno-puppeteer,deno-postgres,land">
-<meta name=description content="Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>2021/04/19〜2021/04/25の最新情報 | 週刊Deno</title><meta name=keywords content="deno,deno_std,deno-puppeteer,deno-postgres,land"><meta name=description content="Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。
 v1.9.1の変更点:
- deno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された  v1.9.2の変更点:
- WebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された    https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2  deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。
+deno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された v1.9.2の変更点:
+WebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2 deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。
 v0.94.0の変更点:
- node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された  v0.95.0の変更点:
- node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された    https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0  サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。
+node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された v0.95.0の変更点:
+node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0 サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。
 変更点:
- 内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された   https://github.">
-<meta name=author content>
-<link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/04/25.html>
-<link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png>
-<link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png">
-<meta name=twitter:site content="@uki00a">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-MK2K2MRMBF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="2021/04/19〜2021/04/25の最新情報">
-<meta property="og:description" content="Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。
+内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0
+deno-postgres v0.11.0/v0.11.1がリリース deno-postgresのv0.11.0とv0.11.1がリリースされました。
+v0.11.0の変更点:
+Poolクラスから直接SQLを実行できないよう変更された。 今後は、Pool#connect経由でPoolClientオブジェクトを取得し、それを使ってSQLを実行する必要があります。 v0.11.1の変更点:
+--unstableフラグを指定しなくても利用できるようになった https://github.com/denodrivers/postgres/releases/tag/v0.11.0 https://github.com/denodrivers/postgres/releases/tag/v0.11.1 land - deno.land/xで公開されているモジュールを直接実行するツール landというdeno.land/xで公開されているモジュールをdeno installでインストールせずに実行できるツールが公開されました。
+https://github.com/postui/land"><meta name=author content><link rel=canonical href=https://uki00a.github.io/deno-weekly/articles/2021/04/25.html><link crossorigin=anonymous href=/deno-weekly/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/deno-weekly/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://uki00a.github.io/deno-weekly/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://uki00a.github.io/deno-weekly/favicon-32x32.png><link rel=apple-touch-icon href=https://uki00a.github.io/deno-weekly/apple-touch-icon.png><link rel=mask-icon href=https://uki00a.github.io/deno-weekly/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta property="twitter:image" content="https://raw.githubusercontent.com/uki00a/blog/master/src/assets/avatar.png"><meta name=twitter:site content="@uki00a"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2K2MRMBF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MK2K2MRMBF",{anonymize_ip:!1})}</script><meta property="og:title" content="2021/04/19〜2021/04/25の最新情報"><meta property="og:description" content="Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。
 v1.9.1の変更点:
- deno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された  v1.9.2の変更点:
- WebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された    https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2  deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。
+deno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された v1.9.2の変更点:
+WebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2 deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。
 v0.94.0の変更点:
- node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された  v0.95.0の変更点:
- node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された    https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0  サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。
+node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された v0.95.0の変更点:
+node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0 サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。
 変更点:
- 内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された   https://github.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/04/25.html"><meta property="article:section" content="articles">
-<meta property="article:published_time" content="2021-04-25T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-04-25T00:00:00+00:00">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="2021/04/19〜2021/04/25の最新情報">
-<meta name=twitter:description content="Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。
+内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0
+deno-postgres v0.11.0/v0.11.1がリリース deno-postgresのv0.11.0とv0.11.1がリリースされました。
+v0.11.0の変更点:
+Poolクラスから直接SQLを実行できないよう変更された。 今後は、Pool#connect経由でPoolClientオブジェクトを取得し、それを使ってSQLを実行する必要があります。 v0.11.1の変更点:
+--unstableフラグを指定しなくても利用できるようになった https://github.com/denodrivers/postgres/releases/tag/v0.11.0 https://github.com/denodrivers/postgres/releases/tag/v0.11.1 land - deno.land/xで公開されているモジュールを直接実行するツール landというdeno.land/xで公開されているモジュールをdeno installでインストールせずに実行できるツールが公開されました。
+https://github.com/postui/land"><meta property="og:type" content="article"><meta property="og:url" content="https://uki00a.github.io/deno-weekly/articles/2021/04/25.html"><meta property="article:section" content="articles"><meta property="article:published_time" content="2021-04-25T00:00:00+00:00"><meta property="article:modified_time" content="2021-04-25T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="2021/04/19〜2021/04/25の最新情報"><meta name=twitter:description content="Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。
 v1.9.1の変更点:
- deno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された  v1.9.2の変更点:
- WebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された    https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2  deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。
+deno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された v1.9.2の変更点:
+WebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2 deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。
 v0.94.0の変更点:
- node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された  v0.95.0の変更点:
- node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された    https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0  サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。
+node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された v0.95.0の変更点:
+node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0 サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。
 変更点:
- 内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された   https://github.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/04/19〜2021/04/25の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/04/25.html"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/04/19〜2021/04/25の最新情報","name":"2021\/04\/19〜2021\/04\/25の最新情報","description":"Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。\nv1.9.1の変更点:\n deno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された  v1.9.2の変更点:\n WebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された    https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2  deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。\nv0.94.0の変更点:\n node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された  v0.95.0の変更点:\n node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された    https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0  サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。\n変更点:\n 内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された   https://github.","keywords":["deno","deno_std","deno-puppeteer","deno-postgres","land"],"articleBody":"Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。\nv1.9.1の変更点:\n deno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された  v1.9.2の変更点:\n WebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された    https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2  deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。\nv0.94.0の変更点:\n node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された  v0.95.0の変更点:\n node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された    https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0  サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。\n変更点:\n 内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された   https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0\ndeno-postgres v0.11.0/v0.11.1がリリース deno-postgresのv0.11.0とv0.11.1がリリースされました。\nv0.11.0の変更点:\n Poolクラスから直接SQLを実行できないよう変更された。  今後は、Pool#connect経由でPoolClientオブジェクトを取得し、それを使ってSQLを実行する必要があります。    v0.11.1の変更点:\n --unstableフラグを指定しなくても利用できるようになった    https://github.com/denodrivers/postgres/releases/tag/v0.11.0 https://github.com/denodrivers/postgres/releases/tag/v0.11.1  land - deno.land/xで公開されているモジュールを直接実行するツール landというdeno.land/xで公開されているモジュールをdeno installでインストールせずに実行できるツールが公開されました。\n https://github.com/postui/land\n","wordCount":"70","inLanguage":"en","datePublished":"2021-04-25T00:00:00Z","dateModified":"2021-04-25T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/04/25.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ>
-<span><i class="fa fa-heart"></i>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー>
-<span><i class="fa fa-heart"></i>カテゴリー</span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー>
-<span><i class="fa fa-road"></i>ギャラリー<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed">
-<span><i class="fa fa-road"></i>RSS feed<span class=alert></span></span>
-</a>
-</li>
-<li>
-<a href=https://uki00a.github.io/deno-weekly/about.html title=About>
-<span><i class="fa fa-road"></i>About<span class=alert></span></span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<h1 class=post-title>
-2021/04/19〜2021/04/25の最新情報
-</h1>
-<div class=post-meta><span title="2021-04-25 00:00:00 +0000 UTC">April 25, 2021</span>
-</div>
-</header> <div class=toc>
-<details>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>Table of Contents</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#deno%e6%9c%ac%e4%bd%93%e3%81%ae%e6%9c%80%e6%96%b0%e6%83%85%e5%a0%b1 aria-label=Deno本体の最新情報>Deno本体の最新情報</a><ul>
-<li>
-<a href=#deno-v191192%e3%81%ae%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9 aria-label="Deno v1.9.1/1.9.2のリリース">Deno v1.9.1/1.9.2のリリース</a></li>
-<li>
-<a href=#deno_std-v09400950%e3%81%ae%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9 aria-label="deno_std v0.94.0/0.95.0のリリース">deno_std v0.94.0/0.95.0のリリース</a></li></ul>
-</li>
-<li>
-<a href=#%e3%82%b5%e3%83%bc%e3%83%89%e3%83%91%e3%83%bc%e3%83%86%e3%82%a3%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%aa%e3%81%a9%e3%81%ae%e6%9c%80%e6%96%b0%e6%83%85%e5%a0%b1 aria-label=サードパーティモジュールなどの最新情報>サードパーティモジュールなどの最新情報</a><ul>
-<li>
-<a href=#deno-puppeteer-v900httpsgithubcomlucacasonatodeno-puppeteerreleasestag900%e3%81%ae%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9 aria-label="deno-puppeteer v9.0.0のリリース"><a href=https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0>deno-puppeteer v9.0.0</a>のリリース</a></li>
-<li>
-<a href=#deno-postgres-v0110v0111%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9 aria-label="deno-postgres v0.11.0/v0.11.1がリリース">deno-postgres v0.11.0/v0.11.1がリリース</a></li>
-<li>
-<a href=#landhttpsgithubcompostuiland---denolandx%e3%81%a7%e5%85%ac%e9%96%8b%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%82%92%e7%9b%b4%e6%8e%a5%e5%ae%9f%e8%a1%8c%e3%81%99%e3%82%8b%e3%83%84%e3%83%bc%e3%83%ab aria-label="land - deno.land/xで公開されているモジュールを直接実行するツール"><a href=https://github.com/postui/land>land</a> - deno.land/xで公開されているモジュールを直接実行するツール</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><h2 id=deno本体の最新情報>Deno本体の最新情報<a hidden class=anchor aria-hidden=true href=#deno本体の最新情報>#</a></h2>
-<h3 id=deno-v191192のリリース>Deno v1.9.1/1.9.2のリリース<a hidden class=anchor aria-hidden=true href=#deno-v191192のリリース>#</a></h3>
-<p>Denoのv1.9.1とv1.9.2がリリースされました。</p>
-<p><strong>v1.9.1の変更点:</strong></p>
-<ul>
-<li><code>deno lsp</code>で<code>textDocument/documentSymbol</code>, <code>textDocument/prepareCallHierarchy</code>, <code>textDocument/semanticTokens/full</code>がサポートされた</li>
-<li><code>deno lsp</code>で<code>X-TypeScript-Types</code>と<code>import type</code>/<code>export type</code>の組み合わせがうまく機能しない問題が修正された</li>
-<li>v1.9.0で実施された<code>Deno.Conn</code>型への変更がリバートされた</li>
-<li><code>Deno.serveHttp</code>が<code>Worker</code>内で動作しない問題が修正された</li>
-<li><code>Deno.serveHttp</code>でレスポンスの返却中にハングが起きうる問題が修正された</li>
-<li><code>Worker</code>は停止しているがterminateメッセージをまだ受信していない場合、<code>postMessage</code>で競合状態に陥る問題が修正された</li>
-</ul>
-<p><strong>v1.9.2の変更点:</strong></p>
-<ul>
-<li>WebSocketメッセージが適切にパースされない問題が解消された</li>
-<li>M1 Mac上で<code>deno compile</code>で生成されたバイナリを再び<code>deno compile</code>で上書きすると、壊れたバイナリが生成される問題が修正された</li>
-<li><code>Response</code>オブジェクトを<code>console.log</code>などで表示しようとすると、エラーが発生する問題が修正された</li>
-</ul>
-<hr>
-<ul>
-<li><a href=https://github.com/denoland/deno/releases/tag/v1.9.1>https://github.com/denoland/deno/releases/tag/v1.9.1</a></li>
-<li><a href=https://github.com/denoland/deno/releases/tag/v1.9.2>https://github.com/denoland/deno/releases/tag/v1.9.2</a></li>
-</ul>
-<h3 id=deno_std-v09400950のリリース>deno_std v0.94.0/0.95.0のリリース<a hidden class=anchor aria-hidden=true href=#deno_std-v09400950のリリース>#</a></h3>
-<p>deno_std v0.94.0とv0.95.0がリリースされました。</p>
-<p><strong>v0.94.0の変更点:</strong></p>
-<ul>
-<li>node/fs: <code>fstat()</code>が実装された</li>
-<li>io/streams: <code>Deno.Reader</code>から<code>ReadableStream</code>を作成するために、<code>readableStreamFromReader()</code>が実装された</li>
-<li>testing: <code>assertEquals</code>で<code>undefined</code>が設定されたキーと存在しないキーが区別されない問題が修正された</li>
-</ul>
-<p><strong>v0.95.0の変更点:</strong></p>
-<ul>
-<li>node/child_process: <code>spawn()</code>の基本的なサポート</li>
-<li>path/glob: <code>globToRegExp()</code>に<code>caseInsensitive</code>オプションが追加された</li>
-<li>node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された</li>
-</ul>
-<hr>
-<ul>
-<li><a href=https://github.com/denoland/deno_std/releases/tag/0.94.0>https://github.com/denoland/deno_std/releases/tag/0.94.0</a></li>
-<li><a href=https://github.com/denoland/deno_std/releases/tag/0.95.0>https://github.com/denoland/deno_std/releases/tag/0.95.0</a></li>
-</ul>
-<h2 id=サードパーティモジュールなどの最新情報>サードパーティモジュールなどの最新情報<a hidden class=anchor aria-hidden=true href=#サードパーティモジュールなどの最新情報>#</a></h2>
-<h3 id=deno-puppeteer-v900httpsgithubcomlucacasonatodeno-puppeteerreleasestag900のリリース><a href=https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0>deno-puppeteer v9.0.0</a>のリリース<a hidden class=anchor aria-hidden=true href=#deno-puppeteer-v900httpsgithubcomlucacasonatodeno-puppeteerreleasestag900のリリース>#</a></h3>
-<p><a href=https://github.com/lucacasonato/deno-puppeteer>deno-puppeteer</a>のv9.0.0がリリースされました。</p>
-<p><strong>変更点:</strong></p>
-<ul>
-<li>内部のpuppeteerのバージョンが9.0.0へ更新された</li>
-<li>Macで<a href=https://github.com/lucacasonato/deno-puppeteer/blob/9.0.0/install.ts>install.ts</a>経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された</li>
-</ul>
-<hr>
-<p><a href=https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0>https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0</a></p>
-<h3 id=deno-postgres-v0110v0111がリリース>deno-postgres v0.11.0/v0.11.1がリリース<a hidden class=anchor aria-hidden=true href=#deno-postgres-v0110v0111がリリース>#</a></h3>
-<p><a href=https://github.com/denodrivers/postgres>deno-postgres</a>のv0.11.0とv0.11.1がリリースされました。</p>
-<p><strong>v0.11.0の変更点:</strong></p>
-<ul>
-<li><code>Pool</code>クラスから直接SQLを実行できないよう変更された。
-<ul>
-<li>今後は、<code>Pool#connect</code>経由で<code>PoolClient</code>オブジェクトを取得し、それを使ってSQLを実行する必要があります。</li>
-</ul>
-</li>
-</ul>
-<p><strong>v0.11.1の変更点:</strong></p>
-<ul>
-<li><code>--unstable</code>フラグを指定しなくても利用できるようになった</li>
-</ul>
-<hr>
-<ul>
-<li><a href=https://github.com/denodrivers/postgres/releases/tag/v0.11.0>https://github.com/denodrivers/postgres/releases/tag/v0.11.0</a></li>
-<li><a href=https://github.com/denodrivers/postgres/releases/tag/v0.11.1>https://github.com/denodrivers/postgres/releases/tag/v0.11.1</a></li>
-</ul>
-<h3 id=landhttpsgithubcompostuiland---denolandxで公開されているモジュールを直接実行するツール><a href=https://github.com/postui/land>land</a> - deno.land/xで公開されているモジュールを直接実行するツール<a hidden class=anchor aria-hidden=true href=#landhttpsgithubcompostuiland---denolandxで公開されているモジュールを直接実行するツール>#</a></h3>
-<p><code>land</code>という<a href=https://deno.land/x>deno.land/x</a>で公開されているモジュールを<code>deno install</code>でインストールせずに実行できるツールが公開されました。</p>
-<hr>
-<p><a href=https://github.com/postui/land>https://github.com/postui/land</a></p>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno-puppeteer.html>deno-puppeteer</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/deno-postgres.html>deno-postgres</a></li>
-<li><a href=https://uki00a.github.io/deno-weekly/tags/land.html>land</a></li>
-</ul>
-</footer>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
-<span>
-Powered by
+内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0
+deno-postgres v0.11.0/v0.11.1がリリース deno-postgresのv0.11.0とv0.11.1がリリースされました。
+v0.11.0の変更点:
+Poolクラスから直接SQLを実行できないよう変更された。 今後は、Pool#connect経由でPoolClientオブジェクトを取得し、それを使ってSQLを実行する必要があります。 v0.11.1の変更点:
+--unstableフラグを指定しなくても利用できるようになった https://github.com/denodrivers/postgres/releases/tag/v0.11.0 https://github.com/denodrivers/postgres/releases/tag/v0.11.1 land - deno.land/xで公開されているモジュールを直接実行するツール landというdeno.land/xで公開されているモジュールをdeno installでインストールせずに実行できるツールが公開されました。
+https://github.com/postui/land"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2021/04/19〜2021/04/25の最新情報","item":"https://uki00a.github.io/deno-weekly/articles/2021/04/25.html"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"2021/04/19〜2021/04/25の最新情報","name":"2021\/04\/19〜2021\/04\/25の最新情報","description":"Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。\nv1.9.1の変更点:\ndeno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された v1.9.2の変更点:\nWebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2 deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。\nv0.94.0の変更点:\nnode/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された v0.95.0の変更点:\nnode/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0 サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。\n変更点:\n内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0\ndeno-postgres v0.11.0/v0.11.1がリリース deno-postgresのv0.11.0とv0.11.1がリリースされました。\nv0.11.0の変更点:\nPoolクラスから直接SQLを実行できないよう変更された。 今後は、Pool#connect経由でPoolClientオブジェクトを取得し、それを使ってSQLを実行する必要があります。 v0.11.1の変更点:\n--unstableフラグを指定しなくても利用できるようになった https://github.com/denodrivers/postgres/releases/tag/v0.11.0 https://github.com/denodrivers/postgres/releases/tag/v0.11.1 land - deno.land/xで公開されているモジュールを直接実行するツール landというdeno.land/xで公開されているモジュールをdeno installでインストールせずに実行できるツールが公開されました。\nhttps://github.com/postui/land","keywords":["deno","deno_std","deno-puppeteer","deno-postgres","land"],"articleBody":"Deno本体の最新情報 Deno v1.9.1/1.9.2のリリース Denoのv1.9.1とv1.9.2がリリースされました。\nv1.9.1の変更点:\ndeno lspでtextDocument/documentSymbol, textDocument/prepareCallHierarchy, textDocument/semanticTokens/fullがサポートされた deno lspでX-TypeScript-Typesとimport type/export typeの組み合わせがうまく機能しない問題が修正された v1.9.0で実施されたDeno.Conn型への変更がリバートされた Deno.serveHttpがWorker内で動作しない問題が修正された Deno.serveHttpでレスポンスの返却中にハングが起きうる問題が修正された Workerは停止しているがterminateメッセージをまだ受信していない場合、postMessageで競合状態に陥る問題が修正された v1.9.2の変更点:\nWebSocketメッセージが適切にパースされない問題が解消された M1 Mac上でdeno compileで生成されたバイナリを再びdeno compileで上書きすると、壊れたバイナリが生成される問題が修正された Responseオブジェクトをconsole.logなどで表示しようとすると、エラーが発生する問題が修正された https://github.com/denoland/deno/releases/tag/v1.9.1 https://github.com/denoland/deno/releases/tag/v1.9.2 deno_std v0.94.0/0.95.0のリリース deno_std v0.94.0とv0.95.0がリリースされました。\nv0.94.0の変更点:\nnode/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された v0.95.0の変更点:\nnode/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0 サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。\n変更点:\n内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0\ndeno-postgres v0.11.0/v0.11.1がリリース deno-postgresのv0.11.0とv0.11.1がリリースされました。\nv0.11.0の変更点:\nPoolクラスから直接SQLを実行できないよう変更された。 今後は、Pool#connect経由でPoolClientオブジェクトを取得し、それを使ってSQLを実行する必要があります。 v0.11.1の変更点:\n--unstableフラグを指定しなくても利用できるようになった https://github.com/denodrivers/postgres/releases/tag/v0.11.0 https://github.com/denodrivers/postgres/releases/tag/v0.11.1 land - deno.land/xで公開されているモジュールを直接実行するツール landというdeno.land/xで公開されているモジュールをdeno installでインストールせずに実行できるツールが公開されました。\nhttps://github.com/postui/land\n","wordCount":"70","inLanguage":"en","datePublished":"2021-04-25T00:00:00Z","dateModified":"2021-04-25T00:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://uki00a.github.io/deno-weekly/articles/2021/04/25.html"},"publisher":{"@type":"Organization","name":"週刊Deno","logo":{"@type":"ImageObject","url":"https://raw.githubusercontent.com/uki00a/blog/master/src/assets/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://uki00a.github.io/deno-weekly/ accesskey=h title="週刊Deno (Alt + H)">週刊Deno</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://uki00a.github.io/deno-weekly/tags.html title=タグ><span><i class='fa fa-heart'></i>タグ</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/categories.html title=カテゴリー><span><i class='fa fa-heart'></i>カテゴリー</span></a></li><li><a href=https://uki00a.github.io/deno-weekly/gallery.html title=ギャラリー><span><i class='fa fa-road'></i>ギャラリー<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/index.xml title="RSS feed"><span><i class='fa fa-road'></i>RSS feed<span class=alert></span></span></a></li><li><a href=https://uki00a.github.io/deno-weekly/about.html title=About><span><i class='fa fa-road'></i>About<span class=alert></span></span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class=post-title>2021/04/19〜2021/04/25の最新情報</h1><div class=post-meta><span title='2021-04-25 00:00:00 +0000 UTC'>April 25, 2021</span></div></header><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#deno%e6%9c%ac%e4%bd%93%e3%81%ae%e6%9c%80%e6%96%b0%e6%83%85%e5%a0%b1 aria-label=Deno本体の最新情報>Deno本体の最新情報</a><ul><li><a href=#deno-v191192%e3%81%ae%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9 aria-label="Deno v1.9.1/1.9.2のリリース">Deno v1.9.1/1.9.2のリリース</a></li><li><a href=#deno_std-v09400950%e3%81%ae%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9 aria-label="deno_std v0.94.0/0.95.0のリリース">deno_std v0.94.0/0.95.0のリリース</a></li></ul></li><li><a href=#%e3%82%b5%e3%83%bc%e3%83%89%e3%83%91%e3%83%bc%e3%83%86%e3%82%a3%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%81%aa%e3%81%a9%e3%81%ae%e6%9c%80%e6%96%b0%e6%83%85%e5%a0%b1 aria-label=サードパーティモジュールなどの最新情報>サードパーティモジュールなどの最新情報</a><ul><li><a href=#deno-puppeteer-v900httpsgithubcomlucacasonatodeno-puppeteerreleasestag900%e3%81%ae%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9 aria-label="deno-puppeteer v9.0.0のリリース"><a href=https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0>deno-puppeteer v9.0.0</a>のリリース</a></li><li><a href=#deno-postgres-v0110v0111%e3%81%8c%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9 aria-label="deno-postgres v0.11.0/v0.11.1がリリース">deno-postgres v0.11.0/v0.11.1がリリース</a></li><li><a href=#landhttpsgithubcompostuiland---denolandx%e3%81%a7%e5%85%ac%e9%96%8b%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%82%92%e7%9b%b4%e6%8e%a5%e5%ae%9f%e8%a1%8c%e3%81%99%e3%82%8b%e3%83%84%e3%83%bc%e3%83%ab aria-label="land - deno.land/xで公開されているモジュールを直接実行するツール"><a href=https://github.com/postui/land>land</a> - deno.land/xで公開されているモジュールを直接実行するツール</a></li></ul></li></ul></div></details></div><div class=post-content><h2 id=deno本体の最新情報>Deno本体の最新情報<a hidden class=anchor aria-hidden=true href=#deno本体の最新情報>#</a></h2><h3 id=deno-v191192のリリース>Deno v1.9.1/1.9.2のリリース<a hidden class=anchor aria-hidden=true href=#deno-v191192のリリース>#</a></h3><p>Denoのv1.9.1とv1.9.2がリリースされました。</p><p><strong>v1.9.1の変更点:</strong></p><ul><li><code>deno lsp</code>で<code>textDocument/documentSymbol</code>, <code>textDocument/prepareCallHierarchy</code>, <code>textDocument/semanticTokens/full</code>がサポートされた</li><li><code>deno lsp</code>で<code>X-TypeScript-Types</code>と<code>import type</code>/<code>export type</code>の組み合わせがうまく機能しない問題が修正された</li><li>v1.9.0で実施された<code>Deno.Conn</code>型への変更がリバートされた</li><li><code>Deno.serveHttp</code>が<code>Worker</code>内で動作しない問題が修正された</li><li><code>Deno.serveHttp</code>でレスポンスの返却中にハングが起きうる問題が修正された</li><li><code>Worker</code>は停止しているがterminateメッセージをまだ受信していない場合、<code>postMessage</code>で競合状態に陥る問題が修正された</li></ul><p><strong>v1.9.2の変更点:</strong></p><ul><li>WebSocketメッセージが適切にパースされない問題が解消された</li><li>M1 Mac上で<code>deno compile</code>で生成されたバイナリを再び<code>deno compile</code>で上書きすると、壊れたバイナリが生成される問題が修正された</li><li><code>Response</code>オブジェクトを<code>console.log</code>などで表示しようとすると、エラーが発生する問題が修正された</li></ul><hr><ul><li><a href=https://github.com/denoland/deno/releases/tag/v1.9.1>https://github.com/denoland/deno/releases/tag/v1.9.1</a></li><li><a href=https://github.com/denoland/deno/releases/tag/v1.9.2>https://github.com/denoland/deno/releases/tag/v1.9.2</a></li></ul><h3 id=deno_std-v09400950のリリース>deno_std v0.94.0/0.95.0のリリース<a hidden class=anchor aria-hidden=true href=#deno_std-v09400950のリリース>#</a></h3><p>deno_std v0.94.0とv0.95.0がリリースされました。</p><p><strong>v0.94.0の変更点:</strong></p><ul><li>node/fs: <code>fstat()</code>が実装された</li><li>io/streams: <code>Deno.Reader</code>から<code>ReadableStream</code>を作成するために、<code>readableStreamFromReader()</code>が実装された</li><li>testing: <code>assertEquals</code>で<code>undefined</code>が設定されたキーと存在しないキーが区別されない問題が修正された</li></ul><p><strong>v0.95.0の変更点:</strong></p><ul><li>node/child_process: <code>spawn()</code>の基本的なサポート</li><li>path/glob: <code>globToRegExp()</code>に<code>caseInsensitive</code>オプションが追加された</li><li>node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された</li></ul><hr><ul><li><a href=https://github.com/denoland/deno_std/releases/tag/0.94.0>https://github.com/denoland/deno_std/releases/tag/0.94.0</a></li><li><a href=https://github.com/denoland/deno_std/releases/tag/0.95.0>https://github.com/denoland/deno_std/releases/tag/0.95.0</a></li></ul><h2 id=サードパーティモジュールなどの最新情報>サードパーティモジュールなどの最新情報<a hidden class=anchor aria-hidden=true href=#サードパーティモジュールなどの最新情報>#</a></h2><h3 id=deno-puppeteer-v900httpsgithubcomlucacasonatodeno-puppeteerreleasestag900のリリース><a href=https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0>deno-puppeteer v9.0.0</a>のリリース<a hidden class=anchor aria-hidden=true href=#deno-puppeteer-v900httpsgithubcomlucacasonatodeno-puppeteerreleasestag900のリリース>#</a></h3><p><a href=https://github.com/lucacasonato/deno-puppeteer>deno-puppeteer</a>のv9.0.0がリリースされました。</p><p><strong>変更点:</strong></p><ul><li>内部のpuppeteerのバージョンが9.0.0へ更新された</li><li>Macで<a href=https://github.com/lucacasonato/deno-puppeteer/blob/9.0.0/install.ts>install.ts</a>経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された</li></ul><hr><p><a href=https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0>https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0</a></p><h3 id=deno-postgres-v0110v0111がリリース>deno-postgres v0.11.0/v0.11.1がリリース<a hidden class=anchor aria-hidden=true href=#deno-postgres-v0110v0111がリリース>#</a></h3><p><a href=https://github.com/denodrivers/postgres>deno-postgres</a>のv0.11.0とv0.11.1がリリースされました。</p><p><strong>v0.11.0の変更点:</strong></p><ul><li><code>Pool</code>クラスから直接SQLを実行できないよう変更された。<ul><li>今後は、<code>Pool#connect</code>経由で<code>PoolClient</code>オブジェクトを取得し、それを使ってSQLを実行する必要があります。</li></ul></li></ul><p><strong>v0.11.1の変更点:</strong></p><ul><li><code>--unstable</code>フラグを指定しなくても利用できるようになった</li></ul><hr><ul><li><a href=https://github.com/denodrivers/postgres/releases/tag/v0.11.0>https://github.com/denodrivers/postgres/releases/tag/v0.11.0</a></li><li><a href=https://github.com/denodrivers/postgres/releases/tag/v0.11.1>https://github.com/denodrivers/postgres/releases/tag/v0.11.1</a></li></ul><h3 id=landhttpsgithubcompostuiland---denolandxで公開されているモジュールを直接実行するツール><a href=https://github.com/postui/land>land</a> - deno.land/xで公開されているモジュールを直接実行するツール<a hidden class=anchor aria-hidden=true href=#landhttpsgithubcompostuiland---denolandxで公開されているモジュールを直接実行するツール>#</a></h3><p><code>land</code>という<a href=https://deno.land/x>deno.land/x</a>で公開されているモジュールを<code>deno install</code>でインストールせずに実行できるツールが公開されました。</p><hr><p><a href=https://github.com/postui/land>https://github.com/postui/land</a></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://uki00a.github.io/deno-weekly/tags/deno.html>deno</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno_std.html>deno_std</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno-puppeteer.html>deno-puppeteer</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/deno-postgres.html>deno-postgres</a></li><li><a href=https://uki00a.github.io/deno-weekly/tags/land.html>land</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>
