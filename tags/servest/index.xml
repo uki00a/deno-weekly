@@ -6,11 +6,7 @@ Deno本体にネイティブのHTTP/2サーバの実装が組み込まれた Den
 io/util: Deno v1.9.0でのDeno.iterの非推奨化に合わせて、io/utilにiterが追加された node/fs: fdatasync/fsync/ftuncate/futimesが実装された https://github.com/denoland/deno_std/pull/850
 サードパーティモジュールなどの最新情報 Oak v7.0.0及びv7.1.0のリリース DenoのWebフレームワークであるOakのv7.0.0及びv7.1.0がリリースされました。
 主な変更点:
-Deno v1.9で実装されたネイティブHTTPサーバがサポートされた Deno Deployのサポート context.stateがapp.stateから深いコピーが行われるようになった ETagサポートが追加された https://github.com/oakserver/oak/commit/2a68eda28cb93bfb099a5f27dfad728f2183e0df https://github.com/oakserver/oak/commit/4ae51e28e04490cc639e887659b8626c05c9b0bb Servest v1.3.0がリリース Servest v1.3.0がリリースされました。こちらもDeno v1.9.0のリリースに合わせて、ネイティブHTTPサーバのサポートが追加されています。
-https://github.com/keroxp/servest/releases/tag/v1.3.0
-esbuildがDenoへの実験的サポートを追加 まだ実験的ではありますが、esbuildでDenoのサポートが追加されました。
-それに合わせて、esbuildがdeno.land/xで公開されています。
-https://github.com/evanw/esbuild/issues/936#issuecomment-818620960 https://twitter.com/evanwallace/status/1381926114189172737 https://github.com/esbuild/deno-esbuild</description></item><item><title>2021/03/15〜2021/03/21の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/21.html</link><pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/21.html</guid><description>サードパーティモジュールなどの最新情報 luath - Vite/WMRライクなフロントエンドビルドツール luathというフロントエンド開発用のビルドツールが公開されました。
+Deno v1.9で実装されたネイティブHTTPサーバがサポートされた Deno Deployのサポート context.stateがapp.stateから深いコピーが行われるようになった ETagサポートが追加された https://github.com/oakserver/oak/commit/2a68eda28cb93bfb099a5f27dfad728f2183e0df https://github.com/oakserver/oak/commit/4ae51e28e04490cc639e887659b8626c05c9b0bb Servest v1.</description></item><item><title>2021/03/15〜2021/03/21の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/21.html</link><pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/21.html</guid><description>サードパーティモジュールなどの最新情報 luath - Vite/WMRライクなフロントエンドビルドツール luathというフロントエンド開発用のビルドツールが公開されました。
 ViteやWMRに影響を受けており、以下のような機能が提供されています:
 HMR及びオンデマンドビルドなどの機能を提供するdevサーバ Rollup互換のプラグインシステム PostCSSやCSS Modulesのサポート https://github.com/cmorten/luath
 estest - DenoやNode.jsなどで動作するテストフレームワーク estestはDenoやNode.jsなどのES Modulesをサポートする環境で動作するテストフレームワークです。

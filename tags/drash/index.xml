@@ -31,13 +31,4 @@ node/events: onとemitメソッドを非EventEmitterオブジェクトに束縛�
 http/file_server: ファイル一覧ページでパンくずリストが表示されるようになりました
 http/file_server: ファイル名に%記号などが含まれている場合、そのファイルに適切にアクセスできない問題が修正されました
 http/file_server: 200や206以外のレスポンスを返却する際に生じるリソースリークが修正されました
-http/file_server: エラーログに色がつくようになりました
-async/tee: tee関数から返却されたイテレータのnextメソッドを平行で複数回呼ぶと、正しい値が返却されなくなる問題が修正されました
-crypto: crypto.subtle.digestでalgorithm.lengthが無視される問題が修正されました
-https://github.com/denoland/deno_std/releases/tag/0.113.0
-Deno Deploy Beta 3 Deno DeployのBeta 3がリリースされました。
-このリリースでは、Deno.connectなどのAPIやプレイグランド、GitHub Organizationのサポートが追加されています。
-また、GAリリースは2021年の第4四半期に予定されています。
-次のリリースではキャッシュ機能やCLIとの相互運用性の強化などが実施される予定のようです。
-変更点:
-Deno.connectとDeno.connectTlsがサポートされました Deno.resolveDnsがサポートされました URLPatternがサポートされました プレイグラウンドがサポートされました オンラインエディタ上でコードを編集し、それを直接Deno Deploy上で実行できます https://embed.deno.com/ 経由で&amp;lt;iframe&amp;gt;を使ってパブリックプレイグラウンド上のコードを埋め込めます Organizationのサポート https://deno.</description></item></channel></rss>
+http/file_server: エラーログに色がつくようになりました</description></item></channel></rss>

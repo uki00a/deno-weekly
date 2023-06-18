@@ -9,6 +9,4 @@ npm:URLを使っていると、依存関係が変わっていなくても、毎�
 deno_std v0.179.0 deno_std v0.179.0がリリースされました。
 std/encoding/varint.tsの追加, std/encoding/varint/mod.tsの非推奨化 TypeScriptをベースに実装されたstd/encoding/varint.tsが追加されました。 (実装はhttps://deno.land/x/varintがベースのようです)
 これに合わせて、WASMベースのstd/encoding/varint/mod.tsが非推奨化されています。
-std/fsの改善 std/fs/expand_glob: expandGlob()にfollowSymlinksオプションが追加されました (trueを指定すると、シンボリックリンクが解決されます) std/fs/ensure_dir: ensureDir()を同じディレクトリに対して並列で呼んだときに、Deno.errors.AlreadyExistsがthrowされる問題が修正されています。 std/fs/ensure_symlink: ensureSymlink()でtargetに対する相対的なリンクを作ろうとすると、意図せぬパスを指すリンクが作成されてしまう問題が修正されています (#2312) std/http/cookie - =の取り扱いが改善 Cookieの値に=が含まれていると、getSetCookiesが意図せぬ値を返す問題が修正されています。
-https://github.com/denoland/deno_std/releases/tag/0.179.0
-Fresh v1.1.4 Fresh v1.</description></item></channel></rss>
+std/fsの改善 std/fs/expand_glob: expandGlob()にfollowSymlinksオプションが追加されました (trueを指定すると、シンボリックリンクが解決されます) std/fs/ensure_dir: ensureDir()を同じディレクトリに対して並列で呼んだときに、Deno.errors.AlreadyExistsがthrowされる問題が修正されています。 std/fs/ensure_symlink: ensureSymlink()でtargetに対する相対的なリンクを作ろうとすると、意図せぬパスを指すリンクが作成されてしまう問題が修正されています (#2312) std/http/cookie - =の取り扱いが改善 Cookieの値に=が含まれていると、getSetCookiesが意図せぬ値を返す問題が修正されています。</description></item></channel></rss>

@@ -6,13 +6,7 @@ std/io/buffer.ts: (破壊的変更) 非推奨APIの削除 以下のAPIが削除�
 同名のAPIは引き続き別ファイルで提供されているため、もしこれらを利用されている場合は、以下の移行先ファイルへimportを書き換える必要がありそうです。
 対象API 移行先 BufferFullError std/io/buf_reader.ts BufReader std/io/buf_reader.ts PartialReadError std/io/buf_reader.ts ReadLineResult std/io/buf_reader.ts BufWriter std/io/buf_writer.ts BufWriterSync std/io/buf_writer.ts readDelim std/io/read_delim.ts readStringDelim std/io/read_string_delim.ts readLines std/io/read_lines.ts std/io/files.tsモジュールの削除 (破壊的変更) std/io/files.tsが削除されています。
 このファイルで提供されていたAPIはstd/io/read_range.tsから引き続き利用できるため、今後はそちらへ移行する必要がありそうです。
-std/io/readers.tsモジュールの削除 (破壊的変更) std/io/readers.tsが削除されています。
-このファイルから提供されていたAPIは引き続き別ファイルで提供されているため、もしこれらを利用されている場合は、以下の移行先ファイルへimportを書き換える必要がありそうです。
-対象API 移行先 StringReader std/io/string_reader.ts MultiReader std/io/multi_reader.ts LimitedReader std/io/limited_reader.ts std/io/writers.tsモジュールの削除 (破壊的変更) std/io/writers.tsが削除されています。
-このファイルで提供されていたStringWriterは、引き続きstd/io/string_writer.tsから利用できるため、もし利用されている場合は移行する必要がありそうです。
-std/io/util.tsモジュールの削除 (破壊的変更) std/io/util.tsが削除されています。
-このファイルから提供されていたAPIは引き続き別ファイルで提供されているため、もしこれらを利用されている場合は、以下の移行先ファイルへimportを書き換える必要がありそうです。
-対象API 移行先 copyN std/io/copy_n.ts readInt std/io/read_int.ts readLong std/io/read_long.ts readShort std/io/read_short.</description></item><item><title>2021/03/21〜2022/03/27の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/03/27.html</link><pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/03/27.html</guid><description>Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。
+std/io/readers.tsモジュールの削除 (破壊的変更) std/io/readers.</description></item><item><title>2021/03/21〜2022/03/27の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/03/27.html</link><pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/03/27.html</guid><description>Deno v1.20.2 permissionsオプションへの破壊的変更について Deno v1.20で行われる予定であったpermissionsオプションへの破壊的変更が正式に反映されました。
 詳細については下記を参照ください。
 Deno v1.20 deno taskコマンドの改善 deno taskコマンドの内部で使われているdeno_task_shellがアップデートされています。
 これにより、cp -Rや|&amp;amp;のサポートなどが行われています。
@@ -26,7 +20,7 @@ Deno v1.20.3 Deno v1.20.2に続けて、v1.20.3もリリースされています
 Denoはfetchの第一引数としてURLの指定をサポートしていますが、この形式での呼び出しが非推奨化されました。 (v2で削除される予定のようです) FFI関連の各API(Deno.UnsafeFnPointer#callなど)でちゃんと--unstableオプションが与えられているかチェックされるよう変更されました。 Deno.RunOptionsのcmdプロパティがreadonlyに変更されました。 https://github.com/denoland/deno/releases/tag/v1.20.3
 deno_std v0.131.0 deno_std v0.131.0がリリースされました。
 collections BinaryHeapが追加されました。
-import { BinaryHeap } from &amp;#34;https://deno.land/std@0.132.0/collections/binary_heap.ts&amp;#34;; const heap = new BinaryHeap&amp;lt;number&amp;gt;(); heap.push(4); heap.push(1); heap.push(10); heap.push(6); heap.push(3); console.log(Array.from(heap)); // [ 10, 6, 4, 3, 1 ] async async/abortableモジュールの内部関数であったabortablePromiseとabortableAsyncIterableが公開APIに変更されました。</description></item><item><title>2021/02/07〜2022/02/13の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/02/13.html</link><pubDate>Sun, 13 Feb 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/02/13.html</guid><description>--promptオプションの挙動をデフォルト化するPRがマージされました Denoで--promptオプションをデフォルトで有効化するPRがマージされました。
+import { BinaryHeap } from &amp;#34;https://deno.land/std@0.132.0/collections/binary_heap.ts&amp;#34;; const heap = new BinaryHeap&amp;lt;number&amp;gt;(); heap.</description></item><item><title>2021/02/07〜2022/02/13の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/02/13.html</link><pubDate>Sun, 13 Feb 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/02/13.html</guid><description>--promptオプションの挙動をデフォルト化するPRがマージされました Denoで--promptオプションをデフォルトで有効化するPRがマージされました。
 feat: prompt by default (#13650)
 次のDeno v1.19でリリースされる可能性がありそうです。
 また、この変更に合わせて、--no-promptオプションが追加されています。 このオプションを指定することで、今まで通り、 許可されていないAPIを実行しようとすると、即時にエラーが発生します。
@@ -45,7 +39,4 @@ Deno.umask()の削除について Deno.umask()を削除するPRが作成され�
 chore: remove Deno.umask (#13639)
 背景としては、競合状態によるバグが存在するためのようです。
 詳しくは以下のissueを参照ください。
-Proposal: Remove (unstable) Deno.umask (#13632)
-deployctl v1 deployctlのv1がリリースされました。
-このリリースではGitHubアクションが追加されています。
-https://github.com/denoland/deployctl/tree/1.0.0/action これを使うことで、GitHub ActionsからDeno Deployへのデプロイを自動化できます。</description></item></channel></rss>
+Proposal: Remove (unstable) Deno.</description></item></channel></rss>

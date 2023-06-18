@@ -12,6 +12,4 @@ $ deno test --allow-read &amp;#34;--&amp;#34; &amp;#34;some-test.js&amp;#34; Den
 deno testの変更点 Deno v1.21でテストケースの実行時にログに出力された内容がキャプチャされるように改善されました。
 このリリースでは、Deno.spawn()などでstdoutやstderrオプションに&amp;quot;inherit&amp;quot;を指定した際に、サブプロセスの出力内容もキャプチャされるように改善されています。
 他にも、Workerの出力内容もキャプチャするように改善されています。
-その他の変更点 Deno.spawn(Sync)でstdinなどのオプションに&amp;quot;piped&amp;quot;を指定した際にエラーを発生させるよう修正されました。 Worker.terminateが呼び出し元のスレッドをブロックしないように修正されました (https://github.com/denoland/deno/issues/13705) https://github.com/denoland/deno/releases/tag/v1.21.1
-deno_std v0.137.0 deno_std v0.137.0がリリースされました。
-testing/mock stub()やspy()の使用時に、対象オブジェクトのメソッドの型が自動で推論されるように修正されました。(型定義の修正のみで挙動には影響はありません)</description></item></channel></rss>
+その他の変更点 Deno.</description></item></channel></rss>

@@ -8,5 +8,4 @@ testing/asserts assertRejects()に渡した関数が同期的に例外を投げ�
 await assertRejects(() =&amp;gt; { throw new Error(&amp;#34;foo&amp;#34;); }); // =&amp;gt; rejectされたPromiseが返されていないため、エラー https://github.com/denoland/deno_std/releases/tag/0.140.0
 SQLバイディング Deno本体でSQLバインディングを公開するPRが作成されています。
 experiment(runtime): expose SQLite bindings (#14627)
-まだ実際にリリースされるかどうかは不明ですが、今のところ、下記のようにしてクエリを発行できる想定のようです。
-const { Connection } = Deno.sqlite; const conn = new Connection(&amp;#34;sqlite.</description></item></channel></rss>
+まだ実際にリリースされるかどうかは不明ですが、今のところ、下記のようにしてクエリを発行できる想定のようです。</description></item></channel></rss>

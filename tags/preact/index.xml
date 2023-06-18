@@ -32,6 +32,4 @@ TextLineStreamにallowCRオプションが追加 (streams/delimiter) このオ�
 前回のリリースで、デフォルトでCRが取り扱われるように修正されましたが、デフォルトの挙動を変えてしまうのはまずいということで、このオプションが追加されました。
 https://github.com/denoland/deno_std/releases/tag/0.142.0
 oak_commonsパッケージの機能のdeno_stdへの移行 現在、oak_commonsパッケージで提供されていた機能の一部をdeno_stdへ移植するPRが作成されています。
-例)
-http/http_statusのSTATUS_TEXTがMapからRecord型に変更 http/http_errorsの追加 http/negotiationの追加 crypto/keystackの追加 (Oakの内部でも使われているCookieの署名・検証用モジュール) deno_std v0.142.0で追加されたmedia_typesモジュールも、元々は oakserver/media_typesリポジトリで管理されていたものであり、これらの変更が入る可能性も比較的高そうに見えます。
-deno_redis v0.</description></item></channel></rss>
+例)</description></item></channel></rss>

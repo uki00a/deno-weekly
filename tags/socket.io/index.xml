@@ -4,5 +4,4 @@
 node:moduleのcreateRequireで絶対パスがサポート deno runコマンドでnpm:と--inspect-brkの併用がサポート packages.jsonのexports.typesサポートに関する改善 その他の変更点 プロセス停止前に未解決のPromiseが存在する際のエラーメッセージが改善 (問題が発生している箇所がエラーメッセージに表示されるように) ReadableStreamのリーダー周辺の型定義の改善 Denoのトランスパイル結果のキャッシュとdeno test --coverageで生成されたカバレッジの整合性が取れなかった場合に、プロセスがパニックする問題が修正 deno replの履歴管理に関する信頼性の向上 https://github.com/denoland/deno/releases/tag/v1.28.3
 deno_std v0.167.0 deno_std v0.167.0がリリースされています。
 std/async/retryモジュールの追加 std/asyncにExponential backoffアルゴリズムに基づいたリトライ機能を提供するモジュールが追加されました。
-import { retry } from &amp;#34;https://deno.land/std@0.167.0/async/retry.ts&amp;#34;; const result = await retry(async () =&amp;gt; { const result = await doSomeAsyncOperation(); return result; }, { multiplier: 2, maxTimeout: 16_000, maxAttempts: 10, minTimeout: 500, }); std/testing/typesモジュールの追加 std/testingにTypeScriptの型をテストするためのモジュールが追加されています。
-import type { Has, IsExact, IsNullable } from &amp;#34;https://deno.</description></item></channel></rss>
+import { retry } from &amp;#34;https://deno.land/std@0.167.0/async/retry.ts&amp;#34;; const result = await retry(async () =&amp;gt; { const result = await doSomeAsyncOperation(); return result; }, { multiplier: 2, maxTimeout: 16_000, maxAttempts: 10, minTimeout: 500, }); std/testing/typesモジュールの追加 std/testingにTypeScriptの型をテストするためのモジュールが追加されています。</description></item></channel></rss>

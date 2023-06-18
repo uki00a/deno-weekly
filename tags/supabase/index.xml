@@ -13,7 +13,7 @@ vscode_denoでは、v3.18.0でdocumentPreloadLimitオプションのサポート
 その他 Deno.seekSyncとDeno.seekの型定義が統一されていなかった問題が修正されました。(#19060) node:module: Module.runMain()が実装されました。(ts-nodeで使用されているようです) リダイレクトするリモートモジュールへの依存があった場合、deno vendorの実行時にパニックする問題が修正されました。 Deno.UnsafeCallbackが使用されていると、deno testがハングすることのある問題が修正されました。 deno_std v0.187.0 deno_std v0.187.0がリリースされました。
 std/regexpが追加 新しいモジュールとしてstd/regexpが追加されました。
 現状では、正規表現のメタ文字をエスケープするための機能が提供されています。
-import { escape } from &amp;#34;https://deno.land/std@0.187.0/regexp/escape.ts&amp;#34;; const regexp = new RegExp(`^${escape(&amp;#34;ba.</description></item><item><title>2022/10/03〜2022/10/09の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/09.html</link><pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/09.html</guid><description>Deno v1.26.1 Deno v1.26.1がリリースされました。
+import { escape } from &amp;#34;https://deno.</description></item><item><title>2022/10/03〜2022/10/09の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/09.html</link><pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/09.html</guid><description>Deno v1.26.1 Deno v1.26.1がリリースされました。
 Node-APIの実装 DenoでNode-APIが実装されました。
 Node-APIで実装されたアドオンのrequire()での読み込みがサポートされます。
 Node-APIを有効化するためには、今のところ、--allow-ffiの指定が必要なようです。 (ただし、将来的にオプションが変わる可能性はあるようです)
@@ -39,9 +39,4 @@ Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されま�
 function fetch( input: URL, init?: RequestInit, ): Promise&amp;lt;Response&amp;gt;; 変更後:
 function fetch( input: URL | Request | string, init?: RequestInit, ): Promise&amp;lt;Response&amp;gt;; deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。
 deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。
-https://github.com/denoland/deno/releases/tag/v1.20.4
-deno_std v0.133.0 deno_std v0.133.0がリリースされました。
-testing/mockモジュールが追加 testingモジュールにテストスパイやテストスタブなどを提供するモジュールが追加されました。
-spy
-spy()で関数をラップすることで、assertSpyCall()やassertSpyCalls()などで検証ができます。
-import { assertSpyCall, assertSpyCalls, spy } from &amp;#34;https://deno.</description></item></channel></rss>
+https://github.</description></item></channel></rss>

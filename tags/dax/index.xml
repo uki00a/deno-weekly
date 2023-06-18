@@ -10,4 +10,4 @@ HOST=localhost URL=http://${HOST}:${PORT:-3000} このファイルをdotenvモ�
 { HOST: &amp;#34;localhost&amp;#34;, URL: &amp;#34;http://localhost:3000&amp;#34; } その他には、stringify()関数が追加されています。
 import { stringify } from &amp;#34;https://deno.land/std@0.147.0/dotenv/mod.ts&amp;#34;; stringify({ PORT: &amp;#34;3000&amp;#34;, HOST: &amp;#34;localhost&amp;#34;, LOG_LEVEL: &amp;#34;debug&amp;#34; }); // PORT=3000 // HOST=localhost // LOG_LEVEL=debug http oak_commonsのHTTPエラーとコンテントネゴシエーション用のモジュールがdeno_std/httpに取り込まれました。
 http/negotiation
-import { accepts } from &amp;#34;https://deno.land/std@0.147.0/http/negotiation.ts&amp;#34;; const req = new Request(&amp;#34;https://github.com&amp;#34;, { headers: { accept: &amp;#34;text/html,application/xhtml+xml,application/xml;q=0.</description></item></channel></rss>
+import { accepts } from &amp;#34;https://deno.land/std@0.147.0/http/negotiation.ts&amp;#34;; const req = new Request(&amp;#34;https://github.</description></item></channel></rss>

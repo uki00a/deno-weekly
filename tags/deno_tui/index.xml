@@ -10,6 +10,4 @@ import express from &amp;#34;npm:express@5&amp;#34;; import { expect } from &amp
 デフォルトでnpmパッケージはnpmの公式レジストリからダウンロードされ、DENO_DIRにキャッシュされます。 Node.js互換モード(--compat)とは異なり、npm:URLで読み込まれたモジュール内のみにNode.jsのグローバルAPI(process/global/Bufferなど)が注入されます。 Node.js互換モード(--compat)とは異なり、現時点では--unstableなしで使用できる想定のようです。 型チェック, LSPのサポート, エントリポイントでのnpm:URLの指定(例: deno run npm:mkdirp path/to/dir)などの機能はまだ入っておらず、今後追加されていく予定のようです。 この機能はおそらく、次のv1.25でリリースされるのではないかと思われます。
 新しいHTTPサーバ (Flash) HTTPサーバの高速化を目的に、Deno本体でFlashという新しいHTTPサーバが開発されています。
 feat(ext/flash): An optimized http/1.1 server (#15405)
-feat(unstable): change Deno.serve() API (#15498)
-既存のDeno.serveHttp()とは異なるDeno.serve()という新しいAPIが追加されており、これによってFlashサーバを起動することができます。
-Deno.serve({ fetch: async (req) =&amp;gt; { return new Response(await req.text()); }, signal: abortController.</description></item></channel></rss>
+feat(unstable): change Deno.serve() API (#15498)</description></item></channel></rss>

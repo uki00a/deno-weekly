@@ -7,10 +7,7 @@ Conditional exportsで指定されたエントリポイントが型定義を持�
 deno_std v0.164.0 deno_std v0.164.0がリリースされました。
 std/fmt: durationモジュールが追加 ミリ秒単位で指定された時間のフォーマットされた文字列を取得することができます。
 import { prettyDuration } from &amp;#34;https://deno.land/std@0.165.0/fmt/duration.ts&amp;#34;; prettyDuration(130000, { ignoreZero: true, formatType: &amp;#34;full&amp;#34; }); // =&amp;gt; &amp;#34;2 minutes, 10 seconds&amp;#34; 補足) prettyDurationは以下のPRでformatにリネームされています。この変更は、おそらくv0.166.0あたりでリリースされると思われるため、今後利用する際はprettyDurationではなくformatを使用するとよさそうです。
-https://github.com/denoland/deno_std/pull/2896 std/node: 互換性の向上 node/fs: - read()でコールバックが非同期に呼ばれるように修正 node/http: ServerResponse.finishedが実装 node/http: --unstableが指定されていると、Buffer形式のレスポンスが適切に取り扱われない問題が修正 node/string_decoder: StringDecoder.decodeのパフォーマンスが小さなUint8Arrayに対しては51倍、大きなUint8Arrayに対しては4倍程まで高速化 https://github.com/denoland/deno_std/releases/tag/0.164.0
-Support Astro Denoのnpmパッケージサポートを活用して、Astroのサポートに向けた対応が進められているようです。
-進捗については、下記のissueで確認できます。
-https://github.com/denoland/deno/issues/16659 npmパッケージサポートに関するチュートリアル Denoのv1.28にリリースに合わせ、npmパッケージサポートに関するチュートリアルが公式で公開されています。</description></item><item><title>2021/03/28〜2022/04/03の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/04/03.html</link><pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/04/03.html</guid><description>Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。
+https://github.com/denoland/deno_std/pull/2896 std/node: 互換性の向上 node/fs: - read()でコールバックが非同期に呼ばれるように修正 node/http: ServerResponse.finishedが実装 node/http: --unstableが指定されていると、Buffer形式のレスポンスが適切に取り扱われない問題が修正 node/string_decoder: StringDecoder.</description></item><item><title>2021/03/28〜2022/04/03の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/04/03.html</link><pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/04/03.html</guid><description>Supabase Functions SupabaseでSupabase FunctionsというFaaSが利用できるようになりました。
 Supabase FunctionsはDeno Deployをベースにしており、TypeScriptなどを利用してコードを記述できるようです。
 Supabase Functions on Deno Deploy Edge Functions are now available in Supabase Deno v1.20.4 Deno v1.20.4がリリースされました。
 変更点:
@@ -20,9 +17,4 @@ Deno v1.20.3で非推奨化されたfetch()のシグネチャが修正されま�
 function fetch( input: URL, init?: RequestInit, ): Promise&amp;lt;Response&amp;gt;; 変更後:
 function fetch( input: URL | Request | string, init?: RequestInit, ): Promise&amp;lt;Response&amp;gt;; deno lspでdeno.jsoncなどの拡張子が.jsoncのファイルがウォッチされない問題が修正されました。
 deno taskコマンドでのPATHEXT環境変数の取り扱いが改善されました。
-https://github.com/denoland/deno/releases/tag/v1.20.4
-deno_std v0.133.0 deno_std v0.133.0がリリースされました。
-testing/mockモジュールが追加 testingモジュールにテストスパイやテストスタブなどを提供するモジュールが追加されました。
-spy
-spy()で関数をラップすることで、assertSpyCall()やassertSpyCalls()などで検証ができます。
-import { assertSpyCall, assertSpyCalls, spy } from &amp;#34;https://deno.</description></item></channel></rss>
+https://github.</description></item></channel></rss>

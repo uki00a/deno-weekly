@@ -5,6 +5,4 @@ SubtleCrypto.encryptで指定されたキーとアルゴリズムが一致しな
 deno_std v0.117.0 deno_std v0.117.0がリリースされました。
 httpモジュールでの新機能の追加やnodeモジュールのNode.jsとの互換性の向上が実施されています。
 httpモジュール serveなどの関数でonErrorオプションがサポートされ、handlerで発生したエラーを補足できるようになりました
-const handler = (request: Request) =&amp;gt; { throw new Error(&amp;#34;Hello&amp;#34;); }; const servePromise = serve(handler, { addr: &amp;#34;localhost:3000&amp;#34;, onError(_error) { return new Response(&amp;#34;Internal Server Error&amp;#34;, { status: 500 }); }, }); nodeモジュール readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました. またindexOf()やincludes()などの互換性も向上されています fs: rm/rmSync/stat/statSync/writeFile/writeFileSyncなどの互換性が向上しました util: util.inspect()の互換性が向上しました streams: Node.jsとの互換性が大幅に向上しました https://github.com/denoland/deno_std/releases/tag/0.117.0
-Denoの--no-check=remoteオプションのサポートについて 以下のプルリクエストでDenoに--no-check=remoteオプションが追加されました。
-https://github.com/denoland/deno/pull/12766 内容としては、Denoを実行する際に--no-check=remoteを指定することで、リモートモジュール(URLがhttps:やhttp:で始まるモジュール)の型チェックのみをスキップさせるというものです。</description></item></channel></rss>
+const handler = (request: Request) =&amp;gt; { throw new Error(&amp;#34;Hello&amp;#34;); }; const servePromise = serve(handler, { addr: &amp;#34;localhost:3000&amp;#34;, onError(_error) { return new Response(&amp;#34;Internal Server Error&amp;#34;, { status: 500 }); }, }); nodeモジュール readline: createInterface()が実装されました process: process.stdin.read()で読み込みが非同期に行われるようになりました buffer: Bufferでbase64エンコーディングがサポートされました.</description></item></channel></rss>

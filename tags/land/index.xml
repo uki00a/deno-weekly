@@ -6,9 +6,4 @@ v0.94.0の変更点:
 node/fs: fstat()が実装された io/streams: Deno.ReaderからReadableStreamを作成するために、readableStreamFromReader()が実装された testing: assertEqualsでundefinedが設定されたキーと存在しないキーが区別されない問題が修正された v0.95.0の変更点:
 node/child_process: spawn()の基本的なサポート path/glob: globToRegExp()にcaseInsensitiveオプションが追加された node/fs: すでに実装されている多くのAPIがexportされていなかった問題が修正された https://github.com/denoland/deno_std/releases/tag/0.94.0 https://github.com/denoland/deno_std/releases/tag/0.95.0 サードパーティモジュールなどの最新情報 deno-puppeteer v9.0.0のリリース deno-puppeteerのv9.0.0がリリースされました。
 変更点:
-内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された https://github.com/lucacasonato/deno-puppeteer/releases/tag/9.0.0
-deno-postgres v0.11.0/v0.11.1がリリース deno-postgresのv0.11.0とv0.11.1がリリースされました。
-v0.11.0の変更点:
-Poolクラスから直接SQLを実行できないよう変更された。 今後は、Pool#connect経由でPoolClientオブジェクトを取得し、それを使ってSQLを実行する必要があります。 v0.11.1の変更点:
---unstableフラグを指定しなくても利用できるようになった https://github.com/denodrivers/postgres/releases/tag/v0.11.0 https://github.com/denodrivers/postgres/releases/tag/v0.11.1 land - deno.land/xで公開されているモジュールを直接実行するツール landというdeno.land/xで公開されているモジュールをdeno installでインストールせずに実行できるツールが公開されました。
-https://github.com/postui/land</description></item></channel></rss>
+内部のpuppeteerのバージョンが9.0.0へ更新された Macでinstall.ts経由でインストールしたChromeがdeno-puppeteerで起動できない問題が修正された https://github.</description></item></channel></rss>

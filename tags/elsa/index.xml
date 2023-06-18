@@ -13,11 +13,7 @@ https://deno.com/blog/v1.29#changes-to-the-standard-modules std/dotenv - config(
 リネーム前 リネーム後 config load configSync loadSync ConfigOptions LoadOptions 古い名前のAPIも削除されずに残されてはいますが、現在は非推奨化されているため、もし使用されている場合は新しい名前への移行が推奨されます。
 std/nodeの改善 std/node/httpのServerResponseクラスでTransfer-Encoding: chunkedが意図通りに動作しない問題が修正されています。
 また、Buffer.toStringによるUTF-8のデコードが大幅に高速化されています。
-Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。
-元々、ElsaはGoとQuickJSで実装されていました。
-(まだ未確定ではありますが) 現在は下記のような変更が検討されているようです。
-内部実装のRustへの置き換え V8/JavaScriptCore/QuickJSなどの様々なエンジンのサポート stcの採用 詳細については以下のTweetを参照ください。
-https://twitter.com/undefined_void/status/1601609755759644673 https://twitter.com/undefined_void/status/1601844969157058560</description></item><item><title>2021/03/01〜2021/03/07の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/07.html</link><pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/07.html</guid><description>Deno本体の最新情報 Deno v1.8.0がリリースされました Deno v1.8.0がリリースされました。
+Elsaの開発について Denoに影響を受けたJavaScript/TypeScriptランタイムであるElsaで、内部実装の書き換えが検討されているようです。</description></item><item><title>2021/03/01〜2021/03/07の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2021/03/07.html</link><pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2021/03/07.html</guid><description>Deno本体の最新情報 Deno v1.8.0がリリースされました Deno v1.8.0がリリースされました。
 magurotunaさんによるDeno v1.8.0のまとめが公開されていますので、よろしければそちらも参照ください。
 主な変更点:
 WebGPUがサポートされました(experimental) ICUサポートが追加されました。 テストカバレッジの収集と集計が個別のコマンドに分離されました(収集はdeno test --coverage、集計はdeno coverageコマンドで行います) lcov形式でのカバレッジの集計がサポートされました。 Import maps/Deno.permissions/Deno.link/Deno.symlink/deno lspが安定化されました(--unstableオプションが不要になった) リモートモジュールをダウンロードする際に、Authorizationヘッダにトークンを設定できるようになりました(DENO_AUTH_TOKENS) テストコード中でDeno.exit()の呼び出しがチェックされるようになりました(exitサニタイザ) Deno.metrics()で収集できる情報がより詳細化されました(--unstableを付与したときのみ) deno fmtでJSONファイルのフォーマットがサポートされました。 Deno.emitでIIFE形式の出力サポートされました。 TypeScriptが4.2にアップグレードされました。 https://github.com/denoland/deno/releases/tag/v1.8.0 https://zenn.dev/magurotuna/articles/deno-release-note-1-8-0 deno_std v0.89.0がリリース Deno v1.8.0のリリースに合わせ、deno_stdのv0.89.0がリリースされました。
@@ -26,7 +22,4 @@ std/nodeへの機能追加などに加え、std/io/streamsモジュールに破�
 io/streams: readableStreamFromAsyncIterator()が削除され、代わりにreadableStreamFromIterable()が追加されました。 node: constantsモジュールが追加されました。 node/crypto: createHash()関数が実装されました。 node: process.hrtime()が実装されました。 node/fs: truncate/truncateSyncが実装されました。 node/util: callbackify/promisify/typesが公開されました。 node/events: require('events').EventEmitterがundefinedになる問題が修正されました。 node: requireでshebangの書かれたJSファイルを読めるようになりました。 node: process.argvがProxyから配列へ変更されました。 https://github.com/denoland/deno_std/pull/780
 サードパーティモジュールなどの最新情報 ts_morphがDenoをサポート ts_morphにDenoのサポートが追加されました。
 ts_morphはTypeScriptのコンパイラAPIのラッパライブラリです。
-https://github.com/dsherret/ts-morph/releases/tag/10.0.1 https://deno.land/x/ts_morph@10.0.1 vnoがVue 3をサポート vnoにVue 3のサポートが追加されました。
-vno.config.jsonで&amp;quot;vue&amp;quot;: 3の設定を記述すると、Vue 3が使用できるようになります。
-https://github.com/open-source-labs/vno/releases/tag/v1.1.0 https://twitter.com/vno_land/status/1366762314309984261 elsaの開発が再開されました elsaはQuickJSとGoをベースにしたTypeScript/JavaScriptランタイムです。
-ここ数ヶ月程開発が若干停滞している状況でしたが、先週より徐々に開発が再開されています。</description></item></channel></rss>
+https://github.com/dsherret/ts-morph/releases/tag/10.0.1 https://deno.land/x/ts_morph@10.0.1 vnoがVue 3をサポート vnoにVue 3のサポートが追加されました。</description></item></channel></rss>

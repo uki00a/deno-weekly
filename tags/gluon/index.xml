@@ -14,7 +14,4 @@ https://github.com/denoland/deno_std/releases/tag/0.173.0
 eslint_binary eslint_binaryという、DenoのNode.js互換性やV8 Snapshot、ESBuildなどを活用して、ESLintをシングルバイナリ化するプロジェクトが公開されています。
 bartlomieju/eslint_binary このプロジェクトはあくまでPoCのため、今後どうなるかはまだ不明ですが、READMEにロードマップが公開されており、ESLintのCLIをRustで書き直すことなども検討されているようです。
 esm.shの2023年のロードマップ esm.shの今年のロードマップが公開されています。
-Roadmap of 2023 プレイグラウンドにコードの共有機能を実装することや、安定性の向上などを図ることが検討されているようです。
-https://twitter.com/_ayame113_/status/1616062748328357888 Gluon Gluonという、Node.js/Deno/Bunをサポートするデスクトップアプリ用のフレームワークが開発されているようです。
-Electronライクな新フレームワーク「Gluon」登場。Chromium内蔵せずWebブラウザを利用、Node.jsだけでなくDenoとBunにも対応 Denoサポートのステータスについては、以下のissueで公開されています。
-Deno edition https://github.com/gluon-framework/gluon</description></item></channel></rss>
+Roadmap of 2023 プレイグラウンドにコードの共有機能を実装することや、安定性の向上などを図ることが検討されているようです。</description></item></channel></rss>

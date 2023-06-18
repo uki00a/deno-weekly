@@ -13,9 +13,4 @@ https://github.com/vim-denops/denops-helloworld.vim https://github.com/vim-denop
 https://deno.land/x/slack_web_api@1.0.1
 deno-redis v0.18.0がリリース deno-redis v0.18.0がリリースされました。
 このリリースでは、deno lintでcamelcaseルールが実装されたことに合わせ、全メソッド及びプロパティがキャメルケース形式へリネームされています。
-変更点:
-全メソッド・プロパティがキャメルケース形式へリネームされました。 CLIENT PAUSEコマンドが実装されました。 https://github.com/denodrivers/redis/releases/tag/v0.18.0
-deno-postgres v0.8.0がリリース deno-postgres v0.8.0がリリースされました。
-このリリースでは、いくつかの新機能が追加されています。
-変更点:
-SSL/TLS接続がサポートされました(Deno.startTlsに依存するため、現時点では--unstableフラグが必要です) テンプレートリテラルを使用したSQLの実行がサポートされました。 name_too_longエラーが発生した際に、例外が発生しないように修正されました。 https://github.com/denodrivers/postgres/releases/tag/v0.8.0</description></item></channel></rss>
+変更点:</description></item></channel></rss>

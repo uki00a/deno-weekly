@@ -12,5 +12,4 @@ https://github.com/githubocto/flat Flat Dataについて Flat Viewer packup - Pa
 Parcelに影響を受けているようで、以下のような特徴があります。
 設定なしでアプリケーションコードをバンドルできる TypeScriptをサポート esbuildを使用した高速なビルド https://github.com/kt3k/packup
 luath v0.6.0/v0.7.0/v0.8.0がリリース Denoで実装されたフロントエンドビルドツールであるluathのv0.6.0/v0.7.0/v0.8.0がリリースされました。
-変更点:
-プロダクションアセットを生成するために、luath buildコマンドが実装されました。 プロダクションアセットを配信するために、luath runコマンドが実装されました。 Import mapsの基本的なサポート https://github.com/cmorten/luath/releases/tag/0.8.0 https://github.com/cmorten/luath/releases/tag/0.7.0 https://github.com/cmorten/luath/releases/tag/0.6.0</description></item></channel></rss>
+変更点:</description></item></channel></rss>

@@ -30,7 +30,4 @@ Sift - Deno Deployのルーティングライブラリ SiftはDeno Deployのル�
 path-to-regexpでサポートされている形式で、ルーティングを定義することができます。
 他にも、静的ファイルの配信やJSXのレンダリングなどがサポートされています。
 https://github.com/satyarohith/sift
-deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用することのできるDOM APIの実装を提供しています。
-WebAssembly及びDeno Pluginの2種類のバックエンドを提供しており、用途などに応じて使い分けることができます。(Deno Pluginベースのバックエンドの方がパフォーマンスが高いようですが、まだunstableであるDeno Pluginに依存しているなどの欠点もあります)
-https://github.com/b-fuze/deno-dom
-Trex v1.6.0がリリース DenoのモジュールマネージャであるTrexのv1.</description></item></channel></rss>
+deno-dom - Denoで利用できるDOM APIの実装 deno-domは、Denoから利用することのできるDOM APIの実装を提供しています。</description></item></channel></rss>

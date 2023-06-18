@@ -8,4 +8,4 @@ deno_std v0.145.0 deno_std v0.145.0がリリースされました。
 std/encoding/json/stream std/encoding/json/streamが追加されました。
 このモジュールでは、下記4フォーマットでのストリーミングがサポートされています。
 JSON Lines ndjson JSON Text Sequences Concatenated JSON JSONParseStreamは上記の上から3つのフォーマットをサポートしています。
-import { JSONParseStream } from &amp;#34;https://deno.land/std@0.145.0/encoding/json/stream.ts&amp;#34;; import { readableStreamFromIterable } from &amp;#34;https://deno.land/std@0.145.0/streams/conversion.ts&amp;#34;; const readable = readableStreamFromIterable([ `{&amp;#34;name&amp;#34;: &amp;#34;foo&amp;#34;}`, `{&amp;#34;a&amp;#34;: 1, &amp;#34;b&amp;#34;: true}`, ]) .pipeThrough(new JSONParseStream()); for await (const json of readable) { console.</description></item></channel></rss>
+import { JSONParseStream } from &amp;#34;https://deno.land/std@0.145.0/encoding/json/stream.ts&amp;#34;; import { readableStreamFromIterable } from &amp;#34;https://deno.land/std@0.145.0/streams/conversion.ts&amp;#34;; const readable = readableStreamFromIterable([ `{&amp;#34;name&amp;#34;: &amp;#34;foo&amp;#34;}`, `{&amp;#34;a&amp;#34;: 1, &amp;#34;b&amp;#34;: true}`, ]) .</description></item></channel></rss>
