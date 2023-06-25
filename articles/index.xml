@@ -7,7 +7,9 @@ denoland/kv_api Deno KVのデータをREST API経由で管理できるように�
 denoland/kv_api 現状はFreshのみがサポートされていますが、今後、Oakのサポートが追加されることも検討されているようです。
 deno_std/msgpack deno_stdにMessagePackのサポートを追加するPRが作成されています。
 feat: msgpack encoding #3460
-まだマージはされていませんが、近いタイミングでリリースされる可能性もあるかもしれません。</description></item><item><title>2023/06/12〜2023/06/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/06/18.html</link><pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/06/18.html</guid><description>fresh v1.2 fresh v1.2がリリースされました。
+まだマージはされていませんが、近いタイミングでリリースされる可能性もあるかもしれません。
+Global database comparison Deno KVやDynamoDBなどのDeno Deployからの利用に適していると考えられる各種データベースについて、詳しく比較を行っているWebページが公開されています。
+https://global-db-comparison.deno.dev/</description></item><item><title>2023/06/12〜2023/06/18の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/06/18.html</link><pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/06/18.html</guid><description>fresh v1.2 fresh v1.2がリリースされました。
 変更内容について以下のページにまとめたため、よろしければ参照いただければと思います。
 fresh v1.2 Deno v1.34.3 Deno v1.34.3がリリースされました。
 Deno KVにキューが実装 Deno.KvにenqueueとlistenQueueメソッドが追加されています。
