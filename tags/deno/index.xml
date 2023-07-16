@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno.html</link><description>Recent content in deno on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 09 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno/index.xml" rel="self" type="application/rss+xml"/><item><title>2023/07/03〜2023/07/09の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/07/09.html</link><pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/07/09.html</guid><description>Deno v1.35 Deno v1.35がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>deno on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/deno.html</link><description>Recent content in deno on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 16 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/deno/index.xml" rel="self" type="application/rss+xml"/><item><title>2023/07/10〜2023/07/16の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/07/16.html</link><pubDate>Sun, 16 Jul 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/07/16.html</guid><description>Deno v1.35.1 Deno v1.35.1がリリースされました。
+Node.js互換性 node_modules/.deno/setup-cache.binという独自のキャッシュファイルが導入されています。
+このファイルはnode_modules/.denoに関するディレクトリ構造を記録しており、このファイルを活用してシンボリックリンクの作成を効率化することで、node_modulesのセットアップを高速化することが狙いのようです。
+https://github.com/denoland/deno/pull/19787
+Deno.listenTls Deno.listenTlsのalpnProtocolsオプションを--unstableを指定せずに利用できるようになりました。(元々、Deno v1.35のリリース時に安定化される予定でしたが、今回のリリースで改めて安定化されました)
+https://github.com/denoland/deno/pull/19732
+Deno.serve Deno.serveでBrotliによる圧縮が適用された際のパフォーマンスを改善するため、以下のパラメータが設定されています。
+BROTLI_PARAM_QUALITY: 6 (ngx_brotliのデフォルトと同じ値) BROTLI_PARAM_LGWIN: 22 (brotliのデフォルトのウィンドウサイズ) https://github.com/denoland/deno/pull/19758
+deno lsp deno.jsonのexcludeで指定されたファイルがdeno lspで取り扱われなくなるように挙動が改善されています。
+https://github.com/denoland/deno/pull/19791
+deno vendor deno.jsonのcompilerOptions.jsxImportSourceにImport Mapsで定義されたマッピングが指定された際に、対象のモジュールがベンダリングされない問題が修正されました。
+https://github.com/denoland/deno/pull/19724
+deno_std v0.194.0 deno_std v0.194.0がリリースされました。
+std/msgpackが追加 MessagePackを取り扱うためのモジュールがdeno_stdに追加されています。
+import { decode, encode } from &amp;#34;https://deno.land/std@0.194.0/msgpack/mod.ts&amp;#34;; const message = decode(encode({ type: &amp;#34;foo&amp;#34;, message: &amp;#34;bar&amp;#34; })); console.info(message); // =&amp;gt; `{ type: &amp;#34;foo&amp;#34;, message: &amp;#34;bar&amp;#34; }` https://github.</description></item><item><title>2023/07/03〜2023/07/09の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2023/07/09.html</link><pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2023/07/09.html</guid><description>Deno v1.35 Deno v1.35がリリースされました。
 以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
 Deno v1.35 deno_std v0.193.0 deno_std v0.193.0がリリースされました。
 std/http/user_agent.ts std/httpにユーザーエージェントを取り扱うためのユーティリティが追加されています。
