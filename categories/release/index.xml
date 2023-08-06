@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>release on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/release.html</link><description>Recent content in release on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 23 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>fresh v1.3</title><link>https://uki00a.github.io/deno-weekly/articles/fresh/v1.3.html</link><pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/fresh/v1.3.html</guid><description>fresh v1.3がリリースされました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>release on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/categories/release.html</link><description>Recent content in release on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 06 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/categories/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Deno v1.36</title><link>https://uki00a.github.io/deno-weekly/articles/deno/v1.36.html</link><pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/deno/v1.36.html</guid><description>Deno v1.36がリリースされました。
+この記事では主な変更点などについて解説します。
+--deny-*オプション --deny-*という新しいオプションが導入されました。このオプションにより、Denoに対して特定の操作のみを明示的に拒否させることができます。
+例えば、以下の場合、Denoにwrite権限のみを拒否させています。
+$ deno run --allow-all --deny-write main.js このように--allow-*オプションと--deny-*オプションは併用することが可能で、その場合、--deny-*オプションの方が優先されます。
+また、--deny-*には--allow-*と同様に、リスト形式で対象を指定することもできます。
+$ deno run --allow-read --deny-read=README.md main.js 上記の場合、./README.mdへの読み込みのみが拒否され、それ以外のファイルの読み込みは許可されます。
+{ const content = await Deno.readTextFile(&amp;#34;Makefile&amp;#34;); // =&amp;gt; OK console.info(content); } { const content = await Deno.readTextFile(&amp;#34;README.md&amp;#34;); // =&amp;gt; PermissionDenied console.info(content); } deno_modulesディレクトリの導入 ⚠️この機能はまだunstableという扱いのため、今後、機能などに変更が入る可能性があります。
+また、現在、deno_modulesをvendorにリネームするPRも作成されており、今後ディレクトリやオプションなどの名前が変わる可能性も高そうです。
+feat(unstable): rename deno_modules to vendor #20065 deno.jsonにdenoModulesDirという新しいオプションが導入されました。
+このオプションにtrueを設定すると、リモートモジュールがdeno_modulesというディレクトリにダウンロードされるように挙動が変更されます。
+{ &amp;#34;denoModulesDir&amp;#34;: true } この状態でスクリプトを実行すると、依存しているリモートモジュールがdeno_modulesに保存されます。
+import { blue } from &amp;#34;https://deno.</description></item><item><title>fresh v1.3</title><link>https://uki00a.github.io/deno-weekly/articles/fresh/v1.3.html</link><pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/fresh/v1.3.html</guid><description>fresh v1.3がリリースされました。
 この記事では主な変更点などについて解説します。
 非同期Routeコンポーネント 非同期Routeコンポーネントがサポートされました。
 例えばデータベースや外部のAPIなどから非同期に取得したデータをRouteコンポーネントに渡すためには、今までは以下のようにhandlerを定義する必要がありました。
