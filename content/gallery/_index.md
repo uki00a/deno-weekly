@@ -65,6 +65,7 @@ title: ギャラリー
 |[denoland/setup-deno](https://github.com/denoland/setup-deno)|GitHub ActionsからDenoを使用する|
 |[depsbot](https://github.com/denosaurs/depsbot)|モジュールの更新状態をチェックしてくれるGitHubアクション|
 |[depcheck](https://github.com/ebebbington/depcheck)|未使用モジュールの検出を行うツール|
+|[denoland/terraform-provider-deno](https://github.com/denoland/terraform-provider-deno)|Deno DeployのTerraformプロパイダ (Deno公式)|
 |[terraform-deploy-provider](https://github.com/wperron/terraform-deploy-provider)|Deno DeployのTerraformプロパイダ|
 |[deploy_dir](https://github.com/kt3k/deploy_dir)|Deno Deployへのデプロイツール|
 |[deno-bin](https://github.com/kt3k/deno-bin)|Node.jsからDenoを使用するためのツール|
