@@ -39,7 +39,70 @@ feat(unstable): ability to npm install then deno run main.ts #20967
 例えば、以下のようにnpmでkoaパッケージがインストールされていたとします。
 $ npm i koa npmによってインストールされたkoaパッケージをnpm:なしで読み込むJavaScriptファイルを用意します。
 // index.js import Koa from "koa"; const app = new Koa(); app.use(async (ctx) => { ctx.body = "Hello Deno!"; }); app.listen(3000); この状態で--unstable-byonmオプションを指定すると、npmによって作成されたnode_modulesディレクトリからkoaパッケージが読みこまれます。
-$ deno run --unstable-byonm --allow-net --allow-read --allow-env index....</p></div><footer class=entry-footer><span title="2023-10-29 00:00:00 +0000 UTC">October 29, 2023</span></footer><a class=entry-link aria-label="post link to 2023/10/23〜2023/10/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/10/29.html></a></article></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+$ deno run --unstable-byonm --allow-net --allow-read --allow-env index....</p></div><footer class=entry-footer><span title="2023-10-29 00:00:00 +0000 UTC">October 29, 2023</span></footer><a class=entry-link aria-label="post link to 2023/10/23〜2023/10/29の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/10/29.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2023/09/25〜2023/10/01の最新情報</h2></header><div class=entry-content><p>Deno v1.37.1 Deno v1.37.1がリリースされました。
+deno lsp 現在のファイルの全依存モジュールをキャッシュするQuickFixアクションが実装されています。(Cache all dependencies of this module.)
+また、deno lspでリモートのImport mapsのサポートも追加されています。
+deno test Deno.testやDeno.TestContext.stepなどによるテストケースの登録がDeno v1.37から2倍近くまで高速化されています。
+deno jupyter: Deno.jupyter.broadcastが追加 (unstable) Denoからdisplay_dataやupdate_display_dataメッセージを送信するためのメソッドのようです。
+Deno.jupyter.broadcast Deno KV Deno.Kv#enqueueのdelayオプションに設定できる最大値が30日まで増加されました。
+Node.js互換性 node:crypto: randomFillSync()にArrayBufferなどを渡すと、TypeErrorが発生する問題が修正されています。 package.json: exportsフィールドがnullだった場合、プロセスがパニックする問題が修正されています。 deno_std v0.203.0 deno_std v0.203.0がリリースされました。
+std/ioが非推奨化 std/ioはDeno.ReaderとDeno.Writerベースの機能が提供されていたため、非推奨化されました。
+std/encoding: encode/decodeが非推奨化 std/encodingの各モジュールで提供されていたencodeとdecodeが非推奨化されています。今後は、以下の関数への移行が推奨されます。
+std/encoding/ascii85.ts: encodeAscii85/decodeAscii85 std/encoding/base32.ts: encodeBase32/decodeBase32 std/encoding/base58.ts: encodeBase58/decodeBase58 std/encoding/base64.ts: encodeBase64/decodeBase64 std/encoding/base64url.ts: encodeBase64Url/decodeBase64Url std/encoding/hex.ts: encodeHex/decodeHex std/front_matter 他のモジュールとの一貫性の向上のため、以下の各ファイルで提供されていたdefault exportが非推奨化されました。
+std/front_matter/any.ts std/front_matter/json.ts std/front_matter/toml.ts std/front_matter/yaml.ts std/collections - 一部関数の引数がArrayからReadonlyArrayへ変更 以下の各関数の引数がArrayではなくReadonlyArrayを受け取るように修正されています。(std/collectionsの他の関数との一貫性の向上が目的)...</p></div><footer class=entry-footer><span title="2023-10-01 00:00:00 +0000 UTC">October 1, 2023</span></footer><a class=entry-link aria-label="post link to 2023/09/25〜2023/10/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/10/01.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2023/09/11〜2023/09/17の最新情報</h2></header><div class=entry-content><p>Deno v1.37でリリースされそうな機能について (part 2) 前週に引き続き、直近で開発されているDeno v1.37でリリースされそうな機能について紹介いたします。
+Jupyter Kernelの実装 (deno jupyter) Deno本体にJupyter Kernelを実装するPRがマージされています。
+feat: Add “deno jupyter” subcommand #20337
+このPRではdeno jupyterという新しいコマンドが実装されており、これを利用することで、Deno本体に組み込まれたJupyter Kernelのインストールや起動などを行うことができるようです。
+このコマンドでは、以下の3つのオプションが提供されています。
+オプション 説明 --install Deno本体に組み込まれたKernelをJupyterにインストールします。 --kernel Deno本体に組み込まれたKernelを起動します。以下の--connとセットで指定する必要があります。 --conn コネクションファイルのパス これらのうち、ユーザーが直接利用するのは--installオプションです。
+# KernelをJupyterにインストールします $ deno jupyter --unstable --install --kernelと--connについては、JupyterがKernelを起動する際に使用されるもののため、ユーザーが直接利用することは想定されていません。
+また、--installも--kernelも指定しないでdeno jupyterを実行すると、Deno Kernelがインストールされているかどうかを確認できるようです。
+$ deno jupyter --unstable 今のところ、deno jupyterの利用には--unstableの指定が必要なようです。
+using/await usingのサポート (TypeScriptのみ) Deno本体のTypeScriptをv5.2へアップデートする対応に続いて、usingとawait usingをサポートする対応がマージされています。
+feat: explicit resource management in TypeScript #20506...</p></div><footer class=entry-footer><span title="2023-09-17 00:00:00 +0000 UTC">September 17, 2023</span></footer><a class=entry-link aria-label="post link to 2023/09/11〜2023/09/17の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/09/17.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2023/09/04〜2023/09/10の最新情報</h2></header><div class=entry-content><p>Deno v1.37でリリースされそうな機能について 今週はDenoのリリースが行われていないため、おそらく次にリリースされるであろうDeno v1.37に入りそうな機能などについて紹介します。
+Lockfile v3 deno.lockの新しいフォーマット(v3)が実装されています。
+feat: lockfile v3 #20424
+npm.specifiersがpackages.specifiersへ、npm.packagesがpackages.npmへ移動されています。
+これはdeno:URLのサポートを想定した変更のようです。
+TypeScript v5.2 Deno本体に搭載されたTypeScriptをv5.2にアップデートするPRがマージされています。
+feat: TypeScript 5.2 #20425
+ただし、usingやDecorator Metadataなどについてはv8側でサポートされるまでは使用できない状況のようです。
+Import Attributes DenoにImport Attributesを実装するPRがマージされています。
+feat: support import attributes #20342
+// static import import data from "./data.json" with { type: "json" }; // dynamic import const data2 = await import("./data2.json", { with: { type: "json" } }); Deno Deployでnpmパッケージがサポート Deno Deployでnpmパッケージがサポートされました。Denoと同様に、npm:URL経由でnpmパッケージを読み込むことができます。
+以下の公式ブログ記事では、ExpressやFastify, OpenAI APIなどの使用例が紹介されています。...</p></div><footer class=entry-footer><span title="2023-09-10 00:00:00 +0000 UTC">September 10, 2023</span></footer><a class=entry-link aria-label="post link to 2023/09/04〜2023/09/10の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/09/10.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2023/08/28〜2023/09/03の最新情報</h2></header><div class=entry-content><p>Deno v1.36.4 Deno v1.36.4がリリースされました。
+Deno KV Deno KVでデータベースへのリモート接続がサポートされました。これにより、ローカルからDeno Deploy上のDeno KVデータベースへ接続ができるようになったようです。
+Deno.openKvにhttp:/https:形式のURLを与えると、従来までのSQLiteベースのバックエンドは使用されず、代わりにHTTP経由でデータベースへリモート接続されます。
+このリモート接続機能はDeno Deployに限らず、KV Connectというプロトコルさえ実装されていれば、任意のデータベースへ接続が可能なようです。
+また、この機能を利用するには、以下の設定が必要なようです:
+--allow-envとallow-netオプション DENO_KV_ACCESS_TOKEN環境変数 (Deno Deployで発行した認証用アクセストークン) KV Connectプロトコルについて:
+以下のページなどにドキュメントが存在します。
+KV Connect Metadata Exchangeエンドポイントのレスポンスのスキーマ Data Pathエンドポイントのメッセージのフォーマット deno lsp suggest.completeFunctionCallsオプションが実装:
+このオプションにtrueを設定すると、関数の引数と括弧()が入力補完されます。
+vscode-denoでは"deno.suggest.completeFunctionCalls": trueオプションで有効化できるようです。
+{ // ... "deno.suggest.completeFunctionCalls": true } テストエクスプローラーに関するバグ修正:
+TestContext.stepを使っていると、vscodeのテストエクスプローラー経由でテストを実行した際に、LSPがパニックしてしまう問題が修正されました。 テストエクスプローラーからテストを実行する際に、対象テストファイルからはimportしていないファイルも実行されてしまう問題が修正されました。 deno_std v0.201.0 deno_std v0.201.0がリリースされました。
+std/dotenv - パーミッションに関する改善 std/dotenvでパーミッションをより厳格に設定できるように実装が改善されました。
+変数展開やexportオプションを使用しない場合、--allow-envオプションの指定が不要になります。
+また、変数展開やexportオプションを使用する場合のパーミッションの取り扱いも改善されています。具体的には、以下のような.envファイルを読み込む場合、--allow-env=BAZの指定のみで動作します。(今までは--allow-envによって全ての環境変数の読み込みを許可する必要がありました。)
+FOO=bar HOGE=piyo${BAZ} これらの変更に合わせて、restrictEnvAccessToオプションが非推奨化されています。
+std/urlが追加 新規モジュールとしてstd/urlが追加されました。
+URLに関する様々なユーティリティが提供されています。
+import { dirname } from "https://deno....</p></div><footer class=entry-footer><span title="2023-09-03 00:00:00 +0000 UTC">September 3, 2023</span></footer><a class=entry-link aria-label="post link to 2023/08/28〜2023/09/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/09/03.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2023/08/21〜2023/08/27の最新情報</h2></header><div class=entry-content><p>Deno v1.36.2 Deno v1.36.2がリリースされました。
+Deno KV キーに有効期限を設定できるようになりました。
+Deno.Kv#setなどのexpireInオプションを指定することで、ミリ秒単位で対象のキーの生存期間を指定できます。
+const db = await Deno.openKv(); await db.set(["key"], "value", { expireIn: 30 * 1000 }); // 最低でも30秒後に削除されます。 FFI FFI関連のAPIをより型安全に扱えるように型定義が改善されています。
+Deno.PointerObjectの型定義が公開されています。 Deno.PointerValueがGenerics型に変更されています。 など
+その他の変更点(バグ修正など) Denoで以下のエラーが発生する問題が修正されています。(古いバージョンのdeno_cacheで作成したキャッシュを最新のDenoで読もうとした際に発生していたようです) error: missing field `now` at line x column y Deno.listenTlsに不正な証明書または秘密鍵が指定されると、プロセスがパニックする問題が修正されました。 deno lsp: auto importの実行時にdeno.jsonのfmtの設定が効くように挙動が改善されています。 deno test: JUnitレポーターでfilename/line/colが出力されるように改善されました。 deno.json: vendor: trueが指定された際に、vendorディレクトリからの直接のimportが無効化されました。(二重に依存関係がダウンロードされてしまったりする問題などを防止するため) node:os: WindowsでuserInfo()が利用出来ない問題が修正されています。 navigator.userAgentがWorker内で利用できない問題が修正されました。 Deno v1.36.3 Deno v1.36.3がリリースされました。
+v1.36.2でdeno lintを実行した際に、async関数に対してno-await-in-sync-fnルールのエラーが起こることのある問題が修正されています。
+また、URL.canParseの型定義も追加されています。
+Deno本体での.envのサポートについて Deno本体に--envというオプションを追加するPRが作成されています。
+feat: –env-file #20300...</p></div><footer class=entry-footer><span title="2023-08-27 00:00:00 +0000 UTC">August 27, 2023</span></footer><a class=entry-link aria-label="post link to 2023/08/21〜2023/08/27の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/08/27.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2023/08/14〜2023/08/20の最新情報</h2></header><div class=entry-content><p>fresh v1.4 fresh v1.4がリリースされました。
+以下に内容をまとめたため、よろしければそちらを参照いただければと思います。
+fresh v1.4 Deno KVでのキーの有効期限の設定について Deno.Kv#setなどのAPIでexpireInというオプションをサポートするPRが作成されています。
+feat(ext/kv): key expiration #20091
+このオプションを指定することで、対象のキーに対して有効期限を設定することができます。
+const db = await Deno.openKv(); await db.set( ["key"], "value", { // 有効期限をミリ秒単位で指定します。 // 以下の場合、最低でも1秒後にこのキーが自動で削除されます。 expireIn: 1000 }, ); このPRはすでにマージされているため、次のDeno v1.36.2またはv1.37あたりでリリースされる可能性がありそうです。</p></div><footer class=entry-footer><span title="2023-08-20 00:00:00 +0000 UTC">August 20, 2023</span></footer><a class=entry-link aria-label="post link to 2023/08/14〜2023/08/20の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/08/20.html></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://uki00a.github.io/deno-weekly/tags/deno-kv/page/2.html>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2023 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>
