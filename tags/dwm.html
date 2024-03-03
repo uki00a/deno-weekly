@@ -7,7 +7,7 @@ Decorators proposal (stage 3)のサポート ⚠️ V8でまだサポートさ�
 TypeScript v5で導入されたDecorators (stage 3)がDenoでもサポートされました。
 これに伴い、今までデフォルトで有効化されていたTypeScriptのexperimentalDecoratorsは無効化されたため、もし利用したい場合はdeno.jsonで明示的に有効化する必要があります。
 { "compilerOptions": { "experimentalDecorators": true } } TypeScript5で導入されたStage 3のDecoratorを眺めてみる | 豆蔵デベロッパーサイト
-deno.json importsでnpm:URLのマッピングを定義する際の挙動の改善 npmパッケージが提供するサブパスの読み込みに関する挙動が改善されています。
+deno.json importsでnpm:URLのマッピングを定義する際の挙動の改善 (Import map expansion) npmパッケージが提供するサブパスの読み込みに関する挙動が改善されています。
 例えば、deno.jsonでImport Mapsを定義しておき、npm:なしでmswとmsw/nodeを読み込みたい場面があったとします。
 import { http, HttpResponse } from "msw"; import { setupServer } from "msw/node"; const server = setupServer( http.get(`${location.origin}/api/user`, () => HttpResponse.json({ id: 1, name: "foo", })), ); この場合、v1....</p></div><footer class=entry-footer><span title="2024-01-28 00:00:00 +0000 UTC">January 28, 2024</span></footer><a class=entry-link aria-label="post link to Deno v1.40" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.40.html></a></article></main><footer class=footer><span>&copy; 2024 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
 <span>Powered by
