@@ -6,7 +6,98 @@ jsr-io/jsr @deno/x-to-jsr Deno公式から@deno/x-to-jsrというdeno.land/xパ�
 jsr-npm Node.jsやBunなどでJSRパッケージを利用するためのjsr-npmというCLIツールが公開されています。
 $ npx jsr --version 0.9.0 # @oak/oakをインストール $ npx jsr add @oak/oak # package.jsonにjsrパッケージが追加されます $ cat package.json | jq '.dependencies["@oak/oak"]' "npm:@jsr/oak__oak@^14.1.1" # .npmrcが自動で作成されます $ cat .npmrc @jsr:registry=https://npm.jsr.io esm.sh - JSRの実験的サポートが追加 esm.shにJSRパッケージの実験的サポートが追加されています。
 JSR is now in public beta 🔥
-FYI https://t.co/GUKvoBGZVC also experimentally supports JSR packages too!...</p></div><footer class=entry-footer><span title="2024-03-03 00:00:00 +0000 UTC">March 3, 2024</span></footer><a class=entry-link aria-label="post link to 2024/02/26〜2024/03/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2024/03/03.html></a></article></main><footer class=footer><span>&copy; 2024 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+FYI https://t.co/GUKvoBGZVC also experimentally supports JSR packages too!...</p></div><footer class=entry-footer><span title="2024-03-03 00:00:00 +0000 UTC">March 3, 2024</span></footer><a class=entry-link aria-label="post link to 2024/02/26〜2024/03/03の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2024/03/03.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Deno v1.41</h2></header><div class=entry-content><p>Deno v1.41がリリースされました。
+この記事では主な変更点などについて解説します。
+Deno API Deno.FsFile Deno.FsFileにisTerminalとsetRawメソッドが追加されています。
+Deno.isattyは非推奨化されているため、Deno.FsFileやDeno.stdinなどのisTerminalメソッドへの移行が推奨されます。
+Deno.ConnectTlsOptions Deno.ConnectTlsOptionsにcertとkeyオプションが追加されています。
+これに伴い、Deno.ConnectTlsOptionsのcertChainとprivateKeyは非推奨化されているため、新しく追加されたこれらへの移行が推奨されます。
+破壊的変更 Deno.DatagramConnとDeno.HttpClientからridプロパティが削除されました。 Deno.CreateHttpClientOptionsのcertChainがcert、privateKeyがkeyにリネームされました。 パッケージシステム パッケージシステム (deno publish)に関してもいくつか改善が行われています。
+⚠️ jsr:に関しては、現在はwaitlistが公開されている段階で、まだ正式には利用できません。
+deno lint deno lintにno-slow-typesルールが導入されています (#22430)
+このルールはdeno.jsonにname, version, 及びexportsフィールドが定義されている場合、自動で有効化されるようです。
+このルールが有効化されている場合、fast checkが実行されるようです。
+型チェックに関する改善 deno publishの実行時に型チェックが実行されるように変更されています (#22506)
+デフォルトではローカルモジュールに対してのみfast checkが行われるようです。--allow-slow-typesを指定するとfast checkではなく通常の型チェックが行われるようです
+また、fast checkに関しては、deno lintなどのコマンドと同様にSQLiteをベースにキャッシュの仕組みが導入されており、型チェックがより効率化されています。(#22485)
+deno lsp deno lspでjsr:URL向けにimportの補完が実装されています (#22462)
+deno compile v1.40.5でdeno compile向けの軽量バイナリであるdenortが再導入されています。
+Deno v1.41ではstripコマンドを実行することでdenortバイナリがさらに軽量化されています。Deno公式のリリースポストによると、今後、deno compileをする際に特定の機能のみを有効化したカスタムビルドをサポートすることで、さらにバイナリを軽量化することなども検討されているようです。
+その他には、deno compileでdeno.jsonのcompilerOptionsなどが効かない問題が修正されています。
+deno info deno infoコマンドを実行した際もロックファイル(deno.lock)が生成されるように挙動が改善されています。
+Node.js互換性 影響が大きそうな内容として、process.envからパーミッションが与えられていない環境変数にアクセスしようとした際に、パーミッションプロンプトが表示されるように挙動が変更されています。
+それ以外には、node:testではDenoのテストサニタイザーの仕組みが無効化されています。
+参考 https://github.com/denoland/deno/releases/tag/v1.41.0 Deno 1.41: smaller deno compile binaries</p></div><footer class=entry-footer><span title="2024-02-25 00:00:00 +0000 UTC">February 25, 2024</span></footer><a class=entry-link aria-label="post link to Deno v1.41" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.41.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2024/02/12〜2024/02/18の最新情報</h2></header><div class=entry-content><p>Deno v1.40.5 Deno v1.40.5がリリースされています。
+denort (deno compile向けの軽量バイナリ) deno compile向けの軽量バイナリであるdenortが再導入されています。これにより、deno compileによって生成される実行可能ファイルのサイズがかなり縮小されるようです。
+feat: denort binary for deno compile #22205 GitHub Releaseに各プラットフォーム向けのdenortバイナリがアップロードされており、deno compileを実行する際にダウンロードされ、利用されます。
+Remove denort optimization #10350 DENO_FUTURE環境変数の導入 DENO_FUTUREという環境変数が導入されています。この環境変数は、将来的なDenoのバージョンで実施予定の破壊的変更をテストしやすくするために導入されたようです。
+今のところ、この環境変数を設定するとglobalThis.windowが削除されるようです。
+$ DENO_FUTURE=1 deno repl --eval='console.log(globalThis.window)' undefined Add DENO_FUTURE env var for testing breaking changes (#22315) その他 deno lspでjsr:サポートの実装が進んでいるようです (#22382, #22418) CompressionStream/DecompressionStreamで処理を中断すると、リソースリークが発生する問題が修正されています (Aborting a CompressionStream/DecompressionStream leaks a resource #14212) deno.jsonから依存パッケージを削除すると、deno.lockが壊れてしまうことがある問題が修正されています deno_std v0.216.0 deno_std v0.216.0がリリースされています。...</p></div><footer class=entry-footer><span title="2024-02-18 00:00:00 +0000 UTC">February 18, 2024</span></footer><a class=entry-link aria-label="post link to 2024/02/12〜2024/02/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2024/02/18.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2024/01/29〜2024/02/04の最新情報</h2></header><div class=entry-content><p>dax v0.38.0 dax v0.38.0がリリースされています。
+サブシェルやリダイレクト、パイプなどのサポートが追加されています。
+import { $ } from "https://deno.land/x/dax@0.38.0/mod.ts"; // サブシェル await $`(export VAR=123; echo $VAR) && echo $VAR`; // リダイレクト { const request = $.request( "https://raw.githubusercontent.com/denoland/deno_std/0.214.0/version.ts", ) .showProgress(); await $`cat - &lt; ${request}`; const path = $.path("test.txt"); await $`echo foobar > ${path}`; } // パイプ { await $`cat deno.json | jq .imports`; const imports = await $`cat deno....</p></div><footer class=entry-footer><span title="2024-02-04 00:00:00 +0000 UTC">February 4, 2024</span></footer><a class=entry-link aria-label="post link to 2024/01/29〜2024/02/04の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2024/02/04.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2024/01/22〜2024/01/28の最新情報</h2></header><div class=entry-content><p>Deno v1.40 Deno v1.40がリリースされました。
+以下に内容をまとめたため、よろしければこちらを参照いただければと思います。
+Deno v1.40 deno_stdでのワークスペースの導入について deno_stdでワークスペースやdeno publish、“fast check”などの導入に向けた準備が進んでいるようです。
+chore: set up workspace publish from CI #4210
+もし今後、パッケージの公開やワークスペースの利用などを検討されている際は、参考になるかもしれません。
+std/kvについて deno_std/kvモジュールの開発が行われているようです。
+feat: std/kv
+まだ入るかどうかは不明なのですが、今後、こちらからDeno KV関連のユーティリティが提供されていく可能性がありそうです。
+Deno v1.40.1 Deno v1.40.1がリリースされています。
+v1.40.0でdeno lspにおいてデフォルトでcompilerOptions.experimentalDecoratorsが無効化されていなかったため、改めて無効化されています。
+Deno v1.40.2 Deno v1.40.2がリリースされています。
+Deno.FsFileでinstanceofが動作しなくなっていた問題が修正されています。
+また、v1.40.0で導入された非推奨API使用時の警告メッセージが簡略化されています。
+もし、v1.40.0時点での詳細な警告メッセージへ戻したい場合は、DENO_VERBOSE_WARNINGSを設定する必要があります。
+deno_std v0.213.0 deno_std v0.213.0がリリースされています。
+破壊的変更 非推奨化されていたモジュールやAPIが削除されています。
+std/http/cookie_map.tsが削除されています。 std/semver/format.ts: function format(semver: SemVer, style?: FormatStyle): string形式が削除されています。 std/semver/compare_build.tsが削除されています。 std/semver/rsort.tsが削除されています。(reverseSortへの移行が推奨されます) 非推奨化 std/path std/path/constants.tsが追加されています。
+これに合わせてstd/path/separator.tsが非推奨化されました。このファイルで公開されていたSEPはSEPARATORに、SEP_PATTERNはSEPARATOR_PATTERNにリネームされており、それぞれconstants.tsからの読み込みが推奨されます。
+std/semver std/semver/types.ts: SemVerRangeが非推奨化されています。代わりにRangeが追加されているため、そちらのへの移行が推奨されます。 std/semver/outside....</p></div><footer class=entry-footer><span title="2024-01-28 00:00:00 +0000 UTC">January 28, 2024</span></footer><a class=entry-link aria-label="post link to 2024/01/22〜2024/01/28の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2024/01/28.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Deno v1.40</h2></header><div class=entry-content><p>Deno v1.40がリリースされました。
+この記事では主な変更点などについて解説します。
+Temporalサポート DenoでTemporal がサポートされました。利用するには--unstable-temporalの指定が必要です。
+Temporal.Now.instant(); 今のところTemporalのサポートはv2での安定化が検討されているようです。
+Decorators proposal (stage 3)のサポート ⚠️ V8でまだサポートされていない関係で.jsファイルではまだ動作しないようなためご注意 (.tsなどのトランスパイルされるファイルでのみ動作します)
+TypeScript v5で導入されたDecorators (stage 3)がDenoでもサポートされました。
+これに伴い、今までデフォルトで有効化されていたTypeScriptのexperimentalDecoratorsは無効化されたため、もし利用したい場合はdeno.jsonで明示的に有効化する必要があります。
+{ "compilerOptions": { "experimentalDecorators": true } } TypeScript5で導入されたStage 3のDecoratorを眺めてみる | 豆蔵デベロッパーサイト
+deno.json importsでnpm:URLのマッピングを定義する際の挙動の改善 (Import map expansion) npmパッケージが提供するサブパスの読み込みに関する挙動が改善されています。
+例えば、deno.jsonでImport Mapsを定義しておき、npm:なしでmswとmsw/nodeを読み込みたい場面があったとします。
+import { http, HttpResponse } from "msw"; import { setupServer } from "msw/node"; const server = setupServer( http.get(`${location.origin}/api/user`, () => HttpResponse.json({ id: 1, name: "foo", })), ); この場合、v1....</p></div><footer class=entry-footer><span title="2024-01-28 00:00:00 +0000 UTC">January 28, 2024</span></footer><a class=entry-link aria-label="post link to Deno v1.40" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.40.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2023/11/20〜2023/11/26の最新情報</h2></header><div class=entry-content><p>Deno v1.38.3 Deno v1.38.3がリリースされました。
+deno publishコマンドについて ⚠️パッケージレジストリが公開されていないため、この機能はまだ利用できません。また、この機能には、今後、大きな変更が入る可能性があります。
+Denoの新しいパッケージレジストリへパッケージを公開するためのコマンドが実装されているようです。(helpメッセージにはこのコマンドは表示されず、まだ使用は推奨されません)
+feat(unstable): tar up directory with deno.json #21228
+現時点では、公開したいパッケージが含まれるディレクトリを指定して利用することが想定されているようです。
+$ deno publish path/to/package_directory 引数で指定したディレクトリには、以下の項目を設定したdeno.jsonを置いておく必要があります。
+項目 説明 version パッケージのバージョン name パッケージ名(@&lt;scope_name>/&lt;package_name>のフォーマット) また、もし指定されたディレクトリでワークスペースが有効化されている場合、ワークスペース内の各パッケージがまとめて公開されるようです。
+パッケージが公開される際は、Import Mapsの内容を元に各ファイルのspecifierを解決した後、tarballが作成され、DENO_REGISTRY_URLへアップロードされるようです。
+認証については、--tokenオプションでpublish用のAPIトークンを指定できます。もし--tokenオプションが指定されなかった場合は、以下のように認証が行われるようです。
+GitHub Actionsで実行されていれば、OIDCを使用する。 そうでなければ、インタラクティブに認証をする。 その他の改善 node:stream: Writableで意図した通りにデータが書き込まれないことがある問題が修正されています。 @jsxプラグマとshebangを併用するとパニックする問題が修正されています。 deno repl/deno jupyterでPromise was collectedエラーが起きることのある問題が修正されています。 NO_COLOR環境変数に空文字列が設定されている際は、Deno.noColorにtrueが設定されないように修正されています。 deno_std v0.208.0 deno_std v0.208.0がリリースされています。
+既存モジュールの非推奨化 以下のモジュールが非推奨化されました。
+std/collections/group_by.ts: 今後はObject....</p></div><footer class=entry-footer><span title="2023-11-26 00:00:00 +0000 UTC">November 26, 2023</span></footer><a class=entry-link aria-label="post link to 2023/11/20〜2023/11/26の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/11/26.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2023/11/13〜2023/11/19の最新情報</h2></header><div class=entry-content><p>ワークスペースのサポートについて DenoにワークスペースをサポートするPRがマージされています。Deno v1.39でリリースされる可能性があるかもしれません。
+feat(unstable): Workspaces support #20410
+これはdeno.jsonで定義された各ワークスペースごとに独自のImport Mapsを持たせることができる機能のようです。
+利用方法 ⚠️この機能は今後使用方法が大きく変わる可能性があります。
+以下の構成のプロジェクトがあったとします。
+. ├── deno.json ├── main.ts ├── ws-a │ ├── deno.json │ └── mod.ts └── ws-b ├── deno.json └── mod.ts ワークスペースを利用する際は、ルートディレクトリのdeno.jsonでワークスペースとして扱うディレクトリを指定します。
+{ "workspaces": ["ws-a", "ws-b"], "imports": { "$std/": "https://deno.land/std@0.206.0" } } これにより、ws-aとws-bという2つのワークスペースが認識されます。
+ws-a/deno.jsonは以下のように定義します。ここではルートディレクトリとは異なるバージョンのdeno_stdを読み込むよう指定しています。
+{ "name": "ws-a", "version": "0.0.1", "imports": { "$std/": "https://deno.land/std@0.207.0/" } } ws-a/mod.tsは以下のように書かれていたとします。
+export { VERSION } from "$std/version....</p></div><footer class=entry-footer><span title="2023-11-19 00:00:00 +0000 UTC">November 19, 2023</span></footer><a class=entry-link aria-label="post link to 2023/11/13〜2023/11/19の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2023/11/19.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Deno v1.37</h2></header><div class=entry-content><p>Deno v1.37がリリースされました。
+この記事では主な変更点などについて解説します。
+実験的なパッケージマネージャが実装 (jsr:URL) ⚠️この機能は実験的機能のようなので、今後、大きな変更が入る可能性があります。
+⚠️また、パッケージレジストリがまだ公開されていないため、この機能はまだ利用できない状態のようです。
+Deno本体に実験的なパッケージマネージャーが実装されています。
+具体的には、以下のようにjsr:形式のURLを記述することで、Denoがパッケージレジストリと連携してsemverの解決などを行いつつ、パッケージのインストールなどを自動で行ってくれるようです。
+import { foo } from "jsr:@foo/some_pkg@1/mod.ts"; 例えば、この場合、@foo/some_pkgパッケージに関するsemverの解決を行うために、まずhttps://${DENO_REGISTRY_URL}/@foo/some_pkg/meta.jsonの問い合わせを行い、その内容を元にどのバージョンをインストールすべきか判断されるようです。
+従来のhttps:やnpm:形式のパッケージと同様に、npm installなどのコマンドの実行は不要で、スクリプトの実行時にDenoが必要に応じてパッケージをインストールしてくれます。
+また、パッケージのインストール元レジストリはDENO_REGISTRY_URL環境変数で変更可能なようです。
+ここからは推測になりますが、この機能は、元々、導入される予定であったdeno:URLに相当する機能だと思われます。
+Deno本体がレジストリと連携してsemver解決を行うことで、依存関係の重複問題などを解消しようというのがこの機能の狙いだと思われます。
+feat(unstable): package manager #20517
+Built-in support for semvered specifiers on the deno.land/x registry #17495
+deno jupyter Deno本体にJupyter Kernelが実装されました。
+以下のコマンドを実行すると、Deno Kernelがインストールされているかどうかを確認できます。
+$ deno jupyter --unstable ℹ️ Deno kernel is not yet installed, run `deno jupyter --unstable --install` to set it up もしインストールされていなければ、以下のコマンドでインストールできます。...</p></div><footer class=entry-footer><span title="2023-09-24 00:00:00 +0000 UTC">September 24, 2023</span></footer><a class=entry-link aria-label="post link to Deno v1.37" href=https://uki00a.github.io/deno-weekly/articles/deno/v1.37.html></a></article></main><footer class=footer><span>&copy; 2024 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>
