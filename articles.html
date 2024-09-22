@@ -5,7 +5,7 @@ Deno v2.0.0-rc.3/v2.0.0-rc.4 Deno v2.0.0-rc.3とv2.0.0-rc.4がリリースされ
 v2.0.0-rc.2からv2.0.0-rc.3までのコミット v2.0.0-rc.3からv2.0.0-rc.4までのコミット 破壊的変更 deno add deno addでJSRパッケージを追加する場合にjsr:プレフィックスの指定が必須になりました:
 $ deno add @david/dax error: @david/dax is missing a prefix. Did you mean `deno add jsr:@david/dax`? feat: require jsr prefix for deno install and deno add #25698 deno cache deno cacheコマンドを--helpに表示しないようにする対応が行われています。
 今後はdeno cacheではなくdeno install --entrypointの使用が推奨されるようです。
-- feat: suggest deno install --entrypoint instead of deno cache #25228...</p></div><footer class=entry-footer><span title="2024-09-22 00:00:00 +0000 UTC">September 22, 2024</span></footer><a class=entry-link aria-label="post link to 2024/09/16〜2024/09/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2024/09/22.html></a></article><article class=post-entry><header class=entry-header><h2>2024/09/09〜2024/09/15の最新情報</h2></header><div class=entry-content><p>Deno v2.0.0-rc.2 Deno v2.0.0-rc.2がリリースされています。
+feat: suggest deno install --entrypoint instead of deno cache #25228 deno run Deno v1....</p></div><footer class=entry-footer><span title="2024-09-22 00:00:00 +0000 UTC">September 22, 2024</span></footer><a class=entry-link aria-label="post link to 2024/09/16〜2024/09/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2024/09/22.html></a></article><article class=post-entry><header class=entry-header><h2>2024/09/09〜2024/09/15の最新情報</h2></header><div class=entry-content><p>Deno v2.0.0-rc.2 Deno v2.0.0-rc.2がリリースされています。
 どの変更内容がv2.0.0-rc.2に入っているかは不明なため、Deno v2.0.0-rc.1からの差分を参考に直近の変更内容についてまとめます (差分)
 破壊的変更 Deno.errors.NotCapableの導入 Deno.errors.NotCapableという新しいエラーが追加されています。
 今までは、OSによる権限エラーとDenoによる権限エラー(--allow-*の指定漏れ)の両方がDeno.errors.PermissionDeniedによって表現されていました。
