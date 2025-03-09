@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Nitro on 週刊Deno</title><link>https://uki00a.github.io/deno-weekly/tags/nitro.html</link><description>Recent content in Nitro on 週刊Deno</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 09 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://uki00a.github.io/deno-weekly/tags/nitro/index.xml" rel="self" type="application/rss+xml"/><item><title>2025/03/03〜2025/03/09の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2025/03/09.html</link><pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2025/03/09.html</guid><description>Deno v2.2.3 (deno lint - JavaScriptプラグインにおけるセレクターの改善, ESM/CommonJSの相互運用性に関する改善, node:sqliteやOpenTelemetryサポートなどに関するバグの修正, など), deno_stdのリリース (@std/cli@1.0.14 - ProgressBarの再描画に関するインターバルが変更, @std/fs@1.0.14 - Node.jsサポートの改善, @std/tar@0.1.6 - mode, uid, gidの取り扱いの変更), Nitro v2.11.0 (Deno v2との互換性の改善やデータベースレイヤーにおけるnode:sqliteのサポートなど), Platform Node.js compat (Deno DeployやCloudflare Workersなどの各種プラットフォームにおけるNode.js互換性を掲載)</description></item><item><title>2022/10/17〜2022/10/23の最新情報</title><link>https://uki00a.github.io/deno-weekly/articles/2022/10/23.html</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://uki00a.github.io/deno-weekly/articles/2022/10/23.html</guid><description>Deno v1.26.2 Deno v1.26.2がリリースされました。
+サブプロセス関連のAPIやnpmサポートの改善、fetch()の互換性の向上などが実施されています。
+Deno.SpawnOptionsでwindowsRawArgumentsオプションがサポート Windows上でこのオプションにtrueを指定すると、コマンドライン引数のクォーテーションの付与とエスケープがスキップされます。
+const { success, stdout } = await Deno.spawn(cmd, { args, windowsRawArguments: true, }); この機能は、後述するdeno_std v0.160.0におけるwindowsVerbatimArgumentsの実装に利用されています。
+npmサポートの改善 dist-tagがサポートされています。
+例)
+import ts from &amp;#34;npm:typescript@next&amp;#34;; その他の改善として、npmレジストリからのパッケージ情報のダウンロード処理が並列化されています。
+Fetch APIの互換性の向上 Fetch Standardとの互換性の改善が実施されています。
+例)
+Headersで不正な形式のヘッダを連続で解析すると、二度目以降の解析時にエラーが発生しない問題が修正 fetch()の呼び出し時にRangeヘッダが指定された際は、Accept-Encoding: identityが自動で設定されるように修正 ResponseやRequestに空のFormDataを渡せるように改善 Responseに設定したReadableStreamから非Uint8Array型のチャンクが読み込まれた際は、TypeErrorが発生するように修正 レスポンスボディがContent-Lengthを超過した際などにTypeErrorが発生するように修正 それ以外にもCache APIやWeb Streams APIなどでも互換性の向上が実施されています。
+その他の変更点 deno taskでのスクリプト実行時にINIT_CWD環境変数が設定されるように修正 (npm runとの互換性の向上が目的のようです) deno.json(c)のimportMapオプションにリモートURLを指定できるように改善 deno lspでの補完時に、スニペットが適切に取り扱われるように修正 コンパイル対象ファイルの名前が@で始まるときに、deno compileがパニックする問題が修正 https://github.com/denoland/deno/releases/tag/v1.26.2
+deno_std v0.160.0 deno_std v0.160.0がリリースされました。
+このリリースではstd/nodeのNode.js互換性の向上が実施されています。
+変更点:
+std/node/readline/promisesが実装 std/node/child_process: windowsVerbatimArgumentsオプションがサポート std/node/fs: Windowsでfs.</description></item></channel></rss>
