@@ -14,7 +14,7 @@ deno jupyter --install --force deno jupyter --installに--forceオプション�
 このオプションを指定すると、カーネルがすでにインストール済みである際も強制的にカーネルを再インストールしてくれます。
 deno check Ambient moduleに関する挙動の改善 Ambient moduleによって型が定義されたパスに対して発生する型エラーが無視されるよう挙動が変更されています (#29135)
 例えば、Ambient moduleによって*.svgに対する型定義が定義されていたら、*.svgに対するimportによって型エラーが起きぬように改善されています。
-deno.lock deno.lockを更新タイミングが型チェックの実行前から実行後へ変更されています (#29265) 型チェックの実行時にはじめて@types/nodeが必要となるケースがあるため挙動が変更されたようです。...</p></div><footer class=entry-footer><span title="2025-05-18 00:00:00 +0000 UTC">May 18, 2025</span></footer><a class=entry-link aria-label="post link to 2025/05/12〜2025/05/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2025/05/18.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2024/11/25〜2024/12/01の最新情報</h2></header><div class=entry-content><p>Deno v2.1.2 Deno v2.1.2がリリースされています。
+deno.lock deno.lockの更新タイミングが型チェックの実行前から実行後へ変更されています (#29265) 型チェックの実行時にはじめて@types/nodeが必要となるケースがあるため挙動が変更されたようです。...</p></div><footer class=entry-footer><span title="2025-05-18 00:00:00 +0000 UTC">May 18, 2025</span></footer><a class=entry-link aria-label="post link to 2025/05/12〜2025/05/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2025/05/18.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2024/11/25〜2024/12/01の最新情報</h2></header><div class=entry-content><p>Deno v2.1.2 Deno v2.1.2がリリースされています。
 WASMモジュール .wasmモジュールから提供される関数以外の要素の読み込みがサポートされています。
 fix: support non-function exports in Wasm modules #26992 TypeScript deno checkコマンドでJSDocの@importタグがサポート .jsファイルにおける@importタグによる型チェックがサポートされています。
 fix(check): support jsdoc @import tag #26991 resolution-mode属性のサポート TypeScriptのresolution-mode属性のサポートが追加されています。
