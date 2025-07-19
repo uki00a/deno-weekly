@@ -24,7 +24,114 @@ deno bundleについて Deno v2.3.6で、esbuildをベースにdeno bundleコマ
 Deno v2.4に関する公式ブログによると、今後、このdeno bundleの機能をAPI経由で利用できるようにすることが検討されているようです。
 deno updateコマンドが追加 deno updateコマンドが追加されています (#29187)
 このコマンドによって依存関係の更新を行うことができます (実質的にdeno outdated --updateのエイリアスとして機能します)
-$ deno update --latest @ts-morph/ts-morph deno deployコマンドについて 小さな変更ですが、Deno v2....</p></div><footer class=entry-footer><span title="2025-07-06 00:00:00 +0000 UTC">July 6, 2025</span></footer><a class=entry-link aria-label="post link to Deno v2.4" href=https://uki00a.github.io/deno-weekly/articles/deno/v2.4.html></a></article></main><footer class=footer><span>&copy; 2025 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
+$ deno update --latest @ts-morph/ts-morph deno deployコマンドについて 小さな変更ですが、Deno v2....</p></div><footer class=entry-footer><span title="2025-07-06 00:00:00 +0000 UTC">July 6, 2025</span></footer><a class=entry-link aria-label="post link to Deno v2.4" href=https://uki00a.github.io/deno-weekly/articles/deno/v2.4.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2025/06/16〜2025/06/22の最新情報</h2></header><div class=entry-content><p>OpenTelemetryサポートの安定化について DenoのOpenTelemetryサポートを安定化するPRが作成されています:
+feat(otel): Stabilize OpenTelemetry support #29822 今後は--unstable-otelの指定は不要化され、OTEL_DENOなどの指定のみで利用できそうです。
+このPRは2.4.0のマイルストーンに含まれており、Deno v2.4でのリリースが検討されているようです。
+deno publishでのnpmパッケージの公開について deno publishでnpmパッケージの公開をサポートするため、--npmオプションを追加するPRが作成されています:
+feat(publish): allow publishing to npm #29823 現状ではまだ実装途中の段階のようですが、今のところdeno runコマンド経由でnpm (npm:npm@11.4.2) を実行することでnpmパッケージを公開できるようにすることが想定されているようです (cli/tools/publish/npm.rs#L15)
+このPRについては2.4.0のマイルストーンに含まれていないため、リリースは少し先になるかもしれません。
+Freshにおけるesbuild_deno_loaderから@deno/esbuild-pluginへの移行について Freshでは長らくesbuild_deno_loaderというesbuildプラグインが使用されていました。Freshにおいてこのesbuild_deno_loaderから先週に紹介した@deno/esbuild-pluginへ移行が行われています:
+fix(core): move to new esbuild deno plugin #3034 まだリリースは行われていないものの、この変更によって、Deno本体とFreshにおけるモジュール解決の振る舞いの互換性がより改善されそうです。
+Hono v4.8.0 Hono v4.8.0がリリースされています。
+hono/routeが追加 hono/route (Route Helper)という新しいモジュールが追加されており、Contextオブジェクトを引数に渡すことでクライアントから要求されたパスなどの情報を取得することが可能です。
+hono/ssg - プラグインシステムが実装 hono/ssgにおいてプラグインシステムが実装されています。
+toSSG()に追加されたpluginsオプションでプラグインを指定可能で、フックを実装することによってページの生成に関する振る舞いのカスタマイズなどができるようです。
+各種ミドルウェアの改善 各種ミドルウェアで様々な改善が実施されています:
+ミドルウェア 変更内容 hono/jwt Authorization以外のヘッダーがサポート (headerNameオプション) hono/cors allowMethodsオプションで関数の指定がサポート hono/jsx/streaming &lt;StreamingContext>が追加 (&lt;script>へのnonce属性の設定がサポート) hono/jwk allow_anonオプションが追加 (trueを指定すると、有効なトークンが見つからない場合でも次のミドルウェアーが実行されます) hono/cache cacheableStatusCodesオプションが追加, キャッシュ対象のステータスコードを指定できます (デフォルトは200のみ) Hono#fireの非推奨化 代わりにhono/service-workerのfire()への移行が推奨されています。...</p></div><footer class=entry-footer><span title="2025-06-22 00:00:00 +0000 UTC">June 22, 2025</span></footer><a class=entry-link aria-label="post link to 2025/06/16〜2025/06/22の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2025/06/22.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2025/06/09〜2025/06/15の最新情報</h2></header><div class=entry-content><p>Deno v2.3.6 Deno v2.3.6がリリースされています。
+deno.json - patchからlinksへのリネーム deno.jsonのpatchがlinksへリネームされています (#29677, #29714)
+deno.jsonのpatchは元々、JSRパッケージやnpmパッケージにパッチを適用するために導入された機能で、今回のlinksへのリネームに伴い、特に利用法などに変更はないようです。
+patchについてはまだサポートされているようですが、将来的に削除される予定のようです。
+esbuildベースのdeno bundleコマンド esbuildをベースにdeno bundleコマンドが再実装されました (#29470, #29706, #29651, #29683, #29680)
+$ cat main.js import pc from "npm:picocolors@1.1.1"; console.info(pc.green("foo")); $ deno bundle --output bundle.js main.js ⚠️ deno bundle is experimental and subject to changes bundled in 28ms $ deno run --allow-env bundle.js foo 今後、Freshとの統合も検討されているようです:
+https://x.com/rough__sea/status/1933244186104639839 deno deploy 以前に紹介したdeno deployサブコマンドがリリースされています。Deno Deploy Early Accessに関連した変更だと思われます。
+利用するためにはDENO_DEPLOY_SUBCOMMAND環境変数によって明示的に有効化する必要があるようです。
+$ DENO_DEPLOY_SUBCOMMAND=1 deno deploy --help Usage: deno deploy [OPTIONS] [args]....</p></div><footer class=entry-footer><span title="2025-06-15 00:00:00 +0000 UTC">June 15, 2025</span></footer><a class=entry-link aria-label="post link to 2025/06/09〜2025/06/15の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2025/06/15.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2025/05/26〜2025/06/01の最新情報</h2></header><div class=entry-content><p>Deno v2.3.4 & v2.3.5 Denoのv2.3.4とv2.3.5がリリースされています。
+CLI --unstable-subdomain-wildcardsが追加 --unstable-subdomain-wildcardsオプションが追加されています (#29327)
+--allow-netにおいてサブドメインに対するワイルドカード指定が有効化されます:
+$ deno run --unstable-subdomain-wildcards --allow-net='*.github.com' main.mjs DENO_UNSTABLE_SUBDOMAIN_WILDCARDS環境変数によって有効化することも可能です。
+DENO_USR2_MEMORY_TRIM環境変数の導入 DENO_USR2_MEMORY_TRIMという環境変数が導入されています (#29295)
+この環境変数が設定された場合、SIGUSR2シグナルが受信された際に、Denoがmalloc_trim(0)でヒープの開放を行ってくれます。この環境変数はLinuxでのみ利用可能です。おそらく、後述するDeno Deploy Early Accessに関連した変更ではないかと思われます。
+--frozenオプションの拡充 deno uninstallやdeno docなどの一部コマンドで--frozenオプションがサポートされていなかった問題が修正されています (#29508)
+Web API globalThis.performanceの取り扱いの変更 ユーザーコードとnpmパッケージとの間でglobalThis.performanceが同一のオブジェクトが共有されるよう挙動が変更されています (#29323)
+今までは、ユーザーコードとnpmパッケージ中のコードにおいてglobalThis.performanceが異なるオブジェクトを参照していました。具体的には、ユーザーコードではWeb Performance APIsにおけるPerformanceオブジェクト、npmパッケージ中のコードではnode:perf_hooksモジュールのPerformanceオブジェクトがそれぞれ参照されていました。
+今回のリリースに伴い、ユーザーコードとnpmパッケージ中のコードの両方がglobalThis.performanceによってnode:perf_hooksモジュールのPerformanceオブジェクトを参照するよう挙動が変更されています。
+WebGPU Deno.UnsafeWindowSurfaceにresize()というメソッドが実装されています (#29254)
+このメソッドはウィンドウのサイズが変更された際に呼ばれることが想定されています。
+また、GPUQueue#onSubmittedWorkDoneが実装されています (#29255)
+deno lsp deno/testRunの改善 deno lspから実行したテストが失敗した際に、Deno.test()の行ではなく実際にエラーが発生した行にエラーが表示されるよう改善されています (#29221)
+プロジェクト外のdeno.jsonの参照がサポート .vscode/settings.jsonのdeno.configにおいて、プロジェクト外のdeno.jsonの指定がサポートされています (#29420)
+Auto importの改善 Workspaceメンバーに対する相対パス形式ではなく bare specifier によってimportが追加されるよう改善されています (#29304)
+また、deno.jsonのpatchで指定されたjsrパッケージに対して、相対パス形式でimportが追加される問題が修正されています (#29437)
+deno task - タスクのワイルドカード指定に関するバグ修正 deno task check:*のようにワイルドカード形式でタスクを指定した場合、先頭一致ではなく部分一致によってタスクが探索されてしまう問題が修正されています (#29343)...</p></div><footer class=entry-footer><span title="2025-06-01 00:00:00 +0000 UTC">June 1, 2025</span></footer><a class=entry-link aria-label="post link to 2025/05/26〜2025/06/01の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2025/06/01.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2025/05/12〜2025/05/18の最新情報</h2></header><div class=entry-content><p>Deno v2.3.2 & v2.3.3 Deno v2.3.2とDeno v2.3.3がリリースされています。
+https://github.com/denoland/deno/blob/395878c5fb72d87a44f7c88ce9f391acc31feab3/Releases.md#233--20250516 deno lint deno lintプラグインでコメントの取得がサポートされています (#29189)
+SourceCodeクラス (RuleContext.sourceCodeからアクセス可能) にgetAllComments()/getCommentsBefore()/getCommentsAfter()/getCommentsInside()メソッドが追加されています。
+また、Programにもcommentsプロパティーが追加されています。
+deno coverage deno coverage --htmlで生成されるHTMLレポートで、OS設定に基づいてlightとdarkテーマが切り替わるように改善されています (#29267)
+deno jupyter - 複数カーネルの管理がサポート deno jupyterコマンドで複数のカーネルをインストール・管理するための機能が導入されています (#29249)
+--nameオプション deno jupyterコマンドに--nameオプションが追加されています。
+--installオプションとともに--nameオプションが指定されると、カーネルがインストールされる際のディレクトリ名を変更できます (デフォルトはLinuxだと~/.local/share/jupyter/kernels/denoで、--name deno-canaryを指定すると~/.local/share/jupyter/kernels/deno-canaryにインストールされます)
+--installが省略された場合、--nameオプションによって指定された名前でkernel.jsonがインストールされているか確認できます。
+deno jupyter --install --display &lt;name> deno jupyter --installに--displayオプションが追加されています。
+このオプションを指定することで、kernel.jsonのdisplay_nameをカスタマイズできます (デフォルトはDeno)
+deno jupyter --install --force deno jupyter --installに--forceオプションが追加されています。
+このオプションを指定すると、カーネルがすでにインストール済みである際も強制的にカーネルを再インストールしてくれます。
+deno check Ambient moduleに関する挙動の改善 Ambient moduleによって型が定義されたパスに対して発生する型エラーが無視されるよう挙動が変更されています (#29135)
+例えば、Ambient moduleによって*.svgに対する型定義が定義されていたら、*.svgに対するimportによって型エラーが起きぬように改善されています。
+deno.lock deno.lockの更新タイミングが型チェックの実行前から実行後へ変更されています (#29265) 型チェックの実行時にはじめて@types/nodeが必要となるケースがあるため挙動が変更されたようです。...</p></div><footer class=entry-footer><span title="2025-05-18 00:00:00 +0000 UTC">May 18, 2025</span></footer><a class=entry-link aria-label="post link to 2025/05/12〜2025/05/18の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2025/05/18.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>Deno v2.3</h2></header><div class=entry-content><p>はじめに Deno v2.3がリリースされました。
+この記事では主な変更点などについて解説します。
+v2.3のRCバージョンでの変更内容に関しては以下を参照いただければと思います:
+Deno v2.3.0-rc.1〜rc.3 また、Deno v2.3に関する公式ブログではすでに実装されていたnpmパッケージへのパッチ機能やvsockのサポートなどについても正式にアナウンスされています。
+deno.lock v5 deno.lockのv5 ("version": "5")がデフォルトで有効化されました。
+今後、deno.lockが新しく作成される際はv5がデフォルトで有効化されます。
+deno add --npmと--jsrオプションがサポート deno addとdeno installコマンドで--npmと--jsrオプションがサポートされています (#28666)
+複数のJSRまたはnpmパッケージをまとめて追加する際の記述を若干簡略化できます:
+# `jsr:@std/uuid`と`jsr:@std/ulid`を追加 $ deno add --jsr @std/uuid @std/ulid # `npm:koa`を追加 $ deno add --npm koa # `--jsr`オプションを指定した状態でnpmパッケージをインストールする場合、`npm:`を明示する必要があります $ deno add --jsr @std/uuid @std/ulid npm:koa deno check 引数なしでのdeno checkがサポート deno checkを引数なしで実行した際に、deno check .と同等の振る舞いをするよう改善されています (#28655)
+tsconfig.jsonの自動検出 deno.jsonもしくはpackage.jsonがある際は、tsconfig.jsonが自動で検出されるよう改善されています (#29092)
+deno.jsonでcompilerOptionsが定義されている際はこの検出機能は無効化されます。
+compilerOptions.erasableSyntaxOnlyのサポート 後述するTypeScript v5.8へのアップデートに合わせて、compilerOptions.erasableSyntaxOnlyがサポートされています (#29097)
+deno compile FFIとNode....</p></div><footer class=entry-footer><span title="2025-05-04 00:00:00 +0000 UTC">May 4, 2025</span></footer><a class=entry-link aria-label="post link to Deno v2.3" href=https://uki00a.github.io/deno-weekly/articles/deno/v2.3.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2025/03/31〜2025/04/06の最新情報</h2></header><div class=entry-content><p>Deno v2.2.7 Deno v2.2.7がリリースされています。
+panic.deno.com Denoのプロセスがパニックした際に、panic.deno.comというサイトへのリンクが表示されるよう改善されています (#28470)
+エラーメッセージ中のリンクから詳細なスタックトレースを閲覧できるようです。
+panic.deno.comのソースコードは以下にあります:
+https://github.com/denoland/panic OpenTelemetry V8 JS Engine Runtime metrics のサポート V8 JS Engine Runtime metricsのサポートが実施されています (#28592)
+OTEL_DENOまたはOTEL_DENO_METRICSによってMetricsが有効化されていれば、自動でヒープやGCなどに関する各指標が収集されます。
+Node.js互換性の改善 npmライフサイクルスクリプト Denoにおいてnpmのライフサイクルスクリプトは、Node.jsのCLIフラグの有無などに応じてNode.jsまたはDenoのいずれかを使用して実行されます。
+このリリースではnpmのライフサイクルスクリプトの実行において、より多くの場面でDenoが使用されるよう変更されています (#28715)
+これに合わせて、Denoでnpmライフサイクルスクリプトを実行する際に追加で以下のオプションが適用されるよう変更されています:
+--unstable-bare-node-builtins --unstable-detect-cjs --unstable-node-globals --unstable-sloppy-imports --unstable-unsafe-proto node:dns dns.lookup()の互換性が改善されています (#27936)
+node:netのconnect()においてホスト名を指定した場合、今まではDNSサーバーと解決したいホスト名の両方を--allow-netで許可する必要があったものの、この変更に合わせて解決したいホスト名の指定だけで動作するよう改善されているようです。
+node:sqlite 空のBLOBがnullではなく空のUint8Arrayとして返却されるよう修正されています (#28674)
+node:process process.cpuUsage()でpreviousValue引数がサポートされています (#28550)
+deno lsp vscodeにおいて、deno lspでsettings.json (User settings)をフォーマットできるよう改善されています (#28706)
+その他 Error.isError Error.isErrorの型定義が追加されています (#28679)
+WebGPU 以下のAPIに関して変更が行われています (#28650)
+isFallbackAdapterプロパティーがGPUAdapterからGPUAdapterInfoへ移動 GPUSupportedLimits 各プロパティーがreadonlyに変更 maxBindGroupsPlusVertexBuffersとmaxInterStageShaderVariablesプロパティーが追加 Deno v2....</p></div><footer class=entry-footer><span title="2025-04-06 00:00:00 +0000 UTC">April 6, 2025</span></footer><a class=entry-link aria-label="post link to 2025/03/31〜2025/04/06の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2025/04/06.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2025/03/17〜2025/03/23の最新情報</h2></header><div class=entry-content><p>Deno v2.2.5 Deno v2.2.5がリリースされています。
+npmパッケージに対するパッチが実験的にサポート ⚠️Deno v2.3がリリースされるまでは、この機能の利用には"unstable": ["npm-patch"]の指定が必要なようです。今後、破壊的変更が加わる可能性もありそうです。
+deno.jsonのpatchフィールドによるnpmパッケージへのパッチがサポートされています (#28512)
+この機能を利用するためにはnode_modulesが必要なため"nodeModulesDir": "manual"や"nodeModulesDir": "auto"などとの併用が必要なようです。
+使い方はjsrパッケージにおけるパッチと同様で、patchフィールドにpackage.jsonを持つディレクトリへのパスを指定することで、該当のpackage.jsonの"name"フィールドの値に一致するパッケージがpatchフィールドで指定されたディレクトリの内容へ置き換えられます:
+{ "nodeModulesDir": "auto", "patch": ["./path/to/patched-npm-package"], "unstable": ["npm-patch"] } このnpmパッケージのパッチ機能はnodeModulesDirの設定値によって振る舞いが若干変わるようです:
+nodeModulesDir 振る舞い "manual" パッチの内容を変更するたびにdeno installの実行が要求されるようです "auto" スクリプト実行のたびにnode_modulesが作り直されるため、起動時間が少し伸びるようです OpenTelemetry Span Eventsのサポート Span Eventsの基本的なサポートが実施されています (#28552)
+これによって、Span#addEventが利用できるようです。
+意図せぬTypeErrorの修正 OpenTelemetryサポートを利用する際にTypeErrorが発生することがある問題が修正されています (#28538)
+Node.js互換性の改善 node:sqlite Denoのパーミッションシステムとの兼ね合いを考慮して、ATTACH DATABASEの使用が無効化されました (#28513)
+また、StatementSync#runから返却されるchangesフィールドに誤った値が設定される問題が修正されています (#28506)
+node:util getCallSites()が実装されています (#28546)
+その他 Deno本体のV8が135へアップデートされています (#28562)
+また、Error.stackTraceLimitの型定義が追加されています (#28539)...</p></div><footer class=entry-footer><span title="2025-03-23 00:00:00 +0000 UTC">March 23, 2025</span></footer><a class=entry-link aria-label="post link to 2025/03/17〜2025/03/23の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2025/03/23.html></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2025/03/10〜2025/03/16の最新情報</h2></header><div class=entry-content><p>Deno v2.2.4 Deno v2.2.4がリリースされています。
+OpenTelemetry Context propagationのサポート Context propagationがサポートされています (#28460)
+OTEL_PROPAGATORS環境変数にカンマ区切りでPropagatorを設定可能です (デフォルト値はtracecontext,baggage)
+現時点ではtracecontextとbaggageのみがサポートされているようです。
+その他の改善 node:httpのrequest()が計装されています (#28463)
+また、fetch()で発生したエラーが適切に取り扱われるよう改善されています (#28480)
+deno check - package.jsonに基づいた型定義の解決に関する改善 package.jsonに関する以下のサポートが追加されています:
+"exports"フィールドにおけるtypes@{selector}形式 (#28450) typesVersionsフィールド (#28468) deno install プライベートなnpmパッケージに関する改善 ワークスペースのメンバーにプライベートなnpmパッケージが指定されている場合に、deno installが失敗しないように改善されています (#28401)
+file:のサポート package.jsonのdependenciesにおいてfile:形式での依存の指定がサポートされています (#28396)
+deno lint - プラグインシステムに関するバグの修正 プラグインシステムに関する以下のバグが修正されています:
+!==が!=として解釈されていた問題が修正されています (#28403) ({ a = b } = {}のようなコードがDeno.lint.ObjectPatternとDeno.lint.AssignmentPatternの組み合わせで表現されるよう改善されています (#28402) Node.js互換性の改善 CommonJSサポートの改善 CommonJSモジュールからESM形式のモジュールの再exportがサポートされています (#28379)
+module.exports = require("./index.mjs"); また、deno compileでrequire(esm)が動いてなかった問題も修正されているようです。
+node:http STATUS_CODESがNode.jsと同様の形式に修正されています (#28489)
+その他 FORCE_COLOR環境変数のサポート FORCE_COLOR環境変数がサポートされています (#28490)...</p></div><footer class=entry-footer><span title="2025-03-16 00:00:00 +0000 UTC">March 16, 2025</span></footer><a class=entry-link aria-label="post link to 2025/03/10〜2025/03/16の最新情報" href=https://uki00a.github.io/deno-weekly/articles/2025/03/16.html></a></article><footer class=page-footer><nav class=pagination><a class=next href=https://uki00a.github.io/deno-weekly/tags/opentelemetry/page/2.html>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2025 <a href=https://uki00a.github.io/deno-weekly/>週刊Deno</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>
